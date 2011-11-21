@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
+"POT-Creation-Date: 2011-11-21 22:57Romance Standard Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -841,7 +841,7 @@ msgstr ""
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
 msgstr ""
 
-#. OptionsDialog.xml:67(term) Acknowledgements.xml:68(entry) 
+#. OptionsDialog.xml:67(term) Acknowledgements.xml:80(entry) 
 msgid "Language"
 msgstr ""
 
@@ -4329,183 +4329,175 @@ msgstr ""
 msgid "Libraries"
 msgstr ""
 
-#. Acknowledgements.xml:16(member) 
+#. Acknowledgements.xml:17(member) 
 msgid "Translation library."
 msgstr ""
 
-#. Acknowledgements.xml:23(member) 
+#. Acknowledgements.xml:26(member) 
 msgid "Library for creating shell extensions."
 msgstr ""
 
-#. Acknowledgements.xml:30(member) 
+#. Acknowledgements.xml:35(member) 
 msgid "Used to create PDF files."
 msgstr ""
 
-#. Acknowledgements.xml:37(member) 
+#. Acknowledgements.xml:44(member) 
 msgid "Used for plugin support and advanced interaction."
 msgstr ""
 
-#. Acknowledgements.xml:44(member) 
+#. Acknowledgements.xml:53(member) 
 msgid "Numerical library."
 msgstr ""
 
-#. Acknowledgements.xml:51(member) 
+#. Acknowledgements.xml:62(member) 
 msgid "Peer-reviewed C++ library."
 msgstr ""
 
-#. Acknowledgements.xml:58(title) 
+#. Acknowledgements.xml:70(title) 
 msgid "Translations"
 msgstr ""
 
-#. Acknowledgements.xml:69(entry) 
+#. Acknowledgements.xml:81(entry) 
 msgid "Program"
 msgstr ""
 
-#. Acknowledgements.xml:70(entry) 
+#. Acknowledgements.xml:82(entry) 
 msgid "Help file"
 msgstr ""
 
-#. Acknowledgements.xml:71(entry) 
-msgid "Translator(s)"
+#. Acknowledgements.xml:83(entry) 
+msgid "Translators"
 msgstr ""
 
-#. Acknowledgements.xml:76(entry) 
+#. Acknowledgements.xml:88(entry) 
 msgid "Arabic"
 msgstr ""
 
-#. Acknowledgements.xml:77(entry) Acknowledgements.xml:84(entry) Acknowledgements.xml:91(entry) Acknowledgements.xml:98(entry) Acknowledgements.xml:105(entry) Acknowledgements.xml:112(entry) Acknowledgements.xml:119(entry) Acknowledgements.xml:120(entry) Acknowledgements.xml:126(entry) Acknowledgements.xml:133(entry) Acknowledgements.xml:134(entry) Acknowledgements.xml:140(entry) Acknowledgements.xml:147(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:154(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:161(entry) Acknowledgements.xml:168(entry) Acknowledgements.xml:175(entry) Acknowledgements.xml:181(entry) Acknowledgements.xml:182(entry) Acknowledgements.xml:188(entry) Acknowledgements.xml:195(entry) Acknowledgements.xml:202(entry) Acknowledgements.xml:209(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:244(entry) Acknowledgements.xml:251(entry) Acknowledgements.xml:252(entry) Acknowledgements.xml:258(entry) Acknowledgements.xml:259(entry) Acknowledgements.xml:265(entry) Acknowledgements.xml:272(entry) Acknowledgements.xml:279(entry) 
+#. Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:118(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:136(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:204(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:236(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:270(entry) Acknowledgements.xml:277(entry) Acknowledgements.xml:284(entry) Acknowledgements.xml:296(entry) Acknowledgements.xml:297(entry) Acknowledgements.xml:310(entry) Acknowledgements.xml:311(entry) Acknowledgements.xml:322(entry) Acknowledgements.xml:334(entry) Acknowledgements.xml:341(entry) 
 msgid "Yes"
 msgstr ""
 
-#. Acknowledgements.xml:78(entry) Acknowledgements.xml:85(entry) Acknowledgements.xml:92(entry) Acknowledgements.xml:99(entry) Acknowledgements.xml:106(entry) Acknowledgements.xml:113(entry) Acknowledgements.xml:127(entry) Acknowledgements.xml:141(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:210(entry) Acknowledgements.xml:217(entry) Acknowledgements.xml:224(entry) Acknowledgements.xml:231(entry) Acknowledgements.xml:238(entry) Acknowledgements.xml:245(entry) Acknowledgements.xml:266(entry) Acknowledgements.xml:273(entry) Acknowledgements.xml:280(entry) 
+#. Acknowledgements.xml:90(entry) Acknowledgements.xml:97(entry) Acknowledgements.xml:104(entry) Acknowledgements.xml:111(entry) Acknowledgements.xml:125(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:190(entry) Acknowledgements.xml:197(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:271(entry) Acknowledgements.xml:278(entry) Acknowledgements.xml:285(entry) Acknowledgements.xml:323(entry) Acknowledgements.xml:335(entry) Acknowledgements.xml:342(entry) 
 msgid "No"
 msgstr ""
 
-#. Acknowledgements.xml:83(entry) 
+#. Acknowledgements.xml:95(entry) 
 msgid "Basque"
 msgstr ""
 
-#. Acknowledgements.xml:90(entry) 
-msgid "Chinese (Traditional)"
-msgstr ""
-
-#. Acknowledgements.xml:97(entry) 
+#. Acknowledgements.xml:102(entry) 
 msgid "Chinese (Simplified)"
 msgstr ""
 
-#. Acknowledgements.xml:104(entry) 
+#. Acknowledgements.xml:109(entry) 
+msgid "Chinese (Traditional)"
+msgstr ""
+
+#. Acknowledgements.xml:116(entry) 
 msgid "Croatian"
 msgstr ""
 
-#. Acknowledgements.xml:111(entry) 
+#. Acknowledgements.xml:123(entry) 
 msgid "Czech"
 msgstr ""
 
-#. Acknowledgements.xml:118(entry) 
+#. Acknowledgements.xml:135(entry) 
 msgid "Danish"
 msgstr ""
 
-#. Acknowledgements.xml:125(entry) 
+#. Acknowledgements.xml:147(entry) 
 msgid "Dutch"
 msgstr ""
 
-#. Acknowledgements.xml:132(entry) 
+#. Acknowledgements.xml:154(entry) 
 msgid "English"
 msgstr ""
 
-#. Acknowledgements.xml:139(entry) 
+#. Acknowledgements.xml:161(entry) 
 msgid "Finnish"
 msgstr ""
 
-#. Acknowledgements.xml:146(entry) 
+#. Acknowledgements.xml:168(entry) 
 msgid "French"
 msgstr ""
 
-#. Acknowledgements.xml:153(entry) 
+#. Acknowledgements.xml:175(entry) 
 msgid "German"
 msgstr ""
 
-#. Acknowledgements.xml:160(entry) 
+#. Acknowledgements.xml:188(entry) 
 msgid "Greek"
 msgstr ""
 
-#. Acknowledgements.xml:167(entry) 
+#. Acknowledgements.xml:195(entry) 
 msgid "Hungarian"
 msgstr ""
 
-#. Acknowledgements.xml:174(entry) 
-msgid "Hebrew"
-msgstr ""
-
-#. Acknowledgements.xml:180(entry) 
+#. Acknowledgements.xml:202(entry) 
 msgid "Italian"
 msgstr ""
 
-#. Acknowledgements.xml:187(entry) 
+#. Acknowledgements.xml:214(entry) 
 msgid "Korean"
 msgstr ""
 
-#. Acknowledgements.xml:194(entry) 
+#. Acknowledgements.xml:221(entry) 
 msgid "Mongolian"
 msgstr ""
 
-#. Acknowledgements.xml:201(entry) 
+#. Acknowledgements.xml:228(entry) 
 msgid "Norwegian"
 msgstr ""
 
-#. Acknowledgements.xml:208(entry) 
+#. Acknowledgements.xml:235(entry) 
 msgid "Persian"
 msgstr ""
 
-#. Acknowledgements.xml:211(entry) 
-msgid "Shayan Abyari &amp; Yashar PourMohammad"
-msgstr ""
-
-#. Acknowledgements.xml:215(entry) 
+#. Acknowledgements.xml:247(entry) 
 msgid "Polish"
 msgstr ""
 
-#. Acknowledgements.xml:222(entry) 
+#. Acknowledgements.xml:254(entry) 
 msgid "Portuguese (Brazil)"
 msgstr ""
 
-#. Acknowledgements.xml:229(entry) 
+#. Acknowledgements.xml:269(entry) 
 msgid "Portuguese (Portugal)"
 msgstr ""
 
-#. Acknowledgements.xml:236(entry) 
+#. Acknowledgements.xml:276(entry) 
 msgid "Russian"
 msgstr ""
 
-#. Acknowledgements.xml:243(entry) 
+#. Acknowledgements.xml:283(entry) 
 msgid "Serbian"
 msgstr ""
 
-#. Acknowledgements.xml:250(entry) 
+#. Acknowledgements.xml:295(entry) 
 msgid "Slovenian"
 msgstr ""
 
-#. Acknowledgements.xml:257(entry) 
+#. Acknowledgements.xml:309(entry) 
 msgid "Spanish"
 msgstr ""
 
-#. Acknowledgements.xml:264(entry) 
+#. Acknowledgements.xml:321(entry) 
 msgid "Swedish"
 msgstr ""
 
-#. Acknowledgements.xml:271(entry) 
+#. Acknowledgements.xml:333(entry) 
 msgid "Turkish"
 msgstr ""
 
-#. Acknowledgements.xml:278(entry) 
+#. Acknowledgements.xml:340(entry) 
 msgid "Vietnamese"
 msgstr ""
 
-#. Acknowledgements.xml:290(title) 
+#. Acknowledgements.xml:352(title) 
 msgid "Miscellaneous"
 msgstr ""
 
-#. Acknowledgements.xml:291(para) 
+#. Acknowledgements.xml:353(para) 
 msgid "The icon for Graph was designed by <placeholder-1/>."
 msgstr ""
 

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2011-10-18 19:53+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2011-11-21 22:57Romance Standard Time\n"
+"PO-Revision-Date: 2011-11-21 23:03+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -849,7 +849,7 @@ msgstr "Taille de la police "
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
 msgstr "Vous pouvez utiliser ceci pour changer l'échelle des fontes et de la plupart des éléments de l'interface utilisateur. C'est très utile si votre résolution d'écran est très élevée, ou pour toute autre raison, vous gênant pour lire l'interface utilisateur."
 
-#. OptionsDialog.xml:67(term) Acknowledgements.xml:68(entry)
+#. OptionsDialog.xml:67(term) Acknowledgements.xml:80(entry)
 msgid "Language"
 msgstr "Langue "
 
@@ -2227,7 +2227,7 @@ msgstr "Il est possible de tracer des lignes entre les marqueurs. La ligne sera 
 
 #. InsertPointSeriesDialog.xml:98(guilabel)
 msgid "1D cubic spline"
-msgstr "Spline cubique 1D"
+msgstr "Splines cubiques 1D"
 
 #. InsertPointSeriesDialog.xml:98(ulink)
 msgid "natural cubic spline"
@@ -2235,7 +2235,7 @@ msgstr "spline cubique naturelle"
 
 #. InsertPointSeriesDialog.xml:100(guilabel)
 msgid "2D cubic spline"
-msgstr "Spline cubique 2D"
+msgstr "Splines cubiques 2D"
 
 #. InsertPointSeriesDialog.xml:101(guilabel)
 msgid "Half cosine"
@@ -4337,183 +4337,175 @@ msgstr "logo"
 msgid "Libraries"
 msgstr "Librairies"
 
-#. Acknowledgements.xml:16(member)
+#. Acknowledgements.xml:17(member)
 msgid "Translation library."
 msgstr "Bibliothèque de traduction."
 
-#. Acknowledgements.xml:23(member)
+#. Acknowledgements.xml:26(member)
 msgid "Library for creating shell extensions."
 msgstr "Bibliothèque pour la création d'extensions shell."
 
-#. Acknowledgements.xml:30(member)
+#. Acknowledgements.xml:35(member)
 msgid "Used to create PDF files."
 msgstr "Utilisé pour créer les fichiers ."
 
-#. Acknowledgements.xml:37(member)
+#. Acknowledgements.xml:44(member)
 msgid "Used for plugin support and advanced interaction."
 msgstr "Utilisé pour support des plugins et des interactions avancées."
 
-#. Acknowledgements.xml:44(member)
+#. Acknowledgements.xml:53(member)
 msgid "Numerical library."
 msgstr "Bibliothèque numérique."
 
-#. Acknowledgements.xml:51(member)
+#. Acknowledgements.xml:62(member)
 msgid "Peer-reviewed C++ library."
 msgstr "Bibliothèque C++ contrôlée par des pairs."
 
-#. Acknowledgements.xml:58(title)
+#. Acknowledgements.xml:70(title)
 msgid "Translations"
 msgstr "Traductions"
 
-#. Acknowledgements.xml:69(entry)
+#. Acknowledgements.xml:81(entry)
 msgid "Program"
 msgstr "Programme"
 
-#. Acknowledgements.xml:70(entry)
+#. Acknowledgements.xml:82(entry)
 msgid "Help file"
 msgstr "Fichier d'aide"
 
-#. Acknowledgements.xml:71(entry)
-msgid "Translator(s)"
-msgstr "Traducteur(s)"
+#. Acknowledgements.xml:83(entry)
+msgid "Translators"
+msgstr "Traducteurs"
 
-#. Acknowledgements.xml:76(entry)
+#. Acknowledgements.xml:88(entry)
 msgid "Arabic"
 msgstr "Arabe"
 
-#. Acknowledgements.xml:77(entry) Acknowledgements.xml:84(entry) Acknowledgements.xml:91(entry) Acknowledgements.xml:98(entry) Acknowledgements.xml:105(entry) Acknowledgements.xml:112(entry) Acknowledgements.xml:119(entry) Acknowledgements.xml:120(entry) Acknowledgements.xml:126(entry) Acknowledgements.xml:133(entry) Acknowledgements.xml:134(entry) Acknowledgements.xml:140(entry) Acknowledgements.xml:147(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:154(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:161(entry) Acknowledgements.xml:168(entry) Acknowledgements.xml:175(entry) Acknowledgements.xml:181(entry) Acknowledgements.xml:182(entry) Acknowledgements.xml:188(entry) Acknowledgements.xml:195(entry) Acknowledgements.xml:202(entry) Acknowledgements.xml:209(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:244(entry) Acknowledgements.xml:251(entry) Acknowledgements.xml:252(entry) Acknowledgements.xml:258(entry) Acknowledgements.xml:259(entry) Acknowledgements.xml:265(entry) Acknowledgements.xml:272(entry) Acknowledgements.xml:279(entry)
+#. Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:118(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:136(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:204(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:236(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:270(entry) Acknowledgements.xml:277(entry) Acknowledgements.xml:284(entry) Acknowledgements.xml:296(entry) Acknowledgements.xml:297(entry) Acknowledgements.xml:310(entry) Acknowledgements.xml:311(entry) Acknowledgements.xml:322(entry) Acknowledgements.xml:334(entry) Acknowledgements.xml:341(entry)
 msgid "Yes"
 msgstr "Oui"
 
-#. Acknowledgements.xml:78(entry) Acknowledgements.xml:85(entry) Acknowledgements.xml:92(entry) Acknowledgements.xml:99(entry) Acknowledgements.xml:106(entry) Acknowledgements.xml:113(entry) Acknowledgements.xml:127(entry) Acknowledgements.xml:141(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:210(entry) Acknowledgements.xml:217(entry) Acknowledgements.xml:224(entry) Acknowledgements.xml:231(entry) Acknowledgements.xml:238(entry) Acknowledgements.xml:245(entry) Acknowledgements.xml:266(entry) Acknowledgements.xml:273(entry) Acknowledgements.xml:280(entry)
+#. Acknowledgements.xml:90(entry) Acknowledgements.xml:97(entry) Acknowledgements.xml:104(entry) Acknowledgements.xml:111(entry) Acknowledgements.xml:125(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:190(entry) Acknowledgements.xml:197(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:271(entry) Acknowledgements.xml:278(entry) Acknowledgements.xml:285(entry) Acknowledgements.xml:323(entry) Acknowledgements.xml:335(entry) Acknowledgements.xml:342(entry)
 msgid "No"
 msgstr "Non"
 
-#. Acknowledgements.xml:83(entry)
+#. Acknowledgements.xml:95(entry)
 msgid "Basque"
 msgstr "Basque"
 
-#. Acknowledgements.xml:90(entry)
-msgid "Chinese (Traditional)"
-msgstr "Chinois (traditionnel)"
-
-#. Acknowledgements.xml:97(entry)
+#. Acknowledgements.xml:102(entry)
 msgid "Chinese (Simplified)"
 msgstr "Chinois (simplifié)"
 
-#. Acknowledgements.xml:104(entry)
+#. Acknowledgements.xml:109(entry)
+msgid "Chinese (Traditional)"
+msgstr "Chinois (traditionnel)"
+
+#. Acknowledgements.xml:116(entry)
 msgid "Croatian"
 msgstr "Croate"
 
-#. Acknowledgements.xml:111(entry)
+#. Acknowledgements.xml:123(entry)
 msgid "Czech"
 msgstr "Tchèque"
 
-#. Acknowledgements.xml:118(entry)
+#. Acknowledgements.xml:135(entry)
 msgid "Danish"
 msgstr "Danois"
 
-#. Acknowledgements.xml:125(entry)
+#. Acknowledgements.xml:147(entry)
 msgid "Dutch"
 msgstr "Hollandais"
 
-#. Acknowledgements.xml:132(entry)
+#. Acknowledgements.xml:154(entry)
 msgid "English"
 msgstr "Anglais"
 
-#. Acknowledgements.xml:139(entry)
+#. Acknowledgements.xml:161(entry)
 msgid "Finnish"
 msgstr "Finnois"
 
-#. Acknowledgements.xml:146(entry)
+#. Acknowledgements.xml:168(entry)
 msgid "French"
 msgstr "Français"
 
-#. Acknowledgements.xml:153(entry)
+#. Acknowledgements.xml:175(entry)
 msgid "German"
 msgstr "Allemand"
 
-#. Acknowledgements.xml:160(entry)
+#. Acknowledgements.xml:188(entry)
 msgid "Greek"
 msgstr "Grec"
 
-#. Acknowledgements.xml:167(entry)
+#. Acknowledgements.xml:195(entry)
 msgid "Hungarian"
 msgstr "Hongrois"
 
-#. Acknowledgements.xml:174(entry)
-msgid "Hebrew"
-msgstr "Hébreu"
-
-#. Acknowledgements.xml:180(entry)
+#. Acknowledgements.xml:202(entry)
 msgid "Italian"
 msgstr "Italien"
 
-#. Acknowledgements.xml:187(entry)
+#. Acknowledgements.xml:214(entry)
 msgid "Korean"
 msgstr "Coréen"
 
-#. Acknowledgements.xml:194(entry)
+#. Acknowledgements.xml:221(entry)
 msgid "Mongolian"
 msgstr "Mongolien"
 
-#. Acknowledgements.xml:201(entry)
+#. Acknowledgements.xml:228(entry)
 msgid "Norwegian"
 msgstr "Norvégien"
 
-#. Acknowledgements.xml:208(entry)
+#. Acknowledgements.xml:235(entry)
 msgid "Persian"
 msgstr "Persan"
 
-#. Acknowledgements.xml:211(entry)
-msgid "Shayan Abyari &amp; Yashar PourMohammad"
-msgstr "Shayan Abyari &amp; Yashar PourMohammad"
-
-#. Acknowledgements.xml:215(entry)
+#. Acknowledgements.xml:247(entry)
 msgid "Polish"
 msgstr "Polonais"
 
-#. Acknowledgements.xml:222(entry)
+#. Acknowledgements.xml:254(entry)
 msgid "Portuguese (Brazil)"
 msgstr "Portugais (Brésil)"
 
-#. Acknowledgements.xml:229(entry)
+#. Acknowledgements.xml:269(entry)
 msgid "Portuguese (Portugal)"
 msgstr "Portugais (Portugal)"
 
-#. Acknowledgements.xml:236(entry)
+#. Acknowledgements.xml:276(entry)
 msgid "Russian"
 msgstr "Russe"
 
-#. Acknowledgements.xml:243(entry)
+#. Acknowledgements.xml:283(entry)
 msgid "Serbian"
 msgstr "Serbe"
 
-#. Acknowledgements.xml:250(entry)
+#. Acknowledgements.xml:295(entry)
 msgid "Slovenian"
 msgstr "Slovène"
 
-#. Acknowledgements.xml:257(entry)
+#. Acknowledgements.xml:309(entry)
 msgid "Spanish"
 msgstr "Espagnol"
 
-#. Acknowledgements.xml:264(entry)
+#. Acknowledgements.xml:321(entry)
 msgid "Swedish"
 msgstr "Suédois"
 
-#. Acknowledgements.xml:271(entry)
+#. Acknowledgements.xml:333(entry)
 msgid "Turkish"
 msgstr "Turc"
 
-#. Acknowledgements.xml:278(entry)
+#. Acknowledgements.xml:340(entry)
 msgid "Vietnamese"
 msgstr "Vietnamien"
 
-#. Acknowledgements.xml:290(title)
+#. Acknowledgements.xml:352(title)
 msgid "Miscellaneous"
 msgstr "Divers"
 
-#. Acknowledgements.xml:291(para)
+#. Acknowledgements.xml:353(para)
 msgid "The icon for Graph was designed by <placeholder-1/>."
 msgstr "L'icône de Graph a été conçue par <placeholder-1/>."
 
@@ -4524,126 +4516,96 @@ msgstr "translator-credits"
 msgid "Translator:"
 msgstr "Traducteurs :"
 
+#~ msgid "Hebrew"
+#~ msgstr "Hébreu"
+
+#~ msgid "Shayan Abyari &amp; Yashar PourMohammad"
+#~ msgstr "Shayan Abyari &amp; Yashar PourMohammad"
+
 #~ msgid "Returns the <placeholder-1/> root of the argument."
 #~ msgstr "Donne la racine <placeholder-1/>ème de l'argument."
+
 #~ msgid "GNU General Public License"
 #~ msgstr "Licence publique générale GNU"
+
 #~ msgid "Area"
 #~ msgstr "Aire "
+
 #~ msgid "&Delta;x"
 #~ msgstr "&Delta;x"
+
 #~ msgid "&Delta;t"
 #~ msgstr "&Delta;t"
-#~ msgid ""
-#~ "Returns the summation of the first argument evaluated for all integers "
-#~ "from the second to the third argument."
-#~ msgstr ""
-#~ "Donne la somme du premier argument pour les valeurs entières du deuxième "
-#~ "au troisième argument."
-#~ msgid ""
-#~ "Returns the product of the first argument evaluated for all integers from "
-#~ "the second to the third argument."
-#~ msgstr ""
-#~ "Donne le produit des valeurs du premier argument calculées pour tous les "
-#~ "entiers du deuxième au troisième argument."
-#~ msgid ""
-#~ "Returns the second argument if the first argument evaluates to a value "
-#~ "different from zero, else the third value is returned."
-#~ msgstr ""
-#~ "Donne le deuxième argument si le premier argument prend une valeur "
-#~ "différente de zéro, sinon cela donne le troisième argument."
-#~ msgid ""
-#~ "Evaluates a sequence of if functions and returns the first result found "
-#~ "with a condition different from zero."
-#~ msgstr ""
-#~ "Évalue une suite de conditions et donne le premier résultat trouvé non "
-#~ "nul."
-#~ msgid ""
-#~ "Calculates the signed area between the graph and the x-axis. This is the "
-#~ "same as the numerical integral."
-#~ msgstr ""
-#~ "Calcule l'aire algébrique entre le graphique et l'axe des x. C'est "
-#~ "identique à l'intégrale simple."
+
+#~ msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
+#~ msgstr "Donne la somme du premier argument pour les valeurs entières du deuxième au troisième argument."
+
+#~ msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
+#~ msgstr "Donne le produit des valeurs du premier argument calculées pour tous les entiers du deuxième au troisième argument."
+
+#~ msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
+#~ msgstr "Donne le deuxième argument si le premier argument prend une valeur différente de zéro, sinon cela donne le troisième argument."
+
+#~ msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
+#~ msgstr "Évalue une suite de conditions et donne le premier résultat trouvé non nul."
+
+#~ msgid "Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral."
+#~ msgstr "Calcule l'aire algébrique entre le graphique et l'axe des x. C'est identique à l'intégrale simple."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Marquer début de plage"
-#~ msgid ""
-#~ "Check this to draw a line at the start of the range. Uncheck it if you "
-#~ "want two shadings to look as one."
-#~ msgstr ""
-#~ "Validez cette option pour limiter le remplissage par un segment au début "
-#~ "de l'intervalle. Désactivez si vous souhaitez voir deux remplissages "
-#~ "avoir l'aspect d'un seul."
+
+#~ msgid "Check this to draw a line at the start of the range. Uncheck it if you want two shadings to look as one."
+#~ msgstr "Validez cette option pour limiter le remplissage par un segment au début de l'intervalle. Désactivez si vous souhaitez voir deux remplissages avoir l'aspect d'un seul."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Marquer fin de plage."
+
 #~ msgid "Indicates if a term evaluates to 0."
 #~ msgstr "Indique si un terme est nul."
-#~ msgid ""
-#~ "Indicates if two expressions both evaluate to a value different from 0."
-#~ msgstr ""
-#~ "Indique si les deux expressions prennent toutes les deux des valeurs non "
-#~ "nulles (vraies). "
-#~ msgid ""
-#~ "Indicates if at least one of two expressions evaluates to a value "
-#~ "different from 0."
-#~ msgstr ""
-#~ "Indique si au moins une des deux expressions prend une valeur non nulle "
-#~ "(vraie)"
-#~ msgid ""
-#~ "Indicates if exactly one of two expressions evaluates to a value "
-#~ "different from 0."
-#~ msgstr ""
-#~ "Indique si une et une seule des deux expressions prend une valeur non "
-#~ "nulle (vraie)."
+
+#~ msgid "Indicates if two expressions both evaluate to a value different from 0."
+#~ msgstr "Indique si les deux expressions prennent toutes les deux des valeurs non nulles (vraies). "
+
+#~ msgid "Indicates if at least one of two expressions evaluates to a value different from 0."
+#~ msgstr "Indique si au moins une des deux expressions prend une valeur non nulle (vraie)"
+
+#~ msgid "Indicates if exactly one of two expressions evaluates to a value different from 0."
+#~ msgstr "Indique si une et une seule des deux expressions prend une valeur non nulle (vraie)."
+
 #~ msgid "The same as a sequence of if functions."
 #~ msgstr "Identique à une séquence de fonctions si."
-#~ msgid ""
-#~ "Graph requires 32 bit Windows. It has been tested under Windows 98, "
-#~ "Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is "
-#~ "able to run Windows, it should be able to run the program, though Windows "
-#~ "95 is no longer supported."
-#~ msgstr ""
-#~ "Graph nécessite un Windows 32 bit. Il a été testé sous Windows 98, "
-#~ "Windows ME, Windows 2000, Windows XP et Windows Vista. Si le système peut "
-#~ "exécuter Windows, il devrait être en mesure d'exécuter le programme, bien "
-#~ "que Windows 95 ne soit plus supporté."
-#~ msgid ""
-#~ "Can I copy a function or point series from one instance of the program to "
-#~ "another?"
-#~ msgstr ""
-#~ "Puis-je copier une fonction ou une série de points d'une session du "
-#~ "programme dans une autre ?"
-#~ msgid ""
-#~ "Yes, you can select a function or point series and use the <placeholder-1/"
-#~ "> menu item to place a copy of the selected item in the clipboard. You "
-#~ "can then paste the item into another coordinate system."
-#~ msgstr ""
-#~ "Oui, vous pouvez sélectionner une fonction ou une série de points et "
-#~ "utiliser l'item <placeholder-1/> du menu pour en placer une copie dans le "
-#~ "presse-papiers. Vous pouvez alors la coller dans l'autre repère."
+
+#~ msgid "Graph requires 32 bit Windows. It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported."
+#~ msgstr "Graph nécessite un Windows 32 bit. Il a été testé sous Windows 98, Windows ME, Windows 2000, Windows XP et Windows Vista. Si le système peut exécuter Windows, il devrait être en mesure d'exécuter le programme, bien que Windows 95 ne soit plus supporté."
+
+#~ msgid "Can I copy a function or point series from one instance of the program to another?"
+#~ msgstr "Puis-je copier une fonction ou une série de points d'une session du programme dans une autre ?"
+
+#~ msgid "Yes, you can select a function or point series and use the <placeholder-1/> menu item to place a copy of the selected item in the clipboard. You can then paste the item into another coordinate system."
+#~ msgstr "Oui, vous pouvez sélectionner une fonction ou une série de points et utiliser l'item <placeholder-1/> du menu pour en placer une copie dans le presse-papiers. Vous pouvez alors la coller dans l'autre repère."
+
 #~ msgid "Graph uses dxgettext as translation library:"
 #~ msgstr "Graph utilise dxgettext comme librairie de traduction :"
+
 #~ msgid "For shell extensions the EasyNSE library is used:"
 #~ msgstr "La librairie EasyNSE est utilisée pour les extensions du shell :"
+
 #~ msgid "Python is used for plugin support:"
 #~ msgstr "Python est utilisé pour les modules d'extension :"
 
 #, fuzzy
 #~ msgid "Shadings"
 #~ msgstr "Remplissage"
-#~ msgid ""
-#~ "CompuServe Graphics Interchange (gif) is not supported because it uses "
-#~ "the LZW compression, which is patented by Unisys."
-#~ msgstr ""
-#~ "CompuServe Graphics Interchange (gif) n'est pas supporté car il utilise "
-#~ "la compression LZW qui est sous licence Unisys."
+
+#~ msgid "CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys."
+#~ msgstr "CompuServe Graphics Interchange (gif) n'est pas supporté car il utilise la compression LZW qui est sous licence Unisys."
+
 #~ msgid "Extreme y-value (Extremum)"
 #~ msgstr "Valeur extrème en y (Extremum)"
-#~ msgid ""
-#~ "The probability function of the normal distribution in a variate with "
-#~ "mean and standard"
-#~ msgstr ""
-#~ "La fonction densité de probabilité de la loi normale, avec valeurs "
-#~ "optionnelles pour moyenne et écart-type."
+
+#~ msgid "The probability function of the normal distribution in a variate with mean and standard"
+#~ msgstr "La fonction densité de probabilité de la loi normale, avec valeurs optionnelles pour moyenne et écart-type."
 
 #, fuzzy
 #~ msgid "I"
@@ -4656,96 +4618,78 @@ msgstr "Traducteurs :"
 #, fuzzy
 #~ msgid "N"
 #~ msgstr "Non"
+
 #~ msgid "Parts of Graph are using the Spirit parser library:"
 #~ msgstr "Des parties de Graph utilisent la librairie Spirit parser :"
+
 #~ msgid "Graph uses BMGLib for saving images as Portable Network Graphics:"
-#~ msgstr ""
-#~ "Graph utilise la librairie BMGLib pour enregistrer les images au format "
-#~ "Portable Network Graphics (PNG) :"
+#~ msgstr "Graph utilise la librairie BMGLib pour enregistrer les images au format Portable Network Graphics (PNG) :"
+
 #~ msgid "f'(x)"
 #~ msgstr "f'(x)"
+
 #~ msgid "sin(x)^2= (sin(x))^2"
 #~ msgstr "sin(x)^2= (sin(x))^2"
+
 #~ msgid "sin 2x = sin(2x)"
 #~ msgstr "sin 2x = sin(2x)"
+
 #~ msgid "sin 2+x = sin(2)+x"
 #~ msgstr "sin 2+x = sin(2)+x"
+
 #~ msgid "sin x^2 = sin(x^2)"
 #~ msgstr "sin x^2 = sin(x^2)"
+
 #~ msgid "2(x+3)x = 2*(x+3)*x"
 #~ msgstr "2(x+3)x = 2*(x+3)*x"
+
 #~ msgid "-x^2 = -(x^2)"
 #~ msgstr "-x^2 = -(x^2)"
+
 #~ msgid "2x = 2*x"
 #~ msgstr "2x = 2*x"
+
 #~ msgid "e^2x = e^(2*x)"
 #~ msgstr "e^2x = e^(2*x)"
+
 #~ msgid "avi"
 #~ msgstr "avi"
+
 #~ msgid "Tnt Delphi Unicode Controls"
 #~ msgstr "Tnt Delphi Unicode Controls"
-#~ msgid ""
-#~ "The <placeholder-1/> function calculates the inverse cosine of "
-#~ "<placeholder-2/>. The result may be in <glossterm>radians</glossterm> or "
-#~ "degrees depending on the current settings. <placeholder-3/> may be any "
-#~ "<glossterm>numeric expression</glossterm> that evaluates to a "
-#~ "<glossterm>real number</glossterm>. This is the reverse of the "
-#~ "<placeholder-4/> function."
-#~ msgstr ""
-#~ "La fonction <placeholder-1/> donne l'arccosinus de <placeholder-2/>. Le "
-#~ "résultat peut être en <glossterm>radians</glossterm> ou degrés selon le "
-#~ "paramétrage actif. <placeholder-3/> peut être n'importe quelle "
-#~ "<glossterm>expression numérique</glossterm> qui donne un "
-#~ "<glossterm>nombre réel</glossterm>. C'est la fonction réciproque de la "
-#~ "fonction <placeholder-4/>."
-#~ msgid ""
-#~ "The <placeholder-1/> function calculates the secant of an angle "
-#~ "<placeholder-2/>, which may be in <glossterm>radians</glossterm> or "
-#~ "degrees depending on the current settings. <placeholder-3/> is the same "
-#~ "as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric "
-#~ "expression</glossterm> that evaluates to a <glossterm>real number</"
-#~ "glossterm> or a <glossterm>complex number</glossterm>."
-#~ msgstr ""
-#~ "La fonction <placeholder-1/> donne la sécante d'un angle <placeholder-2/"
-#~ ">, qui peut être en <glossterm>radians</glossterm> ou degrés selon le "
-#~ "paramétrage actif. <placeholder-3/> est identique à <placeholder-4/>. "
-#~ "<placeholder-5/>  peut être n'importe quelle <glossterm>expression "
-#~ "numérique</glossterm> qui donne un <glossterm>nombre réel</glossterm> ou "
-#~ "un <glossterm>nombre complexe</glossterm>."
-#~ msgid ""
-#~ "The <placeholder-1/> function calculates the cosecant of an angle "
-#~ "<placeholder-2/>, which may be in <glossterm>radians</glossterm> or "
-#~ "degrees depending on the current settings. <placeholder-3/> is the same "
-#~ "as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric "
-#~ "expression</glossterm> that evaluates to a <glossterm>real number</"
-#~ "glossterm> or a <glossterm>complex number</glossterm>."
-#~ msgstr ""
-#~ "La fonction <placeholder-1/> donne la cosécante d'un angle <placeholder-2/"
-#~ ">, qui peut être en <glossterm>radians</glossterm> ou degrés selon le "
-#~ "paramétrage actif. <placeholder-3/> est identique à <placeholder-4/>. "
-#~ "<placeholder-5/>  peut être n'importe quelle <glossterm>expression "
-#~ "numérique</glossterm> qui donne un <glossterm>nombre réel</glossterm> ou "
-#~ "un <glossterm>nombre complexe</glossterm>."
-#~ msgid ""
-#~ "The <placeholder-1/> function is not defined for real values of "
-#~ "<placeholder-2/> when <placeholder-3/> &lt; -1/e."
-#~ msgstr ""
-#~ "La fonction <placeholder-1/> n'est pas définie pour les valeurs réelles "
-#~ "de <placeholder-2/> quand <placeholder-3/> &lt; -1/e."
+
+#~ msgid "The <placeholder-1/> function calculates the inverse cosine of <placeholder-2/>. The result may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm>. This is the reverse of the <placeholder-4/> function."
+#~ msgstr "La fonction <placeholder-1/> donne l'arccosinus de <placeholder-2/>. Le résultat peut être en <glossterm>radians</glossterm> ou degrés selon le paramétrage actif. <placeholder-3/> peut être n'importe quelle <glossterm>expression numérique</glossterm> qui donne un <glossterm>nombre réel</glossterm>. C'est la fonction réciproque de la fonction <placeholder-4/>."
+
+#~ msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
+#~ msgstr "La fonction <placeholder-1/> donne la sécante d'un angle <placeholder-2/>, qui peut être en <glossterm>radians</glossterm> ou degrés selon le paramétrage actif. <placeholder-3/> est identique à <placeholder-4/>. <placeholder-5/>  peut être n'importe quelle <glossterm>expression numérique</glossterm> qui donne un <glossterm>nombre réel</glossterm> ou un <glossterm>nombre complexe</glossterm>."
+
+#~ msgid "The <placeholder-1/> function calculates the cosecant of an angle <placeholder-2/>, which may be in <glossterm>radians</glossterm> or degrees depending on the current settings. <placeholder-3/> is the same as <placeholder-4/>. <placeholder-5/> may be any <glossterm>numeric expression</glossterm> that evaluates to a <glossterm>real number</glossterm> or a <glossterm>complex number</glossterm>."
+#~ msgstr "La fonction <placeholder-1/> donne la cosécante d'un angle <placeholder-2/>, qui peut être en <glossterm>radians</glossterm> ou degrés selon le paramétrage actif. <placeholder-3/> est identique à <placeholder-4/>. <placeholder-5/>  peut être n'importe quelle <glossterm>expression numérique</glossterm> qui donne un <glossterm>nombre réel</glossterm> ou un <glossterm>nombre complexe</glossterm>."
+
+#~ msgid "The <placeholder-1/> function is not defined for real values of <placeholder-2/> when <placeholder-3/> &lt; -1/e."
+#~ msgstr "La fonction <placeholder-1/> n'est pas définie pour les valeurs réelles de <placeholder-2/> quand <placeholder-3/> &lt; -1/e."
+
 #~ msgid "double-click"
 #~ msgstr "double-clic"
+
 #~ msgid "left mouse button"
 #~ msgstr "bouton gauche de la souris"
+
 #~ msgid "Right click"
 #~ msgstr "Clic droit"
+
 #~ msgid "right click"
 #~ msgstr "clic droit"
+
 #~ msgid "hyperbolic cosecanr"
 #~ msgstr "cosécante hyperbolique"
+
 #~ msgid "hyperbolic secanr"
 #~ msgstr "sécante hyperbolique"
+
 #~ msgid "Variable/constant"
 #~ msgstr "Variable/constante"
+
 #~ msgid "Operator/constant"
 #~ msgstr "Opérateur/constante"
-
