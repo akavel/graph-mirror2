@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spanish Help File 4.4\n"
-"POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2011-11-20 13:55+0100\n"
+"POT-Creation-Date: 2011-11-21 22:57Romance Standard Time\n"
+"PO-Revision-Date: 2011-11-21 23:03+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team:  <fran_oliver@ono.com>\n"
 "MIME-Version: 1.0\n"
@@ -851,7 +851,7 @@ msgstr "Escala de la interfaz"
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
 msgstr "Modifica la escala de la interfaz de usuario. Esto es útil si la resolución de tu pantalla es muy alta o si, por alguna razón, tienes dificultades para leer los textos."
 
-#. OptionsDialog.xml:67(term) Acknowledgements.xml:68(entry)
+#. OptionsDialog.xml:67(term) Acknowledgements.xml:80(entry)
 msgid "Language"
 msgstr "Idioma"
 
@@ -2229,7 +2229,7 @@ msgstr "Si lo deseas, puedes unir los marcadores con líneas. En <guilabel>Estil
 
 #. InsertPointSeriesDialog.xml:98(guilabel)
 msgid "1D cubic spline"
-msgstr "Spline cúbico-1D"
+msgstr "Spline cúbico-1D     "
 
 #. InsertPointSeriesDialog.xml:98(ulink)
 msgid "natural cubic spline"
@@ -4245,7 +4245,7 @@ msgstr "Intervalo"
 
 #. AnimateDialog.xml:42(guilabel) AnimateDialog.xml:43(guilabel)
 msgid "Step"
-msgstr "Paso"
+msgstr "Cuadro siguiente"
 
 #. AnimateDialog.xml:40(para)
 msgid "In the <placeholder-1/> and <placeholder-2/> fields you need to specify the range of the selected constant in the animation. The <placeholder-3/> value indicates how much the constant is changed between two frames. The number of frames is given by (<placeholder-4/> - <placeholder-5/>) / <placeholder-6/>. More frames will give a smoother animation but it will also take longer to create and take up more space in the disk file."
@@ -4339,183 +4339,175 @@ msgstr "logo"
 msgid "Libraries"
 msgstr "Bibliotecas"
 
-#. Acknowledgements.xml:16(member)
+#. Acknowledgements.xml:17(member)
 msgid "Translation library."
 msgstr "Biblioteca de traducción para programas."
 
-#. Acknowledgements.xml:23(member)
+#. Acknowledgements.xml:26(member)
 msgid "Library for creating shell extensions."
 msgstr "Biblioteca para crear extensiones shell."
 
-#. Acknowledgements.xml:30(member)
+#. Acknowledgements.xml:35(member)
 msgid "Used to create PDF files."
 msgstr "Biblioteca empleada para crear archivos PDF."
 
-#. Acknowledgements.xml:37(member)
+#. Acknowledgements.xml:44(member)
 msgid "Used for plugin support and advanced interaction."
 msgstr "Biblioteca utilizada para soporte de los complementos e interacción avanzada."
 
-#. Acknowledgements.xml:44(member)
+#. Acknowledgements.xml:53(member)
 msgid "Numerical library."
 msgstr "Bibliotecas matemáticas. "
 
-#. Acknowledgements.xml:51(member)
+#. Acknowledgements.xml:62(member)
 msgid "Peer-reviewed C++ library."
 msgstr "Bibliotecas C++ para aplicaciones."
 
-#. Acknowledgements.xml:58(title)
+#. Acknowledgements.xml:70(title)
 msgid "Translations"
 msgstr "Traducciones"
 
-#. Acknowledgements.xml:69(entry)
+#. Acknowledgements.xml:81(entry)
 msgid "Program"
 msgstr "Interfaz"
 
-#. Acknowledgements.xml:70(entry)
+#. Acknowledgements.xml:82(entry)
 msgid "Help file"
 msgstr "Archivo de Ayuda"
 
-#. Acknowledgements.xml:71(entry)
-msgid "Translator(s)"
-msgstr "Traductor(es)"
+#. Acknowledgements.xml:83(entry)
+msgid "Translators"
+msgstr "Traductores"
 
-#. Acknowledgements.xml:76(entry)
+#. Acknowledgements.xml:88(entry)
 msgid "Arabic"
 msgstr "Árabe"
 
-#. Acknowledgements.xml:77(entry) Acknowledgements.xml:84(entry) Acknowledgements.xml:91(entry) Acknowledgements.xml:98(entry) Acknowledgements.xml:105(entry) Acknowledgements.xml:112(entry) Acknowledgements.xml:119(entry) Acknowledgements.xml:120(entry) Acknowledgements.xml:126(entry) Acknowledgements.xml:133(entry) Acknowledgements.xml:134(entry) Acknowledgements.xml:140(entry) Acknowledgements.xml:147(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:154(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:161(entry) Acknowledgements.xml:168(entry) Acknowledgements.xml:175(entry) Acknowledgements.xml:181(entry) Acknowledgements.xml:182(entry) Acknowledgements.xml:188(entry) Acknowledgements.xml:195(entry) Acknowledgements.xml:202(entry) Acknowledgements.xml:209(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:244(entry) Acknowledgements.xml:251(entry) Acknowledgements.xml:252(entry) Acknowledgements.xml:258(entry) Acknowledgements.xml:259(entry) Acknowledgements.xml:265(entry) Acknowledgements.xml:272(entry) Acknowledgements.xml:279(entry)
+#. Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:118(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:136(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:204(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:236(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:270(entry) Acknowledgements.xml:277(entry) Acknowledgements.xml:284(entry) Acknowledgements.xml:296(entry) Acknowledgements.xml:297(entry) Acknowledgements.xml:310(entry) Acknowledgements.xml:311(entry) Acknowledgements.xml:322(entry) Acknowledgements.xml:334(entry) Acknowledgements.xml:341(entry)
 msgid "Yes"
 msgstr "Sí"
 
-#. Acknowledgements.xml:78(entry) Acknowledgements.xml:85(entry) Acknowledgements.xml:92(entry) Acknowledgements.xml:99(entry) Acknowledgements.xml:106(entry) Acknowledgements.xml:113(entry) Acknowledgements.xml:127(entry) Acknowledgements.xml:141(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:210(entry) Acknowledgements.xml:217(entry) Acknowledgements.xml:224(entry) Acknowledgements.xml:231(entry) Acknowledgements.xml:238(entry) Acknowledgements.xml:245(entry) Acknowledgements.xml:266(entry) Acknowledgements.xml:273(entry) Acknowledgements.xml:280(entry)
+#. Acknowledgements.xml:90(entry) Acknowledgements.xml:97(entry) Acknowledgements.xml:104(entry) Acknowledgements.xml:111(entry) Acknowledgements.xml:125(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:190(entry) Acknowledgements.xml:197(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:271(entry) Acknowledgements.xml:278(entry) Acknowledgements.xml:285(entry) Acknowledgements.xml:323(entry) Acknowledgements.xml:335(entry) Acknowledgements.xml:342(entry)
 msgid "No"
 msgstr "No"
 
-#. Acknowledgements.xml:83(entry)
+#. Acknowledgements.xml:95(entry)
 msgid "Basque"
 msgstr "Euskera"
 
-#. Acknowledgements.xml:90(entry)
-msgid "Chinese (Traditional)"
-msgstr "Chino (Tradicional)"
-
-#. Acknowledgements.xml:97(entry)
+#. Acknowledgements.xml:102(entry)
 msgid "Chinese (Simplified)"
 msgstr "Chino (Simplificado)"
 
-#. Acknowledgements.xml:104(entry)
+#. Acknowledgements.xml:109(entry)
+msgid "Chinese (Traditional)"
+msgstr "Chino (Tradicional)"
+
+#. Acknowledgements.xml:116(entry)
 msgid "Croatian"
 msgstr "Croata"
 
-#. Acknowledgements.xml:111(entry)
+#. Acknowledgements.xml:123(entry)
 msgid "Czech"
 msgstr "Checo"
 
-#. Acknowledgements.xml:118(entry)
+#. Acknowledgements.xml:135(entry)
 msgid "Danish"
 msgstr "Danés"
 
-#. Acknowledgements.xml:125(entry)
+#. Acknowledgements.xml:147(entry)
 msgid "Dutch"
 msgstr "Holandés"
 
-#. Acknowledgements.xml:132(entry)
+#. Acknowledgements.xml:154(entry)
 msgid "English"
 msgstr "Inglés"
 
-#. Acknowledgements.xml:139(entry)
+#. Acknowledgements.xml:161(entry)
 msgid "Finnish"
 msgstr "Finés"
 
-#. Acknowledgements.xml:146(entry)
+#. Acknowledgements.xml:168(entry)
 msgid "French"
 msgstr "Francés"
 
-#. Acknowledgements.xml:153(entry)
+#. Acknowledgements.xml:175(entry)
 msgid "German"
 msgstr "Alemán"
 
-#. Acknowledgements.xml:160(entry)
+#. Acknowledgements.xml:188(entry)
 msgid "Greek"
 msgstr "Griego"
 
-#. Acknowledgements.xml:167(entry)
+#. Acknowledgements.xml:195(entry)
 msgid "Hungarian"
 msgstr "Húngaro"
 
-#. Acknowledgements.xml:174(entry)
-msgid "Hebrew"
-msgstr "Hebreo"
-
-#. Acknowledgements.xml:180(entry)
+#. Acknowledgements.xml:202(entry)
 msgid "Italian"
 msgstr "Italiano"
 
-#. Acknowledgements.xml:187(entry)
+#. Acknowledgements.xml:214(entry)
 msgid "Korean"
 msgstr "Coreano"
 
-#. Acknowledgements.xml:194(entry)
+#. Acknowledgements.xml:221(entry)
 msgid "Mongolian"
 msgstr "Mongol"
 
-#. Acknowledgements.xml:201(entry)
+#. Acknowledgements.xml:228(entry)
 msgid "Norwegian"
 msgstr "Noruego"
 
-#. Acknowledgements.xml:208(entry)
+#. Acknowledgements.xml:235(entry)
 msgid "Persian"
 msgstr "Persa (Farsi)"
 
-#. Acknowledgements.xml:211(entry)
-msgid "Shayan Abyari &amp; Yashar PourMohammad"
-msgstr "Shayan Abyari &amp; Yashar PourMohammad"
-
-#. Acknowledgements.xml:215(entry)
+#. Acknowledgements.xml:247(entry)
 msgid "Polish"
 msgstr "Polaco"
 
-#. Acknowledgements.xml:222(entry)
+#. Acknowledgements.xml:254(entry)
 msgid "Portuguese (Brazil)"
 msgstr "Portugués (Brasil)"
 
-#. Acknowledgements.xml:229(entry)
+#. Acknowledgements.xml:269(entry)
 msgid "Portuguese (Portugal)"
 msgstr "Portugués (Portugal)"
 
-#. Acknowledgements.xml:236(entry)
+#. Acknowledgements.xml:276(entry)
 msgid "Russian"
 msgstr "Ruso"
 
-#. Acknowledgements.xml:243(entry)
+#. Acknowledgements.xml:283(entry)
 msgid "Serbian"
 msgstr "Serbio"
 
-#. Acknowledgements.xml:250(entry)
+#. Acknowledgements.xml:295(entry)
 msgid "Slovenian"
 msgstr "Esloveno"
 
-#. Acknowledgements.xml:257(entry)
+#. Acknowledgements.xml:309(entry)
 msgid "Spanish"
 msgstr "Español"
 
-#. Acknowledgements.xml:264(entry)
+#. Acknowledgements.xml:321(entry)
 msgid "Swedish"
 msgstr "Sueco"
 
-#. Acknowledgements.xml:271(entry)
+#. Acknowledgements.xml:333(entry)
 msgid "Turkish"
 msgstr "Turco"
 
-#. Acknowledgements.xml:278(entry)
+#. Acknowledgements.xml:340(entry)
 msgid "Vietnamese"
 msgstr "Vietnamita"
 
-#. Acknowledgements.xml:290(title)
+#. Acknowledgements.xml:352(title)
 msgid "Miscellaneous"
 msgstr "Logo"
 
-#. Acknowledgements.xml:291(para)
+#. Acknowledgements.xml:353(para)
 msgid "The icon for Graph was designed by <placeholder-1/>."
 msgstr "El icono de Graph ha sido diseñado por <placeholder-1/>."
 
@@ -4526,90 +4518,47 @@ msgstr "Francisco Oliver <graph.esp@gmail.com>, 2009"
 msgid "Translator:"
 msgstr "Traducido al español por:"
 
+#~ msgid "Hebrew"
+#~ msgstr "Hebreo"
+
+#~ msgid "Shayan Abyari &amp; Yashar PourMohammad"
+#~ msgstr "Shayan Abyari &amp; Yashar PourMohammad"
+
 #~ msgid "Returns the <placeholder-1/> root of the argument."
 #~ msgstr "Devuelve la raíz enésima del argumento."
 
 #~ msgid "Area"
 #~ msgstr "Área"
 
-#~ msgid ""
-#~ "Returns the second argument if the first argument evaluates to a value "
-#~ "different from zero, else the third value is returned."
-#~ msgstr ""
-#~ "Devuelve el segundo argumento si la condición evalúa a verdadera, de otro "
-#~ "modo devuelve el tercer argumento. "
+#~ msgid "Returns the second argument if the first argument evaluates to a value different from zero, else the third value is returned."
+#~ msgstr "Devuelve el segundo argumento si la condición evalúa a verdadera, de otro modo devuelve el tercer argumento. "
 
-#~ msgid ""
-#~ "Evaluates a sequence of if functions and returns the first result found "
-#~ "with a condition different from zero."
-#~ msgstr ""
-#~ "Analiza una secuencia de funciones <emphasis><link linkend=\"if\">if</"
-#~ "link></emphasis> devolviendo el primer argumento cuya condición evalúe a "
-#~ "verdadera."
+#~ msgid "Evaluates a sequence of if functions and returns the first result found with a condition different from zero."
+#~ msgstr "Analiza una secuencia de funciones <emphasis><link linkend=\"if\">if</link></emphasis> devolviendo el primer argumento cuya condición evalúe a verdadera."
 
-#~ msgid ""
-#~ "Calculates the signed area between the graph and the x-axis. This is the "
-#~ "same as the numerical integral."
-#~ msgstr ""
-#~ "Calcula el área comprendida entre la gráfica de la función seleccionada y "
-#~ "el eje X en el intervalo especificado."
+#~ msgid "Calculates the signed area between the graph and the x-axis. This is the same as the numerical integral."
+#~ msgstr "Calcula el área comprendida entre la gráfica de la función seleccionada y el eje X en el intervalo especificado."
 
-#~ msgid ""
-#~ "Evaluates to 1 if an expression evaluates to 0, and evaluates to 0 "
-#~ "otherwise."
-#~ msgstr ""
-#~ "Operador lógico unario: NO lógico. Devuelve 1 si una expresión evalúa a "
-#~ "0, de otro modo, devuelve 0. Ejemplo: f(x)=not x, devuelve 1 en x=0."
+#~ msgid "Evaluates to 1 if an expression evaluates to 0, and evaluates to 0 otherwise."
+#~ msgstr "Operador lógico unario: NO lógico. Devuelve 1 si una expresión evalúa a 0, de otro modo, devuelve 0. Ejemplo: f(x)=not x, devuelve 1 en x=0."
 
-#~ msgid ""
-#~ "Evaluates to 1 if two expressions both evaluate to a value different from "
-#~ "0, and evaluates to 0 otherwise."
-#~ msgstr ""
-#~ "Operador lógico binario: Y lógico. Devuelve 1 si dos expresiones no "
-#~ "evalúan a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x and x^2-x, "
-#~ "devuelve 0 en x=0."
+#~ msgid "Evaluates to 1 if two expressions both evaluate to a value different from 0, and evaluates to 0 otherwise."
+#~ msgstr "Operador lógico binario: Y lógico. Devuelve 1 si dos expresiones no evalúan a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x and x^2-x, devuelve 0 en x=0."
 
-#~ msgid ""
-#~ "Evaluates to 1 if at least one of two expressions evaluates to a value "
-#~ "different from 0, and evaluates to 0 otherwise."
-#~ msgstr ""
-#~ "Operador lógico binario: O lógico. Devuelve 1 si una de dos expresiones, "
-#~ "o ambas, no evalúan a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x or x^2-"
-#~ "1, devuelve 1 en x=0 y x=1."
+#~ msgid "Evaluates to 1 if at least one of two expressions evaluates to a value different from 0, and evaluates to 0 otherwise."
+#~ msgstr "Operador lógico binario: O lógico. Devuelve 1 si una de dos expresiones, o ambas, no evalúan a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x or x^2-1, devuelve 1 en x=0 y x=1."
 
-#~ msgid ""
-#~ "Evaluates to 1 if exactly one of two expressions evaluates to a value "
-#~ "different from 0, and evaluates to 0 otherwise."
-#~ msgstr ""
-#~ "Operador lógico binario: O lógico exclusivo. Devuelve 1 si sólo una de "
-#~ "dos expresiones evalúa a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x xor "
-#~ "x^2-1, devuelve 1 en x=0 y x=1."
+#~ msgid "Evaluates to 1 if exactly one of two expressions evaluates to a value different from 0, and evaluates to 0 otherwise."
+#~ msgstr "Operador lógico binario: O lógico exclusivo. Devuelve 1 si sólo una de dos expresiones evalúa a 0, de otro modo, devuelve 0. Ejemplo: f(x)=x xor x^2-1, devuelve 1 en x=0 y x=1."
 
 #~ msgid "The same as a sequence of if functions."
-#~ msgstr ""
-#~ "Analiza una secuencia de funciones <emphasis>if</emphasis> devolviendo el "
-#~ "primer argumento cuya condición evalúe a verdadera."
+#~ msgstr "Analiza una secuencia de funciones <emphasis>if</emphasis> devolviendo el primer argumento cuya condición evalúe a verdadera."
 
-#~ msgid ""
-#~ "Can I copy a function or point series from one instance of the program to "
-#~ "another?"
-#~ msgstr ""
-#~ "¿Puedo copiar un <glossterm linkend=\"GraphElement\">elemento de Graph</"
-#~ "glossterm> desde una ejecución del programa a otra?"
+#~ msgid "Can I copy a function or point series from one instance of the program to another?"
+#~ msgstr "¿Puedo copiar un <glossterm linkend=\"GraphElement\">elemento de Graph</glossterm> desde una ejecución del programa a otra?"
 
-#~ msgid ""
-#~ "Yes, you can select a function or point series and use the <placeholder-1/"
-#~ "> menu item to place a copy of the selected item in the clipboard. You "
-#~ "can then paste the item into another coordinate system."
-#~ msgstr ""
-#~ "Sí. Selecciona el elemento de Graph en el <glossterm linkend="
-#~ "\"FunctionList\">panel de contenido</glossterm> y utiliza <placeholder-1/"
-#~ "> para colocar dicho elemento en el Portapapeles. Podrás pegarlo en otro "
-#~ "sistema de coordenadas desde <menuchoice><guimenu>Editar</"
-#~ "guimenu><guimenuitem>Pegar</guimenuitem></menuchoice>. Asimismo, si haces "
-#~ "clic derecho sobre el elemento seleccionado, podrás obtener el mismo "
-#~ "resultado con el menú contextual a través de los comandos "
-#~ "<guimenu>Copiar</guimenu> y <guimenu>Pegar</guimenu>."
+#~ msgid "Yes, you can select a function or point series and use the <placeholder-1/> menu item to place a copy of the selected item in the clipboard. You can then paste the item into another coordinate system."
+#~ msgstr "Sí. Selecciona el elemento de Graph en el <glossterm linkend=\"FunctionList\">panel de contenido</glossterm> y utiliza <placeholder-1/> para colocar dicho elemento en el Portapapeles. Podrás pegarlo en otro sistema de coordenadas desde <menuchoice><guimenu>Editar</guimenu><guimenuitem>Pegar</guimenuitem></menuchoice>. Asimismo, si haces clic derecho sobre el elemento seleccionado, podrás obtener el mismo resultado con el menú contextual a través de los comandos <guimenu>Copiar</guimenu> y <guimenu>Pegar</guimenu>."
 
 #, fuzzy
 #~ msgid "Windows XP"
@@ -4633,59 +4582,32 @@ msgstr "Traducido al español por:"
 #~ msgid "&Delta;t"
 #~ msgstr "&Delta;t"
 
-#~ msgid ""
-#~ "Returns the summation of the first argument evaluated for all integers "
-#~ "from the second to the third argument."
-#~ msgstr ""
-#~ "Devuelve el sumatorio del primer argumento evaluado para todos los "
-#~ "números enteros entre el segundo argumento y el tercer argumento."
+#~ msgid "Returns the summation of the first argument evaluated for all integers from the second to the third argument."
+#~ msgstr "Devuelve el sumatorio del primer argumento evaluado para todos los números enteros entre el segundo argumento y el tercer argumento."
 
-#~ msgid ""
-#~ "Returns the product of the first argument evaluated for all integers from "
-#~ "the second to the third argument."
-#~ msgstr ""
-#~ "Devuelve el multiplicatorio del primer argumento evaluado para todos los "
-#~ "números enteros entre el segundo argumento y el tercer argumento."
+#~ msgid "Returns the product of the first argument evaluated for all integers from the second to the third argument."
+#~ msgstr "Devuelve el multiplicatorio del primer argumento evaluado para todos los números enteros entre el segundo argumento y el tercer argumento."
 
 #~ msgid "Mark start of range"
 #~ msgstr "Marcar el inicio del relleno"
 
-#~ msgid ""
-#~ "Check this to draw a line at the start of the range. Uncheck it if you "
-#~ "want two shadings to look as one."
-#~ msgstr ""
-#~ "Activa esta casilla si deseas delimitar el inicio del intervalo del "
-#~ "relleno con una línea. Desactívala si quieres que dos rellenos con el "
-#~ "mismo estilo semejen uno sólo."
+#~ msgid "Check this to draw a line at the start of the range. Uncheck it if you want two shadings to look as one."
+#~ msgstr "Activa esta casilla si deseas delimitar el inicio del intervalo del relleno con una línea. Desactívala si quieres que dos rellenos con el mismo estilo semejen uno sólo."
 
 #~ msgid "Mark end of range"
 #~ msgstr "Marcar el final del relleno"
 
 #~ msgid "Indicates if a term evaluates to 0."
-#~ msgstr ""
-#~ "Operador lógico unario: NO lógico. Devuelve 1 si una expresión evalúa a "
-#~ "0, de otro modo, devuelve 0."
+#~ msgstr "Operador lógico unario: NO lógico. Devuelve 1 si una expresión evalúa a 0, de otro modo, devuelve 0."
 
-#~ msgid ""
-#~ "Graph requires 32 bit Windows. It has been tested under Windows 98, "
-#~ "Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is "
-#~ "able to run Windows, it should be able to run the program, though Windows "
-#~ "95 is no longer supported."
-#~ msgstr ""
-#~ "Graph precisa un sistema operativo Windows (32/64 bits), y ha sido "
-#~ "probado bajo Windows 98, Windows ME, Windows 2000, Windows XP, Windows "
-#~ "Vista y Windows 7. Si tu ordenador es capaz de ejecutar Windows debería "
-#~ "ser capaz igualmente de ejecutar el programa, aunque Windows 95 ya no "
-#~ "está soportado."
+#~ msgid "Graph requires 32 bit Windows. It has been tested under Windows 98, Windows ME, Windows 2000, Windows XP and Windows Vista. If the system is able to run Windows, it should be able to run the program, though Windows 95 is no longer supported."
+#~ msgstr "Graph precisa un sistema operativo Windows (32/64 bits), y ha sido probado bajo Windows 98, Windows ME, Windows 2000, Windows XP, Windows Vista y Windows 7. Si tu ordenador es capaz de ejecutar Windows debería ser capaz igualmente de ejecutar el programa, aunque Windows 95 ya no está soportado."
 
 #~ msgid "Graph uses dxgettext as translation library:"
-#~ msgstr ""
-#~ "Graph usa <emphasis>dxgettext</emphasis> como biblioteca de traducción:"
+#~ msgstr "Graph usa <emphasis>dxgettext</emphasis> como biblioteca de traducción:"
 
 #~ msgid "For shell extensions the EasyNSE library is used:"
-#~ msgstr ""
-#~ "Para extensiones <emphasis>shell</emphasis> ha sido utilizada la "
-#~ "biblioteca EasyNSE:"
+#~ msgstr "Para extensiones <emphasis>shell</emphasis> ha sido utilizada la biblioteca EasyNSE:"
 
 #~ msgid "Python is used for plugin support:"
 #~ msgstr "Python ha sido empleado para soporte de los complementos:"
@@ -4693,17 +4615,8 @@ msgstr "Traducido al español por:"
 #~ msgid "Shadings"
 #~ msgstr "Relleno"
 
-#~ msgid ""
-#~ "CompuServe Graphics Interchange (gif) is not supported because it uses "
-#~ "the LZW compression, which is patented by Unisys."
-#~ msgstr ""
-#~ "El formato gif (Graphics Interchange Format) no está reconocido por Graph "
-#~ "ya que utiliza el algoritmo LZW (Lempel-Ziv-Welch), que es patente de "
-#~ "Unisys."
+#~ msgid "CompuServe Graphics Interchange (gif) is not supported because it uses the LZW compression, which is patented by Unisys."
+#~ msgstr "El formato gif (Graphics Interchange Format) no está reconocido por Graph ya que utiliza el algoritmo LZW (Lempel-Ziv-Welch), que es patente de Unisys."
 
-#~ msgid ""
-#~ "The probability function of the normal distribution in a variate with "
-#~ "mean and standard"
-#~ msgstr ""
-#~ "Devuelve la función de densidad de probabilidad de una variable aleatoria "
-#~ "en la media y desviación típica indicadas."
+#~ msgid "The probability function of the normal distribution in a variate with mean and standard"
+#~ msgstr "Devuelve la función de densidad de probabilidad de una variable aleatoria en la media y desviación típica indicadas."
