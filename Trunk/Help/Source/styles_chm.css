@@ -147,9 +147,10 @@ div.informaltable title { background-color: #FFFFFF; width:100%; border: 0px; }
 div.informaltable p { text-align: center; }
 div.informaltable table {
 	background-color: #7099C5;
-	font-size: 90%;
 	border-width: 0px;
+   font-size: 90%;
 }
+
 div.informaltable th {
 	text-align: center;
 	color: white;
@@ -165,6 +166,20 @@ div.informaltable td {
 	vertical-align: top;
 	padding: 2px 4px 1px 4px;
 	border: none;
+}
+
+/* Revert format changes in tables in informaltables, e.g. used in the Acknowledgements chapter */
+div.informaltable table table{
+   font-size: 100%;
+   background-color: transparent;
+   margin-left: -5px;
+   margin-top: -3px;
+   margin-bottom: -3px;
+}
+
+div.informaltable table table td {
+   padding-top: 0;
+   padding-bottom: 0;
 }
 
 .caution, .important, .note, .tip, .warning {
@@ -261,8 +276,9 @@ h4 {
 }
 
 table.simplelist {
-   margin-top: 0.8em;
+   /*margin-top: 0.8em;*/
 }
+
 
 div.simplesect h2 {
    font-size: 120%;

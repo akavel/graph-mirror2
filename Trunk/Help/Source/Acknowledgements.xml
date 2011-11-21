@@ -11,46 +11,58 @@
 	<indexterm><primary>logo</primary></indexterm>
 	<simplesect renderas="sect2">
 		<title>Libraries</title>
-		<simplelist>
-			<member><emphasis role="bold"><application>dxgettext</application></emphasis></member>
-			<member>Translation library.</member>
-			<member><orgname>Copyright &copy; Lars B. Dybdahl (<email>Lars@dybdahl.dk</email>) et al.</orgname></member>
-			<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
-		</simplelist>
-
-		<simplelist>
-			<member><emphasis role="bold"><application>EasyNSE</application></emphasis></member>
-			<member>Library for creating shell extensions.</member>
-			<member><orgname>Copyright &copy; 2005 Cool Breeze Software</orgname></member>
-			<member><ulink url="http://www.mustangpeak.net"/></member>
-		</simplelist>
-
-		<simplelist>
-			<member><emphasis role="bold"><application>PDFlib-Lite</application></emphasis></member>
-			<member>Used to create PDF files.</member>
-			<member><orgname>Copyright &copy; 1997-2005 Thomas Merz &amp; PDFlib GmbH</orgname></member>
-			<member><ulink url="http://www.pdflib.com"/></member>
-		</simplelist>
-
-		<simplelist>
-			<member><emphasis role="bold"><application>Python</application></emphasis></member>
-			<member>Used for plugin support and advanced interaction.</member>
-			<member><orgname>Copyright &copy; 2001-2006 Python Software Foundation</orgname></member>
-			<member><ulink url="http://www.python.org"/></member>
-		</simplelist>
-
-		<simplelist>
-			<member><emphasis role="bold"><application>GNU Scientific Library</application></emphasis></member>
-			<member>Numerical library.</member>
-			<member><orgname>Copyright &copy; 2009 Free Software Foundation, Inc.</orgname></member>
-			<member><ulink url="http://www.gnu.org/software/gsl/"/></member>
-		</simplelist>
-
-		<simplelist>
-			<member><emphasis role="bold"><application>Boost</application></emphasis></member>
-			<member>Peer-reviewed C++ library.</member>
-			<member><ulink url="http://www.boost.org"/></member>
-		</simplelist>
+		<para>
+  		<simplelist>
+  			<member><emphasis role="bold"><application>dxgettext</application></emphasis></member>
+  			<member>Translation library.</member>
+  			<member><orgname>Copyright &copy; Lars B. Dybdahl et al.</orgname></member>
+  			<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
+  		</simplelist>
+    </para>
+    
+    <para>
+  		<simplelist>
+  			<member><emphasis role="bold"><application>EasyNSE</application></emphasis></member>
+  			<member>Library for creating shell extensions.</member>
+  			<member><orgname>Copyright &copy; 2005 Cool Breeze Software</orgname></member>
+  			<member><ulink url="http://www.mustangpeak.net"/></member>
+		  </simplelist>
+    </para>
+    
+    <para>
+  		<simplelist>
+  			<member><emphasis role="bold"><application>PDFlib-Lite</application></emphasis></member>
+  			<member>Used to create PDF files.</member>
+  			<member><orgname>Copyright &copy; 1997-2005 Thomas Merz &amp; PDFlib GmbH</orgname></member>
+  			<member><ulink url="http://www.pdflib.com"/></member>
+  		</simplelist>
+    </para>
+    
+    <para>
+  		<simplelist>
+  			<member><emphasis role="bold"><application>Python</application></emphasis></member>
+  			<member>Used for plugin support and advanced interaction.</member>
+  			<member><orgname>Copyright &copy; 2001-2006 Python Software Foundation</orgname></member>
+  			<member><ulink url="http://www.python.org"/></member>
+  		</simplelist>
+    </para>
+    
+    <para>
+  		<simplelist>
+  			<member><emphasis role="bold"><application>GNU Scientific Library</application></emphasis></member>
+  			<member>Numerical library.</member>
+  			<member><orgname>Copyright &copy; 2009 Free Software Foundation, Inc.</orgname></member>
+  			<member><ulink url="http://www.gnu.org/software/gsl/"/></member>
+  		</simplelist>
+    </para>
+    
+    <para>
+  		<simplelist>
+  			<member><emphasis role="bold"><application>Boost</application></emphasis></member>
+  			<member>Peer-reviewed C++ library.</member>
+  			<member><ulink url="http://www.boost.org"/></member>
+  		</simplelist>
+  	</para>
 	</simplesect>
 
 	<?hard-pagebreak?>
@@ -68,7 +80,7 @@
 							<entry>Language</entry>
 							<entry>Program</entry>
 							<entry>Help file</entry>
-							<entry>Translator(s)</entry>
+							<entry>Translators</entry>
 						</row>
 					</thead>
 					<tbody>
@@ -87,13 +99,6 @@
 						</row>
 
 						<row>
-							<entry>Chinese (Traditional)</entry>
-							<entry>Yes</entry>
-							<entry>No</entry>
-							<entry><personname>Dung Jian-Jie</personname></entry>
-						</row>
-
-						<row>
 							<entry>Chinese (Simplified)</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
@@ -101,9 +106,16 @@
 						</row>
 
 						<row>
-							<entry>Croatian</entry>
+							<entry>Chinese (Traditional)</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
+							<entry><personname>Jian-Jie Dong</personname></entry>
+						</row>
+
+						<row>
+							<entry>Croatian</entry>
+							<entry>Yes</entry>
+							<entry>Yes</entry>
 							<entry><personname>Hasan Osmanagić</personname></entry>
 						</row>
 
@@ -111,20 +123,30 @@
 							<entry>Czech</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
-							<entry><personname>Martin Stružský &amp; Pavlína Krausová</personname></entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Martin Stružský</personname></member>
+                  <member><personname>Pavlína Krausová</personname></member>
+                </simplelist>  
+              </entry>
 						</row>
 
 						<row>
 							<entry>Danish</entry>
 							<entry>Yes</entry>
 							<entry>Yes</entry>
-							<entry><personname>Ivan Johansen, Michael Bach Ipsen &amp; Erik Lyngholt Nielsen</personname></entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Michael Bach Ipsen</personname></member>
+                  <member><personname>Erik Lyngholt Nielsen</personname></member>
+                </simplelist>
+              </entry>
 						</row>
 
 						<row>
 							<entry>Dutch</entry>
 							<entry>Yes</entry>
-							<entry>No</entry>
+							<entry>Yes</entry>
 							<entry><personname>Etienne Goemaere</personname></entry>
 						</row>
 
@@ -153,7 +175,13 @@
 							<entry>German</entry>
 							<entry>Yes</entry>
 							<entry>Yes</entry>
-							<entry><personname>Frank Httemeister, Michael Bach Ipsen &amp; Sebastian Stütz</personname></entry>
+							<entry>
+                <simplelist>
+                 <member><personname>Frank Hüttemeister</personname></member>
+                 <member><personname>Sebastian Stütz</personname></member>
+                 <member><personname>Michael Bach Ipsen</personname></member>
+                </simplelist>  
+              </entry>
 						</row>
 
 						<row>
@@ -169,18 +197,17 @@
 							<entry>No</entry>
 							<entry><personname>Gabor Magyari</personname></entry>
 						</row>
-
-            <row>
-              <entry>Hebrew</entry>
-              <entry>Yes</entry>
-              <entry>No</entry>
-              <entry><personname>רודני דני</personname></entry>
-            </row>
+					
 						<row>
 							<entry>Italian</entry>
 							<entry>Yes</entry>
 							<entry>Yes</entry>
-							<entry><personname>Serena Alessandro &amp; Attilio Ridomi</personname></entry>
+							<entry>
+                <simplelist>
+                  <member><personname>AlessandroSerena</personname></member>
+                  <member><personname>Attilio Ridomi</personname></member>
+                </simplelist>  
+              </entry>
 						</row>
 
 						<row>
@@ -208,7 +235,12 @@
 							<entry>Persian</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
-							<entry>Shayan Abyari &amp; Yashar PourMohammad</entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Shayan Abyari</personname></member>
+                  <member><personname>Yashar PourMohammad</personname></member>
+                </simplelist>
+              </entry>  
 						</row>
 
 						<row>
@@ -221,8 +253,16 @@
 						<row>
 							<entry>Portuguese (Brazil)</entry>
 							<entry>Yes</entry>
-							<entry>No</entry>
-							<entry><personname>Jorge, Mara, Deivid &amp; Fernanda</personname></entry>
+							<entry>Yes</entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Jorge Costa</personname></member>
+                  <member><personname>Andre Fduarte</personname></member>
+                  <member><personname>Haroldo Luiz Bertoldo</personname></member>
+                  <member><personname>Janete Flor de Maio Fonseca</personname></member>
+                  <member><personname>Aldemar Calazans Filho</personname></member>
+                </simplelist>  
+              </entry>
 						</row>
 
 						<row>
@@ -243,28 +283,50 @@
 							<entry>Serbian</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
-							<entry><personname>Jasmina Malinovic &amp; Branimir Krstic</personname></entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Jasmina Malinovic</personname></member>
+                  <member><personname>Branimir Krstic</personname></member>
+                </simplelist>
+              </entry>
 						</row>
 
 						<row>
 							<entry>Slovenian</entry>
 							<entry>Yes</entry>
 							<entry>Yes</entry>
-							<entry><personname>Jernej Baša, Rok Štokelj &amp; Barbara Pušnar</personname></entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Jernej Baša</personname></member>
+                  <member><personname>Rok Štokelj</personname></member>
+                  <member><personname>Barbara Pušnar</personname></member>
+                  <member><personname>Sergej Pušnar</personname></member>
+                </simplelist>
+              </entry>
 						</row>
 
 						<row>
 							<entry>Spanish</entry>
 							<entry>Yes</entry>
 							<entry>Yes</entry>
-							<entry><personname>Dr. Gustavo Criscuolo, Francisco Oliver &amp; Alejandro Arce</personname></entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Francisco Oliver</personname></member>
+                  <member><personname>Alejandro Arce</personname></member>
+                </simplelist>
+              </entry>
 						</row>
 
 						<row>
 							<entry>Swedish</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
-							<entry><personname>Pär Smårs</personname></entry>
+							<entry>
+                <simplelist>
+                  <member><personname>Pär Smårs</personname></member>
+                  <member><personname>Michael Bach Ipsen</personname></member>
+                </simplelist>
+              </entry>
 						</row>
 
 						<row>
