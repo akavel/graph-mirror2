@@ -261,10 +261,30 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       Writer->Arc(Arc->rclBox, Arc->ptlStart, Arc->ptlEnd);
       break;
     }
+
+    case EMR_STRETCHDIBITS:
+    {
+      const EMRSTRETCHDIBITS *Stretch = reinterpret_cast<const EMRSTRETCHDIBITS*>(lpEMFR);
+      Writer->StretchBitmap(&Stretch->rclBounds, Stretch->cxSrc, Stretch->cySrc,
+        reinterpret_cast<const BYTE*>(Stretch) + Stretch->offBmiSrc,
+        Stretch->emr.nSize - Stretch->offBmiSrc, Stretch->cbBmiSrc);
+      break;
+    }
+
     case EMR_SELECTPALETTE:
     case EMR_EXTSELECTCLIPRGN:
     case EMR_EOF:
     case EMR_SETROP2:
+    case EMR_SETVIEWPORTORGEX:
+    case EMR_INTERSECTCLIPRECT:
+    case EMR_SAVEDC:
+    case EMR_SETLAYOUT:
+    case EMR_SETMETARGN:
+    case EMR_SETSTRETCHBLTMODE:
+    case EMR_SETTEXTALIGN:
+    case EMR_SETBRUSHORGEX:
+    case EMR_SETMITERLIMIT:
+    case EMR_SETWORLDTRANSFORM:
       break;
 
     default:
@@ -276,7 +296,7 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
 void TEmfParser::Parse(HENHMETAFILE Handle, TGraphicWriter &AWriter)
 {
   ENHMETAHEADER Header;
-  assert(GetEnhMetaFileHeader(Handle, sizeof(Header), &Header));
+  GetEnhMetaFileHeader(Handle, sizeof(Header), &Header);
 
   Writer = &AWriter;
   RECTL Rect;
