@@ -634,7 +634,7 @@ void TDraw::DrawAxes()
     Context.DrawLine(X1, Y, X2 - Size(3), Y);
 
     Context.SetBrush(bsSolid, ForceBlack ? clBlack : Axes.AxesColor);
-    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(PlotSettings.TickWidth));
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, 1);
     int a = Size(5*ArrowScale);
     int b = PlotSettings.AxisWidth % 2 ? 0 : 1;
     const TPoint LeftArrow[] = {TPoint(X1+a, Y-a-b), TPoint(X1, Y-b), TPoint(X1, Y), TPoint(X1+a, Y+a)};
@@ -645,6 +645,7 @@ void TDraw::DrawAxes()
     if(Axes.xAxis.ShowPositiveArrow)
       Context.DrawPolygon(RightArrow, 4);
 
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(PlotSettings.TickWidth));
     //Only show ticks if we have not already drawn a solid grid line instead
 		if(Axes.xAxis.ShowTicks && (!Axes.xAxis.ShowGrid || Axes.GridStyle != gsLines || Axes.xAxis.TickUnit <= Axes.xAxis.GridUnit))
       //Show coordinate points on x-axis
@@ -652,7 +653,7 @@ void TDraw::DrawAxes()
         //Don't show at or beside axis (when scaled it might be moved a pixel or two)
         //Don't show tick at left side
 				if(x > AxesRect.Left && std::abs(x - xPixelCross) > 1)
-          Context.DrawLine(x + 0.5, Y + Size(PlotSettings.TickLength + (PlotSettings.AxisWidth - 1)/ 2), x + 0.5, Y - Size(PlotSettings.TickLength + PlotSettings.AxisWidth / 2 + 1));
+          Context.DrawLine(x + 0.5, Y + Size(PlotSettings.TickLength) + (Size(PlotSettings.AxisWidth) - 1)/2, x + 0.5, Y - Size(PlotSettings.TickLength) - Size(PlotSettings.AxisWidth)/2 - 1);
   }
 
   //If y-axis is inside the view
@@ -677,6 +678,7 @@ void TDraw::DrawAxes()
     if(Axes.yAxis.ShowPositiveArrow)
       Context.DrawPolygon(TopArrow, 4);
 
+    Context.SetPen(psSolid, ForceBlack ? clBlack : Axes.AxesColor, Size(PlotSettings.TickWidth));
     double yPixelScl = (Axes.yAxis.LogScl ? std::log(yTickUnit) : yTickUnit) * yScale;
     //Only show ticks if we have not already drawn a solid grid line instead
 		if(Axes.yAxis.ShowTicks && (!Axes.yAxis.ShowGrid || Axes.GridStyle != gsLines || yTickUnit <= yGridUnit))
@@ -684,7 +686,7 @@ void TDraw::DrawAxes()
       for(double y = yPointExact(yTickMin); y > AxesRect.Top + Size(5); y -= yPixelScl)
         if(std::abs(y - yPixelCross) > 1 &&  //Don't show at or beside axis (when scaled it might be moved a pixel or two)
             y < AxesRect.Bottom - 4) //Don't show too close to bottom
-          Context.DrawLine(X - Size(5)-1, y + 0.5, X + Size(5)+1, y + 0.5);
+          Context.DrawLine(X - Size(PlotSettings.TickLength) - Size(PlotSettings.AxisWidth)/2, y + 0.5, X + Size(PlotSettings.TickLength) + (Size(PlotSettings.AxisWidth)-1)/ 2+1, y + 0.5);
   }
 }
 //---------------------------------------------------------------------------
