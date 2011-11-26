@@ -533,6 +533,8 @@ void InitPlugins()
 			"    value = GraphImpl.InputQuery()\n"
 			"    if value == None: raise KeyboardInterrupt('operation cancelled')\n"
 			"    return value + '\\n'\n"
+      "  def flush(self):\n"
+      "    pass\n"
 
 			"sys.stdout = ConsoleWriter(0)\n"
 			"sys.stderr = ConsoleWriter(0xFF)\n"
