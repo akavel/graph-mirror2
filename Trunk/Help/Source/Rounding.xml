@@ -28,10 +28,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Truncate"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Truncate.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Truncate"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Truncate.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -60,10 +62,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions#Fractional_part"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/FractionalPart.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions#Fractional_part"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/FractionalPart.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -90,10 +94,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/CeilingFunction.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/CeilingFunction.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -121,10 +127,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/FloorFunction.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/FloorFunction.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -151,20 +159,24 @@
 		</simplesect>
 		<simplesect>
 			<title>Examples</title>
-			<simplelist>
-				<member><mathphrase>round(412.4572,3) = 412.457</mathphrase></member>
-				<member><mathphrase>round(412.4572,2) = 412.46</mathphrase></member>
-				<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
-				<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
-				<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><mathphrase>round(412.4572,3) = 412.457</mathphrase></member>
+					<member><mathphrase>round(412.4572,2) = 412.46</mathphrase></member>
+					<member><mathphrase>round(412.4572,1) = 412.5</mathphrase></member>
+					<member><mathphrase>round(412.4572,0) = 412</mathphrase></member>
+					<member><mathphrase>round(412.4572,-2) = 400</mathphrase></member>
+				</simplelist>
+			</para>
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Rounding"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/NearestIntegerFunction.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Rounding"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/NearestIntegerFunction.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 </section>

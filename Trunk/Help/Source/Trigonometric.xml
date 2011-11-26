@@ -35,10 +35,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Sine"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Sine.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Sine"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Sine.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -73,10 +75,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Cosine"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Cosine.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Cosine"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Cosine.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -113,10 +117,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Tangent"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Tangent.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Tangent"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Tangent.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -145,10 +151,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/InverseSine.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/InverseSine.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -177,10 +185,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/InverseCosine.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/InverseCosine.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -209,10 +219,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/InverseTangent.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/InverseTangent.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -246,10 +258,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Reciprocal_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Secant.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Reciprocal_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Secant.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -283,10 +297,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Reciprocal_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Cosecant.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Reciprocal_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Cosecant.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -320,10 +336,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Reciprocal_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Cotangent.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Trigonometric_functions#Reciprocal_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Cotangent.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -353,10 +371,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/InverseSecant.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/InverseSecant.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -386,10 +406,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/InverseCosecant.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/InverseCosecant.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -426,10 +448,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/InverseCotangent.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/InverseCotangent.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 </section>

@@ -27,10 +27,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Absolute_value"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/AbsoluteValue.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Absolute_value"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/AbsoluteValue.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -61,10 +63,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Arg_(mathematics)"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/ComplexArgument.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Arg_(mathematics)"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/ComplexArgument.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -90,10 +94,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Complex_conjugation"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/ComplexConjugate.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Complex_conjugation"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/ComplexConjugate.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -118,10 +124,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Real_part"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/RealPart.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Real_part"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/RealPart.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -146,10 +154,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Imaginary_part"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/ImaginaryPart.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Imaginary_part"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/ImaginaryPart.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 </section>
