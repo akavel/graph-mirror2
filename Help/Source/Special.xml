@@ -47,10 +47,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Integral"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Integral.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Integral"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Integral.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -82,10 +84,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Summation"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Sum.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Summation"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Sum.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -116,10 +120,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Multiplication#Capital_pi_notation"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Product.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Multiplication#Capital_pi_notation"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Product.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -146,10 +152,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Factorial"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Factorial.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Factorial"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Factorial.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -184,10 +192,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Gamma_function"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/GammaFunction.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Gamma_function"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/GammaFunction.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -214,10 +224,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Beta_function"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/BetaFunction.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Beta_function"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/BetaFunction.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -250,10 +262,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Lambert_w_function"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/LambertW-Function.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Lambert_w_function"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/LambertW-Function.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -284,10 +298,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Riemann_zeta_function"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/RiemannZetaFunction.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Riemann_zeta_function"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/RiemannZetaFunction.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -316,10 +332,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Modular_arithmetic"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Congruence.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Modular_arithmetic"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Congruence.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -354,10 +372,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Normal_distribution"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/NormalDistribution.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Normal_distribution"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/NormalDistribution.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 </section>

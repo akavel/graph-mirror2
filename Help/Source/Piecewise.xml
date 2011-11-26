@@ -28,10 +28,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Sign_function"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/Sign.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Sign_function"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/Sign.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
@@ -57,10 +59,12 @@
 		</simplesect>
 		<simplesect>
 			<title>See also</title>
-			<simplelist>
-				<member><ulink url="http://en.wikipedia.org/wiki/Unit_step#Discrete_form"><orgname>Wikipedia</orgname></ulink></member>
-				<member><ulink url="http://mathworld.wolfram.com/HeavisideStepFunction.html"><orgname>MathWorld</orgname></ulink></member>
-			</simplelist>
+			<para>
+				<simplelist>
+					<member><ulink url="http://en.wikipedia.org/wiki/Unit_step#Discrete_form"><orgname>Wikipedia</orgname></ulink></member>
+					<member><ulink url="http://mathworld.wolfram.com/HeavisideStepFunction.html"><orgname>MathWorld</orgname></ulink></member>
+				</simplelist>
+			</para>
 		</simplesect>
 	</section>
 
