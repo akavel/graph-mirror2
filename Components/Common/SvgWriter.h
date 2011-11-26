@@ -42,5 +42,6 @@ public:
   void SetWindowMapping(SIZEL WindowSize, SIZEL ViewportSize, POINTL WindowOrg);
   void PaintRegion(const RECT *Rect, unsigned Count);
   void FrameRegion(const RECT *Rect, unsigned Count, const TBrushInfo &Brush, unsigned xSize, unsigned ySize);
+  void StretchBitmap(const RECTL *DestRect, unsigned SrcWidth, unsigned SrcHeight, const BYTE *BitmapData, unsigned Size, unsigned BitsOffset);
 };
 #endif

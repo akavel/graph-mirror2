@@ -14,6 +14,9 @@
 #include <vector>
 #include <iomanip>
 #include <algorithm>
+#include <PngImage.hpp>
+#include <Graphics.hpp>
+#include "Encode.h"
 //---------------------------------------------------------------------------
 std::string Utf8Encode(const std::wstring &Str)
 {
@@ -53,7 +56,7 @@ void TSvgWriter::BeginFile(const RECTL &Rect, unsigned Width, unsigned Height)
     "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n"
     "<svg " << "width=\"" << PixelWidth << "px\" height=\"" << PixelHeight << "px\" "  << "viewBox=\""
       << Rect.left << " " << Rect.top << " " << PixelWidth << " " << PixelHeight
-      << "\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n";
+      << "\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
   Stream << "  <g>\n";
   Stream << std::setfill('0');
 }
@@ -291,6 +294,28 @@ void TSvgWriter::FrameRegion(const RECT *Rect, unsigned Count, const TBrushInfo 
     Rect++;
   }
   Stream << "    </g>\n";*/
+}
+//---------------------------------------------------------------------------
+void TSvgWriter::StretchBitmap(const RECTL *DestRect, unsigned SrcWidth, unsigned SrcHeight, const BYTE *BitmapData, unsigned Size, unsigned BitsOffset)
+{
+//      std::ofstream File("d:\\test.bmp", std::ios_base::binary);
+//      File.write((char*)Stretch + Stretch->offBmiSrc, Stretch->emr.nSize - Stretch->offBmiSrc);
+  std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+  std::auto_ptr<TPngImage> PngImage(new TPngImage);
+  std::auto_ptr<TMemoryStream> ImageStream(new TMemoryStream);
+  BITMAPFILEHEADER Header = {0x4D42, Size + sizeof(Header), 0, 0, BitsOffset + sizeof(Header)};
+  ImageStream->Write(&Header, sizeof(Header));
+  ImageStream->Write(BitmapData, Size);
+  ImageStream->Position = 0;
+  Bitmap->LoadFromStream(ImageStream.get());
+  PngImage->Assign(Bitmap.get());
+  ImageStream->Position = 0;
+  PngImage->SaveToStream(ImageStream.get());
+  ImageStream->Position = 0;
+  Stream << "    <image x=\"" << DestRect->left << "\" y=\"" << DestRect->top <<
+    "\" width=\"" << DestRect->right - DestRect->left << "\" height=\"" <<
+  DestRect->bottom - DestRect->top << "\" xlink:href=\"data:image/png;base64," <<
+  Base64Encode(ImageStream->Memory, ImageStream->Size) << "\" />\n";
 }
 //---------------------------------------------------------------------------
 

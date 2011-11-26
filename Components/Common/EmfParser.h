@@ -68,6 +68,7 @@ public:
   virtual void SetWindowMapping(SIZEL WindowSize, SIZEL ViewportSize, POINTL WindowOrg)=0;
   virtual void PaintRegion(const RECT *Rect, unsigned Count)=0;
   virtual void FrameRegion(const RECT *Rect, unsigned Count, const TBrushInfo &Brush, unsigned xSize, unsigned ySize)=0;
+  virtual void StretchBitmap(const RECTL *DestRect, unsigned SrcWidth, unsigned SrcHeight, const BYTE *BitmapData, unsigned Size, unsigned BitsOffset)=0;
 };
 
 class TEmfParser
