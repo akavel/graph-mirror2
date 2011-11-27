@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-10-09 22:02+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2011-11-22 00:32-0500\n"
+"Last-Translator: Murat arik <mumtazmurat@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -108,24 +108,23 @@ msgstr "Döndür"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
-#, fuzzy
 msgid "Show the label with no rotation."
-msgstr "Fonksiyonun altındaki alanı tara"
+msgstr "Etiketi dondermeden gosterir."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
 msgid "Show the label rotated 90° counter clockwise."
-msgstr ""
+msgstr "Etiketi 90 derece sola dondurerek gosterir."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_180..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_180..Hint
 msgid "Show the label rotated 180°."
-msgstr ""
+msgstr "Etiketi 180 derece dondurerek gosterir."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_270..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_270..Hint
 msgid "Show the label rotated 270° counter clockwise."
-msgstr ""
+msgstr "Etiketi 270 derece sola dondurerek gosterir."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
@@ -259,9 +258,8 @@ msgid "New"
 msgstr "Yeni"
 
 #. Form1..ActionManager..NewAction("New")..Hint
-#, fuzzy
 msgid "Create a new coordinate system."
-msgstr "Yeni koordinat sistemi tanımlar"
+msgstr "Yeni koordinat sistemi tanımlar."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
 msgid "Open..."
@@ -276,9 +274,8 @@ msgid "Save"
 msgstr "Kaydet"
 
 #. Form1..ActionManager..SaveAction("Save")..Hint
-#, fuzzy
 msgid "Write the current coordinate system to a file."
-msgstr "Geçerli koordinat sistemini dosyaya kaydet"
+msgstr "Geçerli koordinat sistemini dosyaya kaydeder."
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Caption
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
@@ -286,16 +283,14 @@ msgid "Save as..."
 msgstr "Farklı kaydet"
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Hint
-#, fuzzy
 msgid "Write the current coordinate system to a file with a new name."
-msgstr "Geçerli koordinat sistemini dosyaya kaydet"
+msgstr "Geçerli koordinat sistemini yeni isim ile dosyaya kaydeder."
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
 msgid "Save copy as..."
 msgstr "Kopya olarak kaydet"
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
-#, fuzzy
 msgid "Save a copy of the current coordinate system to a file."
 msgstr "Geçerli koordinat sistemini dosyaya kaydet"
 
@@ -304,9 +299,8 @@ msgid "Save as image..."
 msgstr "Resim olarak kaydet..."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
-#, fuzzy
 msgid "Save the shown coordinate system as an image."
-msgstr "Geçerli koordinat sistemini kaydet"
+msgstr "Geçerli koordinat sistemini resim olarak kaydeder."
 
 #. Form1..ActionManager..PrintAction("Print...")..Caption
 msgid "Print..."
@@ -350,7 +344,6 @@ msgid "Cut"
 msgstr "Kes"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
-#, fuzzy
 msgid "Cut the selected function or point series to the clipboard."
 msgstr "Seçili fonksiyonu yada nokta serisini panoya kaydeder"
 
@@ -363,7 +356,6 @@ msgid "Copy"
 msgstr "Kopyala"
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
-#, fuzzy
 msgid "Copy the selected function or point series to the clipboard."
 msgstr "Seçili fonksiyonu yada nokta serisini panoya kaydeder"
 
@@ -375,7 +367,6 @@ msgid "Paste"
 msgstr "Yapıştır"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
-#, fuzzy
 msgid "Paste a function or point series from the clipboard into the coordinate system."
 msgstr "Panodan fonksiyonu yada nokta serisini koordinat sistemine yapıştırır."
 
@@ -384,7 +375,6 @@ msgid "Copy image"
 msgstr "Resmi kopyala"
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Hint
-#, fuzzy
 msgid "Copy the shown coordinate system to the clipboard."
 msgstr "Gösterilen koordinat sistemini panoya yapıştırır."
 
@@ -479,7 +469,7 @@ msgstr "In"
 
 #. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Yakinlastir."
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
@@ -487,7 +477,7 @@ msgstr "Out"
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Uzaklaştırır. Daha hızlı uzaklaştırmak icin Shift' e basılı tutun. "
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
@@ -510,7 +500,6 @@ msgid "Standard"
 msgstr "Standard"
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
-#, fuzzy
 msgid "Reset the axes to their default settings."
 msgstr "Eksenleri program tarafından atanmış değerlerine döndürür."
 
@@ -527,16 +516,14 @@ msgid "Move up"
 msgstr "Yukarı taşı"
 
 #. Form1..ActionManager..MoveUpAction("Move up")....Hint
-#, fuzzy
 msgid "Move the graphing area up along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Koordinat sistemi boyunca pencereyi taşır."
+msgstr "Koordinat sistemi boyunca pencereyi yukari taşır. Hizli tasimak icin Shifte basili tutun."
 
 #. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "Aşağı taşı"
 
 #. Form1..ActionManager..MoveDownAction("Move down")....Hint
-#, fuzzy
 msgid "Move the graphing area down along the coordinate system. Hold down Shift to move in larger steps."
 msgstr "Koordinat sistemi boyunca pencereyi aşağı taşır."
 
@@ -545,7 +532,6 @@ msgid "Move left"
 msgstr "Sola taşı"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")....Hint
-#, fuzzy
 msgid "Move the graphing area to the left along the coordinate system. Hold down Shift to move in larger steps."
 msgstr "Koordinat sistemi boyunca pencereyi sola taşır."
 
@@ -554,7 +540,6 @@ msgid "Move right"
 msgstr "Sağa taşı"
 
 #. Form1..ActionManager..MoveRightAction("Move right")....Hint
-#, fuzzy
 msgid "Move the graphing area to the right along the coordinate system. Hold down Shift to move in larger steps."
 msgstr "Koordinat sistemi boyunca pencereyi sağa taşır."
 
@@ -571,18 +556,16 @@ msgid "Length of path"
 msgstr "Yol uzunluğu"
 
 #. Form1..ActionManager..PathAction("Length of path")....Hint
-#, fuzzy
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Eğri üzerinde verilen iki nokta arasındaki yolu hesaplar."
 
 #. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
 msgid "Integrate"
-msgstr "İnternet"
+msgstr "İntegralini al"
 
 #. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given interval."
-msgstr ""
+msgstr "Verilen aralikta tanimli integrali hesaplar."
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -594,14 +577,12 @@ msgid "Evaluate or trace the selected function."
 msgstr "Seçili fonksiyonu verilen değer için hesaplar."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
 msgstr "Tablolar.."
 
 #. Form1..ActionManager..TableAction("Table")..Hint
-#, fuzzy
 msgid "Show an evaluation table."
-msgstr "Hesaplanmış tabloyu göster."
+msgstr "Hesaplanmış tabloyu gösterir."
 
 #. Form1..ActionManager..ContentsAction("Contents and index")..Caption
 msgid "Contents and index"
@@ -616,7 +597,6 @@ msgid "List of functions"
 msgstr "Fonksiyonların listesi"
 
 #. Form1..ActionManager..ListAction("List of functions")..Hint
-#, fuzzy
 msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Grafik için kullanılabilecek onceden tanımlanmış fonksiyonların listesini gösterir."
 
@@ -625,7 +605,6 @@ msgid "Graph web site"
 msgstr "Graph web sitesi"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
-#, fuzzy
 msgid "Open the default browser and show the Graph web site."
 msgstr "Graph internet sitesini açar."
 
@@ -672,9 +651,8 @@ msgid "Frequently Asked Questions"
 msgstr "Sık sorulan sorular"
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
-#, fuzzy
 msgid "Show a list of frequently asked questions and their answers."
-msgstr "Sık sorulan soruların listesi ve cevapları"
+msgstr "Sık sorulan soruların listesi ve cevaplarıni gosterir."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
 msgid "Insert label..."
@@ -716,7 +694,7 @@ msgstr "x-ekseninde büyült"
 
 #. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")....Hint
 msgid "Zoom in on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Yaklaştırır. Daha hızlı yaklaştırmak icin Shift' e basılı tutun. "
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
 msgid "Zoom x-axis out"
@@ -724,7 +702,7 @@ msgstr "x-ekseninde küçült"
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")....Hint
 msgid "Zoom out on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Sadece x ekseninde uzaklaştırır. Daha hızlı uzaklaştırmak icin Shift' e basılı tutun. "
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
 msgid "Zoom y-axis in"
@@ -732,7 +710,7 @@ msgstr "y-ekseninde büyült"
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")....Hint
 msgid "Zoom in on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Sadece y ekseninde yakınlaştırır. Daha hızlı yakınlaştırmak icin Shift' e basılı tutun. "
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
 msgid "Zoom y-axis out"
@@ -740,7 +718,7 @@ msgstr "y-ekseninde küçült"
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")....Hint
 msgid "Zoom out on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Sadece y ekseninde uzaklaştırır. Daha hızlı uzaklaştırmak icin Shift' e basılı tutun. "
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
@@ -751,7 +729,6 @@ msgid "Insert a new equation or inequality."
 msgstr "Yeni bir denklem yada eşitlik ekler."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
-#, fuzzy
 msgid "Custom functions/constants..."
 msgstr "Özel fonksiyonlar/sabitler"
 
@@ -784,12 +761,14 @@ msgid "Import point series from a data file."
 msgstr "Data dosyasından nokta serisi ekle"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
+#, fuzzy
 msgid "Scripting engine documentation"
-msgstr ""
+msgstr "Scripting engine documentation"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
+#, fuzzy
 msgid "Show documentation for scripting engine and plugin system."
-msgstr ""
+msgstr "Show documentation for scripting engine and plugin system."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -1351,14 +1330,12 @@ msgid "Select which kind of line to draw between the markers."
 msgstr "Noktalar arasındaki çizginin tipini seçin."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "Cubic splines"
+msgstr "1D Cubic splines"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "Cubic splines"
+msgstr "2D Cubic splines"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
@@ -1411,37 +1388,32 @@ msgid "Right"
 msgstr "Sağ"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Above Left"
-msgstr "Sola taşı"
+msgstr "Yukari sol"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Above Right"
-msgstr "Sağa taşı"
+msgstr "Asagi sağ"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Below Left"
-msgstr "Sol üst"
+msgstr "Alt üst"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Below Right"
-msgstr "Sağ üst"
+msgstr "Alt üst"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
 msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
-msgstr ""
+msgstr "Kartezyen koordinatlar(x,y)  ya da  polar koordinatlar(θ,r) arasinda secim yapar."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
-#, fuzzy
 msgid "Coordinate type"
-msgstr "Koordinat tanımsız"
+msgstr "Koordinat tipi"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 msgid "Cartesian"
-msgstr ""
+msgstr "Kartezyen"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 #. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
@@ -1453,9 +1425,8 @@ msgid "Error bars"
 msgstr "Hata çubukları"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Caption
-#, fuzzy
 msgid "X error amount"
-msgstr "X hata çubukları"
+msgstr "X hata miktari"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Hint
 msgid "Show horizontal error bars."
@@ -1505,9 +1476,8 @@ msgid "Enter relative value in percent."
 msgstr "Yüzde oranını girin"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Caption
-#, fuzzy
 msgid "Y error amount"
-msgstr "Y hata çubuğu"
+msgstr "Y hata miktari"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Hint
 msgid "Show vertical error bars."
@@ -1615,9 +1585,8 @@ msgstr "%s'yi göster"
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show3("Show %s")..Hint
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show4("Show %s")..Hint
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show5("Show %s")..Hint
-#, fuzzy
 msgid "Show the %s column in the table."
-msgstr "Tabloda f'(x) sütununu göster."
+msgstr "Tabloda %s sütununu gösterir."
 
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
 msgid "Copy selected cells to the clipboard."
@@ -1749,14 +1718,12 @@ msgid "Select color used for shading."
 msgstr "Taralı alan için renk seçimi"
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
-#, fuzzy
 msgid "Mark the border around the shading."
-msgstr "Taralı alanın sonunu çizgi ile işaretle"
+msgstr "Taralı alanın sinirlarini çizgi ile işaretle"
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
-#, fuzzy
 msgid "Mark border"
-msgstr "Nokta"
+msgstr "Sinirlari isaretle."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1887,18 +1854,17 @@ msgid "Choose paper size to use."
 msgstr "Kağıt boyutunu seçin"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Sol"
-
-#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-msgid "Ledger"
-msgstr ""
+msgstr "Letter"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 #, fuzzy
+msgid "Ledger"
+msgstr "Ledger"
+
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Legal"
-msgstr "Real"
+msgstr "Legal"
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -1987,14 +1953,12 @@ msgid "This is free software, and you are welcome to redistribute it under the t
 msgstr "Bu yazılım ücretsizdir, ve GNU lisansı altında programın geliştirilmesine katkıda bulunabilirsiniz. Lütfen bug raporlarını ve önerilerini programcıya yollayın."
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
-#, fuzzy
 msgid "The newest version as well as the source code are available at: %s"
-msgstr "Yeni versiyonun kodu buradan temin edilebilir."
+msgstr "Yeni versiyonun kodu buradan temin edilebilir: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "Email:"
+msgstr "Email: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2026,8 +1990,9 @@ msgid "Step"
 msgstr "Adım"
 
 #. Form20("Animation")..SaveDialog1..Filter
+#, fuzzy
 msgid "Audio Video Interleave [*.avi]|*.avi"
-msgstr ""
+msgstr "Audio Video Interleave [*.avi]|*.avi"
 
 #. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
 msgid "Speed"
@@ -2088,24 +2053,20 @@ msgid "Choose which corner of the label should be locked."
 msgstr "Etiketin her zaman bulunacağı köşeyi seçin"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Upper Left"
 msgstr "Sol üst"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Upper Right"
 msgstr "Sağ üst"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Lower Left"
-msgstr "Sol üst"
+msgstr "Sol alt"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Lower Right"
-msgstr "Sağ üst"
+msgstr "Sağ alt"
 
 #. Form21("Placement")..Edit1..Hint
 #. Form21("Placement")..Edit2..Hint
@@ -2206,9 +2167,8 @@ msgid "Show grid"
 msgstr "Izgara çizgilerini göster"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
-#, fuzzy
 msgid "Show the label at the right side of the graphing area, above the x-axis."
-msgstr "Etiketi ana pencerenin sağında,x-ekseninin üzerinde göster."
+msgstr "Etiketi ana pencerenin sağında, x-ekseninin üzerinde göster."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")..Caption
@@ -2253,9 +2213,8 @@ msgstr "Seçili eksen üzerinde çentikleri pi'nin kesirleri şeklinde gösterir
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "pi'nin katları şeklinde gösterir"
+msgstr "Pi'nin katları şeklinde göster."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2290,7 +2249,7 @@ msgstr "Yatay ızgara çizgilerini göster."
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
 #, fuzzy
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
-msgstr "Etiketi ana pencerenin üstünde y-ekseninin sağında göster."
+msgstr "Etiketi ana pencerenin üstünde y-ekseninin sağında gösterir."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Label8("The y-axis cross at x=")..Caption
 msgid "The y-axis cross at x="
@@ -2527,15 +2486,16 @@ msgstr "Graph başladığında yeni versiyonu kontrol et."
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
 msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
-msgstr ""
+msgstr "Ozel secilmis ondalık basamak ayracı kullanilir."
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
 msgid "Custom decimal separator:"
-msgstr ""
+msgstr "Ondalık basamak ayracı:"
 
 #. Form4("Options")..GridPanelEx1..Edit4..Hint
+#, fuzzy
 msgid "Decimal separator used when exporting to other programs."
-msgstr ""
+msgstr "Diger programlara veri aktarirken ondaılik basamak ayracı kullanir."
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2623,9 +2583,8 @@ msgid "Insert symbol (Ctrl+G)"
 msgstr "Sembol ekle (Ctrl+G)"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-#, fuzzy
 msgid "Insert object."
-msgstr "Nesne ekle"
+msgstr "Nesne ekler."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2745,9 +2704,8 @@ msgstr "Resim üzerine tıkladığınızda işaretçinin konumlanacağı yeri se
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "İnternet"
+msgstr "Integral"
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2860,16 +2818,14 @@ msgid "Error"
 msgstr "Hata"
 
 #. Indicates an error code, e.g. "Error 5"
-#, fuzzy
 msgid "Error %s"
-msgstr "Hata çubukları"
+msgstr "Hata %s"
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Uzunluk"
 
 #. Shown in rotation dialog
-#, fuzzy
 msgid "Degrees"
 msgstr "Derece"
 
@@ -2886,19 +2842,16 @@ msgid "Axes"
 msgstr "Eksenler"
 
 #. Shortcut key
-#, fuzzy
 msgid "Ctrl"
-msgstr "Ctrl+"
+msgstr "Ctrl"
 
 #. Shortcut key
-#, fuzzy
 msgid "Alt"
-msgstr "Alt+"
+msgstr "Alt"
 
 #. Shortcut key
-#, fuzzy
 msgid "Shift"
-msgstr "Shift+"
+msgstr "Shift"
 
 #. Shortcut key
 msgid "Del"
@@ -2955,9 +2908,8 @@ msgstr "Space"
 msgid "An error occurred while evaluating power function."
 msgstr "Üssel fonkiyon hesaplanırken hata oluştu."
 
-#, fuzzy
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
-msgstr "Tanjant 90+p180 tanımlı değil"
+msgstr "Tanjant 90+n*180 derece tanımlı değil."
 
 msgid "Fact can only be calculated for positive integers."
 msgstr "Sadece pozitif tamsayılar için hesaplanabilir."
@@ -3005,7 +2957,7 @@ msgid "Overflow: A function returned a value too large to handle."
 msgstr "Taşma: fonksiyon çok büyük sayı üretti."
 
 msgid "A plugin function failed: %s"
-msgstr ""
+msgstr "Plugin fonksiyon hatasi: %s"
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Beklenmedik operatör.Operatör  '%s' burada olmamalı."
@@ -3013,9 +2965,8 @@ msgstr "Beklenmedik operatör.Operatör  '%s' burada olmamalı."
 msgid "The right bracket is missing."
 msgstr "Sağ braket eksik."
 
-#, fuzzy
 msgid "Invalid number of arguments supplied for the function '%s'"
-msgstr "'%s' fonksiyonu için geçersiz argument numarası"
+msgstr "'%s' fonksiyonu için geçersiz sayida argument"
 
 msgid "Comparison operator misplaced."
 msgstr "Karşılaştırma operatörü unutulmuş."
@@ -3023,7 +2974,6 @@ msgstr "Karşılaştırma operatörü unutulmuş."
 msgid "Invalid number found. Use the format: -5.475E-8"
 msgstr "Geçersiz sayı bulundu. -5.475E-8 formatını kullanın."
 
-#, fuzzy
 msgid "String is empty. You need to enter a formula."
 msgstr "String boş. Fonksiyon girmeniz gerekli."
 
@@ -3073,9 +3023,8 @@ msgstr "Geri çağrıcı fonksiyonun türevini alamadı."
 msgid "Internal error."
 msgstr "İç hata"
 
-#, fuzzy
 msgid "Function \"%s\" cannot be differentiated."
-msgstr "Fonksiyonun türevi alınamadı."
+msgstr "\"%s\" fonksiyonunun türevi alınamadı."
 
 msgid "Not further specified error occurred under calculation."
 msgstr "Not further specified error occurred under calculation."
@@ -3084,11 +3033,10 @@ msgid "No solution found. Try another guess or another model."
 msgstr "Çözüm bulunamadı.Lütfen başka bir model deneyin. "
 
 msgid "No result found."
-msgstr ""
+msgstr "Sonuc bulunamadi."
 
-#, fuzzy
 msgid "An accurate result cannot be found."
-msgstr "Sonuçta taşma"
+msgstr "An accurate result cannot be found."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "İç hata."
@@ -3147,7 +3095,6 @@ msgstr "Maximum büyütmeye ulaştınız"
 msgid "You have reached the minimum range of zoom."
 msgstr "Minumum büyütmeye ulaştınız."
 
-#, fuzzy
 msgid "'%s' must not be zero."
 msgstr "'%s' sıfırdan büyük olmalı"
 
@@ -3218,14 +3165,12 @@ msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "\"%s\" fontu mevcut değil."
 
 #. Description of grf file
-#, fuzzy
 msgid "Graph system"
-msgstr "Graph web sitesi"
+msgstr "Graph sistemi"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
-#, fuzzy
 msgid "Open"
-msgstr "Aç..."
+msgstr "Aç"
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -3264,12 +3209,12 @@ msgstr "Dosya bulunamadı"
 msgid "Error reading file"
 msgstr "Dosya okuma hatası"
 
-#, fuzzy
 msgid "Printer error"
-msgstr "Yazdırma işlemi sırasında hata"
+msgstr "Yazdıci hatasi"
 
+#, fuzzy
 msgid "Invalid use of infinity. Infinity cannot be used here."
-msgstr ""
+msgstr "Gecersiz sonsuzluk kullanimi. Sonsuzluk burada kullanilamaz."
 
 msgid "Confirm delete"
 msgstr "Doğrulama hatası"
@@ -3283,7 +3228,7 @@ msgstr "Graph dosyaları [*.grf]|*.grf|All files [*.*]|*.*"
 
 #. Import from file dialog
 msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
-msgstr ""
+msgstr "CSV (noktalı virgül limitli) [*.csv]|*.csv|CSV (virgül limitli) [*.csv]|*.csv|Text (tab limitli) [*.txt]|*.txt|Text (bosluk limitli) [*.txt]|*.txt|All files [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "%s modelini silmek istediğinizden emin misiniz?"
@@ -3353,9 +3298,8 @@ msgstr "Yeni versiyon kontrol ediliyor."
 msgid "Abort printing?"
 msgstr "Yazdırma hakkında?"
 
-#, fuzzy
 msgid "Calculate definite integral"
-msgstr "Tabloyu hesapla"
+msgstr "Tanimli integrali hesapla"
 
 msgid "Calculate length of path"
 msgstr "Eğri uzunluğunu hesapla"
@@ -3409,41 +3353,35 @@ msgstr "Bir fonksiyon seçmelisiniz."
 msgid "New version of Graph available"
 msgstr "Graph programının yeni versiyonu bulundu."
 
-#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
 "\n"
 "Would you like to visit the download page?"
 msgstr ""
 "Graph %s versiyonunu www.padowan.dk sitesinden indirmek şu anda mümkün\n"
-" şu yeni özellikler mevcut\n"
-"\n"
-"%s\n"
 "\n"
 "Siteyi ziyaret etmek ister misiniz?"
 
 msgid "No new version"
 msgstr "Yeni versiyon yok"
 
-#, fuzzy
 msgid "You are already using the most recent version of Graph."
 msgstr "Şu anda son sürümü kullanmaktasınız."
 
 msgid ""
 "Cannot connect to server www.padowan.dk.\n"
 "Either the server is down or you do not have a connection to the Internet."
-msgstr "www.padowan.dk sitesine bağlanamadı."
+msgstr "www.padowan.dk sitesine bağlanamadı.\n"
 
 #. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "Soket hatası %s"
 
 msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
-msgstr ""
+msgstr "Secilen bolge icin tanimli integral ya da fonksiyon ile x ekseni arasindaki taranmis bolge."
 
-#, fuzzy
 msgid "Length of path along the curve calculated for the given range."
-msgstr "Verilen açı için hesaplanan fonsiyonun eğimi"
+msgstr "Verilen bolge için hesaplanan yolun uzunlugu."
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3499,9 +3437,12 @@ msgid ""
 "If you cancel the operation the program will become unstable.\n"
 "You should therefore save your data under a new name and restart the application."
 msgstr ""
+"Program sonsuz donguye girmis gozukuyor. \n"
+"Bu komutu iptal ederseniz program dengesiz olur.\n"
+"Bilgilerinizi yeni bir isimle kayit edin ve uygulamayi yeniden baslatin."
 
 msgid "Thread is not responding"
-msgstr ""
+msgstr "Thread cevap vermiyor."
 
 #. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
@@ -3509,7 +3450,7 @@ msgstr "Günün ip ucu size birçok kullanıcının bilmediği bilgi verir."
 
 #. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
 msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr ""
+msgstr "Graph programinin kullanimi, program hatalari hakkinda forumda bilgi alabilirsiniz forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
@@ -3594,9 +3535,8 @@ msgid "You can drag a grf-file from explorer into an open instance of Graph to o
 msgstr "Açık Graph programına grf-dosyasını sürükleyip bırakıp açabilirsiniz."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Graph will remember the size of the main window between executions. This can be disabled from the Options dialog."
-msgstr "Graph programı ana pencereyi son konumunu ve boyutunda açar.Bu özellik Özellikler kutusundan değiştirilebilir. "
+msgstr "Graph programı ana pencereyi son kapatilan konumunda ve boyutunda açar.Bu özellik Özellikler kutusundan değiştirilebilir. "
 
 #. Tip of the Day
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
@@ -3607,7 +3547,6 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Hesaplanmış tablonun bir kısmı yada hepsi bir başka dosyaya sağ tuşu tıklayıp 'Dosyaya kaydet' komutu ile kaydedilebilir."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Data from the evaluation table can be copied to another program like Microsoft Excel."
 msgstr "Pano kullanılarak tablodaki veriler Excel gibi bir programa gönderilebilir."
 
@@ -3648,7 +3587,6 @@ msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functio
 msgstr "Zoom|Bütün noktalar komutlarını kullanarak koordinat sistemindeki bütün noktaları görünür yaparsınız"
 
 #. Tip of the Day
-#, fuzzy
 msgid "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."
 msgstr "Zoom|Fit komutunu kullanarak seçili fonksiyonun yada nokta serisinin gözükmesini sağlayabilirsiniz"
 
@@ -3734,19 +3672,17 @@ msgstr "Özelleştir"
 msgid "Description"
 msgstr "Tanım"
 
-#, fuzzy
 msgid "Cannot open clipboard: %s"
-msgstr "Pano açılamadı"
+msgstr "Pano açılamadı: %s"
 
 msgid "There is no default printer currently selected."
-msgstr ""
+msgstr "Tanimli yazici secilmedi."
 
 msgid "Install for all users"
-msgstr ""
+msgstr "Tum kullanicilar icin yukle."
 
-#, fuzzy
 msgid "Examples"
-msgstr "Örnek"
+msgstr "Örnekler"
 
 msgid "Local"
 msgstr "Lokal"
@@ -3822,7 +3758,7 @@ msgstr "Sayfanın merkezi"
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
 msgid "Specify the printing area of the page. The printer will print only within these margins."
-msgstr ""
+msgstr "Yazdirilacak bolgeyi secin."
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
@@ -3838,60 +3774,84 @@ msgstr "orjinal boyutun yüzdesini girin"
 
 #~ msgid "Area"
 #~ msgstr "Alan"
+
 #~ msgid ""
 #~ "Area or length of path calculated for the given range using Simpson's "
 #~ "formula."
 #~ msgstr "Alan yada uzunluk Simpson kuralı kullanılarak hesaplanır."
+
 #~ msgid "Extremum"
 #~ msgstr "Extremum"
+
 #~ msgid "Saves the coordinate system as a new name."
 #~ msgstr "Koordinat sistemini yeni isimle kaydet"
+
 #~ msgid "Saves a copy of the current coordinate system."
 #~ msgstr "Geçerli koordinat sistemini kaydet."
+
 #~ msgid "Zoom in."
 #~ msgstr "Büyült"
+
 #~ msgid "Zoom out."
 #~ msgstr "Küçült"
+
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Seçili fonksiyon altındaki alanı hesaplar."
+
 #~ msgid "About Graph..."
 #~ msgstr "Graph hakkında"
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Sadece x-ekseninde büyültür."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Sadece x-ekseninde küçültür."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "sadece y-ekseninde büyültür."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Sadece y-ekseninde küçültür."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Özel fonksiyonlar..."
+
 #~ msgid "Insert an OLE object such as a drawing or an equation."
 #~ msgstr "OLE nesnesi ekle eşitlik,çizim gibi"
+
 #~ msgid "Show the f''(x) column in the table."
 #~ msgstr "Tabloda f'(x) sütununu göster."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Değişimin sonunu işaretle"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Taralı alanın başlangıcını çizgi ile işaretle"
+
 #~ msgid "Mark start of range"
 #~ msgstr "Değişimin başlangıcını işaretle"
+
 #~ msgid "Open the file %s."
 #~ msgstr "%s dosyasını aç"
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Alanı hesapla"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Server '%s' mesajı ile karşılaştı."
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokol cevabı hatası %s"
+
 #~ msgid ""
 #~ "You can send suggestions for future versions, bug reports and comments to "
 #~ "graph@padowan.dk"
 #~ msgstr ""
 #~ "Buraya gelecek versiyonlar için önerilerinizi, bug raporlarınızı, "
 #~ "yorumlarınızı yollayabilirsiniz.  "
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Resmi sayfanın ortasına yerleştir."
-
