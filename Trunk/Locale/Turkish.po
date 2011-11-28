@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-11-22 00:32-0500\n"
-"Last-Translator: Murat arik <mumtazmurat@gmail.com>\n"
+"PO-Revision-Date: 2011-11-28 21:55+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -761,12 +761,10 @@ msgid "Import point series from a data file."
 msgstr "Data dosyasından nokta serisi ekle"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
-#, fuzzy
 msgid "Scripting engine documentation"
 msgstr "Scripting engine documentation"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
-#, fuzzy
 msgid "Show documentation for scripting engine and plugin system."
 msgstr "Show documentation for scripting engine and plugin system."
 
@@ -1009,7 +1007,6 @@ msgid "Insert tangent/normal"
 msgstr "Tanjant/normal ekle"
 
 #. Form12("Insert tangent/normal")..Edit1..Hint
-#, fuzzy
 msgid "Value where the tangent/normal will interact with the function."
 msgstr "Tanjant/normal'in fonksiyonu kestiği koordinat"
 
@@ -1858,7 +1855,6 @@ msgid "Letter"
 msgstr "Letter"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Ledger"
 msgstr "Ledger"
 
@@ -1948,7 +1944,6 @@ msgid "Build %s"
 msgstr "Yapım %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-#, fuzzy
 msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
 msgstr "Bu yazılım ücretsizdir, ve GNU lisansı altında programın geliştirilmesine katkıda bulunabilirsiniz. Lütfen bug raporlarını ve önerilerini programcıya yollayın."
 
@@ -1990,7 +1985,6 @@ msgid "Step"
 msgstr "Adım"
 
 #. Form20("Animation")..SaveDialog1..Filter
-#, fuzzy
 msgid "Audio Video Interleave [*.avi]|*.avi"
 msgstr "Audio Video Interleave [*.avi]|*.avi"
 
@@ -2044,7 +2038,6 @@ msgid "Save all frames in the animation to image files. This will create as many
 msgstr "Animasyondaki bütün çerçeveleri resim dosyasına kaydeder."
 
 #. Form21("Placement")..Label1("Corner:")..Caption
-#, fuzzy
 msgid "Corner:"
 msgstr "Renk:"
 
@@ -2247,7 +2240,6 @@ msgid "Show horizontal grid lines."
 msgstr "Yatay ızgara çizgilerini göster."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
-#, fuzzy
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
 msgstr "Etiketi ana pencerenin üstünde y-ekseninin sağında gösterir."
 
@@ -2493,7 +2485,6 @@ msgid "Custom decimal separator:"
 msgstr "Ondalık basamak ayracı:"
 
 #. Form4("Options")..GridPanelEx1..Edit4..Hint
-#, fuzzy
 msgid "Decimal separator used when exporting to other programs."
 msgstr "Diger programlara veri aktarirken ondaılik basamak ayracı kullanir."
 
@@ -3001,9 +2992,8 @@ msgstr "Tanınmayan karakter: \"%s\""
 msgid "The end of the expression was unexpected."
 msgstr "İfade sonu yanlış yerde."
 
-#, fuzzy
 msgid "Error parsing expression."
-msgstr "Fonksiyon textinde hata"
+msgstr "Fonksiyon textinde hata."
 
 msgid "A calculation resulted in an overflow."
 msgstr "Sonuçta taşma"
@@ -3212,7 +3202,6 @@ msgstr "Dosya okuma hatası"
 msgid "Printer error"
 msgstr "Yazdıci hatasi"
 
-#, fuzzy
 msgid "Invalid use of infinity. Infinity cannot be used here."
 msgstr "Gecersiz sonsuzluk kullanimi. Sonsuzluk burada kullanilamaz."
 
@@ -3417,7 +3406,6 @@ msgstr "Komutlar"
 msgid "(All Commands)"
 msgstr "( Bütün komutlar )"
 
-#, fuzzy
 msgid "To add a command to the toolbar simply select a category and drag the command out of this dialog box to the toolbar."
 msgstr "Araç kutusuna komut eklemek için bir kategori seçin ve komutu buradan araç kutusu içine sürükleyip bırakın."
 
@@ -3493,7 +3481,6 @@ msgid "You can import the contents of another Graph file into the current coordi
 msgstr "Dosya|Ekle|Graph dosyası komutlarını kullanarak başka bir Graph dosyasının içeriğini geçerli koordinat sistemine ekleyebilirsiniz."
 
 #. Tip of the Day
-#, fuzzy
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."
 msgstr "Eğer Eksenler kutusunda 'Default olarak kaydet' seçeneğini seçerseniz geçerli ayarlar yeni dosya oluşturulduğunda kullanılır."
 
@@ -3522,7 +3509,6 @@ msgid "Graph can save the shown coordinate system in five different image format
 msgstr "Graph programı koordinat sistemini 5 farklı resim dosyası halinde kaydedebilir: bmp, emf, png, jpg and pdf."
 
 #. Tip of the Day
-#, fuzzy
 msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."
 msgstr "Düzenle|Kopyala komutlarını kullanarak panoya geçerli koordinat dosyasını yapıştırabilirsiniz."
 
@@ -3551,12 +3537,10 @@ msgid "Data from the evaluation table can be copied to another program like Micr
 msgstr "Pano kullanılarak tablodaki veriler Excel gibi bir programa gönderilebilir."
 
 #. Tip of the Day
-#, fuzzy
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
 msgstr "Pano kullanılarak nokta serileri Excel gibi bir programa gönderilebilir."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
 msgstr "Düzenle|Kopyala komutları ile fonksiyonlar program içinde kopyalanabilir. "
 
@@ -3577,12 +3561,10 @@ msgid "You can import point series from files saved by other programs, like Micr
 msgstr "Başka programlardan nokta serileri kopyalayabilirsiniz. "
 
 #. Tip of the Day
-#, fuzzy
 msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
 msgstr "Nokta serisi girerken Excel gibi programlardan kopyala yapıştır yapabilirsiniz."
 
 #. Tip of the Day
-#, fuzzy
 msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
 msgstr "Zoom|Bütün noktalar komutlarını kullanarak koordinat sistemindeki bütün noktaları görünür yaparsınız"
 
@@ -3747,9 +3729,8 @@ msgid "Top margin:"
 msgstr "Üst boşluk"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
-#, fuzzy
 msgid "Center the printing area on the page."
-msgstr "Sayfa üzerindeki resmin konumunu girin"
+msgstr "Sayfa üzerindeki resmin konumunu girin."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
