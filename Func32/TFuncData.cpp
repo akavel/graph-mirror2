@@ -278,7 +278,7 @@ void TFuncData::Replace(const TElem &OldElem, const TElem &NewElem)
 //---------------------------------------------------------------------------
 /** Update data to use functions/constants in a new symbol list. This will loop through all the elements, and replace all
  *  custom functions/constants with ones with the same name in the symbol list.
- *  \param SymbolList: List of symbols to reaplce exiting ones with.
+ *  \param SymbolList: List of symbols to replace exiting ones with.
  */
 bool TFuncData::Update(const TSymbolList &SymbolList)
 {
@@ -320,16 +320,22 @@ bool TFuncData::CheckRecursive(std::vector<const TFuncData*> &FuncStack) const
 {
   for(std::vector<TElem>::const_iterator Iter = Data.begin(); Iter != Data.end(); ++Iter)
     if(Iter->Ident == CodeCustom)
-    {
-      boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
-      if(std::find(FuncStack.begin(), FuncStack.end(), Func->GetFuncData().get()) != FuncStack.end())
-        return true;
+      try
+      {
+        boost::shared_ptr<TBaseCustomFunc> Func = boost::any_cast<boost::shared_ptr<TBaseCustomFunc> >(Iter->Value);
+        if(std::find(FuncStack.begin(), FuncStack.end(), Func->GetFuncData().get()) != FuncStack.end())
+          return true;
 
-      FuncStack.push_back(Func->GetFuncData().get());
-      if(Func->GetFuncData()->CheckRecursive(FuncStack))
-        return true;
-      FuncStack.pop_back();
-    }
+        FuncStack.push_back(Func->GetFuncData().get());
+        if(Func->GetFuncData()->CheckRecursive(FuncStack))
+          return true;
+        FuncStack.pop_back();
+      }
+      catch(EFuncError &E)
+      {
+        E.Str = FunctionName(*Iter);
+        throw;
+      }
 
   return false;
 }
