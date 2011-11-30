@@ -135,7 +135,8 @@ class TPluginFunc : public Func32::TBaseCustomFunc
   PyObject *Func;
   unsigned Arguments;
 public:
-  TPluginFunc(PyObject *AFunc, unsigned AArguments) : Func(AFunc), Arguments(AArguments) {Py_INCREF(Func);}
+  TPluginFunc(PyObject *AFunc, unsigned AArguments)
+    : Func(AFunc), Arguments(AArguments) {Py_INCREF(Func);}
   ~TPluginFunc() {Py_XDECREF(Func);}
   unsigned ArgumentCount() const {return Arguments;}
   long double Call(const long double *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const

@@ -20,6 +20,7 @@ TProperty Property;
 TGuiFormatSettings GuiFormatSettings;
 TPlotSettings PlotSettings;
 TGuiSettings GuiSettings;
+Func32::TSymbolList TCustomFunctions::GlobalSymbolList;
 //---------------------------------------------------------------------------
 ///////////
 // TAxes //
@@ -228,23 +229,6 @@ void TProperty::Write(TConfigRegistry &Registry)
 /////////////////////
 // TCustomFunction //
 /////////////////////
-std::wstring TCustomFunction::CheckAndTrimName(const std::wstring &Str, unsigned Offset)
-{
-  unsigned Begin = Str.find_first_not_of(L" ");
-  unsigned End = Str.find_last_not_of(L" ");
-  if(Begin == std::wstring::npos)
-    throw ECustomFunctionError(Offset ? cfeEmptyArg : cfeEmptyName, Offset);
-
-  std::wstring Name = Str.substr(Begin, End - Begin + 1);
-  if(Name[0] == '$')
-    throw ECustomFunctionError(Offset ? cfeInvalidArg : cfeInvalidName, Begin + Offset, Name);
-
-  if(!Func32::IsValidName(Name))
-    throw ECustomFunctionError(Offset ? cfeInvalidArg : cfeInvalidName, Begin + Offset, Name);
-
-  return Name;
-}
-//---------------------------------------------------------------------------
 TCustomFunction::TCustomFunction(const std::wstring &Str, const std::wstring &AText)
   : Text(AText)
 {
@@ -286,29 +270,54 @@ std::wstring TCustomFunction::GetName() const
   return Str;
 }
 //---------------------------------------------------------------------------
+std::wstring TCustomFunction::CheckAndTrimName(const std::wstring &Str, unsigned Offset)
+{
+  unsigned Begin = Str.find_first_not_of(L" ");
+  unsigned End = Str.find_last_not_of(L" ");
+  if(Begin == std::wstring::npos)
+    throw ECustomFunctionError(Offset ? cfeEmptyArg : cfeEmptyName, Offset);
+
+  std::wstring Name = Str.substr(Begin, End - Begin + 1);
+  if(Name[0] == '$')
+    throw ECustomFunctionError(Offset ? cfeInvalidArg : cfeInvalidName, Begin + Offset, Name);
+
+  if(!Func32::IsValidName(Name))
+    throw ECustomFunctionError(Offset ? cfeInvalidArg : cfeInvalidName, Begin + Offset, Name);
+
+  return Name;
+}
+//---------------------------------------------------------------------------
 //////////////////////
 // TCustomFunctions //
 //////////////////////
+TCustomFunctions::TCustomFunctions(const TData &AData)
+  : Data(AData), InternalSymbolList(GlobalSymbolList), SymbolList(GlobalSymbolList)
+{
+}
+//---------------------------------------------------------------------------
 void TCustomFunctions::Add(const std::wstring &Str, const std::wstring &Value)
 {
   TCustomFunction CustomFunction(Str, Value);
   if(SymbolList.Exists(CustomFunction.Name))
     throw ECustomFunctionError(cfeDoubleDefinedSymbol, 0, Str);
+  CustomFunction.InternalFunc = InternalSymbolList.Add(CustomFunction.Name, L"0", CustomFunction.Arguments);
   Functions.push_back(CustomFunction);
-  SymbolList.Add(CustomFunction.Name, L"0", CustomFunction.Arguments);
 }
 //---------------------------------------------------------------------------
 void TCustomFunctions::Add(const std::wstring &Name, const Func32::TArgType &Args, const std::wstring &Text)
 {
   TCustomFunction CustomFunction(Name, Args, Text);
-  SymbolList.Add(Name, Text, CustomFunction.Arguments);
   std::wstring LowerName = ToLower(Name);
   for(TIterator Iter = Functions.begin(); Iter != Functions.end(); ++Iter)
     if(ToLower(Iter->Name) == LowerName)
     {
+      CustomFunction.InternalFunc = Iter->InternalFunc;
+      CustomFunction.InternalFunc->SetFunc(Text, CustomFunction.Arguments, SymbolList);
       *Iter = CustomFunction;
       return;
     }
+  CustomFunction.InternalFunc = InternalSymbolList.Add(Name, Text, CustomFunction.Arguments);
+  SymbolList.Add(Name, CustomFunction.InternalFunc);
   Functions.push_back(CustomFunction);
 }
 //---------------------------------------------------------------------------
@@ -318,8 +327,7 @@ void TCustomFunctions::Replace(const std::wstring &Name, const std::wstring &Val
     if(Iter->Name == Name)
     {
       Iter->Text = Value;
-      if(Func32::TCustomFunc *Func = dynamic_cast<Func32::TCustomFunc*>(SymbolList.Get(Name).get()))
-        Func->SetFunc(Value, Iter->Arguments, SymbolList);
+      Iter->InternalFunc->SetFunc(Value, Iter->Arguments, SymbolList);
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
@@ -331,8 +339,7 @@ void TCustomFunctions::Replace(const std::wstring &Name, long double Value)
     if(Iter->Name == Name)
     {
       Iter->Text = ToWString(Value);
-      if(Func32::TCustomFunc *Func = dynamic_cast<Func32::TCustomFunc*>(SymbolList.Get(Name).get()))
-        Func->SetFunc(Value);
+      Iter->InternalFunc->SetFunc(Value);
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
@@ -344,6 +351,7 @@ void TCustomFunctions::Delete(const std::wstring &Name)
     if(Iter->Name == Name)
     {
       Functions.erase(Iter);
+      InternalSymbolList.Erase(Name);
       SymbolList.Erase(Name);
       return;
     }
@@ -358,35 +366,51 @@ const TCustomFunction& TCustomFunctions::GetValue(const std::wstring &Name) cons
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
 }
 //---------------------------------------------------------------------------
-void TCustomFunctions::Update()
+void TCustomFunctions::UpdateAll(bool IgnoreErrors)
 {
   unsigned I;
-  try
-  {
-    for(I = 0; I < Functions.size(); I++)
+  for(I = 0; I < Functions.size(); I++)
+    try
     {
-      std::wstring Expression = Functions[I].Text.substr(0, Functions[I].Text.find(L"#"));
-      SymbolList.Add(Functions[I].Name, boost::shared_ptr<Func32::TCustomFunc>(new Func32::TCustomFunc(Expression, Functions[I].Arguments, SymbolList)));
+      TCustomFunction &Function = Functions[I];
+      std::wstring Expression = Function.Text.substr(0, Function.Text.find(L"#"));
+      Function.InternalFunc->SetFunc(Expression, Function.Arguments, InternalSymbolList);
+      SymbolList.Add(Function.Name, Function.InternalFunc);
     }
-    SymbolList.Update();
-
-    //Replace all constant expressions with their value
-    std::vector<Func32::TComplex> DummyArgs;
-    for(Func32::TSymbolList::TIterator Iter = SymbolList.Begin(); Iter != SymbolList.End(); ++Iter)
-      if(Iter->second->ArgumentCount() == 0)
-      {
-        if(Func32::TCustomFunc *Func = dynamic_cast<Func32::TCustomFunc*>(Iter->second.get()))
-        {
-          Func->SetTrigonometry(Data.Axes.Trigonometry);
-          Func32::TComplex Value = Func->Calc(DummyArgs);
-          Iter->second.reset(new Func32::TCustomFunc(Value));
-      } }
-    SymbolList.Update();  
-  }
-  catch(const Func32::EParseError &E)
+    catch(const Func32::EParseError &E)
+    {
+      if(IgnoreErrors)
+        ShowStatusError(GetErrorMsg(E));
+      else
+        throw ECustomFunctionError(cfeParseError, I, E);
+    }
+}
+//---------------------------------------------------------------------------
+void TCustomFunctions::Update()
+{
+  //Replace all constant expressions with their value
+  std::vector<Func32::TComplex> DummyArgs;
+  for(unsigned I = 0; I < Functions.size(); I++)
   {
-    throw ECustomFunctionError(cfeParseError, I, E);
+    TCustomFunction &Function = Functions[I];
+    if(Function.Arguments.size() == 0)
+    {
+      Function.InternalFunc->SetTrigonometry(Data.Axes.Trigonometry);
+      Func32::TComplex Value = Function.InternalFunc->Calc(DummyArgs);
+      if(Function.Func)
+        Function.Func->SetFunc(Value);
+      else
+        Function.Func = SymbolList.Add(Function.Name, Value);
+    }
   }
+}
+//---------------------------------------------------------------------------
+void TCustomFunctions::Swap(TCustomFunctions &Other)
+{
+  //Do not swap GlobalSymbolList. It must stay in the global TData
+  Functions.swap(Other.Functions);
+  SymbolList.Swap(Other.SymbolList);
+  InternalSymbolList.Swap(Other.InternalSymbolList);
 }
 //---------------------------------------------------------------------------
 void TCustomFunctions::WriteToIni(TConfigFileSection &Section) const
@@ -401,14 +425,14 @@ void TCustomFunctions::ReadFromIni(const TConfigFileSection &Section)
   {
     for(TConfigFileSection::TIterator Iter = Section.Begin(); Iter != Section.End(); ++Iter)
       Add(Iter->first, Iter->second);
-    Update();
+    UpdateAll(true);
   }
 }
 //---------------------------------------------------------------------------
 void TCustomFunctions::Clear()
 {
   Functions.clear();
-//  SymbolList.Clear();
+  InternalSymbolList = GlobalSymbolList;
   SymbolList = GlobalSymbolList;
 }
 //---------------------------------------------------------------------------
