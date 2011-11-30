@@ -65,14 +65,7 @@ TCustomFunc::TCustomFunc(long double Value)
 TCustomFunc::TCustomFunc(const TComplex &Complex)
   : FuncData(new TFuncData), Trigonometry(Radian)
 {
-  if(imag(Complex))
-  {
-    FuncData->Add(CodeAdd);
-    FuncData->Add(CodeMul);
-    FuncData->Add(imag(Complex));
-    FuncData->Add(Codei);
-  }
-  FuncData->Add(real(Complex));
+  SetFunc(Complex);
 }
 //---------------------------------------------------------------------------
 /** Assigns new data to the function.
@@ -105,8 +98,26 @@ void TCustomFunc::SetFunc(const std::wstring &Text, const TArgType &AArgs, const
  */
 void TCustomFunc::SetFunc(long double Value)
 {
-  FuncData.reset(new TFuncData);
+  Unique();
+  FuncData->Clear();
   FuncData->Add(Value);
+}
+//---------------------------------------------------------------------------
+/** Assigns a value to the function.
+ *  \param Values: The value assigned to the function
+ */
+void TCustomFunc::SetFunc(const TComplex &Complex)
+{
+  Unique();
+  FuncData->Clear();
+  if(imag(Complex))
+  {
+    FuncData->Add(CodeAdd);
+    FuncData->Add(CodeMul);
+    FuncData->Add(imag(Complex));
+    FuncData->Add(Codei);
+  }
+  FuncData->Add(real(Complex));
 }
 //---------------------------------------------------------------------------
 /** Evaluates the function for a given set of arguments.

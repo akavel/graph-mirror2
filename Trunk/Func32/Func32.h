@@ -582,6 +582,7 @@ public:
   void SetFunc(const std::wstring &Text, const TArgType &AArgs);
   void SetFunc(const std::wstring &Text, const TArgType &AArgs, const TSymbolList &SymbolList);
   void SetFunc(long double Value);
+  void SetFunc(const TComplex &Value);
   long double Calc(const std::vector<long double> &Values) const;
   long double Calc(const std::vector<long double> &Values, ECalcError &E) const;
   TComplex Calc(const std::vector<TComplex> &Values) const;
@@ -604,22 +605,26 @@ public:
   const boost::shared_ptr<TFuncData>& GetFuncData() const {return FuncData;}
 };
 
+typedef boost::shared_ptr<TBaseCustomFunc> TBaseCustomFuncPtr;
+typedef boost::shared_ptr<TCustomFunc> TCustomFuncPtr;
+
 class TSymbolList
 {
-  std::map<std::wstring, boost::shared_ptr<TBaseCustomFunc> > List;
+  std::map<std::wstring, TBaseCustomFuncPtr> List;
 
 public:
-  typedef std::map<std::wstring, boost::shared_ptr<TBaseCustomFunc> >::iterator TIterator;
-  typedef std::map<std::wstring, boost::shared_ptr<TBaseCustomFunc> >::const_iterator TConstIterator;
+  typedef std::map<std::wstring, TBaseCustomFuncPtr>::iterator TIterator;
+  typedef std::map<std::wstring, TBaseCustomFuncPtr>::const_iterator TConstIterator;
 
-  void Add(const std::wstring &Key);
-  void Add(const std::wstring &Key, const std::wstring &Value, const TArgType &Args = TArgType());
+  const TBaseCustomFuncPtr& Add(const std::wstring &Key);
+  TCustomFuncPtr Add(const std::wstring &Key, const std::wstring &Value, const TArgType &Args = TArgType());
   void Add(const std::wstring &Key, const boost::shared_ptr<TBaseCustomFunc> &CustomFunc);
+  TCustomFuncPtr Add(const std::wstring &Key, const TComplex &Value);
   TConstIterator Begin() const {return List.begin();}
   TIterator Begin() {return List.begin();}
   TConstIterator End() const {return List.end();}
   TIterator End() {return List.end();}
-  boost::shared_ptr<TBaseCustomFunc> Get(const std::wstring &Key) const;
+  TBaseCustomFuncPtr Get(const std::wstring &Key) const;
   void Clear();
   bool Empty() const {return List.empty();}
   bool Exists(const std::wstring &Key) const;
@@ -629,12 +634,7 @@ public:
   void Update() {for(TIterator Iter = List.begin(); Iter != List.end(); ++Iter) Iter->second->Update(*this);}
   TSymbolList& operator+=(const TSymbolList &SymbolList) {List.insert(SymbolList.List.begin(), SymbolList.List.end()); return *this;}
   TSymbolList operator+(const TSymbolList &SymbolList) const {return TSymbolList(*this) += SymbolList;}
-  TSymbolList& operator-=(const TSymbolList &SymbolList)
-  {
-    for(TConstIterator Iter = SymbolList.List.begin(); Iter != SymbolList.List.end(); ++Iter)
-      List.erase(Iter->first);
-    return *this;
-  }
+  TSymbolList& operator-=(const TSymbolList &SymbolList);
   TSymbolList operator-(const TSymbolList &SymbolList) const {return TSymbolList(*this) -= SymbolList;}
 };
 //---------------------------------------------------------------------------
