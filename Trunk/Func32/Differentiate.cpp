@@ -246,7 +246,7 @@ void TFuncData::AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trig
           }
 				}
 				else if(DifData.IsEmpty())
-					throw EFuncError(ecNotDifAble, FunctionName(Iter->Ident));
+					throw EFuncError(ecNotDifAble, FunctionName(*Iter));
 
 				TConstIterator End = DifData.Data.end();
 				TConstIterator FirstPar = Iter;             //Start of first parenthesis
