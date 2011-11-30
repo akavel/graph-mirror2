@@ -884,6 +884,9 @@ void Test()
 	TestError("2+(x*[5+x*{2-x})]", 10, ecNoEndPar);
 	TestError("log[log(log{x}10]10)", 10, ecNoEndPar);
 
+  //Test relations
+  Test("sin(x^2) < cos(x^2)", 0, 1);
+
 	//Test difficult function
 	Test("-sin(x)+(-sin(x)*sqrt((-sin(x))^2+cos(x)^2)-cos(x)*0.5/sqrt((-sin(x))^2+cos(x)^2)*(--2*sin(x)*cos(x)-2*cos(x)*sin(x)))/sqrt((-sin(x))^2+cos(x)^2)^2", 0, 0);
 
