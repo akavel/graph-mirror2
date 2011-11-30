@@ -136,6 +136,8 @@ struct TCustomFunction
   std::wstring Name;
   std::wstring Text;
   std::vector<std::wstring> Arguments;
+  Func32::TCustomFuncPtr Func;
+  Func32::TCustomFuncPtr InternalFunc;
   TCustomFunction(const std::wstring &Str, const std::wstring &AText);
   TCustomFunction(const std::wstring &AName, const std::vector<std::wstring> &AArguments, const std::wstring &AText)
     : Name(AName), Arguments(AArguments), Text(AText) {}
@@ -148,13 +150,14 @@ class TCustomFunctions
   std::vector<TCustomFunction> Functions;
   typedef std::vector<TCustomFunction>::iterator TIterator;
   const TData &Data;
+  Func32::TSymbolList InternalSymbolList; //Unoptimized
 
 public:
   typedef std::vector<TCustomFunction>::const_iterator TConstIterator;
   Func32::TSymbolList SymbolList;
-  Func32::TSymbolList GlobalSymbolList;
+  static Func32::TSymbolList GlobalSymbolList;
 
-  TCustomFunctions(const TData &AData) : Data(AData) {}
+  TCustomFunctions(const TData &AData);
   void Add(const std::wstring &Str, const std::wstring &Value);
   void Add(const std::wstring &Name, const Func32::TArgType &Args, const std::wstring &Text);
   void Replace(const std::wstring &Name, const std::wstring &Value);
@@ -162,8 +165,9 @@ public:
   void Delete(const std::wstring &Name);
   const TCustomFunction& GetValue(const std::wstring &Name) const;
   void Update();
+  void UpdateAll(bool IgnoreErrors=false);
   void Clear();
-  void Swap(TCustomFunctions &Other) {Functions.swap(Other.Functions); SymbolList.Swap(Other.SymbolList);}
+  void Swap(TCustomFunctions &Other);
   void WriteToIni(TConfigFileSection &IniFile) const;
   void ReadFromIni(const TConfigFileSection &IniFile);
   TConstIterator Begin() const {return Functions.begin();}
