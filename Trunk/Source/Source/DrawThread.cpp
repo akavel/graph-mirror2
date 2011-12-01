@@ -738,6 +738,15 @@ void TDrawThread::CreateShade(TShading &Shade)
       //Check if Max is actually less than min for one of the functions
       bool SwapMinMax = (Shade.sMin.Value < Shade.sMax.Value) != (Shade.sMin2.Value < Shade.sMax2.Value);
 
+      if(X1 == AxesRect.Left)
+        X1--;
+      if(X2 == AxesRect.Right)
+        X2++;
+      if(Y1 == AxesRect.Bottom)
+        Y1++;
+      if(Y2 == AxesRect.Top)
+        Y2--;
+
       //Add start point to the polygon points list
       if(!Shade.ExtendMax2ToIntercept)
         Points.push_back(SwapMinMax ? TPoint(X1, Y1) : TPoint(X2, Y2));
