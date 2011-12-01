@@ -621,9 +621,9 @@ bool TTan::CalcTan()
   }
 }
 //---------------------------------------------------------------------------
-////////////
-// TShade //
-////////////
+//////////////
+// TShading //
+//////////////
 TShading::TShading()
   : ShadeStyle(ssXAxis), BrushStyle(bsFDiagonal), Color(clGreen),
   ExtendMinToIntercept(false), ExtendMaxToIntercept(false), ExtendMin2ToIntercept(false),
@@ -636,8 +636,9 @@ TShading::TShading()
 TGraphElemPtr TShading::Clone() const
 {
 	TShading *Shading = new TShading(*this);
-	if(Func2)
-		Shading->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(Func2->Clone());
+  //Func2 will be updated later in the copy constructor of TData when all functions
+  //has been copied.
+	Shading->Func2 = Func2;
 	return CloneHelper(Shading);
 }
 //---------------------------------------------------------------------------
