@@ -141,6 +141,7 @@ struct TCustomFunction
   TCustomFunction(const std::wstring &Str, const std::wstring &AText);
   TCustomFunction(const std::wstring &AName, const std::vector<std::wstring> &AArguments, const std::wstring &AText)
     : Name(AName), Arguments(AArguments), Text(AText) {}
+  TCustomFunction(const TCustomFunction &Other);
   std::wstring GetName() const;
   static std::wstring CheckAndTrimName(const std::wstring &Str, unsigned Offset);
 };
@@ -149,7 +150,6 @@ class TCustomFunctions
 {
   std::vector<TCustomFunction> Functions;
   typedef std::vector<TCustomFunction>::iterator TIterator;
-  const TData &Data;
   Func32::TSymbolList InternalSymbolList; //Unoptimized
 
 public:
@@ -157,14 +157,15 @@ public:
   Func32::TSymbolList SymbolList;
   static Func32::TSymbolList GlobalSymbolList;
 
-  TCustomFunctions(const TData &AData);
+  TCustomFunctions();
+  TCustomFunctions(const TCustomFunctions &Other);
   void Add(const std::wstring &Str, const std::wstring &Value);
   void Add(const std::wstring &Name, const Func32::TArgType &Args, const std::wstring &Text);
   void Replace(const std::wstring &Name, const std::wstring &Value);
   void Replace(const std::wstring &Name, long double Value);
   void Delete(const std::wstring &Name);
   const TCustomFunction& GetValue(const std::wstring &Name) const;
-  void Update();
+  void Update(const TData &Data);
   void UpdateAll(bool IgnoreErrors=false);
   void Clear();
   void Swap(TCustomFunctions &Other);
