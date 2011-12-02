@@ -62,6 +62,9 @@ TCustomFunc::TCustomFunc(long double Value)
   FuncData->Add(Value);
 }
 //---------------------------------------------------------------------------
+/** Constructor creating a custom function from a complex value.
+ *  \param Value: A complex number to create function from.
+ */
 TCustomFunc::TCustomFunc(const TComplex &Complex)
   : FuncData(new TFuncData), Trigonometry(Radian)
 {
@@ -232,7 +235,7 @@ std::wstring TCustomFunc::MakeText(unsigned Decimals) const
  */
 bool TCustomFunc::Update(const TSymbolList &SymbolList)
 {
-//  Unique();
+  Unique();
   return FuncData->Update(SymbolList);
 }
 //---------------------------------------------------------------------------
