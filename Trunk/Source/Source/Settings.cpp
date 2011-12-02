@@ -257,6 +257,14 @@ TCustomFunction::TCustomFunction(const std::wstring &Str, const std::wstring &AT
   }
 }
 //---------------------------------------------------------------------------
+TCustomFunction::TCustomFunction(const TCustomFunction &Other)
+  : Name(Other.Name), Text(Other.Text), Arguments(Other.Arguments),
+    InternalFunc(new Func32::TCustomFunc(*Other.InternalFunc))
+{
+  if(Other.Func)
+    Func.reset(new Func32::TCustomFunc(*Other.Func));
+}
+//---------------------------------------------------------------------------
 std::wstring TCustomFunction::GetName() const
 {
   std::wstring Str = Name;
@@ -290,9 +298,20 @@ std::wstring TCustomFunction::CheckAndTrimName(const std::wstring &Str, unsigned
 //////////////////////
 // TCustomFunctions //
 //////////////////////
-TCustomFunctions::TCustomFunctions(const TData &AData)
-  : Data(AData), InternalSymbolList(GlobalSymbolList), SymbolList(GlobalSymbolList)
+TCustomFunctions::TCustomFunctions()
+  : InternalSymbolList(GlobalSymbolList), SymbolList(GlobalSymbolList)
 {
+}
+//---------------------------------------------------------------------------
+TCustomFunctions::TCustomFunctions(const TCustomFunctions &Other)
+  : Functions(Other.Functions), InternalSymbolList(GlobalSymbolList),
+    SymbolList(GlobalSymbolList)
+{
+  for(unsigned I = 0; I < Functions.size(); I++)
+  {
+    InternalSymbolList.Add(Functions[I].Name, Functions[I].InternalFunc);
+    SymbolList.Add(Functions[I].Name, Functions[I].Func ? Functions[I].Func : Functions[I].InternalFunc);
+  }
 }
 //---------------------------------------------------------------------------
 void TCustomFunctions::Add(const std::wstring &Str, const std::wstring &Value)
@@ -386,7 +405,7 @@ void TCustomFunctions::UpdateAll(bool IgnoreErrors)
     }
 }
 //---------------------------------------------------------------------------
-void TCustomFunctions::Update()
+void TCustomFunctions::Update(const TData &Data)
 {
   //Replace all constant expressions with their value
   std::vector<Func32::TComplex> DummyArgs;

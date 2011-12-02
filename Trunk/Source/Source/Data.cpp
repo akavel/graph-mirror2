@@ -28,8 +28,7 @@ namespace Graph
 {
 TUndoList UndoList(50);
 //---------------------------------------------------------------------------
-TData::TData()
-  : CustomFunctions(*this), TopElem(new TTopGraphElem(this))
+TData::TData() : TopElem(new TTopGraphElem(this))
 {
 }
 //---------------------------------------------------------------------------
@@ -45,6 +44,7 @@ TData::TData()
           int Index = OldData.TopElem->GetChildIndex(Shade->Func2);
           Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(TopElem->GetChild(Index));
         }
+  Update();
 }
 //---------------------------------------------------------------------------
 void TData::WriteInfoToIni(TConfigFile &IniFile)
@@ -582,7 +582,7 @@ boost::shared_ptr<TGraphElem> TData::GetElem(unsigned Index) const
 //---------------------------------------------------------------------------
 void TData::Update()
 {
-  CustomFunctions.Update();
+  CustomFunctions.Update(*this);
   TopElem->Update();
 }
 //---------------------------------------------------------------------------
