@@ -141,7 +141,6 @@ struct TCustomFunction
   TCustomFunction(const std::wstring &Str, const std::wstring &AText);
   TCustomFunction(const std::wstring &AName, const std::vector<std::wstring> &AArguments, const std::wstring &AText)
     : Name(AName), Arguments(AArguments), Text(AText) {}
-  TCustomFunction(const TCustomFunction &Other);
   std::wstring GetName() const;
   static std::wstring CheckAndTrimName(const std::wstring &Str, unsigned Offset);
 };
