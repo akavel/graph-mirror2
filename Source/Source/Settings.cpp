@@ -257,14 +257,6 @@ TCustomFunction::TCustomFunction(const std::wstring &Str, const std::wstring &AT
   }
 }
 //---------------------------------------------------------------------------
-TCustomFunction::TCustomFunction(const TCustomFunction &Other)
-  : Name(Other.Name), Text(Other.Text), Arguments(Other.Arguments),
-    InternalFunc(new Func32::TCustomFunc(*Other.InternalFunc))
-{
-  if(Other.Func)
-    Func.reset(new Func32::TCustomFunc(*Other.Func));
-}
-//---------------------------------------------------------------------------
 std::wstring TCustomFunction::GetName() const
 {
   std::wstring Str = Name;
@@ -304,23 +296,36 @@ TCustomFunctions::TCustomFunctions()
 }
 //---------------------------------------------------------------------------
 TCustomFunctions::TCustomFunctions(const TCustomFunctions &Other)
-  : Functions(Other.Functions), InternalSymbolList(GlobalSymbolList),
-    SymbolList(GlobalSymbolList)
+  : InternalSymbolList(GlobalSymbolList), SymbolList(GlobalSymbolList)
 {
+  for(unsigned I = 0; I < Other.Functions.size(); I++)
+  {
+    const TCustomFunction &Function = Other.Functions[I];
+    TCustomFunction NewFunc(Function);
+    NewFunc.InternalFunc.reset(new Func32::TCustomFunc(*Function.InternalFunc));
+    if(Function.Func)
+      NewFunc.Func.reset(new Func32::TCustomFunc(*Function.Func));
+    Functions.push_back(NewFunc);
+    InternalSymbolList.Add(NewFunc.Name, NewFunc.InternalFunc);
+    SymbolList.Add(NewFunc.Name, NewFunc.Func ? NewFunc.Func : NewFunc.InternalFunc);
+  }
+
   for(unsigned I = 0; I < Functions.size(); I++)
   {
-    InternalSymbolList.Add(Functions[I].Name, Functions[I].InternalFunc);
-    SymbolList.Add(Functions[I].Name, Functions[I].Func ? Functions[I].Func : Functions[I].InternalFunc);
+    const TCustomFunction &Function = Functions[I];
+    Function.InternalFunc->Update(InternalSymbolList);
+    if(Function.Func)
+      Function.Func->Update(SymbolList);
   }
 }
 //---------------------------------------------------------------------------
 void TCustomFunctions::Add(const std::wstring &Str, const std::wstring &Value)
 {
-  TCustomFunction CustomFunction(Str, Value);
-  if(SymbolList.Exists(CustomFunction.Name))
+  TCustomFunction Function(Str, Value);
+  if(InternalSymbolList.Exists(Function.Name))
     throw ECustomFunctionError(cfeDoubleDefinedSymbol, 0, Str);
-  CustomFunction.InternalFunc = InternalSymbolList.Add(CustomFunction.Name, L"0", CustomFunction.Arguments);
-  Functions.push_back(CustomFunction);
+  Function.InternalFunc = InternalSymbolList.Add(Function.Name, L"0", Function.Arguments);
+  Functions.push_back(Function);
 }
 //---------------------------------------------------------------------------
 void TCustomFunctions::Add(const std::wstring &Name, const Func32::TArgType &Args, const std::wstring &Text)
@@ -346,7 +351,8 @@ void TCustomFunctions::Replace(const std::wstring &Name, const std::wstring &Val
     if(Iter->Name == Name)
     {
       Iter->Text = Value;
-      Iter->InternalFunc->SetFunc(Value, Iter->Arguments, SymbolList);
+      Iter->Arguments.clear();
+      Iter->InternalFunc->SetFunc(Value, Iter->Arguments, InternalSymbolList);
       return;
     }
   throw ECustomFunctionError(cfeSymbolUndefined, 0, Name);
@@ -358,6 +364,7 @@ void TCustomFunctions::Replace(const std::wstring &Name, long double Value)
     if(Iter->Name == Name)
     {
       Iter->Text = ToWString(Value);
+      Iter->Arguments.clear();
       Iter->InternalFunc->SetFunc(Value);
       return;
     }
@@ -413,14 +420,21 @@ void TCustomFunctions::Update(const TData &Data)
   {
     TCustomFunction &Function = Functions[I];
     if(Function.Arguments.size() == 0)
-    {
-      Function.InternalFunc->SetTrigonometry(Data.Axes.Trigonometry);
-      Func32::TComplex Value = Function.InternalFunc->Calc(DummyArgs);
-      if(Function.Func)
-        Function.Func->SetFunc(Value);
-      else
-        Function.Func = SymbolList.Add(Function.Name, Value);
-    }
+      try
+      {
+        Function.InternalFunc->SetTrigonometry(Data.Axes.Trigonometry);
+        Func32::TComplex Value = Function.InternalFunc->Calc(DummyArgs);
+        if(Function.Func)
+          Function.Func->SetFunc(Value);
+        else
+          Function.Func = SymbolList.Add(Function.Name, Value);
+      }
+      catch(Func32::ECalcError &E)
+      {
+        if(Function.Func)
+          *Function.Func = *Function.InternalFunc;
+        SymbolList.Add(Function.Name, Function.InternalFunc);
+      }
   }
 }
 //---------------------------------------------------------------------------

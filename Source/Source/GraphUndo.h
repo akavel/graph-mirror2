@@ -91,13 +91,16 @@ struct TUndoAxes
 
 struct TUndoCustomFunctions
 {
-  TCustomFunctions CustomFunctions;
+  boost::shared_ptr<TCustomFunctions> CustomFunctions;
   TData &Data;
-  TUndoCustomFunctions(TData &AData)
-    : Data(AData), CustomFunctions(AData.CustomFunctions) {}
+  TUndoCustomFunctions(TData &AData) //This will steal the custom functions from AData
+    : Data(AData), CustomFunctions(new TCustomFunctions)
+  {
+    CustomFunctions->Swap(AData.CustomFunctions);
+  }
 	void operator()(TUndoList &UndoList)
   {
-    Data.CustomFunctions.Swap(CustomFunctions);
+    Data.CustomFunctions.Swap(*CustomFunctions);
     UndoList.Push(*this);
     Data.Update();
     Data.ClearCache();

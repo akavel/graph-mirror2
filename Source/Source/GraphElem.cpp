@@ -264,10 +264,10 @@ void TBaseFuncType::ReadFromIni(const TConfigFileSection &Section)
   Color = Section.Read(L"Color", clRed);
   Size = Section.Read(L"Size", 1);
   if(Section.KeyExists(L">From"))
-    From.Set(Section.Read(L">From", L"-INF"), GetData()); //Caused by bug in MS Outlook Express
+    From.Set(Section.Read(L">From", L"-INF"), GetData(), true); //Caused by bug in MS Outlook Express
   else
-    From.Set(Section.Read(L"From", L"-INF"), GetData());
-  To.Set(Section.Read(L"To", L"+INF"), GetData());
+    From.Set(Section.Read(L"From", L"-INF"), GetData(), true);
+  To.Set(Section.Read(L"To", L"+INF"), GetData(), true);
   Steps.Set(Section.Read(L"Steps", L""), GetData(), true);
   StartPointStyle = Section.Read(L"StartPoint", 0);
   EndPointStyle = Section.Read(L"EndPoint", 0);

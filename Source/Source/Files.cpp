@@ -68,6 +68,7 @@ void TData::LoadFromFile(const std::wstring &FileName)
     }
 
     CustomFunctions.ReadFromIni(IniFile.Section(L"CustomFunctions"));
+    CustomFunctions.Update(*this);
     LoadData(IniFile);
     AnimationInfo.ReadFromIni(IniFile.Section(L"Animate"));
     LoadPluginData(IniFile.Section(L"PluginData"));
