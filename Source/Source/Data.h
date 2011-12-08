@@ -101,6 +101,8 @@ public:
   {
     return EvalComplex(Str, CustomFunctions.SymbolList, Axes.Trigonometry);
   }
+
+  bool IsDependent(const std::wstring &Expression, const std::wstring &SymbolName) const;
 };
 //---------------------------------------------------------------------------
 //extern TData Data;

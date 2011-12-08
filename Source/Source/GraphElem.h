@@ -56,6 +56,7 @@ struct TTextValue
   void Set(const std::wstring AText, const TData &Data, bool IgnoreErrors = false);
   void Set(double AValue);
   bool IsFinite() const {return boost::math::isfinite(Value);}
+  bool IsDependent(const TData &Data, const std::wstring &SymbolName) const;
 };
 
 std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue);
@@ -108,6 +109,7 @@ public:
   void SetShowInLegend(bool Value) {ShowInLegend = Value;}
   std::wstring GetLegendText() const {return LegendText;}
   void SetLegendText(const std::wstring &Str) {LegendText = Str;}
+  virtual bool IsDependent(const std::wstring &SymbolName) const =0;
 };
 
 class TTopGraphElem : public TGraphElem
@@ -123,6 +125,7 @@ public:
   TGraphElemPtr Clone() const {throw "Not implemented!";;}
   boost::shared_ptr<TTopGraphElem> Clone(const TData *AData) const;
   const TData& GetData() const {return *Data;}
+  bool IsDependent(const std::wstring &SymbolName) const {return false;}
 };
 
 enum TLabelPlacement
@@ -175,6 +178,7 @@ public:
   void SetRotation(unsigned Value) {Rotation = Value;}
   TMetafile* GetImage() const {return Metafile;}
   void Update();
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 
 struct TAxes;
@@ -211,6 +215,7 @@ public:
   void Update();
   Func32::TCoord<long double> Eval(long double t) const;
   virtual long double CalcArea(long double From, long double To) const;
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 
 enum TTangentType {ttTangent, ttNormal};
@@ -406,7 +411,9 @@ public:
   void SetLabelPosition(TLabelPosition Value) {LabelPosition = Value;}
   TPointType GetPointType() const {return PointType;}
   void SetPointType(TPointType Value) {PointType = Value;}
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
+
 Func32::TDblPoint FindCoord(TPointSeries::TPointList::const_iterator Iter, double x);
 typedef boost::shared_ptr<TPointSeries> TPointSeriesPtr;
 
@@ -438,6 +445,7 @@ public:
   TGraphElemPtr Clone() const;
   void Update();
   void ClearCache();
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 typedef boost::shared_ptr<TShading> TShadingPtr;
 
@@ -480,6 +488,7 @@ public:
   TRelationType GetRelationType() const {return RelationType;}
   unsigned GetSize() const {return Size;}
   void SetSize(unsigned Value) {Size = Value;}
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 
 class TAxesView : public TGraphElem
@@ -494,6 +503,7 @@ public:
   int GetVisible() const;
   void ChangeVisible();
   const TAxes& GetAxes() const;
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 } //namespace Graph
 using namespace Graph;

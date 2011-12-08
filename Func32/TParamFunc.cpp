@@ -547,5 +547,14 @@ bool TParamFunc::Update(const TSymbolList &SymbolList)
   return !yFuncData->Update(SymbolList) ? false : Result;
 }
 //---------------------------------------------------------------------------
+/** Check if a symbol is referenced by the function directly or indirectly.
+ *  \param SymbolName: Name of symbol to check for.
+ */
+bool TParamFunc::IsDependent(const std::wstring &SymbolName) const
+{
+  std::wstring Name = ToLower(SymbolName);
+  return xFuncData->IsDependent(Name) || yFuncData->IsDependent(Name);
+}
+//---------------------------------------------------------------------------
 } //namespace Func32
 

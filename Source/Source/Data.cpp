@@ -592,5 +592,17 @@ void TData::LoadPluginData(const TConfigFileSection &Section)
     PluginData[Iter->first] = Iter->second;
 }
 //---------------------------------------------------------------------------
+bool TData::IsDependent(const std::wstring &Expression, const std::wstring &SymbolName) const
+{
+  try
+  {
+    return Func32::TFunc(Expression, L"", CustomFunctions.SymbolList).IsDependent(SymbolName);
+  }
+  catch(Func32::EFuncError &E)
+  {
+    return false;
+  }
+}
+//---------------------------------------------------------------------------
 } //namespace Graph
 

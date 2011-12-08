@@ -273,14 +273,26 @@ bool TCustomFunc::IsEmpty() const
   return FuncData->IsEmpty();
 }
 //---------------------------------------------------------------------------
+/** Interface used when the custom function is called internal.
+ */
 long double TCustomFunc::DynCall(class TDynData<long double> &DynData) const
 {
   return FuncData->CalcF(DynData);
 }
 //---------------------------------------------------------------------------
+/** Interface used when the custom function is called internal.
+ */
 TComplex TCustomFunc::DynCall(TDynData<TComplex> &DynData) const
 {
   return FuncData->CalcF(DynData);
+}
+//---------------------------------------------------------------------------
+/** Returns true if the custom function dependens on a given symbol name.
+ *  \param SymbolName: Name of symbol to check for.
+ */
+bool TCustomFunc::IsDependent(const std::wstring &SymbolName) const
+{
+  return FuncData->IsDependent(SymbolName);
 }
 //---------------------------------------------------------------------------
 } //namespace Func32

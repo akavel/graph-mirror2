@@ -464,4 +464,12 @@ bool TFunc::Update(const TSymbolList &SymbolList)
   return FuncData->Update(SymbolList);
 }
 //---------------------------------------------------------------------------
+/** Check if a symbol is referenced by the function directly or indirectly.
+ *  \param SymbolName: Name of symbol to check for.
+ */
+bool TFunc::IsDependent(const std::wstring &SymbolName) const
+{
+  return FuncData->IsDependent(ToLower(SymbolName));
+}
+//---------------------------------------------------------------------------
 } //namespace Func32

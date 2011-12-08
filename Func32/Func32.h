@@ -321,6 +321,9 @@ public:
   virtual void Assign(const TBaseFunc &F) = 0;
 
   virtual bool Update(const TSymbolList &SymbolList) =0;
+
+  //!Check if a symbol is referenced by the function directly or indirectly
+  virtual bool IsDependent(const std::wstring &SymbolName) const =0;
 };
 //---------------------------------------------------------------------------
 //!The TFunc class is derived from TBaseFunc. The class models a standard function y=f(x).
@@ -385,6 +388,7 @@ public:
   TFunc ConvYToFunc() const {return *this;}
 
   bool Update(const TSymbolList &SymbolList);
+  bool IsDependent(const std::wstring &SymbolName) const;
 
   //Overloaded operators
   TFunc& operator=(const TFunc &Func);
@@ -465,6 +469,7 @@ public:
   void Simplify();
 
   bool Update(const TSymbolList &SymbolList);
+  bool IsDependent(const std::wstring &SymbolName) const;
 
 //Overloaded operators
   TParamFunc& operator=(const TParamFunc &Func);
@@ -538,6 +543,7 @@ public:
   void Simplify();
   void Assign(const TBaseFunc &F);
   bool Update(const TSymbolList &SymbolList);
+  bool IsDependent(const std::wstring &SymbolName) const;
 
 //Overloaded operators
   TPolarFunc& operator=(const TPolarFunc &Func);
@@ -560,6 +566,7 @@ public:
   virtual unsigned ArgumentCount() const =0;
   virtual long double Call(const long double *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const {return 0;}
   virtual TComplex Call(const TComplex *Args, TTrigonometry Trig, TErrorCode &ErrorCode, std::wstring &ErrorStr) const {return 0;}
+  virtual bool IsDependent(const std::wstring &SymbolName) const {return false;}
 };
 
 class TCustomFunc : public TBaseCustomFunc
@@ -603,6 +610,7 @@ public:
   long double DynCall(class TDynData<long double> &DynData) const;
   TComplex DynCall(TDynData<TComplex> &DynData) const;
   const boost::shared_ptr<TFuncData>& GetFuncData() const {return FuncData;}
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 
 typedef boost::shared_ptr<TBaseCustomFunc> TBaseCustomFuncPtr;

@@ -459,6 +459,30 @@ std::pair<long double,long double> GetPolarCoord(const Func32::TDblPoint &P, Fun
   return std::make_pair(r, a);
 }
 //---------------------------------------------------------------------------
+unsigned FindEndPar(const std::string &Str, unsigned Pos)
+{
+  unsigned Count = 0;
+  for(unsigned I = Pos; I <= Str.size(); I++)
+    if(Str[I] == '(')
+      Count++;
+    else if(Str[I] == ')')
+      if(--Count == 0)
+        return I;
+  return std::string::npos;
+}
+//---------------------------------------------------------------------------
+unsigned FindEndPar(const std::wstring &Str, unsigned Pos)
+{
+  unsigned Count = 0;
+  for(unsigned I = Pos; I <= Str.size(); I++)
+    if(Str[I] == '(')
+      Count++;
+    else if(Str[I] == ')')
+      if(--Count == 0)
+        return I;
+  return std::wstring::npos;
+}
+//---------------------------------------------------------------------------
 
 
 

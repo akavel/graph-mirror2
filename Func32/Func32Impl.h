@@ -273,6 +273,7 @@ public:
   bool operator==(const TFuncData &FuncData) const {return Data == FuncData.Data;}
   double Integrate(double Min, double Max, double RelError, TTrigonometry Trigonometry) const;
   TElem& Front() {BOOST_ASSERT(!Data.empty()); return Data.front();}
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 //---------------------------------------------------------------------------
 std::list<TElem>::iterator SimplifyData(std::list<TElem> &List, std::list<TElem>::iterator &Iter);
