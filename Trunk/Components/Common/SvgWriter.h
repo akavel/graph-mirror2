@@ -20,13 +20,14 @@ class TSvgWriter : public TGraphicWriter
   TPenInfo Pen;
   TBrushInfo Brush;
   std::vector<TBrushInfo> PatternList;
+  int ClipPathId;
 
   void WritePen();
   void WriteBrush();
   unsigned CreatePattern();
 
 public:
-  TSvgWriter(std::ostream &AStream) : Stream(AStream) {}
+  TSvgWriter(std::ostream &AStream) : Stream(AStream), ClipPathId(0) {}
   void BeginFile(const RECTL &Rect, unsigned Width, unsigned Height);
   void EndOfFile();
   void Line(int X1, int Y1, int X2, int Y2);
@@ -35,7 +36,7 @@ public:
   void Rectangle(const RECTL &Rect);
   void Arc(const RECTL &Box, const POINTL &Start, const POINTL &End);
   void Ellipse(const RECTL &Rect);
-  void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font);
+  void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font, const RECTL &Rect);
   void SetPen(const TPenInfo &APen);
   void SetBrush(const TBrushInfo &ABrush);
   void ExcludeClipRect(const RECTL &Rect);

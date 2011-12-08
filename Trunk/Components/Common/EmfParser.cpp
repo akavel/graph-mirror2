@@ -99,13 +99,14 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     {
       EMREXTCREATEFONTINDIRECTW *ExtFont = (EMREXTCREATEFONTINDIRECTW*)lpEMFR;
       std::wstring Temp = ExtFont->elfw.elfLogFont.lfFaceName;
-      Font.Name = std::string(Temp.begin(), Temp.end());
-      Font.Size = -ExtFont->elfw.elfLogFont.lfHeight;
-      Font.Weight = ExtFont->elfw.elfLogFont.lfWeight;
-      Font.Italic = ExtFont->elfw.elfLogFont.lfItalic;
-      Font.Underline = ExtFont->elfw.elfLogFont.lfUnderline;
-      Font.StrikeOut = ExtFont->elfw.elfLogFont.lfStrikeOut;
-      FontList[ExtFont->ihFont] = Font;
+      TFontMember FontData;
+      FontData.Name = std::string(Temp.begin(), Temp.end());
+      FontData.Size = -ExtFont->elfw.elfLogFont.lfHeight;
+      FontData.Weight = ExtFont->elfw.elfLogFont.lfWeight;
+      FontData.Italic = ExtFont->elfw.elfLogFont.lfItalic;
+      FontData.Underline = ExtFont->elfw.elfLogFont.lfUnderline;
+      FontData.StrikeOut = ExtFont->elfw.elfLogFont.lfStrikeOut;
+      FontList[ExtFont->ihFont] = FontData;
       break;
     }
 
@@ -125,11 +126,10 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     {
       EMREXTTEXTOUTW *Text = (EMREXTTEXTOUTW*)lpEMFR;
       int X = Text->rclBounds.left;
-      int Y = Text->rclBounds.top + Font.Size - ((Font.Size-11) / 3);
+      int Y = Text->rclBounds.top + Font.Font.Size - ((Font.Font.Size-11) / 3);
       wchar_t *Str = (wchar_t*)(((char*)Text)+Text->emrtext.offString);
       int Size = Text->emrtext.nChars;
-      if(Size > 0)
-        Writer->Text(X, Y, std::wstring(Str, Size), Font);
+      Writer->Text(X, Y, std::wstring(Str, Size), Font, Text->rclBounds);
       break;
     }
 
@@ -165,7 +165,7 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       else if(BrushList.count(Index))
         Writer->SetBrush(BrushList[Index]);
       else if(FontList.count(Index))
-        Font = FontList[Index];
+        Font.Font = FontList[Index];
       break;
     }
 

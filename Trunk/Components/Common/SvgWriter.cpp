@@ -137,24 +137,34 @@ void TSvgWriter::Arc(const RECTL &Box, const POINTL &Start, const POINTL &End)
   Stream << " " << End.x << "," << End.y << "\" />\n";
 }
 //---------------------------------------------------------------------------
-void TSvgWriter::Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font)
+void TSvgWriter::Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font, const RECTL &Rect)
 {
-  Stream << "    <text x=\"" << X << "\" y=\"" << Y << "\" font-family=\"" <<
-    Font.Name << "\" font-size=\"" << Font.Size << "\"";
-  if(Font.Weight != 400)
-    Stream << " font-weight=\"" << Font.Weight << "\"";
-  if(Font.Italic)
-    Stream << " font-style=\"italic\"";
-  if(Font.StrikeOut || Font.Underline)
+  if(!Font.TransparentBk && Rect.right > Rect.left && Rect.bottom > Rect.top)
   {
-    Stream << " text-decoration=\"";
-    if(Font.Underline) Stream << "underline";
-    if(Font.Underline && Font.StrikeOut) Stream << ",";
-    if(Font.StrikeOut) Stream << "line-through";
-    Stream << "\"";
+    Stream << "    <rect fill=\"#" << std::hex << std::setw(6) << Font.BkColor << std::dec <<
+      "\" x=\"" << Rect.left << "\" y=\"" << Rect.top << "\" width=\"" <<
+      Rect.right - Rect.left << "\" height=\"" << Rect.bottom - Rect.top << "\" />\n";
   }
-  Stream << " fill=\"#" << std::hex << std::setw(6) << Font.Color << std::dec << "\"";
-  Stream << ">" << Utf8Encode(Str) << "</text>\n";
+
+  if(Str.size() > 0)
+  {
+    Stream << "    <text x=\"" << X << "\" y=\"" << Y << "\" font-family=\"" <<
+      Font.Font.Name << "\" font-size=\"" << Font.Font.Size << "\"";
+    if(Font.Font.Weight != 400)
+      Stream << " font-weight=\"" << Font.Font.Weight << "\"";
+    if(Font.Font.Italic)
+      Stream << " font-style=\"italic\"";
+    if(Font.Font.StrikeOut || Font.Font.Underline)
+    {
+      Stream << " text-decoration=\"";
+      if(Font.Font.Underline) Stream << "underline";
+      if(Font.Font.Underline && Font.Font.StrikeOut) Stream << ",";
+      if(Font.Font.StrikeOut) Stream << "line-through";
+      Stream << "\"";
+    }
+    Stream << " fill=\"#" << std::hex << std::setw(6) << Font.Color << std::dec << "\"";
+    Stream << ">" << Utf8Encode(Str) << "</text>\n";
+  }
 }
 //---------------------------------------------------------------------------
 void TSvgWriter::WritePen()
@@ -247,14 +257,15 @@ unsigned TSvgWriter::CreatePattern()
 //---------------------------------------------------------------------------
 void TSvgWriter::ExcludeClipRect(const RECTL &Rect)
 {
+  ClipPathId++;
   Stream << "  </g>\n";
-  Stream << "  <clipPath id=\"clippath\">\n";
+  Stream << "  <clipPath id=\"clippath" << ClipPathId << "\">\n";
   Stream << "    <path d=\"M" << ViewBox.left-1 << "," << ViewBox.top-1 << " H" << ViewBox.right+1 << " V"
     << ViewBox.bottom << "H" << ViewBox.top-1 << " z M" << Rect.left-1 << "," << Rect.top-1 << " H" << Rect.right+1 << " V"
     << Rect.bottom+1 << " H" << Rect.left-1 << " z\" clip-rule=\"evenodd\" />\n";
   Stream << "  </clipPath>\n";
 
-  Stream << "  <g clip-path=\"url(#clippath)\">\n";
+  Stream << "  <g clip-path=\"url(#clippath" << ClipPathId << ")\">\n";
 }
 //---------------------------------------------------------------------------
 #pragma argsused
