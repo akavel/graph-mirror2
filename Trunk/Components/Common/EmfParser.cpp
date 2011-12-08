@@ -126,7 +126,7 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     {
       EMREXTTEXTOUTW *Text = (EMREXTTEXTOUTW*)lpEMFR;
       int X = Text->rclBounds.left;
-      int Y = Text->rclBounds.top + Font.Font.Size - ((Font.Font.Size-11) / 3);
+      int Y = Text->rclBounds.top + Font.Font.Size - ((std::max(Font.Font.Size, 11U)-11) / 3);
       wchar_t *Str = (wchar_t*)(((char*)Text)+Text->emrtext.offString);
       int Size = Text->emrtext.nChars;
       Writer->Text(X, Y, std::wstring(Str, Size), Font, Text->rclBounds);
