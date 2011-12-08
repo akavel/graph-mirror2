@@ -3360,7 +3360,7 @@ msgstr "Şu anda son sürümü kullanmaktasınız."
 msgid ""
 "Cannot connect to server www.padowan.dk.\n"
 "Either the server is down or you do not have a connection to the Internet."
-msgstr "www.padowan.dk sitesine bağlanamadı.\n"
+msgstr "www.padowan.dk sitesine bağlanamadı."
 
 #. Communication error when checking for newer version
 msgid "Socket error %s"
