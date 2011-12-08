@@ -119,6 +119,18 @@ void TTextValue::Set(double AValue)
   Text = _finite(Value) ? ToWString(AValue) : std::wstring();
 }
 //---------------------------------------------------------------------------
+bool TTextValue::IsDependent(const TData &Data, const std::wstring &SymbolName) const
+{
+  try
+  {
+    return Func32::TFunc(Text, L"", Data.CustomFunctions.SymbolList).IsDependent(SymbolName);
+  }
+  catch(Func32::EFuncError &E)
+  {
+    return false;
+  }
+}
+//---------------------------------------------------------------------------
 std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue)
 {
   if(TextValue.Value == INF)
@@ -318,6 +330,12 @@ Func32::TCoord<long double> TBaseFuncType::Eval(long double t) const
 long double TBaseFuncType::CalcArea(long double From, long double To) const
 {
   return GetFunc().CalcArea(From, To, 1E-3);
+}
+//---------------------------------------------------------------------------
+bool TBaseFuncType::IsDependent(const std::wstring &SymbolName) const
+{
+  return GetFunc().IsDependent(SymbolName) || From.IsDependent(GetData(), SymbolName) ||
+    To.IsDependent(GetData(), SymbolName) || Steps.IsDependent(GetData(), SymbolName);
 }
 //---------------------------------------------------------------------------
 //////////////
@@ -733,6 +751,12 @@ void TShading::ClearCache()
   Region.reset();
 }
 //---------------------------------------------------------------------------
+bool TShading::IsDependent(const std::wstring &SymbolName) const
+{
+  return sMin.IsDependent(GetData(), SymbolName) || sMax.IsDependent(GetData(), SymbolName) ||
+    sMin2.IsDependent(GetData(), SymbolName) || sMax2.IsDependent(GetData(), SymbolName);
+}
+//---------------------------------------------------------------------------
 //////////////////
 // TPointSeries //
 //////////////////
@@ -1017,6 +1041,19 @@ void TPointSeries::Update()
   }
 }
 //---------------------------------------------------------------------------
+bool TPointSeries::IsDependent(const std::wstring &SymbolName) const
+{
+  for(unsigned I = 0; I < PointList.size(); I++)
+  {
+    if(GetData().IsDependent(PointData[I].First, SymbolName) ||
+      GetData().IsDependent(PointData[I].Second, SymbolName) ||
+      PointData[I].xError.IsDependent(GetData(), SymbolName) ||
+      PointData[I].yError.IsDependent(GetData(), SymbolName))
+        return true;
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
 ////////////////
 // TTextLabel //
 ////////////////
@@ -1102,6 +1139,26 @@ void TTextLabel::Update()
 
   xPos.Update(GetData());
   yPos.Update(GetData());
+}
+//---------------------------------------------------------------------------
+bool TTextLabel::IsDependent(const std::wstring &SymbolName) const
+{
+  unsigned Pos = std::wstring::npos;
+  while((Pos = Text.rfind("%(", Pos-1)) != std::wstring::npos)
+    try
+		{
+      unsigned Pos2 = FindEndPar(Text, Pos);
+      if(Pos2 == std::string::npos)
+        break;
+      unsigned Length = Pos2 - Pos + 1;
+      if(Func32::TFunc(ToWString(Text.substr(Pos+2, Pos2-Pos-2)), L"",
+        GetData().CustomFunctions.SymbolList).IsDependent(SymbolName))
+        return true;
+    }
+    catch(Func32::EFuncError &Error)
+    {
+    }
+  return xPos.IsDependent(GetData(), SymbolName) || yPos.IsDependent(GetData(), SymbolName);
 }
 //---------------------------------------------------------------------------
 ///////////////
@@ -1243,6 +1300,11 @@ void TRelation::Update()
   Constraints.Update(GetData().CustomFunctions.SymbolList);
 }
 //---------------------------------------------------------------------------
+bool TRelation::IsDependent(const std::wstring &SymbolName) const
+{
+  return Func.IsDependent(SymbolName) || Constraints.IsDependent(SymbolName);
+}
+//---------------------------------------------------------------------------
 ///////////////
 // TAxesView //
 ///////////////
@@ -1298,6 +1360,11 @@ void TAxesView::ChangeVisible()
 const TAxes& TAxesView::GetAxes() const
 {
   return GetData().Axes;
+}
+//---------------------------------------------------------------------------
+bool TAxesView::IsDependent(const std::wstring &SymbolName) const
+{
+  return false;
 }
 //---------------------------------------------------------------------------
 } //namespace Graph

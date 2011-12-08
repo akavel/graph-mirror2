@@ -469,6 +469,13 @@ void TCustomFunctions::Clear()
   SymbolList = GlobalSymbolList;
 }
 //---------------------------------------------------------------------------
+void TCustomFunctions::Reset()
+{
+  SymbolList = InternalSymbolList;
+  for(unsigned I = 0; I < Functions.size(); I++)
+    Functions[I].Func.reset();
+}
+//---------------------------------------------------------------------------
 //////////////////
 // TDefaultData //
 //////////////////

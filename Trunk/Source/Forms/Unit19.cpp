@@ -121,6 +121,11 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
   ProgressForm1->Show();
   TCallOnRelease Dummy(&ProgressForm1->Close);
 
+  Data.CustomFunctions.Reset();
+  Data.GetTopElem()->Update();
+  std::vector<TGraphElemPtr> ElemList;
+  GetSymbolDependent(AnimationInfo.Constant, ElemList, Data.GetTopElem());
+
   TRect Rect(0, 0, ImageWidth, ImageHeight);
   std::vector<char> ImageData;
   ImageData.reserve(Rect.Width() * Rect.Height());
@@ -175,17 +180,21 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     for(std::set<TColor>::iterator Iter = GraphColors.begin(); Iter != GraphColors.end(); ++Iter)
       Colors.push_back(ColorToRGBQUAD(*Iter));
 
-    unsigned I = 0;
 		Python::TPyObjectPtr DataObject(Python::IsPythonInstalled() ? ToPyObject(Data) : NULL, false);
-    for(double Value = Min; I < StepCount; Value += Step, I++)
+    for(unsigned I = 0; I < StepCount; I++)
     {
+      double Value = Min + Step * I;
       Bitmap->Canvas->Brush->Style = bsSolid;
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
       Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
       Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
       ExecutePluginEvent(Python::peAnimate, DataObject.get(), AnimationInfo.Constant, Value);
-      Data.Update();
-      Data.ClearCache();
+      Data.CustomFunctions.Update(Data);
+      for(unsigned I = 0; I < ElemList.size(); I++)
+      {
+        ElemList[I]->Update();
+        ElemList[I]->ClearCache();
+      }
       Draw.DrawAll();
       Draw.Wait();
 
@@ -261,6 +270,14 @@ void __fastcall TForm19::ComboBox1Change(TObject *Sender)
   Edit1->Text = ToUString(AnimationConstant.Min);
   Edit2->Text = ToUString(AnimationConstant.Max);
   Edit3->Text = ToUString(AnimationConstant.Step);
+}
+//---------------------------------------------------------------------------
+void TForm19::GetSymbolDependent(const std::wstring &SymbolName, std::vector<TGraphElemPtr> &List, const TGraphElemPtr &Elem) const
+{
+  if(Elem->GetVisible() && Elem->IsDependent(SymbolName))
+    List.push_back(Elem);
+  for(unsigned I = 0; I < Elem->ChildCount(); I++)
+    GetSymbolDependent(SymbolName, List, Elem->GetChild(I));
 }
 //---------------------------------------------------------------------------
 

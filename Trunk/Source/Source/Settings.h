@@ -172,6 +172,7 @@ public:
   void ReadFromIni(const TConfigFileSection &IniFile);
   TConstIterator Begin() const {return Functions.begin();}
   TConstIterator End() const {return Functions.end();}
+  void Reset();
 };
 
 struct TAnimationConstant

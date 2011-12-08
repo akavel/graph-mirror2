@@ -16,18 +16,6 @@
 #include <fstream>
 #include <algorithm>
 //---------------------------------------------------------------------------
-unsigned FindEndPar(const std::wstring &Str, unsigned Pos)
-{
-  unsigned Count = 0;
-  for(unsigned I = Pos; I <= Str.size(); I++)
-    if(Str[I] == '(')
-      Count++;
-    else if(Str[I] == ')')
-      if(--Count == 0)
-        return I;
-  return std::wstring::npos;
-}
-//---------------------------------------------------------------------------
 void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 {
   std::wstring Str = ToWString(RichEdit->Text);

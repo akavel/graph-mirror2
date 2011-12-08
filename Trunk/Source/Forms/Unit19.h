@@ -51,6 +51,8 @@ private:	// User declarations
   TData Data;
   Graph::TAnimationInfo &AnimationInfo;
 
+  void GetSymbolDependent(const std::wstring &SymbolName, std::vector<TGraphElemPtr> &List, const TGraphElemPtr &Elem) const;
+
 public:		// User declarations
   __fastcall TForm19(TComponent* Owner, TData &AData, int AWidth, int AHeight);
 };

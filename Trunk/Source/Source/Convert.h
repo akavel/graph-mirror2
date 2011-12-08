@@ -59,4 +59,7 @@ std::wstring ToLower(const std::wstring &Str);
 
 std::pair<long double,long double> GetPolarCoord(const Func32::TDblPoint &P, Func32::TTrigonometry Trig);
 
+unsigned FindEndPar(const std::string &Str, unsigned Pos);
+unsigned FindEndPar(const std::wstring &Str, unsigned Pos);
+
 #endif

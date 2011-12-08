@@ -340,5 +340,24 @@ bool TFuncData::CheckRecursive(std::vector<const TFuncData*> &FuncStack) const
   return false;
 }
 //---------------------------------------------------------------------------
+/** Check if a symbol name is referenced directly or indirectly.
+  * \param SymbolName: Name of symbol to check for.
+  */
+bool TFuncData::IsDependent(const std::wstring &SymbolName) const
+{
+	TConstIterator End = Data.end();
+	for(TConstIterator Iter = Data.begin(); Iter != End; ++Iter)
+    if(Iter->Ident == CodeCustom)
+    {
+      if(Iter->Text == SymbolName)
+        return true;
+      const boost::shared_ptr<TBaseCustomFunc> &Func = *boost::unsafe_any_cast<boost::shared_ptr<TBaseCustomFunc> >(&Iter->Value);
+      if(Func)
+        if(Func->IsDependent(SymbolName))
+          return true;
+    }
+  return false;
+}
+//---------------------------------------------------------------------------
 } //namespace Func32
 
