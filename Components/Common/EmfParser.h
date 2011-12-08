@@ -34,17 +34,22 @@ struct TBrushInfo
   bool operator==(const TBrushInfo &O) const {return Style == O.Style && Color == O.Color && Hatch == O.Hatch;}  
 };
 
-struct TFontInfo
+struct TFontMember
 {
   std::string Name;
   unsigned Size;
-  unsigned Color;
-  unsigned BkColor;
-  bool TransparentBk;
   bool Italic;
   bool Underline;
   bool StrikeOut;
   unsigned Weight;
+};
+
+struct TFontInfo
+{
+  TFontMember Font;
+  unsigned Color;
+  unsigned BkColor;
+  bool TransparentBk;
 };
 
 enum TPolyFillMode {pfmNonZero, pfmEvenOdd};
@@ -61,7 +66,7 @@ public:
   virtual void Rectangle(const RECTL &Rect)=0;
   virtual void Ellipse(const RECTL &Rect)=0;
   virtual void Arc(const RECTL &Box, const POINTL &Start, const POINTL &End)=0;
-  virtual void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font)=0;
+  virtual void Text(int X, int Y, const std::wstring &Str, const TFontInfo &Font, const RECTL &Rect)=0;
   virtual void SetPen(const TPenInfo &APen)=0;
   virtual void SetBrush(const TBrushInfo &ABrush)=0;
   virtual void ExcludeClipRect(const RECTL &Rect)=0;
@@ -78,7 +83,7 @@ class TEmfParser
   TFontInfo Font;
   std::map<unsigned, TPenInfo> PenList;
   std::map<unsigned, TBrushInfo> BrushList;
-  std::map<unsigned, TFontInfo> FontList;
+  std::map<unsigned, TFontMember> FontList;
   SIZEL WindowSize, ViewportSize;
   POINTL WindowOrg;
   double xScale, yScale;
