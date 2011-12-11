@@ -5,7 +5,7 @@
  * Allows forum content to be syndicated outside of the site in various formats
  * (ie: RSS, Atom, XML, HTML).
  *
- * @copyright (C) 2008-2009 PunBB, partially based on code (C) 2008-2009 FluxBB.org
+ * @copyright (C) 2008-2011 PunBB, partially based on code (C) 2008-2009 FluxBB.org
  * @license http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  * @package PunBB
  */
@@ -51,6 +51,10 @@
 
     show:   Any integer value between 1 and 50. The default is 15.
 
+    sort:	posted - sort topics by posted time (default)
+			last_post - sort topics by last post
+
+
 
 
 /***********************************************************************/
@@ -78,6 +82,7 @@ if ($forum_user['g_read_board'] == '0')
 }
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'feed';
+$sort_by = isset($_GET['sort']) ? $_GET['sort'] : 'posted';
 
 //
 // Sends the proper headers for Basic HTTP Authentication
@@ -108,10 +113,11 @@ function output_rss($feed)
 	header('Pragma: public');
 
 	echo '<?xml version="1.0" encoding="utf-8"?>'."\n";
-	echo '<rss version="2.0">'."\n";
+	echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">'."\n";
 	echo "\t".'<channel>'."\n";
 	echo "\t\t".'<title><![CDATA['.escape_cdata($feed['title']).']]></title>'."\n";
 	echo "\t\t".'<link>'.$feed['link'].'</link>'."\n";
+	echo "\t\t".'<atom:link href="'.forum_htmlencode(get_current_url()).'" rel="self" type="application/rss+xml" />'."\n";
 	echo "\t\t".'<description><![CDATA['.escape_cdata($feed['description']).']]></description>'."\n";
 	echo "\t\t".'<lastBuildDate>'.gmdate('r', count($feed['items']) ? $feed['items'][0]['pubdate'] : time()).'</lastBuildDate>'."\n";
 
@@ -128,9 +134,8 @@ function output_rss($feed)
 		echo "\t\t\t".'<title><![CDATA['.escape_cdata($item['title']).']]></title>'."\n";
 		echo "\t\t\t".'<link>'.$item['link'].'</link>'."\n";
 		echo "\t\t\t".'<description><![CDATA['.escape_cdata($item['description']).']]></description>'."\n";
-//     echo "\t\t\t".'<author><![CDATA['.(isset($item['author']['email']) ? escape_cdata($item['author']['email']) : 'null@example.com').' ('.escape_cdata($item['author']['name']).')]]></author>'."\n";
-      echo "\t\t\t".'<author><![CDATA['.(isset($item['author']['email']) ? escape_cdata($item['author']['email']).' ('.escape_cdata($item['author']['name']).')' : escape_cdata($item['author']['name'])).']]></author>'."\n";
-      echo "\t\t\t".'<pubDate>'.gmdate('r', $item['pubdate']).'</pubDate>'."\n";
+		echo "\t\t\t".'<author><![CDATA['.(isset($item['author']['email']) ? escape_cdata($item['author']['email']) : 'null@example.com').' ('.escape_cdata($item['author']['name']).')]]></author>'."\n";
+		echo "\t\t\t".'<pubDate>'.gmdate('r', $item['pubdate']).'</pubDate>'."\n";
 		echo "\t\t\t".'<guid>'.$item['link'].'</guid>'."\n";
 
 		($hook = get_hook('ex_add_new_rss_item_info')) ? eval($hook) : null;
@@ -306,13 +311,13 @@ if ($action == 'feed')
 
 		($hook = get_hook('ex_qr_get_topic_data')) ? eval($hook) : null;
 		$result = $forum_db->query_build($query) or error(__FILE__, __LINE__);
-		if (!$forum_db->num_rows($result))
+
+		$cur_topic = $forum_db->fetch_assoc($result);
+		if (!$cur_topic)
 		{
 			http_authenticate_user();
 			exit($lang_common['Bad request']);
 		}
-
-		$cur_topic = $forum_db->fetch_assoc($result);
 
 		if (!defined('FORUM_PARSER_LOADED'))
 			require FORUM_ROOT.'include/parser.php';
@@ -416,8 +421,9 @@ if ($action == 'feed')
 				);
 
 				$result = $forum_db->query_build($query) or error(__FILE__, __LINE__);
-				if ($forum_db->num_rows($result))
-					$forum_name = $lang_common['Title separator'].$forum_db->result($result);
+				$forum_name_in_db = $forum_db->result($result);
+				if (!is_null($forum_name_in_db) && $forum_name_in_db !== false)
+					$forum_name = $lang_common['Title separator'].$forum_name_in_db;
 			}
 		}
 
@@ -442,17 +448,13 @@ if ($action == 'feed')
 
 		// Fetch $show topics
 		$query = array(
-//        'SELECT' => 't.id, t.poster, t.posted, t.subject, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email',
-         'SELECT' => 't.id, p.poster, t.subject, t.last_post, t.last_poster, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email, p.posted, p.id',
-//        'FROM'      => 'topics AS t',
-         'FROM'      => 'posts AS p',
-         'JOINS'     => array(
+			'SELECT'	=> 't.id, t.poster, t.posted, t.subject, p.message, p.hide_smilies, u.email_setting, u.email, p.poster_id, p.poster_email',
+			'FROM'		=> 'topics AS t',
+			'JOINS'		=> array(
 				array(
-//              'INNER JOIN'   => 'posts AS p',
-//              'ON'        => 'p.id = t.first_post_id'
-               'INNER JOIN'   => 'topics AS t',
-               'ON'        => 't.id=p.topic_id'
-            ),
+					'INNER JOIN'	=> 'posts AS p',
+					'ON'			=> 'p.id = t.first_post_id'
+				),
 				array(
 					'INNER JOIN'	=> 'users AS u',
 					'ON'			=> 'u.id = p.poster_id'
@@ -463,9 +465,8 @@ if ($action == 'feed')
 				)
 			),
 			'WHERE'		=> '(fp.read_forum IS NULL OR fp.read_forum = 1) AND t.moved_to IS NULL',
-//        'ORDER BY'  => 't.posted DESC',
-         'ORDER BY'  => 'p.posted DESC',
-         'LIMIT'     => $show
+			'ORDER BY'	=> (($sort_by == 'last_post') ? 't.last_post' : 't.posted').' DESC',
+			'LIMIT'		=> $show
 		);
 
 		if (isset($forum_sql))
@@ -486,12 +487,11 @@ if ($action == 'feed')
 			$item = array(
 				'id'			=>	$cur_topic['id'],
 				'title'			=>	$cur_topic['subject'],
-//           'link'         => forum_link($forum_url['topic_new_posts'], array($cur_topic['id'], sef_friendly($cur_topic['subject']))),
-            'link'         => forum_link('viewtopic.php?pid=$1', array($cur_topic['id'])),
-            'description'  => $cur_topic['message'],
+				'link'			=>	forum_link($forum_url['topic_new_posts'], array($cur_topic['id'], sef_friendly($cur_topic['subject']))),
+				'description'	=>	$cur_topic['message'],
 				'author'		=>	array(
-              'name'         => $cur_topic['poster']
-            ),
+					'name'			=> $cur_topic['poster']
+				),
 				'pubdate'		=>	$cur_topic['posted']
 			);
 
