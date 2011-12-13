@@ -156,11 +156,6 @@ void TIRichEdit::Render(TCanvas *Canvas, const TPoint &Pos, int Width)
   Format.chrg.cpMax = -1;
 
   SendMessage(Handle, EM_FORMATRANGE, 1, reinterpret_cast<long>(&Format));
-
-  TRect Rect(Pos, TPoint(Pos.x + Width, MaxInt));
-  if(!SendMessage(Handle, EM_DISPLAYBAND , 0, reinterpret_cast<long>(&Rect)))
-    RaiseLastOSError();
-
   //Free cached memory
   SendMessage(Handle, EM_FORMATRANGE, 1, NULL);
 }                             
