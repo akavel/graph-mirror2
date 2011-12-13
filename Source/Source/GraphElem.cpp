@@ -1106,7 +1106,6 @@ void TTextLabel::ReadFromIni(const TConfigFileSection &Section)
   Text = DecodeEscapeSequence(ToString(Section.Read(L"Text", L"ERROR")));
   BackgroundColor = Section.Read(L"BackgroundColor", clNone);
 
-  Update();
   StatusText = RtfToPlainText(Text);
 
   TGraphElem::ReadFromIni(Section);
