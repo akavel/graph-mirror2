@@ -30,30 +30,36 @@ TTextValue::TTextValue(double AValue) : Value(AValue)
     Text = ToWString(AValue);
 }
 //---------------------------------------------------------------------------
-long double FastCalc(const std::wstring &Text, const TData &Data)
+long double FastCalc(const std::wstring &Text, const TData &Data, bool IgnoreErrors=true)
 {
+  if(Text.empty())
+  {
+    if(!IgnoreErrors)
+      throw Func32::EFuncError(Func32::ecEmptyString);
+    return NAN;
+  }
+
   //Optimize for numbers
-  try
+  //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
+  if(Text.find(L"e") == std::wstring::npos)
   {
-    if(Text.empty())
-      return NAN;
-
-    //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
-    if(Text.find(L"e") == std::wstring::npos)
-    {
-      return boost::lexical_cast<long double>(Text);
-    }
+    //use wcstod as boost::lexical_cast is slow when it fails
+    wchar_t *endptr;
+    double Value = wcstod(Text.c_str(), &endptr);
+    if(endptr == Text.c_str() + Text.size())
+      return Value;
+    if(Text == L"INF")
+      //wcstod() handles "+INF" and "-INF"
+      return INF;
   }
-  catch(boost::bad_lexical_cast &E)
-  {
-  }
-
   try
   {
     return Data.Calc(Text);
   }
   catch(Func32::EFuncError &E)
   {
+    if(!IgnoreErrors)
+      throw;
     return NAN;
   }
 }
@@ -62,55 +68,13 @@ void TTextValue::Update(const TData &Data)
 {
   //Nothing to update. Values is already +/-INF
   if(!Text.empty())
-    Value = FastCalc(Text, Data);
+    Value = FastCalc(Text, Data, true);
 }
 //---------------------------------------------------------------------------
 void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErrors)
 {
+  Value = FastCalc(AText, Data, IgnoreErrors);
   Text = AText;
-  if(Text == L"INF" || Text == L"+INF")
-  {
-    Text = L"";
-    Value = INF;
-  }
-  else if(Text == L"-INF")
-  {
-    Text = L"";
-    Value = -INF;
-  }
-  else if(Text.empty())
-  {
-    if(!IgnoreErrors)
-      throw Func32::EFuncError(Func32::ecEmptyString);
-    Value = NAN;
-  }
-  else
-  {
-    //Optimize for numbers
-    try
-    {
-      //Make sure there is no 'e' (Euler's constant) as it will be interpretted as 'E'
-      if(Text.find(L"e") == std::wstring::npos)
-      {
-        Value = boost::lexical_cast<double>(Text);
-        return;
-      }
-    }
-    catch(boost::bad_lexical_cast &E)
-    {
-    }
-    try
-    {
-      Value = Data.Calc(Text);
-    }
-    catch(Func32::EFuncError &E)
-    {
-      if(!IgnoreErrors)
-        throw;
-      Text = L"";
-      Value = NAN;
-    }
-  }
 }
 //---------------------------------------------------------------------------
 void TTextValue::Set(double AValue)
@@ -271,6 +235,7 @@ void TBaseFuncType::WriteToIni(TConfigFileSection &Section) const
 //---------------------------------------------------------------------------
 void TBaseFuncType::ReadFromIni(const TConfigFileSection &Section)
 {
+  const TData &Data = GetData();
   GetFunc().SetTrigonometry(GetData().Axes.Trigonometry);
   Style = Section.Read(L"Style", psSolid);
   Color = Section.Read(L"Color", clRed);
@@ -278,9 +243,9 @@ void TBaseFuncType::ReadFromIni(const TConfigFileSection &Section)
   if(Section.KeyExists(L">From"))
     From.Set(Section.Read(L">From", L"-INF"), GetData(), true); //Caused by bug in MS Outlook Express
   else
-    From.Set(Section.Read(L"From", L"-INF"), GetData(), true);
-  To.Set(Section.Read(L"To", L"+INF"), GetData(), true);
-  Steps.Set(Section.Read(L"Steps", L""), GetData(), true);
+    From.Set(Section.Read(L"From", L"-INF"), Data, true);
+  To.Set(Section.Read(L"To", L"+INF"), Data, true);
+  Steps.Set(Section.Read(L"Steps", L""), Data, true);
   StartPointStyle = Section.Read(L"StartPoint", 0);
   EndPointStyle = Section.Read(L"EndPoint", 0);
   DrawType = Section.Read(L"DrawType", dtAuto);
