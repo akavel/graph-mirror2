@@ -210,12 +210,17 @@ void TForm22::WritePrompt(const String &Str)
 //---------------------------------------------------------------------------
 void __fastcall TForm22::Clear1Click(TObject *Sender)
 {
+  Clear();
+  WritePrompt();
+}
+//---------------------------------------------------------------------------
+void TForm22::Clear()
+{
   FAllowChange = true;
   IRichEdit1->Clear();
   FAllowChange = false;
   LastIndex = 0;
   PromptIndex = 0;
-  WritePrompt();
 }
 //---------------------------------------------------------------------------
 void TForm22::KeyboardInterrupt()

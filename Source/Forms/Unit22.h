@@ -49,6 +49,7 @@ public:		// User declarations
   __fastcall TForm22(TComponent* Owner);
   void WriteText(const String &Str, TColor Color = clBlack);
   void Translate();
+  void Clear();
 };
 //---------------------------------------------------------------------------
 extern TForm22 *Form22;

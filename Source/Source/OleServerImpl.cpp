@@ -19,6 +19,7 @@
 #include "Debug.h"
 #include "Unit1.h"
 #include "ConfigRegistry.h"
+#include "PyGraph.h"
 
 TOleServerImpl *OleServerImpl;
 
