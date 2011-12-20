@@ -28,6 +28,7 @@ Graph.OnCustomFunctions.append(EventLogger("OnCustomFunctions"))
 Graph.OnNewElem.append(EventLogger("OnNewElem"))
 Graph.OnChanged.append(EventLogger("OnChanged"))
 Graph.OnMoved.append(EventLogger("OnMoved"))
+File.write("PluginTester loaded!\n")
 
 def TestUndo():
     Graph.LoadDefault

@@ -1,3 +1,7 @@
+# Example plugin for Graph for creating circles.
+# The plugin will create an action and add it to the main menu. When executed, the action will show a dialog where you can enter radius and center of the circle.
+# When the dialog is closed it will create the circle as a parametric function and add it to the function list.
+# In addition the plugin hooks into Edit command and shows the same dialog when a circle previously  created by the plugin is edited.
 import Graph
 import vcl
 import Gui

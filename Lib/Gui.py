@@ -1,5 +1,9 @@
+# Module with utility functions and classes for helping with GUI dialogs.
 import vcl
 
+"""Helper class for creating dialogs. When you derive from this class, your dialog will get an OK button and a Cancel button if ShowCancel is True,
+   both at the bottom right of the dialog. A panel will fill the rest of the dialog where you can fill in your content.
+"""
 class SimpleDialog:
     def __init__(self, ShowCancel=True, **keywords):
         self.form = vcl.TForm(None, **keywords)
@@ -23,6 +27,7 @@ class SimpleDialog:
             self.button2.TabOrder = 101
         pass
 
+    # Method to be overwitten in sub class. It is called when the OK button is pressed.
     def OnOk(self, sender):
         self.Close()
 

@@ -1,5 +1,10 @@
-# This plugin adds a menu item to the Plugins menu and context menu.
-# This will show a dialog that can calculate the srurface area of revolution of the selected function around the x- and y-axis
+# Example plugin for Graph for calculating surface area of revolution of the selected function around the x- and y-axis.
+# The plugin creates an action and adds it to the main menu and the context menu of the function list.
+# The plugin hooks into the function list. Every time a new element is selected, the action is updated to be enabled if the element is a function.
+# At the same time the visibility of the context menu item is updated, so it only is visible if enabled.
+# When the action is executed a dialog form is shown with two edit boxes. When a text is entered in the edit boxes, the area of revolution between the two values are caculated.
+# A radio group is used to specify if the revolution is around the x- or y-axis.
+# The result is shown in a third edit box.
 import Graph
 import vcl
 import Gui
@@ -37,14 +42,14 @@ class RevolutionDialog(Gui.SimpleDialog):
             self.Edit3.Text = "" # What to do on error?
 
 def Execute(Sender):
-    import math
     Form = RevolutionDialog()
     Form.ShowModal()
 
 def OnSelect(Item):
     Action.Enabled = isinstance(Item, Graph.TBaseFuncType)
+    ContextMenuItem.Visible = Action.Enabled
 
 Action = Graph.CreateAction(Caption="Revolution", OnExecute=Execute, Hint="Area for surface of revolution.")
 Graph.AddActionToMainMenu(Action)
-Graph.AddActionToContextMenu(Action)
+ContextMenuItem = Graph.AddActionToContextMenu(Action)
 Graph.OnSelect.append(OnSelect)
