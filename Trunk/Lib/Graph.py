@@ -1,3 +1,4 @@
+# Interface for built-in functionlity in Graph
 import os.path
 import os
 import sys
@@ -81,16 +82,19 @@ TTextLabel = Data.TTextLabel
 TShading = Data.TShading
 TRelation = Data.TRelation
 TPointSeries = Data.TPointSeries
-Form1 = GraphImpl.Form1
 Form22 = GraphImpl.Form22
 EFuncError = GraphImpl.EFuncError
 EGraphError = GraphImpl.EGraphError
 
+# Current version of Graph
 VersionInfo = collections.namedtuple("VersionInfo", ["Major","Minor","Release","ReleaseLevel","Build"])._make(GraphImpl.version_info)
 
+# Function called when Graph is started. It will load the plugins in the Plugins directory. BaseDir is the directory where Graph is installed.
 def InitPlugins(BaseDir):
     global PluginsDir
+    global Form1
     PluginsDir = BaseDir + '\\Plugins'
+    Form1 = GraphImpl.Form1 # Form1 does not exist when Graph is started with /regserver
     sys.path.append(PluginsDir)
 
     Modules = []
@@ -104,6 +108,18 @@ def InitPlugins(BaseDir):
             except Exception:
                 traceback.print_exc()
 
+# Put the ClearConsole function into the module used in the console.
+sys.modules["__main__"].clear = GraphImpl.ClearConsole
+
+"""Create a new action.
+   Caption is the caption used when the action is shown in a menu.
+   OnExecute is the function called when the action is executed, e.g. the menu item is selected.
+   Hint is an optional hint for the action which is shown in the menu.
+   ShortCut is an optional shortcut as a string, e.g. "Ctrl+A".
+   IconFile is an optional file name of an image file that will be used as icon.
+   OnUpdate is an optinal function called when idle and may be used to update the action.
+   AddToToolBar, which is default True, specifies if the action can be added to the tool bar. The user will have to add it himself. This only makes it available.
+"""
 def CreateAction(Caption, OnExecute, Hint="", ShortCut="", IconFile=None, OnUpdate=None, AddToToolBar=True):
     Action = vcl.TAction(vcl.Application, Name=OnExecute.__module__+"_"+OnExecute.__name__, Caption=Caption, OnExecute=OnExecute, Hint=Hint, ShortCut=vcl.TextToShortCut(ShortCut), Category="Plugins", OnUpdate=OnUpdate)
     if AddToToolBar:
@@ -121,12 +137,14 @@ def AddActionToMainMenu(Action):
         Item = PluginsItem.Items.Add();
     Item.Action = Action;
     PluginsItem.Visible = True;
+    return Item
 
 def AddActionToContextMenu(Action):
     Item = vcl.TMenuItem(Form1)
     Item._owned = False
     Item.Action = Action
     Form1.PopupMenu1.Items.Insert(Form1.N10.MenuIndex, Item)
+    return Item
 
 def LoadImage(FileName, BkColor=0xFFFFFF):
     Bitmap = vcl.TBitmap()
