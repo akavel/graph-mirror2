@@ -465,7 +465,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">4</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">513</VersionInfo>
+						<VersionInfo Name="Build">517</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -477,7 +477,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.4.0.513</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.4.0.517</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>
@@ -499,6 +499,7 @@
 						<Parameters Name="RemoteDebug">False</Parameters>
 						<Parameters Name="Debug Symbols Search Path">D:\Projects\Graph</Parameters>
 						<Parameters Name="LoadUnspecifiedSymbols">True</Parameters>
+						<Parameters Name="RunParams">/register</Parameters>
 					</Parameters>
 					<ProjectProperties>
 						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
@@ -512,6 +513,7 @@
 				<Platforms>
 					<Platform value="Win32">True</Platform>
 				</Platforms>
+				<ModelSupport>False</ModelSupport>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>
 		</ProjectExtensions>

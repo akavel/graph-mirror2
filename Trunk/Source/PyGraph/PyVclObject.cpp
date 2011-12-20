@@ -9,8 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#undef _DEBUG
-#include "Python.h"
+#include "Python.hpp"
 #include <structmember.h>
 #define private public
 #include <Rtti.hpp>
@@ -110,7 +109,7 @@ public:
 	{
     Py_DECREF(static_cast<PyObject*>(Impl->FUserData));
 		delete Impl->FInvokeInfo;
-		delete Impl;
+   	delete Impl;
 	}
 };
 //---------------------------------------------------------------------------

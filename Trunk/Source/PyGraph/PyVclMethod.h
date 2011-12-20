@@ -10,7 +10,6 @@
 #ifndef PyVclMethodH
 #define PyVclMethodH
 //---------------------------------------------------------------------------
-#include "Python.h"
 namespace Python
 {
 	extern PyTypeObject VclMethodType;

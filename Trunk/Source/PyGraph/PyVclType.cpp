@@ -9,8 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#undef _DEBUG
-#include "Python.h"
+#include "Python.hpp"
 #include <Rtti.hpp>
 #include "PyVclMethod.h"
 #include "PyVcl.h"

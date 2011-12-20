@@ -11,8 +11,7 @@
 #pragma hdrstop
 #define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
 #include "PythonBind.h"
-#undef _DEBUG
-#include <python.h>
+#include "python.hpp"
 #include "ConfigRegistry.h"
 #include <Rtti.hpp>
 #include "PyVclObject.h"

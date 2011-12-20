@@ -9,8 +9,7 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#undef _DEBUG
-#include <Python.h>
+#include "Python.hpp"
 #include "PyVclConvert.h"
 #define private public
 #include <Rtti.hpp>
@@ -289,11 +288,11 @@ PyObject* PyVclHandleException()
 	}
 	catch(EListError &E)
 	{
-		PyErr_SetString(PyExc_IndexError, AnsiString(E.Message).c_str());
+		SetErrorString(PyExc_IndexError, E.Message);
 	}
 	catch(Exception &E)
 	{
-		PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
+		SetErrorString(PyVclException, E.Message);
 	}
 	catch(std::exception &E)
 	{

@@ -20,8 +20,7 @@
 #include "Images.h"
 #include <cfloat>
 #include <boost/variant/get.hpp>
-#undef _DEBUG
-#include <python.h>
+#include "python.hpp"
 #include "PyVcl.h"
 #include "ConfigRegistry.h"
 #include "ExtColorBox.h"
@@ -106,14 +105,20 @@ static PyObject* PluginWriteToConsole(PyObject *Self, PyObject *Args)
   }
   else if(Form22)
     Form22->WriteText(Str, Color);
-
+#ifdef _DEBUG
   static std::ofstream Log((ExtractFileDir(Application->ExeName) + "\\PyGraph.log").c_str());
   if(Log)
-    Log << Str;
-
+    Log << AnsiString(Str);
+#endif
   Py_END_ALLOW_THREADS
   //This creates problems when used from OLE
 //  Application->ProcessMessages();
+  Py_RETURN_NONE;
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginClearConsole(PyObject *Self, PyObject *Args)
+{
+  Form22->Clear();
   Py_RETURN_NONE;
 }
 //---------------------------------------------------------------------------
@@ -440,15 +445,16 @@ static PyMethodDef GraphMethods[] = {
 	{"DelCustomFunction",         PluginDelCustomFunction, METH_O, ""},
 	{"GetCustomFunctionNames",    PluginGetCustomFunctionNames, METH_NOARGS, ""},
 	{"WriteToConsole",            PluginWriteToConsole, METH_VARARGS, ""},
+	{"ClearConsole",              PluginClearConsole, METH_NOARGS, "Clear the Python console."},
 	{"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
-	{"Eval",                      PluginEval, METH_VARARGS, ""},
-	{"EvalComplex",               PluginEvalComplex, METH_VARARGS, ""},
-	{"Update",                    PluginUpdate, METH_NOARGS, ""},
+	{"Eval",                      PluginEval, METH_VARARGS, "Evaluates an expression and returns the result as a real number."},
+	{"EvalComplex",               PluginEvalComplex, METH_VARARGS, "Evaluates an expression and returns the result as a complex number."},
+	{"Update",                    PluginUpdate, METH_NOARGS, "Updated the graphing area."},
 	{"SetConstant",               PluginSetConstant, METH_VARARGS, ""},
 	{"GetConstant",               PluginGetConstant, METH_O, ""},
 	{"DelConstant",               PluginDelConstant, METH_O, ""},
 	{"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
-	{"SaveAsImage",               (PyCFunction)PluginSaveAsImage, METH_VARARGS | METH_KEYWORDS, ""},
+	{"SaveAsImage",               (PyCFunction)PluginSaveAsImage, METH_VARARGS | METH_KEYWORDS, "Saves the graphing area to an image file."},
 	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------

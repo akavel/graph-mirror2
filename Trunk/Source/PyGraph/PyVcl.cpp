@@ -12,8 +12,7 @@
 #include <Rtti.hpp>
 #include "PyVcl.h"
 #include <ActnMan.hpp>
-#undef _DEBUG
-#include <python.h>
+#include "python.hpp"
 #include <structmember.h>
 #include "PyVclConvert.h"
 #include "ExtColorBox.h"
@@ -85,7 +84,10 @@ static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 		else
 			Result = VclFunction_Create(Name);
 		if(Result == NULL)
-			throw EPyVclError("VCL has no global attribute '" + Name + "'");
+    {
+  		SetErrorString(PyExc_AttributeError, "VCL has no global attribute '" + Name + "'");
+      return NULL;
+    }
 
 		PyObject_GenericSetAttr(self, attr_name, Result);
 		return Result;
