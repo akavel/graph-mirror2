@@ -499,7 +499,6 @@
 						<Parameters Name="RemoteDebug">False</Parameters>
 						<Parameters Name="Debug Symbols Search Path">D:\Projects\Graph</Parameters>
 						<Parameters Name="LoadUnspecifiedSymbols">True</Parameters>
-						<Parameters Name="RunParams">/register</Parameters>
 					</Parameters>
 					<ProjectProperties>
 						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>

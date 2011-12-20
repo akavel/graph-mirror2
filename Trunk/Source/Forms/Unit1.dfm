@@ -3864,7 +3864,7 @@ object Form1: TForm1
     end
     object AreaAction: TAction
       Category = 'Calc'
-      Caption = 'Integrate'
+      Caption = 'Area'
       Hint = 'Calculate the definite integral over a given interval.'
       ImageIndex = 32
       OnExecute = AreaActionExecute

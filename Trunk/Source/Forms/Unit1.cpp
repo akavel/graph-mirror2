@@ -354,6 +354,7 @@ void TForm1::Translate()
 //---------------------------------------------------------------------------
 __fastcall TForm1::~TForm1()
 {
+	Python::UnloadPlugin();
   //WARNING: DefaultActionBars is not destroyed by the VCL
   //Delete it to prevent Code Guard from reporting a lot of memory leaks
 //  delete ActionManager->DefaultActionBars;
@@ -957,7 +958,6 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
       AbortPrinting = true;
   }
 	Python::ExecutePluginEvent(Python::peClose);
-	Python::UnloadPlugin();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormConstrainedResize(TObject *Sender,

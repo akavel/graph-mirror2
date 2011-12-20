@@ -238,8 +238,8 @@ void TATLModule<T>::DoFileAndObjectRegistration()
       RegisterClassObjects(CLSCTX_LOCAL_SERVER, REGCLS_MULTIPLEUSE);
 #endif
   }
-  else
-    exit(EXIT_SUCCESS);
+//  else
+//    exit(EXIT_SUCCESS); //Exit disabled by IJO
 }
 
 #endif  // USING_VCL

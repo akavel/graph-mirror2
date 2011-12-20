@@ -55,7 +55,6 @@ USEFORM("Forms\Unit20.cpp", Form20);
 //---------------------------------------------------------------------------
 TComModule _ProjectModule(0 /*InitATLServer*/);
 TComModule &_Module = _ProjectModule;
-
 // The ATL Object map holds an array of _ATL_OBJMAP_ENTRY structures that
 // described the objects of your OLE server. The MAP is handed to your
 // project's CComModule-derived _Module object via the Init method.
@@ -80,12 +79,15 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
       LoadLanguage(Language.c_str());
 
     //Only show main form if we are not running as OLE server
-    Application->ShowMainForm = !FindCmdLineSwitch(L"EMBEDDING");
+    Application->ShowMainForm = !FindCmdLineSwitch(L"EMBEDDING") && !FindCmdLineSwitch(L"REGSERVER");
+    //Exit has been disabled in atlmod.h:242 and replaced by this to avoid crash at exit
+ 	  if(FindCmdLineSwitch("REGSERVER"))
+      Application->Terminate();
     Application->Initialize();
     Application->MainFormOnTaskBar = true;
     Application->Title = "Graph";
     Application->CreateForm(__classid(TForm1), &Form1);
-     Application->Run();
+    Application->Run();
   }
   catch (Exception &E)
   {
