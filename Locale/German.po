@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2011-10-09 18:00+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:17+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -205,7 +205,7 @@ msgstr "Zoomen"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -554,11 +554,11 @@ msgstr "Länge eines Kurvenstücks"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Die Länge eines Kurvenstücks zwischen zwei Punkten berechnen."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "Integrieren"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Fläche"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Berechnung des bestimmten Integrals über einen Definitionsbereich."
 
@@ -981,13 +981,13 @@ msgstr "Breite:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Wählen Sie den Zeichen-Stil für die Ungleichung. Wird für Gleichungen nicht benötigt."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Breite des Graphs einer Gleichung oder der Grenzlinie einer Ungleichung, in Pixel."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Wählen Sie die Farbe für die Relation."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Breite des Graphs einer Gleichung oder der Grenzlinie einer Ungleichung, in Pixel."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3760,101 +3760,146 @@ msgstr "Geben Sie die Anzahl der zu druckenden Kopien ein."
 msgid "Enter percent of original size."
 msgstr "Geben die den Prozentssatz zur Originalgröße ein."
 
-#, fuzzy
-#~ msgid "Arial"
-#~ msgstr "Fläche"
+#~ msgid "Integrate"
+#~ msgstr "Integrieren"
+
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Fläche oder Kurvenlänge des gegebenen Intervalls, bestimmt mit der Simpson'schen Regel (Keplersche Fassregel)"
+
 #~ msgid "Extremum"
 #~ msgstr "Extremwert"
+
 #~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Dies ist die zweite Ableitung der Funktion für den eingegebenen Wert."
+
 #~ msgid "Zoom in."
 #~ msgstr "Vergrößern"
+
 #~ msgid "Zoom out."
 #~ msgstr "Verkleinern"
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Auf Standardkoordinaten zoomen."
+
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "Den Bereich unter dem Kurvenstück der gewählten Funktion berechnen."
+
 #~ msgid "Go to home page"
 #~ msgstr "Die Graph-Homepage besuchen"
+
 #~ msgid "About Graph..."
 #~ msgstr "Über Graph..."
+
 #~ msgid "All points"
 #~ msgstr "Alle Punkte"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Zoomen, so dass alle Punkte sichtbar sind."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Nur die X-Achse vergrößern."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Nur die X-Achse verkleinern."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Nur die Y-Achse vergrößern."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Nur die Y-Achse verkleinern."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Benutzerdefinierte Funktionen..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Bereichsende markieren"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Markieren Sie den Anfang der Schraffur mit einer Linie."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Bereichsanfang markieren"
+
 #~ msgid "Image information"
 #~ msgstr "Bildinformationen"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Öffne die Datei %s."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Textdateien [*.txt; *.csv]|*.txt;*.csv|Alle Dateien [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Fläche berechnen"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Der Server hat mit der Meldung '%s' geantwortet."
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokollantwortfehler %s"
+
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Vorschläge für zukünftige Versionen, Fehlermeldungen und Kommentare senden Sie bitte an deutsch@padowan.dk."
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Hiermit plazieren Sie das Bild in der Seitenmitte."
+
 #~ msgid "Insert shade..."
 #~ msgstr "Schraffur einfügen..."
+
 #~ msgid "Shade"
 #~ msgstr "Schraffur"
+
 #~ msgid "Black"
 #~ msgstr "Schwarz"
+
 #~ msgid "Maroon"
 #~ msgstr "Marone"
+
 #~ msgid "Green"
 #~ msgstr "Hellgrün"
+
 #~ msgid "Olive"
 #~ msgstr "Chamois"
+
 #~ msgid "Navy"
 #~ msgstr "Marine"
+
 #~ msgid "Purple"
 #~ msgstr "Lila"
+
 #~ msgid "Gray"
 #~ msgstr "Grau"
+
 #~ msgid "Silver"
 #~ msgstr "Silber"
+
 #~ msgid "Red"
 #~ msgstr "Rot"
+
 #~ msgid "Lime"
 #~ msgstr "Limette"
+
 #~ msgid "Yellow"
 #~ msgstr "Gelb"
+
 #~ msgid "Blue"
 #~ msgstr "Blau"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Pink"
+
 #~ msgid "Aqua"
 #~ msgstr "Zyan"
+
 #~ msgid "White"
 #~ msgstr "Weiß"
+
 #~ msgid "Money Green"
 #~ msgstr "Dollargrün"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Azur"
+
 #~ msgid "Med Gray"
 #~ msgstr "Hellgrau"
-

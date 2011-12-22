@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-10-19 22:08+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:18+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -209,7 +209,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -558,11 +558,11 @@ msgstr "Zuzenkiaren luzeera"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Kalkulatu kurbaren bi puntuen arteko luzeera."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "Integratu"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Azalera"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Kalkulatu emandako tarte baten integral mugatua."
 
@@ -985,13 +985,13 @@ msgstr "Lodiera:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Aukeratu estiloa inekuazioak adierazteko. Ekuazioetan ez da erabiltzen."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Ekuazioaren edo inekuazioaren ertzaren adierazpen grafikoaren lodiera, pixeletan."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Aukeratu kolorea erlazioa adierazteko."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Ekuazioaren edo inekuazioaren ertzaren adierazpen grafikoaren lodiera, pixeletan."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3754,73 +3754,86 @@ msgstr "Aukeratu inprimatu nahi duzun kopia kopurua."
 msgid "Enter percent of original size."
 msgstr "Adierazi jatorrizko neurriaren portzentai bat."
 
-#, fuzzy
-#~ msgid "Arial"
-#~ msgstr "Azalera"
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Kalkulatu emandako tartean azalera edo zuzenkiaren luzeera Simpsonen "
-#~ "formula erabiliz."
+#~ msgid "Integrate"
+#~ msgstr "Integratu"
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Kalkulatu emandako tartean azalera edo zuzenkiaren luzeera Simpsonen formula erabiliz."
+
 #~ msgid "Extremum"
 #~ msgstr "Muturra"
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
-#~ msgstr ""
-#~ "Funtzioaren bigarren deribatuaren balioa, adierazitako x koordenatuan "
-#~ "ebaluatua."
+
+#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgstr "Funtzioaren bigarren deribatuaren balioa, adierazitako x koordenatuan ebaluatua."
+
 #~ msgid "Zoom in."
 #~ msgstr "Zoom-ez urbildu."
+
 #~ msgid "Zoom out."
 #~ msgstr "Zoom-ez urrundu."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Itzuli ardatzei konfigurazio lehenetsia."
+
 #~ msgid "Calculates the area under the path of the selected function."
-#~ msgstr ""
-#~ "Kalkulatu grafiko baten zuzenkiaren eta X ardatzaren arteko azalera."
+#~ msgstr "Kalkulatu grafiko baten zuzenkiaren eta X ardatzaren arteko azalera."
+
 #~ msgid "Go to home page"
 #~ msgstr "Joan orri nagusira"
+
 #~ msgid "About Graph..."
 #~ msgstr "Graph-en inguruan..."
+
 #~ msgid "All points"
 #~ msgstr "Dohitu puntu guztiak"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "Berdimensionatu area-grafikoa sartutako puntu guztiak ikusteko."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Zoom-ez urbildu X ardatzan soilik."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Zoom-ez urrundu X ardatzan soilik."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Zoom-ez urbildu Y ardatzan soilik."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Zoom-ez urrundu Y ardatzan soilik."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Funtzioak personalizatu..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Markatu tartearen bukaera"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Markatu lerro batez betegarriaren hasiera."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Markatu tartearen hasiera"
+
 #~ msgid "Image information"
 #~ msgstr "Irudiaren aukerak"
+
 #~ msgid "Open the file %s."
 #~ msgstr "Ireki %s fitxategia."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Testua [*.txt; *.csv]|*.txt;*.csv| Fitxategi guztiak  [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Kalkulatu azalera"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Zerbitzariak mezu henen bitartez erantzun du: '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokoloaren erantzun-errorea %s"
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "Hurrengo bertsioetarako iradokizunak, erroren informeak edota oharrak "
-#~ "bidali ditzakezu hurrengo helbide elektronikora: graph@padowan.dk"
+
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Hurrengo bertsioetarako iradokizunak, erroren informeak edota oharrak bidali ditzakezu hurrengo helbide elektronikora: graph@padowan.dk"
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Zentratu inprimatze-area orrian."
-

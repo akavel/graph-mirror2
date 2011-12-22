@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
-"POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-11-20 13:11+0100\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:25+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
 "MIME-Version: 1.0\n"
@@ -207,7 +207,7 @@ msgstr "Zooma"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -556,11 +556,11 @@ msgstr "Linjelängd"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Beräkna grafens längd mellan två punkter på grafen."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "Integrera"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Area"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Beräkna bestämd integral för ett givet intervall."
 
@@ -983,13 +983,13 @@ msgstr "Linjebredd:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Välj stil för olikheten. Används inte till ekvationer."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Linjebredd för ekvationen, i pixel. Används inte till olikheter."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Välj färg för att rita upp relationen."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Linjebredd för ekvationen, i pixel. Används inte till olikheter."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3752,22 +3752,16 @@ msgstr "Välj antal kopior att skriva ut."
 msgid "Enter percent of original size."
 msgstr "Välj procent av originalstorlek."
 
-#, fuzzy
-#~ msgid "Arial"
-#~ msgstr "Area"
+#~ msgid "Integrate"
+#~ msgstr "Integrera"
 
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Använder Simpsons formel för att beräkna area eller längd på kurvan för "
-#~ "angivet område."
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Använder Simpsons formel för att beräkna area eller längd på kurvan för angivet område."
 
 #~ msgid "Extremum"
 #~ msgstr "Extremvärde"
 
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
+#~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Detta är funktionens andraderivata utvärderad för inmatat värde."
 
 #~ msgid "Zoom in."
@@ -3836,12 +3830,8 @@ msgstr "Välj procent av originalstorlek."
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Fel i svar från nätverksprotokoll %s"
 
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "Du kan sända förslag på förbättringar för framtida versioner, "
-#~ "felrapporter och kommentarer till graph@padowan.dk."
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Du kan sända förslag på förbättringar för framtida versioner, felrapporter och kommentarer till graph@padowan.dk."
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Välj för att placera bilden mitt på sidan."
@@ -3887,12 +3877,8 @@ msgstr "Välj procent av originalstorlek."
 #~ msgstr "Himmelsblå"
 #~ msgid "Med Gray"
 #~ msgstr "Medelgrå"
-#~ msgid ""
-#~ "Insert a text label (select and click in the main window where you want "
-#~ "the label)."
-#~ msgstr ""
-#~ "Lägg till textetikett (välj och klicka i huvudfönstret där du vill "
-#~ "placera etiketten)."
+#~ msgid "Insert a text label (select and click in the main window where you want the label)."
+#~ msgstr "Lägg till textetikett (välj och klicka i huvudfönstret där du vill placera etiketten)."
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Klipp ur vald text till Windows urklipp."
 #~ msgid "Open an animation file."
@@ -3936,9 +3922,7 @@ msgstr "Välj procent av originalstorlek."
 #~ "Kan inte hitta felmeddelandet för detta fel."
 
 #~ msgid "This error should not occur. Please report this to the programmer."
-#~ msgstr ""
-#~ "Detta fel skall ej uppkomma. Var god rapportera händelsen till "
-#~ "programmeraren."
+#~ msgstr "Detta fel skall ej uppkomma. Var god rapportera händelsen till programmeraren."
 
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Maximal textlängd har uppnåtts."
@@ -3949,10 +3933,5 @@ msgstr "Välj procent av originalstorlek."
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Okänt Graph-data hittades när inehållet i urklipp klistrades in."
 
-#~ msgid ""
-#~ "To add actions to your application simply drag and drop from either "
-#~ "Categories or Actions onto an existing ActionBar."
-#~ msgstr ""
-#~ "För att lägga till en åtgärd till din applikation, dra objekt från "
-#~ "antingen Kategorier eller Åtgärder och släpp dem på en befintlig "
-#~ "Åtgärdslist."
+#~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
+#~ msgstr "För att lägga till en åtgärd till din applikation, dra objekt från antingen Kategorier eller Åtgärder och släpp dem på en befintlig Åtgärdslist."

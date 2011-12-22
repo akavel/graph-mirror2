@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-08-13 00:00\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
 "PO-Revision-Date: 2011-10-18 18:25+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
@@ -208,7 +208,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -557,11 +557,11 @@ msgstr "Longitud de arco"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcula la longitud del arco comprendido entre dos puntos de una gráfica."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "Integral"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Área"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Calcula la integral definida en el intervalo indicado."
 
@@ -984,13 +984,13 @@ msgstr "Grosor:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Elige el estilo (color uniforme o trama) para representar gráficamente las soluciones de las inecuaciones."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Anchura de la gráfica de una ecuación, o del límite de una inecuación, en píxeles."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Elige el color para representar gráficamente la ecuación o inecuación."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Anchura de la gráfica de una ecuación, o del límite de una inecuación, en píxeles."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3764,110 +3764,122 @@ msgstr "Indica el número de copias que deseas imprimir."
 msgid "Enter percent of original size."
 msgstr "Indica un porcentaje del tamaño original del área gráfica."
 
+#~ msgid "Integrate"
+#~ msgstr "Integral"
+
 #~ msgid "Show as a multiple of pi"
 #~ msgstr "Mostrar números como múltiplos de pi"
+
 #~ msgid "Calculate area"
 #~ msgstr "Calcular área"
-#~ msgid "Area"
-#~ msgstr "Área"
+
 #~ msgid "Calculate the area under the path of the selected function."
-#~ msgstr ""
-#~ "Calcula el área respecto a la función seleccionada en el intervalo "
-#~ "especificado."
+#~ msgstr "Calcula el área respecto a la función seleccionada en el intervalo especificado."
+
 #~ msgid "Insert an OLE object such as a drawing or an equation."
-#~ msgstr ""
-#~ "Inserta un objeto OLE, por ejemplo, una imagen, un gráfico o un elemento "
-#~ "del Editor de Ecuaciones de Microsoft."
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Cálculo del área, o longitud de arco en el intervalo dado usando la "
-#~ "fórmula de Simpson."
+#~ msgstr "Inserta un objeto OLE, por ejemplo, una imagen, un gráfico o un elemento del Editor de Ecuaciones de Microsoft."
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Cálculo del área, o longitud de arco en el intervalo dado usando la fórmula de Simpson."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos los archivos [*.*]|*.*"
+
 #~ msgid "About Graph..."
 #~ msgstr "Acerca de Graph"
+
 #~ msgid "Custom functions..."
 #~ msgstr "Personalizar funciones/constantes..."
+
 #~ msgid "Mark end of range"
 #~ msgstr "Marcar el final del relleno"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Delimita el inicio del intervalo del relleno con una línea."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Marcar el inicio del relleno"
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "<a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
-#~ msgstr ""
-#~ "Puedes enviar comentarios, sugerencias para futuras versiones e informes "
-#~ "de errores a la siguiente dirección electrónica: <a href=\"mailto:"
-#~ "graph@padowan.dk\">graph@padowan.dk</a>"
+
+#~ msgid "You can send suggestions for future versions, bug reports and comments to <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
+#~ msgstr "Puedes enviar comentarios, sugerencias para futuras versiones e informes de errores a la siguiente dirección electrónica: <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
+
 #~ msgid "Extremum"
 #~ msgstr "Mínimo / Máximo"
+
 #~ msgid "Zoom in."
 #~ msgstr "Acerca la presentación del sistema de coordenadas."
+
 #~ msgid "Zoom out."
 #~ msgstr "Aleja la presentación del sistema de coordenadas."
+
 #~ msgid "Ctrl+Shift+Up"
 #~ msgstr "Ctrl+Mayús+Arriba"
+
 #~ msgid "Ctrl+Shift+Down"
 #~ msgstr "Ctrl+Mayús+Abajo"
+
 #~ msgid "Ctrl+Shift+Left"
 #~ msgstr "Ctrl+Mayús+Izquierda"
+
 #~ msgid "Ctrl+Shift+Right"
 #~ msgstr "Ctrl+Mayús+Derecha"
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Sólo acercamiento al eje X."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Sólo alejamiento del eje X."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Sólo acercamiento al eje Y."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Sólo alejamiento del eje Y."
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "El servidor respondió con este mensaje: '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Error de respuesta del protocolo %s"
+
 #~ msgid "Enter the image position on the page."
-#~ msgstr ""
-#~ "Especifica la distancia entre los márgenes de la página y los márgenes "
-#~ "del área de impresión, en milímetros."
-#~ msgid ""
-#~ "Enter the independent variable for which you want to evaluate the "
-#~ "function, or click on the graph in the graphing area."
-#~ msgstr ""
-#~ "Introduce un valor para la variable independiente, o haz clic sobre un "
-#~ "punto de la gráfica."
+#~ msgstr "Especifica la distancia entre los márgenes de la página y los márgenes del área de impresión, en milímetros."
+
+#~ msgid "Enter the independent variable for which you want to evaluate the function, or click on the graph in the graphing area."
+#~ msgstr "Introduce un valor para la variable independiente, o haz clic sobre un punto de la gráfica."
+
 #~ msgid "Saves the coordinate system as a new name."
-#~ msgstr ""
-#~ "Guarda el sistema de coordenadas activo con un nombre nuevo, o una "
-#~ "ubicación diferente."
+#~ msgstr "Guarda el sistema de coordenadas activo con un nombre nuevo, o una ubicación diferente."
+
 #~ msgid "Saves a copy of the current coordinate system."
 #~ msgstr "Guarda una copia del sistema de coordenadas activo."
+
 #~ msgid "Show the f''(x) column in the table."
 #~ msgstr "Muestra la columna de f''(x) en la tabla."
+
 #~ msgid "Open the file %s."
 #~ msgstr "Abre el archivo %s"
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Centra el área de impresión en la página."
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
-#~ msgstr ""
-#~ "Valor de la segunda derivada de la función, evaluada en la coordenada x "
-#~ "indicada."
+
+#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgstr "Valor de la segunda derivada de la función, evaluada en la coordenada x indicada."
+
 #~ msgid "Write coordinate system and functions to a file."
 #~ msgstr "Guarda el actual sistema de coordenadas en un archivo."
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Devuelve a los ejes su configuración por defecto."
+
 #~ msgid "Go to home page"
 #~ msgstr "Ir a la página principal de Graph"
+
 #~ msgid "All points"
 #~ msgstr "Ajustar todos los puntos"
+
 #~ msgid "Zoom as much as all points are visible."
-#~ msgstr ""
-#~ "Redimensiona el área gráfica para que todos los puntos introducidos sean "
-#~ "visibles."
+#~ msgstr "Redimensiona el área gráfica para que todos los puntos introducidos sean visibles."
+
 #~ msgid "Image information"
 #~ msgstr "Opciones de imagen"
-

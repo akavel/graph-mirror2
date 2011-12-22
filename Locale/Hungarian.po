@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-10-27 22:00+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:21+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Magyari Gábor <magyari@kola.sulinet.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -207,7 +207,7 @@ msgstr "Nagyítás"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -556,11 +556,11 @@ msgstr "Ívhossz"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Ívhossz kiszámítása a görbe két adott pontja között."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "Integrál"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Terület"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "A megadott intervallumhoz tartozó határozott integrál számítása."
 
@@ -983,13 +983,13 @@ msgstr "Vastagság:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Válszd ki az egyenlőtlenség ábrázolásának típusát. Egyenlet esetén nem használható."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Az egyenlet grafikonjának vastagsága képpontban. Egyenlőtlenségnél nem használható."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "A relációt ábrázoló grafikon színének kiválasztása."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Az egyenlet grafikonjának vastagsága képpontban. Egyenlőtlenségnél nem használható."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3751,162 +3751,205 @@ msgstr "Másolatok száma:"
 msgid "Enter percent of original size."
 msgstr "Új méret az eredetihez képest százalékban."
 
-#, fuzzy
-#~ msgid "Arial"
-#~ msgstr "Terület"
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Terület vagy ívhossz kiszámítása a megadott tartományon a Simpson formula "
-#~ "segítségével."
+#~ msgid "Integrate"
+#~ msgstr "Integrál"
+
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Terület vagy ívhossz kiszámítása a megadott tartományon a Simpson formula segítségével."
+
 #~ msgid "Extremum"
 #~ msgstr "Szélsőérték"
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
+
+#~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "A függvény második deriváltja a változó megadott érték esetén."
+
 #~ msgid "Zoom in."
 #~ msgstr "Nagyítás"
+
 #~ msgid "Zoom out."
 #~ msgstr "Kicsinyítés"
+
 #~ msgid "Zoom to standard coordinates."
 #~ msgstr "Az alapértelmezett nézet visszaállítása."
+
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "A kiválasztott függvény alatti terület kiszámítása."
+
 #~ msgid "Go to home page"
 #~ msgstr "Honlap megynitása"
+
 #~ msgid "About Graph..."
 #~ msgstr "Névjegy"
+
 #~ msgid "All points"
 #~ msgstr "Minden pont"
+
 #~ msgid "Zoom as much as all points are visible."
 #~ msgstr "A lehetséges legtöbb pont megjelenítése."
+
 #~ msgid "Zoom in on the x-axis only."
 #~ msgstr "Csak az x tengely irányában nagyítja a képet."
+
 #~ msgid "Zoom out on the x-axis only."
 #~ msgstr "Csak az x tengely irányában kicsinyíti a képet."
+
 #~ msgid "Zoom in on the y-axis only."
 #~ msgstr "Csak az y tengely irányában nagyítja a képet."
+
 #~ msgid "Zoom out on the y-axis only."
 #~ msgstr "Csak az y tengely irányában kicsinyíti a képet."
+
 #~ msgid "Custom functions..."
 #~ msgstr "Egyéni függvények"
+
 #~ msgid "Mark end of range"
 #~ msgstr "Tartomány végének jelölése"
+
 #~ msgid "Mark the start of the shading with a line."
 #~ msgstr "Jelölje vonal a színezés kezdetét."
+
 #~ msgid "Mark start of range"
 #~ msgstr "Tartomány kezdetének jelölése"
+
 #~ msgid "Image information"
 #~ msgstr "Kép jellemzői"
+
 #~ msgid "Open the file %s."
 #~ msgstr "A(z) %s fájl megnyitása."
+
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Szöveg [*.txt; *.csv]|*.txt;*.csv|Minden fájl [*.*]|*.*"
+
 #~ msgid "Calculate area"
 #~ msgstr "Terület kiszámítása"
+
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "A szervertől a következő válasz érkezett: '%s'"
+
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokoll válasz hiba %s"
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "A graph@padowan.dk címre várjuk a hibák jelzését, új funkciók "
-#~ "fejlesztésének igényét és véleményeket."
+
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "A graph@padowan.dk címre várjuk a hibák jelzését, új funkciók fejlesztésének igényét és véleményeket."
+
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "A kép igazítása az oldal közepére."
+
 #~ msgid "Insert shade..."
 #~ msgstr "Kiszínezés"
+
 #~ msgid "Shade"
 #~ msgstr "Színezés"
+
 #~ msgid "Black"
 #~ msgstr "Fekete"
+
 #~ msgid "Maroon"
 #~ msgstr "Gesztenye"
+
 #~ msgid "Green"
 #~ msgstr "Zöld"
+
 #~ msgid "Olive"
 #~ msgstr "Oliva"
+
 #~ msgid "Navy"
 #~ msgstr "Tenger"
+
 #~ msgid "Purple"
 #~ msgstr "Lila"
+
 #~ msgid "Gray"
 #~ msgstr "Szürke"
+
 #~ msgid "Silver"
 #~ msgstr "Ezüst"
+
 #~ msgid "Red"
 #~ msgstr "Piros"
+
 #~ msgid "Lime"
 #~ msgstr "Banánzöld"
+
 #~ msgid "Yellow"
 #~ msgstr "Sárga"
+
 #~ msgid "Blue"
 #~ msgstr "Kék"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Magenta"
+
 #~ msgid "Aqua"
 #~ msgstr "Türkiz"
+
 #~ msgid "Money Green"
 #~ msgstr "Világoszöld"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Világoskék"
+
 #~ msgid "Med Gray"
 #~ msgstr "Sötétszürke"
-#~ msgid ""
-#~ "Insert a text label (select and click in the main window where you want "
-#~ "the label)."
-#~ msgstr ""
-#~ "Szövegdoboz beszúrása (Kattintással válaszd ki a fő ablakban, hová "
-#~ "kerüljön a szövegdoboz)."
+
+#~ msgid "Insert a text label (select and click in the main window where you want the label)."
+#~ msgstr "Szövegdoboz beszúrása (Kattintással válaszd ki a fő ablakban, hová kerüljön a szövegdoboz)."
+
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "A kijelölt szöveg kivágása"
+
 #~ msgid "Open an animation file."
 #~ msgstr "Animációs fájl megnyitása."
 
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Verzió"
+
 #~ msgid "Visible"
 #~ msgstr "Látható"
+
 #~ msgid "Check to make the selected item visible in the coordinate system."
-#~ msgstr ""
-#~ "Jelöld be, hogy a kiválasztott elem látható legyen a "
-#~ "koordinátarendszerben."
+#~ msgstr "Jelöld be, hogy a kiválasztott elem látható legyen a koordinátarendszerben."
+
 #~ msgid "Functions"
 #~ msgstr "Függvények"
+
 #~ msgid "Tangents"
 #~ msgstr "Érintők"
+
 #~ msgid "Point series"
 #~ msgstr "Pontsorok"
+
 #~ msgid "Shades"
 #~ msgstr "Színezések"
+
 #~ msgid "No error occurred. You should not see this message."
 #~ msgstr "Nincs hiba. Nem szabadna látni ezt a feliratot."
+
 #~ msgid "Right bracket missing."
 #~ msgstr "A záró zárójel hiányzik."
+
 #~ msgid "Conversion error"
 #~ msgstr "Konvertálási hiba"
+
 #~ msgid ""
 #~ "Unknown error code.\n"
 #~ "Could not find error message for this error."
 #~ msgstr ""
 #~ "Ismeretlen hibakód.\n"
 #~ "Ehhez a hibához nincs hibaüzenet."
+
 #~ msgid "This error should not occur. Please report this to the programmer."
 #~ msgstr "Hiba történt. Kérünk értesítsd a program készítőjét."
+
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Elérted a szöveg maximális hosszát."
+
 #~ msgid "Dialog error: %sh"
 #~ msgstr "Párbeszéd hiba: %sh"
+
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Beillesztési hiba: ismeretlen Graph adat."
-#~ msgid ""
-#~ "To add actions to your application simply drag and drop from either "
-#~ "Categories or Actions onto an existing ActionBar."
-#~ msgstr ""
-#~ "Művelet hozzáadáaához egyszerűen húzza át a Kategóriák vagy a Műveletek "
-#~ "panelből az Eszköztárra."
 
+#~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
+#~ msgstr "Művelet hozzáadáaához egyszerűen húzza át a Kategóriák vagy a Műveletek panelből az Eszköztárra."

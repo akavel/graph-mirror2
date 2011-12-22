@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2007-07-30 19:54+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:25+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -206,7 +206,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -571,12 +571,11 @@ msgstr "Dolžina poti"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Izračunaj dolžino poti med dvema točkama na krivulji."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
-msgid "Integrate"
-msgstr "Internet"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Območje..."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 #, fuzzy
 msgid "Calculate the definite integral over a given interval."
 msgstr "Izračunaj tabelo"
@@ -1012,13 +1011,13 @@ msgstr "Širina:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Izberite slog, ki se uporablja le za risanje neenačb."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Širina črte enačbe ali meje neenačbe v pikslih."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Izberi barvo za risanje relacij."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Širina črte enačbe ali meje neenačbe v pikslih."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3878,6 +3877,10 @@ msgid "Enter percent of original size."
 msgstr "Vnesi odstotek izvorne velikosti."
 
 #, fuzzy
+#~ msgid "Integrate"
+#~ msgstr "Internet"
+
+#, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Ploščina"
 
@@ -4122,9 +4125,6 @@ msgstr "Vnesi odstotek izvorne velikosti."
 
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "Da dodate dejanja k vaši aplikaciji, preprosto povlecite in spustite iz Kategorije ali Akcije na Vrstico dejanj."
-
-#~ msgid "Area..."
-#~ msgstr "Območje..."
 
 #~ msgid "Evaluate..."
 #~ msgstr "Ovrednoti..."
