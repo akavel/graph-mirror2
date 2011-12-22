@@ -5,14 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-12-21 21:57+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:18+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: IL\n"
-"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Virtaal 0.7.0\n"
 "X-Poedit-Language: Arabic\n"
@@ -216,7 +216,7 @@ msgstr "تقريب"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -565,11 +565,11 @@ msgstr "طول مسار"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "حساب طول المسار بين نقطتين معينتين على المنحنى."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "تكامل"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "مساحة"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "حساب التكامل الواضح عبر مجال معين."
 
@@ -992,13 +992,13 @@ msgstr "العرض:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "اختر النمط المستخدم لرسم المتراجحة. لا يستخدم للمعادلات."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "العرض بالبكسل لخط الرسم لحلول المعادلة أو لحدود حلول المتراجحة."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "اختر لونا لرسم العلاقة."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "العرض بالبكسل لخط الرسم لحلول المعادلة أو لحدود حلول المتراجحة."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3763,15 +3763,11 @@ msgstr "اختر عدد النسخ لطباعتها."
 msgid "Enter percent of original size."
 msgstr "أدخل النسبة مقارنة بالحجم الأصلي."
 
-#, fuzzy
-#~ msgid "Arial"
-#~ msgstr "مساحة"
+#~ msgid "Integrate"
+#~ msgstr "تكامل"
 
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "مساحة أو طول المسار مقدر(ة) من أجل المجال المعين باستعمال معادلة Simpson."
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "مساحة أو طول المسار مقدر(ة) من أجل المجال المعين باستعمال معادلة Simpson."
 
 #~ msgid "Extremum"
 #~ msgstr "ذروة"
@@ -3839,18 +3835,13 @@ msgstr "أدخل النسبة مقارنة بالحجم الأصلي."
 #~ msgid "Protocol reply error %s"
 #~ msgstr "الخطأ - ‪%s‬ في إجابة نظام الإتصال (Protocol)"
 
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "يمكنك إرسال إقترحات من أجل الإصدارات القادمة، تقارير عن الأخطاء البرمجية "
-#~ "أو تعليقات إلى graph@padowan.dk."
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "يمكنك إرسال إقترحات من أجل الإصدارات القادمة، تقارير عن الأخطاء البرمجية أو تعليقات إلى graph@padowan.dk."
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "وضع الصورة في وسط الصفحة."
 
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
+#~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "قيمة المشتق الثاني للدالة المقدرة من أجل قيمة x المعينة."
 
 #~ msgid "Write coordinate system and functions to a file."

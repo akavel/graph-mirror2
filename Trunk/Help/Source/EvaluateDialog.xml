@@ -98,13 +98,13 @@
 		</para>
 	</simplesect>
 
-	<simplesect id="IntegrateFrame">
-		<title>Integrate</title>
+	<simplesect id="AreaFrame">
+		<title>Area</title>
 		<para>
 			When
 			<menuchoice>
 				<guimenu>Calc</guimenu>
-				<guimenuitem>Integrate</guimenuitem>
+				<guimenuitem>Area</guimenuitem>
 			</menuchoice>
 			is selected the dialog is used to calculate the definite integral for the selected function over a specified domain range.
 			For standard functions, parametric functions and tangents the definite integral is the same as the signed area between the graph and the x-axis

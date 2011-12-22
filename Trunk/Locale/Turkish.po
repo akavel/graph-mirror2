@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-08-13 00:00\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
 "PO-Revision-Date: 2011-11-28 21:55+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
@@ -210,7 +210,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -559,11 +559,11 @@ msgstr "Yol uzunluğu"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Eğri üzerinde verilen iki nokta arasındaki yolu hesaplar."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "İntegralini al"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Alan"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Verilen aralikta tanimli integrali hesaplar."
 
@@ -986,13 +986,13 @@ msgstr "Genişlik:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Eşitsizliği çizmek için stili seçin.Eşitlikler için değil."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Denklem çizgisi yada eşitsizlğin sınır çizgisinin pixel genişliği."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "İlişkiyi çizmek için renk seçin"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Denklem çizgisi yada eşitsizlğin sınır çizgisinin pixel genişliği."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3753,12 +3753,10 @@ msgstr "Yazdırmak için kopya sayısını seçin"
 msgid "Enter percent of original size."
 msgstr "orjinal boyutun yüzdesini girin"
 
-#~ msgid "Area"
-#~ msgstr "Alan"
+#~ msgid "Integrate"
+#~ msgstr "İntegralini al"
 
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Alan yada uzunluk Simpson kuralı kullanılarak hesaplanır."
 
 #~ msgid "Extremum"
@@ -3827,12 +3825,8 @@ msgstr "orjinal boyutun yüzdesini girin"
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokol cevabı hatası %s"
 
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "Buraya gelecek versiyonlar için önerilerinizi, bug raporlarınızı, "
-#~ "yorumlarınızı yollayabilirsiniz.  "
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Buraya gelecek versiyonlar için önerilerinizi, bug raporlarınızı, yorumlarınızı yollayabilirsiniz.  "
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Resmi sayfanın ortasına yerleştir."

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2007-07-30 19:52+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:20+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Pekka Lerssi <pekka.lerssi@tut.fi>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -207,7 +207,7 @@ msgstr "Zoomaa"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -572,12 +572,11 @@ msgstr "Kaaren pituus"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Laskee kahden pisteen välisen kaaren pituuden."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
-msgid "Integrate"
-msgstr "Internet"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "Pinta-ala"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 #, fuzzy
 msgid "Calculate the definite integral over a given interval."
 msgstr "Arvotaulukko"
@@ -1013,13 +1012,13 @@ msgstr "Leveys:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Valitse epäyhtälössä käytettävä tyyli. Ei vaikuta yhtälöihin."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Yhtälön kaaren tai epäyhtälön rajaviivan leveys pikseleinä."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Valitse viivan väri."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Yhtälön kaaren tai epäyhtälön rajaviivan leveys pikseleinä."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3877,8 +3876,8 @@ msgid "Enter percent of original size."
 msgstr "Valitse tulosteen skaalaus suhteessa alkuperäiseen kuvaan."
 
 #, fuzzy
-#~ msgid "Arial"
-#~ msgstr "Pinta-ala"
+#~ msgid "Integrate"
+#~ msgstr "Internet"
 
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Valitun alueen pinta-ala tai kaaren pituus laskettuna Simpsonin säännöllä."

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Граф\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
 "PO-Revision-Date: 2007-05-08 22:39+0800\n"
 "Last-Translator: Батнасан <bat_nasan@mail.mn>\n"
 "Language-Team: Батнасан <baagiibat@yahoo.com>\n"
@@ -213,7 +213,7 @@ msgstr "Харагдац"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -579,12 +579,12 @@ msgstr "Уртыг олохдоо..."
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Муруй дээр өгөгдсөн 2 цэгийн хоорондох замын уртыг олно."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
+#. Form1..ActionManager..AreaAction("Area")..Caption
 #, fuzzy
-msgid "Integrate"
-msgstr "Интернэт"
+msgid "Area"
+msgstr "Талбай"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 #, fuzzy
 msgid "Calculate the definite integral over a given interval."
 msgstr "Тооцоолох хүснэгт"
@@ -1023,13 +1023,13 @@ msgstr "Өргөн:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Харьцааг зурах өнгийг сонгох"
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr ""
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Харьцааг зурах өнгийг сонгох"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr ""
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3891,8 +3891,8 @@ msgid "Enter percent of original size."
 msgstr "Бодит хэмжээний процент оруул"
 
 #, fuzzy
-#~ msgid "Arial"
-#~ msgstr "Талбай"
+#~ msgid "Integrate"
+#~ msgstr "Интернэт"
 
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Симфсоны томъёогоор өгөгдсөн мужийн тооцоологдсон муруйн урт ба мужын талбай."

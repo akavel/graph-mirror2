@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-08-13 00:00\n"
-"PO-Revision-Date: 2011-08-13 00:00\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:12\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -217,7 +217,7 @@ msgstr ""
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -589,11 +589,11 @@ msgid "Calculate the length of path between two given points on the "
 "curve."
 msgstr ""
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
 msgstr ""
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given "
 "interval."
 msgstr ""
@@ -1034,13 +1034,13 @@ msgid "Select the style used for drawing the inequality. Not used for "
 "equations."
 msgstr ""
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the "
-"inequality."
-msgstr ""
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
+msgstr ""
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the "
+"inequality."
 msgstr ""
 
 #. Form11("Insert relation")..Edit1..Hint

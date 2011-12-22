@@ -572,7 +572,7 @@
 
 				<varlistentry>
 					<term>
-						<link linkend="IntegrateFrame">
+						<link linkend="AreaFrame">
 							<menuchoice>
 								<guimenu>Calc</guimenu><guimenuitem>Integrate</guimenuitem>
 							</menuchoice>

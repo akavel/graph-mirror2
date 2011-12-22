@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
-"PO-Revision-Date: 2008-08-13 19:55+0900\n"
-"Last-Translator: The Darkness <xgate32@hotmail.com>\n"
+"POT-Creation-Date: 2011-12-22 21:12\n"
+"PO-Revision-Date: 2011-12-22 21:22+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team: Graph Korean Translation Team <xgate32@hotmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -214,7 +214,7 @@ msgstr "확대/축소"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -578,12 +578,11 @@ msgstr "경로 길이"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "곡선에 주어진 두 개의 점 사이의 경로 길이 계산."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-#, fuzzy
-msgid "Integrate"
-msgstr "인터넷"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+msgid "Area"
+msgstr "면적"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 #, fuzzy
 msgid "Calculate the definite integral over a given interval."
 msgstr "테이블 계산"
@@ -1013,13 +1012,13 @@ msgstr "두께:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "부등식을 작성하는데 사용되는 종류를 선택. 방정식에서는 사용 안됨."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "방정식 선의 혹은 부등식의 경계선 두께(픽셀)."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "관계식 그래프 색상 선택"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "방정식 선의 혹은 부등식의 경계선 두께(픽셀)."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -3840,8 +3839,8 @@ msgid "Enter percent of original size."
 msgstr "원본 크기의 퍼센트 입력."
 
 #, fuzzy
-#~ msgid "Arial"
-#~ msgstr "면적"
+#~ msgid "Integrate"
+#~ msgstr "인터넷"
 
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Simpson 공식을 이용하여 주어진 범위에 대해 계산되어진 면적 또는 경로의 길이."
