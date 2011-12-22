@@ -147,9 +147,13 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	//Set shortcuts that depends on the locale settings
 	ZoomInAction->ShortCut = ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl);
 	ZoomInAction->SecondaryShortCuts->AddObject("Ctrl+Shift++", (TObject*)ShortCut(VkKeyScan('+') & 0xFF, TShiftState() << ssCtrl << ssShift));
+	ZoomInAction->SecondaryShortCuts->AddObject("Ctrl++", (TObject*)ShortCut(VK_ADD, TShiftState() << ssCtrl));
+	ZoomInAction->SecondaryShortCuts->AddObject("Ctrl+Shift++", (TObject*)ShortCut(VK_ADD, TShiftState() << ssCtrl << ssShift));
 
 	ZoomOutAction->ShortCut = ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl);
 	ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+Shift+-", (TObject*)ShortCut(VkKeyScan('-') & 0xFF, TShiftState() << ssCtrl << ssShift));
+	ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+-", (TObject*)ShortCut(VK_SUBTRACT, TShiftState() << ssCtrl));
+	ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+Shift+-", (TObject*)ShortCut(VK_SUBTRACT, TShiftState() << ssCtrl << ssShift));
 
 	Screen->Cursors[crMoveHand2] = LoadCursor(HInstance, L"MOVECURSOR1");
 	Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, L"MOVECURSOR2");
