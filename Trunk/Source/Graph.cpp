@@ -78,10 +78,11 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
     else
       LoadLanguage(Language.c_str());
 
+    bool Register = FindCmdLineSwitch(L"REGSERVER") || FindCmdLineSwitch(L"UNREGSERVER");
     //Only show main form if we are not running as OLE server
-    Application->ShowMainForm = !FindCmdLineSwitch(L"EMBEDDING") && !FindCmdLineSwitch(L"REGSERVER");
+    Application->ShowMainForm = !FindCmdLineSwitch(L"EMBEDDING") && !Register;
     //Exit has been disabled in atlmod.h:242 and replaced by this to avoid crash at exit
- 	  if(FindCmdLineSwitch("REGSERVER"))
+ 	  if(Register)
       Application->Terminate();
     Application->Initialize();
     Application->MainFormOnTaskBar = true;
