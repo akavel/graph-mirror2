@@ -33,6 +33,8 @@ class CircleDialog(Gui.SimpleDialog):
         Func.LegendText = "Circle: radius={0}, center=({1},{2})".format(*CircleData)
         Func.Color = self.colorbox.Selected
         Func.Size = int(self.edit4.Text)
+        Func.From = 0
+        Func.To = 6.28318530717
 
         if self.CircleItem:
             Graph.FunctionList[Graph.FunctionList.index(self.CircleItem)] = Func
