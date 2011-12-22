@@ -18,10 +18,10 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 InfoBeforeFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.4.0.511
+OutputBaseFilename=SetupGraphBeta-4.4.0.516
 OutputDir=.
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.511
+VersionInfoVersion=4.4.0.516
 PrivilegesRequired=None
 SignTool=SignTool /d $qGraph$q $f
 SetupIconFile=Graph in a box.ico
@@ -77,10 +77,9 @@ Source: "Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
 [Icons]
 Name: "{userprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
 Name: "{userprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
-Name: "{userprograms}\Graph\{cm:Uninstall}"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
+Name: "{userprograms}\Graph\{cm:Uninstall}"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
-Name: "{commonprograms}\Graph\{cm:Uninstall}"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{userdesktop}\Graph"; Filename: "{app}\Graph.exe"; Tasks: DesktopIcon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Graph"; Filename: "{app}\Graph.exe"; Tasks: QuickLaunchIcon
 
@@ -148,12 +147,14 @@ German.InstallAllUsers=Für alle Benutzer installieren
 Greek.InstallAllUsers=Εγκατάσταση για όλους τους χρήστες
 Hungarian.InstallAllUsers=Telepítés minden felhasználónak
 Italian.InstallAllUsers=Installa per tutti gli utenti
+Norwegian.InstallAllUsers=Installer for alle brukere
 Persian.InstallAllUsers=نصب براي همه کاربران
 Portuguese_Brazil.InstallAllUsers=Instala para todos os usuários
 Portuguese_Portugal.InstallAllUsers=Instala para todos os usuários
 Russian.InstallAllUsers=Установить для всех пользователей
 Slovenian.InstallAllUsers=Namesti za vse uporabnike
 Spanish.InstallAllUsers=Instalar para todos los usuarios
+Swedish.InstallAllUsers=Installera för alla användare
 
 Examples=Examples
 Basque.Examples=Adibideak
@@ -161,9 +162,12 @@ Croatian.Examples=Primjeri
 Danish.Examples=Eksempler
 Dutch.Examples=Voorbeelden
 French.Examples=Exemples
-Hungarian.Examples=Példák
 German.Examples=Beispiele
+Hungarian.Examples=Példák
+Norwegian.Examples=Eksempler
+Portuguese_Portugal.Examples=Exemplos
 Spanish.Examples=Ejemplos
+Swedish.Examples=Exempel
 
 Uninstall=Uninstall
 Arabic.Uninstall=إلغاء تثبيت
