@@ -19,7 +19,7 @@
   			<member><ulink url="http://dybdahl.dk/dxgettext/"/></member>
   		</simplelist>
     </para>
-    
+
     <para>
   		<simplelist>
   			<member><emphasis role="bold"><application>EasyNSE</application></emphasis></member>
@@ -28,7 +28,7 @@
   			<member><ulink url="http://www.mustangpeak.net"/></member>
 		  </simplelist>
     </para>
-    
+
     <para>
   		<simplelist>
   			<member><emphasis role="bold"><application>PDFlib-Lite</application></emphasis></member>
@@ -37,7 +37,7 @@
   			<member><ulink url="http://www.pdflib.com"/></member>
   		</simplelist>
     </para>
-    
+
     <para>
   		<simplelist>
   			<member><emphasis role="bold"><application>Python</application></emphasis></member>
@@ -46,7 +46,7 @@
   			<member><ulink url="http://www.python.org"/></member>
   		</simplelist>
     </para>
-    
+
     <para>
   		<simplelist>
   			<member><emphasis role="bold"><application>GNU Scientific Library</application></emphasis></member>
@@ -55,7 +55,7 @@
   			<member><ulink url="http://www.gnu.org/software/gsl/"/></member>
   		</simplelist>
     </para>
-    
+
     <para>
   		<simplelist>
   			<member><emphasis role="bold"><application>Boost</application></emphasis></member>
@@ -127,7 +127,7 @@
                 <simplelist>
                   <member><personname>Martin Stružský</personname></member>
                   <member><personname>Pavlína Krausová</personname></member>
-                </simplelist>  
+                </simplelist>
               </entry>
 						</row>
 
@@ -180,7 +180,7 @@
                  <member><personname>Frank Hüttemeister</personname></member>
                  <member><personname>Sebastian Stütz</personname></member>
                  <member><personname>Michael Bach Ipsen</personname></member>
-                </simplelist>  
+                </simplelist>
               </entry>
 						</row>
 
@@ -197,16 +197,16 @@
 							<entry>No</entry>
 							<entry><personname>Gabor Magyari</personname></entry>
 						</row>
-					
+
 						<row>
 							<entry>Italian</entry>
 							<entry>Yes</entry>
 							<entry>Yes</entry>
 							<entry>
                 <simplelist>
-                  <member><personname>AlessandroSerena</personname></member>
+                  <member><personname>Alessandro Serena</personname></member>
                   <member><personname>Attilio Ridomi</personname></member>
-                </simplelist>  
+                </simplelist>
               </entry>
 						</row>
 
@@ -240,7 +240,7 @@
                   <member><personname>Shayan Abyari</personname></member>
                   <member><personname>Yashar PourMohammad</personname></member>
                 </simplelist>
-              </entry>  
+              </entry>
 						</row>
 
 						<row>
@@ -261,7 +261,7 @@
                   <member><personname>Haroldo Luiz Bertoldo</personname></member>
                   <member><personname>Janete Flor de Maio Fonseca</personname></member>
                   <member><personname>Aldemar Calazans Filho</personname></member>
-                </simplelist>  
+                </simplelist>
               </entry>
 						</row>
 
