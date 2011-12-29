@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-11-21 22:57Romance Standard Time\n"
-"PO-Revision-Date: 2011-12-29 00:20+0100\n"
+"PO-Revision-Date: 2011-12-29 09:53+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "Language: \n"
@@ -255,7 +255,6 @@ msgid "The dialog shown below is used to evaluate the selected function for a ra
 msgstr "Het dialoogvenster hieronder is bedoeld om de geselecteerde functie binnen een bepaald bereik te evalueren. Selecteer eerst een functie in de <placeholder-1/> en gebruik het menu-item <placeholder-2/> om het dialoogvenster te weergeven. Je geeft de eerste en de laatste waarde van de onafhankelijke variabele in de <placeholder-3/>- en <placeholder-4/>-velden. In de <placeholder-5/>- of <placeholder-6/>-veld geef je de stijging van de onafhankelijke variabele op elke evaluatie."
 
 #. TableDialog.xml:20(para)
-#, fuzzy
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns depend on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
 msgstr "Wanneer je op de <guibutton>Calc</guibutton>-knop klikt, zal de tabel worden gevuld met de onafhankelijke variabele in de eerste kolom. De rest van de kolommen verschilt van het type functie. Voor een standaardfunctie zal de tabel f(x), f'(x) en f''(x) laten zien. Voor een parameterfunctie zal de tabel x(t), y(t), dx/dt, dy/dt en dy/dx laten zien. Voor een polaire functie zal de tabel r(t), x(t), y(t), dr/dt en dy/dx laten zien. Kolommen die je niet nodig hebt kun je verbergen via het rechtermuisknop-menu. Als de berekenen lang duren, zal een voortgangsbalk worden getoond."
 
@@ -288,7 +287,6 @@ msgid "Special"
 msgstr "Speciaal"
 
 #. Special.xml:11(primary)
-#, fuzzy
 msgid "numerical integral"
 msgstr "numerieke integraal"
 
@@ -297,7 +295,6 @@ msgid "area"
 msgstr "oppervlakte"
 
 #. Special.xml:13(para)
-#, fuzzy
 msgid "Returns an approximation for the numerical integral of the given expression over the given range."
 msgstr "Geeft de numerieke integraal van het eerste argument van het tweede tot het derde argument."
 
@@ -310,7 +307,6 @@ msgid "real numbers"
 msgstr "reële getallen"
 
 #. Special.xml:22(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns an approximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
 msgstr "De <placeholder-1/>-functie geeft de numerieke integraal van <placeholder-2/> van <placeholder-3/> tot <placeholder-4/>. Dit is wiskundig geschreven als: <placeholder-5/> Deze integraal is hetzelfde als de oppervlakte tussen de functie <placeholder-6/> en de x-as van <placeholder-7/> tot <placeholder-8/>, waar de oppervlakte onder de as negatief geteld wordt. <placeholder-9/> kan elke soort functie zijn met x als variabele als als de functie wordt gebruikt in een standaardfunctie en t als variabele als het een parametrische functie is. <placeholder-10/> en <placeholder-11/> kunnen elke soort <placeholder-12/> zijn dat naar <placeholder-13/> evalueert. <placeholder-14/> berekent de integraal niet precies. In plaats daarvan wordt de berekening gedaan met Simpson's formule met 100 iteraties."
 
@@ -327,37 +323,30 @@ msgid "summation"
 msgstr "sommatie"
 
 #. Special.xml:62(para)
-#, fuzzy
 msgid "Returns the summation of an expression evaluated over a range of integers."
-msgstr "Geeft de waarde van de Euler-bèta-functie geëvalueerd voor de argumenten."
+msgstr "Geeft de som van een uitdrukking geëvalueerd over een bereik van gehele getallen."
 
 #. Special.xml:80(glossterm) Special.xml:114(glossterm)
-#, fuzzy
 msgid "integers"
-msgstr "natuurlijk getal"
+msgstr "gehele getallen"
 
 #. Special.xml:71(para)
-#, fuzzy
 msgid ""
 "The <placeholder-1/> function returns the summation of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
-msgstr ""
-"De <placeholder-1/>-functie geeft de sommatie van <placeholder-2/>, geëvalueerd voor alle natuurlijke getallen van <placeholder-3/> tot <placeholder-4/>. Dit is wiskundig geschreven als: <placeholder-5/>\n"
-"\t\t\t\t<placeholder-6/> kan elke functie zijn met x als variabele als als de functie wordt gebruikt in een standaardfunctie en t als variabele als het een parametrische functie is. <placeholder-7/> en <placeholder-8/> kunnen elke soort <placeholder-9/> zijn dat evauleert naar <placeholder-10/>."
+msgstr "De <placeholder-1/> functie geeft de som van <placeholder-2/> waarbij <placeholder-3/> geëvalueerd wordt voor alle gehele getallen van <placeholder-4/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-6/>\ n\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elk <placeholder-11/> zijn dat geëvalueerd wordt tot <placeholder-12/>."
 
 #. Special.xml:96(para)
-#, fuzzy
 msgid "Returns the product of an expression evaluated over a range of integers."
-msgstr "Geeft de waarde van de Euler-bèta-functie geëvalueerd voor de argumenten."
+msgstr "Geeft het product van een uitdrukking geëvalueerd over een bereik van gehele getallen."
 
 #. Special.xml:105(para)
-#, fuzzy
 msgid ""
 "The <placeholder-1/> function returns the product of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
-"De <placeholder-1/>-functie geeft het product van <placeholder-2/>, geëvalueerd voor alle natuurlijke getallen van <placeholder-3/> tot <placeholder-4/>. Dit is wiskundig geschreven als: <placeholder-5/>\n"
-"\t\t\t\t<placeholder-6/> kan elke functie zijn met x als variabele als als de functie wordt gebruikt in een standaardfunctie en t als variabele als het een parametrische functie is. <placeholder-7/> en <placeholder-8/> kunnen elke soort <placeholder-9/> zijn dat evauleert naar <placeholder-10/>."
+"De <placeholder-1/>-functie geeft het product van <placeholder-2/>, waarbij <placeholder-3/> geëvalueerd wordt voor alle natuurlijke getallen van <placeholder-43/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-5/>\n"
+"\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elk <placeholder-11/> zijn dat geëvalueerd wordt tot <placeholder-12/>."
 
 #. Special.xml:130(primary) Special.xml:160(primary)
 msgid "factorial"
@@ -376,9 +365,8 @@ msgid "Returns the value of the Euler gamma function of the argument."
 msgstr "Geeft de waarde van de Euler-gamma-functie van het argument."
 
 #. Special.xml:170(para)
-#, fuzzy
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The gamma function relates to the factorial function as <placeholder-7/>. The mathematical definition of the gamma function is: <placeholder-8/> This cannot be calculated precisely, so Graph is using the Lanczos approximation to calculate the <placeholder-9/> function."
-msgstr "De <placeholder-1/>-functie geeft het resultaat van de Euler-gamma-functie van <placeholder-2/>, normaal geschreven als &Gamma;(z). <placeholder-3/> kan elke soort <placeholder-4/> zijn dat evalueert naar een <placeholder-5/> of een <placeholder-6/>. De gamma-functie heeft met de faculteit-functie te maken als <placeholder-7/>. De wiskundige definitie van de gamma-functie is: <placeholder-8/> Dit kan niet precies worden berekend, daarom gebruikt Graph de zogenoemde Lanczos-benadering om de <placeholder-9/> te berekenen."
+msgstr "De <placeholder-1/>-functie geeft het resultaat van de Euler-gamma-functie van <placeholder-2/>, normaal geschreven als &Gamma;(z). <placeholder-3/> kan elke soort <placeholder-4/> zijn dat evalueert naar een <placeholder-5/> of een <placeholder-6/>. De gamma-functie heeft met de faculteit-functie te maken als <placeholder-7/>. De wiskundige definitie van de gamma-functie is: <placeholder-8/> Dit kan niet precies berekend worden, daarom gebruikt Graph de zogenoemde Lanczos-benadering om de <placeholder-9/>functie te berekenen."
 
 #. Special.xml:198(para)
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
@@ -661,9 +649,8 @@ msgid "The <placeholder-1/> function calculates the square root of <placeholder-
 msgstr "De <placeholder-1/> functie berekent de vierkantswortel van <placeholder-2/>, i.e. <placeholder-3/> tot de macht &frac12;. <placeholder-4/>  kan elk <placeholder-5/>  zijn dat resulteert in  <placeholder-6/> of een <placeholder-7/>. Wanneer de berekening wordt uitgevoerd met reële getallen, is het argument alleen gedefinieerd voor <placeholder-8/> &ge; 0."
 
 #. PowerAndLog.xml:90(para)
-#, fuzzy
 msgid "Returns the <placeholder-1/><superscript>th</superscript> root of the argument."
-msgstr "Geeft de vierkantswortel van het argument."
+msgstr "Geeft de <placeholder-1/><superscript>de</superscript>machtswortel van het argument."
 
 #. PowerAndLog.xml:99(para)
 msgid "The <placeholder-1/> function calculates the <placeholder-2/><superscript>th</superscript> root of <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-9/> &ge; 0."
@@ -2046,7 +2033,6 @@ msgid "Here you may choose the color of the shading."
 msgstr "Hier kun je de arceringskleur kiezen."
 
 #. InsertShadingDialog.xml:164(term)
-#, fuzzy
 msgid "Mark border"
 msgstr "Markering"
 
@@ -2239,17 +2225,14 @@ msgid "It is possible to draw lines between the markers. The line will always be
 msgstr "Het is mogelijk om lijnen te tekenen tussen de markeringen. De lijn zal altijd worden getrokken tussen punten in dezelfde volgorde als in het rooster. Je kan kiezen uit verschillende stijlen, kleuren en breedtes voor de lijnen. Je kan er ook voor kiezen om helemaal geen lijn te trekken ."
 
 #. InsertPointSeriesDialog.xml:98(guilabel)
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "Kubische boog"
+msgstr "1D kubische boog"
 
 #. InsertPointSeriesDialog.xml:98(ulink)
-#, fuzzy
 msgid "natural cubic spline"
-msgstr "Kubische boog"
+msgstr "natuurlijke kubische boog"
 
 #. InsertPointSeriesDialog.xml:100(guilabel)
-#, fuzzy
 msgid "2D cubic spline"
 msgstr "Kubische boog"
 
