@@ -334,7 +334,7 @@ msgstr "gehele getallen"
 msgid ""
 "The <placeholder-1/> function returns the summation of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
-msgstr "De <placeholder-1/> functie geeft de som van <placeholder-2/> waarbij <placeholder-3/> geëvalueerd wordt voor alle gehele getallen van <placeholder-4/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-6/>\ n\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elk <placeholder-11/> zijn dat geëvalueerd wordt tot <placeholder-12/>."
+msgstr "De <placeholder-1/> functie geeft de som van <placeholder-2/> waarbij <placeholder-3/> geëvalueerd wordt voor alle gehele getallen van <placeholder-4/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-6/>\n\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elk <placeholder-11/> zijn dat geëvalueerd wordt tot <placeholder-12/>."
 
 #. Special.xml:96(para)
 msgid "Returns the product of an expression evaluated over a range of integers."
@@ -345,7 +345,7 @@ msgid ""
 "The <placeholder-1/> function returns the product of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
-"De <placeholder-1/>-functie geeft het product van <placeholder-2/>, waarbij <placeholder-3/> geëvalueerd wordt voor alle natuurlijke getallen van <placeholder-43/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-5/>\n"
+"De <placeholder-1/>-functie geeft het product van <placeholder-2/>, waarbij <placeholder-3/> geëvalueerd wordt voor alle natuurlijke getallen van <placeholder-4/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-5/>\n"
 "\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elk <placeholder-11/> zijn dat geëvalueerd wordt tot <placeholder-12/>."
 
 #. Special.xml:130(primary) Special.xml:160(primary)
@@ -554,7 +554,7 @@ msgstr "Verwijdert het gedeelte voor de komma van het argument."
 
 #. Rounding.xml:22(para)
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
-msgstr "De <placeholder-1/>-functie geeft het <placeholder-2/>-gedeelte van <placeholder-3/>. De functie verwijdert het decimale deel van <placeholder-4/>, dat is, rondt af naar beneden. <placeholder-4/> kan elke soort <placeholder-6/> zijn dat naar een <placeholder-7/> of <placeholder-8/> evalueert. Als <placeholder-9/> een complex getal is, geeft de functie <placeholder-10/>."
+msgstr "De <placeholder-1/>-functie geeft het <placeholder-2/>-gedeelte van <placeholder-3/>. De functie verwijdert het decimale deel van <placeholder-4/>, dat is, rondt af naar beneden. <placeholder-5/> kan elke soort <placeholder-6/> zijn dat naar een <placeholder-7/> of <placeholder-8/> evalueert. Als <placeholder-9/> een complex getal is, geeft de functie <placeholder-10/>."
 
 #. Rounding.xml:43(primary)
 msgid "fractional part"
@@ -4174,7 +4174,7 @@ msgstr "In kader"
 
 #. AxesDialog.xml:215(para)
 msgid "Select <placeholder-1/> if you don't want the axes to be shown. Select <placeholder-2/> if you want a normal coordinate system. The location of the axes may be changed from <placeholder-3/> and <placeholder-4/>. Select <placeholder-5/> if you want the axes to be shown at the bottom and left side of the coordinate system, which will overwrite <placeholder-6/> / <placeholder-7/>."
-msgstr "Selecteer <placeholder-1/> als je niet wil dat de assen moeten worden weergegeven. Selecteer <placeholder-2/> als je een normaal assenstelsel wil. De plaats van de assen kan veranderd worden van <placeholder-3/> en <placeholder-4/>. Selecteer <placeholder-5/> als je wil dat de assen getoond worden aan de onderkant en linkerkant van het coördinatenstelsel, hierdoor wordt <placeholder-6/> / <placeholder-7/ > overschreven."
+msgstr "Selecteer <placeholder-1/> als je niet wil dat de assen moeten worden weergegeven. Selecteer <placeholder-2/> als je een normaal assenstelsel wil. De plaats van de assen kan veranderd worden van <placeholder-3/> en <placeholder-4/>. Selecteer <placeholder-5/> als je wil dat de assen getoond worden aan de onderkant en linkerkant van het coördinatenstelsel, hierdoor wordt <placeholder-6/> / <placeholder-7/> overschreven."
 
 #. AxesDialog.xml:227(para)
 msgid "Choose whether trigonometric functions should calculate in <placeholder-1/> or <placeholder-2/>. This is also used for showing <placeholder-3/> in the polar format."
