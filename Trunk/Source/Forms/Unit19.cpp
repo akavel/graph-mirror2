@@ -183,12 +183,12 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
 		Python::TPyObjectPtr DataObject(Python::IsPythonInstalled() ? ToPyObject(Data) : NULL, false);
     for(unsigned I = 0; I < StepCount; I++)
     {
-      double Value = Min + Step * I;
+      long double Value = Min + Step * I;
       Bitmap->Canvas->Brush->Style = bsSolid;
       Bitmap->Canvas->Brush->Color = Data.Axes.BackgroundColor;
       Bitmap->Canvas->FillRect(TRect(0, 0, ImageWidth, ImageHeight));
       Data.CustomFunctions.Replace(AnimationInfo.Constant, Value);
-      ExecutePluginEvent(Python::peAnimate, DataObject.get(), AnimationInfo.Constant, Value);
+      ExecutePluginEvent(Python::peAnimate, DataObject.get(), AnimationInfo.Constant, static_cast<double>(Value));
       Data.CustomFunctions.Update(Data);
       for(unsigned I = 0; I < ElemList.size(); I++)
       {
