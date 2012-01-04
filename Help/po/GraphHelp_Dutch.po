@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2011-11-21 22:57Romance Standard Time\n"
-"PO-Revision-Date: 2011-12-29 09:53+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2012-01-03 10:51+0100\n"
+"Last-Translator: etienne goemaere <etienne.goemaere@telenet.be>\n"
 "Language-Team:  <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -316,7 +316,7 @@ msgstr "Voorbeelden"
 
 #. Special.xml:42(para)
 msgid "<placeholder-1/> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396. More useful is <placeholder-2/>. This will plot the integral of f(s)=s*sin(s) from 0 to x, which is the same as the definite integral of f(x)=x*sin(x)."
-msgstr "<placeholder-1/> integreert f(t)=t^2-7t+1 van -3 tot 15 en evalueert tot 396. Nuttiger is <placeholder-2/>. Dit plot de integraal van f(s)=s*sin(s) van 0 tot x, wat hetzelfde is als de bepaalde integraal vanf f(x)=x*sin(x)."
+msgstr "<placeholder-1/> integreert f(t)=t^2-7t+1 van -3 tot 15 enis gelijk aan 396. Nuttiger is <placeholder-2/>. Dit plot de integraal van f(s)=s*sin(s) van 0 tot x, wat hetzelfde is als de bepaalde integraal vanf f(x)=x*sin(x)."
 
 #. Special.xml:61(primary)
 msgid "summation"
@@ -334,7 +334,7 @@ msgstr "gehele getallen"
 msgid ""
 "The <placeholder-1/> function returns the summation of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
-msgstr "De <placeholder-1/> functie geeft de som van <placeholder-2/> waarbij <placeholder-3/> geëvalueerd wordt voor alle gehele getallen van <placeholder-4/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-6/>\n\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elk <placeholder-11/> zijn dat geëvalueerd wordt tot <placeholder-12/>."
+msgstr "De <placeholder-1/> functie geeft de som van <placeholder-2/> waarbij <placeholder-3/> geëvalueerd wordt voor alle gehele getallen van <placeholder-4/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-6/>\ n\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elke <placeholder-11/> zijn die resulteren in <placeholder-12/>."
 
 #. Special.xml:96(para)
 msgid "Returns the product of an expression evaluated over a range of integers."
@@ -345,8 +345,8 @@ msgid ""
 "The <placeholder-1/> function returns the product of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr ""
-"De <placeholder-1/>-functie geeft het product van <placeholder-2/>, waarbij <placeholder-3/> geëvalueerd wordt voor alle natuurlijke getallen van <placeholder-4/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-5/>\n"
-"\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elk <placeholder-11/> zijn dat geëvalueerd wordt tot <placeholder-12/>."
+"De <placeholder-1/>-functie geeft het product van <placeholder-2/>, waarbij <placeholder-3/> geëvalueerd wordt voor alle natuurlijke getallen van <placeholder-43/> tot <placeholder-5/>. Dit is wiskundig geschreven als: <placeholder-5/>\n"
+"\t\t\t\t<placeholder-7/> kan elke functie zijn met de variabele aangeduid als het tweede argument <placeholder-8/>. <placeholder-9/> en <placeholder-10/> kunnen elke <placeholder-11/> zijn die resulteren in <placeholder-12/>."
 
 #. Special.xml:130(primary) Special.xml:160(primary)
 msgid "factorial"
@@ -358,7 +358,7 @@ msgstr "Geeft de faculteit van het argument."
 
 #. Special.xml:140(para)
 msgid "The <placeholder-1/> function returns the factorial of <placeholder-2/>, commonly written as n!. <placeholder-3/> may be any <placeholder-4/> that evaluates to a positive <placeholder-5/>. The function is defined as <placeholder-6/>, and relates to the <placeholder-7/> function as <placeholder-8/>."
-msgstr "De <placeholder-1/>-functie geeft de faculteit van <placeholder-2/>, vaak geschreven als n!. <placeholder-3/> kan elke soort <placeholder-4/> zijn dat evalueert naar een positieve <placeholder-5/>. De functie is gedefiniëerd als <placeholder-6/>, en heeft met de <placeholder-7/>-functie te maken als <placeholder-8/>."
+msgstr "De <placeholder-1/>-functie geeft de faculteit van <placeholder-2/>, vaak geschreven als n!. <placeholder-3/> kan elke soort <placeholder-4/> zijn dat resulteert in een positief <placeholder-5/>. De functie is gedefiniëerd als <placeholder-6/>, en heeft met de <placeholder-7/>-functie te maken als <placeholder-8/>."
 
 #. Special.xml:161(para)
 msgid "Returns the value of the Euler gamma function of the argument."
@@ -378,7 +378,7 @@ msgstr "complexe getallen"
 
 #. Special.xml:207(para)
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>. The <placeholder-9/> function relates to the <placeholder-10/> function as <placeholder-11/>."
-msgstr "De <placeholder-1/>-functie geeft het resultaat van de Euler-beta-functie geëvalueerd voor <placeholder-2/> en <placeholder-3/>. <placeholder-4/> en <placeholder-5/> kunnen elke soort <placeholder-6/> zijn dat evalueert naar <placeholder-7/> of <placeholder-8/>. De <placeholder-9/>-functie heeft met de <placeholder-10/> te maken als <placeholder-11/>."
+msgstr "De <placeholder-1/>-functie geeft het resultaat van de Euler-beta-functie berekend voor <placeholder-2/> en <placeholder-3/>. <placeholder-4/> en <placeholder-5/> kunnen elke soort <placeholder-6/> zijn die resulteert in <placeholder-7/> of <placeholder-8/>. De <placeholder-9/>-functie heeft met de <placeholder-10/> te maken: <placeholder-11/>."
 
 #. Special.xml:228(primary)
 msgid "Lambert W-function"
@@ -398,7 +398,7 @@ msgstr "De <placeholder-1/>-functie geeft het resultaat van de Lambert-W-functie
 
 #. Special.xml:247(para)
 msgid "For real values of <placeholder-1/> when <placeholder-2/>, the <placeholder-3/> function will evaluate to values with an imaginary part."
-msgstr "Voor reële getallen van <placeholder-1/> wanneer <placeholder-2/> zal de <placeholder-3/>-functie evalueren naar waarden met een imaginair deel."
+msgstr "Voor reële waarden van <placeholder-1/> met <placeholder-2/> zal de <placeholder-3/>-functie evalueren naar waarden met een imaginair deel."
 
 #. Special.xml:264(primary)
 msgid "Riemann Zeta function"
@@ -406,15 +406,15 @@ msgstr "Riemann-Zeta-functie"
 
 #. Special.xml:265(para)
 msgid "Returns the value of the Riemann Zeta function evaluated for the argument."
-msgstr "Geeft de waarde van de Riemann-Zeta-functie geëvalueerd voor het argument."
+msgstr "Geeft de waarde van de Riemann-Zeta-functie berekend voor het argument."
 
 #. Special.xml:274(para)
 msgid "The <placeholder-1/> function returns the result of the Riemann Zeta function, commonly written as &zeta;(s). <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/> or a <placeholder-5/>."
-msgstr "De <placeholder-1/>-functie geeft het resultaat van de Riemann-Zeta-functie, normaal geschreven als &zeta;(s). <placeholder-2/> kan elke soort <placeholder-3/> zijn dat evalueert naar een <placeholder-4/> of een <placeholder-5/>."
+msgstr "De <placeholder-1/>-functie geeft het resultaat van de Riemann-Zeta-functie, normaal geschreven als &zeta;(s). <placeholder-2/> kan elke soort <placeholder-3/> zijn die resulteert in een <placeholder-4/> of een <placeholder-5/>."
 
 #. Special.xml:281(para)
 msgid "The <placeholder-1/> function is defined for the whole complex plane except for the pole at <placeholder-2/>=1."
-msgstr "De <placeholder-1/>-functie is gedefiniëerd voor het gehele complex-getallensysteem voor de pool op <placeholder-2/>=1."
+msgstr "De <placeholder-1/>-functie is gedefiniëerd voor het gehele complex-getallensysteem behalve als de pool in <placeholder-2/>=1."
 
 #. Special.xml:298(primary)
 msgid "modulus"
@@ -430,7 +430,7 @@ msgstr "Geeft de rest van het eerste argument gedeeld door het tweede argument."
 
 #. Special.xml:309(para)
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
-msgstr "Berekent <placeholder-1/> modulus <placeholder-2/>, de rest van <placeholder-3/>. <placeholder-4/> berekent de rest f, waar <placeholder-5/> voor een natuurlijk getal a. Het teken van f is altijd hetzelfde als de teken van <placeholder-6/>. Wanneer <placeholder-7/>, <placeholder-8/> geeft 0. <placeholder-9/> en <placeholder-10/> kunnen elke soort <placeholder-11/>zijn dat evalueert naar <placeholder-12/>."
+msgstr "Berekent <placeholder-1/> modulus <placeholder-2/>, de rest van <placeholder-3/>. <placeholder-4/> berekent de rest f, zodat <placeholder-5/> voor een natuurlijk getal a. Het teken van f is altijd hetzelfde als de teken van <placeholder-6/>. Wanneer <placeholder-7/>, <placeholder-8/> geeft 0. <placeholder-9/> en <placeholder-10/> kunnen elke soort <placeholder-11/> zijn die resulteren in <placeholder-12/>."
 
 #. Special.xml:330(primary)
 msgid "normal distribution"
@@ -442,7 +442,7 @@ msgstr "Geeft de normale verdeling van het eerste argument bij een gegeven gemid
 
 #. Special.xml:340(para)
 msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/> and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
-msgstr "De <placeholder-1/>-functie is de waarschijnlijke dichtheid van de normale verdeling, ook wel de Gaussian-verdeling genoemd. <placeholder-2/> is de variatie, ook wel de willekeurige variabele genoemd, <placeholder-3/> is het gemiddelde en &sigma; is de standaardafwijking. <placeholder-4/> en &sigma; zijn gegeven en als ze worden weggelaten wordt de standaard normale verdeling gebruikt waar <placeholder-5/> en &sigma;=1. <placeholder-6/>, <placeholder-7/> en &sigma; mogen elke soort <placeholder-8/> zijn dat evalueert naar <placeholder-9/> waar &sigma; &gt; 0. De normale verdeling is gedefiniëerd als: <placeholder-10/>"
+msgstr "De <placeholder-1/>-functie is de waarschijnlijke dichtheid van de normale verdeling, ook wel de Gaussian-verdeling genoemd. <placeholder-2/> is de variatie, ook wel de willekeurige variabele genoemd, <placeholder-3/> is het gemiddelde en &sigma; is de standaardafwijking. <placeholder-4/> en &sigma; zijn gegeven en als ze worden weggelaten wordt de standaard normale verdeling gebruikt waar <placeholder-5/> en &sigma;=1. <placeholder-6/>, <placeholder-7/> en &sigma; mogen elke soort <placeholder-8/> zijndie resulteren in <placeholder-9/> waar &sigma; &gt; 0. De normale verdeling is gedefiniëerd als: <placeholder-10/>"
 
 #. SaveImageDialog.xml:8(title)
 msgid "Save as image"
@@ -554,7 +554,7 @@ msgstr "Verwijdert het gedeelte voor de komma van het argument."
 
 #. Rounding.xml:22(para)
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
-msgstr "De <placeholder-1/>-functie geeft het <placeholder-2/>-gedeelte van <placeholder-3/>. De functie verwijdert het decimale deel van <placeholder-4/>, dat is, rondt af naar beneden. <placeholder-5/> kan elke soort <placeholder-6/> zijn dat naar een <placeholder-7/> of <placeholder-8/> evalueert. Als <placeholder-9/> een complex getal is, geeft de functie <placeholder-10/>."
+msgstr "De <placeholder-1/>-functie geeft het <placeholder-2/>-gedeelte van <placeholder-3/>. De functie verwijdert het decimale deel van <placeholder-4/>, dat is, rondt af naar beneden. <placeholder-4/> kan elke soort <placeholder-6/> zijn dat naar een <placeholder-7/> of <placeholder-8/> evalueert. Als <placeholder-9/> een complex getal is, geeft de functie <placeholder-10/>."
 
 #. Rounding.xml:43(primary)
 msgid "fractional part"
@@ -682,7 +682,7 @@ msgstr "Geeft de natuurlijke logaritme van het argument."
 
 #. PowerAndLog.xml:144(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <emphasis>e</emphasis>, which is Euler's constant. <placeholder-3/> is commonly known as the natural logarithm. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0."
-msgstr "De <placeholder-1/> functie die de logaritme berekent van <placeholder-2/> met het getal <emphasis>e</emphasis> als grondtal, de constante van Euler. <placeholder-3/> is algemeen bekend als de natuurlijke logaritme. <placeholder-4/> kan elke <placeholder-5/>  zijn dat resulteert in een<placeholder-6/> of een <placeholder-7/>.Wanneer de berekening wordt uitgevoerd met reële getallen, is het argument alleen gedefinieerd voor <placeholder-8/>&gt;0. Bij de berekening met complexe getallen, is <placeholder-9/> gedefinieerd voor alle getallen, behalve <placeholder-10/> = 0."
+msgstr "De <placeholder-1/> functie die de logaritme berekent van <placeholder-2/> met het getal <emphasis>e</emphasis> als grondtal, de constante van Euler. <placeholder-3/> is algemeen bekend als de natuurlijke logaritme. <placeholder-4/> kan elke <placeholder-5/>  zijn dat resulteert in een <placeholder-6/> of een <placeholder-7/>.Wanneer de berekening wordt uitgevoerd met reële getallen, is het argument alleen gedefinieerd voor <placeholder-8/>&gt;0. Bij de berekening met complexe getallen, is <placeholder-9/> gedefinieerd voor alle getallen, behalve <placeholder-10/> = 0."
 
 #. PowerAndLog.xml:166(para)
 msgid "Returns the base 10 logarithm of the argument."
@@ -1006,11 +1006,11 @@ msgstr "Linken naar bestand"
 
 #. OLE.xml:37(para)
 msgid "You may create a new Graph object in Word by choosing the <placeholder-1/> menu item and selecting <placeholder-2/> as <placeholder-3/>. The same dialog can be used to create an embedded Graph object from an existing grf-file. If you select <placeholder-4/>, you will get a linked object instead of an embedded object. This way all changes to the object will be reflected in the original grf-file. If the grf-file is not available you will not be able to edit the object, but you can still see the image in Word."
-msgstr "Je maakt een nieuw Graph object in Word door te kiezen voor het menu-item <placeholder-1/> en het selecteren van <placeholder-2/> als <placeholder-3/>. Hetzelfde dialoogvenster kan gebruikt worden om een ingesloten Graph-object te maken van een bestaand GRF-bestand. Als je <placeholder-4/>selecteert, krijg je een gekoppeld object in de plaats van een ingesloten object. Op deze manier zulllen alle wijzigingen aan het object weerspiegeld worden in de originele GRF-bestand. Als het GRF-bestand is niet beschikbaar zul je niet in staat zijn om het object te bewerken, maar je kan wel het beeld nog zien in Word."
+msgstr "Je maakt een nieuw Graph object in Word door te kiezen voor het menu-item <placeholder-1/> en het selecteren van <placeholder-2/> als <placeholder-3/>. Hetzelfde dialoogvenster kan gebruikt worden om een ingesloten Graph-object te maken van een bestaand GRF-bestand. Als je <placeholder-4/> selecteert, krijg je een gekoppeld object in de plaats van een ingesloten object. Op deze manier zulllen alle wijzigingen aan het object weerspiegeld worden in de originele GRF-bestand. Als het GRF-bestand niet beschikbaar is, zul je niet in staat zijn om het object te bewerken, maar je kan wel het beeld nog zien in Word."
 
 #. OLE.xml:49(para)
 msgid "To edit a Graph object you must have Graph installed on the system. If Graph is not installed you will still be able to see the image but not edit it."
-msgstr "Voor het bewerken van een grafiek object moet Graph geïnstalleerd zijn op het systeem. Als Graph niet is geïnstalleerd kunt u nog steeds het beeld zien, maar niet bewerken."
+msgstr "Voor het bewerken van een Graph-object moet Graph geïnstalleerd zijn op het systeem. Als Graph niet geïnstalleerd  is, kun je nog steeds het beeld zien, maar niet bewerken."
 
 #. OLE.xml:56(title)
 msgid "OLE client"
@@ -1022,7 +1022,7 @@ msgstr "Voeg object in..."
 
 #. OLE.xml:57(para)
 msgid "Graph can work as an OLE client as a text label in Graph is an OLE container. This means that you can paste images and OLE objects into the editor used to add labels. As in any other OLE container you can edit the object by double clicking on it. From the context menu you can use <placeholder-1/> to create a new OLE object in the label. The same dialog can be used to create an object from a file. You can for example insert an image file this way. To edit an OLE object the server must be installed on the system, else you will only be able to see object but not edit it."
-msgstr "Graph kan werken als een OLE-client als een tekstlabel in Graph  een OLE-container is. Dit betekent dat je afbeeldingen kunt  plakken en OLE-objecten in de editor gebruiken om labels toe te voegen. Zoals in elke OLE container kun je het object bewerken door er dubbel op te klikken. Uit de context menu kun je <placeholder-1/> gebruiken om een ​ieuw OLE-object in het label te creëren. Hetzelfde dialoogvenster kan worden gebruikt om een object uit een bestand te maken. Je kunt bijvoorbeeld een image bestand invoegen op deze manier. Om een OLE-object te bewerkenmoet de server geïnstalleerd zijn op het systeem, anders zul je alleen in staat zijn om het object te zien, maar niet om het te bewerken."
+msgstr "Graph kan werken als een OLE-client, als een tekstlabel in Graph  een OLE-container is. Dit betekent dat je afbeeldingen kunt  plakken en OLE-objecten in de editor gebruiken om labels toe te voegen. Zoals in elke OLE container kun je het object bewerken door er dubbel op te klikken. Uit de context menu kun je <placeholder-1/> gebruiken om een nieuw OLE-object in het label te creëren. Hetzelfde dialoogvenster kan worden gebruikt om een object uit een bestand te maken. Je kunt bijvoorbeeld een image bestand invoegen op deze manier. Om een OLE-object te bewerken, moet de server geïnstalleerd zijn op het systeem, anders zul je alleen in staat zijn om het object te zien, maar niet om het te bewerken."
 
 #. MenuItems.xml:4(title)
 msgid "List of menu items"
@@ -1098,7 +1098,7 @@ msgstr "Puntenreeksen ..."
 
 #. MenuItems.xml:100(para)
 msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit to the number of point series possible in the data file as long as they share the same x-coordinates."
-msgstr "Voert een of meerdere serie punten van een door een tab, komma of puntkomma gescheiden bestand. De eerste kolom bevat de x-coördinaten. De volgende kolommen bevatten de y-coördinaten. Graph zal zo veel serie punten creëren als er kolommen met y-coördinaten zijn in het bestand. Er is geen limiet aan het aantal mogelijke serie punten in het bestand, zolang ze dezelfde x-coördinaten delen."
+msgstr "Voert een of meerdere puntenreeksen in van een door een tab, komma of puntkomma gescheiden bestand. De eerste kolom bevat de x-coördinaten. De volgende kolommen bevatten de y-coördinaten. Graph zal zo veel serie punten creëren als er kolommen met y-coördinaten zijn in het bestand. Er is geen limiet aan het aantal mogelijke serie punten in het bestand, zolang ze dezelfde x-coördinaten delen."
 
 #. MenuItems.xml:113(guimenuitem)
 msgid "Print..."
@@ -1146,11 +1146,11 @@ msgstr "grafiekelement"
 
 #. MenuItems.xml:176(para)
 msgid "This will copy the selected <placeholder-1/> to the clipboard. The element will be deleted afterwards."
-msgstr "Dit kopieert de geselecteerde <placeholder-1/> naar het klembord. Het element zal achteraf worden verwijderd."
+msgstr "Dit kopieert het geselecteerde <placeholder-1/> naar het klembord. Het element zal achteraf worden verwijderd."
 
 #. MenuItems.xml:190(para)
 msgid "This will copy the selected <placeholder-1/> to the clipboard."
-msgstr "Dit kopieert de geselecteerde <placeholder-1/> naar het klembord."
+msgstr "Dit kopieert het geselecteerde <placeholder-1/> naar het klembord."
 
 #. MenuItems.xml:204(para)
 msgid "This will paste an earlier copied <placeholder-1/> from the clipboard into the coordinate system."
@@ -1254,7 +1254,7 @@ msgstr "Enter"
 
 #. MenuItems.xml:403(para)
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
-msgstr "Dit toont een dialoogvenster waarin je de geselecteerde <placeholder-1/> in de <placeholder-2/> kunt veranderen."
+msgstr "Dit toont een dialoogvenster waarin je het geselecteerde <placeholder-1/> in de <placeholder-2/> kunt veranderen."
 
 #. MenuItems.xml:412(guimenuitem)
 msgid "Delete"
@@ -1302,7 +1302,7 @@ msgstr "Venster"
 
 #. MenuItems.xml:477(para)
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
-msgstr "Hou de <action> linker muisknop </ actie> terwijl je het gedeelte selecteert dat je wil dat het hele grafische gebied vult. <action> Klik met de rechtermuisknop </ actie> of druk op <keycap> Esc </ keycap> om het commando te annuleren."
+msgstr "Hou de <action>linker muisknop</actie> terwijl je het gedeelte selecteert dat je wil dat het hele grafische gebied vult. <action>Klik met de rechtermuisknop</actie> of druk op <keycap>Esc</keycap> om het commando te annuleren."
 
 #. MenuItems.xml:487(guimenuitem) FAQ.xml:198(guimenuitem)
 msgid "Square"
@@ -1486,7 +1486,7 @@ msgstr "bug-melding"
 
 #. Introduction.xml:18(para)
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
-msgstr "Graph is een programma dat ontworpenis  om grafieken van wiskundige functies in een assenstelsel en soortgelijke dingen te tekenen. Het programma is een standaard Windows-programma met menu's en dialoogvensters. Het programma is in staat om standaard functies, parametrische functies, polaire functies, raaklijnen, punt series, arceringen en relaties, te tekenen. Het is ook mogelijk om  een functiewaarde voor een bepaald punt te berekenen, een grafiek te traceren met de muis en nog veel meer. Voor meer informatie over het gebruik van het programma zie <placeholder-1/>."
+msgstr "Graph is een programma dat ontworpen is  om grafieken van wiskundige functies in een assenstelsel en soortgelijke dingen te tekenen. Het programma is een standaard Windows-programma met menu's en dialoogvensters. Het programma is in staat om standaard functies, parametrische functies, polaire functies, raaklijnen, puntenreeksen, arceringen en relaties te tekenen. Het is ook mogelijk om  een functiewaarde voor een bepaald punt te berekenen, een grafiek te traceren met de muis en nog veel meer. Voor meer informatie over het gebruik van het programma zie <placeholder-1/>."
 
 #. Introduction.xml:25(para)
 msgid "Graph is free software; you can redistribute it and/or modify it under the terms of the <placeholder-1/>. Newest version of the program as well as the source code may be downloaded from <placeholder-2/>."
@@ -1498,7 +1498,7 @@ msgstr "Graph ondersteuningsforum"
 
 #. Introduction.xml:30(para)
 msgid "Graph has been tested under <placeholder-1/>, but there may still be bugs left. If you need help using Graph or have suggestions for future improvements, please use the <placeholder-2/>."
-msgstr "Grafiek is getest onder <placeholder-1/>, maar er kunnen nog steeds bugs overblijven. Heb je hulp nodig bij het gebruik van Graph of heb je suggesties voor toekomstige verbeteringen, gebruik dan de <placeholder-2/>."
+msgstr "Gaph is getest onder <placeholder-1/>, maar er kunnen nog steeds bugs overblijven. Heb je hulp nodig bij het gebruik van Graph of heb je suggesties voor toekomstige verbeteringen, gebruik dan de <placeholder-2/>."
 
 #. Introduction.xml:42(para)
 msgid "When you send a bug report, please write the following:"
@@ -1598,7 +1598,7 @@ msgstr "De installatie maakt een snelkoppeling in het Start-menu, deze kan gebru
 
 #. Installation.xml:73(para)
 msgid "If an older version of the program is already installed, the installation suggests you install in the same directory. You can just install over the old version. There is no need to uninstall the old version first, but make sure the old version is not running while installing."
-msgstr "Als een oudere versie van het programma reeds geïnstalleerd is, suggereert de installatie eenu installatie in dezelfde directory. Je kunt gewoon installeren over de oude versie. Het is niet nodig om eerst de oude versie te verwijderen, maar zorg ervoor dat de oude versie niet draait tijdens het installeren."
+msgstr "Als een oudere versie van het programma reeds geïnstalleerd is, suggereert de installatie u een installatie in dezelfde directory. Je kunt gewoon installeren over de oude versie. Het is niet nodig om eerst de oude versie te verwijderen, maar zorg ervoor dat de oude versie niet draait tijdens het installeren."
 
 #. Installation.xml:78(para)
 msgid "The Graph Setup can take the parameters specified in the table below. These are especially useful when you want to automate the installation."
@@ -1618,7 +1618,7 @@ msgstr "Verzoekt om een stille installatie, wat betekent dat de wizard en het ac
 
 #. Installation.xml:104(entry)
 msgid "Instructs the Setup to be very silent. This is the same as silent with the addition that the installation progress window is not displayed either. If a restart is necessary, the Setup will reboot without asking."
-msgstr "Verzoekt om een zeer stille Setup. Dit is hetzelfde als stille war ook het installatie vooruitgangvenster niet wordt weergegeven. Als een herstart noodzakelijk is, zal de Setup opnieuw op te starten zonder te vragen."
+msgstr "Verzoekt om een zeer stille Setup. Dit is hetzelfde als stille waar ook het installatie vooruitgangvenster niet wordt weergegeven. Als een herstart noodzakelijk is, zal de Setup opnieuw op te starten zonder te vragen."
 
 #. Installation.xml:111(entry)
 msgid "Instructs Setup not to reboot even if it's necessary."
@@ -1630,7 +1630,7 @@ msgstr "Selecteer taal"
 
 #. Installation.xml:117(entry)
 msgid "Specifies the language to use. <placeholder-1/> specifies the English name of the language. When a valid /LANG parameter is used, the <placeholder-2/> dialog will be suppressed."
-msgstr "Specificeert de te gebruiken taal. <placeholder-1/> specificeert de Engels naam van de taal. Wanneer een geldige /LANG parameter gebruikt wordt, zal de <placeholder-2/> dialoog worden onderdrukt."
+msgstr "Specifieert de te gebruiken taal. <placeholder-1/> geeft de Engelse naam van de taal. Wanneer een geldige /LANG parameter gebruikt wordt, zal de <placeholder-2/> dialoog onderdrukt worden ."
 
 #. Installation.xml:126(guilabel)
 msgid "Select destination location"
@@ -1638,7 +1638,7 @@ msgstr "Selecteer locatie"
 
 #. Installation.xml:125(entry)
 msgid "Overrides the default directory name displayed on the <placeholder-1/> wizard page. A fully qualified pathname must be specified."
-msgstr "Overschrijft de standaard directory naam weergegeven op de pagina van de <placeholder-1/> wizard . Een volledig gekwalificeerde padnaam moet worden gespecificeerd."
+msgstr "Overschrijft de standaard directorynaam weergegeven op de pagina van de <placeholder-1/> wizard. De gegeven padnaam moet volledig geldig zijn."
 
 #. Installation.xml:137(title)
 msgid "Uninstallation"
@@ -1646,7 +1646,7 @@ msgstr "De-installatie"
 
 #. Installation.xml:138(para)
 msgid "Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. If files were added to the installation directory after the installation, you will be asked if you want to delete them. Make sure Graph is not running while uninstalling."
-msgstr "De-installatie wordt gedaan van <emphasis> Add / Remove Programs </ emphasis> in de <emphasis> Control Panel </ emphasis>. Selecteer gewoon Graph en klik op de <emphasis> knop Wijzigen / verwijderen </ emphasis>. Dit zal alle sporen van het programma verwijderen. Als er bestanden toegevoegd werden aan de installatie-directory na de installatie, word je gevraagd of je ze wilt verwijderen. Zorg ervoor dat Graph is niet actief tijdens het verwijderen."
+msgstr "De-installatie wordt gedaan van <emphasis>Add/Remove Programs</emphasis> in de <emphasis>Control Panel</emphasis>. Selecteer gewoon Graph en klik op de <emphasis> knop Wijzigen / verwijderen </ emphasis>. Dit zal alle sporen van het programma verwijderen. Als er bestanden toegevoegd werden aan de installatie-directory na de installatie, word je gevraagd of je ze wilt verwijderen. Zorg ervoor dat Graph niet actief i  tijdens het verwijderen."
 
 #. Installation.xml:147(title)
 msgid "Startup"
@@ -1654,7 +1654,7 @@ msgstr "Opstarten"
 
 #. Installation.xml:148(para)
 msgid "Usually Graph is started from the link in the <guibutton>Start</guibutton> menu. A .grf file can be passed as parameter, in which case Graph will open the specified file. In addition to this the parameters in the table below can be passed to Graph on the command line."
-msgstr "Meestal wordt Graph gestart vanuit de link in de <guibutton> Start </ guibutton> menu. Een .grf-bestand kan worden doorgegeven als parameter, in dit geval zal Graph het opgegeven bestand te openen. Aansluitend hierop kunnen de parameters uit onderstaande tabel naar Graph doorgegeven worden in de opdrachtregel."
+msgstr "Meestal wordt Graph gestart vanuit de link in de <guibutton>Start</guibutton> menu. Een .grf-bestand kan worden doorgegeven als parameter, in dit geval zal Graph het opgegeven bestand openen. Aansluitend hierop kunnen de parameters uit onderstaande tabel naar Graph doorgegeven worden in de opdrachtregel."
 
 #. Installation.xml:169(link)
 msgid "image formats"
@@ -2646,7 +2646,7 @@ msgstr "Geeft de inverse hyperbolische cotangens van het argument."
 
 #. Hyperbolic.xml:361(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
-msgstr "De <placeholder-1/> functie berekent de inverse hyperbolische cotangens van <placeholder-2/>. <placeholder-3/> kan elk <placeholder-4/> zijn dat resulteert in een <placeholder-5/> of een <placeholder-6/>. <placeholder-7/> is het omgekeerde van <placeholder-8/>, dat wil zeggen <placeholder-9/>. Voor reële getallen is<placeholder-10/> niet gedefinieerd in het interval [-1, 1]."
+msgstr "De <placeholder-1/> functie berekent de inverse hyperbolische cotangens van <placeholder-2/>. <placeholder-3/> kan elk <placeholder-4/> zijn dat resulteert in een <placeholder-5/> of een <placeholder-6/>. <placeholder-7/> is het omgekeerde van <placeholder-8/>, dat wil zeggen <placeholder-9/>. Voor reële getallen is  <placeholder-10/> niet gedefinieerd in het interval [-1, 1]."
 
 #. HowToUse.xml:4(title)
 msgid "How to use Graph"
@@ -2678,7 +2678,7 @@ msgstr "werkbalk"
 
 #. HowToUse.xml:16(para)
 msgid "When the program starts, you will see the main window shown below. This window shows the graphing area to the right with the coordinate system where the graphs you insert will be shown. You can use the menu or the buttons on the toolbar to show different dialog boxes to insert a function, edit functions, delete functions etc. You can find a <link linkend=\"MenuItems\">description</link> of all the menu items."
-msgstr "Wanneer het programma start, zie je hieronder het hoofdvenster weergegeven. Dit venster toont rechts het grafische gedeelte met het assenstelsel waar de ingevoerde grafieken getoond worden. Je kan gebruik maken van het menu of de knoppen op de werkbalk om de verschillende dialoogvensters om een functie in te voegen, bewerkingsfuncties te tonen,functies  te verwijderen enz. Je kan een <link linkend=\"MenuItems\"> beschrijving vinden </link> van alle menu-items."
+msgstr "Wanneer het programma start, zie je het hoofdvenster hieronder weergegeven. Dit venster toont rechts het grafische gedeelte met het assenstelsel waar de ingevoerde grafieken getoond zullen worden. Je kan gebruik maken van het menu of de knoppen op de werkbalk om de verschillende dialoogvensters te tonen, om een functie in te voegen, bewerkingsfuncties te tonen,functies  te verwijderen enz. Je kan een <link linkend=\"MenuItems\"> beschrijving vinden </link> van alle menu-items."
 
 #. HowToUse.xml:23(guimenuitem)
 msgid "Customize toolbar..."
@@ -2694,7 +2694,7 @@ msgstr "Je kan nieuwe elementen toevoegen aan het coördinatensysteem van het fu
 
 #. HowToUse.xml:41(para)
 msgid "The <placeholder-1/> to the left shows a list of functions, tangents, point series, shadings and relations you have added. If you want to manipulate anything in the list, just select it and use the <placeholder-2/> menu. You can also right click on an item in the list to get the context menu with available commands. An item may be edited by double clicking on it."
-msgstr "De <placeholder-1/> aan de linkerkant toont een lijst van functies, raaklijnen, punt series, arceringen en de relaties die u hebt toegevoegd. Als je iets in de lijst wil manipuleren, selecteer je het en gebruik het <placeholder-2/> menu. Je kan ook met de rechtermuisknop klikken op een item in de lijst om het contextmenu te krijgen met de beschikbare commando's. Een item kan bewerkt worden door er op dubbel te klikken."
+msgstr "De <placeholder-1/> aan de linkerkant toont een lijst van functies, raaklijnen, puntenreeksen, arceringen en de relaties die je hebt toegevoegd. Als je iets in de lijst wil manipuleren, selecteer je het en gebruik het <placeholder-2/> menu. Je kan ook met de rechtermuisknop klikken op een item in de lijst om het contextmenu te krijgen met de beschikbare commando's. Een item kan bewerkt worden door er op dubbel te klikken."
 
 #. HowToUse.xml:47(para)
 msgid "The <placeholder-1/> menu contains commands to make calculations on functions, for example evaluations at specific coordinates or given intervals."
@@ -2742,7 +2742,7 @@ msgstr "Toon in de legende."
 
 #. Glossary.xml:72(para)
 msgid "The legend is a box that per default is placed at the upper right corner of the graphing area, and shows a list of the plotted functions, tangents, shadings, and point series in the coordinate system. Select <placeholder-1/> under <placeholder-2/> in the <placeholder-3/> dialog to show the legend. <action>Right click</action> on an item in the function list and deselect <placeholder-4/> if you don't want the item shown in the legend. When editing an item you can enter the text to be shown in the legend. For functions and tangents the function equation will be shown if no legend text is entered."
-msgstr "De legende is een vak dat standaard in de rechter bovenhoek vanhet grafisch gebied verschijnt, en vermeldt een lijst van de geplotte functies, raaklijnen, arceringen, en puntenreeksen in het coördinatenstelsel. Selecteer <placeholder-1/> onder <placeholder-2/> in de <placeholder-3/> dialoog om de legende te tonen. <action>Right click</action> op een item in de lijst en schakel <placeholder-4/> uit, als je niet wil dat het item getoond wordt in de legende. Bij het bewerken van een item kan je tekst laten weergeven in de legende. Voor functies en raaklijnen zal de functievergelijking getoond worden als er geen legendetekst ingevoerd is."
+msgstr "De legende is een vak dat standaard in de rechter bovenhoek vanhet grafisch gebied verschijnt, en vermeldt een lijst van de geplotte functies, raaklijnen, arceringen, en puntenreeksen in het coördinatenstelsel. Selecteer <placeholder-1/> onder <placeholder-2/> in de <placeholder-3/> dialoog om de legende te tonen. <action>Klik rechts</action> op een item in de lijst en schakel <placeholder-4/> uit, als je niet wil dat het item getoond wordt in de legende. Bij het bewerken van een item kan je tekst laten weergeven in de legende. Voor functies en raaklijnen zal de functievergelijking getoond worden als er geen legendetekst ingevoerd is."
 
 #. Glossary.xml:87(para)
 msgid "An expression that can be evaluated as a number is called a numeric expression. The expression can include any combination of numbers, constants, variables, operators and functions."
@@ -3206,7 +3206,7 @@ msgstr "Draait Graph onder Linux?"
 
 #. FAQ.xml:41(para)
 msgid "Graph is a native Windows application and not tested under Linux, but several users have informed me that Graph runs without problems under Linux with Wine."
-msgstr "Graph is een Windows-eiegen-applicatie en niet getest onder Linux, maar meerdere gebruikers hebben mij meegedeeld dat Graph draait zonder problemen onder Linux met Wine."
+msgstr "Graph is een Windows-eigen applicatie en niet getest onder Linux, maar meerdere gebruikers hebben mij meegedeeld dat Graph draait zonder problemen onder Linux met Wine."
 
 #. FAQ.xml:49(para)
 msgid "Will Graph run on a Macintosh?"
@@ -3218,7 +3218,7 @@ msgstr "Net als bij het  bovenstaande, kun je Graph niet direct draaien op een M
 
 #. FAQ.xml:62(para)
 msgid "When will the next version be released?"
-msgstr "Wanneer komt de volgende versie worden vrijgegeven?"
+msgstr "Wanneer wordt de volgende versie vrijgegeven?"
 
 #. FAQ.xml:67(para)
 msgid "When it is ready."
@@ -3230,7 +3230,7 @@ msgstr "Hoe kan ik het assenstelsel bewegen?"
 
 #. FAQ.xml:80(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the arrow keys to move the coordinate system. You can also use <placeholder-1/> and drag the coordinate system around with the mouse."
-msgstr "Als je de <keycap>Ctrl</ keycap> toets indrukt, kan je gebruik maken van de pijltoetsen om het coördinatensysteem te verplaatsen. Je kan ook gebruik maken van <placeholder-1/> en het coördinatenstelsel verslepen  met de muis."
+msgstr "Als je de <keycap>Ctrl</keycap> toets indrukt, kan je gebruik maken van de pijltoetsen om het coordinatensysteem te verplaatsen. Je kan ook gebruik maken van <placeholder-1/> en het coördinatenstelsel verslepen  met de muis."
 
 #. FAQ.xml:94(para)
 msgid "How can I easily zoom in and out?"
@@ -3238,7 +3238,7 @@ msgstr "Hoe kan ik gemakkelijk in-en uitzoomen?"
 
 #. FAQ.xml:99(para)
 msgid "When you hold down the <keycap>Ctrl</keycap> key you can use the <keycap>+</keycap> and <keycap>-</keycap> keys to zoom in and out. The scroll wheel on the mouse can be used for zooming at the position of the mouse pointer. When you move the scroll wheel up the program will zoom into the coordinate system and center the graphing area at the position of the mouse pointer. When you move the scroll wheel down the program zooms out."
-msgstr "Als je de <keycap>Ctrl</ keycap> toets indrukt , kan je gebruik maken van de <keycap>+</ keycap> en <keycap>-</ keycap> toetsen om in-en uitzoomen. Het scrollwieltje op de muis kan worden gebruikt voor het zoomen op de positie van de muisaanwijzer. Wanneer u omhoog scrolt zal het programma inzoomen op het coördinatensysteem en het midden van de grafische omgeving op de positie van de muisaanwijzer plaatsen. Wanneer je naar beneden scrollt zal het programma uitzoomen."
+msgstr "Als je de <keycap>Ctrl</keycap toets indrukt , kan je gebruik maken van de <keycap>+</keycap> en <keycap>-</keycap> toetsen om in-en uitzoomen. Het scrollwieltje op de muis kan gebruikt worden voor het zoomen op de positie van de muisaanwijzer. Wanneer u omhoog scrolt zal het programma inzoomen op het coördinatensysteem en het midden van de grafische omgeving op de positie van de muisaanwijzer plaatsen. Wanneer je naar beneden scrollt zal het programma uitzoomen."
 
 #. FAQ.xml:110(para)
 msgid "How do I save default settings?"
@@ -3250,7 +3250,7 @@ msgstr "Als standaard opslaan"
 
 #. FAQ.xml:115(para)
 msgid "Set the desired default settings in the <placeholder-1/> dialog, and put a mark in <placeholder-2/> before pressing the <guibutton>OK</guibutton> button. Next time you create a new coordinate system, the saved default settings will be used."
-msgstr "Stel de gewenste standaardinstellingen in het dialoogvenster <placeholder-1/>, en zet een vinkje in <placeholder-2/> voordat u op de <guibutton> OK </ guibutton> knop drukt. De volgende keer dat je een nieuw coördinatenstelsel maakt, zullen de opgeslagen standaardinstellingen gebruikt worden ."
+msgstr "Stel de gewenste standaardinstellingen in het dialoogvenster <placeholder-1/>, en zet een vinkje in <placeholder-2/> voordat je op de <guibutton>OK</guibutton>  knop drukt. De volgende keer dat je een nieuw coordinatenstelsel maakt, zullen de opgeslagen standaardinstellingen gebruikt worden ."
 
 #. FAQ.xml:125(para)
 msgid "Can I make the program remember the size and position of the window?"
@@ -3278,7 +3278,7 @@ msgstr "Parameter functie"
 
 #. FAQ.xml:159(para)
 msgid "A vertical line can be drawn as a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. You can then add the vertical line at x=5 as <userinput>x(t)=5, y(t)=t</userinput>. Alternatively you can add <userinput>x=5</userinput> as a relation."
-msgstr "Een verticale lijn kan getekend worden als een parameter functie. Selecteer <placeholder-1/> als <placeholder-2/> bij het toevoegen van de functie. Je kan vervolgens de verticale lijn bij x = 5 toevoegen als <userinput> x (t)=5, y (t)=t</ userinput>. Als alternatief kan je <userinput>x=5</userinput> als een relatie toevoegen"
+msgstr "Een verticale lijn kan getekend worden als een parameter functie. Selecteer <placeholder-1/> als <placeholder-2/> bij het toevoegen van de functie. Je kan vervolgens de verticale lijn bij x = 5 toevoegen als <userinput>x(t)=5, y(t)=t</userinput>. Als alternatief kan je <userinput>x=5</userinput> als een relatie toevoegen"
 
 #. FAQ.xml:170(para)
 msgid "How do I plot a function x=f(y)?"
@@ -3286,7 +3286,7 @@ msgstr "Hoe plot ik een functie x=f(y)?"
 
 #. FAQ.xml:175(para)
 msgid "To draw a function with y as the independent variable, you need to use a parametric function. Select <placeholder-1/> as <placeholder-2/> when adding the function. If you want to draw the function x=sin(y), you can now enter the function as <userinput>x(t)=sin(t), y(t)=t</userinput>. Alternatively you can draw it as a relation where you can enter <userinput>x=sin(y)</userinput> directly."
-msgstr "Om een functie met y als de onafhankelijke variabele te tekenen, moet u een parameter functie te gebruiken. Selecteer <placeholder-1/> als <placeholder-2/> bij het toevoegen van de functie. Als je de functie x = sin (y) wil tekenen , kun je de functie als <userinput>x(t)=sin(t), y(t)=t </ userinput> toevoegen. Als alternatief kun je ze als een relatie tekenen, waar je <userinput>x=sin (y)</ userinput> rechtstreeks invoert."
+msgstr "Om een functie met y als de onafhankelijke variabele te tekenen, moet u een parameter functie te gebruiken. Selecteer <placeholder-1/> als <placeholder-2/> bij het toevoegen van de functie. Als je de functie x = sin (y) wil tekenen , kun je de functie als <userinput>x(t)=sin(t), y(t)=t</userinput> toevoegen. Als alternatief kun je ze als een relatie tekenen, waar je <userinput>x=sin(y)</userinput>  rechtstreeks invoert."
 
 #. FAQ.xml:186(para)
 msgid "How do I plot a circle?"
@@ -3294,7 +3294,7 @@ msgstr "Hoe kan ik een cirkel tekenen?"
 
 #. FAQ.xml:191(para)
 msgid "You need to use a parametric function to draw a circle. When inserting the function, select <placeholder-1/> as <placeholder-2/>. You can now add a circle with radius 5 and center in (2,3) as <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. You may need to use <placeholder-3/> to make the axes equally scaled. Else the circle may look like an ellipse. A circle can also be added as a polar function, but only with center in (0,0). A circle with radius 5 may be added as the polar function <userinput>r(t)=5</userinput>. Alternatively you can use a relation and add the circle as <userinput>(x-2)^2+(y-3)^2=5^2</userinput>."
-msgstr "Om een cirkel te tekenen moet je een parameter functie gebruiken. Bij het invoegen van de functie, kies <placeholder-1/> als <placeholder-2/>. Je kan nu een cirkel met straal 5 en middelpunt in (2,3) toevoegen als <userinput>x(t)=5cos (t) +2, y(t)=5sin (t) +3 </userinput>. Mogelijk moet u <placeholder-3/> gebruiken om de assen gelijk te schalen. Anders kan de cirkel op een ellips lijken. Een cirkel kan ook toegevoegd worden als een polaire functie, maar alleen met het centrum in (0,0). Een cirkel met een straal van 5 kan worden toegevoegd als de polaire functie <userinput>r(t)=5</userinput>.  Je kan ook relaties gebruiken als alternatief en de cirkel als <userinput> (x-2)^2+(y-3)^2=5^2</ userinput> toevoegen. "
+msgstr "Om een cirkel te tekenen moet je een parameter functie gebruiken. Bij het invoegen van de functie, kies <placeholder-1/> als <placeholder-2/>. Je kan nu een cirkel met straal 5 en middelpunt in (2,3) toevoegen als <userinput>x(t)=5cos(t)+2, y(t)=5sin(t)+3</userinput>. Mogelijk moet u <placeholder-3/> gebruiken om de assen gelijk te schalen. Anders kan de cirkel op een ellips lijken. Een cirkel kan ook toegevoegd worden als een polaire functie, maar alleen met het centrum in (0,0). Een cirkel met een straal van 5 kan worden toegevoegd als de polaire functie <userinput>r(t)=5</userinput>.  Je kan ook relaties gebruiken als alternatief en de cirkel als <userinput>(x-2)^2+(y-3)^2=5^2</userinput> toevoegen. "
 
 #. FAQ.xml:211(para)
 msgid "How do I calculate the area between two functions?"
@@ -3302,7 +3302,7 @@ msgstr "Hoe kan ik de oppervlakte berekenen tussen twee functies?"
 
 #. FAQ.xml:216(para)
 msgid "If you want to find the area between two functions f1(x)=3x and f2(x)=x^2, the easiest way is to create a new function that is the difference between the two functions: f(x)=f1(x)-f2(x)=3x-x^2. You can then use <placeholder-1/> to calculate the area for a given interval."
-msgstr "Als je de oppervlakte tussen twee functies f1 (x)=3x en f2 (x)=x^2 wil vinden, is de gemakkelijkste manier het creëren van een nieuwe functie gelijk aan het verschil tussen de twee functies: f(x)=f1(x)-f2(x)=3x-x^2. Je kan dan <placeholder-1/> gebruiken om de oppervlakte te berekenen in een gegeven interval."
+msgstr "Als je de oppervlakte tussen twee functies f1(x)=3x en f2(x)=x^2 wil vinden, is de gemakkelijkste manier het creëren van een nieuwe functie gelijk aan het verschil van de twee functies: f(x)=f1(x)-f2(x)=3x-x^2. Je kan dan <placeholder-1/> gebruiken om de oppervlakte te berekenen in een gegeven interval."
 
 #. FAQ.xml:231(para)
 msgid "How do I plot the inverse of any given function?"
@@ -3310,7 +3310,7 @@ msgstr "Hoe kan ik de inverse van een bepaalde functie tekenen?"
 
 #. FAQ.xml:236(para)
 msgid "You can use a parametric function for this. If you want to plot the inverse of <placeholder-1/>, you can insert it as the parametric function <userinput>x(t)=t^2-2t, y(t)=t</userinput>."
-msgstr "Hiervoor kan je gebruik maken van een parameterfunctie. Wil je de inverse van <placeholder-1/> tekenen, dan kan je deze als een parameterfunctie invoegen: <userinput> x (t)=t^2-2t,y (t)=t </userinput>."
+msgstr "Hiervoor kan je gebruik maken van een parameterfunctie. Wil je de inverse van <placeholder-1/> tekenen, dan kan je deze als een parameterfunctie invoegen: <userinput>x(t)=t^2-2t, y(t)=t</userinput>."
 
 #. FAQ.xml:246(para)
 msgid "How can I draw the negative part of f(x)=sqrt(x+2) ?"
@@ -3318,7 +3318,7 @@ msgstr "Hoe kan ik het negatieve deel van f (x)=sqrt(x +2) tekenen?"
 
 #. FAQ.xml:251(para)
 msgid "For each value x, f(x) will evaluate to at most one value. <userinput>f(x)=sqrt(x+2)</userinput> will therefore only have positive values of f(x). To plot it for negative f(x) too, you will have to create two separate functions: <userinput>f(x)=sqrt(x+2)</userinput> and <userinput>f(x)=-sqrt(x+2)</userinput>. Alternatively you can plot it as the relation: <userinput>y^2=x+2</userinput>."
-msgstr "Voor elke waarde x, zal f (x) berekend worden voor hoogstens één waarde. <userinput>f (x)=sqrt(x+2)</userinput> zal daarom alleen maar positieve waarden van f (x) opleveren. Om ook de negatieve waarden vanf (x) te tekenen, zul je twee afzonderlijke functies moeten definiëren: <userinput>f(x)= sqrt (x+2)</userinput> en <userinput>f(x)=- sqrt(x+2)</userinput>. Als alternatief kun je de relatie: <userinput>y^2=x +2</userinput> laten tekenen."
+msgstr "Voor elke waarde x, zal f (x) berekend worden voor hoogstens één waarde. <userinput>f(x)=sqrt(x+2)</userinput> zal daarom alleen maar positieve waarden van f (x) opleveren. Om ook de negatieve waarden vanf (x) te tekenen, zul je twee afzonderlijke functies moeten definiëren: <userinput>f(x)=sqrt(x+2)</userinput> en <userinput>f(x)=-sqrt(x+2)</userinput>. Als alternatief kun je de relatie: <userinput>y^2=x+2</userinput> laten tekenen."
 
 #. FAQ.xml:263(para)
 msgid "How do I plot a complex function like f(t)=e^(i*t)?"
@@ -3326,7 +3326,7 @@ msgstr "Hoe teken ik een complexe functie als f (t)=e^(i*t)?"
 
 #. FAQ.xml:268(para)
 msgid "You probably want to show the real part on the x-axis and the imaginary part on the y-axis. In that case you can draw the function as the parametric function <userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput>. Notice that <placeholder-1/> must be enabled in the <placeholder-2/> dialog."
-msgstr "Waarschijnlijk wil je het reële deel tonen op de x-as en het imaginaire deel op de y-as. In dat geval kun je de functie als de parameterfunctie <userinput> x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</ userinput> laten tekenen. Merk op dat <placeholder-1/> moet worden ingeschakeld in het <placeholder-2/> dialoogvenster."
+msgstr "Waarschijnlijk wil je het reële deel tonen op de x-as en het imaginaire deel op de y-as. In dat geval kun je de functie als de parameterfunctie<userinput>x(t)=re(e^(i*t)), y(t)=im(e^(i*t))</userinput> laten tekenen. Merk op dat <placeholder-1/> moet worden ingeschakeld in het <placeholder-2/> dialoogvenster."
 
 #. FAQ.xml:278(para)
 msgid "How can I make Graph plot functions with vertical asymptotes correctly?"
@@ -3906,7 +3906,7 @@ msgstr "numerieke waarde"
 
 #. Complex.xml:22(para)
 msgid "The <placeholder-1/> function returns the absolute or numeric value of <placeholder-2/>, commonly written as |z|. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a positive real value."
-msgstr "De <placeholder-1/> functie geeft de absolute  waarde van <placeholder-2/>, vaak geschreven als | z |. <placeholder-3/> kan elk <placeholder-4/> worden die resulteert in een <placeholder-5/> of een <placeholder-6/> . <placeholder-7/> geeft altijd een positieve reële waarde."
+msgstr "De <placeholder-1/> functie geeft de absolute  waarde van <placeholder-2/>, vaak geschreven als |z|. <placeholder-3/> kan elk <placeholder-4/> worden die resulteert in een <placeholder-5/> of een <placeholder-6/> . <placeholder-7/> geeft altijd een positieve reële waarde."
 
 #. Complex.xml:41(primary)
 msgid "argument"
@@ -4174,7 +4174,7 @@ msgstr "In kader"
 
 #. AxesDialog.xml:215(para)
 msgid "Select <placeholder-1/> if you don't want the axes to be shown. Select <placeholder-2/> if you want a normal coordinate system. The location of the axes may be changed from <placeholder-3/> and <placeholder-4/>. Select <placeholder-5/> if you want the axes to be shown at the bottom and left side of the coordinate system, which will overwrite <placeholder-6/> / <placeholder-7/>."
-msgstr "Selecteer <placeholder-1/> als je niet wil dat de assen moeten worden weergegeven. Selecteer <placeholder-2/> als je een normaal assenstelsel wil. De plaats van de assen kan veranderd worden van <placeholder-3/> en <placeholder-4/>. Selecteer <placeholder-5/> als je wil dat de assen getoond worden aan de onderkant en linkerkant van het coördinatenstelsel, hierdoor wordt <placeholder-6/> / <placeholder-7/> overschreven."
+msgstr "Selecteer <placeholder-1/> als je niet wil dat de assen moeten worden weergegeven. Selecteer <placeholder-2/> als je een normaal assenstelsel wil. De plaats van de assen kan veranderd worden van <placeholder-3/> en <placeholder-4/>. Selecteer <placeholder-5/> als je wil dat de assen getoond worden aan de onderkant en linkerkant van het coördinatenstelsel, hierdoor wordt <placeholder-6/> / <placeholder-7/ > overschreven."
 
 #. AxesDialog.xml:227(para)
 msgid "Choose whether trigonometric functions should calculate in <placeholder-1/> or <placeholder-2/>. This is also used for showing <placeholder-3/> in the polar format."
