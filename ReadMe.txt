@@ -1,7 +1,8 @@
 Graph is an application used for drawing functions in a coordinate system. The
-program is licensed under the GNU Gneral Public License. This pacakge contains
-the following parts necesarry to rebuild the application:
+program is licensed under the GNU Gneral Public License.
+This pacakge contains the following parts necesarry to rebuild the application:
 =============
+
 Source
 The program itself written by Ivan Johansen in Borland C++ Builder. The GPL
 license (see COPYING) covers all files found in the Graph catalog and
@@ -52,6 +53,7 @@ The following third party libraries are needed to build Graph:
 =============
 Boost
 Boost (http://boost.org) is used as a general purpose library collection.
+Boost is installed with C++ Builder.
 
 PDFlib-Lite
 PDFlib-Lite (http://www.pdflib.com) is used to create the PDFlib.dll, which is
@@ -61,18 +63,10 @@ EasyNSE
 EasyNSE (http://www.mustangpeak.net/) is used for shell extensions.
 
 
-The program can be compiled with Borland C++ Builder 2009 Pro/Enterprise. To
+The program can be compiled with Borland C++ Builder XE Pro/Enterprise. To
 compile with other versions some changes to the code is probably requeried.
 
 
-The following is required to compile the help file in the Help directory:
-=============
-Python 2.5 (http://python.org)
-Python libxml2 bindings (http://users.skynet.be/sbi/libxml-python/)
-Programs from the Tools package:
-  - Microsoft HTML Help Compiler
-  - xmllint
-  - xsltproc
-  - The FOP processor
-  - The DocBook stylesheet files
+To compile the help file, see Help\Scrips\HowTo.txt
+
 
