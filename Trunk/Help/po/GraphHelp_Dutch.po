@@ -96,7 +96,7 @@ msgstr "Geeft de tangens van het argument."
 
 #. Trigonometric.xml:98(para)
 msgid "The <placeholder-1/> function calculates the tangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
-msgstr "De functie <placeholder-1/> berekent de tangens van een hoek <placeholder-2/>, die in <placeholder-3/> of graden mag zijn volgens de huidige instellingen. <placeholder-4/> mag elke soort <placeholder-5/> zijn dat naar een <placeholder-6/> of een <placeholder-7/> evalueert. Als <placeholder-8/> een reëel getal is, zal het resultaat liggen tussen -1 en 1."
+msgstr "De functie <placeholder-1/> berekent de tangens van een hoek <placeholder-2/>, die in <placeholder-3/> of graden mag zijn volgens de huidige instellingen. <placeholder-4/> mag elke soort <placeholder-5/> zijn dat naar een <placeholder-6/> of een <placeholder-7/> evalueert."
 
 #. Trigonometric.xml:110(glossterm) Special.xml:142(glossterm) Rounding.xml:23(glossterm) Rounding.xml:56(glossterm) Rounding.xml:86(glossterm) Rounding.xml:117(glossterm) Rounding.xml:148(glossterm) PowerAndLog.xml:108(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary)
 msgid "integer"
@@ -872,7 +872,7 @@ msgstr "Associeer *.grf bestanden"
 
 #. OptionsDialog.xml:91(para)
 msgid "A check mark in this field indicates that the file type .grf is associated with this program. The program will automatically start and load the file when you <action>double-click</action> on it in Explorer."
-msgstr "Een vinkje in dit veld betekent dat het bestand type .grf wordt geassocieerd met dit programma. Het programma start automatisch en laadt het bestand ajs je er <action> op dubbelklikt </ actie> op het in de Verkenner."
+msgstr "Een vinkje in dit veld betekent dat het bestand type .grf wordt geassocieerd met dit programma. Het programma start automatisch en laadt het bestand ajs je er <action> op dubbelklikt </action> op het in de Verkenner."
 
 #. OptionsDialog.xml:99(term)
 msgid "Show tooltip"
@@ -1304,7 +1304,7 @@ msgstr "Venster"
 
 #. MenuItems.xml:477(para)
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
-msgstr "Hou de <action>linker muisknop</actie> terwijl je het gedeelte selecteert dat je wil dat het hele grafische gebied vult. <action>Klik met de rechtermuisknop</actie> of druk op <keycap>Esc</keycap> om het commando te annuleren."
+msgstr "Hou de <action>linker muisknop</action> terwijl je het gedeelte selecteert dat je wil dat het hele grafische gebied vult. <action>Klik met de rechtermuisknop</action> of druk op <keycap>Esc</keycap> om het commando te annuleren."
 
 #. MenuItems.xml:487(guimenuitem) FAQ.xml:198(guimenuitem)
 msgid "Square"
@@ -1328,7 +1328,7 @@ msgstr "Beweeg het assenstel"
 
 #. MenuItems.xml:522(para)
 msgid "When selected the mouse pointer changes to a hand. You may now use the mouse to drag the coordinate system around. Select the menu item again, <action>right click</action> or press <keycap>Esc</keycap> to return to normal mode. As an alternative to this menu item, you may hold down the <keycap>Shift</keycap> key and drag the coordinate system around."
-msgstr "Bij selectie verandert  de gebruikte muisaanwijzer in een hand. Je kunt  de muis gebruiken om het assenstelsels rond te slepen. Selecteert het menu-item opnieuw , <action> klik met de rechtermuisknop </ actie> of druk op <keycap> Esc </ keycap> om terug te keren naar de normale modus. Als alternatief voor dit menu-item, kun je de <keycap>Shift</ keycap>-toets ingedrukt houden en het coördinatensysteem rondslepen."
+msgstr "Bij selectie verandert  de gebruikte muisaanwijzer in een hand. Je kunt  de muis gebruiken om het assenstelsels rond te slepen. Selecteert het menu-item opnieuw , <action> klik met de rechtermuisknop </action> of druk op <keycap> Esc </keycap> om terug te keren naar de normale modus. Als alternatief voor dit menu-item, kun je de <keycap>Shift</keycap>-toets ingedrukt houden en het coördinatensysteem rondslepen."
 
 #. MenuItems.xml:533(guimenuitem)
 msgid "Fit"
@@ -1648,7 +1648,7 @@ msgstr "De-installatie"
 
 #. Installation.xml:138(para)
 msgid "Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>. Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program. If files were added to the installation directory after the installation, you will be asked if you want to delete them. Make sure Graph is not running while uninstalling."
-msgstr "De-installatie wordt gedaan van <emphasis>Add/Remove Programs</emphasis> in de <emphasis>Control Panel</emphasis>. Selecteer gewoon Graph en klik op de <emphasis> knop Wijzigen / verwijderen </ emphasis>. Dit zal alle sporen van het programma verwijderen. Als er bestanden toegevoegd werden aan de installatie-directory na de installatie, word je gevraagd of je ze wilt verwijderen. Zorg ervoor dat Graph niet actief i  tijdens het verwijderen."
+msgstr "De-installatie wordt gedaan van <emphasis>Add/Remove Programs</emphasis> in de <emphasis>Control Panel</emphasis>. Selecteer gewoon Graph en klik op de <emphasis> knop Wijzigen / verwijderen </emphasis>. Dit zal alle sporen van het programma verwijderen. Als er bestanden toegevoegd werden aan de installatie-directory na de installatie, word je gevraagd of je ze wilt verwijderen. Zorg ervoor dat Graph niet actief i  tijdens het verwijderen."
 
 #. Installation.xml:147(title)
 msgid "Startup"
@@ -1724,7 +1724,7 @@ msgstr "som van kwadraten"
 
 #. InsertTrendlineDialog.xml:21(para)
 msgid "Use the dialog shown below to insert a trendline that is the function that fits a <link linkend=\"InsertPointSeriesDialog\">point series</link> best. A trendline is a function that shows a trend in a series of points, i.e. a trendline is the curve of bets fit of a specific type for a series of points. The trendline is added as an ordinary function. To create a trendline, you select the point series you want to base the trendline on and use <placeholder-1/>."
-msgstr "Gebruik het dialoogvenster hieronder om een trendlijn in te voegen, dat is de functie die het best bij een <link linkend=\"InsertPointSeriesDialog\"> serie punten past </ link>. Een trendlijn is een functie die een trend in een serie punten laat zien, dat wil zeggen een trendlijn is de curve die hety best een serie punten volgt. De trendlijn wordt weergegeven als een gewone functie. Voor het maken van een trendlijn, selecteert u de serie punten waarvoor je een trendlijn wenst en gebruik <placeholder-1/>."
+msgstr "Gebruik het dialoogvenster hieronder om een trendlijn in te voegen, dat is de functie die het best bij een <link linkend=\"InsertPointSeriesDialog\"> serie punten past </link>. Een trendlijn is een functie die een trend in een serie punten laat zien, dat wil zeggen een trendlijn is de curve die hety best een serie punten volgt. De trendlijn wordt weergegeven als een gewone functie. Voor het maken van een trendlijn, selecteert u de serie punten waarvoor je een trendlijn wenst en gebruik <placeholder-1/>."
 
 #. InsertTrendlineDialog.xml:28(para)
 msgid "If the point series has custom Y-errors defined, these values are used to weight the points. The weight for each point is <placeholder-1/> where &sigma; is the Y-error for the point. X-errors are not used."
@@ -1820,7 +1820,7 @@ msgstr "In dit tabblad kunt u uw eigen trendlijn modellen. Het model is ingevoer
 
 #. InsertTrendlineDialog.xml:149(para)
 msgid "An example of a model could be <placeholder-1/>. The program tries to calculate the constants <placeholder-2/>, <placeholder-3/> and <placeholder-4/> so that f(x) will be as close to the point series as possible. You can use the <guibutton>Add model</guibutton> button to add the model to the saved list with a name."
-msgstr "Een voorbeeld van een model kan <placeholder-1/> zijn. Het programma probeertde constanten <placeholder-2/> te berekenen , <placeholder-3/> en <placeholder-4/>, zo dat f (x) zo dicht mogelijk bij de serie puntenligt. Je kunt gebruik maken van de <guibutton> Voeg model </ guibutton> knop om het model een naam te geven en op te slaan in de lijst."
+msgstr "Een voorbeeld van een model kan <placeholder-1/> zijn. Het programma probeertde constanten <placeholder-2/> te berekenen , <placeholder-3/> en <placeholder-4/>, zo dat f (x) zo dicht mogelijk bij de serie puntenligt. Je kunt gebruik maken van de <guibutton> Voeg model </guibutton> knop om het model een naam te geven en op te slaan in de lijst."
 
 #. InsertTrendlineDialog.xml:156(para)
 msgid "The program needs a guess for where to start the search for the optimum. As default the guess for all constants is 1, but this can be changed for models added to the list. A better guess will increase the possibility that an optimum can be found."
@@ -2088,7 +2088,7 @@ msgstr "impleciete functie"
 
 #. InsertRelationDialog.xml:15(para)
 msgid "This dialog is used to insert a relation in the coordinate system. <literal>Relation</literal> is a common name for inequalities and equations, also known as implicit functions. To insert a relation you use the menu item <placeholder-1/>. To change an existing relation, you first select it in the <placeholder-2/> and use <placeholder-3/>."
-msgstr "Dit dialoogvenster wordt gebruikt om een relatie in te voegen in het assenstelsel. <literal> Relation </ letterlijke> is een veel voorkomende naam voor ongelijkheden en vergelijkingen, ook bekend als impliciete functie. Om een relatie in te voegen gebruik je het menu-item <placeholder-1/>. Om een bestaande relatie te wijzigen, moet je deze eerst selecteren in de <placeholder-2/> en <placeholder-3/> gebruiken ."
+msgstr "Dit dialoogvenster wordt gebruikt om een relatie in te voegen in het assenstelsel. <literal>Relation</literal> is een veel voorkomende naam voor ongelijkheden en vergelijkingen, ook bekend als impliciete functie. Om een relatie in te voegen gebruik je het menu-item <placeholder-1/>. Om een bestaande relatie te wijzigen, moet je deze eerst selecteren in de <placeholder-2/> en <placeholder-3/> gebruiken ."
 
 #. InsertRelationDialog.xml:26(term)
 msgid "Relation"
@@ -2100,11 +2100,11 @@ msgstr "Hier vul je de relatie in waarvan je grafiek wil. Dit moet of een vergel
 
 #. InsertRelationDialog.xml:35(para)
 msgid "An inequality is a statement that one quantity is greater or less than another, and the quantities must be separated by one of the four operators: &lt;, &gt;, &lt;=, &gt;=. An inequality can for example be <literal>abs(x) + abs(y) &lt; 1</literal>. Two operators can be used to specify a range, for example <literal>y &lt; sin(x) &lt; 0.5</literal>."
-msgstr "Een ongelijkheid is een uitdrukking waar het linkerlid groter of kleiner is dan het rechterlid, deze leden worden gescheiden door een van de vier operatoren zijn: &lt;, &gt;, &lt;=, &gt;=. Een ongelijkheid kan bijvoorbeeld <literal> abs (x) + abs (y) <1</ literal>. Twee operatoren kunnen gebruikt worden om een bereik op te geven, bijvoorbeeld <literal>y &lt; sin(x) &lt; 0.5</literal>."
+msgstr "Een ongelijkheid is een uitdrukking waar het linkerlid groter of kleiner is dan het rechterlid, deze leden worden gescheiden door een van de vier operatoren zijn: &lt;, &gt;, &lt;=, &gt;=. Een ongelijkheid kan bijvoorbeeld <literal> abs (x) + abs (y) &lt; 1 </literal>. Twee operatoren kunnen gebruikt worden om een bereik op te geven, bijvoorbeeld <literal>y &lt; sin(x) &lt; 0.5</literal>."
 
 #. InsertRelationDialog.xml:40(para)
 msgid "You can use the same operators and <link linkend=\"ListOfFunctions\">built-in functions</link> as for plotting graphs of functions. In addition you can also create <link linkend=\"CustomFunctionsDialog\">custom functions</link>."
-msgstr "Je kan dezelfde operatoren en <link linkend=\"ListOfFunctions\"> ingebouwde functies </ link> gebruiken als voor het plotten van de grafieken van functies. Je kan ook <link linkend=\"CustomFunctionsDialog\">custom functions</link> definieren."
+msgstr "Je kan dezelfde operatoren en <link linkend=\"ListOfFunctions\"> ingebouwde functies </link> gebruiken als voor het plotten van de grafieken van functies. Je kan ook <link linkend=\"CustomFunctionsDialog\">custom functions</link> definieren."
 
 #. InsertRelationDialog.xml:48(term)
 msgid "Constraints"
@@ -2200,7 +2200,7 @@ msgstr "Cartesisch"
 
 #. InsertPointSeriesDialog.xml:60(para)
 msgid "You need to choose between the type of coordinates used for the points. <placeholder-1/> is used when you want to specify (x,y)-coordinates. <placeholder-2/> is used when you want to specify (&theta;,r)-coordinates, where <emphasis>&theta;</emphasis> is the angle and <emphasis>r</emphasis> is the distance from the origin. The angle <emphasis>&theta;</emphasis> is in <placeholder-3/> or degrees depending on the current setting."
-msgstr "Je moet het type coördinaten kiezen voor de punten. <placeholder-1/> wordt gebruikt als je (x, y)-coördinaten wil opgeven. <placeholder-2/> wordt gebruikt  als je (&theta;,r)-coördinaten wil opgeven , waar <emphasis>&theta;</emphasis>de  is hoek en <emphasis> r </ emphasis> de afstand tot de oorsprong . De hoek <emphasis> &theta;</ emphasis> is in <placeholder-3/> of graden, afhankelijk van de huidige instelling."
+msgstr "Je moet het type coördinaten kiezen voor de punten. <placeholder-1/> wordt gebruikt als je (x, y)-coördinaten wil opgeven. <placeholder-2/> wordt gebruikt  als je (&theta;,r)-coördinaten wil opgeven , waar <emphasis>&theta;</emphasis>de  is hoek en <emphasis> r </emphasis> de afstand tot de oorsprong . De hoek <emphasis> &theta;</emphasis> is in <placeholder-3/> of graden, afhankelijk van de huidige instelling."
 
 #. InsertPointSeriesDialog.xml:71(term)
 msgid "Marker"
@@ -2352,15 +2352,15 @@ msgstr "Plakken speciaal"
 
 #. InsertLabelDialog.xml:39(para)
 msgid "A text label can also contain any <link linkend=\"OLE\">OLE object</link>, for example an image or MS Equation. You can paste an OLE object into the editing area like text. A new object can be created at the cursor position by selecting <placeholder-1/> in the context menu. If there is more than one representation in the clipboard, you can use <placeholder-2/> in the context menu to select the representation to paste."
-msgstr "Een tekstlabel kan ook alle <link linkend=\"OLE\"> OLE-object </ link> zijn, bijvoorbeeld een afbeelding of MS vergelijking. Je kan een OLE-object plakken in het bewerkingsgebied als tekst. Een nieuw object kan gemaakt worden op de cursorpositie door het selecteren van <placeholder-1/> in het contextmenu. Als er meer dan één uitdrukking op het klembord is, kun je gebruik maken <placeholder-2/> in het contextmenu om de juiste te selecteren om te plakken."
+msgstr "Een tekstlabel kan ook alle <link linkend=\"OLE\"> OLE-object </link> zijn, bijvoorbeeld een afbeelding of MS vergelijking. Je kan een OLE-object plakken in het bewerkingsgebied als tekst. Een nieuw object kan gemaakt worden op de cursorpositie door het selecteren van <placeholder-1/> in het contextmenu. Als er meer dan één uitdrukking op het klembord is, kun je gebruik maken <placeholder-2/> in het contextmenu om de juiste te selecteren om te plakken."
 
 #. InsertLabelDialog.xml:46(para)
 msgid "When the <guibutton>OK</guibutton> button is pressed, the label will be shown in the graphing area. The label can be moved by dragging it around with the mouse or it can be locked to one of the axes by <action>right clicking</action> on it and selecting a placement from the context menu. From the context menu it is also possible to rotate the label, for example to show the text vertically."
-msgstr "Als de <guibutton> OK </ guibutton> knop ingedrukt wordt , zal het label worden getoond in de grafische omgeving. Het label kan verplaatst worden door het te verslepen met de muis of het kan vergrendeld worden om een van de assen door er <action>right clicking</action> op en een  plaats te selecteren in het contextmenu. Via het context-menu is het ook mogelijk om het label te draaien, bijvoorbeeld om tekst verticaal te plaatsen."
+msgstr "Als de <guibutton> OK </guibutton> knop ingedrukt wordt , zal het label worden getoond in de grafische omgeving. Het label kan verplaatst worden door het te verslepen met de muis of het kan vergrendeld worden om een van de assen door er <action>right clicking</action> op en een  plaats te selecteren in het contextmenu. Via het context-menu is het ook mogelijk om het label te draaien, bijvoorbeeld om tekst verticaal te plaatsen."
 
 #. InsertLabelDialog.xml:53(para)
 msgid "A label can contain and evaluate a <placeholder-1/>. This is very useful when you want to show the value of <link linkend=\"CustomFunctionsDialog\">custom constants</link> in a label. Graph will try to evaluate any expression in a label if placed in brackets after a percent sign (%). If you have 3 custom constants a=2.5, b=-3, and c=8.75, you can create a label with the text <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal>. This label will be shown as <literal>f(x)=2.5x<superscript>2</superscript>-3x+8.75</literal> in the graphing area. When you change the constants, the label will be updated to reflect the new values. In the above case, the + preceding %(b) is removed because b evaluates to a negative number."
-msgstr "Een label kan een <placeholder-1/> bevatten en evalueren. Dit is erg handig wanneer u de waarde van <link linkend=\"CustomFunctionsDialog\">custom constants</link>wil tonen in een label. Graph zal proberen om elke uitdrukking uit te werken in een label, als deze tussen haakjes geplaatst werd na een procent teken (%). Als je drie constanten a = 2.5, b =- 3 en c = 8,75 hebt, dan kan je een label maken met de tekst  <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal>. Dit label wordt in de grafische omgeving getoond als <literal>f (x) = 2.5x <superscript>2</ superscript>-3x +8.75 </literal> . Wanneer je de constanten wijzigt, zal het label worden aangepast aan de nieuwe waarden. In het bovenstaande geval is de + afgelopen% (b) verwijderd omdat b resulteert in een negatief getal."
+msgstr "Een label kan een <placeholder-1/> bevatten en evalueren. Dit is erg handig wanneer u de waarde van <link linkend=\"CustomFunctionsDialog\">custom constants</link>wil tonen in een label. Graph zal proberen om elke uitdrukking uit te werken in een label, als deze tussen haakjes geplaatst werd na een procent teken (%). Als je drie constanten a = 2.5, b =- 3 en c = 8,75 hebt, dan kan je een label maken met de tekst  <literal>f(x)=%(a)x<superscript>2</superscript>+%(b)x+%(c)</literal>. Dit label wordt in de grafische omgeving getoond als <literal>f (x) = 2.5x <superscript>2</superscript>-3x +8.75 </literal> . Wanneer je de constanten wijzigt, zal het label worden aangepast aan de nieuwe waarden. In het bovenstaande geval is de + afgelopen% (b) verwijderd omdat b resulteert in een negatief getal."
 
 #. InsertFunctionDialog.xml:8(title)
 msgid "Insert function"
@@ -4264,7 +4264,7 @@ msgstr "Je kan de beeldgrootte van de animatie specifieren. Dit heeft invloed op
 
 #. AnimateDialog.xml:63(para)
 msgid "When you press the <guibutton>Animate</guibutton> button, an animation is created from the settings you have specified. This may take some time depending on what elements exist in the coordinate system and how many frames are needed."
-msgstr "Wanneer je de <guibutton> Animate</ guibutton> knop drukt, wordt een animatie gemaakt volgens de instellingen die je opgegeven hebt. Dit kan enige tijd duren, afhankelijk van welke elementen in het coördinatenstelsel bestaan en hoeveel frames nodig zijn."
+msgstr "Wanneer je de <guibutton> Animate</guibutton> knop drukt, wordt een animatie gemaakt volgens de instellingen die je opgegeven hebt. Dit kan enige tijd duren, afhankelijk van welke elementen in het coördinatenstelsel bestaan en hoeveel frames nodig zijn."
 
 #. AnimateDialog.xml:67(para)
 msgid "When the animation is finished, a very simple player is shown. You can use this to play the animation. The <guibutton><inlinegraphic fileref=\"AnimationMenu.png\" scale=\"60\"/></guibutton> button will give you some additional options."
