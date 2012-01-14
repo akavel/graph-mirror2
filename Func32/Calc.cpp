@@ -58,12 +58,18 @@ inline const TFuncData& FunctionTable(TIdent Ident)
 	return Table[Ident - CodeCsc];
 }
 //---------------------------------------------------------------------------
+/** Returns true if a complex is finite for both real and imaginary part.
+ *  \param C: Complex number to check.
+ */
 template<typename T>
 inline bool IsFinite(const std::complex<T> &C)
 {
 	return boost::math::isfinite(C.real()) && boost::math::isfinite(C.imag());
 }
 //---------------------------------------------------------------------------
+/** Returns true if a number is finite.
+ *  \param C: Number to check.
+ */
 template<typename T>
 inline bool IsFinite(const T &C)
 {
@@ -79,25 +85,35 @@ inline bool operator!(const std::complex<T> &C)
 	return !real(C) && !imag(C);
 }
 //---------------------------------------------------------------------------
-//Returns the number itself; Exists for generic use with conj(std::complex<T>)
+/** Returns the conjugate of a real number;
+ *  Exists for generic use with conj(std::complex<T>)
+ *  \param x: Number which will be returned.
+ */
 inline long double Conj(long double x)
 {
 	return x;
 }
 //---------------------------------------------------------------------------
+/** Returns the conjugate of a complex number.
+ *  \param x: Complex number to conjugate.
+ */
 inline TComplex Conj(TComplex x)
 {
   return conj(x);
 }
 //---------------------------------------------------------------------------
-//Returns the inverse hyperbolic sine to x
+/** Returns the inverse hyperbolic sine to x
+ *  \param x: Number to calculate inverse hyperbolic sine on.
+ */
 template<typename T>
 inline T asinh(T x)
 {
   return log(x + sqrt(x*x + 1.0L));
 }
 //---------------------------------------------------------------------------
-//Returns the inverse hyperbolic cosine to x
+/** Returns the inverse hyperbolic cosine to x
+ *  \param x: Number to calculate inverse hyperbolic cosine on
+ */
 template<typename T>
 inline T acosh(T x)
 {
@@ -105,7 +121,9 @@ inline T acosh(T x)
   return log(x + Temp);
 }
 //---------------------------------------------------------------------------
-//Returns the inverse hyperbolic tangent to x
+/** Returns the inverse hyperbolic tangent to x
+ *  \param x: Number to calculate inverse hyperbolic tangent on.
+ */
 template<typename T>
 T atanh(T x)
 {
@@ -117,52 +135,75 @@ T atanh(T x)
 	return std::numeric_limits<long double>::quiet_NaN();
 }
 //---------------------------------------------------------------------------
-//Returns the inverse sine to x
+/** Returns the inverse sine to x
+ *  \param C: Complex number to calculate inverse sine on
+ */
 template<typename T>
 inline std::complex<T> asin(const std::complex<T> &C)
 {
 	return boost::math::asin(std::complex<double>(C));
 }
 //---------------------------------------------------------------------------
-//Returns the inverse cosine to x
+/** Returns the inverse cosine to x
+ *  \param C: Complex number to calculate inverse cosine on.
+ */
 template<typename T>
 inline std::complex<T> acos(const std::complex<T> &C)
 {
 	return boost::math::acos(std::complex<double>(C));
 }
 //---------------------------------------------------------------------------
-//Returns the inverse tangent to x
+/** Returns the inverse tangent to x
+ *  \param C: Complex number to calculate inverse tangent on
+ */
 template<typename T>
 inline std::complex<T> atan(const std::complex<T> &C)
 {
 	return boost::math::atan(std::complex<double>(C));
 }
 //---------------------------------------------------------------------------
-//Returns x without the decimals
+/** Truncate the argument, i.e. returns x without the decimals.
+ *  \param C: Number to truncate
+ */
 template<typename T>
 inline T Trunc(const T &C)
 {
   return static_cast<long long>(C);
 }
-
+//---------------------------------------------------------------------------
+/** Truncate a complex number, i.e. drop the decimals on both real and imaginary parts.
+ *  \param C: Complex number to truncate.
+ */
 template<typename T>
 inline std::complex<T> Trunc(const std::complex<T> &C)
 {
   return std::complex<T>(Trunc(C.real()), Trunc(C.imag()));
 }
 //---------------------------------------------------------------------------
+/** Returns the complex number where ceil is calculated on both real and imaginary part.
+ *  \param C: Complex number to ceil.
+ */
 template<typename T>
 inline std::complex<T> ceil(const std::complex<T> &C)
 {
   return std::complex<T>(std::ceil(C.real()), std::ceil(C.imag()));
 }
 //---------------------------------------------------------------------------
+/** Returns the complex number where floor is calculated on both real and imaginary part.
+ *  \param C: Complex number to floor.
+ */
 template<typename T>
 inline std::complex<T> floor(const std::complex<T> &C)
 {
   return std::complex<T>(std::floor(C.real()), std::floor(C.imag()));
 }
 //---------------------------------------------------------------------------
+/** Returns C1 modulo C2 where C1 and C2 are complex numbers.
+ *  \param C1: The complex dividend.
+ *  \param C2: The complex divisor.
+ *  \return The complex remainder of the modulo.
+ *  NaN is retunrned if either C1 or C2 has an imaginary part.
+ */
 template<typename T>
 inline std::complex<T> fmod(const std::complex<T> &C1, const std::complex<T> &C2)
 {
@@ -171,33 +212,46 @@ inline std::complex<T> fmod(const std::complex<T> &C1, const std::complex<T> &C2
 	return std::fmod(C1.real(), C2.real());
 }
 //---------------------------------------------------------------------------
-//Return a number with the min real part and min imag part
+/** Return a complex number with the minimum real part and minimum imaginary part
+ *  \param C1, C2: Complex numbers to find minimum of.
+ */
 template<typename T>
 inline std::complex<T> Minimum(const std::complex<T> &C1, const std::complex<T> &C2)
 {
 	return std::complex<T>(std::min(C1.real(), C2.real()), std::min(C1.imag(), C2.imag()));
 }
 //---------------------------------------------------------------------------
+/** Return a number with the minimum real part and minimum imaginary part
+ *  \param C1, C2: Numbers to find minimum of.
+ */
 template<typename T>
 inline T Minimum(const T &C1, const T &C2)
 {
 	return C1 < C2 ? C1 : C2;
 }
 //---------------------------------------------------------------------------
-//Return a number with the max real part and max imag part
+/** Return a complex number with the maximum real part and maximum imaginary part
+ *  \param C1, C2: Complex numbers to find maximum of.
+ */
 template<typename T>
 inline std::complex<T> Maximum(const std::complex<T> &C1, const std::complex<T> &C2)
 {
 	return std::complex<T>(std::max(C1.real(), C2.real()), std::max(C1.imag(), C2.imag()));
 }
 //---------------------------------------------------------------------------
+/** Return a number with the maximum real part and maximum imaginary part
+ *  \param C1, C2: Numbers to find maximum of.
+ */
 template<typename T>
 inline T Maximum(const T &C1, const T &C2)
 {
 	return C1 > C2 ? C1 : C2;
 }
 //---------------------------------------------------------------------------
-//Rounds Number to the given number of decimals
+/** Returns Number rounded to the given number of decimals
+ *  \param Number: Number to round
+ *  \param Decimals: Decimals to round to.
+ */
 template<typename T>
 inline T Round(const T &Number, int Decimals)
 {
@@ -205,14 +259,19 @@ inline T Round(const T &Number, int Decimals)
 	return Trunc(Number * DecMul + (Number < 0 ? -0.5L : 0.5L)) / DecMul;
 }
 //---------------------------------------------------------------------------
-//Rounds Number to the given number of decimals
+/** Returns a complex number rounded to the given number of decimals
+ *  \param Number: Complex number to round
+ *  \param Decimals: Decimals to round to.
+ */
 template<typename T>
 inline std::complex<T> Round(const std::complex<T> &Number, int Decimals)
 {
   return std::complex<T>(Round(real(Number), Decimals), Round(imag(Number), Decimals));
 }
 //---------------------------------------------------------------------------
-//Calculate Greatest Common Divisor
+/** Calculate Greatest Common Divisor.
+ *  \param a, b: Numbers to find greatest common divisor for.
+ */
 int CalcGcd(int a, int b)
 {
   if(b > a)
@@ -224,6 +283,9 @@ int CalcGcd(int a, int b)
   return CalcGcd(b, a%b);
 }
 //---------------------------------------------------------------------------
+/** Return factorial of x, i.e. x!
+ *  \param x: Number to calculate factorial of.
+ */
 long double Fact(unsigned x)
 {
   static std::vector<long double> List; //Cache for Fact(0)..Fact(100)
@@ -317,14 +379,16 @@ T Omega(T z, TErrorCode &ErrorCode)
 	return -1;
 }
 //---------------------------------------------------------------------------
+/** Calculates the binomial coefficient of n and k.
+ *  \param n, k: These are the input binomial coefficients.
+ */
 long double Binomial(unsigned n, unsigned k)
 {
 	return Fact(n) / (Fact(n-k) * Fact(k));
 }
 //---------------------------------------------------------------------------
-//Calculate Zeta(s)
-//See http://mathworld.wolfram.com/RiemannZetaFunction.html
-//and http://numbers.computation.free.fr/Constants/Miscellaneous/zetaevaluations.pdf
+/** Helper function for the zeta function.
+ */
 const int ZetaN = 50; //Increase to increase precision of Zerta() function
 long double ZetaHelper(unsigned k)
 {
@@ -333,7 +397,13 @@ long double ZetaHelper(unsigned k)
     Result += Fact(ZetaN + j - 1) * pow(4.0, j) / (Fact(ZetaN - j) * Fact(2*j));
   return ZetaN * Result;
 }
-
+//---------------------------------------------------------------------------
+/** Calculate Zeta(s)
+ *  See http://mathworld.wolfram.com/RiemannZetaFunction.html
+ *  and http://numbers.computation.free.fr/Constants/Miscellaneous/zetaevaluations.pdf
+ *  \param s: Parameter to zeta function
+ *  \param ErrorCode: Set to an error code in case of error.
+ */
 template<typename T>
 T Zeta(T s, TErrorCode &ErrorCode)
 {
@@ -355,16 +425,24 @@ T Zeta(T s, TErrorCode &ErrorCode)
   return 1.0L / (ZetaHelper(0) * (1.0L - pow(T(2.0L), 1.0L-s))) * Result;
 }
 //---------------------------------------------------------------------------
-//Evaluate the normal distribution with given mean and standard deviation for the value x
-//Deviation must not be 0
+/** Evaluate the normal distribution with given mean and standard deviation for the value x
+ *  \param x: The variate
+ *  \param Mean: Mean
+ *  \param Deviation: Standard deviation. May not be 0.
+ */
 long double NormalDist(long double x, long double Mean, long double Deviation)
 {
   const long double Sqrt2_SqrtPi = 0.564189583547756286948L * 0.707106781186547524401L; //1/sqrt(pi)*1/sqrt(2)
   return std::exp(-(x-Mean)*(x-Mean) / (2*Deviation*Deviation)) * Sqrt2_SqrtPi / Deviation;
 }
 //---------------------------------------------------------------------------
+/** Compare t1 and t2 the way given by Compare
+ *  \param t1, t2: Numbers to compare
+ *  \param Compare: Specifies how the two numbers are compared.
+ *  \param ErrorCode: Set to an error code if it is not possible to compare complex numbers.
+ */
 template<typename T>
-bool Compare(const T &t1, const T &t2, TCompareMethod Compare, TErrorCode &ErrorCode)
+bool LowLevelCompare(const T &t1, const T &t2, TCompareMethod Compare, TErrorCode &ErrorCode)
 {
   if(Compare != cmEqual && Compare != cmNotEqual)
     if(imag(t1) || imag(t2))
@@ -377,12 +455,37 @@ bool Compare(const T &t1, const T &t2, TCompareMethod Compare, TErrorCode &Error
     case cmGreater:       return real(t1) > real(t2);
     case cmLessEqual:     return real(t1) <= real(t2);
     case cmGreaterEqual:  return real(t1) >= real(t2);
-    default:              return 0; //Error
+    default:              ErrorCode = ecInternalError; return 0; //Error
   }
 }
 //---------------------------------------------------------------------------
-//Returns a^(b/c) for real numbers
-//c may not be 0
+/** Compare two long double numbers.
+ *  The numbers are converted to double before they are compared to ensure the least
+ *  significant bits are not compared. This should ensure that 0.01*20 = 0.2
+ *  \param t1, t2: Numbers to compare
+ *  \param Compare: Specifies how the two numbers are compared.
+ *  \param ErrorCode: Set to an error code if it is not possible to compare complex numbers.
+ */
+inline bool Compare(const long double &t1, const long double &t2, TCompareMethod Compare, TErrorCode &ErrorCode)
+{
+  return LowLevelCompare(static_cast<double>(t1), static_cast<double>(t2), Compare, ErrorCode);
+}
+//---------------------------------------------------------------------------
+/** Compare two std::complex<long double> numbers.
+ *  The numbers are converted to std::complex<double> before they are compared to
+ *  ensure the least significant bits are not compared. This should ensure that 0.01*20 = 0.2
+ *  \param t1, t2: Numbers to compare
+ *  \param Compare: Specifies how the two numbers are compared.
+ *  \param ErrorCode: Set to an error code if it is not possible to compare complex numbers.
+ */
+inline bool Compare(const TComplex &t1, const TComplex &t2, TCompareMethod Compare, TErrorCode &ErrorCode)
+{
+  return LowLevelCompare(static_cast<std::complex<double> >(t1), static_cast<std::complex<double> >(t2), Compare, ErrorCode);
+}
+//---------------------------------------------------------------------------
+/** Returns a^(b/c) for real numbers
+ *  \param a,b,c: Numbers to calculate on. c may not be 0
+ */
 long double PowDiv(const long double &a, const long double &b, const long double &c)
 {
 	if(!b) //Define: 0^0 = 1
@@ -411,7 +514,8 @@ long double PowDiv(const long double &a, const long double &b, const long double
   return pow(a, b/c);
 }
 //---------------------------------------------------------------------------
-// Returns a^b for complex numbers
+/** Returns a^b for complex numbers
+ */
 template<typename T>
 std::complex<T> Pow(const std::complex<T> &a, const std::complex<T> &b)
 {
@@ -436,6 +540,8 @@ std::complex<T> Pow(const std::complex<T> &a, const std::complex<T> &b)
   return pow(a, b);
 }
 //---------------------------------------------------------------------------
+/** Raise a to the power of b for real numbers.
+ */
 template<typename T>
 inline T Pow(const T &a, const T &b)
 {
@@ -444,13 +550,15 @@ inline T Pow(const T &a, const T &b)
   return pow(a, b);
 }
 //---------------------------------------------------------------------------
+/** Returns a^(b/c) for real numbers
+ *  \param a,b,c: Numbers to calculate on. c may not be 0
+ */
 template<typename T>
 inline std::complex<T> PowDiv(const std::complex<T> &a, const std::complex<T> &b, const std::complex<T> &c)
 {
   return Pow(a, b/c);
 }
 //---------------------------------------------------------------------------
-
 template<typename T> struct TComplexTrait
 {
 	static const bool HasImagUnit = false;
@@ -987,6 +1095,9 @@ T TFuncData::CalcFunc(TConstIterator &Iter, TDynData<T> &DynData)
 	}
 }
 //---------------------------------------------------------------------------
+/** Call back function called by the GNU Scientific Library (GSL) to evaluate a
+ *  function.
+ */
 template<typename T>
 double TFuncData::CalcGSLFunc(double x, void *Params)
 {
@@ -1079,6 +1190,8 @@ double TFuncData::Integrate(double Min, double Max, double RelError, TTrigonomet
   return Result;
 }
 //---------------------------------------------------------------------------
+/** Called by the GNU Scientific Library on errors.
+ */
 void GSL_ErrorHandler(const char * reason, const char * file, int line, int gsl_errno)
 {
 	DEBUG_LOG(std::wclog << reason << std::endl);
