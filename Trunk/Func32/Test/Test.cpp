@@ -736,6 +736,23 @@ void Test()
   Test("3<x<6", 6, 0);
   Test("3<x<6", 7, 0);
 
+  //Test corner cases for compare
+  Test("x = 0.2", 0.2, 1);
+  Test("x <> 0.2", 0.2, 0);
+  Test("x < 0.2", 0.2, 0);
+  Test("x <= 0.2", 0.2, 1);
+  Test("x > 0.2", 0.2, 0);
+  Test("x <= 0.2", 0.2, 1);
+
+  Test("x = 0.01*20", 0.2, 1);
+  Test("x <> 0.01*20", 0.2, 0);
+  Test("x < 0.01*20", 0.2, 0);
+  Test("x <= 0.01*20", 0.2, 1);
+  Test("x > 0.01*20", 0.2, 0);
+  Test("x <= 0.01*20", 0.2, 1);
+
+
+  //Test logical functions
   Test("1 and 1", 0, 1);
   Test("0 and 1", 0, 0);
   Test("1 and 0", 0, 0);
