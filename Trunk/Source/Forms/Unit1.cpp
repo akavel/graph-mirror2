@@ -170,7 +170,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void TForm1::HandleCommandLine()
 {
 	//Do not initialize data when OLE is used. This is done through InitNew() and Load() in IPersistStorage
-	if(!FindCmdLineSwitch("EMBEDDING"))
+	if(!OleServerRunning())
 	{
 		if(!ParamCount() || ParamStr(1)[1] == '/' || ParamStr(1)[1] == '-' || !LoadFromFile(ParamStr(1)))
 			LoadDefault();
@@ -969,8 +969,6 @@ void __fastcall TForm1::FormConstrainedResize(TObject *Sender,
 {
 	if(WindowState == wsNormal && Top > 0)
   {
-    StdTop = Top;
-    StdLeft = Left;
     StdWidth = Width;
     StdHeight = Height;
   }
@@ -1180,7 +1178,7 @@ void __fastcall TForm1::Panel2Resize(TObject *Sender)
       UpdateEval();
     }
 
-    if(OleServerImpl)
+    if(OleServerRunning())
       OleServerImpl->SetSize(Image1->Width, Image1->Height);
   }
 }
@@ -2739,7 +2737,7 @@ void __fastcall TForm1::TipActionExecute(TObject *Sender)
 //Called when message loop is up and running
 void __fastcall TForm1::WMUser(TMessage &Message)
 {
-  if(Property.ShowTipsAtStartup)
+  if(Property.ShowTipsAtStartup && !OleServerRunning())
     ShowForm<TForm10>();
 }
 //---------------------------------------------------------------------------
