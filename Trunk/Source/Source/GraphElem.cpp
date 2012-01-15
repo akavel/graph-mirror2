@@ -74,7 +74,7 @@ void TTextValue::Update(const TData &Data)
 void TTextValue::Set(const std::wstring AText, const TData &Data, bool IgnoreErrors)
 {
   Value = FastCalc(AText, Data, IgnoreErrors);
-  Text = AText;
+  Text = _finite(Value) ? AText : std::wstring();
 }
 //---------------------------------------------------------------------------
 void TTextValue::Set(double AValue)
