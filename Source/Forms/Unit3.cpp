@@ -84,6 +84,7 @@ void TForm3::Translate()
   TranslateStrings(ExtColorBox2->Items);
   TranslateStrings(ExtColorBox3->Items);
   SetAccelerators(this);
+  ResizeControl(Edit13, Label16);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Button1Click(TObject *Sender)
