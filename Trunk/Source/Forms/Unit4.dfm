@@ -277,17 +277,11 @@ object Form4: TForm4
       Hint = 'Format used when complex numbers are shown.'
       Anchors = [akTop, akRight, akBottom]
       Caption = 'Complex form'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
       ItemIndex = 1
       Items.Strings = (
         'Real'
         'Rectangular'
         'Polar')
-      ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 11
