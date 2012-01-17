@@ -70,7 +70,13 @@
   <!-- Only use title in xref references -->
   <xsl:param name="local.l10n.xml" select="document('')"/>
   <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
-    <l:l10n language="en">
+    <l:l10n language="hr">
+      <l:context name="xref">
+        <l:template name="section" text="%t"/>
+        <l:template name="simplesect" text="%t"/>
+      </l:context>
+    </l:l10n>
+    <l:l10n language="cs">
       <l:context name="xref">
         <l:template name="section" text="%t"/>
         <l:template name="simplesect" text="%t"/>
@@ -82,19 +88,7 @@
         <l:template name="simplesect" text="%t"/>
       </l:context>
     </l:l10n>
-    <l:l10n language="es">
-      <l:context name="xref">
-        <l:template name="section" text="%t"/>
-        <l:template name="simplesect" text="%t"/>
-      </l:context>
-    </l:l10n>
-    <l:l10n language="de">
-      <l:context name="xref">
-        <l:template name="section" text="%t"/>
-        <l:template name="simplesect" text="%t"/>
-      </l:context>
-    </l:l10n>
-    <l:l10n language="sv">
+    <l:l10n language="nl">
       <l:context name="xref">
         <l:template name="section" text="%t"/>
         <l:template name="simplesect" text="%t"/>
@@ -106,13 +100,31 @@
         <l:template name="simplesect" text="%t"/>
       </l:context>
     </l:l10n>
-    <l:l10n language="hr">
+    <l:l10n language="en">
       <l:context name="xref">
         <l:template name="section" text="%t"/>
         <l:template name="simplesect" text="%t"/>
       </l:context>
     </l:l10n>
-    <l:l10n language="nl">
+    <l:l10n language="de">
+      <l:context name="xref">
+        <l:template name="section" text="%t"/>
+        <l:template name="simplesect" text="%t"/>
+      </l:context>
+    </l:l10n>
+    <l:l10n language="sl">
+      <l:context name="xref">
+        <l:template name="section" text="%t"/>
+        <l:template name="simplesect" text="%t"/>
+      </l:context>
+    </l:l10n>
+    <l:l10n language="es">
+      <l:context name="xref">
+        <l:template name="section" text="%t"/>
+        <l:template name="simplesect" text="%t"/>
+      </l:context>
+    </l:l10n>
+    <l:l10n language="sv">
       <l:context name="xref">
         <l:template name="section" text="%t"/>
         <l:template name="simplesect" text="%t"/>
