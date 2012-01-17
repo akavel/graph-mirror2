@@ -5,6 +5,7 @@ import sys
 ToolsDir = "..\\..\\Tools\\"
 Languages = [
     ("Croatian",    "hr",   {"$LabelWidth": "5em"}),
+    ("Czech",       "cs",   {"$LabelWidth": "5em"}),
     ("Danish",      "da",   {"$LabelWidth": "5em"}),
     ("Dutch",       "nl",   {"$LabelWidth": "5em"}),
     ("French",      "fr",   {"$LabelWidth": "2em"}),
