@@ -447,17 +447,19 @@
 
 	<simplesect>
 		<title>Notice the following relations:</title>
-		<simplelist>
-			<member><mathphrase>sin(x)^2= (sin(x))^2</mathphrase></member>
-			<member><mathphrase>sin 2x = sin(2x)</mathphrase></member>
-			<member><mathphrase>sin 2+x = sin(2)+x</mathphrase></member>
-			<member><mathphrase>sin x^2	= sin(x^2)</mathphrase></member>
-			<member><mathphrase>2(x+3)x	= 2*(x+3)*x</mathphrase></member>
-			<member><mathphrase>-x^2 = -(x^2)</mathphrase></member>
-			<member><mathphrase>2x = 2*x</mathphrase></member>
-			<member><mathphrase>e^2x = e^(2*x)</mathphrase></member>
-			<member><mathphrase>x^2^3 = x^(2^3)</mathphrase></member>
-		</simplelist>
+		<para>
+			<simplelist>
+				<member><mathphrase>sin(x)^2= (sin(x))^2</mathphrase></member>
+				<member><mathphrase>sin 2x = sin(2x)</mathphrase></member>
+				<member><mathphrase>sin 2+x = sin(2)+x</mathphrase></member>
+				<member><mathphrase>sin x^2	= sin(x^2)</mathphrase></member>
+				<member><mathphrase>2(x+3)x	= 2*(x+3)*x</mathphrase></member>
+				<member><mathphrase>-x^2 = -(x^2)</mathphrase></member>
+				<member><mathphrase>2x = 2*x</mathphrase></member>
+				<member><mathphrase>e^2x = e^(2*x)</mathphrase></member>
+				<member><mathphrase>x^2^3 = x^(2^3)</mathphrase></member>
+			</simplelist>
+		</para>
 	</simplesect>
 </section>
 <?hard-pagebreak?>
