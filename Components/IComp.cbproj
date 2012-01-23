@@ -3,7 +3,7 @@
 			<ProjectGuid>{A1226338-C69F-4866-9220-ED350B8C5D17}</ProjectGuid>
 			<MainSource>IComp.cpp</MainSource>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Library</AppType>
@@ -122,9 +122,6 @@
 				<DependentOn>TGridPanelEx\GridPanelEx.h</DependentOn>
 				<BuildOrder>55</BuildOrder>
 			</CppCompile>
-			<ResFiles Include="TGrid\Cursors.res">
-				<BuildOrder>12</BuildOrder>
-			</ResFiles>
 			<CppCompile Include="TGrid\Grid.cpp">
 				<DependentOn>TGrid\Grid.h</DependentOn>
 				<BuildOrder>8</BuildOrder>

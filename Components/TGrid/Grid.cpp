@@ -14,8 +14,9 @@
 #include "HandleCsv.h"
 #include <algorithm>
 #include "ICompCommon.h"
+#include <cassert>
 #pragma package(smart_init)
-//#pragma resource "cursors.res"
+#pragma resource "cursors.res" //Necesarry to ensure the res file is linked into the exe file and not only the package
 
 const TCursor crColCursor = static_cast<TCursor>(256); //Cursor used to select colums
 const TCursor crRowCursor = static_cast<TCursor>(257); //Cursor used to select rows
@@ -47,8 +48,12 @@ __fastcall TGrid::TGrid(TComponent* Owner)
   //Initialize to invalid value
   SelStart.X = -1;
   SelStart.Y = -1;
-  Screen->Cursors[crColCursor] = LoadCursor(HInstance, L"COL");
-  Screen->Cursors[crRowCursor] = LoadCursor(HInstance, L"ROW");
+  HCURSOR ColCursor = LoadCursor(HInstance, L"COL");
+  HCURSOR RowCursor = LoadCursor(HInstance, L"ROW");
+  Screen->Cursors[crColCursor] = ColCursor;
+  Screen->Cursors[crRowCursor] = RowCursor;
+	assert(ColCursor);
+	assert(RowCursor);
   FTitleCaptions->OnChange = TitleCaptionsChange;
 }
 //---------------------------------------------------------------------------
