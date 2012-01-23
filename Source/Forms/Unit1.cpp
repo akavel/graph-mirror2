@@ -155,16 +155,18 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+-", (TObject*)ShortCut(VK_SUBTRACT, TShiftState() << ssCtrl));
 	ZoomOutAction->SecondaryShortCuts->AddObject("Ctrl+Shift+-", (TObject*)ShortCut(VK_SUBTRACT, TShiftState() << ssCtrl << ssShift));
 
-	Screen->Cursors[crMoveHand2] = LoadCursor(HInstance, L"MOVECURSOR1");
-	Screen->Cursors[crMoveHand1] = LoadCursor(HInstance, L"MOVECURSOR2");
+	HCURSOR MoveHand2 = LoadCursor(HInstance, L"MOVECURSOR1");
+	HCURSOR MoveHand1 = LoadCursor(HInstance, L"MOVECURSOR2");
+  Screen->Cursors[crMoveHand1] = MoveHand1;
+  Screen->Cursors[crMoveHand2] = MoveHand2;
 
 	Recent1->FileMenu = ActionMainMenuBar1->ActionClient->Items->ActionClients[0]->Items;
 
 	//We need to use something in HTMLHelpViewer.pas to make sure it is linked in
 	ViewerName = "HTML Help Viewer";
 
-	BOOST_ASSERT(Screen->Cursors[crMoveHand1]);
-	BOOST_ASSERT(Screen->Cursors[crMoveHand2]);
+	BOOST_ASSERT(MoveHand1);
+	BOOST_ASSERT(MoveHand2);
 }
 //---------------------------------------------------------------------------
 void TForm1::HandleCommandLine()
