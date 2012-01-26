@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
-"PO-Revision-Date: 2011-12-22 21:25+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"POT-Creation-Date: 2011-09-21 23:00\n"
+"PO-Revision-Date: 2012-01-23 11:19+0100\n"
+"Last-Translator: Mask <embrio1988@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,7 +92,7 @@ msgstr "Po meri..."
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Hint
 msgid "Place the label at a custom position."
-msgstr ""
+msgstr "Postavi oznako na poljubno mesto."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
@@ -102,30 +102,28 @@ msgstr "Obračanje"
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
-#, fuzzy
 msgid "Show the label with no rotation."
-msgstr "Osenči območje pod funkcijo."
+msgstr "Prikaži oznako brez obračanja."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
 msgid "Show the label rotated 90° counter clockwise."
-msgstr ""
+msgstr "Prikaži oznako obrnjeno 90° proti smeri urinega kazalca."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_180..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_180..Hint
 msgid "Show the label rotated 180°."
-msgstr ""
+msgstr "Prikaži oznako obrnjeno za 180°."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_270..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_270..Hint
 msgid "Show the label rotated 270° counter clockwise."
-msgstr ""
+msgstr "Prikaži oznako obrnjeno 270° proti smeri urinega kazalca."
 
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
 #. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
-#, fuzzy
 msgid "Specify the angle of rotation for the label."
-msgstr "Izberi piasvo za naslov."
+msgstr "Določi kot obračanja za oznako."
 
 #. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
@@ -206,7 +204,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..AreaAction("Integrate")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -216,7 +214,7 @@ msgstr "Računaj"
 
 #. Form1..ActionManager........("File")..Caption
 msgid "Plugins"
-msgstr ""
+msgstr "Vtičniki"
 
 #. Form1..ActionManager........("File")....("Import")..Caption
 msgid "Internet"
@@ -254,27 +252,24 @@ msgid "New"
 msgstr "Nov"
 
 #. Form1..ActionManager..NewAction("New")..Hint
-#, fuzzy
 msgid "Create a new coordinate system."
-msgstr "Ustvari nov koordinatni sistem.."
+msgstr "Ustvari nov koordinatni sistem."
 
 #. Form1..ActionManager..OpenAction("Open...")..Caption
 msgid "Open..."
 msgstr "Odpri..."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
-#, fuzzy
 msgid "Read a coordinate system from a file."
-msgstr "Preberi koordinatni sistem in funkcije iz datoteke."
+msgstr "Preberi koordinatni sistem iz datoteke."
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
 msgstr "Shrani"
 
 #. Form1..ActionManager..SaveAction("Save")..Hint
-#, fuzzy
 msgid "Write the current coordinate system to a file."
-msgstr "Zapiši koordinatni sistem in funkcije v datoteko."
+msgstr "Zapiši trenutni koordinatni sistem v datoteko."
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Caption
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
@@ -282,25 +277,22 @@ msgid "Save as..."
 msgstr "Shrani kot..."
 
 #. Form1..ActionManager..SaveAsAction("Save as...")..Hint
-#, fuzzy
 msgid "Write the current coordinate system to a file with a new name."
-msgstr "Shrani koordinatni sistem pod novim imenom."
+msgstr "Shrani trenutni koordinatni sistem v datoteko pod novim imenom."
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
 msgid "Save copy as..."
 msgstr "Shrani kopijo kot..."
 
 #. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
-#, fuzzy
 msgid "Save a copy of the current coordinate system to a file."
-msgstr "Shrani kopijo trenutnega koordinatnega sistema"
+msgstr "Shrani kopijo trenutnega koordinatnega sistema v datoteko."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
 msgid "Save as image..."
 msgstr "Shrani sliko kot..."
 
 #. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
-#, fuzzy
 msgid "Save the shown coordinate system as an image."
 msgstr "Shrani prikazan koordinatni sistem kot sliko."
 
@@ -346,7 +338,6 @@ msgid "Cut"
 msgstr "Izreži"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
-#, fuzzy
 msgid "Cut the selected function or point series to the clipboard."
 msgstr "Izreži izbrano funkcijo ali zaporedje točk v odložišče."
 
@@ -359,9 +350,8 @@ msgid "Copy"
 msgstr "Kopiraj"
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
-#, fuzzy
 msgid "Copy the selected function or point series to the clipboard."
-msgstr "Kopira izbrano funkcijo ali zaporedje točk v odložišče."
+msgstr "Kopiraj izbrano funkcijo ali zaporedje točk v odložišče."
 
 #. Form1..ActionManager..PasteAction("Paste")..Caption
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
@@ -371,7 +361,6 @@ msgid "Paste"
 msgstr "Prilepi"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
-#, fuzzy
 msgid "Paste a function or point series from the clipboard into the coordinate system."
 msgstr "Prilepi funkcijo ali zaporedje točk iz odložišča v koordinatni sistem."
 
@@ -380,9 +369,8 @@ msgid "Copy image"
 msgstr "Kopiraj sliko"
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Hint
-#, fuzzy
 msgid "Copy the shown coordinate system to the clipboard."
-msgstr "Kopira prikazan koordinatni sistem v odložišče."
+msgstr "Kopiraj prikazan koordinatni sistem v odložišče."
 
 #. Form1..ActionManager..AxesAction("Axes...")..Caption
 msgid "Axes..."
@@ -475,7 +463,7 @@ msgstr "Povečaj"
 
 #. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Povečaj. Držite Shift za povečanje v večjih korakih."
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
@@ -483,7 +471,7 @@ msgstr "Zmanjšaj"
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Pomanjšaj. Držite Shift za pomanjšanje v večjih korakih."
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
@@ -506,9 +494,8 @@ msgid "Standard"
 msgstr "Standardno"
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
-#, fuzzy
 msgid "Reset the axes to their default settings."
-msgstr "Ponastavi orodno vrstico na prvotni izgled."
+msgstr "Ponastavi osi na privzete nastavitve."
 
 #. Form1..ActionManager..MoveUpAction("Move up")..Category
 #. Form1..ActionManager..MoveDownAction("Move down")..Category
@@ -523,36 +510,32 @@ msgid "Move up"
 msgstr "Pomakni gor"
 
 #. Form1..ActionManager..MoveUpAction("Move up")....Hint
-#, fuzzy
 msgid "Move the graphing area up along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Pomakni okno po koordinatnem sistemu navzgor."
+msgstr "Premakni risalno območje navzgor po koordinarnem sistemu. Držite Shift za pomik v večjih korakih."
 
 #. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "Pomakni dol"
 
 #. Form1..ActionManager..MoveDownAction("Move down")....Hint
-#, fuzzy
 msgid "Move the graphing area down along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Pomakni okno po koordinatnem sistemu navzdol."
+msgstr "Premakni risalno območje navzdol po koordinarnem sistemu. Držite Shift za pomik v večjih korakih."
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
 msgstr "Pomakni levo"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")....Hint
-#, fuzzy
 msgid "Move the graphing area to the left along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Pomakni okno po koordinatnem sistemu levo."
+msgstr "Premakni risalno območje levo po koordinarnem sistemu. Držite Shift za pomik v večjih korakih."
 
 #. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr "Pomakni desno"
 
 #. Form1..ActionManager..MoveRightAction("Move right")....Hint
-#, fuzzy
 msgid "Move the graphing area to the right along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Pomakni okno po koordinatnem sistemu desno."
+msgstr "Premakni risalno območje desno po koordinarnem sistemu. Držite Shift za pomik v večjih korakih."
 
 #. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
@@ -567,18 +550,16 @@ msgid "Length of path"
 msgstr "Dolžina poti"
 
 #. Form1..ActionManager..PathAction("Length of path")....Hint
-#, fuzzy
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Izračunaj dolžino poti med dvema točkama na krivulji."
 
-#. Form1..ActionManager..AreaAction("Area")..Caption
-msgid "Area"
-msgstr "Območje..."
+#. Form1..ActionManager..AreaAction("Integrate")..Caption
+msgid "Integrate"
+msgstr "Integriraj"
 
-#. Form1..ActionManager..AreaAction("Area")..Hint
-#, fuzzy
+#. Form1..ActionManager..AreaAction("Integrate")..Hint
 msgid "Calculate the definite integral over a given interval."
-msgstr "Izračunaj tabelo"
+msgstr "Izračunaj določeni integral za dani interval."
 
 #. Form1..ActionManager..EvalAction("Evaluate")..Caption
 #. Form9("Evaluate")..Caption
@@ -590,14 +571,12 @@ msgid "Evaluate or trace the selected function."
 msgstr "Ovrednoti ali sledi izbrano funkcijo."
 
 #. Form1..ActionManager..TableAction("Table")..Caption
-#, fuzzy
 msgid "Table"
-msgstr "Tabela..."
+msgstr "Tabela"
 
 #. Form1..ActionManager..TableAction("Table")..Hint
-#, fuzzy
 msgid "Show an evaluation table."
-msgstr "Prikaže tabelo vrednosti."
+msgstr "Prikaži tabelo vrednosti."
 
 #. Form1..ActionManager..ContentsAction("Contents and index")..Caption
 msgid "Contents and index"
@@ -612,19 +591,16 @@ msgid "List of functions"
 msgstr "Spisek funkcij"
 
 #. Form1..ActionManager..ListAction("List of functions")..Hint
-#, fuzzy
 msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Prikaži spisek vgrajenih funkcij, ki se lahko uporabljajo za izris."
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Caption
-#, fuzzy
 msgid "Graph web site"
-msgstr "Lastnosti grafa"
+msgstr "Spletna strana Graph-a"
 
 #. Form1..ActionManager..HomePageAction("Graph web site")..Hint
-#, fuzzy
 msgid "Open the default browser and show the Graph web site."
-msgstr "Odpre brskalnik in prikaže domačo stran programa."
+msgstr "Odpri brskalnik in prikaži domačo stran programa."
 
 #. Form1..ActionManager..UpdateAction("Check for update")..Caption
 msgid "Check for update"
@@ -653,35 +629,30 @@ msgid "Fit"
 msgstr "Na graf"
 
 #. Form1..ActionManager..ZoomFitAction("Fit")..Hint
-#, fuzzy
 msgid "Zoom to show the selected element."
-msgstr "Prilagodi povečavo da bo prikazana izbrana funkcija."
+msgstr "Prilagodi povečavo, da bo prikazan izbran element."
 
 #. Form1..ActionManager..ZoomFitAllAction("Fit all")..Caption
-#, fuzzy
 msgid "Fit all"
-msgstr "Na graf"
+msgstr "Zajemi vse"
 
 #. Form1..ActionManager..ZoomFitAllAction("Fit all")..Hint
-#, fuzzy
 msgid "Zoom to show all elements."
-msgstr "Prilagodi povečavo da bo prikazana izbrana funkcija."
+msgstr "Prilagodi povečavo, da bodo prikazani vsi elemenit."
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
 msgid "Frequently Asked Questions"
 msgstr "Pogosto zastavljena vprašanja"
 
 #. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
-#, fuzzy
 msgid "Show a list of frequently asked questions and their answers."
-msgstr "Prikaže spisek pogosto zastavljenih vprašanj in njihovih odgovorov."
+msgstr "Prikaži spisek pogosto zastavljenih vprašanj in njihovih odgovorov."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
 msgid "Insert label..."
 msgstr "Vstavi oznako..."
 
 #. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
-#, fuzzy
 msgid "Insert a text label."
 msgstr "Vstavi besedilno oznako."
 
@@ -717,7 +688,7 @@ msgstr "Povečaj x-os."
 
 #. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")....Hint
 msgid "Zoom in on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Povečaj le x-os. Drižte Shift za povečanje v večjih korakih."
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
 msgid "Zoom x-axis out"
@@ -725,7 +696,7 @@ msgstr "Zmanjšaj x-os."
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")....Hint
 msgid "Zoom out on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Pomanjšaj le x-os. Držite Shift za pomanjšanje v večjih korakih."
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
 msgid "Zoom y-axis in"
@@ -733,7 +704,7 @@ msgstr "Povečaj y-os."
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")....Hint
 msgid "Zoom in on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Povečaj le y-os. Drižte Shift za povečanje v večjih korakih."
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
 msgid "Zoom y-axis out"
@@ -741,7 +712,7 @@ msgstr "Zmanjšaj y-os."
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")....Hint
 msgid "Zoom out on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
+msgstr "Pomanjšaj le y-os. Držite Shift za pomanjšanje v večjih korakih."
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
@@ -752,9 +723,8 @@ msgid "Insert a new equation or inequality."
 msgstr "Vstavi novo enačbo ali neenačbo."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
-#, fuzzy
 msgid "Custom functions/constants..."
-msgstr "Lastne funkcije/konstante"
+msgstr "Lastne funkcije/konstante..."
 
 #. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in graphs."
@@ -786,11 +756,11 @@ msgstr "Uvozi zaporedje točk iz datoteke."
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
 msgid "Scripting engine documentation"
-msgstr ""
+msgstr "Dokumentacija skriptnega pogona"
 
 #. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
 msgid "Show documentation for scripting engine and plugin system."
-msgstr ""
+msgstr "Prikaži dokumentacijo za skiptni pogon in vtični sistem."
 
 #. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
@@ -969,9 +939,8 @@ msgstr "Opis:"
 
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
-#, fuzzy
 msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
-msgstr "Vpišite opis, ki bo uporabljen v legendi, sicer bo uporabljena enačaba funkcije."
+msgstr "Vpišite opis, ki bo uporabljen v legendi in seznamu funkcij. Če pustite prazno bo uporabljena enačba funkcije."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
@@ -1011,13 +980,13 @@ msgstr "Širina:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Izberite slog, ki se uporablja le za risanje neenačb."
 
+#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Širina črte enačbe ali meje neenačbe v pikslih."
+
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Izberi barvo za risanje relacij."
-
-#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Širina črte enačbe ali meje neenačbe v pikslih."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -1032,9 +1001,8 @@ msgid "Insert tangent/normal"
 msgstr "Vstavi tangento/normalo"
 
 #. Form12("Insert tangent/normal")..Edit1..Hint
-#, fuzzy
 msgid "Value where the tangent/normal will interact with the function."
-msgstr "Koordinate tangenta/normala prečka funkcijo."
+msgstr "Vrednost kjer se tangenta/normala stika s funkcijo."
 
 #. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
 msgid "Choose if you want a tangent or a normal."
@@ -1275,24 +1243,21 @@ msgid "Import from file..."
 msgstr "Uvozi iz datoteke..."
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Hint
-#, fuzzy
 msgid "Import user models from a file."
-msgstr "Uvozi zaporedje točk iz datoteke."
+msgstr "Uvozi uporabnikove vzorce iz datoteke."
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Caption
-#, fuzzy
 msgid "Export all to file..."
-msgstr "Izvozi v datoteko..."
+msgstr "Izvozi vse v datoteko..."
 
 #. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
-#, fuzzy
 msgid "Export user models to a file."
-msgstr "Izvozi izbrane podake v datoteko."
+msgstr "Izvozi uporabnikove vzorce v datoteko."
 
 #. Form13("Insert trendline")..SaveDialog1..Filter
 #. Form13("Insert trendline")..OpenDialog1..Filter
 msgid "User models [*.ini]|*.ini"
-msgstr ""
+msgstr "Uporabnikovi vzorci [*.ini]|*.ini"
 
 #. Form14("Insert point series")..Caption
 msgid "Insert point series"
@@ -1356,14 +1321,12 @@ msgid "Select which kind of line to draw between the markers."
 msgstr "Izberite kateri tip črte narisati med oznakami."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "1D cubic spline"
-msgstr "Kubični zlepki"
+msgstr "1D kubični zlepki"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
-#, fuzzy
 msgid "2D cubic spline"
-msgstr "Kubični zlepki"
+msgstr "2D kubični zlepki"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
@@ -1416,37 +1379,32 @@ msgid "Right"
 msgstr "Desno"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Above Left"
-msgstr "Pomakni levo"
+msgstr "Nad Levo"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Above Right"
-msgstr "Pomakni desno"
+msgstr "Nad Desno"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Below Left"
-msgstr "Pod funkcijo"
+msgstr "Pod Levo"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Below Right"
-msgstr "Zgoraj Desno"
+msgstr "Pod Desno"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
 msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
-msgstr ""
+msgstr "Izberi med kartezijskimi (x,y) koordinatami in polarnimi (θ,r) koordinatami."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
-#, fuzzy
 msgid "Coordinate type"
-msgstr "Nedefinirane koordinate"
+msgstr "Tip koordinat"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 msgid "Cartesian"
-msgstr ""
+msgstr "Kartezijski"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 #. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
@@ -1458,9 +1416,8 @@ msgid "Error bars"
 msgstr "Intervali napak"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Caption
-#, fuzzy
 msgid "X error amount"
-msgstr "X intervali napak"
+msgstr "X količina napak"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Hint
 msgid "Show horizontal error bars."
@@ -1510,9 +1467,8 @@ msgid "Enter relative value in percent."
 msgstr "Vpiši relativno vrednost v procentih."
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Caption
-#, fuzzy
 msgid "Y error amount"
-msgstr "Y intervali napak"
+msgstr "Y količina napak"
 
 #. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Hint
 msgid "Show vertical error bars."
@@ -1595,9 +1551,8 @@ msgid "Calculate table"
 msgstr "Izračunaj tabelo"
 
 #. Form15("Calculate table")..Edit3....Hint
-#, fuzzy
 msgid "The step value. This is the difference between two adjoining values in the defined interval."
-msgstr "Velikost koraka. To je razdalja med x vrednostmi na intervalu."
+msgstr "Velikost koraka. To je razlika med dvema sosednjima vrednostima na definiranem intervalu."
 
 #. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
@@ -1621,9 +1576,8 @@ msgstr "Prikaži %s"
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show3("Show %s")..Hint
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show4("Show %s")..Hint
 #. Form15("Calculate table")..PopupMenu1..Popup1_Show5("Show %s")..Hint
-#, fuzzy
 msgid "Show the %s column in the table."
-msgstr "Prikaži legendo v spodnjem levem kotu."
+msgstr "Prikaži %s stolpec v tabeli."
 
 #. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
 msgid "Copy selected cells to the clipboard."
@@ -1755,14 +1709,12 @@ msgid "Select color used for shading."
 msgstr "Izberite barvo senc."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
-#, fuzzy
 msgid "Mark the border around the shading."
-msgstr "Zaznamuj konec sence s črto."
+msgstr "Označi meje okoli sence."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
-#, fuzzy
 msgid "Mark border"
-msgstr "Točke"
+msgstr "Označi rob"
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
 msgid "Enter a description to show in the legend."
@@ -1817,14 +1769,12 @@ msgid "Image height:"
 msgstr "Višina:"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
-#, fuzzy
 msgid "Set a custom image width in pixels."
-msgstr "Nastavi željeno širino slike."
+msgstr "Nastavi željeno širino slike v pikslih"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
-#, fuzzy
 msgid "Set a custom image height in pixels."
-msgstr "Nastavi željeno višino slike."
+msgstr "Nastavi željeno višino slike v pikslih"
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
 msgid "Choose to use the same size as shown on the screen or a custom image size."
@@ -1851,9 +1801,8 @@ msgid "Encoding"
 msgstr "Kodiranje"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
-#, fuzzy
 msgid "Sequential"
-msgstr "Izberi vse"
+msgstr "Zaporedni"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
@@ -1896,19 +1845,16 @@ msgid "Choose paper size to use."
 msgstr "Izberite velikost papirja."
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Letter"
-msgstr "Levo"
+msgstr "Pismo"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Ledger"
-msgstr "Levo"
+msgstr "Glavna knjiga"
 
 #. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Legal"
-msgstr "Turkizna"
+msgstr "Pravno"
 
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
@@ -1931,7 +1877,7 @@ msgstr "Konstanta:"
 
 #. Form19("Animate")..ComboBox1..Hint
 msgid "Choose a constant to change between each frame."
-msgstr "Izberite konstanto, ki se bo spremenila z vsako novo sliko animacije."
+msgstr "Izberite konstanto, ki se bo spremenila z vsako novo sličico."
 
 #. Form19("Animate")..TntGroupBox1("Range")..Label4("Step:")..Caption
 msgid "Step:"
@@ -1947,40 +1893,35 @@ msgstr "Zadnja vrednost konstante."
 
 #. Form19("Animate")..TntGroupBox1("Range")..Edit3..Hint
 msgid "The chosen constant is changed by this value between each frame."
-msgstr "Vrednost za katero se izbrana konstanta spremeni ob vsaki novi sliki animacije."
+msgstr "Vrednost za katero se izbrana konstanta spremeni ob vsaki novi sličici."
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Caption
-#, fuzzy
 msgid "Frame options"
-msgstr "Možnosti slike"
+msgstr "Možnosti sličic"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
-#, fuzzy
 msgid "Frame width:"
-msgstr "Širina:"
+msgstr "Širina sličic:"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
-#, fuzzy
 msgid "Frame height:"
-msgstr "Višina:"
+msgstr "Višina sličic:"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Label7("Frames/second:")..Caption
 msgid "Frames/second:"
-msgstr "Slik/sekundo:"
+msgstr "Sličic/sekundo:"
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Edit4..Hint
-#, fuzzy
 msgid "Width of each frame, in pixels."
-msgstr "Širina grafa v pikslih."
+msgstr "Širina vsake sličice v pikslih."
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Edit5..Hint
-#, fuzzy
 msgid "Height of each frame, in pixels."
-msgstr "Širina grafa v pikslih."
+msgstr "Višina vsake sličice v pikslih."
 
 #. Form19("Animate")..TntGroupBox2("Frame options")..Edit6..Hint
 msgid "Number of frames per second used when the animation is played."
-msgstr "Število slik na sekundo ob predvajanju animacije"
+msgstr "Število sličic na sekundo ob predvajanju animacije"
 
 #. Form19("Animate")..ProgressForm1("Working")..Caption
 msgid "Working"
@@ -1997,19 +1938,16 @@ msgid "Build %s"
 msgstr "Prevedi %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-#, fuzzy
 msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
-msgstr "To je brezplačni program. Lahko ga uporabljate in razširjate pod pogoji, navedenimi v licenci GNU General Public License. Prosimo, da poročila o napakah in priporočila pošiljate razvijalcu."
+msgstr "To je brezplačni program, katerega lahko razširjate pod pogoji, navedenimi v licenci <a href=\"%s\">GNU General Public License</a> različica 2 . Prosimo, da poročila o napakah in priporočila pošiljate razvijalcu."
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
-#, fuzzy
 msgid "The newest version as well as the source code are available at: %s"
-msgstr "Najnovejša različica in izvorna koda se nahajata na spletni strani:"
+msgstr "Najnovejša različica in izvorna koda se nahajata na spletni strani: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Email: %s")..Caption
-#, fuzzy
 msgid "Email: %s"
-msgstr "E-mail:"
+msgstr "E-mail: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2042,7 +1980,7 @@ msgstr "Korak"
 
 #. Form20("Animation")..SaveDialog1..Filter
 msgid "Audio Video Interleave [*.avi]|*.avi"
-msgstr ""
+msgstr "Audio Video Interleave [*.avi]|*.avi"
 
 #. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
 msgid "Speed"
@@ -2078,68 +2016,57 @@ msgid "Save the animation to a file."
 msgstr "Shrani animacijo v datoteko."
 
 #. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Caption
-#, fuzzy
 msgid "Save frame..."
-msgstr "Shrani kot..."
+msgstr "Shrani sličico..."
 
 #. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Hint
-#, fuzzy
 msgid "Save the shown frame to an image file."
-msgstr "Shrani prikazan koordinatni sistem kot sliko."
+msgstr "Shrani prikazano sličico v slikovno datoteko."
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")..Caption
-#, fuzzy
 msgid "Save all frames..."
-msgstr "Shrani kot..."
+msgstr "Shrani vse okvirje..."
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
 msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
-msgstr ""
+msgstr "Shrani vse sličice v animaciji v slikovne datoteke. Ustvarjeno bo isto število datotek, kot je sličic v animaciji."
 
 #. Form21("Placement")..Label1("Corner:")..Caption
-#, fuzzy
 msgid "Corner:"
-msgstr "Barva:"
+msgstr "Kot:"
 
 #. Form21("Placement")..ComboBox1..Hint
-#, fuzzy
 msgid "Choose which corner of the label should be locked."
-msgstr "Izberite, kje bo prikazana legenda."
+msgstr "Izberite kateri kot oznake bo zaklenjen."
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Upper Left"
 msgstr "Zgoraj Levo"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Upper Right"
 msgstr "Zgoraj Desno"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Lower Left"
-msgstr "Zgoraj Levo"
+msgstr "Spodaj Levo"
 
 #. Form21("Placement")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Lower Right"
-msgstr "Zgoraj Desno"
+msgstr "Spodaj Desno"
 
 #. Form21("Placement")..Edit1..Hint
 #. Form21("Placement")..Edit2..Hint
-#, fuzzy
 msgid "Enter a coordinate to lock label at."
-msgstr "Vpištei x-koordinato al pa kliknite v glavnem oknu."
+msgstr "Vpište koordinate, kjer bo zaklenjena oznaka."
 
 #. Form22("Python interpreter")..Caption
 msgid "Python interpreter"
-msgstr ""
+msgstr "Python interpreter"
 
 #. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
-#, fuzzy
 msgid "Clear"
-msgstr "Bež"
+msgstr "Počisti"
 
 #. Form3("Edit axes")..Caption
 msgid "Edit axes"
@@ -2227,9 +2154,8 @@ msgid "Show grid"
 msgstr "Prikaži mrežo"
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")....Hint
-#, fuzzy
 msgid "Show the label at the right side of the graphing area, above the x-axis."
-msgstr "Prikaži oznako na desni strani glavnega okna nad x-osjo."
+msgstr "Prikaži oznako na desni strani risalnega območja nad x-osjo."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Panel1..CheckBox3("Label:")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")..Caption
@@ -2274,9 +2200,8 @@ msgstr "Prikaže enote an osi kot ulomek pomnožen s pi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
-#, fuzzy
 msgid "Show as a multiple of π"
-msgstr "Prikaži kot večkratnike pi"
+msgstr "Prikaži kot večkratnike π"
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
@@ -2309,9 +2234,8 @@ msgid "Show horizontal grid lines."
 msgstr "Prikaži vodoravne mrežne črte."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel3..CheckBox10("Label:")....Hint
-#, fuzzy
 msgid "Show the label at the top of the graphing area, to the right of the y-axis."
-msgstr "Prikaži oznako na vrhu glavnega okna desno od y-osi."
+msgstr "Prikaži oznako na vrhu risalnega območja desno od y-osi."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Panel4..Label8("The y-axis cross at x=")..Caption
 msgid "The y-axis cross at x="
@@ -2531,9 +2455,8 @@ msgid "Show tooltip"
 msgstr "Pokaži nasvet"
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")....Hint
-#, fuzzy
 msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
-msgstr "Shrani položaj okna ob izhodu programa. Te nastavitve bodo uporabljene ob naslednji uporabi programa.|Shrani stanje okna ob izhodu."
+msgstr "Shrani velikost glavnega okna ob izhodu programa. Nastavitev bo uporabljena ob naslednji uporabi Graph-a."
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
@@ -2549,15 +2472,15 @@ msgstr "Preveri za novo verzijo Graph-a ob zagonu."
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
 msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
-msgstr ""
+msgstr "Uporabi lastno decimalno vejico namesto privzete iz Windows Lokalnih nastavitev."
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
 msgid "Custom decimal separator:"
-msgstr ""
+msgstr "Lastna decimalna vejica:"
 
 #. Form4("Options")..GridPanelEx1..Edit4..Hint
 msgid "Decimal separator used when exporting to other programs."
-msgstr ""
+msgstr "Decimalna vejica, ki se uporabi, ko izvozimo v druge programe."
 
 #. Form5("Insert function")..Caption
 msgid "Insert function"
@@ -2617,9 +2540,8 @@ msgid "Lines"
 msgstr "Črte"
 
 #. Form6("Insert text label")..Caption
-#, fuzzy
 msgid "Insert text label"
-msgstr "Vstavi besedilno oznako."
+msgstr "Vstavi besedilno oznako"
 
 #. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
@@ -2646,9 +2568,8 @@ msgid "Insert symbol (Ctrl+G)"
 msgstr "Vstavi simbol (Ctrl+G)"
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton13..Hint
-#, fuzzy
 msgid "Insert object."
-msgstr "Vstavi objekt"
+msgstr "Vstavi objekt."
 
 #. Form6("Insert text label")..GroupBox1("Text string")..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
@@ -2768,9 +2689,8 @@ msgstr "Izberite, kje se bo pojavil kurzor ko klikneš na sliko."
 
 #. AreaFrame..GridPanel1..Label3("Integral")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Integral"
-msgstr "Internet"
+msgstr "Integral"
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -2807,9 +2727,8 @@ msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "Strmina funkcije ovrednotena za parameter t."
 
 #. ParFuncFrame..Edit1....Hint
-#, fuzzy
 msgid "Enter the value for the parameter t for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Vpiši število za katero hočeš funkcijo ovrednotiti, ali pa klikni na funkcijo v glavnem oknu."
+msgstr "Vpišite vrednost parametra t za katerega želite ovrednotiti funkcijo ali pa kliknite na graf na risalnem območju."
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
@@ -2849,14 +2768,12 @@ msgid "The slope of the function evaluated for the given angle."
 msgstr "Strmina funkcije ovrednotena za dan kot."
 
 #. PolFuncFrame..Edit1....Hint
-#, fuzzy
 msgid "Enter the value of the polar angle for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Vpišite neodvisno spremenljivko za katero hočete ovrednotiti funkcijo ali pa kliknite na funkcijo v glavnem oknu."
+msgstr "Vpišite vrednost polarni kot za katerega hočete ovrednotiti funkcijo ali pa kliknite na graf na risalnem območju."
 
 #. StdFuncFrame..Edit1....Hint
-#, fuzzy
 msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Vpiši število za katero hočeš funkcijo ovrednotiti, ali pa klikni na funkcijo v glavnem oknu."
+msgstr "Vpišite vrednost za katero hočete ovrednotiti funkcijo, ali pa kliknite na graf na risalnem območju."
 
 #. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
@@ -2867,18 +2784,16 @@ msgid "This is the first derivative of the function evaluated for the entered va
 msgstr "To je prvi odvod funkcije ovrednoten za vpisano vrednost."
 
 #. StdFuncFrame..Edit4....Hint
-#, fuzzy
 msgid "This is the second derivative of the function evaluated for the entered value."
-msgstr "To je prvi odvod funkcije ovrednoten za vpisano vrednost."
+msgstr "To je drugi odvod funkcije ovrednoten za vpisano vrednost."
 
 #. TanFrame..Edit2....Hint
 msgid "This is the y-coordinate corresponding to the entered x-coordinate."
 msgstr "To je y-koordinata, ki vstreza vtipkani x-koordinati."
 
 #. TanFrame..Edit1..Hint
-#, fuzzy
 msgid "Enter an x-coordinate or click in the graphing area."
-msgstr "Vpištei x-koordinato al pa kliknite v glavnem oknu."
+msgstr "Vpišite x-koordinato al pa kliknite na risalnem območju."
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -2888,16 +2803,14 @@ msgid "Error"
 msgstr "Napaka"
 
 #. Indicates an error code, e.g. "Error 5"
-#, fuzzy
 msgid "Error %s"
-msgstr "Intervali napak"
+msgstr "Napaka %s"
 
 #. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Dolžina"
 
 #. Shown in rotation dialog
-#, fuzzy
 msgid "Degrees"
 msgstr "Stopinje"
 
@@ -2915,81 +2828,73 @@ msgstr "Osi"
 
 #. Shortcut key
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #. Shortcut key
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #. Shortcut key
-#, fuzzy
 msgid "Shift"
-msgstr "Bela"
+msgstr "Shift"
 
 #. Shortcut key
-#, fuzzy
 msgid "Del"
-msgstr "Izbriši"
+msgstr "Del"
 
 #. Shortcut key
-#, fuzzy
 msgid "Ins"
-msgstr "Povečaj"
+msgstr "Ins"
 
 #. Shortcut key
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. Shortcut key
-#, fuzzy
 msgid "End"
-msgstr "Končna:"
+msgstr "End"
 
 #. Shortcut key
 msgid "PgUp"
-msgstr ""
+msgstr "PgUp"
 
 #. Shortcut key
 msgid "PgDn"
-msgstr ""
+msgstr "PgDn"
 
 #. Shortcut key
 msgid "Up"
-msgstr ""
+msgstr "Up"
 
 #. Shortcut key
-#, fuzzy
 msgid "Down"
-msgstr "Darujte"
+msgstr "Down"
 
 #. Shortcut key
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #. Shortcut key
-#, fuzzy
 msgid "Enter"
-msgstr "Tiskalnik"
+msgstr "Enter"
 
 #. Shortcut key
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #. Shortcut key
 msgid "BkSp"
-msgstr ""
+msgstr "BkSp"
 
 #. Shortcut key
-#, fuzzy
 msgid "Space"
-msgstr "Shrani"
+msgstr "Presledek"
 
 msgid "An error occurred while evaluating power function."
 msgstr "Prišlo je do napake pri vrednotenju potenčne funkcije."
 
-#, fuzzy
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
-msgstr "Tangenta k 90+p180 je nedefinirana."
+msgstr "Tangenta k pi/2+n*pi (90+n180 v stopinjah) je nedefinirana."
 
 msgid "Fact can only be calculated for positive integers."
 msgstr "Vrednost lahko izračunamo samo za pozitivna cela števila."
@@ -3034,10 +2939,10 @@ msgid "Too many recursive calls."
 msgstr "Preveč rekurzivnih klicev."
 
 msgid "Overflow: A function returned a value too large to handle."
-msgstr ""
+msgstr "Prekoračitev: Funkcija je vrnila preveliko vrednost."
 
 msgid "A plugin function failed: %s"
-msgstr ""
+msgstr "Funkcija vtičnika ne deluje: %s"
 
 msgid "Unexpected operator. Operator '%s' cannot be placed here."
 msgstr "Nepričakovan operator. Operator '%s' tukaj ne sme biti postavljen."
@@ -3045,9 +2950,8 @@ msgstr "Nepričakovan operator. Operator '%s' tukaj ne sme biti postavljen."
 msgid "The right bracket is missing."
 msgstr "Majnkajoč zaklepaj"
 
-#, fuzzy
 msgid "Invalid number of arguments supplied for the function '%s'"
-msgstr "Neveljavno število danih argumentov k funkciji '%s'"
+msgstr "Neveljavno število argumentov danih k funkciji '%s'"
 
 msgid "Comparison operator misplaced."
 msgstr "Primerjalni operator napačno postavljen."
@@ -3055,9 +2959,8 @@ msgstr "Primerjalni operator napačno postavljen."
 msgid "Invalid number found. Use the format: -5.475E-8"
 msgstr "Najdeno neveljavno število. Uporabite obliko: -5.475E-8"
 
-#, fuzzy
 msgid "String is empty. You need to enter a formula."
-msgstr "Vtipkati moraš funkcijo."
+msgstr "Niz je prazen. Vtipkati morate funkcijo."
 
 msgid "Comma is not allowed here. Use dot as decimal separator."
 msgstr "Vejica ni dovoljena. Za decimalni zapis uporabite piko."
@@ -3083,9 +2986,8 @@ msgstr "Neznan znak: \"%s\""
 msgid "The end of the expression was unexpected."
 msgstr "Nepričakovan konec izraza."
 
-#, fuzzy
 msgid "Error parsing expression."
-msgstr "Napaka pri zapisu funkcije."
+msgstr "Napaka pri procesiranju izraza."
 
 msgid "A calculation resulted in an overflow."
 msgstr "Med računanjem je prišlo do prekoračitve."
@@ -3105,9 +3007,8 @@ msgstr "Rekurzna funkcija ni odvedljiva."
 msgid "Internal error."
 msgstr "Notranja napaka."
 
-#, fuzzy
 msgid "Function \"%s\" cannot be differentiated."
-msgstr "Funkcija ni odvedljiva."
+msgstr "Funkcija  \"%s\" ni odvedljiva."
 
 msgid "Not further specified error occurred under calculation."
 msgstr "Med računanjem se je zgodila nadalje nedefinirana napaka."
@@ -3116,11 +3017,10 @@ msgid "No solution found. Try another guess or another model."
 msgstr "Rešitev ni bila najdena. Poizkusite z drugo možnostjo ali modelom"
 
 msgid "No result found."
-msgstr ""
+msgstr "Ni rezultatov."
 
-#, fuzzy
 msgid "An accurate result cannot be found."
-msgstr "Med računanjem je prišlo do prekoračitve."
+msgstr "Natančnega rezultata ni mogoče najti."
 
 msgid "Internal error. Please notify the programmer with as much information as possible."
 msgstr "Notranja napaka. Prosimo da obvestite razvijalaca in priložite čim več podatkov."
@@ -3179,9 +3079,8 @@ msgstr "Dosegli ste najnižjo stopnjo povečave."
 msgid "You have reached the minimum range of zoom."
 msgstr "Dosegli ste najvišjo stopnjo pomanjšave."
 
-#, fuzzy
 msgid "'%s' must not be zero."
-msgstr "'%s' mora biti večji od 0."
+msgstr "'%s' ne sme biti ničla."
 
 #. Error message when an invalid value is entered.
 msgid "Error in value"
@@ -3250,14 +3149,12 @@ msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Pisava \"%s\" ne obstaja. Uporabljena bo standardna pisava."
 
 #. Description of grf file
-#, fuzzy
 msgid "Graph system"
-msgstr "Premakni sistem."
+msgstr "Graf sistem"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
-#, fuzzy
 msgid "Open"
-msgstr "Odpri..."
+msgstr "Odpri"
 
 #. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
@@ -3290,20 +3187,17 @@ msgstr "Windows nimajo dovolj sredstev za shranjevanje tako velike slike."
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' mora biti med %2% in %3%."
 
-#, fuzzy
 msgid "File not found"
-msgstr "Datoteka ne obstaja: %s"
+msgstr "Datoteka ne obstaja"
 
-#, fuzzy
 msgid "Error reading file"
-msgstr "Napaka v branju objekta"
+msgstr "Napaka pri branju datoteke"
 
-#, fuzzy
 msgid "Printer error"
-msgstr "Napaka pri tiskanju"
+msgstr "Napaka na tiskalniku"
 
 msgid "Invalid use of infinity. Infinity cannot be used here."
-msgstr ""
+msgstr "Neveljavna uporaba neskončnosti. Tukaj ne morete uporabiti neskončnosti."
 
 msgid "Confirm delete"
 msgstr "Potrdi brisanje"
@@ -3317,7 +3211,7 @@ msgstr "Graph datoteke[*.grf]|*.grf|Vse datoteke [*.*]|*.*"
 
 #. Import from file dialog
 msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
-msgstr ""
+msgstr "CSV (s podpičjem razmejen) [*.csv]|*.csv|CSV (z vejico razmejen) [*.csv]|*.csv|Besedilo (s tabulatorjem razmejen) [*.txt]|*.txt|Besedilo (s presledkom razmejen) [*.txt]|*.txt|Vse datoteke [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Ste prepričani, da želite izbrisati model: %s"
@@ -3369,16 +3263,15 @@ msgid "The end of interval must be greater than the start of interval and %s mus
 msgstr "Konec intervala mora biti večji od začetka in %s mora biti večji od 0."
 
 msgid "Invalid model name."
-msgstr ""
+msgstr "Neveljavno ime vzorca."
 
 msgid "A model of that name already exist."
-msgstr ""
+msgstr "Vzorec  s tem imenom že obstaja."
 
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Odvod funkcije ni definiran v %s=%s"
 
 #. Caption of message box when trying to insert tangent at undefined coordinate
-#, fuzzy
 msgid "Coordinate not defined"
 msgstr "Nedefinirane koordinate"
 
@@ -3388,9 +3281,8 @@ msgstr "Iskanje nove različice..."
 msgid "Abort printing?"
 msgstr "Prekinem tiskanje?"
 
-#, fuzzy
 msgid "Calculate definite integral"
-msgstr "Izračunaj tabelo"
+msgstr "Izračunaj določeni integral"
 
 msgid "Calculate length of path"
 msgstr "Izračunaj dolžino poti."
@@ -3404,12 +3296,11 @@ msgstr "Uredi tangento/normalo"
 msgid "Error processing file '%s' at line %s."
 msgstr "Napaka pri obdelavi datoteke '%s' v vrstici %s."
 
-#, fuzzy
 msgid "Edit text label"
-msgstr "Besedilna oznaka"
+msgstr "Uredi besedilno oznako"
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
-msgstr ""
+msgstr "Graph mora v vzorcu najti konstante (začnejo s $)."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' mora biti celo število med 0 in 1000."
@@ -3445,23 +3336,18 @@ msgstr "Izbrati morate funkcijo."
 msgid "New version of Graph available"
 msgstr "Nova različica programa je na voljo"
 
-#, fuzzy
 msgid ""
 "Graph %s is now available for download from www.padowan.dk\n"
 "\n"
 "Would you like to visit the download page?"
 msgstr ""
-"Graph %s je zdaj na voljo na strani www.padowan.dk\n"
-"s temi novostmi:\n"
-"\n"
-"%s\n"
+"Graph %s je sedaj na voljo na strani www.padowan.dk\n"
 "\n"
 "Hočete obiskati spletno stran?"
 
 msgid "No new version"
 msgstr "Ni nove različice"
 
-#, fuzzy
 msgid "You are already using the most recent version of Graph."
 msgstr "Že uporabljate najnovejšo različico programa."
 
@@ -3477,11 +3363,10 @@ msgid "Socket error %s"
 msgstr "Napaka na vtičnici %s"
 
 msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
-msgstr ""
+msgstr "Določeni integral, ali predznačeno območje med funkcijo in x-osjo, za dan interval domene."
 
-#, fuzzy
 msgid "Length of path along the curve calculated for the given range."
-msgstr "Strmina funkcije ovrednotena za dan kot."
+msgstr "Dolžina poti po krivulji izračunana za dan interval."
 
 msgid ""
 "The file cannot be opened by this version of the program.\n"
@@ -3517,9 +3402,8 @@ msgstr "Ukazi"
 msgid "(All Commands)"
 msgstr "(Vsi Ukazi)"
 
-#, fuzzy
 msgid "To add a command to the toolbar simply select a category and drag the command out of this dialog box to the toolbar."
-msgstr "Za dodajanje ukaza v orodno vrstico preprosto izberite kategorijo in povlecite ukaz iz pogovornega okna v orodno vrstico."
+msgstr "Za dodajanje ukaza v orodno vrstico preprosto izberite kategorijo in povlecite ukaz iz tega pogovornega okna v orodno vrstico."
 
 msgid "Edit f'(x)"
 msgstr "Uredi f'(x)"
@@ -3528,9 +3412,8 @@ msgid "Edit trendline"
 msgstr "Uredi trendno črto"
 
 #. Customize toolbar dialog
-#, fuzzy
 msgid "Categories:"
-msgstr "Kate&gorije:"
+msgstr "Kategorije:"
 
 #. An error message that hopefully is never seen by the user
 msgid ""
@@ -3538,9 +3421,12 @@ msgid ""
 "If you cancel the operation the program will become unstable.\n"
 "You should therefore save your data under a new name and restart the application."
 msgstr ""
+"Program je ujet v neskončno zanko.\n"
+"Program bo postal nestabilen, če prekinete operacijo.\n"
+"Priporočamo da shranite vaše podatke v novo datoteko in ponovno zaženete aplikacijo."
 
 msgid "Thread is not responding"
-msgstr ""
+msgstr "Nit se ne odziva"
 
 #. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
@@ -3548,20 +3434,19 @@ msgstr "Nasvet dneva vam lahko pove veliko informacij o programu, ki jih večina
 
 #. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
 msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr ""
+msgstr "Prijavo napak, podajanje predlogov in pomoč za uporabo programa lahko najdete na spletnem forumu: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "Orodno vrstico lahko prilagodite tako, da kliknete nanjo z desnim miškinim gumbom in izberete 'Prilagodi orodno vrstico'."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
-msgstr "Namesto da funkcijo zbrišete jo lahko naredite nevidno, tako da z desnim gumbom miške kliknite nanjo v spisku funkcij in in odkljukate 'Vidno'."
+msgstr "Namesto da funkcijo zbrišete jo lahko naredite nevidno, tako da jo odkljukate v seznamu funkcij."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
-msgstr "V tekstovno oznako lahko prilepite slike."
+msgstr "V besedilno oznako lahko prilepite slike."
 
 #. Tip of the Day
 msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
@@ -3592,9 +3477,8 @@ msgid "You can import the contents of another Graph file into the current coordi
 msgstr "Uvozite lahko vsebino neke Graph datoteke v trenutni koordinatni sistem s uporabo 'Datoteka|Uvozi|Graph datoteka'."
 
 #. Tip of the Day
-#, fuzzy
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."
-msgstr "Obkljukajte 'Shrani kot privzeto' v nastavitvah osi, da se bodo vaše nastavitve uporabljale kot privzete ob naslednjem delu."
+msgstr "Če obkljukate 'Shrani kot privzeto' v nastavitvah osi, se bodo nastavitve uporabljale kot privzete, ko boste ustvarili nov koordinatni sistem."
 
 #. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
@@ -3621,9 +3505,8 @@ msgid "Graph can save the shown coordinate system in five different image format
 msgstr "Graph lahko shrani prikazan koordinatni sistem kot sliko v petih različnih formatih: bmp, emf, png, jpg in pdf"
 
 #. Tip of the Day
-#, fuzzy
 msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."
-msgstr "Uporabite 'Uredi|Kopiraj sliko' za kopiranje koordinatnega sistema v odložišče in potem prilepite sliko v drug program."
+msgstr "Uporabite 'Uredi|Kopiraj sliko' da kopirate koordinatni sistem in ga prilepite v drug program, kot je Microsoft Word. Pozneje lahko sliko popravljate tako, da nanjo dvokliknete in jo urejate v Graph-u."
 
 #. Tip of the Day
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
@@ -3634,9 +3517,8 @@ msgid "You can drag a grf-file from explorer into an open instance of Graph to o
 msgstr "Če hočete odpreti grf-datoteko jo lahko povlečete iz Raziskovalca v odprt primer Graph-a.   "
 
 #. Tip of the Day
-#, fuzzy
 msgid "Graph will remember the size of the main window between executions. This can be disabled from the Options dialog."
-msgstr "Graph si zapomni velikost in postavitev glavnega okna med izvršitvami. To lahko onemogočite v pogovornem oknu Možnosti."
+msgstr "Graph si zapomni velikost glavnega okna med izvršitvami. To lahko onemogočite v pogovornem oknu Možnosti."
 
 #. Tip of the Day
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
@@ -3647,19 +3529,16 @@ msgid "A part or the whole evaluation table can be exported to a file by right c
 msgstr "Del celotne tabele vrednosti lahko izvozite v datoteko tako, da kliknete desni miškin gumb in izberete 'Izvozi v datoteko'. Datoteko lahko potem odprete v drugih programih, kot je Microsoft Excel."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Data from the evaluation table can be copied to another program like Microsoft Excel."
-msgstr "Podatke iz tabele vrednosti lahko kopirate v drugi program, kot je Microsoft Excel, preko odložišča."
+msgstr "Podatke iz tabele vrednosti lahko kopirate v drugi program, kot je Microsoft Excel."
 
 #. Tip of the Day
-#, fuzzy
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
-msgstr "Podatkovne točke in zaporedje točk se lahko kopira v in iz drugih programov, kot je Microsoft Excel, preko odložišča."
+msgstr "Podatkovne točke v zaporedju točk se lahko kopira v in iz drugih programov, kot je Microsoft Excel."
 
 #. Tip of the Day
-#, fuzzy
 msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
-msgstr "Funkcije lahko kopirate iz odprtega primera enega programa v drugega preko odložišča z uporabo 'Uredi|Kopiraj'."
+msgstr "Elemente, kot so funkcije, zaporedja točk, itd. lahko kopirate iz enega programa v drugega uporabo 'Uredi|Kopiraj'."
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
@@ -3678,19 +3557,16 @@ msgid "You can import point series from files saved by other programs, like Micr
 msgstr "Zaporedje točk lahko uvozite tudi iz datotek, shranjenih z drugimi programi, kot je Microsoft Excel."
 
 #. Tip of the Day
-#, fuzzy
 msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
 msgstr "Ko vstavljate zaporedje točk, lahko kopirate podatke iz programov kot je Microsoft Excel in jih prilepite v mrežo v Graph-u."
 
 #. Tip of the Day
-#, fuzzy
 msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
-msgstr "Uporabite lahko 'Zoom|Vse točke', da spremenite merilo koordinatnega sistema, da bo vidno zaporedje točk."
+msgstr "Uporabite Zoom|Zajemi vse, da spremenite koordinatni sistem, da bodo vidne vse funkcije in zaporedja točk."
 
 #. Tip of the Day
-#, fuzzy
 msgid "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."
-msgstr "Uporabite lahko 'Zoom|Na graf', da spremenite merilo koordinatnega sistema, da bo vidna funkcija ali pa zaporedje točk."
+msgstr "Uporabite Zoom|Na graf, da spremenite koordinatni sistem, da bo v celoti vidna izbrana funkcija ali zaporedje točk."
 
 #. Tip of the Day
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
@@ -3775,18 +3651,16 @@ msgid "Description"
 msgstr "Opis"
 
 msgid "Cannot open clipboard: %s"
-msgstr ""
+msgstr "Ne morem odpreti odložišča: %s"
 
-#, fuzzy
 msgid "There is no default printer currently selected."
-msgstr "Tiskalnik ni nameščen."
+msgstr "Privzet tiskalnik trenutno ni izbran."
 
 msgid "Install for all users"
-msgstr ""
+msgstr "Namesti za vse uporabnike"
 
-#, fuzzy
 msgid "Examples"
-msgstr "Vzorec"
+msgstr "Primeri"
 
 msgid "Local"
 msgstr "Lokalno"
@@ -3851,9 +3725,8 @@ msgid "Top margin:"
 msgstr "Zgornji rob:"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
-#, fuzzy
 msgid "Center the printing area on the page."
-msgstr "Vpišite položaj slike na strani."
+msgstr "Postavi območje tiskanja na sredino strani."
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
@@ -3862,7 +3735,7 @@ msgstr "Sredina strani"
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
 msgid "Specify the printing area of the page. The printer will print only within these margins."
-msgstr ""
+msgstr "Določi območje tiskanje. Tiskalnik bo na strani tiskal le v teh mejah."
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
@@ -3875,10 +3748,6 @@ msgstr "Izberite koliko kopij želite natisniti."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Vnesi odstotek izvorne velikosti."
-
-#, fuzzy
-#~ msgid "Integrate"
-#~ msgstr "Internet"
 
 #, fuzzy
 #~ msgid "Arial"
@@ -4125,6 +3994,9 @@ msgstr "Vnesi odstotek izvorne velikosti."
 
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "Da dodate dejanja k vaši aplikaciji, preprosto povlecite in spustite iz Kategorije ali Akcije na Vrstico dejanj."
+
+#~ msgid "Area..."
+#~ msgstr "Območje..."
 
 #~ msgid "Evaluate..."
 #~ msgstr "Ovrednoti..."
