@@ -130,6 +130,12 @@
         <l:template name="simplesect" text="%t"/>
       </l:context>
     </l:l10n>
+    <l:l10n language="it">
+      <l:context name="xref">
+        <l:template name="section" text="%t"/>
+        <l:template name="simplesect" text="%t"/>
+      </l:context>
+    </l:l10n>
   </l:i18n>
 
 </xsl:stylesheet>
