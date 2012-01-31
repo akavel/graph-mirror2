@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-10-17 23:46Romance Daylight Time\n"
-"PO-Revision-Date: 2012-01-29 02:50+0100\n"
-"Last-Translator: Attilio <ridomi@libero.it>\n"
+"POT-Creation-Date: 2012-01-31 23:38Romance Standard Time\n"
+"PO-Revision-Date: 2012-01-31 23:41+0100\n"
+"Last-Translator: Ivan Johansen\n"
 "Language-Team:  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,15 +17,15 @@ msgstr "Versione <placeholder-1/>"
 msgid "Trigonometric"
 msgstr "Trigonometrica"
 
-#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:47(title) Trigonometric.xml:48(primary) Trigonometric.xml:85(title) Trigonometric.xml:86(primary) Trigonometric.xml:125(title) Trigonometric.xml:126(primary) Trigonometric.xml:157(title) Trigonometric.xml:158(primary) Trigonometric.xml:189(title) Trigonometric.xml:190(primary) Trigonometric.xml:221(title) Trigonometric.xml:222(primary) Trigonometric.xml:258(title) Trigonometric.xml:259(primary) Trigonometric.xml:295(title) Trigonometric.xml:296(primary) Trigonometric.xml:332(title) Trigonometric.xml:333(primary) Trigonometric.xml:365(title) Trigonometric.xml:366(primary) Trigonometric.xml:398(title) Trigonometric.xml:399(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:59(title) Special.xml:60(primary) Special.xml:94(title) Special.xml:95(primary) Special.xml:128(title) Special.xml:129(primary) Special.xml:158(title) Special.xml:159(primary) Special.xml:196(title) Special.xml:197(primary) Special.xml:226(title) Special.xml:227(primary) Special.xml:262(title) Special.xml:263(primary) Special.xml:296(title) Special.xml:297(primary) Special.xml:328(title) Special.xml:329(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:40(title) Rounding.xml:41(primary) Rounding.xml:72(title) Rounding.xml:73(primary) Rounding.xml:102(title) Rounding.xml:103(primary) Rounding.xml:133(title) Rounding.xml:134(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:59(title) PowerAndLog.xml:60(primary) PowerAndLog.xml:88(title) PowerAndLog.xml:89(primary) PowerAndLog.xml:131(title) PowerAndLog.xml:132(primary) PowerAndLog.xml:163(title) PowerAndLog.xml:164(primary) PowerAndLog.xml:193(title) PowerAndLog.xml:194(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:40(title) Piecewise.xml:41(primary) Piecewise.xml:69(title) Piecewise.xml:70(primary) Piecewise.xml:93(title) Piecewise.xml:94(primary) Piecewise.xml:117(title) Piecewise.xml:118(primary) Piecewise.xml:142(title) Piecewise.xml:143(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:40(title) Hyperbolic.xml:41(primary) Hyperbolic.xml:71(title) Hyperbolic.xml:72(primary) Hyperbolic.xml:102(title) Hyperbolic.xml:103(primary) Hyperbolic.xml:132(title) Hyperbolic.xml:133(primary) Hyperbolic.xml:163(primary) Hyperbolic.xml:167(title) Hyperbolic.xml:194(title) Hyperbolic.xml:195(primary) Hyperbolic.xml:225(title) Hyperbolic.xml:226(primary) Hyperbolic.xml:256(title) Hyperbolic.xml:257(primary) Hyperbolic.xml:288(title) Hyperbolic.xml:289(primary) Hyperbolic.xml:318(title) Hyperbolic.xml:319(primary) Hyperbolic.xml:348(title) Hyperbolic.xml:349(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:39(title) Complex.xml:40(primary) Complex.xml:73(title) Complex.xml:74(primary) Complex.xml:102(title) Complex.xml:103(primary) Complex.xml:130(title) Complex.xml:131(primary)
+#. Trigonometric.xml:9(title) Trigonometric.xml:10(primary) Trigonometric.xml:49(title) Trigonometric.xml:50(primary) Trigonometric.xml:89(title) Trigonometric.xml:90(primary) Trigonometric.xml:131(title) Trigonometric.xml:132(primary) Trigonometric.xml:165(title) Trigonometric.xml:166(primary) Trigonometric.xml:199(title) Trigonometric.xml:200(primary) Trigonometric.xml:233(title) Trigonometric.xml:234(primary) Trigonometric.xml:272(title) Trigonometric.xml:273(primary) Trigonometric.xml:311(title) Trigonometric.xml:312(primary) Trigonometric.xml:350(title) Trigonometric.xml:351(primary) Trigonometric.xml:385(title) Trigonometric.xml:386(primary) Trigonometric.xml:420(title) Trigonometric.xml:421(primary) Special.xml:9(title) Special.xml:10(primary) Special.xml:61(title) Special.xml:62(primary) Special.xml:98(title) Special.xml:99(primary) Special.xml:134(title) Special.xml:135(primary) Special.xml:166(title) Special.xml:167(primary) Special.xml:206(title) Special.xml:207(primary) Special.xml:238(title) Special.xml:239(primary) Special.xml:276(title) Special.xml:277(primary) Special.xml:312(title) Special.xml:313(primary) Special.xml:346(title) Special.xml:347(primary) Rounding.xml:9(title) Rounding.xml:10(primary) Rounding.xml:42(title) Rounding.xml:43(primary) Rounding.xml:76(title) Rounding.xml:77(primary) Rounding.xml:108(title) Rounding.xml:109(primary) Rounding.xml:141(title) Rounding.xml:142(primary) PowerAndLog.xml:9(title) PowerAndLog.xml:10(primary) PowerAndLog.xml:30(title) PowerAndLog.xml:31(primary) PowerAndLog.xml:61(title) PowerAndLog.xml:62(primary) PowerAndLog.xml:92(title) PowerAndLog.xml:93(primary) PowerAndLog.xml:137(title) PowerAndLog.xml:138(primary) PowerAndLog.xml:171(title) PowerAndLog.xml:172(primary) PowerAndLog.xml:203(title) PowerAndLog.xml:204(primary) Piecewise.xml:9(title) Piecewise.xml:10(primary) Piecewise.xml:42(title) Piecewise.xml:43(primary) Piecewise.xml:73(title) Piecewise.xml:74(primary) Piecewise.xml:97(title) Piecewise.xml:98(primary) Piecewise.xml:121(title) Piecewise.xml:122(primary) Piecewise.xml:146(title) Piecewise.xml:147(primary) Hyperbolic.xml:9(title) Hyperbolic.xml:10(primary) Hyperbolic.xml:42(title) Hyperbolic.xml:43(primary) Hyperbolic.xml:75(title) Hyperbolic.xml:76(primary) Hyperbolic.xml:108(title) Hyperbolic.xml:109(primary) Hyperbolic.xml:140(title) Hyperbolic.xml:141(primary) Hyperbolic.xml:173(primary) Hyperbolic.xml:177(title) Hyperbolic.xml:206(title) Hyperbolic.xml:207(primary) Hyperbolic.xml:239(title) Hyperbolic.xml:240(primary) Hyperbolic.xml:272(title) Hyperbolic.xml:273(primary) Hyperbolic.xml:306(title) Hyperbolic.xml:307(primary) Hyperbolic.xml:338(title) Hyperbolic.xml:339(primary) Hyperbolic.xml:370(title) Hyperbolic.xml:371(primary) Complex.xml:9(title) Complex.xml:10(primary) Complex.xml:41(title) Complex.xml:42(primary) Complex.xml:77(title) Complex.xml:78(primary) Complex.xml:108(title) Complex.xml:109(primary) Complex.xml:138(title) Complex.xml:139(primary)
 msgid "<placeholder-1/> function"
 msgstr "<placeholder-1/> funzione"
 
-#. Trigonometric.xml:11(primary) Trigonometric.xml:49(primary) Trigonometric.xml:87(primary) Trigonometric.xml:127(primary) Trigonometric.xml:159(primary) Trigonometric.xml:191(primary) Trigonometric.xml:223(primary) Trigonometric.xml:260(primary) Trigonometric.xml:297(primary) Trigonometric.xml:334(primary) Trigonometric.xml:367(primary) Trigonometric.xml:400(primary) AxesDialog.xml:27(primary)
+#. Trigonometric.xml:11(primary) Trigonometric.xml:51(primary) Trigonometric.xml:91(primary) Trigonometric.xml:133(primary) Trigonometric.xml:167(primary) Trigonometric.xml:201(primary) Trigonometric.xml:235(primary) Trigonometric.xml:274(primary) Trigonometric.xml:313(primary) Trigonometric.xml:352(primary) Trigonometric.xml:387(primary) Trigonometric.xml:422(primary) AxesDialog.xml:27(primary)
 msgid "trigonometry"
 msgstr "trigonometria"
 
-#. Trigonometric.xml:12(primary) Trigonometric.xml:128(primary)
+#. Trigonometric.xml:12(primary) Trigonometric.xml:134(primary)
 msgid "sine"
 msgstr "seno"
 
@@ -33,27 +33,27 @@ msgstr "seno"
 msgid "Returns the sine of the argument."
 msgstr "Restituisce il seno dell'argomento."
 
-#. Trigonometric.xml:17(title) Trigonometric.xml:55(title) Trigonometric.xml:93(title) Trigonometric.xml:134(title) Trigonometric.xml:166(title) Trigonometric.xml:198(title) Trigonometric.xml:229(title) Trigonometric.xml:266(title) Trigonometric.xml:303(title) Trigonometric.xml:341(title) Trigonometric.xml:374(title) Trigonometric.xml:407(title) Special.xml:17(title) Special.xml:66(title) Special.xml:100(title) Special.xml:135(title) Special.xml:165(title) Special.xml:202(title) Special.xml:234(title) Special.xml:269(title) Special.xml:304(title) Special.xml:335(title) Rounding.xml:17(title) Rounding.xml:49(title) Rounding.xml:80(title) Rounding.xml:111(title) Rounding.xml:139(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:66(title) PowerAndLog.xml:94(title) PowerAndLog.xml:139(title) PowerAndLog.xml:170(title) PowerAndLog.xml:200(title) Piecewise.xml:16(title) Piecewise.xml:46(title) Piecewise.xml:76(title) Piecewise.xml:100(title) Piecewise.xml:123(title) Piecewise.xml:148(title) Hyperbolic.xml:16(title) Hyperbolic.xml:47(title) Hyperbolic.xml:78(title) Hyperbolic.xml:110(title) Hyperbolic.xml:140(title) Hyperbolic.xml:172(title) Hyperbolic.xml:201(title) Hyperbolic.xml:232(title) Hyperbolic.xml:263(title) Hyperbolic.xml:296(title) Hyperbolic.xml:326(title) Hyperbolic.xml:356(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:47(title) Complex.xml:80(title) Complex.xml:109(title) Complex.xml:137(title)
+#. Trigonometric.xml:17(title) Trigonometric.xml:57(title) Trigonometric.xml:97(title) Trigonometric.xml:140(title) Trigonometric.xml:174(title) Trigonometric.xml:208(title) Trigonometric.xml:241(title) Trigonometric.xml:280(title) Trigonometric.xml:319(title) Trigonometric.xml:359(title) Trigonometric.xml:394(title) Trigonometric.xml:429(title) Special.xml:17(title) Special.xml:68(title) Special.xml:104(title) Special.xml:141(title) Special.xml:173(title) Special.xml:212(title) Special.xml:246(title) Special.xml:283(title) Special.xml:320(title) Special.xml:353(title) Rounding.xml:17(title) Rounding.xml:51(title) Rounding.xml:84(title) Rounding.xml:117(title) Rounding.xml:147(title) PowerAndLog.xml:16(title) PowerAndLog.xml:37(title) PowerAndLog.xml:68(title) PowerAndLog.xml:98(title) PowerAndLog.xml:145(title) PowerAndLog.xml:178(title) PowerAndLog.xml:210(title) Piecewise.xml:16(title) Piecewise.xml:48(title) Piecewise.xml:80(title) Piecewise.xml:104(title) Piecewise.xml:127(title) Piecewise.xml:152(title) Hyperbolic.xml:16(title) Hyperbolic.xml:49(title) Hyperbolic.xml:82(title) Hyperbolic.xml:116(title) Hyperbolic.xml:148(title) Hyperbolic.xml:182(title) Hyperbolic.xml:213(title) Hyperbolic.xml:246(title) Hyperbolic.xml:279(title) Hyperbolic.xml:314(title) Hyperbolic.xml:346(title) Hyperbolic.xml:378(title) Constants.xml:15(title) Complex.xml:17(title) Complex.xml:49(title) Complex.xml:84(title) Complex.xml:115(title) Complex.xml:145(title)
 msgid "Syntax"
 msgstr "Sintassi"
 
-#. Trigonometric.xml:21(title) Trigonometric.xml:59(title) Trigonometric.xml:97(title) Trigonometric.xml:138(title) Trigonometric.xml:170(title) Trigonometric.xml:202(title) Trigonometric.xml:233(title) Trigonometric.xml:270(title) Trigonometric.xml:307(title) Trigonometric.xml:345(title) Trigonometric.xml:378(title) Trigonometric.xml:411(title) Special.xml:21(title) Special.xml:70(title) Special.xml:104(title) Special.xml:139(title) Special.xml:169(title) Special.xml:206(title) Special.xml:238(title) Special.xml:273(title) Special.xml:308(title) Special.xml:339(title) Rounding.xml:21(title) Rounding.xml:53(title) Rounding.xml:84(title) Rounding.xml:115(title) Rounding.xml:143(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:70(title) PowerAndLog.xml:98(title) PowerAndLog.xml:143(title) PowerAndLog.xml:174(title) PowerAndLog.xml:204(title) Piecewise.xml:20(title) Piecewise.xml:50(title) Piecewise.xml:80(title) Piecewise.xml:104(title) Piecewise.xml:127(title) Piecewise.xml:152(title) Installation.xml:28(entry) Installation.xml:90(entry) Installation.xml:161(entry) InsertRelationDialog.xml:69(term) InsertPointSeriesDialog.xml:49(term) Hyperbolic.xml:20(title) Hyperbolic.xml:51(title) Hyperbolic.xml:82(title) Hyperbolic.xml:114(title) Hyperbolic.xml:144(title) Hyperbolic.xml:176(title) Hyperbolic.xml:205(title) Hyperbolic.xml:236(title) Hyperbolic.xml:267(title) Hyperbolic.xml:300(title) Hyperbolic.xml:330(title) Hyperbolic.xml:360(title) FunctionList.xml:46(entry) FunctionList.xml:97(entry) FunctionList.xml:190(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:51(title) Complex.xml:84(title) Complex.xml:113(title) Complex.xml:141(title)
+#. Trigonometric.xml:21(title) Trigonometric.xml:61(title) Trigonometric.xml:101(title) Trigonometric.xml:144(title) Trigonometric.xml:178(title) Trigonometric.xml:212(title) Trigonometric.xml:245(title) Trigonometric.xml:284(title) Trigonometric.xml:323(title) Trigonometric.xml:363(title) Trigonometric.xml:398(title) Trigonometric.xml:433(title) Special.xml:21(title) Special.xml:72(title) Special.xml:108(title) Special.xml:145(title) Special.xml:177(title) Special.xml:216(title) Special.xml:250(title) Special.xml:287(title) Special.xml:324(title) Special.xml:357(title) Rounding.xml:21(title) Rounding.xml:55(title) Rounding.xml:88(title) Rounding.xml:121(title) Rounding.xml:151(title) PowerAndLog.xml:20(title) PowerAndLog.xml:41(title) PowerAndLog.xml:72(title) PowerAndLog.xml:102(title) PowerAndLog.xml:149(title) PowerAndLog.xml:182(title) PowerAndLog.xml:214(title) Piecewise.xml:20(title) Piecewise.xml:52(title) Piecewise.xml:84(title) Piecewise.xml:108(title) Piecewise.xml:131(title) Piecewise.xml:156(title) Installation.xml:28(entry) Installation.xml:90(entry) Installation.xml:161(entry) InsertRelationDialog.xml:69(term) InsertPointSeriesDialog.xml:49(term) Hyperbolic.xml:20(title) Hyperbolic.xml:53(title) Hyperbolic.xml:86(title) Hyperbolic.xml:120(title) Hyperbolic.xml:152(title) Hyperbolic.xml:186(title) Hyperbolic.xml:217(title) Hyperbolic.xml:250(title) Hyperbolic.xml:283(title) Hyperbolic.xml:318(title) Hyperbolic.xml:350(title) Hyperbolic.xml:382(title) FunctionList.xml:46(entry) FunctionList.xml:97(entry) FunctionList.xml:190(entry) Constants.xml:19(title) Complex.xml:21(title) Complex.xml:53(title) Complex.xml:88(title) Complex.xml:119(title) Complex.xml:149(title)
 msgid "Description"
 msgstr "Descrizione"
 
-#. Trigonometric.xml:24(glossterm) Trigonometric.xml:62(glossterm) Trigonometric.xml:100(glossterm) Trigonometric.xml:141(glossterm) Trigonometric.xml:173(glossterm) Trigonometric.xml:205(glossterm) Trigonometric.xml:236(glossterm) Trigonometric.xml:273(glossterm) Trigonometric.xml:310(glossterm) Trigonometric.xml:348(glossterm) Trigonometric.xml:381(glossterm) Trigonometric.xml:414(glossterm) InsertPointSeriesDialog.xml:65(glossterm) Glossary.xml:95(glossterm) Glossary.xml:96(primary) Complex.xml:56(glossterm)
+#. Trigonometric.xml:24(glossterm) Trigonometric.xml:64(glossterm) Trigonometric.xml:104(glossterm) Trigonometric.xml:147(glossterm) Trigonometric.xml:181(glossterm) Trigonometric.xml:215(glossterm) Trigonometric.xml:248(glossterm) Trigonometric.xml:287(glossterm) Trigonometric.xml:326(glossterm) Trigonometric.xml:366(glossterm) Trigonometric.xml:401(glossterm) Trigonometric.xml:436(glossterm) InsertPointSeriesDialog.xml:65(glossterm) Glossary.xml:95(glossterm) Glossary.xml:96(primary) Complex.xml:58(glossterm)
 msgid "radians"
 msgstr "radianti"
 
-#. Trigonometric.xml:25(glossterm) Trigonometric.xml:63(glossterm) Trigonometric.xml:101(glossterm) Trigonometric.xml:174(glossterm) Trigonometric.xml:206(glossterm) Trigonometric.xml:238(glossterm) Trigonometric.xml:275(glossterm) Trigonometric.xml:350(glossterm) Trigonometric.xml:383(glossterm) Trigonometric.xml:416(glossterm) Special.xml:142(glossterm) Special.xml:172(glossterm) Special.xml:241(glossterm) Special.xml:276(glossterm) Rounding.xml:25(glossterm) Rounding.xml:57(glossterm) Rounding.xml:87(glossterm) Rounding.xml:118(glossterm) Rounding.xml:146(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:73(glossterm) PowerAndLog.xml:101(glossterm) PowerAndLog.xml:147(glossterm) PowerAndLog.xml:177(glossterm) PowerAndLog.xml:207(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:53(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:54(glossterm) Hyperbolic.xml:85(glossterm) Hyperbolic.xml:117(glossterm) Hyperbolic.xml:147(glossterm) Hyperbolic.xml:179(glossterm) Hyperbolic.xml:208(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:270(glossterm) Hyperbolic.xml:303(glossterm) Hyperbolic.xml:333(glossterm) Hyperbolic.xml:363(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:54(glossterm) Complex.xml:87(glossterm) Complex.xml:116(glossterm) Complex.xml:144(glossterm)
+#. Trigonometric.xml:25(glossterm) Trigonometric.xml:65(glossterm) Trigonometric.xml:105(glossterm) Trigonometric.xml:182(glossterm) Trigonometric.xml:216(glossterm) Trigonometric.xml:250(glossterm) Trigonometric.xml:289(glossterm) Trigonometric.xml:368(glossterm) Trigonometric.xml:403(glossterm) Trigonometric.xml:438(glossterm) Special.xml:148(glossterm) Special.xml:180(glossterm) Special.xml:253(glossterm) Special.xml:290(glossterm) Rounding.xml:25(glossterm) Rounding.xml:59(glossterm) Rounding.xml:91(glossterm) Rounding.xml:124(glossterm) Rounding.xml:154(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:75(glossterm) PowerAndLog.xml:105(glossterm) PowerAndLog.xml:153(glossterm) PowerAndLog.xml:185(glossterm) PowerAndLog.xml:217(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:55(glossterm) InsertRelationDialog.xml:51(glossterm) InsertLabelDialog.xml:54(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:56(glossterm) Hyperbolic.xml:89(glossterm) Hyperbolic.xml:123(glossterm) Hyperbolic.xml:155(glossterm) Hyperbolic.xml:189(glossterm) Hyperbolic.xml:220(glossterm) Hyperbolic.xml:253(glossterm) Hyperbolic.xml:286(glossterm) Hyperbolic.xml:321(glossterm) Hyperbolic.xml:353(glossterm) Hyperbolic.xml:385(glossterm) Glossary.xml:84(glossterm) Glossary.xml:85(primary) Complex.xml:24(glossterm) Complex.xml:56(glossterm) Complex.xml:91(glossterm) Complex.xml:122(glossterm) Complex.xml:152(glossterm)
 msgid "numeric expression"
 msgstr "espressione numerica"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:64(glossterm) Trigonometric.xml:102(glossterm) Trigonometric.xml:142(glossterm) Trigonometric.xml:174(glossterm) Trigonometric.xml:206(glossterm) Trigonometric.xml:238(glossterm) Trigonometric.xml:275(glossterm) Trigonometric.xml:312(glossterm) Trigonometric.xml:350(glossterm) Trigonometric.xml:383(glossterm) Trigonometric.xml:416(glossterm) Special.xml:172(glossterm) Special.xml:241(glossterm) Special.xml:276(glossterm) Rounding.xml:25(glossterm) Rounding.xml:57(glossterm) Rounding.xml:87(glossterm) Rounding.xml:118(glossterm) Rounding.xml:146(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:73(glossterm) PowerAndLog.xml:101(glossterm) PowerAndLog.xml:147(glossterm) PowerAndLog.xml:177(glossterm) PowerAndLog.xml:207(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:53(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:54(glossterm) Hyperbolic.xml:85(glossterm) Hyperbolic.xml:117(glossterm) Hyperbolic.xml:147(glossterm) Hyperbolic.xml:179(glossterm) Hyperbolic.xml:208(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:270(glossterm) Hyperbolic.xml:303(glossterm) Hyperbolic.xml:333(glossterm) Hyperbolic.xml:363(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:54(glossterm) Complex.xml:87(glossterm) Complex.xml:116(glossterm) Complex.xml:144(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:66(glossterm) Trigonometric.xml:106(glossterm) Trigonometric.xml:148(glossterm) Trigonometric.xml:182(glossterm) Trigonometric.xml:216(glossterm) Trigonometric.xml:250(glossterm) Trigonometric.xml:289(glossterm) Trigonometric.xml:328(glossterm) Trigonometric.xml:368(glossterm) Trigonometric.xml:403(glossterm) Trigonometric.xml:438(glossterm) Special.xml:180(glossterm) Special.xml:253(glossterm) Special.xml:290(glossterm) Rounding.xml:25(glossterm) Rounding.xml:59(glossterm) Rounding.xml:91(glossterm) Rounding.xml:124(glossterm) Rounding.xml:154(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:75(glossterm) PowerAndLog.xml:105(glossterm) PowerAndLog.xml:153(glossterm) PowerAndLog.xml:185(glossterm) PowerAndLog.xml:217(glossterm) Piecewise.xml:23(glossterm) Piecewise.xml:55(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:56(glossterm) Hyperbolic.xml:89(glossterm) Hyperbolic.xml:123(glossterm) Hyperbolic.xml:155(glossterm) Hyperbolic.xml:189(glossterm) Hyperbolic.xml:220(glossterm) Hyperbolic.xml:253(glossterm) Hyperbolic.xml:286(glossterm) Hyperbolic.xml:321(glossterm) Hyperbolic.xml:353(glossterm) Hyperbolic.xml:385(glossterm) Glossary.xml:109(glossterm) Glossary.xml:110(primary) Complex.xml:24(glossterm) Complex.xml:56(glossterm) Complex.xml:91(glossterm) Complex.xml:122(glossterm) Complex.xml:152(glossterm)
 msgid "real number"
 msgstr "numero reale"
 
-#. Trigonometric.xml:26(glossterm) Trigonometric.xml:64(glossterm) Trigonometric.xml:102(glossterm) Trigonometric.xml:238(glossterm) Trigonometric.xml:275(glossterm) Trigonometric.xml:312(glossterm) Special.xml:172(glossterm) Special.xml:241(glossterm) Special.xml:276(glossterm) Rounding.xml:25(glossterm) Rounding.xml:57(glossterm) Rounding.xml:87(glossterm) Rounding.xml:118(glossterm) Rounding.xml:146(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:73(glossterm) PowerAndLog.xml:101(glossterm) PowerAndLog.xml:147(glossterm) PowerAndLog.xml:177(glossterm) PowerAndLog.xml:207(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:54(glossterm) Hyperbolic.xml:85(glossterm) Hyperbolic.xml:117(glossterm) Hyperbolic.xml:147(glossterm) Hyperbolic.xml:179(glossterm) Hyperbolic.xml:208(glossterm) Hyperbolic.xml:239(glossterm) Hyperbolic.xml:270(glossterm) Hyperbolic.xml:303(glossterm) Hyperbolic.xml:333(glossterm) Hyperbolic.xml:363(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:54(glossterm) Complex.xml:87(glossterm) Complex.xml:116(glossterm) Complex.xml:144(glossterm)
+#. Trigonometric.xml:26(glossterm) Trigonometric.xml:66(glossterm) Trigonometric.xml:106(glossterm) Trigonometric.xml:250(glossterm) Trigonometric.xml:289(glossterm) Trigonometric.xml:328(glossterm) Special.xml:180(glossterm) Special.xml:253(glossterm) Special.xml:290(glossterm) Rounding.xml:25(glossterm) Rounding.xml:59(glossterm) Rounding.xml:91(glossterm) Rounding.xml:124(glossterm) Rounding.xml:154(glossterm) PowerAndLog.xml:23(glossterm) PowerAndLog.xml:45(glossterm) PowerAndLog.xml:75(glossterm) PowerAndLog.xml:105(glossterm) PowerAndLog.xml:153(glossterm) PowerAndLog.xml:185(glossterm) PowerAndLog.xml:217(glossterm) Piecewise.xml:23(glossterm) Hyperbolic.xml:23(glossterm) Hyperbolic.xml:56(glossterm) Hyperbolic.xml:89(glossterm) Hyperbolic.xml:123(glossterm) Hyperbolic.xml:155(glossterm) Hyperbolic.xml:189(glossterm) Hyperbolic.xml:220(glossterm) Hyperbolic.xml:253(glossterm) Hyperbolic.xml:286(glossterm) Hyperbolic.xml:321(glossterm) Hyperbolic.xml:353(glossterm) Hyperbolic.xml:385(glossterm) Glossary.xml:13(glossterm) Glossary.xml:14(primary) Complex.xml:24(glossterm) Complex.xml:56(glossterm) Complex.xml:91(glossterm) Complex.xml:122(glossterm) Complex.xml:152(glossterm)
 msgid "complex number"
 msgstr "numero complesso"
 
@@ -61,159 +61,159 @@ msgstr "numero complesso"
 msgid "The <placeholder-1/> function calculates the sine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
 msgstr "La funzione <placeholder-1/> calcola il seno di un angolo <placeholder-2/>, che può essere in <placeholder-3/> o gradi in base alle impostazioni correnti. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Se <placeholder-8/> è un numero reale, il risultato ricadrà nell'intervallo tra -1 e +1."
 
-#. Trigonometric.xml:31(title) Trigonometric.xml:69(title) Trigonometric.xml:106(title) Trigonometric.xml:242(title) Trigonometric.xml:279(title) Trigonometric.xml:316(title) Trigonometric.xml:421(title) Special.xml:246(title) Special.xml:280(title) PowerAndLog.xml:106(title) Constants.xml:25(title)
+#. Trigonometric.xml:31(title) Trigonometric.xml:71(title) Trigonometric.xml:110(title) Trigonometric.xml:254(title) Trigonometric.xml:293(title) Trigonometric.xml:332(title) Trigonometric.xml:443(title) Special.xml:258(title) Special.xml:294(title) PowerAndLog.xml:110(title) Constants.xml:25(title)
 msgid "Remarks"
 msgstr "Annotazioni"
 
-#. Trigonometric.xml:32(para) Trigonometric.xml:70(para) Trigonometric.xml:243(para) Trigonometric.xml:280(para) Trigonometric.xml:317(para)
+#. Trigonometric.xml:32(para) Trigonometric.xml:72(para) Trigonometric.xml:255(para) Trigonometric.xml:294(para) Trigonometric.xml:333(para)
 msgid "For arguments with a large magnitude, the function will begin to lose precision."
 msgstr "Per argomenti di grande ampiezza, la funzione comincerà a perdere precisione."
 
-#. Trigonometric.xml:37(title) Trigonometric.xml:75(title) Trigonometric.xml:115(title) Trigonometric.xml:147(title) Trigonometric.xml:179(title) Trigonometric.xml:211(title) Trigonometric.xml:248(title) Trigonometric.xml:285(title) Trigonometric.xml:322(title) Trigonometric.xml:355(title) Trigonometric.xml:388(title) Trigonometric.xml:428(title) Special.xml:49(title) Special.xml:84(title) Special.xml:118(title) Special.xml:148(title) Special.xml:186(title) Special.xml:216(title) Special.xml:252(title) Special.xml:286(title) Special.xml:318(title) Special.xml:356(title) Rounding.xml:30(title) Rounding.xml:62(title) Rounding.xml:92(title) Rounding.xml:123(title) Rounding.xml:163(title) PowerAndLog.xml:49(title) PowerAndLog.xml:78(title) PowerAndLog.xml:121(title) PowerAndLog.xml:153(title) PowerAndLog.xml:183(title) PowerAndLog.xml:214(title) Piecewise.xml:30(title) Piecewise.xml:59(title) Hyperbolic.xml:30(title) Hyperbolic.xml:61(title) Hyperbolic.xml:92(title) Hyperbolic.xml:122(title) Hyperbolic.xml:152(title) Hyperbolic.xml:184(title) Hyperbolic.xml:215(title) Hyperbolic.xml:246(title) Hyperbolic.xml:278(title) Hyperbolic.xml:308(title) Hyperbolic.xml:338(title) Hyperbolic.xml:369(title) Constants.xml:38(title) Complex.xml:29(title) Complex.xml:63(title) Complex.xml:92(title) Complex.xml:120(title) Complex.xml:148(title)
+#. Trigonometric.xml:37(title) Trigonometric.xml:77(title) Trigonometric.xml:119(title) Trigonometric.xml:153(title) Trigonometric.xml:187(title) Trigonometric.xml:221(title) Trigonometric.xml:260(title) Trigonometric.xml:299(title) Trigonometric.xml:338(title) Trigonometric.xml:373(title) Trigonometric.xml:408(title) Trigonometric.xml:450(title) Special.xml:49(title) Special.xml:86(title) Special.xml:122(title) Special.xml:154(title) Special.xml:194(title) Special.xml:226(title) Special.xml:264(title) Special.xml:300(title) Special.xml:334(title) Special.xml:374(title) Rounding.xml:30(title) Rounding.xml:64(title) Rounding.xml:96(title) Rounding.xml:129(title) Rounding.xml:173(title) PowerAndLog.xml:49(title) PowerAndLog.xml:80(title) PowerAndLog.xml:125(title) PowerAndLog.xml:159(title) PowerAndLog.xml:191(title) PowerAndLog.xml:224(title) Piecewise.xml:30(title) Piecewise.xml:61(title) Hyperbolic.xml:30(title) Hyperbolic.xml:63(title) Hyperbolic.xml:96(title) Hyperbolic.xml:128(title) Hyperbolic.xml:160(title) Hyperbolic.xml:194(title) Hyperbolic.xml:227(title) Hyperbolic.xml:260(title) Hyperbolic.xml:294(title) Hyperbolic.xml:326(title) Hyperbolic.xml:358(title) Hyperbolic.xml:391(title) Constants.xml:38(title) Complex.xml:29(title) Complex.xml:65(title) Complex.xml:96(title) Complex.xml:126(title) Complex.xml:156(title)
 msgid "See also"
 msgstr "Vedi anche"
 
-#. Trigonometric.xml:50(primary) Trigonometric.xml:160(primary)
+#. Trigonometric.xml:52(primary) Trigonometric.xml:168(primary)
 msgid "cosine"
 msgstr "coseno"
 
-#. Trigonometric.xml:51(para)
+#. Trigonometric.xml:53(para)
 msgid "Returns the cosine of the argument."
 msgstr "Restituisce il coseno dell'argomento."
 
-#. Trigonometric.xml:60(para)
+#. Trigonometric.xml:62(para)
 msgid "The <placeholder-1/> function calculates the cosine of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a real number, the result will be in the range -1 to 1."
 msgstr "La funzione <placeholder-1/> calcola il coseno di un angolo <placeholder-2/>, che può essere in <placeholder-3/> o gradi in base alle impostazioni correnti. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Se <placeholder-8/> è un numero reale, il risultato ricadrà nell'intervallo tra -1 e +1."
 
-#. Trigonometric.xml:88(primary) Trigonometric.xml:192(primary) InsertTangentDialog.xml:10(primary)
+#. Trigonometric.xml:92(primary) Trigonometric.xml:202(primary) InsertTangentDialog.xml:10(primary)
 msgid "tangent"
 msgstr "tangente"
 
-#. Trigonometric.xml:89(para)
+#. Trigonometric.xml:93(para)
 msgid "Returns the tangent of the argument."
 msgstr "Restituisce la tangente dell'argomento."
 
-#. Trigonometric.xml:98(para)
+#. Trigonometric.xml:102(para)
 msgid "The <placeholder-1/> function calculates the tangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
 msgstr "La funzione <placeholder-1/>  calcola la tangente di un angolo <placeholder-2/>, che può essere in <placeholder-3/> o gradi in base alle impostazioni correnti. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. "
 
-#. Trigonometric.xml:110(glossterm) Special.xml:142(glossterm) Rounding.xml:23(glossterm) Rounding.xml:56(glossterm) Rounding.xml:86(glossterm) Rounding.xml:117(glossterm) Rounding.xml:148(glossterm) PowerAndLog.xml:108(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary)
+#. Trigonometric.xml:114(glossterm) Special.xml:148(glossterm) Rounding.xml:23(glossterm) Rounding.xml:58(glossterm) Rounding.xml:90(glossterm) Rounding.xml:123(glossterm) Rounding.xml:156(glossterm) PowerAndLog.xml:112(glossterm) Glossary.xml:58(glossterm) Glossary.xml:59(primary)
 msgid "integer"
 msgstr "intero"
 
-#. Trigonometric.xml:107(para)
+#. Trigonometric.xml:111(para)
 msgid "For arguments with a large magnitude, the function will begin to lose precision. <placeholder-1/> is undefined at <placeholder-2/>, where p is an <placeholder-3/>, but the function returns a very large number if <placeholder-4/> is near the undefined value."
 msgstr "Per argomenti di grande ampiezza, la funzione comincerà a perdere  precisione. <placeholder-1/> è indefinita a <placeholder-2/>, dove p è un <placeholder-3/>, ma la funzione restituisce un numero molto grande se <placeholder-4/> si avvicina al valore indefinito."
 
-#. Trigonometric.xml:129(primary)
+#. Trigonometric.xml:135(primary)
 msgid "inverse sine"
 msgstr "arcoseno"
 
-#. Trigonometric.xml:130(para)
+#. Trigonometric.xml:136(para)
 msgid "Returns the inverse sine of the argument."
 msgstr "Restituisce l'arcoseno dell'argomento"
 
-#. Trigonometric.xml:139(para)
+#. Trigonometric.xml:145(para)
 msgid "The <placeholder-1/> function calculates the inverse sine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any numeric expression that evaluates to a <placeholder-5/>. This is the reverse of the <placeholder-6/> function."
 msgstr "La funzione <placeholder-1/> calcola l'arcoseno di <placeholder-2/>. Il risultato può essere in <placeholder-3/> o gradi in base alle impostazioni correnti. <placeholder-4/> può essere ogni espressione numerica che valuta <placeholder-5/>. Questa è l'inversa della funzione <placeholder-6/>."
 
-#. Trigonometric.xml:161(primary)
+#. Trigonometric.xml:169(primary)
 msgid "inverse cosine"
 msgstr "arcocoseno"
 
-#. Trigonometric.xml:162(para)
+#. Trigonometric.xml:170(para)
 msgid "Returns the inverse cosine of the argument."
 msgstr "Restituisce l'arcocoseno dell'argomento."
 
-#. Trigonometric.xml:171(para)
+#. Trigonometric.xml:179(para)
 msgid "The <placeholder-1/> function calculates the inverse cosine of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
 msgstr "La funzione <placeholder-1/> calcola l'arcocoseno di <placeholder-2/>. Il risultato può essere in <placeholder-3/> o gradi in base alle impostazioni correnti. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/>. Questa è l'inversa della funzione <placeholder-7/>."
 
-#. Trigonometric.xml:193(primary)
+#. Trigonometric.xml:203(primary)
 msgid "inverse tangent"
 msgstr "arcotangente"
 
-#. Trigonometric.xml:194(para)
+#. Trigonometric.xml:204(para)
 msgid "Returns the inverse tangent of the argument."
 msgstr "Restituisce l'arcotangente dell'argomento."
 
-#. Trigonometric.xml:203(para)
+#. Trigonometric.xml:213(para)
 msgid "The <placeholder-1/> function calculates the inverse tangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> function."
 msgstr "La funzione <placeholder-1/> calcola l'arcotangente di <placeholder-2/>. Il risultato può essere in <placeholder-3/> o gradi in base alle impostazioni correnti. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/>. Questa è l'inversa della funzione <placeholder-7/>."
 
-#. Trigonometric.xml:224(primary) Trigonometric.xml:335(primary)
+#. Trigonometric.xml:236(primary) Trigonometric.xml:353(primary)
 msgid "secant"
 msgstr "secante"
 
-#. Trigonometric.xml:225(para)
+#. Trigonometric.xml:237(para)
 msgid "Returns the secant of the argument."
 msgstr "Restituisce la secante dell'argomento."
 
-#. Trigonometric.xml:234(para)
+#. Trigonometric.xml:246(para)
 msgid "The <placeholder-1/> function calculates the secant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> calcola la secante di un angolo <placeholder-2/>, che può essere in <placeholder-3/> o gradi in base alle impostazioni correnti. <placeholder-4/> equivale a <placeholder-5/>. <placeholder-6/> può essere ogni <placeholder-7/> che valuta una <placeholder-8/> o una <placeholder-9/>."
 
-#. Trigonometric.xml:261(primary) Trigonometric.xml:368(primary)
+#. Trigonometric.xml:275(primary) Trigonometric.xml:388(primary)
 msgid "cosecant"
 msgstr "cosecante"
 
-#. Trigonometric.xml:262(para)
+#. Trigonometric.xml:276(para)
 msgid "Returns the cosecant of the argument."
 msgstr "Restituisce la cosecante dell'argomento."
 
-#. Trigonometric.xml:271(para)
+#. Trigonometric.xml:285(para)
 msgid "The <placeholder-1/> function calculates the cosecant of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> calcola la cosecante di un angolo <placeholder-2/>, che può essere in <placeholder-3/> o gradi, in base alle impostazioni correnti. <placeholder-4/> equivale a <placeholder-5/>. <placeholder-6/> può essere ogni <placeholder-7/> che valuta una <placeholder-8/> o una <placeholder-9/>."
 
-#. Trigonometric.xml:298(primary) Trigonometric.xml:401(primary)
+#. Trigonometric.xml:314(primary) Trigonometric.xml:423(primary)
 msgid "cotangent"
 msgstr "cotangente"
 
-#. Trigonometric.xml:299(para)
+#. Trigonometric.xml:315(para)
 msgid "Returns the cotangent of the argument."
 msgstr "Restituisce la cotangente dell'argomento."
 
-#. Trigonometric.xml:308(para)
+#. Trigonometric.xml:324(para)
 msgid "The <placeholder-1/> function calculates the cotangent of an angle <placeholder-2/>, which may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any numeric expression that evaluates to a <placeholder-7/> or a <placeholder-8/>."
 msgstr "La funzione <placeholder-1/> calcola la cotangente di un angolo <placeholder-2/>, che può essere in <placeholder-3/> o gradi, in base alle impostazioni correnti. <placeholder-4/> equivale a <placeholder-5/>. <placeholder-6/> può essere ogni espressione numerica che valuta una <placeholder-7/> o una <placeholder-8/>."
 
-#. Trigonometric.xml:336(primary)
+#. Trigonometric.xml:354(primary)
 msgid "inverse secant"
 msgstr "arcosecante"
 
-#. Trigonometric.xml:337(para)
+#. Trigonometric.xml:355(para)
 msgid "Returns the inverse secant of the argument."
 msgstr "Restituisce l'arcosecante dell'argomento."
 
-#. Trigonometric.xml:346(para)
+#. Trigonometric.xml:364(para)
 msgid "The <placeholder-1/> function calculates the inverse secant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
 msgstr "La funzione <placeholder-1/> calcola l'arcosecante di <placeholder-2/>.Il risultato può essere in <placeholder-3/> o gradi, in base alle impostazioni correnti. <placeholder-4/> equivale a <placeholder-5/>. <placeholder-6/> può essere ogni <placeholder-7/> che valuta una <placeholder-8/> o una <placeholder-9/>. Questa è l'inversa della funzione <placeholder-9/>."
 
-#. Trigonometric.xml:369(primary)
+#. Trigonometric.xml:389(primary)
 msgid "inverse cosecant"
 msgstr "arcocosecante"
 
-#. Trigonometric.xml:370(para)
+#. Trigonometric.xml:390(para)
 msgid "Returns the inverse cosecant of the argument."
 msgstr "Restituisce l'arcocosecante dell'argomento."
 
-#. Trigonometric.xml:379(para)
+#. Trigonometric.xml:399(para)
 msgid "The <placeholder-1/> function calculates the inverse cosecant of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
 msgstr "La funzione <placeholder-1/> calcola l'arcocosecante di <placeholder-2/>.Il risultato può essere in <placeholder-3/> o gradi, in base alle impostazioni correnti. <placeholder-4/> equivale a <placeholder-5/>. <placeholder-6/> può essere ogni <placeholder-7/> che valuta una <placeholder-8/>. Questa è l'inversa della funzione <placeholder-9/>."
 
-#. Trigonometric.xml:402(primary)
+#. Trigonometric.xml:424(primary)
 msgid "inverse cotangent"
 msgstr "arcocotangente"
 
-#. Trigonometric.xml:403(para)
+#. Trigonometric.xml:425(para)
 msgid "Returns the inverse cotangent of the argument."
 msgstr "Restituisce l'arcocotangente dell'argomento."
 
-#. Trigonometric.xml:412(para)
+#. Trigonometric.xml:434(para)
 msgid "The <placeholder-1/> function calculates the inverse cotangent of <placeholder-2/>. The result may be in <placeholder-3/> or degrees depending on the current settings. <placeholder-4/> is the same as <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/>. This is the reverse of the <placeholder-9/> function."
 msgstr "La funzione <placeholder-1/> calcola l'arcocotangente di <placeholder-2/>.Il risultato può essere in <placeholder-3/> o gradi, in base alle impostazioni correnti. <placeholder-4/> equivale a <placeholder-5/>. <placeholder-6/> può essere ogni <placeholder-7/> che valuta una <placeholder-8/>. Questa è l'inversa della funzione <placeholder-9/>."
 
-#. Trigonometric.xml:422(para)
+#. Trigonometric.xml:444(para)
 msgid "The <placeholder-1/> function returns a value in the range ]-&pi;/2;&pi;/2] (]-90;90] when calculating in degrees), which is the most common definition, though some may define it to be in the range ]0;&pi;[."
 msgstr "La funzione <placeholder-1/> restituisce un valore nell'intervallo ]-&pi;/2;&pi;/2] (]-90;90] calcolando in gradi), che è la definizione più comune, sebbene alcuni possano definirla ricadente nel range [0;&pi;]."
 
@@ -271,7 +271,7 @@ msgstr "Seleziona tutto"
 
 #. TableDialog.xml:39(para)
 msgid "When you move the mouse to the left side of the table the mouse pointer changes to a right pointing arrow. Now you can select whole rows with the mouse. When you move the mouse to the top of the table, the pointer changes to a down pointing arrow. Now you can select whole columns with the mouse. The whole table may be selected by <action>right clicking</action> and selecting <placeholder-1/>. It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard."
-msgstr "Spostando il mouse sul lato sinistro della tabella, il puntatore cambia in 'freccia verso destra' e ora potrai selezionare intere righe. Spostando il mouse in cima alla tabella, il puntatore cambia in 'freccia verso il basso' e ora potrai selezionare intere colonne. L'intera tabella è selezionabile con <action>right clicking</action> e selezionando <placeholder-1/>. E' anche possibile selezionare celle da tastiera, mediante i tasti <Freccia> tenendo contemporaneamente premuto <Shift>."
+msgstr "Spostando il mouse sul lato sinistro della tabella, il puntatore cambia in 'freccia verso destra' e ora potrai selezionare intere righe. Spostando il mouse in cima alla tabella, il puntatore cambia in 'freccia verso il basso' e ora potrai selezionare intere colonne. L'intera tabella è selezionabile con <action>right clicking</action> e selezionando <placeholder-1/>. E' anche possibile selezionare celle da tastiera, mediante i tasti &lt;Freccia> tenendo contemporaneamente premuto &lt;Shift>."
 
 #. TableDialog.xml:48(para)
 msgid "From the context menu it is also possible to export the selected data to a file as comma or tab delimited text."
@@ -297,11 +297,11 @@ msgstr "area"
 msgid "Returns an approximation for the numerical integral of the given expression over the given range."
 msgstr "Restituisce un'approssimazione dell'integrale numerico di una data espressione per il dato intervallo."
 
-#. Special.xml:34(glossterm) Special.xml:80(glossterm) Special.xml:114(glossterm) Special.xml:209(glossterm) Special.xml:314(glossterm) Special.xml:345(glossterm) Piecewise.xml:84(glossterm) Piecewise.xml:108(glossterm) Piecewise.xml:133(glossterm) Piecewise.xml:158(glossterm)
+#. Special.xml:34(glossterm) Special.xml:82(glossterm) Special.xml:118(glossterm) Special.xml:219(glossterm) Special.xml:330(glossterm) Special.xml:363(glossterm) Piecewise.xml:88(glossterm) Piecewise.xml:112(glossterm) Piecewise.xml:137(glossterm) Piecewise.xml:162(glossterm)
 msgid "numeric expressions"
 msgstr "espressioni numeriche"
 
-#. Special.xml:35(glossterm) Special.xml:210(glossterm) Special.xml:314(glossterm) Special.xml:346(glossterm) Piecewise.xml:85(glossterm) Piecewise.xml:109(glossterm) Piecewise.xml:134(glossterm) Piecewise.xml:159(glossterm) OptionsDialog.xml:126(glossterm) Errors.xml:16(glossterm) Errors.xml:102(glossterm)
+#. Special.xml:35(glossterm) Special.xml:220(glossterm) Special.xml:330(glossterm) Special.xml:364(glossterm) Piecewise.xml:89(glossterm) Piecewise.xml:113(glossterm) Piecewise.xml:138(glossterm) Piecewise.xml:163(glossterm) OptionsDialog.xml:126(glossterm) Errors.xml:16(glossterm) Errors.xml:102(glossterm)
 msgid "real numbers"
 msgstr "numeri reali"
 
@@ -309,7 +309,7 @@ msgstr "numeri reali"
 msgid "The <placeholder-1/> function returns an approximation for the numerical integral of <placeholder-2/> with the variable <placeholder-3/> from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/> This integral is the same as the area between the function <placeholder-7/> and the x-axis from <placeholder-8/> to <placeholder-9/> where the area under the axis is counted negative. <placeholder-10/> may be any function with the variable indicated as the second argument <placeholder-11/>. <placeholder-12/> and <placeholder-13/> may be any <placeholder-14/> that evaluate to <placeholder-15/> or they can be <placeholder-16/> or <placeholder-17/> to indicate negative or positive infinity. <placeholder-18/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-19/>."
 msgstr "La funzione <placeholder-1/> restituisce un'approssimazione dell'integrale numerico di <placeholder-2/> con la variabile <placeholder-3/> da <placeholder-4/> a <placeholder-5/>. Matematicamente scritta come: <placeholder-6/>. Questo integrale equivale all'area compresa tra la funzione <placeholder-7/> e l'asse-x da <placeholder-8/> a <placeholder-9/> dove l'area sotto l'asse è considerata negativa. <placeholder-10/> può essere ogni funzione con la variabile indicata come secondo argomento <placeholder-11/>. <placeholder-12/> e <placeholder-13/> può essere ogni <placeholder-14/> che stima <placeholder-15/> o possono essere <placeholder-16/> o <placeholder-17/> per indicare + o - infinito. <placeholder-18/> non calcola l'integrale con esattezza, in alternativa l'elaborazione fa ricorso alla regola di integrazione a 21-punti di Gauss-Kronrod con un errore relativo stimato inferiore di <placeholder-19/>."
 
-#. Special.xml:41(title) Rounding.xml:153(title)
+#. Special.xml:41(title) Rounding.xml:161(title)
 msgid "Examples"
 msgstr "Esempi"
 
@@ -317,19 +317,19 @@ msgstr "Esempi"
 msgid "<placeholder-1/> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396. More useful is <placeholder-2/>. This will plot the integral of f(s)=s*sin(s) from 0 to x, which is the same as the definite integral of f(x)=x*sin(x)."
 msgstr "<placeholder-1/> integrerà f(t)=t^2-7t+1 da -3 a 15 e darà 396. Più utile è <placeholder-2/> che plotterà l'integrale di f(s)=s*sin(s) da 0 a x, che è del tutto equivalente all'integrale definito di f(x)=x*sin(x)."
 
-#. Special.xml:61(primary)
+#. Special.xml:63(primary)
 msgid "summation"
 msgstr "sommatoria"
 
-#. Special.xml:62(para)
+#. Special.xml:64(para)
 msgid "Returns the summation of an expression evaluated over a range of integers."
 msgstr "Restituisce la sommatoria di una espressione valutata su un intervallo di interi."
 
-#. Special.xml:80(glossterm) Special.xml:114(glossterm)
+#. Special.xml:82(glossterm) Special.xml:118(glossterm)
 msgid "integers"
 msgstr "interi"
 
-#. Special.xml:71(para)
+#. Special.xml:73(para)
 msgid ""
 "The <placeholder-1/> function returns the summation of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
@@ -337,11 +337,11 @@ msgstr ""
 "La funzione <placeholder-1/> restituisce la sommatoria di <placeholder-2/>, ove <placeholder-3/> è valutata per tutti gli interi da <placeholder-4/> a <placeholder-5/>. Matematicamente scritta come: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> Può essere ogni funzione con la variabile <placeholder-8/> indicata come secondo argomento. <placeholder-9/> e <placeholder-10/> possono essere ogni <placeholder-11/> che calcola <placeholder-12/>."
 
-#. Special.xml:96(para)
+#. Special.xml:100(para)
 msgid "Returns the product of an expression evaluated over a range of integers."
 msgstr "Restituisce il prodotto di una espressione valutato su un intervallo di interi."
 
-#. Special.xml:105(para)
+#. Special.xml:109(para)
 msgid ""
 "The <placeholder-1/> function returns the product of <placeholder-2/> where <placeholder-3/> is evaluated for all integers from <placeholder-4/> to <placeholder-5/>. This is mathematically written as: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> may be any function with the variable indicated as the second argument <placeholder-8/>. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
@@ -349,99 +349,99 @@ msgstr ""
 "La funzione <placeholder-1/> restituisce il prodotto di <placeholder-2/> dove <placeholder-3/> è calcolato per tutti gli interi da <placeholder-4/> a <placeholder-5/>. Matematicamente descritto come: <placeholder-6/>\n"
 "\t\t\t\t<placeholder-7/> può essere ogni funzione con la variabile indicata come secondo argomento <placeholder-8/>. <placeholder-9/> e <placeholder-10/> possono essere ogni <placeholder-11/> che stima <placeholder-12/>."
 
-#. Special.xml:130(primary) Special.xml:160(primary)
+#. Special.xml:136(primary) Special.xml:168(primary)
 msgid "factorial"
 msgstr "fattoriale"
 
-#. Special.xml:131(para) FunctionList.xml:417(entry)
+#. Special.xml:137(para) FunctionList.xml:417(entry)
 msgid "Returns the factorial of the argument."
 msgstr "Restituisce il fattoriale dell'argomento."
 
-#. Special.xml:140(para)
+#. Special.xml:146(para)
 msgid "The <placeholder-1/> function returns the factorial of <placeholder-2/>, commonly written as n!. <placeholder-3/> may be any <placeholder-4/> that evaluates to a positive <placeholder-5/>. The function is defined as <placeholder-6/>, and relates to the <placeholder-7/> function as <placeholder-8/>."
 msgstr "La funzione <placeholder-1/> restituisce il fattoriale di <placeholder-2/>, comunemente scritto n!. <placeholder-3/> può essere ogni <placeholder-4/> che stima un positivo <placeholder-5/>. La funzione è definita come <placeholder-6/> e si rapporta alla funzione <placeholder-7/> come <placeholder-8/>."
 
-#. Special.xml:161(para)
+#. Special.xml:169(para)
 msgid "Returns the value of the Euler gamma function of the argument."
 msgstr "Restituisce il valore della funzione-Gamma di Eulero calcolato per l'argomento."
 
-#. Special.xml:170(para)
+#. Special.xml:178(para)
 msgid "The <placeholder-1/> function returns the result of the Euler gamma function of <placeholder-2/>, commonly written as &Gamma;(z). <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The gamma function relates to the factorial function as <placeholder-7/>. The mathematical definition of the gamma function is: <placeholder-8/> This cannot be calculated precisely, so Graph is using the Lanczos approximation to calculate the <placeholder-9/> function."
 msgstr "La funzione <placeholder-1/> restituisce il risultato della funzione-Gamma di Eulero di <placeholder-2/>, comunemente scritto as &Gamma;(z). <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. La funzione-Gamma si relaziona alla funzione fattoriale come <placeholder-7/>. La definizione matematica della funzione-Gamma è: <placeholder-8/>. Questa non può essere calcolata con precisione, così Graph ricorre alla approssimazione di Lanczos per calcolare la funzione <placeholder-9/>."
 
-#. Special.xml:198(para)
+#. Special.xml:208(para)
 msgid "Returns the value of the Euler beta function evaluated for the arguments."
 msgstr "Restituisce il valore della funzione-Beta di Eulero calcolato per gli argomenti."
 
-#. Special.xml:210(glossterm) Piecewise.xml:85(glossterm) Piecewise.xml:109(glossterm) Piecewise.xml:134(glossterm) Piecewise.xml:159(glossterm) OptionsDialog.xml:128(glossterm) Errors.xml:103(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
+#. Special.xml:220(glossterm) Piecewise.xml:89(glossterm) Piecewise.xml:113(glossterm) Piecewise.xml:138(glossterm) Piecewise.xml:163(glossterm) OptionsDialog.xml:128(glossterm) Errors.xml:103(glossterm) AxesDialog.xml:25(primary) AxesDialog.xml:205(glossterm) AxesDialog.xml:229(glossterm)
 msgid "complex numbers"
 msgstr "numeri complessi"
 
-#. Special.xml:207(para)
+#. Special.xml:217(para)
 msgid "The <placeholder-1/> function returns the result of the Euler beta function evaluated for <placeholder-2/> and <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluate to <placeholder-7/> or <placeholder-8/>. The <placeholder-9/> function relates to the <placeholder-10/> function as <placeholder-11/>."
 msgstr "La funzione <placeholder-1/> restituisce il risultato della funzione-Beta di Eulero, valutata per <placeholder-2/> e <placeholder-3/> . <placeholder-4/> e <placeholder-5/> possono essere ogni <placeholder-6/> che valuta <placeholder-7/> o <placeholder-8/>. La funzione <placeholder-9/> si relaziona alla funzione <placeholder-10/> come <placeholder-11/>."
 
-#. Special.xml:228(primary)
+#. Special.xml:240(primary)
 msgid "Lambert W-function"
 msgstr "Funzione-W di Lambert"
 
-#. Special.xml:229(primary)
+#. Special.xml:241(primary)
 msgid "omega function"
 msgstr "funzione-Omega"
 
-#. Special.xml:230(para)
+#. Special.xml:242(para)
 msgid "Returns the value of the Lambert W-function evaluated for the argument."
 msgstr "Restituisce il valore della funzione-W di Lambert per l'argomento."
 
-#. Special.xml:239(para)
+#. Special.xml:251(para)
 msgid "The <placeholder-1/> function returns the result of the Lambert W-function, also known as the omega function, evaluated for <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The inverse of the <placeholder-7/> function is given by <placeholder-8/>."
 msgstr "La funzione <placeholder-1/> restituisce il risultato della funzione-W di Lambert, nota anche come funzione-Omega, valutata per <placeholder-2/>. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. L'inversa della funzione <placeholder-7/> è dato da <placeholder-8/>."
 
-#. Special.xml:247(para)
+#. Special.xml:259(para)
 msgid "For real values of <placeholder-1/> when <placeholder-2/>, the <placeholder-3/> function will evaluate to values with an imaginary part."
 msgstr "Per valori reali di <placeholder-1/> quando <placeholder-2/>,  la funzione <placeholder-3/> perverrà a valori con una parte immaginaria."
 
-#. Special.xml:264(primary)
+#. Special.xml:278(primary)
 msgid "Riemann Zeta function"
 msgstr "funzione-Zeta di Riemann"
 
-#. Special.xml:265(para)
+#. Special.xml:279(para)
 msgid "Returns the value of the Riemann Zeta function evaluated for the argument."
 msgstr "Restituisce il valore della funzione-Zeta di Riemann calcolato per l'argomento."
 
-#. Special.xml:274(para)
+#. Special.xml:288(para)
 msgid "The <placeholder-1/> function returns the result of the Riemann Zeta function, commonly written as &zeta;(s). <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/> or a <placeholder-5/>."
 msgstr "La funzione <placeholder-1/> restituisce il risultato della funzione-Zeta di Riemann, comunemente scritto come &zeta;(s). <placeholder-2/> può essere ogni <placeholder-3/> che stima un <placeholder-4/> o un <placeholder-5/>."
 
-#. Special.xml:281(para)
+#. Special.xml:295(para)
 msgid "The <placeholder-1/> function is defined for the whole complex plane except for the pole at <placeholder-2/>=1."
 msgstr "La funzione <placeholder-1/> è definita per l'intero piano complesso eccetto che per il polo a <placeholder-2/>=1."
 
-#. Special.xml:298(primary)
+#. Special.xml:314(primary)
 msgid "modulus"
 msgstr "modulo"
 
-#. Special.xml:299(primary)
+#. Special.xml:315(primary)
 msgid "remainder"
 msgstr "resto"
 
-#. Special.xml:300(para) FunctionList.xml:437(entry)
+#. Special.xml:316(para) FunctionList.xml:437(entry)
 msgid "Returns the remainder of the first argument divided by the second argument."
 msgstr "Restituisce il resto del primo argomento diviso per il secondo argomento."
 
-#. Special.xml:309(para)
+#. Special.xml:325(para)
 msgid "Calculates <placeholder-1/> modulo <placeholder-2/>, the remainder of <placeholder-3/>. <placeholder-4/> calculates the remainder f, where <placeholder-5/> for some integer a. The sign of f is always the same as the sign of <placeholder-6/>. When <placeholder-7/>, <placeholder-8/> returns 0. <placeholder-9/> and <placeholder-10/> may be any <placeholder-11/> that evaluate to <placeholder-12/>."
 msgstr "Calcola <placeholder-1/> modulo <placeholder-2/>, il resto di <placeholder-3/>. <placeholder-4/> calcola il resto f, ove <placeholder-5/> per qualche intero a. Il segno di f è sempre lo stesso di <placeholder-6/>. Quando <placeholder-7/>, <placeholder-8/> restituisce 0. <placeholder-9/> e <placeholder-10/> possono essere <placeholder-11/> che valuta <placeholder-12/>."
 
-#. Special.xml:330(primary)
+#. Special.xml:348(primary)
 msgid "normal distribution"
 msgstr "distribuzione normale"
 
-#. Special.xml:331(para) FunctionList.xml:441(entry)
+#. Special.xml:349(para) FunctionList.xml:441(entry)
 msgid "Returns the normal distribution of the first argument with optional mean value and standard deviation."
 msgstr "Restituisce la distribuzione normale del primo argomento con media e deviazione standard  (opzionali)."
 
-#. Special.xml:340(para)
+#. Special.xml:358(para)
 msgid "The <placeholder-1/> function is the probability density of the normal distribution, also called Gaussian distribution. <placeholder-2/> is the variate, also known as the random variable, <placeholder-3/> is the mean value and &sigma; is the standard deviation. <placeholder-4/> and &sigma; are optional and if left out the standard normal distribution is used where <placeholder-5/> and &sigma;=1. <placeholder-6/>, <placeholder-7/> and &sigma; may be any <placeholder-8/> that evaluate to <placeholder-9/> where &sigma; &gt; 0. The normal distribution is defined as: <placeholder-10/>"
 msgstr "La funzione <placeholder-1/> è la densità di probabilità della distribuzione normale, detta anche distribuzione gaussiana. <placeholder-2/> è la variante, nota anche come variabile casuale, <placeholder-3/> è il valore medio e &sigma; è la deviazione standard. <placeholder-4/> e &sigma; sono opzionali e se tralasciate viene usata la distribuzione normale in cui <placeholder-5/> e &sigma;=1. <placeholder-6/>, <placeholder-7/> e &sigma; possono essere ogni <placeholder-8/> che valuta <placeholder-9/> in cui &sigma; &gt; 0. La distribuzione normale è definita come: <placeholder-10/>"
 
@@ -541,7 +541,7 @@ msgstr "Il comando <guibutton>Opzioni...</guibutton> nel casella  'Salva' può e
 msgid "Rounding"
 msgstr "Arrotondamento"
 
-#. Rounding.xml:11(primary) Rounding.xml:42(primary) Rounding.xml:74(primary) Rounding.xml:104(primary)
+#. Rounding.xml:11(primary) Rounding.xml:44(primary) Rounding.xml:78(primary) Rounding.xml:110(primary)
 msgid "rounding"
 msgstr "arrotondamento"
 
@@ -557,55 +557,55 @@ msgstr "Rimuove la parte frazionaria dell'argomento."
 msgid "The <placeholder-1/> function returns the <placeholder-2/> part of <placeholder-3/>. The function removes the decimal part of <placeholder-4/>, i.e. rounds against zero. <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If <placeholder-9/> is a complex number, the function returns <placeholder-10/>."
 msgstr "La funzione <placeholder-1/> restituisce la parte <placeholder-2/> di <placeholder-3/>. La funzione rimuove la parte decimale di <placeholder-4/>, cioè arrotonda verso 0. <placeholder-5/> può essere ogni <placeholder-6/> che valuta una <placeholder-7/> o una <placeholder-8/>. Se <placeholder-9/> è un numero complesso la funzione restituisce <placeholder-10/>."
 
-#. Rounding.xml:43(primary)
+#. Rounding.xml:45(primary)
 msgid "fractional part"
 msgstr "parte frazionaria"
 
-#. Rounding.xml:44(primary)
+#. Rounding.xml:46(primary)
 msgid "decimal part"
 msgstr "parte decimale"
 
-#. Rounding.xml:45(para) FunctionList.xml:359(entry)
+#. Rounding.xml:47(para) FunctionList.xml:359(entry)
 msgid "Returns the fractional part of the argument."
 msgstr "Restituisce la parte frazionaria dell'argomento."
 
-#. Rounding.xml:54(para)
+#. Rounding.xml:56(para)
 msgid "The <placeholder-1/> function returns the fractional part of <placeholder-2/>. The function removes the <placeholder-3/> part of <placeholder-4/>, i.e. <placeholder-5/>. <placeholder-6/> may be any <placeholder-7/> that evaluates to a <placeholder-8/> or a <placeholder-9/>. If <placeholder-10/> is a complex number, the function returns <placeholder-11/>."
 msgstr "La funzione <placeholder-1/> restituisce la parte frazionaria di <placeholder-2/>. La funzione rimuove la parte <placeholder-3/> di <placeholder-4/>, cioè <placeholder-5/>. <placeholder-6/> può essere ogni <placeholder-7/> che valuta una <placeholder-8/> o una <placeholder-9/>. Se <placeholder-10/> è un numero complesso la funzione restituisce <placeholder-11/>."
 
-#. Rounding.xml:75(primary)
+#. Rounding.xml:79(primary)
 msgid "round up"
 msgstr "arrotonda in sù"
 
-#. Rounding.xml:76(para)
+#. Rounding.xml:80(para)
 msgid "Rounds the argument up."
 msgstr "Arrotonda in sù l'argomento."
 
-#. Rounding.xml:85(para)
+#. Rounding.xml:89(para)
 msgid "The <placeholder-1/> function finds the smallest <placeholder-2/> not less than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> trova il più piccolo <placeholder-2/> non inferiore di <placeholder-3/>. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Se <placeholder-8/> è un numero complesso, la funzione restituisce <placeholder-9/>."
 
-#. Rounding.xml:105(primary)
+#. Rounding.xml:111(primary)
 msgid "round down"
 msgstr "arrotonda in giù"
 
-#. Rounding.xml:106(primary)
+#. Rounding.xml:112(primary)
 msgid "greatest integer"
 msgstr "intero più grande"
 
-#. Rounding.xml:107(para)
+#. Rounding.xml:113(para)
 msgid "Rounds the argument down."
 msgstr "Arrotonda in giù l'argomento."
 
-#. Rounding.xml:116(para)
+#. Rounding.xml:122(para)
 msgid "The <placeholder-1/> function, which is also called the greatest integer function, gives the largest <placeholder-2/> not greater than <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>."
 msgstr "La funzione <placeholder-1/>, anche detta la più grande funzione intera, dà il più grande <placeholder-2/> non maggiore di <placeholder-3/>. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Se <placeholder-8/> è un numero complesso, la funzione restituisce <placeholder-9/>."
 
-#. Rounding.xml:135(para)
+#. Rounding.xml:143(para)
 msgid "Rounds a number to the specified number of decimals."
 msgstr "Arrotonda un numero allo specificato numero di cifre decimali."
 
-#. Rounding.xml:144(para)
+#. Rounding.xml:152(para)
 msgid "The <placeholder-1/> function rounds <placeholder-2/> to the number of decimals given by <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> is a complex number, the function returns <placeholder-9/>. <placeholder-10/> may be any numeric expression that evaluates to an <placeholder-11/>. If <placeholder-12/>&lt;0, <placeholder-13/> is rounded to <placeholder-14/> places to the left of the decimal point."
 msgstr "La funzione <placeholder-1/> arrotonda <placeholder-2/> al numero di decimali fissato da <placeholder-3/>. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Se <placeholder-8/> è un numero complesso, la funzione restituisce <placeholder-9/>.<placeholder-10/> può essere ogni espressione numerica che stima un <placeholder-11/>. Se <placeholder-12/>&lt;0, <placeholder-13/> è arrotondata a <placeholder-14/> posti alla sinistra della parte decimale."
 
@@ -637,67 +637,67 @@ msgstr "Restituisce <emphasis>e</emphasis> elevato alla potenza dell'argomento."
 msgid "The <placeholder-1/> function is used to raise <emphasis>e</emphasis>, Euler's constant, to the power of <placeholder-2/>. This is the same as <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>."
 msgstr "La funzione <placeholder-1/> è usata per elevare <emphasis>e</emphasis>, costante di Eulero, alla potenza di <placeholder-2/>. Ciò equivale a <placeholder-3/>. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>."
 
-#. PowerAndLog.xml:61(primary)
+#. PowerAndLog.xml:63(primary)
 msgid "square root"
 msgstr "radice quadrata"
 
-#. PowerAndLog.xml:62(para) FunctionList.xml:309(entry)
+#. PowerAndLog.xml:64(para) FunctionList.xml:309(entry)
 msgid "Returns the square root of the argument."
 msgstr "Restituisce la radice quadrata dell'argomento."
 
-#. PowerAndLog.xml:71(para)
+#. PowerAndLog.xml:73(para)
 msgid "The <placeholder-1/> function calculates the square root of <placeholder-2/>, i.e. <placeholder-3/> raised to the power of &frac12;. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/> &ge; 0."
 msgstr "La funzione <placeholder-1/> calcola la radice quadrata di <placeholder-2/>, cioè <placeholder-3/> elevato a &frac12;.  <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Se il calcolo è fatto con numeri reali, l'argomento è definito solo per <placeholder-8/> &ge; 0."
 
-#. PowerAndLog.xml:90(para)
+#. PowerAndLog.xml:94(para)
 msgid "Returns the <placeholder-1/><superscript>th</superscript> root of the argument."
 msgstr "Restituisce la <placeholder-1/><superscript>°</superscript> radice dell'argomento."
 
-#. PowerAndLog.xml:99(para)
+#. PowerAndLog.xml:103(para)
 msgid "The <placeholder-1/> function calculates the <placeholder-2/><superscript>th</superscript> root of <placeholder-3/>. <placeholder-4/> and <placeholder-5/> may be any <placeholder-6/> that evaluates to a <placeholder-7/> or a <placeholder-8/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-9/> &ge; 0."
 msgstr "La funzione <placeholder-1/> calcola la radice <placeholder-2/><superscript>°</superscript> di <placeholder-3/>. <placeholder-4/> e <placeholder-5/> possono essere ogni <placeholder-6/> che valuta una <placeholder-7/> o una <placeholder-8/>. Se il calcolo è fatto con numeri reali, l'argomento è definito solo per <placeholder-9/> &ge; 0."
 
-#. PowerAndLog.xml:107(para)
+#. PowerAndLog.xml:111(para)
 msgid "When the calculation is done with real numbers, the function is only defined for <placeholder-1/>&lt;0 if <placeholder-2/> is an odd <placeholder-3/>. For calculations with complex numbers, <placeholder-4/> is defined for the whole complex plane except at the pole <placeholder-5/>=0. Notice that for calculations with complex numbers the result will always have an imaginary part when <placeholder-6/>&lt;0 even though the result is real when calculations are done with real numbers and <placeholder-7/> is an odd integer."
 msgstr "Quando il calcolo è fatto con numeri reali, la funzione è definita solo per <placeholder-1/>&lt;0 se <placeholder-2/> è dispari <placeholder-3/>. Per calcoli con numeri complessi, <placeholder-4/> è definita per l'intero piano complesso eccetto che al polo <placeholder-5/>=0. Notare che con i numeri complessi il risultato avrà sempre una parte immaginaria qualora <placeholder-6/>&lt;0, anche se il risultato è reale, quando il calcolo è fatto con numeri reali e <placeholder-7/> è un numero intero dispari."
 
-#. PowerAndLog.xml:115(title)
+#. PowerAndLog.xml:119(title)
 msgid "Example"
 msgstr "Esempio"
 
-#. PowerAndLog.xml:116(para)
+#. PowerAndLog.xml:120(para)
 msgid "Instead of <placeholder-1/>, you can use <placeholder-2/>."
 msgstr "Invece di <placeholder-1/> puoi usare <placeholder-2/>."
 
-#. PowerAndLog.xml:133(primary) PowerAndLog.xml:165(primary) PowerAndLog.xml:195(primary)
+#. PowerAndLog.xml:139(primary) PowerAndLog.xml:173(primary) PowerAndLog.xml:205(primary)
 msgid "logarithm"
 msgstr "logaritmo"
 
-#. PowerAndLog.xml:134(primary)
+#. PowerAndLog.xml:140(primary)
 msgid "natural logarithm"
 msgstr "logaritmo naturale"
 
-#. PowerAndLog.xml:135(para)
+#. PowerAndLog.xml:141(para)
 msgid "Returns the natural logarithm of the argument."
 msgstr "Restituisce il logaritmo naturale dell'argomento."
 
-#. PowerAndLog.xml:144(para)
+#. PowerAndLog.xml:150(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <emphasis>e</emphasis>, which is Euler's constant. <placeholder-3/> is commonly known as the natural logarithm. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0."
 msgstr "La funzione <placeholder-1/> calcola il logaritmo di <placeholder-2/> in base <emphasis>e</emphasis>, che è la costante di Eulero. <placeholder-3/> è comunemente noto come logaritmo naturale. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Per calcoli con numeri reali, l'argomento è definito solo per <placeholder-8/>&gt;0. Per calcoli con numeri complessi, <placeholder-9/> è definita per tutti i numeri eccetto <placeholder-10/>=0."
 
-#. PowerAndLog.xml:166(para)
+#. PowerAndLog.xml:174(para)
 msgid "Returns the base 10 logarithm of the argument."
 msgstr "Restituisce il logaritmo in base 10 dell'argomento."
 
-#. PowerAndLog.xml:175(para)
+#. PowerAndLog.xml:183(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base 10. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-7/>&gt;0. When calculating with complex numbers, <placeholder-8/> is defined for all numbers except <placeholder-9/>=0."
 msgstr "La funzione <placeholder-1/> calcola il logaritmo di <placeholder-2/> in base 10. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. Per calcoli con numeri reali, l'argomento è definito solo per <placeholder-7/>&gt;0. Per calcoli con numeri complessi, <placeholder-8/> è definita per tutti i numeri eccetto <placeholder-9/>=0."
 
-#. PowerAndLog.xml:196(para)
+#. PowerAndLog.xml:206(para)
 msgid "Returns the base <placeholder-1/> logarithm of the argument."
 msgstr "Restituisce il logaritmo in base <placeholder-1/> dell'argomento."
 
-#. PowerAndLog.xml:205(para)
+#. PowerAndLog.xml:215(para)
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0. <placeholder-11/> must evaluate to a positive real number."
 msgstr "La funzione <placeholder-1/> calcola il logaritmo di <placeholder-2/> in base <placeholder-3/>. <placeholder-4/> può essere ogni <placeholder-5/> che valuta una <placeholder-6/> o una <placeholder-7/>. Per calcoli con numeri reali, l'argomento è definito solo per <placeholder-8/>&gt;0. Per calcoli con numeri complessi, <placeholder-9/> è definita per tutti i numeri eccetto <placeholder-10/>=0. <placeholder-11/> deve valutare un numero reale positivo."
 
@@ -749,51 +749,51 @@ msgstr "Restituisce il segno dell'argomento."
 msgid "The <placeholder-1/> function, which is also called signum, returns the sign of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. When <placeholder-7/> is a real number, <placeholder-8/> returns 1 for <placeholder-9/>&gt;0 and -1 for <placeholder-10/>&lt;0. <placeholder-11/> returns 0 for <placeholder-12/>=0. When <placeholder-13/> evaluates to a complex number, <placeholder-14/> returns <placeholder-15/>."
 msgstr "La funzione <placeholder-1/>, detta anche 'segno', restituisce il segno di <placeholder-2/>. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. Se <placeholder-7/> è un numero reale, <placeholder-8/> restituisce 1 per <placeholder-9/>&gt;0 e -1 per <placeholder-10/>&lt;0. <placeholder-11/> restituisce 0 per <placeholder-12/>=0. Se <placeholder-13/> valuta un numero complesso, <placeholder-14/> restituisce <placeholder-15/>."
 
-#. Piecewise.xml:42(para)
+#. Piecewise.xml:44(para)
 msgid "The unit step function."
 msgstr "Funzione a gradino."
 
-#. Piecewise.xml:51(para)
+#. Piecewise.xml:53(para)
 msgid "<placeholder-1/> is commonly known as the unit step function. <placeholder-2/> may be any <placeholder-3/> that evaluates to a <placeholder-4/>. The function is undefined when <placeholder-5/> has an imaginary part. <placeholder-6/> returns 1 for <placeholder-7/>&ge;0 and 0 for <placeholder-8/>&lt;0."
 msgstr "<placeholder-1/> è comunemente nota come funzione a gradino o di Heaviside. <placeholder-2/> può essere ogni <placeholder-3/> che valuta una<placeholder-4/>. La funzione è indefinita se <placeholder-5/> ha una parte immaginaria. <placeholder-6/> restituisce 1 per <placeholder-7/>&ge;0 e 0 per <placeholder-8/>&lt;0."
 
-#. Piecewise.xml:71(primary) AxesDialog.xml:12(primary)
+#. Piecewise.xml:75(primary) AxesDialog.xml:12(primary)
 msgid "minimum"
 msgstr "minimo"
 
-#. Piecewise.xml:72(para)
+#. Piecewise.xml:76(para)
 msgid "Finds and returns the minimum of the values passed as arguments."
 msgstr "Trova e restituisce il minimo dei valori passati come argomento."
 
-#. Piecewise.xml:81(para)
+#. Piecewise.xml:85(para)
 msgid "The <placeholder-1/> function returns the minimum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> restituisce il valore minimo del suo argomento. <placeholder-2/> può prendere qualsiasi numero di argomenti purchè non inferiore a 2. Gli argomenti possono essere ogni <placeholder-3/> che valuta <placeholder-4/> o <placeholder-5/>. Se gli argomenti sono numeri complessi, la funzione restituisce <placeholder-6/>."
 
-#. Piecewise.xml:95(primary) AxesDialog.xml:13(primary)
+#. Piecewise.xml:99(primary) AxesDialog.xml:13(primary)
 msgid "maximum"
 msgstr "massimo"
 
-#. Piecewise.xml:96(para)
+#. Piecewise.xml:100(para)
 msgid "Finds and returns the maximum of the values passed as arguments."
 msgstr "Trova e restituisce il massimo dei valori passati come argomento."
 
-#. Piecewise.xml:105(para)
+#. Piecewise.xml:109(para)
 msgid "The <placeholder-1/> function returns the maximum value of its arguments. <placeholder-2/> can take any number of arguments not less than 2. The arguments may be any <placeholder-3/> that evaluate to <placeholder-4/> or <placeholder-5/>. If the arguments are complex numbers, the function returns <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> restituisce il valore massimo del suo argomento. <placeholder-2/> può prendere qualsiasi numero di argomenti purchè non inferiore a 2. Gli argomenti possono essere ogni <placeholder-3/> che valuta <placeholder-4/> o <placeholder-5/>. Se gli argomenti sono numeri complessi, la funzione restituisce <placeholder-6/>."
 
-#. Piecewise.xml:119(para)
+#. Piecewise.xml:123(para)
 msgid "Returns the second argument if it is in the range between the first argument and the third argument."
 msgstr "Restituisce il secondo argomento se si trova nell'intervallo tra il primo e il terzo argomento."
 
-#. Piecewise.xml:128(para)
+#. Piecewise.xml:132(para)
 msgid "The <placeholder-1/> function returns <placeholder-2/>, if <placeholder-3/> is greater than <placeholder-4/> and less than <placeholder-5/>. If <placeholder-6/> &lt; <placeholder-7/> then <placeholder-8/> is returned. If <placeholder-9/> &gt; <placeholder-10/> then <placeholder-11/> is returned. The arguments may be any <placeholder-12/> that evaluate to <placeholder-13/> or <placeholder-14/>. The function has the same effect as <placeholder-15/>."
 msgstr "La funzione <placeholder-1/> restituisce <placeholder-2/>, se <placeholder-3/> è maggiore di <placeholder-4/> e minore di <placeholder-5/>. Se <placeholder-6/> &lt; <placeholder-7/> allora vien restituito <placeholder-8/>. Se <placeholder-9/> &gt; <placeholder-10/> allora vien restituito <placeholder-11/>. Gli argomeneti possono essere ogni <placeholder-12/> che valuta <placeholder-13/> o <placeholder-14/>. La funzione ha lo stesso effetto di <placeholder-15/>."
 
-#. Piecewise.xml:144(para)
+#. Piecewise.xml:148(para)
 msgid "Evaluates one or more conditions and returns a different result based on them."
 msgstr "Considera una o più condizioni e restituisce un risultato diverso in base ad esse."
 
-#. Piecewise.xml:153(para)
+#. Piecewise.xml:157(para)
 msgid "The <placeholder-1/> function evaluates <placeholder-2/> and if it is different from 0 then <placeholder-3/> is evaluated and returned. Else <placeholder-4/> is evaluated and if it is different from 0 then <placeholder-5/> is returned and so forth. If none of the conditions are true <placeholder-6/> is returned. <placeholder-7/> is optional and if not specified <placeholder-8/> returns an error if none of the conditions are true. The arguments may be any <placeholder-9/> that evaluate to <placeholder-10/> or <placeholder-11/>."
 msgstr "La funzione <placeholder-1/> valuta <placeholder-2/> e, se è diversa da 0, viene valutata e restituita <placeholder-3/>. Altrimenti viene valutata <placeholder-4/> e, se diversa da 0, viene restituita <placeholder-5/> e così via. Se nessuna condizione è vera, viene restituita <placeholder-6/>. <placeholder-7/> è opzionale e, se non è specificata, <placeholder-8/> restituisce un errore se nessuna delle condizioni è vera. Gli argomenti possono essere ogni <placeholder-9/> che valuta <placeholder-10/> o <placeholder-11/>."
 
@@ -843,13 +843,13 @@ msgstr "Ogni volta che fai una modifica, il programma memorizza le informazioni 
 
 #. OptionsDialog.xml:57(term)
 msgid "Font scale"
-msgstr "Scala Font"
+msgstr "Scala font"
 
 #. OptionsDialog.xml:59(para)
 msgid "You can use this to change the scale of the fonts and most of the user interface. This is mostly useful if your screen resolution is very high, or for some other reason, you are having difficulties reading the user interface."
 msgstr "Puoi usare questo per modificare la scala dei fonts e molti aspetti dell'interfaccia utente. Ciò è utile soprattutto se il tuo monitor è impostato in alta risoluzione o, se per qualsivoglia ragione, hai difficoltà a leggere l'interfaccia utente."
 
-#. OptionsDialog.xml:67(term) Acknowledgements.xml:68(entry)
+#. OptionsDialog.xml:67(term) Acknowledgements.xml:80(entry)
 msgid "Language"
 msgstr "Lingua"
 
@@ -875,7 +875,7 @@ msgstr "Un segno di spunta in questo campo indica che a questo programma sono as
 
 #. OptionsDialog.xml:99(term)
 msgid "Show tooltip"
-msgstr "Mostra suggerimenti"
+msgstr "Mostra suggerimento"
 
 #. OptionsDialog.xml:101(para)
 msgid "When there is a mark in this field, you will see a small box with an explanation when you are holding the mouse pointer over an object, like an edit field, selection box, etc., for a few seconds. The description is also shown in the status bar at the bottom of the main window."
@@ -883,7 +883,7 @@ msgstr "Quando c'è la spunta in questo campo, quando passerai col cursore del m
 
 #. OptionsDialog.xml:110(term) FAQ.xml:131(guilabel)
 msgid "Save workspace on exit"
-msgstr "Salva area di lavoro all'uscita"
+msgstr "Salva area di lavoro alla chiusura"
 
 #. OptionsDialog.xml:112(para)
 msgid "When there is a mark in this field, Graph will save the size of the main window before it quits. The next time you start the program the saved size will be used. In addition the width of the <placeholder-1/> is also stored. When the field doesn't have a mark the options that were last saved will be used."
@@ -891,7 +891,7 @@ msgstr "Quando c'è la spunta in questo campo, Graph salverà le dimensioni dell
 
 #. OptionsDialog.xml:122(term) OptionsDialog.xml:134(guilabel)
 msgid "Complex form"
-msgstr "Forma complessa"
+msgstr "Formato complesso"
 
 #. OptionsDialog.xml:126(guilabel) OptionsDialog.xml:135(guilabel)
 msgid "Real"
@@ -903,7 +903,7 @@ msgstr "Rettangolare"
 
 #. OptionsDialog.xml:129(guilabel) OptionsDialog.xml:136(guilabel) InsertPointSeriesDialog.xml:63(guilabel)
 msgid "Polar"
-msgstr "Polare"
+msgstr "Polari"
 
 #. OptionsDialog.xml:130(guilabel) AxesDialog.xml:228(guilabel)
 msgid "Radian"
@@ -927,7 +927,7 @@ msgstr "Notare che a volte nella frame <placeholder-1/> puoi ottenere un risulta
 
 #. OptionsDialog.xml:142(term)
 msgid "Check for new version of Graph at startup"
-msgstr "Controlla la disponibilità di nuove versioni di Graph all'avvio"
+msgstr "Controlla nuove versioni di Graph all'avvio"
 
 #. OptionsDialog.xml:150(guimenu) MenuItems.xml:644(guimenu) MenuItems.xml:658(guimenu) MenuItems.xml:672(guimenu) MenuItems.xml:685(guimenu) MenuItems.xml:698(guimenu) MenuItems.xml:711(guimenu) MenuItems.xml:724(guimenu) MenuItems.xml:737(guimenu) MenuItems.xml:751(guimenu) Introduction.xml:50(guimenu)
 msgid "Help"
@@ -1323,7 +1323,7 @@ msgstr "Riporta le impostazioni degli assi a quelle di default che hai usato per
 
 #. MenuItems.xml:517(guimenuitem) FAQ.xml:85(guimenuitem)
 msgid "Move system"
-msgstr "Sposta sistema"
+msgstr "Sposta il sistema"
 
 #. MenuItems.xml:522(para)
 msgid "When selected the mouse pointer changes to a hand. You may now use the mouse to drag the coordinate system around. Select the menu item again, <action>right click</action> or press <keycap>Esc</keycap> to return to normal mode. As an alternative to this menu item, you may hold down the <keycap>Shift</keycap> key and drag the coordinate system around."
@@ -1347,13 +1347,13 @@ msgstr "Questo cambierà le impostazioni degli assi al fine di mostrare tutti gl
 
 #. MenuItems.xml:562(guimenuitem) EvaluateDialog.xml:129(title) EvaluateDialog.xml:134(guimenuitem)
 msgid "Length of path"
-msgstr "Lunghezza percorso"
+msgstr "Lunghezza del percorso"
 
 #. MenuItems.xml:567(para)
 msgid "Calculates the distance along the path between two points on the selected graph."
 msgstr "Calcola la distanza lungo il percorso tra due punti sul grafico selezionato."
 
-#. MenuItems.xml:577(guimenuitem) FAQ.xml:222(guimenuitem) EvaluateDialog.xml:102(title) EvaluateDialog.xml:107(guimenuitem)
+#. MenuItems.xml:577(guimenuitem) FAQ.xml:222(guimenuitem)
 msgid "Integrate"
 msgstr "Integra"
 
@@ -1379,7 +1379,7 @@ msgstr "Questa casella riempie una tabella con lo specificato intervallo di valo
 
 #. MenuItems.xml:627(guimenuitem)
 msgid "Animate..."
-msgstr "Crea animazione..."
+msgstr "Anima..."
 
 #. MenuItems.xml:632(para)
 msgid "This dialog allows you to create an animation from the data in the coordinate system by changing an existing custom constant. This makes it easy to see what happens when the constant changes. The animation may be saved to a disk file."
@@ -1403,7 +1403,7 @@ msgstr "Mostra una lista di funzioni e costanti utilizzabili per tracciare i gra
 
 #. MenuItems.xml:672(guimenuitem) FAQ.xml:5(title)
 msgid "Frequently Asked Questions"
-msgstr "Domande Frequenti (FAQ)"
+msgstr "Domande frequenti (FAQ)"
 
 #. MenuItems.xml:676(para)
 msgid "This will show a list of frequently asked questions and their answers."
@@ -1811,7 +1811,7 @@ msgstr "La media mobile è una serie di linee dritte basate sul valore medio dei
 
 #. InsertTrendlineDialog.xml:138(title)
 msgid "User defined"
-msgstr "Definita dall'utente"
+msgstr "Definito dall'utente"
 
 #. InsertTrendlineDialog.xml:142(para)
 msgid "In this tab you can enter your own trendline models. The model is entered as a standard function, where all the constants that you want Graph to find are named with a $ followed by any combination of characters (a-z) and digits (0-9). Examples of valid constants are: $a, $y0, $const."
@@ -1871,7 +1871,7 @@ msgstr "Una tangente è una linea dritta che tocca il grafico della funzione in 
 
 #. InsertTangentDialog.xml:31(term) InsertFunctionDialog.xml:55(term)
 msgid "Argument range"
-msgstr "Intervallo d'argomento"
+msgstr "Intervallo argomento"
 
 #. InsertTangentDialog.xml:33(para)
 msgid "You can choose an interval for the tangent/normal. <placeholder-1/> and <placeholder-2/> indicates the start and end of the interval. You can leave one or both of them blank to draw the graph from minus infinity to plus infinity."
@@ -1879,7 +1879,7 @@ msgstr "Puoi scegliere un intervallo per la tangente/normale. <placeholder-1/> e
 
 #. InsertTangentDialog.xml:42(term) InsertFunctionDialog.xml:73(term)
 msgid "Endpoints"
-msgstr "Punti finali"
+msgstr "Punti estremi"
 
 #. InsertTangentDialog.xml:44(para)
 msgid "Here you can choose to show markers at the start and/or end of the interval. If no interval is specified, the markers will be shown at the edge of the graphing area. The default is not to show any markers."
@@ -1951,7 +1951,7 @@ msgstr "Tra la funzione e l'asse-x"
 
 #. InsertShadingDialog.xml:39(guilabel) InsertShadingDialog.xml:52(guilabel) InsertShadingDialog.xml:63(guilabel) InsertShadingDialog.xml:74(guilabel) InsertShadingDialog.xml:85(guilabel) InsertShadingDialog.xml:124(guilabel)
 msgid "Decrease to intersection"
-msgstr "Descresce all'intersezione"
+msgstr "Descresci all'intersezione"
 
 #. InsertShadingDialog.xml:39(guilabel) InsertShadingDialog.xml:52(guilabel) InsertShadingDialog.xml:63(guilabel) InsertShadingDialog.xml:74(guilabel) InsertShadingDialog.xml:85(guilabel) InsertShadingDialog.xml:138(guilabel)
 msgid "Increase to intersection"
@@ -1987,7 +1987,7 @@ msgstr "Ombreggerà l'area compresa tra il grafico della funzione e la cima dell
 
 #. InsertShadingDialog.xml:81(term)
 msgid "Inside function"
-msgstr "Entro la funzione"
+msgstr "Dentro la funzione"
 
 #. InsertShadingDialog.xml:83(para)
 msgid "This will shade the area inside the graph of the function in the selected interval. If you check <placeholder-1/> or <placeholder-2/>, the interval will decrease or increase until the graph is crossing itself. This is especially useful to shade a closed part of a parametric or polar function, but it can also be used to shade standard functions."
@@ -2035,7 +2035,7 @@ msgstr "Qui puoi scegliere il colore dell'ombreggiatura."
 
 #. InsertShadingDialog.xml:164(term)
 msgid "Mark border"
-msgstr "Marca il bordo"
+msgstr "Marca il bordo."
 
 #. InsertShadingDialog.xml:166(para)
 msgid "Check this to draw a line around the border of the shading. Uncheck it to leave the shading without a border, which is useful if you want two shadings to look as one."
@@ -2127,7 +2127,7 @@ msgstr "Proprietà"
 
 #. InsertRelationDialog.xml:85(guilabel)
 msgid "Width"
-msgstr "Larghezza"
+msgstr "Largh."
 
 #. InsertRelationDialog.xml:81(para)
 msgid "Here you may select a shading style for inequalities, color and width for equations. The shading <placeholder-1/> is only used for inequalities and is ignored for equations. To see overlapping inequalities they must use different styles. The <placeholder-2/> indicates the size of the line drawn for equations and the width of the border line for inequalities. For inequalities the width can be set to 0 to avoid drawing the border line."
@@ -2191,7 +2191,7 @@ msgstr "Nel riquadro in alto della casella puoi immettere il nome da assegnare a
 
 #. InsertPointSeriesDialog.xml:58(term)
 msgid "Coordinate type"
-msgstr "Tipo coordinate"
+msgstr "Tipo di coordinata"
 
 #. InsertPointSeriesDialog.xml:62(guilabel)
 msgid "Cartesian"
@@ -2227,7 +2227,7 @@ msgstr "E' possibile tracciare linee tra i marcatori. La linea sarà sempre dise
 
 #. InsertPointSeriesDialog.xml:98(guilabel)
 msgid "1D cubic spline"
-msgstr "Spline cubica 1D"
+msgstr "Spline 1D cubica"
 
 #. InsertPointSeriesDialog.xml:98(ulink)
 msgid "natural cubic spline"
@@ -2235,7 +2235,7 @@ msgstr "Spline cubica naturale"
 
 #. InsertPointSeriesDialog.xml:100(guilabel)
 msgid "2D cubic spline"
-msgstr "Spline cubica 2D"
+msgstr "Spline 2D cubica"
 
 #. InsertPointSeriesDialog.xml:101(guilabel)
 msgid "Half cosine"
@@ -2403,7 +2403,7 @@ msgstr "Una funzione polare r(t) è una equazione che, dato un angolo<placeholde
 
 #. InsertFunctionDialog.xml:45(term)
 msgid "Function equation"
-msgstr "Equazione funzione"
+msgstr "Equazione della funzione"
 
 #. InsertFunctionDialog.xml:47(para)
 msgid "Here you enter the equation for the function. This can be f(x), x(t),y(t) or r(t) depending on the function type. Under <placeholder-1/> you can see all the available variables, constants and functions, which may be used to draw the graphs."
@@ -2411,7 +2411,7 @@ msgstr "Immetti qui l'equazione della funzione. In base al tipo di funzione, l'e
 
 #. InsertFunctionDialog.xml:64(guilabel) InsertFunctionDialog.xml:66(guilabel) FAQ.xml:288(guilabel)
 msgid "Steps"
-msgstr "Passi"
+msgstr "Step"
 
 #. InsertFunctionDialog.xml:67(guilabel) InsertFunctionDialog.xml:99(guilabel) InsertFunctionDialog.xml:100(guilabel) InsertFunctionDialog.xml:101(guilabel)
 msgid "Draw type"
@@ -2481,7 +2481,7 @@ msgstr "Per la derivata della funzione, puoi selezionare intervallo, stile linea
 msgid "Hyperbolic"
 msgstr "Iperbolica"
 
-#. Hyperbolic.xml:11(primary) Hyperbolic.xml:104(primary)
+#. Hyperbolic.xml:11(primary) Hyperbolic.xml:110(primary)
 msgid "hyperbolic sine"
 msgstr "seno iperbolico"
 
@@ -2497,155 +2497,155 @@ msgstr "La funzione <placeholder-1/> calcola il seno iperbolico di <placeholder-
 msgid "Hyperbolic sine is defined as: <placeholder-1/>"
 msgstr "Il seno iperbolico è definito come: <placeholder-1/>"
 
-#. Hyperbolic.xml:42(primary) Hyperbolic.xml:134(primary)
+#. Hyperbolic.xml:44(primary) Hyperbolic.xml:142(primary)
 msgid "hyperbolic cosine"
 msgstr "coseno iperbolico"
 
-#. Hyperbolic.xml:43(para) FunctionList.xml:254(entry)
+#. Hyperbolic.xml:45(para) FunctionList.xml:254(entry)
 msgid "Returns the hyperbolic cosine of the argument."
 msgstr "Restituisce il coseno iperbolico dell'argomento."
 
-#. Hyperbolic.xml:52(para)
+#. Hyperbolic.xml:54(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr "La funzione<placeholder-1/> calcola il coseno iperbolico di <placeholder-2/>. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>."
 
-#. Hyperbolic.xml:56(para)
+#. Hyperbolic.xml:58(para)
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
 msgstr "Il coseno iperbolico è definito come: <placeholder-1/>"
 
-#. Hyperbolic.xml:73(primary) Hyperbolic.xml:164(primary)
+#. Hyperbolic.xml:77(primary) Hyperbolic.xml:174(primary)
 msgid "hyperbolic tangent"
 msgstr "tangente iperbolica"
 
-#. Hyperbolic.xml:74(para) FunctionList.xml:258(entry)
+#. Hyperbolic.xml:78(para) FunctionList.xml:258(entry)
 msgid "Returns the hyperbolic tangent of the argument."
 msgstr "Restituisce la tangente iperbolica dell'argomento."
 
-#. Hyperbolic.xml:83(para)
+#. Hyperbolic.xml:87(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> calcola la tangente iperbolica di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>."
 
-#. Hyperbolic.xml:87(para)
+#. Hyperbolic.xml:91(para)
 msgid "Hyperbolic tangent is defined as: <placeholder-1/>"
 msgstr "La tangente iperbolica è definita come: <placeholder-1/>"
 
-#. Hyperbolic.xml:105(primary)
+#. Hyperbolic.xml:111(primary)
 msgid "inverse hyperbolic sine"
 msgstr "seno iperbolico inverso"
 
-#. Hyperbolic.xml:106(para) FunctionList.xml:262(entry)
+#. Hyperbolic.xml:112(para) FunctionList.xml:262(entry)
 msgid "Returns the inverse hyperbolic sine of the argument."
 msgstr "Restituisce il seno iperbolico inverso dell'argomento."
 
-#. Hyperbolic.xml:115(para)
+#. Hyperbolic.xml:121(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic sine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> calcola il seno iperbolico inverso di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. <placeholder-7/> è l'inversa di <placeholder-8/>, ovvero <placeholder-9/>."
 
-#. Hyperbolic.xml:135(primary)
+#. Hyperbolic.xml:143(primary)
 msgid "inverse hyperbolic cosine"
 msgstr "coseno iperbolico inverso"
 
-#. Hyperbolic.xml:136(para) FunctionList.xml:266(entry)
+#. Hyperbolic.xml:144(para) FunctionList.xml:266(entry)
 msgid "Returns the inverse hyperbolic cosine of the argument."
 msgstr "Restituisce il coseno iperbolico inverso dell'argomento."
 
-#. Hyperbolic.xml:145(para)
+#. Hyperbolic.xml:153(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosine of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> calcola il coseno iperbolico inverso di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. <placeholder-7/> è l'inversa di <placeholder-8/>, ovvero <placeholder-9/>."
 
-#. Hyperbolic.xml:165(primary)
+#. Hyperbolic.xml:175(primary)
 msgid "inverse hyperbolic tangent"
 msgstr "tangente iperbolica inversa"
 
-#. Hyperbolic.xml:168(para) FunctionList.xml:270(entry)
+#. Hyperbolic.xml:178(para) FunctionList.xml:270(entry)
 msgid "Returns the inverse hyperbolic tangent of the argument."
 msgstr "Restituisce la tangente iperbolica inversa dell'argomento."
 
-#. Hyperbolic.xml:177(para)
+#. Hyperbolic.xml:187(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic tangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> calcola la tangente iperbolica inversa di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una<placeholder-5/> o una <placeholder-6/>. <placeholder-7/> è l'inversa di <placeholder-8/>, ovvero <placeholder-9/>."
 
-#. Hyperbolic.xml:196(primary) Hyperbolic.xml:290(primary)
+#. Hyperbolic.xml:208(primary) Hyperbolic.xml:308(primary)
 msgid "hyperbolic cosecant"
 msgstr "cosecante iperbolica"
 
-#. Hyperbolic.xml:197(para) FunctionList.xml:274(entry)
+#. Hyperbolic.xml:209(para) FunctionList.xml:274(entry)
 msgid "Returns the hyperbolic cosecant of the argument."
 msgstr "Restituisce la cosecante iperbolica dell'argomento."
 
-#. Hyperbolic.xml:206(para)
+#. Hyperbolic.xml:218(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> calcola la cosecante iperbolica di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una<placeholder-5/> o una <placeholder-6/>."
 
-#. Hyperbolic.xml:210(para)
+#. Hyperbolic.xml:222(para)
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
 msgstr "La cosecante iperbolica è definita come: <placeholder-1/>"
 
-#. Hyperbolic.xml:227(primary) Hyperbolic.xml:320(primary)
+#. Hyperbolic.xml:241(primary) Hyperbolic.xml:340(primary)
 msgid "hyperbolic secant"
 msgstr "secante iperbolica"
 
-#. Hyperbolic.xml:228(para) FunctionList.xml:278(entry)
+#. Hyperbolic.xml:242(para) FunctionList.xml:278(entry)
 msgid "Returns the hyperbolic secant of the argument."
 msgstr "Restituisce la secante iperbolica dell'argomento."
 
-#. Hyperbolic.xml:237(para)
+#. Hyperbolic.xml:251(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> calcola la cosecante iperbolica di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una<placeholder-5/> o una <placeholder-6/>."
 
-#. Hyperbolic.xml:241(para)
+#. Hyperbolic.xml:255(para)
 msgid "Hyperbolic secant is defined as: <placeholder-1/>"
 msgstr "La secante iperbolica è definita come: <placeholder-1/>"
 
-#. Hyperbolic.xml:258(primary) Hyperbolic.xml:350(primary)
+#. Hyperbolic.xml:274(primary) Hyperbolic.xml:372(primary)
 msgid "hyperbolic cotangent"
 msgstr "cotangente iperbolica"
 
-#. Hyperbolic.xml:259(para) FunctionList.xml:282(entry)
+#. Hyperbolic.xml:275(para) FunctionList.xml:282(entry)
 msgid "Returns the hyperbolic cotangent of the argument."
 msgstr "Restituisce la cotangente iperbolica dell'argomento."
 
-#. Hyperbolic.xml:268(para)
+#. Hyperbolic.xml:284(para)
 msgid "The <placeholder-1/> function calculates the hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> calcola la cotangente iperbolica di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>."
 
-#. Hyperbolic.xml:272(para)
+#. Hyperbolic.xml:288(para)
 msgid "Hyperbolic cotangent is defined as: <placeholder-1/>"
 msgstr "La cotangente iperbolica è definita come: <placeholder-1/>"
 
-#. Hyperbolic.xml:291(primary)
+#. Hyperbolic.xml:309(primary)
 msgid "inverse hyperbolic cosecant"
 msgstr "cosecante iperbolica inversa"
 
-#. Hyperbolic.xml:292(para) FunctionList.xml:286(entry)
+#. Hyperbolic.xml:310(para) FunctionList.xml:286(entry)
 msgid "Returns the inverse hyperbolic cosecant of the argument."
 msgstr "Restituisce la cosecante iperbolica inversa dell'argomento."
 
-#. Hyperbolic.xml:301(para)
+#. Hyperbolic.xml:319(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cosecant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> calcola la cosecante iperbolica inversa di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. <placeholder-7/> è l'inversa di <placeholder-8/>, ovvero <placeholder-9/>."
 
-#. Hyperbolic.xml:321(primary)
+#. Hyperbolic.xml:341(primary)
 msgid "inverse hyperbolic secant"
 msgstr "secante iperbolica inversa"
 
-#. Hyperbolic.xml:322(para) FunctionList.xml:290(entry)
+#. Hyperbolic.xml:342(para) FunctionList.xml:290(entry)
 msgid "Returns the inverse hyperbolic secant of the argument."
 msgstr "Restituisce la secante iperbolica inversa dell'argomento."
 
-#. Hyperbolic.xml:331(para)
+#. Hyperbolic.xml:351(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic secant of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr "La funzione <placeholder-1/> calcola la secante iperbolica inversa di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una<placeholder-5/> o una <placeholder-6/>. <placeholder-7/> è l'inversa di <placeholder-8/>, ovvero <placeholder-9/>."
 
-#. Hyperbolic.xml:351(primary)
+#. Hyperbolic.xml:373(primary)
 msgid "inverse hyperbolic cotangent"
 msgstr "cotangente iperbolica inversa"
 
-#. Hyperbolic.xml:352(para) FunctionList.xml:294(entry)
+#. Hyperbolic.xml:374(para) FunctionList.xml:294(entry)
 msgid "Returns the inverse hyperbolic cotangent of the argument."
 msgstr "Restituisce la cotangente iperbolica inversa dell'argomento."
 
-#. Hyperbolic.xml:361(para)
+#. Hyperbolic.xml:383(para)
 msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is the reverse of <placeholder-8/>, i.e. <placeholder-9/>. For real numbers <placeholder-10/> is undefined in the interval [-1;1]."
 msgstr "La funzione <placeholder-1/> calcola la cotangente iperbolica inversa di <placeholder-2/>. <placeholder-3/> può essere qualsiasi <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. <placeholder-7/> è l'inversa di <placeholder-8/>, ovvero <placeholder-9/>. Con numeri reali, <placeholder-10/> è indefinita nell'intervallo [-1;1]."
 
@@ -2683,7 +2683,7 @@ msgstr "All'avvio del programma vedrai la sottostante finestra principale. Essa 
 
 #. HowToUse.xml:23(guimenuitem)
 msgid "Customize toolbar..."
-msgstr "Personalizza barra strumenti..."
+msgstr "Personalizza barra degli strumenti..."
 
 #. HowToUse.xml:22(para)
 msgid "The toolbar may be customized by right clicking on the bar and selecting <placeholder-1/> from the popup menu. You can then customize the toolbar by dragging commands to and from the bar. The status bar at the bottom of the window shows tooltips or other information to the left and the coordinates located at the mouse pointer to the right."
@@ -3093,15 +3093,15 @@ msgstr "Restituisce il valore assoluto dell'argomento."
 msgid "Returns the angle of the argument in radians or degrees."
 msgstr "Restituisce l'angolo dell'argomento, in radianti o gradi."
 
-#. FunctionList.xml:340(entry) Complex.xml:76(para)
+#. FunctionList.xml:340(entry) Complex.xml:80(para)
 msgid "Returns the conjugate of the argument."
 msgstr "Restituisce la coniugata dell'argomento."
 
-#. FunctionList.xml:344(entry) Complex.xml:105(para)
+#. FunctionList.xml:344(entry) Complex.xml:111(para)
 msgid "Returns the real part of the argument."
 msgstr "Restituisce la parte reale dell'argomento."
 
-#. FunctionList.xml:348(entry) Complex.xml:133(para)
+#. FunctionList.xml:348(entry) Complex.xml:141(para)
 msgid "Returns the imaginary part of the argument."
 msgstr "Restituisce la parte immaginaria dell'argomento."
 
@@ -3432,6 +3432,10 @@ msgstr "Il cursore balzerà sul più vicino valore estremo della coordinata-y."
 #. EvaluateDialog.xml:46(para)
 msgid "When you click with the mouse on the graphing area you may choose what the cursor will snap to: <placeholder-1/>"
 msgstr "Facendo click con il mouse sull'area grafica puoi scegliere dove vuoi far balzare il cursore a:  <placeholder-1/>"
+
+#. EvaluateDialog.xml:102(title) EvaluateDialog.xml:107(guimenuitem)
+msgid "Area"
+msgstr "area"
 
 #. EvaluateDialog.xml:103(para)
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the definite integral for the selected function over a specified domain range. For standard functions, parametric functions and tangents the definite integral is the same as the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range."
@@ -3819,7 +3823,7 @@ msgstr "Finestre d'input"
 
 #. CustomFunctionsDialog.xml:8(title)
 msgid "Custom functions/constants"
-msgstr "Funzioni/costanti personalizzate"
+msgstr "Personalizza funzioni/costanti"
 
 #. CustomFunctionsDialog.xml:9(primary)
 msgid "custom function"
@@ -3909,43 +3913,43 @@ msgstr "valore numerico"
 msgid "The <placeholder-1/> function returns the absolute or numeric value of <placeholder-2/>, commonly written as |z|. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a positive real value."
 msgstr "La funzione <placeholder-1/> restituisce il valore numerico o assoluto di <placeholder-2/>, comunemente scritto così |z|. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. <placeholder-7/> restituisce sempre un numero positivo reale."
 
-#. Complex.xml:41(primary)
+#. Complex.xml:43(primary)
 msgid "argument"
 msgstr "argomento"
 
-#. Complex.xml:42(primary)
+#. Complex.xml:44(primary)
 msgid "angle"
 msgstr "angolo"
 
-#. Complex.xml:43(para)
+#. Complex.xml:45(para)
 msgid "Returns the argument of the parameter."
 msgstr "Restituisce l'argomento del parametro."
 
-#. Complex.xml:52(para)
+#. Complex.xml:54(para)
 msgid "The <placeholder-1/> function returns the argument or angle of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> always returns a real number. The result may be in <placeholder-8/> or degrees depending on the current settings. The angle is always between -&pi; and &pi;. If <placeholder-9/> is a real number, <placeholder-10/> is 0 for positive numbers and &pi; for negative numbers. <placeholder-11/> is undefined."
 msgstr "La funzione <placeholder-1/> restituisce l'argomento o l'angolo di <placeholder-2/>. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una<placeholder-5/> o una <placeholder-6/>. <placeholder-7/> restituisce sempre un numero reale. Il risultato può essere in <placeholder-8/> o in gradi in base alle impostazioni correnti. L'angolo è sempre compreso tra -&pi; e &pi;. Se <placeholder-9/> è un numero reale, <placeholder-10/> è 0 per numeri positivi e &pi; per quelli negativi. <placeholder-11/> è indefinita."
 
-#. Complex.xml:75(primary)
+#. Complex.xml:79(primary)
 msgid "conjugate"
 msgstr "coniugata"
 
-#. Complex.xml:85(para)
+#. Complex.xml:89(para)
 msgid "The <placeholder-1/> function returns the conjugate of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>. The function is defined as: <placeholder-7/>."
 msgstr "La funzione <placeholder-1/> restituisce la coniugata di <placeholder-2/>. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>. La funzione è definita come: <placeholder-7/>."
 
-#. Complex.xml:104(primary)
+#. Complex.xml:110(primary)
 msgid "real value"
 msgstr "valore reale"
 
-#. Complex.xml:114(para)
+#. Complex.xml:120(para)
 msgid "The <placeholder-1/> function returns the real part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> restituisce la parte reale di <placeholder-2/>. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una <placeholder-5/> o una <placeholder-6/>."
 
-#. Complex.xml:132(primary)
+#. Complex.xml:140(primary)
 msgid "imaginary value"
 msgstr "valore immaginario"
 
-#. Complex.xml:142(para)
+#. Complex.xml:150(para)
 msgid "The <placeholder-1/> function returns the imaginary part of <placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr "La funzione <placeholder-1/> restituisce la parte immaginaria di <placeholder-2/>. <placeholder-3/> può essere ogni <placeholder-4/> che valuta una<placeholder-5/> o una <placeholder-6/>."
 
@@ -4039,7 +4043,7 @@ msgstr "Questa è la distanza tra i trattini marcatori sull'asse selezionato, mo
 
 #. AxesDialog.xml:78(term) AxesDialog.xml:133(guilabel) AxesDialog.xml:151(guilabel)
 msgid "Grid unit"
-msgstr "Unità griglia"
+msgstr "Unità Griglia"
 
 #. AxesDialog.xml:80(para)
 msgid "This is the distance between the gridlines perpendicular to the axis. This is only used if grid lines are shown."
@@ -4279,7 +4283,7 @@ msgstr "Qui puoi cambiare la velocità del playback. La modifica riguarderà sol
 
 #. AnimateDialog.xml:84(term) AnimateDialog.xml:97(guimenuitem)
 msgid "Repeat"
-msgstr "Repeat"
+msgstr "Ripeti"
 
 #. AnimateDialog.xml:86(para)
 msgid "When checked the animation will continue playing. When finished it will start over again."
@@ -4337,183 +4341,175 @@ msgstr "logo"
 msgid "Libraries"
 msgstr "Librerie"
 
-#. Acknowledgements.xml:16(member)
+#. Acknowledgements.xml:17(member)
 msgid "Translation library."
 msgstr "Libreria di traduzione."
 
-#. Acknowledgements.xml:23(member)
+#. Acknowledgements.xml:26(member)
 msgid "Library for creating shell extensions."
 msgstr "Libreria per creare estensioni shell."
 
-#. Acknowledgements.xml:30(member)
+#. Acknowledgements.xml:35(member)
 msgid "Used to create PDF files."
 msgstr "Usato per creare file.PDF."
 
-#. Acknowledgements.xml:37(member)
+#. Acknowledgements.xml:44(member)
 msgid "Used for plugin support and advanced interaction."
 msgstr "Usato per il supporto ai pluging e per interazioni avanzate."
 
-#. Acknowledgements.xml:44(member)
+#. Acknowledgements.xml:53(member)
 msgid "Numerical library."
 msgstr "Libreria numerica."
 
-#. Acknowledgements.xml:51(member)
+#. Acknowledgements.xml:62(member)
 msgid "Peer-reviewed C++ library."
 msgstr "Peer-reviewed C++ library."
 
-#. Acknowledgements.xml:58(title)
+#. Acknowledgements.xml:70(title)
 msgid "Translations"
 msgstr "Traduzioni"
 
-#. Acknowledgements.xml:69(entry)
+#. Acknowledgements.xml:81(entry)
 msgid "Program"
 msgstr "Programma"
 
-#. Acknowledgements.xml:70(entry)
+#. Acknowledgements.xml:82(entry)
 msgid "Help file"
 msgstr "Guida"
 
-#. Acknowledgements.xml:71(entry)
-msgid "Translator(s)"
+#. Acknowledgements.xml:83(entry)
+msgid "Translators"
 msgstr "Traduttore(i)"
 
-#. Acknowledgements.xml:76(entry)
+#. Acknowledgements.xml:88(entry)
 msgid "Arabic"
 msgstr "Arabo"
 
-#. Acknowledgements.xml:77(entry) Acknowledgements.xml:84(entry) Acknowledgements.xml:91(entry) Acknowledgements.xml:98(entry) Acknowledgements.xml:105(entry) Acknowledgements.xml:112(entry) Acknowledgements.xml:119(entry) Acknowledgements.xml:120(entry) Acknowledgements.xml:126(entry) Acknowledgements.xml:133(entry) Acknowledgements.xml:134(entry) Acknowledgements.xml:140(entry) Acknowledgements.xml:147(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:154(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:161(entry) Acknowledgements.xml:168(entry) Acknowledgements.xml:175(entry) Acknowledgements.xml:181(entry) Acknowledgements.xml:182(entry) Acknowledgements.xml:188(entry) Acknowledgements.xml:195(entry) Acknowledgements.xml:202(entry) Acknowledgements.xml:209(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:244(entry) Acknowledgements.xml:251(entry) Acknowledgements.xml:252(entry) Acknowledgements.xml:258(entry) Acknowledgements.xml:259(entry) Acknowledgements.xml:265(entry) Acknowledgements.xml:272(entry) Acknowledgements.xml:279(entry)
+#. Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:118(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:138(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:150(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:157(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:190(entry) Acknowledgements.xml:197(entry) Acknowledgements.xml:204(entry) Acknowledgements.xml:205(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:257(entry) Acknowledgements.xml:271(entry) Acknowledgements.xml:278(entry) Acknowledgements.xml:285(entry) Acknowledgements.xml:297(entry) Acknowledgements.xml:298(entry) Acknowledgements.xml:311(entry) Acknowledgements.xml:312(entry) Acknowledgements.xml:323(entry) Acknowledgements.xml:335(entry) Acknowledgements.xml:342(entry)
 msgid "Yes"
 msgstr "Si"
 
-#. Acknowledgements.xml:78(entry) Acknowledgements.xml:85(entry) Acknowledgements.xml:92(entry) Acknowledgements.xml:99(entry) Acknowledgements.xml:106(entry) Acknowledgements.xml:113(entry) Acknowledgements.xml:127(entry) Acknowledgements.xml:141(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:210(entry) Acknowledgements.xml:217(entry) Acknowledgements.xml:224(entry) Acknowledgements.xml:231(entry) Acknowledgements.xml:238(entry) Acknowledgements.xml:245(entry) Acknowledgements.xml:266(entry) Acknowledgements.xml:273(entry) Acknowledgements.xml:280(entry)
+#. Acknowledgements.xml:90(entry) Acknowledgements.xml:97(entry) Acknowledgements.xml:104(entry) Acknowledgements.xml:111(entry) Acknowledgements.xml:125(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:191(entry) Acknowledgements.xml:198(entry) Acknowledgements.xml:217(entry) Acknowledgements.xml:224(entry) Acknowledgements.xml:231(entry) Acknowledgements.xml:238(entry) Acknowledgements.xml:250(entry) Acknowledgements.xml:272(entry) Acknowledgements.xml:279(entry) Acknowledgements.xml:286(entry) Acknowledgements.xml:324(entry) Acknowledgements.xml:336(entry) Acknowledgements.xml:343(entry)
 msgid "No"
 msgstr "No"
 
-#. Acknowledgements.xml:83(entry)
+#. Acknowledgements.xml:95(entry)
 msgid "Basque"
 msgstr "Basco"
 
-#. Acknowledgements.xml:90(entry)
-msgid "Chinese (Traditional)"
-msgstr "Ciinese (Traditionale)"
-
-#. Acknowledgements.xml:97(entry)
+#. Acknowledgements.xml:102(entry)
 msgid "Chinese (Simplified)"
 msgstr "Cinese (Semplificato)"
 
-#. Acknowledgements.xml:104(entry)
+#. Acknowledgements.xml:109(entry)
+msgid "Chinese (Traditional)"
+msgstr "Ciinese (Traditionale)"
+
+#. Acknowledgements.xml:116(entry)
 msgid "Croatian"
 msgstr "Croato"
 
-#. Acknowledgements.xml:111(entry)
+#. Acknowledgements.xml:123(entry)
 msgid "Czech"
 msgstr "Ceco"
 
-#. Acknowledgements.xml:118(entry)
+#. Acknowledgements.xml:136(entry)
 msgid "Danish"
 msgstr "Danese"
 
-#. Acknowledgements.xml:125(entry)
+#. Acknowledgements.xml:148(entry)
 msgid "Dutch"
 msgstr "Olandese"
 
-#. Acknowledgements.xml:132(entry)
+#. Acknowledgements.xml:155(entry)
 msgid "English"
 msgstr "Inglese"
 
-#. Acknowledgements.xml:139(entry)
+#. Acknowledgements.xml:162(entry)
 msgid "Finnish"
 msgstr "Finlandese"
 
-#. Acknowledgements.xml:146(entry)
+#. Acknowledgements.xml:169(entry)
 msgid "French"
 msgstr "Francese"
 
-#. Acknowledgements.xml:153(entry)
+#. Acknowledgements.xml:176(entry)
 msgid "German"
 msgstr "Tedesco"
 
-#. Acknowledgements.xml:160(entry)
+#. Acknowledgements.xml:189(entry)
 msgid "Greek"
 msgstr "Greco"
 
-#. Acknowledgements.xml:167(entry)
+#. Acknowledgements.xml:196(entry)
 msgid "Hungarian"
 msgstr "Ungherese"
 
-#. Acknowledgements.xml:174(entry)
-msgid "Hebrew"
-msgstr "Ebraico"
-
-#. Acknowledgements.xml:180(entry)
+#. Acknowledgements.xml:203(entry)
 msgid "Italian"
 msgstr "Italiano"
 
-#. Acknowledgements.xml:187(entry)
+#. Acknowledgements.xml:215(entry)
 msgid "Korean"
 msgstr "Coreano"
 
-#. Acknowledgements.xml:194(entry)
+#. Acknowledgements.xml:222(entry)
 msgid "Mongolian"
 msgstr "Mongolo"
 
-#. Acknowledgements.xml:201(entry)
+#. Acknowledgements.xml:229(entry)
 msgid "Norwegian"
 msgstr "Norvegese"
 
-#. Acknowledgements.xml:208(entry)
+#. Acknowledgements.xml:236(entry)
 msgid "Persian"
 msgstr "Persiano"
 
-#. Acknowledgements.xml:211(entry)
-msgid "Shayan Abyari &amp; Yashar PourMohammad"
-msgstr "Shayan Abyari &amp; Yashar PourMohammad"
-
-#. Acknowledgements.xml:215(entry)
+#. Acknowledgements.xml:248(entry)
 msgid "Polish"
 msgstr "Polacco"
 
-#. Acknowledgements.xml:222(entry)
+#. Acknowledgements.xml:255(entry)
 msgid "Portuguese (Brazil)"
 msgstr "Portoghese (Brasile)"
 
-#. Acknowledgements.xml:229(entry)
+#. Acknowledgements.xml:270(entry)
 msgid "Portuguese (Portugal)"
 msgstr "Portoghese (Portogallo)"
 
-#. Acknowledgements.xml:236(entry)
+#. Acknowledgements.xml:277(entry)
 msgid "Russian"
 msgstr "Russo"
 
-#. Acknowledgements.xml:243(entry)
+#. Acknowledgements.xml:284(entry)
 msgid "Serbian"
 msgstr "Serbo"
 
-#. Acknowledgements.xml:250(entry)
+#. Acknowledgements.xml:296(entry)
 msgid "Slovenian"
 msgstr "Sloveno"
 
-#. Acknowledgements.xml:257(entry)
+#. Acknowledgements.xml:310(entry)
 msgid "Spanish"
 msgstr "Spagnolo"
 
-#. Acknowledgements.xml:264(entry)
+#. Acknowledgements.xml:322(entry)
 msgid "Swedish"
 msgstr "Svedese"
 
-#. Acknowledgements.xml:271(entry)
+#. Acknowledgements.xml:334(entry)
 msgid "Turkish"
 msgstr "Turco"
 
-#. Acknowledgements.xml:278(entry)
+#. Acknowledgements.xml:341(entry)
 msgid "Vietnamese"
 msgstr "Vietnamita"
 
-#. Acknowledgements.xml:290(title)
+#. Acknowledgements.xml:353(title)
 msgid "Miscellaneous"
 msgstr "Miscellanea"
 
-#. Acknowledgements.xml:291(para)
+#. Acknowledgements.xml:354(para)
 msgid "The icon for Graph was designed by <placeholder-1/>."
 msgstr "L'icona di Graph è stata disegnata con <placeholder-1/>."
 
@@ -4524,3 +4520,8 @@ msgstr "traduttore-credits"
 msgid "Translator:"
 msgstr "Traduttore:"
 
+#~ msgid "Hebrew"
+#~ msgstr "Ebraico"
+
+#~ msgid "Shayan Abyari &amp; Yashar PourMohammad"
+#~ msgstr "Shayan Abyari &amp; Yashar PourMohammad"

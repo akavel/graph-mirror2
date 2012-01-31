@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-12-22 21:35Romance Standard Time\n"
+"POT-Creation-Date: 2012-01-17 00:14Romance Standard Time\n"
 "PO-Revision-Date: 2011-11-19 11:38+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -705,7 +705,7 @@ msgstr "Funkcija <placeholder-1/> izračuna logaritem  argumenta <placeholder-2/
 
 #. Plugins.xml:4(title) Plugins.xml:13(title) 
 msgid "Plugins"
-msgstr "Vključki"
+msgstr "Vtičniki"
 
 #. Plugins.xml:5(primary) 
 msgid "plugins"
@@ -861,7 +861,7 @@ msgstr "To pokaže vse jezike, v katere je program preveden. Izbrani jezik bo pr
 
 #. OptionsDialog.xml:78(term) 
 msgid "Custom decimal separator"
-msgstr "Lasten decimalni separator"
+msgstr "Lastna decimalna vejica"
 
 #. OptionsDialog.xml:80(para) 
 msgid "Decimal separator used when data are exported to files and the clipboard. When disabled the decimal separator from the Windows Regional settings is used. This is not used for expressions entered into Graph, which always use a dot as decimal separator."
@@ -997,7 +997,7 @@ msgstr "Objekt..."
 
 #. OLE.xml:43(guilabel) 
 msgid "Graph system"
-msgstr "Graph sistem"
+msgstr "Graf sistem"
 
 #. OLE.xml:43(guilabel) 
 msgid "Object type"
@@ -1341,7 +1341,7 @@ msgstr "To bo spremenilo nastavitve osi, da bodo prikazani vsi izbrani deli <pla
 
 #. MenuItems.xml:546(guimenuitem) 
 msgid "Fit all"
-msgstr "Vse točke"
+msgstr "Zajemi vse"
 
 #. MenuItems.xml:550(para) 
 msgid "This will change the axes settings to show all parts of all the elements in the <placeholder-1/>."
@@ -1357,7 +1357,7 @@ msgstr "Računa razdaljo vzdolž poti med dvema točkama na označenem grafu."
 
 #. MenuItems.xml:577(guimenuitem) FAQ.xml:222(guimenuitem) 
 msgid "Integrate"
-msgstr "Ploščina"
+msgstr "Integriraj"
 
 #. MenuItems.xml:582(para) 
 msgid "Calculates the definite integral for a specified domain range. This is the same as the signed area between the graph and the x-axis."
@@ -1421,7 +1421,7 @@ msgstr "Prikazalo se bo nekaj namigov o optimalni uporabi Grapha in določene fu
 
 #. MenuItems.xml:698(guimenuitem) 
 msgid "Graph web site"
-msgstr "Spletna stran programa Graph"
+msgstr "Spletna strana Graph-a"
 
 #. MenuItems.xml:702(para) 
 msgid "Shows the web site for Graph in your default web browser."
@@ -2037,7 +2037,7 @@ msgstr "Tu lahko izberete barvo senčenja."
 
 #. InsertShadingDialog.xml:164(term) 
 msgid "Mark border"
-msgstr "Označi mejo"
+msgstr "Označi rob"
 
 #. InsertShadingDialog.xml:166(para) 
 msgid "Check this to draw a line around the border of the shading. Uncheck it to leave the shading without a border, which is useful if you want two shadings to look as one."
@@ -2197,7 +2197,7 @@ msgstr "Tip koordinat"
 
 #. InsertPointSeriesDialog.xml:62(guilabel) 
 msgid "Cartesian"
-msgstr "Kartezični"
+msgstr "Kartezijski"
 
 #. InsertPointSeriesDialog.xml:60(para) 
 msgid "You need to choose between the type of coordinates used for the points. <placeholder-1/> is used when you want to specify (x,y)-coordinates. <placeholder-2/> is used when you want to specify (&theta;,r)-coordinates, where <emphasis>&theta;</emphasis> is the angle and <emphasis>r</emphasis> is the distance from the origin. The angle <emphasis>&theta;</emphasis> is in <placeholder-3/> or degrees depending on the current setting."
@@ -2229,7 +2229,7 @@ msgstr "Med oznakami lahko narišete črto. Črta bo narisana med točkami v ist
 
 #. InsertPointSeriesDialog.xml:98(guilabel) 
 msgid "1D cubic spline"
-msgstr "1D kubični zlepek"
+msgstr "1D kubični zlepki"
 
 #. InsertPointSeriesDialog.xml:98(ulink) 
 msgid "natural cubic spline"
@@ -2237,7 +2237,7 @@ msgstr "naravni kubični zlepek"
 
 #. InsertPointSeriesDialog.xml:100(guilabel) 
 msgid "2D cubic spline"
-msgstr "2D kubični zlepek"
+msgstr "2D kubični zlepki"
 
 #. InsertPointSeriesDialog.xml:101(guilabel) 
 msgid "Half cosine"
@@ -4262,7 +4262,7 @@ msgstr "Informacije o sliki"
 
 #. AnimateDialog.xml:56(guilabel) 
 msgid "Frames/second"
-msgstr "Slik/sekundo"
+msgstr "Sličic/sekundo"
 
 #. AnimateDialog.xml:53(para) 
 msgid "You can specify the image size of the animation. This will affect the file size and the time it takes to create the animation. The <placeholder-1/> indicates the default speed of the animation. Most players will be able to adjust the speed when the animation is played."
@@ -4306,7 +4306,7 @@ msgstr "To bo shranilo animacijo kot Audio Video Interleave (avi) datoteko, ki j
 
 #. AnimateDialog.xml:112(term) AnimateDialog.xml:126(guimenuitem) 
 msgid "Save frame..."
-msgstr "Shrani sliko..."
+msgstr "Shrani sličico..."
 
 #. AnimateDialog.xml:114(para) 
 msgid "This will save the currently shown frame as a bitmap file. This can be either Windows Bitmap (bmp), Portable Network Graphics (png) or Joint Photographic Experts Group (jpeg)."
@@ -4314,7 +4314,7 @@ msgstr "To bo shranilo trenutno prikazano sliko kot bitno sliko. Slika je lahko 
 
 #. AnimateDialog.xml:122(term) 
 msgid "Save all frames..."
-msgstr "Shrani vse slike..."
+msgstr "Shrani vse okvirje..."
 
 #. AnimateDialog.xml:124(para) 
 msgid "This will save all frames as single bitmap files. This is the same as repeating <placeholder-1/> for each frame in the animation."
@@ -4389,11 +4389,11 @@ msgstr "Prevajalec (-ci)"
 msgid "Arabic"
 msgstr "Arabsko"
 
-#. Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:118(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:136(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:176(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:203(entry) Acknowledgements.xml:204(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:236(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:255(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:270(entry) Acknowledgements.xml:277(entry) Acknowledgements.xml:284(entry) Acknowledgements.xml:296(entry) Acknowledgements.xml:297(entry) Acknowledgements.xml:310(entry) Acknowledgements.xml:311(entry) Acknowledgements.xml:322(entry) Acknowledgements.xml:334(entry) Acknowledgements.xml:341(entry) 
+#. Acknowledgements.xml:89(entry) Acknowledgements.xml:96(entry) Acknowledgements.xml:103(entry) Acknowledgements.xml:110(entry) Acknowledgements.xml:117(entry) Acknowledgements.xml:118(entry) Acknowledgements.xml:124(entry) Acknowledgements.xml:137(entry) Acknowledgements.xml:138(entry) Acknowledgements.xml:149(entry) Acknowledgements.xml:150(entry) Acknowledgements.xml:156(entry) Acknowledgements.xml:157(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:170(entry) Acknowledgements.xml:171(entry) Acknowledgements.xml:177(entry) Acknowledgements.xml:178(entry) Acknowledgements.xml:190(entry) Acknowledgements.xml:197(entry) Acknowledgements.xml:204(entry) Acknowledgements.xml:205(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:256(entry) Acknowledgements.xml:257(entry) Acknowledgements.xml:271(entry) Acknowledgements.xml:278(entry) Acknowledgements.xml:285(entry) Acknowledgements.xml:297(entry) Acknowledgements.xml:298(entry) Acknowledgements.xml:311(entry) Acknowledgements.xml:312(entry) Acknowledgements.xml:323(entry) Acknowledgements.xml:335(entry) Acknowledgements.xml:342(entry) 
 msgid "Yes"
 msgstr "Da"
 
-#. Acknowledgements.xml:90(entry) Acknowledgements.xml:97(entry) Acknowledgements.xml:104(entry) Acknowledgements.xml:111(entry) Acknowledgements.xml:125(entry) Acknowledgements.xml:163(entry) Acknowledgements.xml:190(entry) Acknowledgements.xml:197(entry) Acknowledgements.xml:216(entry) Acknowledgements.xml:223(entry) Acknowledgements.xml:230(entry) Acknowledgements.xml:237(entry) Acknowledgements.xml:249(entry) Acknowledgements.xml:271(entry) Acknowledgements.xml:278(entry) Acknowledgements.xml:285(entry) Acknowledgements.xml:323(entry) Acknowledgements.xml:335(entry) Acknowledgements.xml:342(entry) 
+#. Acknowledgements.xml:90(entry) Acknowledgements.xml:97(entry) Acknowledgements.xml:104(entry) Acknowledgements.xml:111(entry) Acknowledgements.xml:125(entry) Acknowledgements.xml:164(entry) Acknowledgements.xml:191(entry) Acknowledgements.xml:198(entry) Acknowledgements.xml:217(entry) Acknowledgements.xml:224(entry) Acknowledgements.xml:231(entry) Acknowledgements.xml:238(entry) Acknowledgements.xml:250(entry) Acknowledgements.xml:272(entry) Acknowledgements.xml:279(entry) Acknowledgements.xml:286(entry) Acknowledgements.xml:324(entry) Acknowledgements.xml:336(entry) Acknowledgements.xml:343(entry) 
 msgid "No"
 msgstr "Ne"
 
@@ -4417,103 +4417,103 @@ msgstr "Hrvaško"
 msgid "Czech"
 msgstr "Češko"
 
-#. Acknowledgements.xml:135(entry) 
+#. Acknowledgements.xml:136(entry) 
 msgid "Danish"
 msgstr "Dansko"
 
-#. Acknowledgements.xml:147(entry) 
+#. Acknowledgements.xml:148(entry) 
 msgid "Dutch"
 msgstr "Nizozemsko"
 
-#. Acknowledgements.xml:154(entry) 
+#. Acknowledgements.xml:155(entry) 
 msgid "English"
 msgstr "Angleško"
 
-#. Acknowledgements.xml:161(entry) 
+#. Acknowledgements.xml:162(entry) 
 msgid "Finnish"
 msgstr "Finsko"
 
-#. Acknowledgements.xml:168(entry) 
+#. Acknowledgements.xml:169(entry) 
 msgid "French"
 msgstr "Francosko"
 
-#. Acknowledgements.xml:175(entry) 
+#. Acknowledgements.xml:176(entry) 
 msgid "German"
 msgstr "Nemško"
 
-#. Acknowledgements.xml:188(entry) 
+#. Acknowledgements.xml:189(entry) 
 msgid "Greek"
 msgstr "Grško"
 
-#. Acknowledgements.xml:195(entry) 
+#. Acknowledgements.xml:196(entry) 
 msgid "Hungarian"
 msgstr "Madžarsko"
 
-#. Acknowledgements.xml:202(entry) 
+#. Acknowledgements.xml:203(entry) 
 msgid "Italian"
 msgstr "Italijansko"
 
-#. Acknowledgements.xml:214(entry) 
+#. Acknowledgements.xml:215(entry) 
 msgid "Korean"
 msgstr "Korejsko"
 
-#. Acknowledgements.xml:221(entry) 
+#. Acknowledgements.xml:222(entry) 
 msgid "Mongolian"
 msgstr "Mongolsko"
 
-#. Acknowledgements.xml:228(entry) 
+#. Acknowledgements.xml:229(entry) 
 msgid "Norwegian"
 msgstr "Norveško"
 
-#. Acknowledgements.xml:235(entry) 
+#. Acknowledgements.xml:236(entry) 
 msgid "Persian"
 msgstr "Iransko"
 
-#. Acknowledgements.xml:247(entry) 
+#. Acknowledgements.xml:248(entry) 
 msgid "Polish"
 msgstr "Poljsko"
 
-#. Acknowledgements.xml:254(entry) 
+#. Acknowledgements.xml:255(entry) 
 msgid "Portuguese (Brazil)"
 msgstr "Portugalsko (Brazilija)"
 
-#. Acknowledgements.xml:269(entry) 
+#. Acknowledgements.xml:270(entry) 
 msgid "Portuguese (Portugal)"
 msgstr "Portugalsko (Portugalska)"
 
-#. Acknowledgements.xml:276(entry) 
+#. Acknowledgements.xml:277(entry) 
 msgid "Russian"
 msgstr "Rusko"
 
-#. Acknowledgements.xml:283(entry) 
+#. Acknowledgements.xml:284(entry) 
 msgid "Serbian"
 msgstr "Srbsko"
 
-#. Acknowledgements.xml:295(entry) 
+#. Acknowledgements.xml:296(entry) 
 msgid "Slovenian"
 msgstr "Slovensko"
 
-#. Acknowledgements.xml:309(entry) 
+#. Acknowledgements.xml:310(entry) 
 msgid "Spanish"
 msgstr "Špansko"
 
-#. Acknowledgements.xml:321(entry) 
+#. Acknowledgements.xml:322(entry) 
 msgid "Swedish"
 msgstr "Švedsko"
 
-#. Acknowledgements.xml:333(entry) 
+#. Acknowledgements.xml:334(entry) 
 msgid "Turkish"
 msgstr "Turško"
 
-#. Acknowledgements.xml:340(entry) 
+#. Acknowledgements.xml:341(entry) 
 msgid "Vietnamese"
 msgstr "Vietnamsko"
 
-#. Acknowledgements.xml:352(title) 
+#. Acknowledgements.xml:353(title) 
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#. Acknowledgements.xml:353(para) 
+#. Acknowledgements.xml:354(para) 
 msgid "The icon for Graph was designed by <placeholder-1/>."
 msgstr "Ikono programa Graph je izdelal <placeholder-1/>."
 
