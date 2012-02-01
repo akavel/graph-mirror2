@@ -556,7 +556,7 @@ void TFuncData::HandleParseError(const EParseError &E, const wchar_t* Where, uns
 	if(*Where == ',')
 		throw EParseError(ecCommaError, Pos);
 
-	if(!std::isalnum(*Where) && ValidChars.find_first_of(*Where) == std::wstring::npos)
+	if(!std::isalnum(*Where) && ValidChars.find_first_of(*Where) == std::wstring::npos && *Where != L'\0')
 		throw EParseError(ecUnknownChar, Pos, std::wstring(1, *Where));
 
 	throw EParseError(E.ErrorCode, Pos, E.Str);

@@ -529,6 +529,7 @@ void Test()
   TestError("round x", 1.2345, ecArgCountError);
 	TestError("round(x)", 1.2345, ecArgCountError);
 	Test("round(x, 0)", 1.2345, 1);
+  TestError("sqrt(x", 0, ecNoEndPar);
 
 	//Implied multiplication
   Test("10sin(pi/2)x", 10, 100);
