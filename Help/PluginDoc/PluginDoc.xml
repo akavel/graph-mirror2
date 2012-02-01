@@ -3,7 +3,7 @@
 <!ENTITY theta  "<markup role='symbolfont'>&#x003B8;</markup>"> <!-- GREEK SMALL LETTER THETA -->
 ]>
 <book id="Plugin" lang="en" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Script Engine Documentation for Graph</title>
+	<title>Scripting Engine Documentation for Graph</title>
 	<subtitle>
 		<mediaobject>
 	  	<imageobject role="fo"><imagedata fileref="Graph_Icon.svg" scale="200"/></imageobject>
@@ -16,7 +16,7 @@
 		<authorgroup>
 		</authorgroup>
 		<copyright>
-			<year>2011</year>
+			<year>2012</year>
 			<holder>Ivan Johansen</holder>
 		</copyright>
 	</bookinfo>
