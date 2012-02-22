@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2011-12-22 21:12\n"
-"PO-Revision-Date: 2012-01-09 14:56+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2012-02-21 16:02+0100\n"
+"Last-Translator: Pavel Simerka <pavel.simerka@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -216,7 +215,7 @@ msgstr "Výpočty"
 
 #. Form1..ActionManager........("File")..Caption
 msgid "Plugins"
-msgstr "Pluginy"
+msgstr "Doplňky"
 
 #. Form1..ActionManager........("File")....("Import")..Caption
 msgid "Internet"
@@ -263,7 +262,7 @@ msgstr "Otevřít..."
 
 #. Form1..ActionManager..OpenAction("Open...")..Hint
 msgid "Read a coordinate system from a file."
-msgstr "Načíst soustavu souřadnic a ze souboru."
+msgstr "Načíst soustavu souřadnic ze souboru."
 
 #. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
@@ -590,7 +589,7 @@ msgstr "Otevřít soubor nápovědy."
 
 #. Form1..ActionManager..ListAction("List of functions")..Caption
 msgid "List of functions"
-msgstr "Seznam funkcí"
+msgstr "Přehled funkcí"
 
 #. Form1..ActionManager..ListAction("List of functions")..Hint
 msgid "Show a list of built-in functions that can be used for graphing."
@@ -2010,7 +2009,7 @@ msgstr "Opakovat přehrávání animace až do manuálního ukončení"
 
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")..Caption
 msgid "Auto reverse"
-msgstr "Automatické převinutí"
+msgstr "Automatické přehrání zpět"
 
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
 msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
@@ -3155,7 +3154,7 @@ msgstr "Písmo \"%s\" neexistuje. Bude použito standardní písmo."
 
 #. Description of grf file
 msgid "Graph system"
-msgstr "Graph "
+msgstr "Graf programu Graph"
 
 #. Menu item shown in OLE client to open a Graph system object in Graph
 msgid "Open"
@@ -3758,18 +3757,13 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgid "Integrate"
 #~ msgstr "Internet"
 
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Obsah oblasti nebo délka křivky vypočítaná pro daný rozsah pomocí "
-#~ "Simpsonova pravidla."
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Obsah oblasti nebo délka křivky vypočítaná pro daný rozsah pomocí Simpsonova pravidla."
 
 #~ msgid "Extremum"
 #~ msgstr "Extrém"
 
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
+#~ msgid "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Toto je hodnota druhé derivace funkce pro zadanou hodnotu."
 
 #~ msgid "Zoom in."
@@ -3828,8 +3822,7 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgstr "Otevřete soubor %s."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-#~ msgstr ""
-#~ "Textové soubory [*.txt; *.csv]|*.txt;*.csv|Všechny soubory [*.*]|*.*"
+#~ msgstr "Textové soubory [*.txt; *.csv]|*.txt;*.csv|Všechny soubory [*.*]|*.*"
 
 #~ msgid "Calculate area"
 #~ msgstr "Obsah oblasti"
@@ -3840,12 +3833,8 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Chyba odpovědi protokolu %s"
 
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "Návrhy pro další verze, hlášení o chybách a komentáře můžete posílat na "
-#~ "adresu graph@padowan.dk"
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Návrhy pro další verze, hlášení o chybách a komentáře můžete posílat na adresu graph@padowan.dk"
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Umístění obrázku do středu stránky."
@@ -3907,12 +3896,8 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgid "Med Gray"
 #~ msgstr "Šedá"
 
-#~ msgid ""
-#~ "Insert a text label (select and click in the main window where you want "
-#~ "the label)."
-#~ msgstr ""
-#~ "Vložit textový popis (vyberte a v hlavním okně klepněte na umístění, kam "
-#~ "chcete popis vložit)."
+#~ msgid "Insert a text label (select and click in the main window where you want the label)."
+#~ msgstr "Vložit textový popis (vyberte a v hlavním okně klepněte na umístění, kam chcete popis vložit)."
 
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Vyjmout vybraný text a vložit ho do schránky."
@@ -3962,8 +3947,7 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ "Pro tuto chybu nelze nelézt chybovou zprávu."
 
 #~ msgid "This error should not occur. Please report this to the programmer."
-#~ msgstr ""
-#~ "Tato chyba by se neměla vyskytovat. Ohlašte ji prosím autorovi programu."
+#~ msgstr "Tato chyba by se neměla vyskytovat. Ohlašte ji prosím autorovi programu."
 
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Byla dosažena největší délka textu."
