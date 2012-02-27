@@ -673,9 +673,9 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
           NewLabel->Update();
           NewLabel->UpdateRect(Image2->Left, Image2->Top); //Needed so we don't have to wait for label to be redrawn
           MovingLabel.reset();
+          Data.SetModified();
         }
 
-        Data.SetModified();
         UpdateMenu();
         Redraw();
         SetCursorState(csIdle);
