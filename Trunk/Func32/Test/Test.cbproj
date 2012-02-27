@@ -22,6 +22,8 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<LinkPackageStatics>rtl.lib</LinkPackageStatics>
+			<AllPackageLibs>rtl.lib</AllPackageLibs>
 			<ILINK_StackReserveSize>0x00400000</ILINK_StackReserveSize>
 			<ILINK_LibraryPath>..\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>

@@ -23,8 +23,8 @@ __fastcall TForm15::TForm15(TComponent* Owner)
         : TForm(Owner), Func(NULL)
 {
 	ScaleForm(this);
-	SetAccelerators(this);
   TranslateProperties(this);
+	SetAccelerators(this);
   MoveControl(Edit1, Label1);
   MoveLabel(Edit2, Label2);
 	Edit3->Left = Edit1->Left;
