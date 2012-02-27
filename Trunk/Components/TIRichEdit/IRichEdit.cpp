@@ -112,8 +112,9 @@ void __fastcall TIRichEdit::SetTransparent(bool Value)
 //---------------------------------------------------------------------------
 void TIRichEdit::SetRichText(const AnsiString &Str)
 {
-  std::auto_ptr<TStringStream> Stream(new TStringStream(RawByteString(Str)));
-  Lines->LoadFromStream(Stream.get());
+  //Using Lines->LoadFromStream seams to cause some trouble with OLE objects in some cases.
+  SETTEXTEX SetTextEx = {ST_DEFAULT, CP_ACP};
+  SendMessage(Handle, EM_SETTEXTEX, (WPARAM)&SetTextEx, (LPARAM)Str.c_str());
 }
 //---------------------------------------------------------------------------
 AnsiString TIRichEdit::GetRichText()
