@@ -503,6 +503,7 @@ bool TRichEditOle::OpenObject()
   {
     RECT Rect = RichEdit->ClientRect;
     HRESULT Result = LOG_FUNCTION_CALL(Obj.poleobj->DoVerb(OLEIVERB_OPEN, NULL, GetClientSite(), 0, RichEdit->Handle, &Rect));
+    Obj.poleobj->Release();
     return Result == S_OK;
   }
   return false;
