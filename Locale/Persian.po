@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-11-20 13:38+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -556,6 +556,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "محاسبه طول مسیر بین دو نقطه نتخابی از منحنی."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr ""
 
@@ -2703,12 +2705,6 @@ msgstr "انتخاب تابع تابع یا مماس برای ارزیابی."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "انتخاب محل مکان نما به هنگام کلیک روی تصویر."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "اینترنت"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "وارد کردن مختصات شروع یا نمایش بازه ای روی نمودار با ماوس."
@@ -3302,7 +3298,7 @@ msgid "Abort printing?"
 msgstr "لغو چاپ؟"
 
 #, fuzzy
-msgid "Calculate definite integral"
+msgid "Calculate area"
 msgstr "محاسبه جدول"
 
 msgid "Calculate length of path"
@@ -3765,6 +3761,14 @@ msgstr "انتخاب تعداد رونوشت ها برای چاپ."
 #. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "وارد کردن درصد اندازه اصلی."
+
+#, fuzzy
+#~ msgid "Integral"
+#~ msgstr "اینترنت"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "محاسبه جدول"
 
 #, fuzzy
 #~ msgid "Integrate"

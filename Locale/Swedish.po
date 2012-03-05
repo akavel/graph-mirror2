@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:25+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
@@ -557,6 +557,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Beräkna grafens längd mellan två punkter på grafen."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Area"
 
@@ -2690,11 +2692,6 @@ msgstr "Välj en funktion eller tangent att utvärdera."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Välj var markören skall placeras då du klickar på bilden."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integral"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Skriv in startkoordinat, eller markera utbredningsområde i koordinatsystemet med musen."
@@ -3284,8 +3281,8 @@ msgstr "Kontrollerar om det finns en ny version..."
 msgid "Abort printing?"
 msgstr "Avbryt utskrift?"
 
-msgid "Calculate definite integral"
-msgstr "Beräkna bestämd integral"
+msgid "Calculate area"
+msgstr "Beräkna area"
 
 msgid "Calculate length of path"
 msgstr "Beräkna grafens längd."
@@ -3752,6 +3749,12 @@ msgstr "Välj antal kopior att skriva ut."
 msgid "Enter percent of original size."
 msgstr "Välj procent av originalstorlek."
 
+#~ msgid "Integral"
+#~ msgstr "Integral"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Beräkna bestämd integral"
+
 #~ msgid "Integrate"
 #~ msgstr "Integrera"
 
@@ -3821,9 +3824,6 @@ msgstr "Välj procent av originalstorlek."
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Textfiler [*.txt; *.csv]|*.txt;*.csv|Alla filer [*.*]|*.*"
 
-#~ msgid "Calculate area"
-#~ msgstr "Beräkna area"
-
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Servern svarade med meddelandet '%s'"
 
@@ -3839,50 +3839,73 @@ msgstr "Välj procent av originalstorlek."
 # Funktion-menyn
 #~ msgid "Insert shade..."
 #~ msgstr "Skuggning..."
+
 #~ msgid "Shade"
 #~ msgstr "Skuggning"
+
 #~ msgid "Black"
 #~ msgstr "Svart"
+
 #~ msgid "Maroon"
 #~ msgstr "Rödbrun"
+
 #~ msgid "Green"
 #~ msgstr "Grön"
+
 #~ msgid "Olive"
 #~ msgstr "Olivfärgad"
+
 #~ msgid "Navy"
 #~ msgstr "Marinblå"
+
 #~ msgid "Purple"
 #~ msgstr "Mörklila"
+
 #~ msgid "Gray"
 #~ msgstr "Grå"
+
 #~ msgid "Silver"
 #~ msgstr "Silver"
+
 #~ msgid "Red"
 #~ msgstr "Röd"
+
 #~ msgid "Lime"
 #~ msgstr "Limegrön"
+
 #~ msgid "Yellow"
 #~ msgstr "Gul"
+
 #~ msgid "Blue"
 #~ msgstr "Blå"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Cerise"
+
 #~ msgid "Aqua"
 #~ msgstr "Akvamarin"
+
 #~ msgid "White"
 #~ msgstr "Vit"
+
 #~ msgid "Money Green"
 #~ msgstr "Mintgrön"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Himmelsblå"
+
 #~ msgid "Med Gray"
 #~ msgstr "Medelgrå"
+
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Lägg till textetikett (välj och klicka i huvudfönstret där du vill placera etiketten)."
+
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Klipp ur vald text till Windows urklipp."
+
 #~ msgid "Open an animation file."
 #~ msgstr "Öppna en animeringsfil."
+
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version"

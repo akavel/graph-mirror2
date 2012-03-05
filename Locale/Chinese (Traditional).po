@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:19+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -573,6 +573,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "計算曲線上兩點之間的路徑長度"
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "面積"
 
@@ -2762,11 +2764,6 @@ msgstr "選擇函數或切線進行求解"
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "選擇點選圖片後的游標放置位置。"
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "積分"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "輸入起始座標或用滑鼠標示圖片範圍"
@@ -3374,8 +3371,8 @@ msgstr "檢查新版本"
 msgid "Abort printing?"
 msgstr "取消列印嗎?"
 
-msgid "Calculate definite integral"
-msgstr "計算有限積分"
+msgid "Calculate area"
+msgstr "計算面積"
 
 msgid "Calculate length of path"
 msgstr "計算路徑長度"
@@ -3858,6 +3855,12 @@ msgstr "選擇列印數目:"
 msgid "Enter percent of original size."
 msgstr "輸入原尺寸百分比率"
 
+#~ msgid "Integral"
+#~ msgstr "積分"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "計算有限積分"
+
 #~ msgid "Integrate"
 #~ msgstr "積分"
 
@@ -3926,9 +3929,6 @@ msgstr "輸入原尺寸百分比率"
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "文字 [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "計算面積"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "主機回應的訊息為 '%s'"

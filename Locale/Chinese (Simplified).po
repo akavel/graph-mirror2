@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:19+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -573,6 +573,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "计算曲线上两点之间的路径长度"
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "面积"
 
@@ -2770,12 +2772,6 @@ msgstr "选择函数或切线进行求解"
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "选择点选图像后的游标放置位置。"
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "网络"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "输入起始坐标或用鼠标标示图像范围"
@@ -3391,9 +3387,8 @@ msgstr "检查新版本"
 msgid "Abort printing?"
 msgstr "取消打印吗?"
 
-#, fuzzy
-msgid "Calculate definite integral"
-msgstr "计算表格"
+msgid "Calculate area"
+msgstr "计算面积"
 
 msgid "Calculate length of path"
 msgstr "计算路径长度"
@@ -3878,6 +3873,14 @@ msgid "Enter percent of original size."
 msgstr "输入原尺寸百分比例"
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "网络"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "计算表格"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "网络"
 
@@ -3889,9 +3892,6 @@ msgstr "输入原尺寸百分比例"
 
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "利用 Simpson's 公式计算给定范围的面积或者路径长度。"
-
-#~ msgid "Calculate area"
-#~ msgstr "计算面积"
 
 #~ msgid "Calculates the area under the path of the selected function."
 #~ msgstr "计算所选择函数路径下方的面积"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Граф\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2007-05-08 22:39+0800\n"
 "Last-Translator: Батнасан <bat_nasan@mail.mn>\n"
 "Language-Team: Батнасан <baagiibat@yahoo.com>\n"
@@ -580,6 +580,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Муруй дээр өгөгдсөн 2 цэгийн хоорондох замын уртыг олно."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 #, fuzzy
 msgid "Area"
 msgstr "Талбай"
@@ -2791,12 +2793,6 @@ msgstr "Функц болон шүргэгчийн тэгшитгэлийг со
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Байрлуулах зургаа сонгон хулганаар товш."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "Интернэт"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -3408,9 +3404,8 @@ msgstr "Шинэ хувилбарыг шалгаж байна."
 msgid "Abort printing?"
 msgstr "Хэвлэлтийг таслах уу?"
 
-#, fuzzy
-msgid "Calculate definite integral"
-msgstr "Тооцоолох хүснэгт"
+msgid "Calculate area"
+msgstr "Тооцоолох муж"
 
 msgid "Calculate length of path"
 msgstr "Зайн уртыг тооцоолох"
@@ -3891,6 +3886,14 @@ msgid "Enter percent of original size."
 msgstr "Бодит хэмжээний процент оруул"
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "Интернэт"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "Тооцоолох хүснэгт"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "Интернэт"
 
@@ -3957,9 +3960,6 @@ msgstr "Бодит хэмжээний процент оруул"
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Техт [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Тооцоолох муж"
 
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Хэрвээ танд шинэ хувилбарын талаар ямар нэгэн асуулт, зөвлөлгөө, хүсэлт байвал  graph@padowan.dk эсвэл bat_nasan@mail.mn хаягаар хандан мэдээлэл ирүүлнэ үү."

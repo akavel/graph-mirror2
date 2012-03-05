@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:24+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -582,6 +582,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Рассчитать длину пути по функции между двумя точками."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Площадь..."
 
@@ -2848,12 +2850,6 @@ msgstr "Выберите функцию или касательную для о�
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Выберите, куда помещать курсор при щелчке мыши на изображении."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "Интернет"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 #, fuzzy
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
@@ -3483,9 +3479,8 @@ msgstr "Проверка обновлений..."
 msgid "Abort printing?"
 msgstr ""
 
-#, fuzzy
-msgid "Calculate definite integral"
-msgstr "Вычислить таблицу"
+msgid "Calculate area"
+msgstr "Вычислить площадь"
 
 msgid "Calculate length of path"
 msgstr "Вычислить расстояние"
@@ -3987,6 +3982,14 @@ msgid "Enter percent of original size."
 msgstr ""
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "Интернет"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "Вычислить таблицу"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "Интернет"
 
@@ -4061,9 +4064,6 @@ msgstr ""
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Вычислить площадь"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Сервер вернул сообщение '%s'"

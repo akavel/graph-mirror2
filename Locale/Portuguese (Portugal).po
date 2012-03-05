@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:24+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -559,6 +559,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcula o comprimento da curva entre dois pontos."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Creme"
 
@@ -2692,11 +2694,6 @@ msgstr "Selecione uma função ou tangente para o cálculo."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Seleccione onde o cursor será colocado quando você clicar sobre a imagem."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integral"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Entre com a coordenada inicial ou marque o intervalo na imagem com o \"rato\"."
@@ -3286,8 +3283,8 @@ msgstr "A procurar por nova versão ..."
 msgid "Abort printing?"
 msgstr "Cancelar impressão?"
 
-msgid "Calculate definite integral"
-msgstr "Calcular Integral definido"
+msgid "Calculate area"
+msgstr "Calcule a área"
 
 msgid "Calculate length of path"
 msgstr "Calcule o comprimento do trajeto"
@@ -3757,6 +3754,12 @@ msgstr "Escolha o número de cópias para imprimir:"
 msgid "Enter percent of original size."
 msgstr "Entre o valor em percentagem do tamanho original."
 
+#~ msgid "Integral"
+#~ msgstr "Integral"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Calcular Integral definido"
+
 #~ msgid "Integrate"
 #~ msgstr "Integral"
 
@@ -3794,9 +3797,6 @@ msgstr "Entre o valor em percentagem do tamanho original."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos os ficheiros [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Calcule a área"
 
 #~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
 #~ msgstr "Podedar sugestões para as versões futuras, relatar erros e comentários enviando um email para: graph@padowan.dk"

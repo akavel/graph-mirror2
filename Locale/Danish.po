@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:17+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Ivan Johansen\n"
@@ -554,6 +554,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Beregn buelængden mellem de to angivne punkter på kurven."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Areal"
 
@@ -2689,11 +2691,6 @@ msgstr "Vælg en funktion eller tangent at evaluere."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Vælg hvor markøren skal placeres når der klikkes på billedet."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integrale"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Indtast en startkoordinat eller marker et interval på selve grafen med musen."
@@ -3283,8 +3280,8 @@ msgstr "Søger efter nyere version..."
 msgid "Abort printing?"
 msgstr "Afbryd udskrivning?"
 
-msgid "Calculate definite integral"
-msgstr "Beregn det bestemte integrale"
+msgid "Calculate area"
+msgstr "Beregn areal"
 
 msgid "Calculate length of path"
 msgstr "Beregn buelængde"
@@ -3751,6 +3748,12 @@ msgstr "Vælg hvor mange eksemplarer der skal udskrives."
 msgid "Enter percent of original size."
 msgstr "Indtast procentdel af oprindelig størrelse."
 
+#~ msgid "Integral"
+#~ msgstr "Integrale"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Beregn det bestemte integrale"
+
 #~ msgid "Integrate"
 #~ msgstr "Integrer"
 
@@ -3780,9 +3783,6 @@ msgstr "Indtast procentdel af oprindelig størrelse."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle filer [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Beregn areal"
 
 #~ msgid "Extremum"
 #~ msgstr "Ekstremum"

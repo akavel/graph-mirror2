@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:18+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
@@ -559,6 +559,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Kalkulatu kurbaren bi puntuen arteko luzeera."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Azalera"
 
@@ -2692,11 +2694,6 @@ msgstr "Aukeratu ebaluatzeko funtzio edo tangente bat."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Aukeratu seinalatu nahi duzuna grafikoan klik egiterakoan."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integral"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Sartu koordenatuen hasierako balioa, edo aukeratu grafikoan saguarekin tarte bat."
@@ -3286,8 +3283,8 @@ msgstr "Konprobatzen bertsio berririk dagoen..."
 msgid "Abort printing?"
 msgstr "Inprimaketa utzi?"
 
-msgid "Calculate definite integral"
-msgstr "Kalkulatu integral mugatua"
+msgid "Calculate area"
+msgstr "Kalkulatu azalera"
 
 msgid "Calculate length of path"
 msgstr "Kalkulatu zuzenkiaren luzeera"
@@ -3754,6 +3751,12 @@ msgstr "Aukeratu inprimatu nahi duzun kopia kopurua."
 msgid "Enter percent of original size."
 msgstr "Adierazi jatorrizko neurriaren portzentai bat."
 
+#~ msgid "Integral"
+#~ msgstr "Integral"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Kalkulatu integral mugatua"
+
 #~ msgid "Integrate"
 #~ msgstr "Integratu"
 
@@ -3822,9 +3825,6 @@ msgstr "Adierazi jatorrizko neurriaren portzentai bat."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Testua [*.txt; *.csv]|*.txt;*.csv| Fitxategi guztiak  [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Kalkulatu azalera"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Zerbitzariak mezu henen bitartez erantzun du: '%s'"

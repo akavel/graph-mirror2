@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:21+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Magyari Gábor <magyari@kola.sulinet.hu>\n"
@@ -557,6 +557,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Ívhossz kiszámítása a görbe két adott pontja között."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Terület"
 
@@ -2690,11 +2692,6 @@ msgstr "Függvény/érintő kiválasztása a számításhoz"
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Válszd ki, mit mutasson a kurzor a képre kattintáskor."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integrál"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Add meg a kezdő koordinátát, vagy jelöld ki a tartományt az egérrel."
@@ -3283,8 +3280,8 @@ msgstr "Frissítés keresése..."
 msgid "Abort printing?"
 msgstr "Megszakítod a nyomtatást?"
 
-msgid "Calculate definite integral"
-msgstr "Határozott integrál kiszámítása"
+msgid "Calculate area"
+msgstr "Terület kiszámítása"
 
 msgid "Calculate length of path"
 msgstr "Ívhossz kiszámítása"
@@ -3751,6 +3748,12 @@ msgstr "Másolatok száma:"
 msgid "Enter percent of original size."
 msgstr "Új méret az eredetihez képest százalékban."
 
+#~ msgid "Integral"
+#~ msgstr "Integrál"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Határozott integrál kiszámítása"
+
 #~ msgid "Integrate"
 #~ msgstr "Integrál"
 
@@ -3819,9 +3822,6 @@ msgstr "Új méret az eredetihez képest százalékban."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Szöveg [*.txt; *.csv]|*.txt;*.csv|Minden fájl [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Terület kiszámítása"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "A szervertől a következő válasz érkezett: '%s'"

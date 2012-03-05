@@ -88,84 +88,94 @@ inherited AreaFrame: TAreaFrame
     object Label3: TLabel
       Left = 4
       Top = 60
-      Width = 38
+      Width = 23
       Height = 20
       Align = alLeft
-      Caption = 'Integral'
+      Caption = 'Area'
       Layout = tlCenter
       ExplicitHeight = 13
     end
     object Edit3: TEdit
-      Left = 46
+      Left = 36
       Top = 60
-      Width = 128
+      Width = 138
       Height = 20
       Align = alClient
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 2
+      ExplicitLeft = 46
+      ExplicitWidth = 128
       ExplicitHeight = 21
     end
     object Panel1: TPanel
-      Left = 46
+      Left = 36
       Top = 8
-      Width = 128
+      Width = 138
       Height = 17
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitLeft = 46
+      ExplicitWidth = 128
       DesignSize = (
-        128
+        138
         17)
       object Edit1: TMyEdit
         Left = 0
         Top = 0
-        Width = 114
+        Width = 124
         Height = 21
-        Hint =
+        Hint = 
           'Enter the start coordinate or mark the range on the graph itself' +
           ' with the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
+        ExplicitWidth = 114
       end
       object UpDown1: TUpDownEx
-        Left = 114
+        Left = 124
         Top = 0
         Width = 15
         Height = 21
         Associate = Edit1
         Anchors = [akRight]
+        ExplicitLeft = 114
       end
     end
     object Panel2: TPanel
-      Left = 46
+      Left = 36
       Top = 34
-      Width = 128
+      Width = 138
       Height = 17
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitLeft = 46
+      ExplicitWidth = 128
       DesignSize = (
-        128
+        138
         17)
       object Edit2: TMyEdit
         Left = 0
         Top = 0
-        Width = 114
+        Width = 124
         Height = 21
-        Hint =
+        Hint = 
           'Enter the end coordinate or mark the range on the graph itself w' +
           'ith the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
+        ExplicitWidth = 114
       end
       object UpDown2: TUpDownEx
-        Left = 114
+        Left = 124
         Top = 0
         Width = 15
         Height = 21
         Associate = Edit2
         Anchors = [akTop, akRight]
+        ExplicitLeft = 114
       end
     end
   end

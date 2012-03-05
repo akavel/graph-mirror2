@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-11-28 21:55+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
@@ -560,6 +560,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Eğri üzerinde verilen iki nokta arasındaki yolu hesaplar."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Alan"
 
@@ -2693,11 +2695,6 @@ msgstr "Hesaplamak için tanjant yada fonksiyon seçin"
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Resim üzerine tıkladığınızda işaretçinin konumlanacağı yeri seçin"
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integral"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Başlangıç koordinatını girin yada grafik üzerinde fare ile işaretleyin"
@@ -3287,8 +3284,8 @@ msgstr "Yeni versiyon kontrol ediliyor."
 msgid "Abort printing?"
 msgstr "Yazdırma hakkında?"
 
-msgid "Calculate definite integral"
-msgstr "Tanimli integrali hesapla"
+msgid "Calculate area"
+msgstr "Alanı hesapla"
 
 msgid "Calculate length of path"
 msgstr "Eğri uzunluğunu hesapla"
@@ -3753,6 +3750,12 @@ msgstr "Yazdırmak için kopya sayısını seçin"
 msgid "Enter percent of original size."
 msgstr "orjinal boyutun yüzdesini girin"
 
+#~ msgid "Integral"
+#~ msgstr "Integral"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Tanimli integrali hesapla"
+
 #~ msgid "Integrate"
 #~ msgstr "İntegralini al"
 
@@ -3815,9 +3818,6 @@ msgstr "orjinal boyutun yüzdesini girin"
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Alanı hesapla"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Server '%s' mesajı ile karşılaştı."

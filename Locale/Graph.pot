@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
-"PO-Revision-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
+"PO-Revision-Date: 2012-03-05 21:19\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -590,6 +590,8 @@ msgid "Calculate the length of path between two given points on the "
 msgstr ""
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr ""
 
@@ -2827,11 +2829,6 @@ msgid "Select where the cursor will be placed when you click on the "
 "image."
 msgstr ""
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr ""
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with "
 "the mouse."
@@ -3476,7 +3473,7 @@ msgstr ""
 msgid "Abort printing?"
 msgstr ""
 
-msgid "Calculate definite integral"
+msgid "Calculate area"
 msgstr ""
 
 msgid "Calculate length of path"

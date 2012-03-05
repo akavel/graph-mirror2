@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2012-01-23 11:19+0100\n"
 "Last-Translator: Mask <embrio1988@gmail.com>\n"
 "Language-Team: \n"
@@ -204,7 +204,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -553,11 +553,14 @@ msgstr "Dolžina poti"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Izračunaj dolžino poti med dvema točkama na krivulji."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "Integriraj"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+#, fuzzy
+msgid "Area"
+msgstr "Območje..."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Izračunaj določeni integral za dani interval."
 
@@ -980,13 +983,13 @@ msgstr "Širina:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Izberite slog, ki se uporablja le za risanje neenačb."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Širina črte enačbe ali meje neenačbe v pikslih."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Izberi barvo za risanje relacij."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Širina črte enačbe ali meje neenačbe v pikslih."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -2687,11 +2690,6 @@ msgstr "Izberite funkcijo ali tangento, ki jo želite ovrednotiti."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Izberite, kje se bo pojavil kurzor ko klikneš na sliko."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integral"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Vpiši začetno koordinato ali označi interval na grafu s mišjo."
@@ -3281,8 +3279,8 @@ msgstr "Iskanje nove različice..."
 msgid "Abort printing?"
 msgstr "Prekinem tiskanje?"
 
-msgid "Calculate definite integral"
-msgstr "Izračunaj določeni integral"
+msgid "Calculate area"
+msgstr "Izračunaj območje"
 
 msgid "Calculate length of path"
 msgstr "Izračunaj dolžino poti."
@@ -3749,6 +3747,15 @@ msgstr "Izberite koliko kopij želite natisniti."
 msgid "Enter percent of original size."
 msgstr "Vnesi odstotek izvorne velikosti."
 
+#~ msgid "Integrate"
+#~ msgstr "Integriraj"
+
+#~ msgid "Integral"
+#~ msgstr "Integral"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Izračunaj določeni integral"
+
 #, fuzzy
 #~ msgid "Arial"
 #~ msgstr "Ploščina"
@@ -3818,9 +3825,6 @@ msgstr "Vnesi odstotek izvorne velikosti."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Besedilo [*.txt; *.csv]|*.txt;*.csv|Vse datoteke [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Izračunaj območje"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Server se je odzval s sporočilom '%s'"
@@ -3994,9 +3998,6 @@ msgstr "Vnesi odstotek izvorne velikosti."
 
 #~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
 #~ msgstr "Da dodate dejanja k vaši aplikaciji, preprosto povlecite in spustite iz Kategorije ali Akcije na Vrstico dejanj."
-
-#~ msgid "Area..."
-#~ msgstr "Območje..."
 
 #~ msgid "Evaluate..."
 #~ msgstr "Ovrednoti..."

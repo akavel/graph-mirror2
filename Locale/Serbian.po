@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:24+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -573,6 +573,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Izracunava duzinu linije izmedju dve zadane tacke na liniji."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Povrsina"
 
@@ -2766,12 +2768,6 @@ msgstr "Izaberite funkciju ili tangentu za izracunavanje."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Izaberite mesto na koje ce biti postavljen kursor kada kliknete na grafik. "
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "Internet"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Unesite pocetnu koordinatu ili drzeci levi taster misa oznacite raspon na grafiku."
@@ -3388,9 +3384,8 @@ msgstr "Provera dostupnosti novije verzije..."
 msgid "Abort printing?"
 msgstr "Otkazi stampanje?"
 
-#, fuzzy
-msgid "Calculate definite integral"
-msgstr "Proracunska tabela"
+msgid "Calculate area"
+msgstr "Izracunaj povrsinu"
 
 msgid "Calculate length of path"
 msgstr "Izracunaj duzinu linije"
@@ -3876,6 +3871,14 @@ msgid "Enter percent of original size."
 msgstr "Unesite procenat od originalne velicine."
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "Internet"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "Proracunska tabela"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "Internet"
 
@@ -3944,9 +3947,6 @@ msgstr "Unesite procenat od originalne velicine."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Izracunaj povrsinu"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Odgovor servera '%s'"
