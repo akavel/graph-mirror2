@@ -11,7 +11,7 @@ BEGIN
   RES_VERSION     "Version %s"  //%s is replaced with version number
   RES_BUILD       "Build %s"    //%s is replaced with build number
   RES_ERROR_NUMBER "Error %s"   //Indicates an error code, e.g. "Error 5"
-  RES_AREA        "Integral"        //Shown as title in the Calc|Area dialog when it is undocked
+  RES_AREA        "Area"        //Shown as title in the Calc|Area dialog when it is undocked
   RES_LENGTH      "Length"      //Shown as title in the Calc|Length of path dialog when it is undocked
   RES_SERIES      "Series"      //Default description in the Insert point series dialog
   RES_DEGREES     "Degrees"     //Shown in rotation dialog
@@ -169,7 +169,7 @@ BEGIN
   519 "Coordinate not defined"    //Caption of message box when trying to insert tangent at undefined coordinate
   520 "Checking for newer version..."
   521 "Abort printing?"
-  522 "Calculate definite integral"
+  522 "Calculate area"
   523 "Calculate length of path"
   524 "Edit function"
   525 "Edit tangent/normal"

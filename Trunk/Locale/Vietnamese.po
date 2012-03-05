@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:25+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -574,6 +574,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Tính toán độ dài của đường cong giữa 2 điểm cho trước."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Diện tích"
 
@@ -2771,12 +2773,6 @@ msgstr "Chọn một hàm số hoặc thông số của điểm tiếp xúc."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Chọn nơi con trỏ chuôt sẽ đựoc đặt khi bạn nhấn lên hình."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "Internet"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Nhập tọa độ hoặc dùng chuột để đánh dấu điểm đầu."
@@ -3391,9 +3387,8 @@ msgstr "Kiểm tra phiên bản mới..."
 msgid "Abort printing?"
 msgstr "Hủy in?"
 
-#, fuzzy
-msgid "Calculate definite integral"
-msgstr "Bảng tính"
+msgid "Calculate area"
+msgstr "Tính diện tích"
 
 msgid "Calculate length of path"
 msgstr "Tính độ dài đường thẳng"
@@ -3877,6 +3872,14 @@ msgid "Enter percent of original size."
 msgstr "Nhập phần trăm so vơi kích cỡ gốc."
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "Internet"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "Bảng tính"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "Internet"
 
@@ -3945,9 +3948,6 @@ msgstr "Nhập phần trăm so vơi kích cỡ gốc."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Tính diện tích"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Máy chủ thông báo trả lời %s"

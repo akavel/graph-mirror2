@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-09-21 23:00\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2012-02-05 15:57+0100\n"
 "Last-Translator: Attilio Ridomi <attilio.ridomi@hotmail.it>\n"
 "Language-Team: \n"
@@ -204,7 +204,7 @@ msgstr "Zoom"
 
 #. Form1..ActionManager........("File")..Caption
 #. Form1..ActionManager..PathAction("Length of path")..Category
-#. Form1..ActionManager..AreaAction("Integrate")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
 #. Form1..ActionManager..EvalAction("Evaluate")..Category
 #. Form1..ActionManager..TableAction("Table")..Category
 #. Form1..ActionManager..AnimateAction("Animate...")..Category
@@ -555,11 +555,14 @@ msgstr "Lunghezza del percorso"
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcola la lunghezza del percorso tra i due punti dati sulla curva."
 
-#. Form1..ActionManager..AreaAction("Integrate")..Caption
-msgid "Integrate"
-msgstr "Integrare"
+#. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
+#, fuzzy
+msgid "Area"
+msgstr "Area"
 
-#. Form1..ActionManager..AreaAction("Integrate")..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Calcola l'integrale definito nell'intervallo dato."
 
@@ -983,13 +986,13 @@ msgstr "Larghezza:"
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Seleziona lo stile da usare per tracciare la disequazione. Non per le equazioni."
 
-#. Form11("Insert relation")..GroupBox2("Properties")..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Spessore della linea dell'equazione o degli estremi della disequazione  (in pixel)."
-
 #. Form11("Insert relation")..GroupBox2("Properties")..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Scegli il colore per tracciare la relazione."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Spessore della linea dell'equazione o degli estremi della disequazione  (in pixel)."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -2692,11 +2695,6 @@ msgstr "Seleziona una funzione o tangente da valutare."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Seleziona dove si posizionerà il cursore quando si clicca sull'immagine."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integrale"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Inserisci la coordinata iniziale oppure marcane l'estensione sul grafico stesso col mouse."
@@ -3288,8 +3286,8 @@ msgstr "Controllo per nuova versione..."
 msgid "Abort printing?"
 msgstr "Annullare stampa?"
 
-msgid "Calculate definite integral"
-msgstr "Calcola integrale definito"
+msgid "Calculate area"
+msgstr "Calcola area"
 
 msgid "Calculate length of path"
 msgstr "Calcola lunghezza del percorso"
@@ -3757,9 +3755,14 @@ msgstr "Scegli quante copie stampare."
 msgid "Enter percent of original size."
 msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 
-#, fuzzy
-#~ msgid "Arial"
-#~ msgstr "Area"
+#~ msgid "Integrate"
+#~ msgstr "Integrare"
+
+#~ msgid "Integral"
+#~ msgstr "Integrale"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Calcola integrale definito"
 
 #~ msgid "Area or length of path calculated for the given range using Simpson's formula."
 #~ msgstr "Area o lunghezza della curva calcolata per l'intervallo dato, usando la formula di Simpson."
@@ -3826,9 +3829,6 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Testo [*.txt; *.csv]|*.txt;*.csv|Tutti i file [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Calcola area"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Il server ha risposto con il messaggio '%s'"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-10-18 18:25+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
@@ -558,6 +558,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Calcula la longitud del arco comprendido entre dos puntos de una gráfica."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Área"
 
@@ -2702,11 +2704,6 @@ msgstr "Selecciona una función para evaluar."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Selecciona qué deseas señalar cuando hagas clic sobre el área gráfica."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integral"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Introduce la coordenada inicial, o selecciona sobre la gráfica misma un intervalo con el ratón."
@@ -3296,8 +3293,8 @@ msgstr "Comprobando si hay una nueva versión..."
 msgid "Abort printing?"
 msgstr "¿Cancelar impresión?"
 
-msgid "Calculate definite integral"
-msgstr "Calcular integral definida"
+msgid "Calculate area"
+msgstr "Calcular área"
 
 msgid "Calculate length of path"
 msgstr "Calcular longitud de arco"
@@ -3764,14 +3761,17 @@ msgstr "Indica el número de copias que deseas imprimir."
 msgid "Enter percent of original size."
 msgstr "Indica un porcentaje del tamaño original del área gráfica."
 
+#~ msgid "Integral"
+#~ msgstr "Integral"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Calcular integral definida"
+
 #~ msgid "Integrate"
 #~ msgstr "Integral"
 
 #~ msgid "Show as a multiple of pi"
 #~ msgstr "Mostrar números como múltiplos de pi"
-
-#~ msgid "Calculate area"
-#~ msgstr "Calcular área"
 
 #~ msgid "Calculate the area under the path of the selected function."
 #~ msgstr "Calcula el área respecto a la función seleccionada en el intervalo especificado."

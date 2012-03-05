@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:20+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Pekka Lerssi <pekka.lerssi@tut.fi>\n"
@@ -573,6 +573,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Laskee kahden pisteen välisen kaaren pituuden."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Pinta-ala"
 
@@ -2766,12 +2768,6 @@ msgstr "Valitse funktio tai tangentti, jota haluat tarkastella."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Valitse mihin kohdistin kiinnittyy, kun klikkaat koordinaatistoa."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "Internet"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Syötä alkupiste tai valitse alue kuvaajasta hiirellä."
@@ -3388,9 +3384,8 @@ msgstr "Etsitään uutta ohjelmaversiota..."
 msgid "Abort printing?"
 msgstr "Peruuta tulostus?"
 
-#, fuzzy
-msgid "Calculate definite integral"
-msgstr "Arvotaulukko"
+msgid "Calculate area"
+msgstr "Laske pinta-ala"
 
 msgid "Calculate length of path"
 msgstr "Laske kaaren pituus"
@@ -3876,6 +3871,14 @@ msgid "Enter percent of original size."
 msgstr "Valitse tulosteen skaalaus suhteessa alkuperäiseen kuvaan."
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "Internet"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "Arvotaulukko"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "Internet"
 
@@ -3944,9 +3947,6 @@ msgstr "Valitse tulosteen skaalaus suhteessa alkuperäiseen kuvaan."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Teksti [*.txt; *.csv]|*.txt;*.csv|Kaikki tiedostot [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Laske pinta-ala"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Palvelimen vastaus: '%s'"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:18+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: IL\n"
@@ -566,6 +566,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "حساب طول المسار بين نقطتين معينتين على المنحنى."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "مساحة"
 
@@ -2701,11 +2703,6 @@ msgstr "حدد دالة أو مماس للتقييم."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "اختر أين يوضع المؤشر حينما تنقر على البيان."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "تكامل"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "أدخل إحداثيات البداية أو عين المجال على الرسم البياني مباشرة باستخدام الفأرة."
@@ -3295,8 +3292,8 @@ msgstr "التحقق من وجود إصدار جديد ..."
 msgid "Abort printing?"
 msgstr "إلغاء الطباعة؟"
 
-msgid "Calculate definite integral"
-msgstr "حساب تكامل المعرّف"
+msgid "Calculate area"
+msgstr "حساب المساحة"
 
 msgid "Calculate length of path"
 msgstr "حساب طول المسار"
@@ -3763,6 +3760,12 @@ msgstr "اختر عدد النسخ لطباعتها."
 msgid "Enter percent of original size."
 msgstr "أدخل النسبة مقارنة بالحجم الأصلي."
 
+#~ msgid "Integral"
+#~ msgstr "تكامل"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "حساب تكامل المعرّف"
+
 #~ msgid "Integrate"
 #~ msgstr "تكامل"
 
@@ -3825,9 +3828,6 @@ msgstr "أدخل النسبة مقارنة بالحجم الأصلي."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "حساب المساحة"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "أجاب الملقم بالرسالة: '‪%s‬'"

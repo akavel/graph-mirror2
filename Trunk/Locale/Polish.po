@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:23+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: \n"
@@ -578,6 +578,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Oblicza długość linii pomiędzy dwoma punktami na krzywej."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Pole pod krzywą"
 
@@ -2840,12 +2842,6 @@ msgstr "Wybierz funkcję lub styczną do analizy."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Wybierz gdzie ma być umieszczony kursor po kliknięciu myszką."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "Internet"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Podaj początkowe współrzędne lub zanzacz zakres na wykresie za pomocą myszki."
@@ -3485,7 +3481,7 @@ msgid "Abort printing?"
 msgstr "Przerwać drukowanie?"
 
 #, fuzzy
-msgid "Calculate definite integral"
+msgid "Calculate area"
 msgstr "Obliczanie"
 
 #, fuzzy
@@ -3959,6 +3955,14 @@ msgid "Enter percent of original size."
 msgstr "Podaj procent oryginalnego rozmiaru."
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "Internet"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "Obliczanie"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "Internet"
 
@@ -4020,10 +4024,6 @@ msgstr "Podaj procent oryginalnego rozmiaru."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Wszystkie pliki [*.*]|*.*"
-
-#, fuzzy
-#~ msgid "Calculate area"
-#~ msgstr "Obliczanie"
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Zaznaczy aby umieścić obraz w środku strony."

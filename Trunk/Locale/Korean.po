@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:22+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Graph Korean Translation Team <xgate32@hotmail.com>\n"
@@ -579,6 +579,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "곡선에 주어진 두 개의 점 사이의 경로 길이 계산."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "면적"
 
@@ -2744,12 +2746,6 @@ msgstr "함수 선택 또는 검토하기 위한 접선."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "이미지 클릭시 커서의 위치 선택."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
-msgid "Integral"
-msgstr "인터넷"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "좌표의 시작을 입력하거나 마우스로 그래프에 범위를 표시."
@@ -3353,9 +3349,8 @@ msgstr "새로운 버젼 확인중..."
 msgid "Abort printing?"
 msgstr "인쇄를 취소하시겠습니까?"
 
-#, fuzzy
-msgid "Calculate definite integral"
-msgstr "테이블 계산"
+msgid "Calculate area"
+msgstr "면적 계산"
 
 msgid "Calculate length of path"
 msgstr "경로 길이 계산"
@@ -3839,6 +3834,14 @@ msgid "Enter percent of original size."
 msgstr "원본 크기의 퍼센트 입력."
 
 #, fuzzy
+#~ msgid "Integral"
+#~ msgstr "인터넷"
+
+#, fuzzy
+#~ msgid "Calculate definite integral"
+#~ msgstr "테이블 계산"
+
+#, fuzzy
 #~ msgid "Integrate"
 #~ msgstr "인터넷"
 
@@ -3913,9 +3916,6 @@ msgstr "원본 크기의 퍼센트 입력."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "텍스트 [*.txt; *.csv]|*.txt;*.csv|모든 파일 [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "면적 계산"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "서버는 메세지 '%s'로 응답했습니다"

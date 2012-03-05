@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:17+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Frank Hüttemeister & Michael Bach Ipsen <deutsch@padowan.dk>\n"
@@ -555,6 +555,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Die Länge eines Kurvenstücks zwischen zwei Punkten berechnen."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Fläche"
 
@@ -2691,11 +2693,6 @@ msgstr "Funktion oder Tangente auswählen, die berechnet werden soll."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Durch Klicken können Sie den Cursor im Koordinatensystem platzieren."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integral"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Eine Anfangskoordinate eingeben oder den Bereich direkt auf dem Graphen mit der Maus markieren."
@@ -3287,8 +3284,8 @@ msgstr "Suche nach neuer Version..."
 msgid "Abort printing?"
 msgstr "Drucken absagen?"
 
-msgid "Calculate definite integral"
-msgstr "Bestimmtes Integral berechnen."
+msgid "Calculate area"
+msgstr "Fläche berechnen"
 
 msgid "Calculate length of path"
 msgstr "Länge des Kurvenstücks berechnen"
@@ -3760,6 +3757,12 @@ msgstr "Geben Sie die Anzahl der zu druckenden Kopien ein."
 msgid "Enter percent of original size."
 msgstr "Geben die den Prozentssatz zur Originalgröße ein."
 
+#~ msgid "Integral"
+#~ msgstr "Integral"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Bestimmtes Integral berechnen."
+
 #~ msgid "Integrate"
 #~ msgstr "Integrieren"
 
@@ -3828,9 +3831,6 @@ msgstr "Geben die den Prozentssatz zur Originalgröße ein."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Textdateien [*.txt; *.csv]|*.txt;*.csv|Alle Dateien [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Fläche berechnen"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Der Server hat mit der Meldung '%s' geantwortet."

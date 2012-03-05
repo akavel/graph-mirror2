@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.0.1\n"
-"POT-Creation-Date: 2011-12-22 21:12\n"
+"POT-Creation-Date: 2012-03-05 21:19\n"
 "PO-Revision-Date: 2011-12-22 21:20+0100\n"
 "Last-Translator: Ivan Johansen\n"
 "Language-Team: Etienne Goemaere <etienne.goemaere@pandora.be>\n"
@@ -556,6 +556,8 @@ msgid "Calculate the length of path between two given points on the curve."
 msgstr "Bereken de lengte langs de kromme tussen twee punten op de kromme."
 
 #. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Oppervlakte"
 
@@ -2689,11 +2691,6 @@ msgstr "Kies functie of raaklijn om te berekenen."
 msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Kies waar de cursor geplaatst moet worden als je de figuur aanklikt."
 
-#. AreaFrame..GridPanel1..Label3("Integral")..Caption
-#. Shown as title in the Calc|Area dialog when it is undocked
-msgid "Integral"
-msgstr "Integraal"
-
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
 msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
 msgstr "Geef een begincoördinaat op of duid met de muis het bereik aan op de figuur"
@@ -3283,8 +3280,8 @@ msgstr "Controleer op een nieuwere versie..."
 msgid "Abort printing?"
 msgstr "Onderbreek het printen?"
 
-msgid "Calculate definite integral"
-msgstr "Bereken bepaalde integraal"
+msgid "Calculate area"
+msgstr "Oppervlakteberekening"
 
 msgid "Calculate length of path"
 msgstr "Bereken lengte op kromme"
@@ -3748,6 +3745,12 @@ msgstr "Aantal kopies:"
 msgid "Enter percent of original size."
 msgstr "Voer procent van het orgineel in."
 
+#~ msgid "Integral"
+#~ msgstr "Integraal"
+
+#~ msgid "Calculate definite integral"
+#~ msgstr "Bereken bepaalde integraal"
+
 #~ msgid "Integrate"
 #~ msgstr "Integreer"
 
@@ -3816,9 +3819,6 @@ msgstr "Voer procent van het orgineel in."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Tekst [*.txt; *.csv]|*.txt;*.csv|Alle bestanden [*.*]|*.*"
-
-#~ msgid "Calculate area"
-#~ msgstr "Oppervlakteberekening"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "De server antwoordde met het bericht '%s'"
