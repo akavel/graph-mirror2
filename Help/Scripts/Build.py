@@ -8,8 +8,8 @@ Languages = [
     ("Czech",       "cs",   {"$LabelWidth": "5em"}),
     ("Danish",      "da",   {"$LabelWidth": "5em"}),
     ("Dutch",       "nl",   {"$LabelWidth": "5em"}),
-    ("French",      "fr",   {"$LabelWidth": "2em"}),
     ("English",     "en",   {"$LabelWidth": "2em"}),
+    ("French",      "fr",   {"$LabelWidth": "2em"}),
     ("German",      "de",   {"$LabelWidth": "2em"}),
     ("Italian",     "it",   {"$LabelWidth": "5em"}),
     ("Portuguese",  "pt",   {"$LabelWidth": "2em"}),
@@ -35,8 +35,8 @@ def HandleLanguage(Language, Lang, Dict):
         print
         print "Creating %s translation" % (Language,)
         os.system("%s ..\\Scripts\\xml2po.py -k -p ..\\po\\GraphHelp_%s.po -l %s -o ../Temp/Graph2.tmp ../Temp/Graph.tmp" % (sys.executable, Language, Lang))
-        os.system("XCopy ..\\Images\\%s\\*.* ..\\Temp\\Images /I /Q /Y > NUL" % (Language,))
 
+    os.system("XCopy ..\\Images\\%s\\*.* ..\\Temp\\Images /I /Q /Y > NUL" % (Language,))
     InFile = "..\\Temp\\Graph2.tmp" if Language != "English" else "..\\Temp\\Graph.tmp"
 
     print "Creating %s PDF file..." % (Language,)
@@ -61,7 +61,7 @@ def HandleLanguage(Language, Lang, Dict):
 
 print "Copying image files..."
 os.system("XCopy ..\\Images\\Common\\*.* ..\\Temp\\Images /I /Q /Y > NUL")
-os.system("XCopy ..\\Images\\English\\*.* ..\\Temp\\Images /I /Q /Y > NUL")
+# os.system("XCopy ..\\Images\\English\\*.* ..\\Temp\\Images /I /Q /Y > NUL")
 os.system("XCopy ..\\Images\\dtd ..\\Temp\\Images\\dtd /I /Q /Y > NUL")
 os.system("XCopy ..\\Source\\dtd ..\\Temp\\dtd /S /I /Q /Y > NUL")
 os.system("XCopy ..\\Source\\styles_chm.css ..\\Temp /Q /Y > NUL")
