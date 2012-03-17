@@ -373,7 +373,7 @@ TFunc sqrt(const TFunc &Func1)
  */
 std::wostream& operator<<(std::wostream &os, const TFunc &Func)
 {
-  Func.FuncData->MakeText(std::vector<std::wstring>(1, L"x"), os, 4);
+  Func.FuncData->MakeText(std::vector<std::wstring>(1, L"x"), os, os.precision());
   return os;
 }
 //---------------------------------------------------------------------------
