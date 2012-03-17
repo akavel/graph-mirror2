@@ -485,10 +485,14 @@ double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func)
   long double St = 0;
   long double Sy = 0;
   for(std::vector<TDblPoint>::const_iterator Iter = Begin; Iter != End; ++Iter)
-  {
-    St += Sqr(yMean - Iter->y);
-    Sy += Sqr(Iter->y - Func(Iter->x));
-  }
+    try
+    {
+      Sy += Sqr(Iter->y - Func(Iter->x));
+      St += Sqr(yMean - Iter->y);
+    }
+    catch(EFuncError &Error)
+    { //Ignore errors and continue without using the affected point
+    }
 
   if(St == 0) //Prevent division by zero. St==0 means that the line is a perfect fit.
     return 1;

@@ -216,7 +216,7 @@ void TestTrendLine(Func32::TTrendType Type, const std::vector<TDblPoint> &P, con
 		{
 			wcerr << "-- Trendline --" << endl;
 			wcerr << "Expected trendline: f(x)=" << Str << std::endl;
-			wcerr << "Evaluated to:       f(x)=" << std::setprecision(15) << Result << std::endl << std::endl;
+ 			wcerr << "Evaluated to:       f(x)=" << std::setprecision(15) << Result << std::endl << std::endl;
 
 		}
 	}
@@ -915,43 +915,52 @@ void Test()
 	//Test difficult trend line
 	TDblPoint Points1[] = {TDblPoint(1950,1571), TDblPoint(1970,524), TDblPoint(1980, 208), TDblPoint(2003, 29)};
 	std::vector<double> Empty;
-	std::vector<TDblPoint> Points(Points1, Points1 + 4);
-	TestTrendLine(ttPower, Points, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)"); //Fails under Cygwin
+	std::vector<TDblPoint> P1(Points1, Points1 + 4);
+	TestTrendLine(ttPower, P1, Empty, 0, NaN, L"7.23106321804096256E+498*x^(-150.630652337941856)"); //Fails under Cygwin
 
   //Test sample trendline
-  TDblPoint P1[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
+  TDblPoint Points2[] = {TDblPoint(0,0.1), TDblPoint(1,0.9), TDblPoint(2,1.9), TDblPoint(3,2.7), TDblPoint(4,4.7)};
 	double W1[] = {0.1, 0.13, 0.16, 0.2, 0.25};
-  std::vector<TDblPoint> P(P1, P1 + 5);
+  std::vector<TDblPoint> P2(Points2, Points2 + 5);
 	std::vector<double> W(5);
   std::transform(W1, W1+5, W.begin(), ErrorToWeight); //Perform x=1/(x*x)
 
-  TestTrendLine(ttLinear, P, Empty, 0, NaN, L"1.1*x-0.14");
-  TestTrendLine(ttLinear, P, Empty, 0, 1, L"0.72*x+1"); //Force crossing with y-axis
-  TestTrendLine(ttLinear, P, W, 0, NaN, L"1.01084802043554*x+0.00367555924507695");
-  TestTrendLine(ttLinear, P, W, 0, 1, L"0.615568703919657*x+1"); //Force crossing with y-axis
+  TestTrendLine(ttLinear, P2, Empty, 0, NaN, L"1.1*x-0.14");
+  TestTrendLine(ttLinear, P2, Empty, 0, 1, L"0.72*x+1"); //Force crossing with y-axis
+  TestTrendLine(ttLinear, P2, W, 0, NaN, L"1.01084802043554*x+0.00367555924507695");
+  TestTrendLine(ttLinear, P2, W, 0, 1, L"0.615568703919657*x+1"); //Force crossing with y-axis
 
-	TestTrendLine(ttPolynomial, P, Empty, 2, NaN, L"0.157142857142857*x^2+0.471428571428571*x+0.174285714285714");
-  TestTrendLine(ttPolynomial, P, Empty, 2, 1, L"0.290322580645161*x^2-0.247741935483871*x+1"); //Force crossing
-  TestTrendLine(ttPolynomial, P, W, 2, NaN, L"0.123428984493036*x^2+0.596597125830378*x+0.12279529365147");
-	TestTrendLine(ttPolynomial, P, W, 2, 1, L"0.292651922716118*x^2-0.254573787956674*x+1");
+	TestTrendLine(ttPolynomial, P2, Empty, 2, NaN, L"0.157142857142857*x^2+0.471428571428571*x+0.174285714285714");
+  TestTrendLine(ttPolynomial, P2, Empty, 2, 1, L"0.290322580645161*x^2-0.247741935483871*x+1"); //Force crossing
+  TestTrendLine(ttPolynomial, P2, W, 2, NaN, L"0.123428984493036*x^2+0.596597125830378*x+0.12279529365147");
+	TestTrendLine(ttPolynomial, P2, W, 2, 1, L"0.292651922716118*x^2-0.254573787956674*x+1");
 
-  TestTrendLine(ttPower, P, Empty, 0, NaN, L"0.872147571158689*x^1.14047602443827");
-  TestTrendLine(ttPower, P, W, 0, NaN, L"0.890072586434138*x^1.10326113209501");
+  TestTrendLine(ttPower, P2, Empty, 0, NaN, L"0.872147571158689*x^1.14047602443827");
+  TestTrendLine(ttPower, P2, W, 0, NaN, L"0.890072586434138*x^1.10326113209501");
 
-  TestTrendLine(ttExponential, P, Empty, 0, NaN, L"0.200922305275277*2.41063632810424^x");
-  TestTrendLine(ttExponential, P, Empty, 0, 1, L"1.41191238522143^x");
-  TestTrendLine(ttExponential, P, W, 0, NaN, L"0.14747627125184*2.92012743745353^x");
-	TestTrendLine(ttExponential, P, W, 0, 1, L"1.36647807441143^x");
+  TestTrendLine(ttExponential, P2, Empty, 0, NaN, L"0.200922305275277*2.41063632810424^x");
+  TestTrendLine(ttExponential, P2, Empty, 0, 1, L"1.41191238522143^x");
+  TestTrendLine(ttExponential, P2, W, 0, NaN, L"0.14747627125184*2.92012743745353^x");
+	TestTrendLine(ttExponential, P2, W, 0, 1, L"1.36647807441143^x");
 
-	TestCustomTrendLine(L"$a*x+$b", P, Empty, L"1.1*x-0.14");
-  TestCustomTrendLine(L"$a*x+1", P, Empty, L"0.72*x+1");
-  TestCustomTrendLine(L"$a*x+$b", P, W, L"1.01085*x+0.00368");
-  TestCustomTrendLine(L"$a*x+1", P, W, L"0.61557*x+1");
+	TestCustomTrendLine(L"$a*x+$b", P2, Empty, L"1.1*x-0.14");
+  TestCustomTrendLine(L"$a*x+1", P2, Empty, L"0.72*x+1");
+  TestCustomTrendLine(L"$a*x+$b", P2, W, L"1.01085*x+0.00368");
+  TestCustomTrendLine(L"$a*x+1", P2, W, L"0.61557*x+1");
 
-  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, Empty, L"0.15714*x^2+0.47143*x+0.17429");
-	TestCustomTrendLine(L"$a*x^2+$b*x+1", P, Empty, L"0.29032*x^2-0.24774*x+1");
-  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P, W, L"0.12343*x^2+0.5966*x+0.1228");
-	TestCustomTrendLine(L"$a*x^2+$b*x+1", P, W, L"0.29265*x^2-0.25457*x+1");
+  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P2, Empty, L"0.15714*x^2+0.47143*x+0.17429");
+	TestCustomTrendLine(L"$a*x^2+$b*x+1", P2, Empty, L"0.29032*x^2-0.24774*x+1");
+  TestCustomTrendLine(L"$a*x^2+$b*x+$c", P2, W, L"0.12343*x^2+0.5966*x+0.1228");
+	TestCustomTrendLine(L"$a*x^2+$b*x+1", P2, W, L"0.29265*x^2-0.25457*x+1");
+
+  //Test trendlines with point at x=0
+  TCoordBase<double> Points3[] = {{0,20.4},{0.00016,14.6},{0.00036,10.8},{0.00052,8.8},{0.00076,6.4},{0.00102,4.8},{0.00128,3.8},{0.00152,3},{0.00178,2.8},{0.00202,2.2},{0.00226,2},{0.00252,1.6},{0.00278,1.6},{0.00302,1.4},{0.00328,1.4},{0.00352,1.2}};
+  std::vector<TDblPoint> P3(Points3, Points3 + 16);
+  TestTrendLine(ttLinear, P3, Empty, 0, NaN, L"-4035.68471434*x+12.1847719");
+  TestTrendLine(ttPower, P3, Empty, 0, NaN, L"0.00946867*x^-0.88071702");
+  TestTrendLine(ttExponential, P3, Empty, 0, NaN, L"12.895232337158638*7.886678185588269E-333^x");
+  TestTrendLine(ttPolynomial, P3, Empty, 2, NaN, L"2.475683432006625E+06*x^2-1.257161390319145E+04*x+16.4719035463553");
+
 
   //Test differentiation of common operators
   TestDif("-0.5796", "0");
