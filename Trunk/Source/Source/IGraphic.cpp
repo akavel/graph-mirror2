@@ -232,14 +232,17 @@ std::vector<double> CalcSecondDerivatives(const std::vector<TPoint> &P)
 	std::vector<double> y2(n), u(n-1);
 
 	for(int i = 1; i < n-1; i++)
-	{
-		double sig = static_cast<double>(P[i].x - P[i-1].x) / (P[i+1].x - P[i-1].x);
-		double p = sig * y2[i-1] + 2;
-		y2[i] = (sig - 1) / p;
-		u[i] = static_cast<double>(P[i+1].y - P[i].y) / (P[i+1].x - P[i].x) -
-					 static_cast<double>(P[i].y - P[i-1].y) / (P[i].x - P[i-1].x);
-		u[i] = (6.0 * u[i] / (P[i+1].x - P[i-1].x) - sig * u[i-1]) / p;
-	}
+    if(P[i-1].x != P[i].X && P[i].x != P[i+1].x)
+    {
+      double sig = static_cast<double>(P[i].x - P[i-1].x) / (P[i+1].x - P[i-1].x);
+      double p = sig * y2[i-1] + 2;
+      y2[i] = (sig - 1) / p;
+      u[i] = static_cast<double>(P[i+1].y - P[i].y) / (P[i+1].x - P[i].x) -
+             static_cast<double>(P[i].y - P[i-1].y) / (P[i].x - P[i-1].x);
+      u[i] = (6.0 * u[i] / (P[i+1].x - P[i-1].x) - sig * u[i-1]) / p;
+    }
+    else
+      y2[i] = 0, u[i] = 0; //Avoid division by zero
 
 	y2[n-1] = 0;
 	for(int k = n-2; k >= 0; k--)
@@ -250,6 +253,8 @@ std::vector<double> CalcSecondDerivatives(const std::vector<TPoint> &P)
 double EvalCubicSpline(const std::vector<TPoint> &P, const std::vector<double> &y2, unsigned i, double x)
 {
 	double h = P[i+1].x - P[i].x;
+  if(h == 0)
+    return P[i].x; //Avoid division by zero
 	double a = (P[i+1].x - x) / h;
 	double b = (x - P[i].x) / h;
 	double y = a * P[i].y + b *P[i+1].y + ((a*a*a-a) * y2[i] + (b*b*b-b)*y2[i+1]) * h*h/6.0;
@@ -272,7 +277,8 @@ void Create2DCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint>
 	std::vector<double> y2 = CalcSecondDerivatives(Py);
 	for(unsigned I = 0; I < n-1; I++)
 	{
-		double dt = 1.0/std::max(abs(P[I].x-P[I+1].x), abs(P[I].y-P[I+1].y));
+    int ds = std::max(abs(P[I].x-P[I+1].x), abs(P[I].y-P[I+1].y));
+		double dt = ds == 0 ? 1 : 1.0/ds;
 		for(double t = I; t < I+1; t += dt)
 		{
 			double x = EvalCubicSpline(Px, x2, I, t);
