@@ -120,11 +120,9 @@ bool __fastcall TExtColorBox::GetExtendedUI()
 //---------------------------------------------------------------------------
 void __fastcall TExtColorBox::SetSelected(TColor Value)
 {
+  FSelected = Value;
   if(ComponentState.Contains(csLoading) || Parent == NULL)
-  {
-    FSelected = Value;
     return;
-  }
 
   int Index = -1;
   for(int I = 0; I < Items->Count; I++)
@@ -154,12 +152,12 @@ void __fastcall TExtColorBox::DrawItem(int Index, const Types::TRect &Rect, TOwn
   TColor BackgroundColor = Canvas->Brush->Color;
   TRect LRect = Rect;
   if(Index < ShowCustom + ShowDefault)
-	LRect.Right = LRect.Height() + LRect.Left;
+    LRect.Right = LRect.Height() + LRect.Left;
 
   InflateRect(&LRect, -1, -1);
   TColor Color = reinterpret_cast<TColor>(Items->Objects[Index]);
   if(Color == clDefault)
-	Color = clWhite;
+    Color = clWhite;
   Canvas->Brush->Color = Color;
   Canvas->Pen->Color = clBlack;
   Canvas->Rectangle(LRect);
@@ -167,9 +165,9 @@ void __fastcall TExtColorBox::DrawItem(int Index, const Types::TRect &Rect, TOwn
 
   if(Index < ShowCustom + ShowDefault)
   {
-	LRect = TRect(LRect.Right + 5, Rect.Top, Rect.Right, Rect.Bottom);
-	String Str = ShowCustom && Index == 0 ? CustomName : DefaultName;
-	Canvas->TextRect(LRect, LRect.Left,
+    LRect = TRect(LRect.Right + 5, Rect.Top, Rect.Right, Rect.Bottom);
+    String Str = ShowCustom && Index == 0 ? CustomName : DefaultName;
+    Canvas->TextRect(LRect, LRect.Left,
       (LRect.Bottom + LRect.Top - Canvas->TextHeight(Str)) / 2, Str);
   }
 }
