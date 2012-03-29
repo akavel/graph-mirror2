@@ -19,13 +19,13 @@
 __fastcall TForm11::TForm11(TComponent* Owner, TData &AData)
   : TForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   Translate();
+  ScaleForm(this);
 
   ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Property.DefaultRelation.Style);
   ExtColorBox1->Selected = Property.DefaultRelation.Color;
   UpDown1->Position = Property.DefaultRelation.Size;
-
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void TForm11::Translate()

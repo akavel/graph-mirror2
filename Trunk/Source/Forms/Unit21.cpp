@@ -22,6 +22,7 @@ __fastcall TForm21::TForm21(TComponent* Owner, TData &AData, const TDraw &ADraw,
   ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
+  FlipForm(this);
 
   const int PlacementToIndex[] = {0, -1, -1, -1, -1, 1, 2, 3};
   ComboBox1->ItemIndex = PlacementToIndex[Label->GetPlacement()];

@@ -66,7 +66,6 @@ object Form21: TForm21
     Height = 21
     Hint = 'Choose which corner of the label should be locked.'
     Style = csDropDownList
-    ItemHeight = 13
     TabOrder = 0
     OnChange = ComboBox1Change
     Items.Strings = (

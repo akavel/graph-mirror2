@@ -81,6 +81,7 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHe
   Edit4->Text = ImageWidth;
   Edit5->Text = ImageHeight;
   Edit6->Text = AnimationInfo.FramesPerSecond;
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm19::Button1Click(TObject *Sender)

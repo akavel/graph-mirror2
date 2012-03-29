@@ -756,7 +756,7 @@ void TForm1::LoadSettings(void)
   Property.Read(Registry);
 
   //We must scale after FontScale has been read and before the form size has been set
-	ScaleForm(this, false);
+	ScaleForm(this);
 
   Registry.OpenKey(REGISTRY_KEY);
   Recent1->MaxFiles = Registry.Read("Recents", 4);
@@ -3006,7 +3006,7 @@ void __fastcall TForm1::IPrintDialog1Show(TObject *Sender)
   {
     TPrintFrm *Form = IPrintDialog1->PrintForm;
     TranslateProperties(Form);  
-    ScaleForm(Form, false);
+    ScaleForm(Form);
     SetAccelerators(Form);
   }                                  
 }

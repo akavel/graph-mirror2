@@ -58,7 +58,7 @@ void TForm20::ShowAnimation(const String &FileName)
   MediaPlayer1->SetSignal(0, 1);
   MediaPlayer1->DisplayRect = DisplayRect;
 
-//  ScaleForm(this);
+  FlipForm(this);
   if(BiDiMode != bdLeftToRight)
     LabeledEdit1->LabelPosition = Extctrls::lpRight;
   if(!Visible)

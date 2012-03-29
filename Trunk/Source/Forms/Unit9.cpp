@@ -38,6 +38,7 @@ __fastcall TForm9::TForm9(TComponent* Owner)
   TranslateComponent(this);
   Translate();
   ScaleForm(this);
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void TForm9::Translate()

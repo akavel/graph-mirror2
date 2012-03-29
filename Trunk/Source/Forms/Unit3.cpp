@@ -21,8 +21,8 @@
 __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
 	: TForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   Translate();
+  ScaleForm(this);
 
   const TAxes &Axes = Data.Axes;
   Edit1->Text = RoundToStr(Axes.xAxis.Min, 8);
@@ -73,7 +73,7 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
 
   Panel1->Align = alClient;
   Panel2->Align = alClient;
-
+  FlipForm(this);
   UpdateEnabledControls();
 }
 //---------------------------------------------------------------------------

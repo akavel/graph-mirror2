@@ -159,65 +159,66 @@ object Form9: TForm9
       ExplicitHeight = 102
       inherited Label1: TLabel
         Width = 26
-        Height = 22
+        Height = 21
         ExplicitWidth = 26
       end
       inherited Label2: TLabel
-        Top = 39
-        Height = 22
+        Top = 38
+        Height = 21
+        ExplicitTop = 39
       end
       inherited Label3: TLabel
-        Top = 70
-        Width = 35
-        Height = 22
-        ExplicitWidth = 35
+        Top = 68
+        Width = 22
+        Height = 24
+        ExplicitTop = 70
+        ExplicitWidth = 22
       end
       inherited Edit3: TEdit
-        Left = 43
-        Top = 70
-        Width = 137
-        Height = 22
-        ExplicitLeft = 43
-        ExplicitTop = 70
-        ExplicitWidth = 137
+        Left = 34
+        Top = 68
+        Width = 146
+        Height = 24
+        ExplicitLeft = 34
+        ExplicitTop = 68
+        ExplicitWidth = 146
       end
       inherited Panel1: TPanel
-        Left = 43
-        Width = 137
-        Height = 22
-        ExplicitLeft = 43
-        ExplicitWidth = 137
-        ExplicitHeight = 22
+        Left = 34
+        Width = 146
+        Height = 21
+        ExplicitLeft = 34
+        ExplicitWidth = 146
+        ExplicitHeight = 21
         inherited Edit1: TMyEdit
-          Width = 122
+          Width = 131
           OnChange = Edit1Change
-          ExplicitWidth = 122
+          ExplicitWidth = 131
         end
         inherited UpDown1: TUpDownEx
-          Left = 122
-          Top = 0
+          Left = 131
           OnUpDown = UpDownExUpDown
-          ExplicitLeft = 122
+          ExplicitLeft = 131
         end
       end
       inherited Panel2: TPanel
-        Left = 43
-        Top = 39
-        Width = 137
-        Height = 22
-        ExplicitLeft = 43
-        ExplicitTop = 39
-        ExplicitWidth = 137
-        ExplicitHeight = 22
+        Left = 34
+        Top = 38
+        Width = 146
+        Height = 21
+        ExplicitLeft = 34
+        ExplicitTop = 38
+        ExplicitWidth = 146
+        ExplicitHeight = 21
         inherited Edit2: TMyEdit
-          Width = 122
+          Width = 131
           OnChange = Edit1Change
-          ExplicitWidth = 122
+          ExplicitWidth = 131
         end
         inherited UpDown2: TUpDownEx
-          Left = 122
+          Left = 131
           OnUpDown = UpDownExUpDown
-          ExplicitLeft = 122
+          ExplicitLeft = 131
         end
       end
     end

@@ -44,6 +44,7 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
   ComboBox1->Text = String(Property.FontScale) + "%";
 
   ClientWidth = GridPanelEx1->Width + GridPanelEx1->Left * 2;
+  FlipForm(this);
   ComboBox1->SelLength = 0; //Don't know why this is necesarry
 
   CheckBox5->Checked = Property.CustomDecimalSeparator;

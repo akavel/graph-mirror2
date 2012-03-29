@@ -25,6 +25,7 @@ __fastcall TForm18::TForm18(TComponent* Owner)
   ResizeControl(Edit2, Label1, Label2);
   ComboBox1->Left = Label3->Left + Label3->Width + 5;
   PageControl1->ActivePage = TabSheet1;
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm18::EditKeyPress(TObject *Sender, char &Key)

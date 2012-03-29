@@ -30,7 +30,7 @@ object Form3: TForm3
     Top = 8
     Width = 404
     Height = 213
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -753,12 +753,11 @@ object Form3: TForm3
             Left = 0
             Top = 0
             Width = 102
-            Height = 32
+            Height = 13
             Align = alLeft
             Caption = 'The y-axis cross at x='
             FocusControl = Edit12
             Layout = tlCenter
-            ExplicitHeight = 13
           end
           object Edit12: TMyEdit
             AlignWithMargins = True

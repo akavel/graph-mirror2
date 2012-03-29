@@ -41,6 +41,7 @@ __fastcall TForm12::TForm12(TComponent* Owner, TData &AData)
   UpDown1->Position = Property.DefaultTangent.Size;
   ComboBox1->ItemIndex = 0;
   ComboBox2->ItemIndex = 0;
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm12::Button1Click(TObject *Sender)

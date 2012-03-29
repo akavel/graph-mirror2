@@ -20,9 +20,10 @@
 __fastcall TForm17::TForm17(TComponent* Owner, TData &AData)
   : TForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
+  ScaleForm(this);
+  FlipForm(this);
   Grid1->ColWidths[1] = Grid1->Width - Grid1->ColWidths[0] - GetSystemMetrics(SM_CXHTHUMB) - 6;
 
   unsigned I = 1;

@@ -26,6 +26,7 @@ __fastcall TForm16::TForm16(TComponent* Owner, TData &AData)
   SetAccelerators(this);
   ResizeControl(Edit5, Label12);
   ScaleForm(this);
+  FlipForm(this);
 
   ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Property.DefaultShade.Style);
   ExtColorBox1->Selected = Property.DefaultShade.Color;

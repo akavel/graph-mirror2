@@ -25,6 +25,7 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
   TranslateProperties(this);
   SetAccelerators(this);
   TranslateStrings(ColorBox1->Items);
+  FlipForm(this);
 
   OrgComboBox1WindowProc = ComboBox1->WindowProc;
   ComboBox1->WindowProc = ComboBox1Proc;

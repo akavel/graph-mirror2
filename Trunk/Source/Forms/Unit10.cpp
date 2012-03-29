@@ -29,6 +29,7 @@ __fastcall TForm10::TForm10(TComponent* Owner)
   LinkLabel1->Caption = LoadRes(Property.NextTip);
 
   Width = Width - Button3->Width + Canvas->TextWidth(Button3->Caption) + 20;
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm10::Button2Click(TObject *Sender)

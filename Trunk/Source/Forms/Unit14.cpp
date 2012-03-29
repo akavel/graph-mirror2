@@ -37,8 +37,8 @@ const TInterpolationAlgorithm FromGuiAlgorithm[4] = {iaLinear, iaCubicSpline2, i
 __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
     : TForm(Owner), Data(AData), FontChanged(false)
 {
-  ScaleForm(this);
   Translate();
+  ScaleForm(this);
 
   FontDialog1->Font->Assign(Property.DefaultPointLabelFont);
   Edit1->Text = Data.CreatePointSeriesDescription().c_str();
@@ -55,6 +55,7 @@ __fastcall TForm14::TForm14(TComponent* Owner, TData &AData)
   UpdateErrorBars();
   PageControl1->ActivePage = TabSheet1;
   ComboBox2->ItemIndex = ToGuiAlgorithm[GetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, iaLinear)];
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void TForm14::Translate()

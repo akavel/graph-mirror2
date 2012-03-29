@@ -66,7 +66,6 @@ object Form6: TForm6
     Default = True
     ModalResult = 1
     TabOrder = 1
-    ExplicitLeft = 288
   end
   object Button2: TButton
     Left = 374
@@ -78,7 +77,6 @@ object Form6: TForm6
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 2
-    ExplicitLeft = 376
   end
   object ComboBox1: TComboBox
     Left = 248
@@ -87,7 +85,6 @@ object Form6: TForm6
     Height = 21
     Hint = 'Text size.'
     AutoComplete = False
-    ItemHeight = 13
     ItemIndex = 0
     TabOrder = 5
     Text = '8'
@@ -124,8 +121,6 @@ object Form6: TForm6
     DoubleBuffered = False
     ParentDoubleBuffered = False
     TabOrder = 0
-    ExplicitWidth = 529
-    ExplicitHeight = 185
     object ToolBar1: TToolBar
       Left = 2
       Top = 15
@@ -138,7 +133,6 @@ object Form6: TForm6
       TabOrder = 0
       Transparent = True
       Wrapable = False
-      ExplicitWidth = 525
       object ToolButton11: TToolButton
         Left = 215
         Top = 0
@@ -278,7 +272,6 @@ object Form6: TForm6
     Sample = 'abc ABC'
     SamplePos = 100
     TabOrder = 4
-    ItemHeight = 15
     OnCloseUp = IFontBox1Exit
     OnExit = IFontBox1Exit
     OnKeyDown = ComboBoxKeyDown
@@ -293,7 +286,6 @@ object Form6: TForm6
     Caption = 'Help'
     TabOrder = 3
     OnClick = Button3Click
-    ExplicitLeft = 464
   end
   object ColorBox1: TExtColorBox
     Left = 312
@@ -301,7 +293,6 @@ object Form6: TForm6
     Width = 105
     Height = 22
     Hint = 'Text color.'
-    ItemHeight = 16
     TabOrder = 6
     OnChange = ColorBox1Change
     OnKeyDown = ComboBoxKeyDown
@@ -316,7 +307,6 @@ object Form6: TForm6
     Width = 105
     Height = 22
     Hint = 'Select background color of the text label.'
-    ItemHeight = 16
     TabOrder = 7
     OnChange = ColorBox2Change
     OnKeyDown = ComboBoxKeyDown

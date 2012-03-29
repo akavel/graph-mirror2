@@ -38,10 +38,6 @@ object Form18: TForm18
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Size'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 8
         Top = 92
@@ -102,10 +98,6 @@ object Form18: TForm18
       Font.Style = []
       ImageIndex = 1
       ParentFont = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         298
         165)
@@ -167,10 +159,6 @@ object Form18: TForm18
     object TabSheet3: TTabSheet
       Caption = 'PDF'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label3: TLabel
         Left = 8
         Top = 8
