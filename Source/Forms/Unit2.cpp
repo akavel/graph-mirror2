@@ -22,6 +22,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   String TranslatorString = LinkLabel3->Caption;
   TranslateProperties(this);
   ScaleForm(this);
+  FlipForm(this);
 
   TVersionInfo Info;
   //Make string with file version information

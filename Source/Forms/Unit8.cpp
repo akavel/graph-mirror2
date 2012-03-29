@@ -19,6 +19,7 @@ __fastcall TForm8::TForm8(TComponent* Owner, TData &AData)
   ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 bool TForm8::EditModel(std::wstring &Name)

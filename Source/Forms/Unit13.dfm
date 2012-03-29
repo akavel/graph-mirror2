@@ -495,10 +495,6 @@ object Form13: TForm13
     object TabSheet2: TTabSheet
       Caption = 'User defined'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 8
         Top = 12

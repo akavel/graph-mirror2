@@ -103,18 +103,10 @@ void FlipMargins(TControl *Control)
       FlipMargins(WinControl->Controls[I]);
 }
 //---------------------------------------------------------------------------
-void ScaleForm(TForm *Form, bool Flip)
+void ScaleForm(TForm *Form)
 {
   //Change font for form. All components should have ParentFont=true
   Form->Font->Name = "MS Shell Dlg";
-
-  if(Flip && SysLocale.MiddleEast)
-  {
-    Form->FlipChildren(true);
-    FlipAnchors(Form);
-    FlipMargins(Form);
-    Form->ParentBiDiMode = true;
-  }
 
   //Set FontScale to 100 to disable scaling
   int FontScale = Property.FontScale;
@@ -122,6 +114,17 @@ void ScaleForm(TForm *Form, bool Flip)
   {
     Form->ScaleBy(FontScale, 100);
     ScaleComponent(Form, FontScale);
+  }
+}
+//---------------------------------------------------------------------------
+void FlipForm(TForm *Form)
+{
+  if(SysLocale.MiddleEast)
+  {
+    Form->FlipChildren(true);
+    FlipAnchors(Form);
+    FlipMargins(Form);
+    Form->ParentBiDiMode = true;
   }
 }
 //---------------------------------------------------------------------------

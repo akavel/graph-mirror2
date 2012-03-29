@@ -30,10 +30,6 @@ object Form16: TForm16
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Shading'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel1: TPanel
         Left = 24
         Top = 14
@@ -633,10 +629,6 @@ object Form16: TForm16
     object TabSheet2: TTabSheet
       Caption = 'Options'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label12: TLabel
         Left = 8
         Top = 12
@@ -772,10 +764,6 @@ object Form16: TForm16
     object TabSheet3: TTabSheet
       Caption = '2nd function'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label11: TLabel
         Left = 8
         Top = 8

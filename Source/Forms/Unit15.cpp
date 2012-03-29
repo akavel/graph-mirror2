@@ -22,9 +22,9 @@
 __fastcall TForm15::TForm15(TComponent* Owner)
         : TForm(Owner), Func(NULL)
 {
-	ScaleForm(this);
   TranslateProperties(this);
 	SetAccelerators(this);
+  ScaleForm(this);
   MoveControl(Edit1, Label1);
   MoveLabel(Edit2, Label2);
 	Edit3->Left = Edit1->Left;
@@ -32,6 +32,7 @@ __fastcall TForm15::TForm15(TComponent* Owner)
 	Edit1->Text = ToUString(GetRegValue(REGISTRY_KEY "\\Table", L"From", HKEY_CURRENT_USER, L"-10"));
 	Edit2->Text = ToUString(GetRegValue(REGISTRY_KEY "\\Table", L"To", HKEY_CURRENT_USER, L"10"));
 	Edit3->Text = ToUString(GetRegValue(REGISTRY_KEY "\\Table", L"dx", HKEY_CURRENT_USER, L"0.1"));
+  FlipForm(this);
 
 	//Initialize as dialog and change to sizeable to prevent change in client size when the border size changes
 	BorderStyle = bsSizeable;

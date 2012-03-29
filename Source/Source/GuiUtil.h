@@ -33,7 +33,8 @@ String GetControlText(TControl *Control);
 void SetControlText(TControl *Control, const String &Str);
 
 void ScaleComponent(TComponent *Component, unsigned Scale);
-void ScaleForm(TForm *Form, bool Flip=true);
+void ScaleForm(TForm *Form);
+void FlipForm(TForm *Form);
 
 void TranslateStrings(TStrings *Strings);
 

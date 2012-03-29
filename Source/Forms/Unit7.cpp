@@ -23,6 +23,7 @@ __fastcall TForm7::TForm7(TComponent* Owner, TData &AData)
   TranslateStrings(ExtColorBox1->Items);
   SetAccelerators(this);
   ScaleForm(this);
+
   Edit1->Left = Label4->Left + Label4->Width + 5;
   Edit2->Left = Label5->Left + Label5->Width + 5;
   ResizeControl(Edit3, Label10);
@@ -34,6 +35,7 @@ __fastcall TForm7::TForm7(TComponent* Owner, TData &AData)
   LineSelect1->ItemIndex = Property.DefaultDif.Style;
   ExtColorBox1->Selected = Property.DefaultDif.Color;
   UpDown1->Position = Property.DefaultDif.Size;
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm7::Button1Click(TObject *Sender)

@@ -22,22 +22,23 @@
 __fastcall TForm13::TForm13(TComponent* Owner, TData &AData)
         : TForm(Owner), Data(AData)
 {
-  ScaleForm(this);
   int OldLabelWidth = TMaxWidth(Label5)(Label6)(Label7);
   TranslateProperties(this);
   TranslateStrings(ExtColorBox1->Items);
+  ScaleForm(this); //Moving this may cause problem for the Arabic translation
   int LabelWidth = TMaxWidth(Label5)(Label6)(Label7);
   SetAccelerators(this);
   if(LabelWidth != OldLabelWidth)
     Width = Width + LabelWidth - OldLabelWidth;
   ResizeControl(Edit5, CheckBox1->Left + CheckBox1->Width);
   PageControl1->ActivePage = TabSheet1;
+  FlipForm(this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm13::ImageClick(TObject *Sender)
 {
   if(Sender == Image1)
-  {                                  
+  {
     if(RadioButton1->CanFocus())
       RadioButton1->SetFocus();
   }
