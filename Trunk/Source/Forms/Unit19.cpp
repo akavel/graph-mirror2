@@ -182,6 +182,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
       Colors.push_back(ColorToRGBQUAD(*Iter));
 
 		Python::TPyObjectPtr DataObject(Python::IsPythonInstalled() ? ToPyObject(Data) : NULL, false);
+    int LastColorCount = -1; //Use invalid value as default to force writing of colors in the first loop
     for(unsigned I = 0; I < StepCount; I++)
     {
       long double Value = Min + Step * I;
@@ -204,12 +205,12 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
       //so we only add to the palette. It also gives problems when the number of entries is
       //increased. Therefore we always store 256 colors, where the unused have dummy values.
       //Why is this so difficult?
-      unsigned LastColorCount = Colors.size();
       CompressBitmap(Bitmap.get(), Rect, Colors, ImageData);
-      if(Colors.size() > LastColorCount)
+      if(static_cast<int>(Colors.size()) > LastColorCount)
       {
         std::copy(Colors.begin(), Colors.end(), BitmapInfo->bmiColors);
         OleCheck(AVIStreamSetFormat(pStream, I, BitmapInfo, BitmapInfoData.size()));
+        LastColorCount = Colors.size();
       }
 
       OleCheck(AVIStreamWrite(pStream, I, 1, &ImageData[0], ImageData.size(), AVIIF_KEYFRAME, NULL, NULL));
