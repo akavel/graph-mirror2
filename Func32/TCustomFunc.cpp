@@ -292,7 +292,7 @@ TComplex TCustomFunc::DynCall(TDynData<TComplex> &DynData) const
  */
 bool TCustomFunc::IsDependent(const std::wstring &SymbolName) const
 {
-  return FuncData->IsDependent(SymbolName);
+  return FuncData->IsDependent(ToLower(SymbolName));
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
