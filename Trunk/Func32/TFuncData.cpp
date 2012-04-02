@@ -341,7 +341,7 @@ bool TFuncData::CheckRecursive(std::vector<const TFuncData*> &FuncStack) const
 }
 //---------------------------------------------------------------------------
 /** Check if a symbol name is referenced directly or indirectly.
-  * \param SymbolName: Name of symbol to check for.
+  * \param SymbolName: Name of symbol to check for. SymbolName must be in lower case.
   */
 bool TFuncData::IsDependent(const std::wstring &SymbolName) const
 {
