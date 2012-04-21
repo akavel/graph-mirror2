@@ -298,12 +298,15 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
               }
             else
             {
-              TCoordSetIter Iter;
+              TCoordSetIter Iter = Func2->sList.end();
               if(Func == Func2)
               { //Special handling for crossing with self: Split the search in two
-                Iter = FindCrossing(p1, Func->sList.begin(), p1-2);
-                if(Iter == p1-2)
-                  Iter = FindCrossing(p1, p1+2, Func->sList.end());
+                if(p1 != Func->sList.begin()+1)
+                {
+                  Iter = FindCrossing(p1, Func->sList.begin(), p1-2);
+                  if(Iter == p1-2)
+                    Iter = FindCrossing(p1, p1+2, Func->sList.end());
+                }
               }
               else
                 Iter = FindCrossing(p1, Func2->sList.begin(), Func2->sList.end());
@@ -331,12 +334,15 @@ double TData::FindInterception(const TBaseFuncType *Func, int X, int Y) const
               }
             else
             {
-              TCoordSetIter Iter;
+              TCoordSetIter Iter = Func2->sList.end();
               if(Func == Func2)
               { //Special handling for crossing with self: Split the search in two
-                Iter = FindCrossing(p3, Func->sList.begin(), p3-2);
-                if(Iter == p3-2)
-                  Iter = FindCrossing(p3, p3+2, Func->sList.end());
+                if(p3 != Func->sList.begin() + 1)
+                {
+                  Iter = FindCrossing(p3, Func->sList.begin(), p3-2);
+                  if(Iter == p3-2)
+                    Iter = FindCrossing(p3, p3+2, Func->sList.end());
+                }
               }
               else
                 Iter = FindCrossing(p3, Func2->sList.begin(), Func2->sList.end());
