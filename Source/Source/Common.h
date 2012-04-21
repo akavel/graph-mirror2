@@ -82,6 +82,8 @@ inline double Perp(const T &u, const T &v)
 template<typename TIterator1, typename TIterator2>
 TIterator2 FindCrossing(TIterator1 p1, TIterator2 First, TIterator2 Last)
 {
+  if(First == Last)
+    return Last;
   TIterator1 p2 = p1;
   ++p2;
   Func32::TDblPoint u(p2->x - p1->x, p2->y - p1->y);  //Vector from p1 to p2
