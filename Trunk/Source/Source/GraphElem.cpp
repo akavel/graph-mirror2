@@ -604,6 +604,11 @@ bool TTan::CalcTan()
   }
 }
 //---------------------------------------------------------------------------
+bool TTan::IsDependent(const std::wstring &SymbolName) const
+{
+  return t.IsDependent(GetData(), SymbolName) || TBaseFuncType::IsDependent(SymbolName);
+}
+//---------------------------------------------------------------------------
 //////////////
 // TShading //
 //////////////

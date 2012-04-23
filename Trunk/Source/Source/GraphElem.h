@@ -243,6 +243,7 @@ public:
   void Update();
   long double CalcArea(long double From, long double To) const;
   bool CalcTan();
+  bool IsDependent(const std::wstring &SymbolName) const;
 };
 
 class TStdFunc : public TBaseFuncType
