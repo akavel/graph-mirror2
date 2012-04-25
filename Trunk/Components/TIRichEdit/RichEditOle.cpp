@@ -307,7 +307,7 @@ bool TRichEditOle::InsertObject()
 	if(io.dwFlags & IOF_CHECKDISPLAYASICON)
   {
 		int Update;
-		if(OleStdSwitchDisplayAspect(OleObject, &Obj.dvaspect, DVASPECT_ICON, io.hMetaPict, true, false, 0, &Update))
+		if(!OleStdSwitchDisplayAspect(OleObject, &Obj.dvaspect, DVASPECT_ICON, io.hMetaPict, true, false, 0, &Update))
 			Application->MessageBox(L"Cannot display object as icon.", L"Insert Object", MB_OK | MB_ICONWARNING);
 	}
 
