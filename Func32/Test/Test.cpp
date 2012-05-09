@@ -974,6 +974,7 @@ void Test()
   TestDif("sin(x)/x", "(cos(x)*x-sin(x))/x^2");
   TestDif("2*sin 30*x", "1", Degree);
   TestDif("x-cos x", "1+sin x");
+  TestDif("e^-(sqrt(2)*x)",  "-e^-(sqrt(2)*x)*sqrt(2)");
 
   //Test differentiation of special functions
   TestDif("dnorm(x)", "-exp(-x^2/2)*x*sqrt(2pi)/2pi");
@@ -1042,6 +1043,7 @@ void Test()
 
 	//Test conversion to text
 	TestMakeText(TFunc(L"0"), L"0");
+  TestMakeText(TFunc(L"-e^-(sqrt(2)*x)*sqrt(2)"), L"-e^(-sqrt(2)*x)*sqrt(2)");
 
 	//Test several known problems
 	TestParamFunc(L"t", L"dsafd");

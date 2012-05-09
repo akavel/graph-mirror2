@@ -324,7 +324,7 @@ inline bool IsFunctionVariableP(const TElem &Elem)
 //---------------------------------------------------------------------------
 inline bool IsOperator(const TElem &Elem)
 {
-  return (Elem.Ident >= FirstFunction2P && Elem.Ident <= CodePow);
+  return Elem.Ident == CodeNeg || (Elem.Ident >= FirstFunction2P && Elem.Ident <= CodePow);
 }
 //---------------------------------------------------------------------------
 inline unsigned FunctionArguments(const TElem &Elem)
