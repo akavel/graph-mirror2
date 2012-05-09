@@ -32,7 +32,7 @@ try:
 
   # Sign Graph.exe
   Password = getpass()
-  os.system('signtool.exe sign /f %s\\Certificate.p12 /p %s /t http://timestamp.comodoca.com/authenticode /d "Graph" Graph.exe")
+  subprocess.check_call(['signtool.exe',  'sign', '/f', 'Certificate.p12', '/p', Password, '/t', 'http://timestamp.comodoca.com/authenticode', '/d', '"Graph"', 'Graph.exe'])
   SignTool = 'SignTool=signtool.exe sign /f %s\\Certificate.p12 /p %s /t http://timestamp.comodoca.com/authenticode $p' % (os.getcwd(), Password)
 
   # Compile SetupGraphBeta-4.2.0.x.exe
