@@ -479,12 +479,11 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
       if(CursorState != csMoveLabel && CursorState != csMoveLegend)
       {
         TPoint Pos = Image1->ClientToScreen(TPoint(X, Y));
+        SetCursorState(csIdle); //Popup() will not return until the context menu is closed again
         if(Data.FindLabel(X, Y))
           PopupMenu3->Popup(Pos.x, Pos.y);
         else if(Draw.InsideLegend(X, Y))
           PopupMenu4->Popup(Pos.x, Pos.y);
-
-        SetCursorState(csIdle);
       }
       break;
 
