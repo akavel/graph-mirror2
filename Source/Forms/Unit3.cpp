@@ -185,6 +185,11 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   Axes.Trigonometry = RadioGroup2->ItemIndex == 0 ? Func32::Radian : Func32::Degree;
   Axes.LegendPlacement = static_cast<TLegendPlacement>(RadioGroup3->ItemIndex + 1);
   Axes.CalcComplex = CheckBox19->Checked;
+  //Ensure that the legend position is valid.
+  if(Axes.xAxis.LogScl && Axes.LegendPos.x <= 0)
+    Axes.LegendPos.x = Axes.xAxis.Min;
+  if(Axes.yAxis.LogScl && Axes.LegendPos.y <= 0)
+    Axes.LegendPos.y = Axes.yAxis.Min;
 
   Axes.BackgroundColor = ExtColorBox1->Selected;
   Axes.AxesColor = ExtColorBox2->Selected;
