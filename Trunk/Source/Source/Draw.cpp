@@ -692,6 +692,7 @@ void TDraw::DrawAxes()
 //---------------------------------------------------------------------------
 void TDraw::DrawLegend()
 {
+  LegendRect = TRect(0, 0, 0, 0);
   if(!Axes.ShowLegend)
     return;
 
@@ -724,10 +725,7 @@ void TDraw::DrawLegend()
   }
 
   if(!LegendCount || !Axes.ShowLegend)
-  {
-    LegendRect = TRect(0, 0, 0, 0);
     return;
-  }
 
   unsigned LegendWidth = std::min(TextWidth + Size(10), AxesRect.Width());
   unsigned LegendHeight = (TextHeight + Size(6)) * LegendCount + Size(10);
@@ -754,6 +752,9 @@ void TDraw::DrawLegend()
       break;
 
     default:
+      if(Axes.xAxis.LogScl && Axes.LegendPos.x <= 0 ||
+         Axes.yAxis.LogScl && Axes.LegendPos.y <= 0)
+           return;
       LegendRect.Top = yPoint(Axes.LegendPos.y);
       LegendRect.Left = xPoint(Axes.LegendPos.x);
   }
