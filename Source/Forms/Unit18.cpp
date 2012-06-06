@@ -43,7 +43,7 @@ void TForm18::EditOptions(TImageOptions &Options, TImageFormat ImageFormat, int 
 
   RadioGroup3->ItemIndex = Options.UseCustomSize;
   Edit1->Text = Options.UseCustomSize ? CustomWidth : ScreenWidth;
-  Edit2->Text = Options.UseCustomSize ? CustomHeight : CustomHeight;
+  Edit2->Text = Options.UseCustomSize ? CustomHeight : ScreenHeight;
   Edit1->Enabled = Options.UseCustomSize;
   Edit2->Enabled = Options.UseCustomSize;
   Edit3->Text = Options.Jpeg.Quality;
