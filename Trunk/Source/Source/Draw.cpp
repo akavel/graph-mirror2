@@ -424,9 +424,9 @@ void TDraw::DrawAxes()
 		Context.ExcludeClipRect(LegendRect);
 
 	//Sanity check tick unit to prevent infinite loop
-	double xMinUnit = Axes.xAxis.LogScl ? std::log(Axes.xAxis.Max)/std::log(Axes.xAxis.Min) : (Axes.xAxis.Max - Axes.xAxis.Min) / 1000;
+	double xMinUnit = Axes.xAxis.LogScl ? std::log10(Axes.xAxis.Max/Axes.xAxis.Min)/10 : (Axes.xAxis.Max - Axes.xAxis.Min) / 1000;
 	double xTickUnit = std::max(Axes.xAxis.TickUnit, xMinUnit);
-	double yMinUnit = Axes.yAxis.LogScl ? std::log(Axes.yAxis.Max)/std::log(Axes.yAxis.Min) : (Axes.yAxis.Max - Axes.yAxis.Min) / 1000;
+	double yMinUnit = Axes.yAxis.LogScl ? std::log10(Axes.yAxis.Max/Axes.yAxis.Min)/10 : (Axes.yAxis.Max - Axes.yAxis.Min) / 1000;
 	double yTickUnit = std::max(Axes.yAxis.TickUnit, yMinUnit);
 
 	double xGridUnit = std::max(Axes.xAxis.GridUnit, xMinUnit);
