@@ -138,14 +138,14 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   //Check for out of range
   if(xAxis.Max-xAxis.Min < 1E-10 || yAxis.Max-yAxis.Min < 1E-10)
   {
-    MessageBox(LoadRes(RES_ERROR_IN_VALUE), LoadRes(RES_MAX_ZOOM));
+    MessageBox(LoadRes(RES_MAX_ZOOM), LoadRes(RES_ERROR_IN_VALUE));
     return;
   }
 
   //Check if we have zoomed so much out that log10(xMin/xMax) can no longer be evaluated
   if(xAxis.Max>1E15 || yAxis.Max>1E15 || xAxis.Min < -1E15 || yAxis.Min < -1E15)
   {
-    MessageBox(LoadRes(RES_ERROR_IN_VALUE), LoadRes(RES_MIN_ZOOM));
+    MessageBox(LoadRes(RES_MIN_ZOOM), LoadRes(RES_ERROR_IN_VALUE));
     return;
   }
 

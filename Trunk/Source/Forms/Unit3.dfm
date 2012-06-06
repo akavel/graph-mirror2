@@ -35,6 +35,10 @@ object Form3: TForm3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'x-axis'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GridPanel1: TGridPanelEx
         Left = 0
         Top = 0
@@ -362,12 +366,11 @@ object Form3: TForm3
             Left = 0
             Top = 0
             Width = 102
-            Height = 32
+            Height = 13
             Align = alLeft
             Caption = 'The x-axis cross at y='
             FocusControl = Edit6
             Layout = tlCenter
-            ExplicitHeight = 13
           end
           object Edit6: TMyEdit
             AlignWithMargins = True
