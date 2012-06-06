@@ -1036,10 +1036,12 @@ void Test()
   Args.push_back(L"b");
 	Args.push_back(L"c");
 	SymbolList.Add(L"foo", L"a^3+b^2+c", Args);
+  SymbolList.Add(L"foo_bar", 5);
 	Test("k*x", 2, 84, Radian, "", SymbolList);
 	Test("TestSqr(x)", 10, 100, Radian, "", SymbolList);
 	Test("TestCube(5, 2, x)", 1, 130, Radian, "", SymbolList);
 	Test("foo(5, 2, x)", 1, 130, Radian, "", SymbolList);
+  Test("foo_bar", 0, 5, Radian, "", SymbolList);
 
 	//Test conversion to text
 	TestMakeText(TFunc(L"0"), L"0");

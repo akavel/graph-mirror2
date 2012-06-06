@@ -389,7 +389,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 							| NoCaseSymbols[TAssign(Constant.List)]
 							]
 							| Symbols[TAssign(Constant.List)]
-							) >> (eps_p - alnum_p)] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
+							) >> eps_p - (alnum_p | '_')] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
 
 	Bracket =	ch_p('(')[Bracket.EndBracket = ')'] |
 						ch_p('[')[Bracket.EndBracket = ']'] |
@@ -398,7 +398,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 	//A function name may not be followd by character og digit, because they should be part of the name.
 	//If an alphanumeric character is found afterwards, the pushed function is popped
 	Function =
-			lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> (eps_p - alnum_p)]] >>
+			lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> eps_p - (alnum_p | '_')]] >>
 					(   Bracket[Function.EndBracket = arg1] >>
 							Expression[TPushBack(Function.List)] >>
 							*(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >>
@@ -430,9 +430,9 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
 	Expression =
 			Relation[Expression.List = arg1] >>
-				 *(   lexeme_d[as_lower_d["and"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
-					|   lexeme_d[as_lower_d["or"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
-					|   lexeme_d[as_lower_d["xor"] >> (eps_p - alnum_p)] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
+				 *(   lexeme_d[as_lower_d["and"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
+					|   lexeme_d[as_lower_d["or"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
+					|   lexeme_d[as_lower_d["xor"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
 					);
 
   Sum =

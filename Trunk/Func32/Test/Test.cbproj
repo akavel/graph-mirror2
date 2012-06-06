@@ -2,7 +2,7 @@
 		<PropertyGroup>
 			<ProjectGuid>{9DFDD0A7-0D84-450E-9A6D-1077D3B0B894}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Release</Config>
+			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Console</AppType>
