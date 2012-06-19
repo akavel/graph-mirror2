@@ -3,7 +3,7 @@
     $Body = "";
     $FromAddr = $HTTP_POST_VARS["email"];
     $Subject = "";
-    $Redirect = "Subscribed.php";
+    $Redirect = "/subscribed";
 
     if(mail($ToAddr, $Subject, $Body, "From: ".$FromAddr."\n"))
     {

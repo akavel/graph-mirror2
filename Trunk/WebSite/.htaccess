@@ -1,8 +1,21 @@
-Redirect 301 /graph/SetupGraphBeta.exe http://www.padowan.dk/graph/DownloadBeta.php
-Redirect 301 /graph/SetupGraph.exe http://www.padowan.dk/graph/DownloadGraph.php
-Redirect 301 /graph/SetupGraph-4.2.exe http://www.padowan.dk/graph/DownloadGraph.php
+Redirect 301 /graph/SetupGraphBeta.exe http://www.padowan.dk/bin/SetupGraph-4.4.exe
+Redirect 301 /graph/SetupGraph.exe http://www.padowan.dk/bin/SetupGraph-4.4.exe
+Redirect 301 /graph/SetupGraph-4.2.exe http://www.padowan.dk/bin/SetupGraph-4.4.exe
 
-Redirect 301 /graph/donate.html http://www.padowan.dk/graph/Donation.php
-Redirect 301 /graph/support.html http://www.padowan.dk/forum
-Redirect 301 /graph/download.php http://www.padowan.dk/graph/DownloadGraph.php
+Redirect 301 /graph/donate.html http://www.padowan.dk/donate
+Redirect 301 /graph/support.html http://forum.padowan.dk
+Redirect 301 /graph/download.php http://www.padowan.dk/bin/SetupGraph-4.4.exe
+Redirect 301 /graph http://www.padowan.dk
 
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wordpress/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wordpress/index.php [L]
+</IfModule>
+
+# END WordPress
