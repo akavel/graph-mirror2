@@ -51,9 +51,9 @@
 		<Program_Category_Class>Education::Mathematics</Program_Category_Class>
 		<Program_System_Requirements />
 		<File_Info>
-			<File_Size_Bytes>2656952</File_Size_Bytes>
-			<File_Size_K>2594</File_Size_K>
-			<File_Size_MB>2.53</File_Size_MB>
+			<File_Size_Bytes>9967400</File_Size_Bytes>
+			<File_Size_K>9733</File_Size_K>
+			<File_Size_MB>9.51</File_Size_MB>
 		</File_Info>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>
@@ -82,7 +82,7 @@ It is possible to save the coordinate system and everything on it as an image fi
 			<Application_Info_URL>http://www.padowan.dk</Application_Info_URL>
 			<Application_Order_URL>http://www.padowan.dk</Application_Order_URL>
 			<Application_Screenshot_URL>http://www.padowan.dk/graph/DialogMain.png</Application_Screenshot_URL>
-			<Application_Icon_URL>http://www.padowan.dk/graph/Icon.png</Application_Icon_URL>
+			<Application_Icon_URL>http://www.padowan.dk/graph/Graph.png</Application_Icon_URL>
 			<Application_XML_File_URL>http://www.padowan.dk/graph/Graph.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
