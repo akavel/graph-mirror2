@@ -284,26 +284,33 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
 	unsigned Row;
 	try
 	{
-		Points.push_back(std::make_pair(L"", std::vector<TPointSeriesPoint>()));
 		unsigned RowCount = CsvGrid.size();
-		for(Row = 0; Row < RowCount; Row++)
-		{
-			std::wstring Str = ToWString(CsvGrid[Row][0]);
-			if(!Str.empty() && Str[0] == L'#')
-			{
-				if(Points.back().second.empty())
-					Points.back().first = Str.substr(1);
-				else
-					Points.push_back(std::make_pair(Str.substr(1), std::vector<TPointSeriesPoint>()));
-			}
-			else
-			{
-				if(Property.DecimalSeparator != '.')
-				{
-					std::replace(Str.begin(), Str.end(), Property.DecimalSeparator, L'.');
-					std::replace(CsvGrid[Row].at(1).begin(), CsvGrid[Row].at(1).end(), (char)Property.DecimalSeparator, '.');
-				}
-				Points.back().second.push_back(TPointSeriesPoint(Str, ToWString(CsvGrid[Row].at(1))));
+    unsigned ColCount = CsvGrid.at(1).size();
+    unsigned ColIndex = 0;
+    for(unsigned Col = 1; Col < ColCount; Col++)
+    {
+  		Points.push_back(std::make_pair(L"", std::vector<TPointSeriesPoint>()));
+		  for(Row = 0; Row < RowCount; Row++)
+		  {
+			  std::wstring xStr = ToWString(CsvGrid[Row][0]);
+			  if(!xStr.empty() && xStr[0] == L'#')
+			  {
+  			  std::wstring Str = ToWString(CsvGrid[Row].at(Col-1).substr(Col == 1 ? 1 : 0));
+				  if(Points.back().second.empty())
+					  Points.back().first = Str;
+				  else
+					  Points.push_back(std::make_pair(Str, std::vector<TPointSeriesPoint>()));
+			  }
+			  else
+			  {
+  			  std::wstring yStr = ToWString(CsvGrid[Row].at(Col));
+				  if(Property.DecimalSeparator != '.')
+				  {
+					  std::replace(xStr.begin(), xStr.end(), Property.DecimalSeparator, L'.');
+  					std::replace(yStr.begin(), yStr.end(), Property.DecimalSeparator, L'.');
+  				}
+	  			Points.back().second.push_back(TPointSeriesPoint(xStr, yStr));
+        }
 			}
 		}
 	}
