@@ -264,7 +264,7 @@ std::vector<TCoordSet<> > AnalyseFunction(const TBaseFunc &Func, long double Min
 std::vector<std::wstring> FindUnknowns(const std::wstring &Str)
 {
   std::vector<std::wstring> Vector;
-  unsigned Pos = Str.find('$');
+  std::size_t Pos = Str.find('$');
   while(Pos != std::string::npos)
   {
     unsigned Pos2;
