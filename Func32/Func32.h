@@ -187,10 +187,10 @@ struct TCoordBase
 template<typename T>
 struct TCoord :  public TCoordBase<T>
 {
-  TCoord() {x=0; y=0;}
-  TCoord(const T &X, const T &Y) {x=X; y=Y;}
+  TCoord() {TCoordBase<T>::x=0; TCoordBase<T>::y=0;}
+  TCoord(const T &X, const T &Y) {TCoordBase<T>::x=X; TCoordBase<T>::y=Y;}
   TCoord(const TCoordSet<T> &Set);
-  TCoord(const TCoordBase<T> &Set) {x=Set.x; y=Set.y;}
+  TCoord(const TCoordBase<T> &Set) {TCoordBase<T>::x=Set.x; TCoordBase<T>::y=Set.y;}
 };
 
 //!Function used to create an (x,y) coordinate
@@ -714,7 +714,7 @@ struct TCoordSet
   TCoordSet(T at, const TCoord<T> &Coord) : t(at), x(Coord.x), y(Coord.y) {}
 };
 template<typename T>
-inline TCoord<T>::TCoord(const TCoordSet<T> &Set) {x=Set.x; y=Set.y;}
+inline TCoord<T>::TCoord(const TCoordSet<T> &Set) {TCoordBase<T>::x=Set.x; TCoordBase<T>::y=Set.y;}
 
 template<typename T=long double>
 class TEvalCoordSet
