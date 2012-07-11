@@ -601,11 +601,13 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift,
 //---------------------------------------------------------------------------
 void TForm1::SetPanelCoordText()
 {
-	int xDigits = 4 - std::log10(std::abs(Data.Axes.xAxis.Max - Data.Axes.xAxis.Min));
+  const TAxis &xAxis = Data.Axes.xAxis;
+  const TAxis &yAxis = Data.Axes.yAxis;
+	int xDigits = xAxis.LogScl ? 1 - std::log10(std::abs(xAxis.Min)) : 4 - std::log10(std::abs(xAxis.Max - xAxis.Min));
   int xPrecision = xDigits > 0 ? 100 : 4;
   if(xDigits < 0)
     xDigits = 0;
-  int yDigits = 4 - std::log10(std::abs(Data.Axes.yAxis.Max - Data.Axes.yAxis.Min));
+  int yDigits = yAxis.LogScl ? 1 - std::log10(std::abs(yAxis.Min)) : 4 - std::log10(std::abs(yAxis.Max - yAxis.Min));
   int yPrecision = yDigits > 0 ? 100 : 4;
   if(yDigits < 0)
     yDigits = 0;
@@ -1220,18 +1222,7 @@ void __fastcall TForm1::FormMouseWheelUp(TObject *Sender,
        return;
 
   //Zoom in at the point where the cursor is.
-  //If you zoom again within 400 ms, the first point is used again.
-  static unsigned LastZoomTime = 0;
-  static Func32::TDblPoint LastZoomCoord;
-  unsigned NewZoomTime = GetTickCount();
-  if(NewZoomTime - LastZoomTime > 400)
-    //Change screen cooridnates to coordinates on Image1
-    LastZoomCoord = Draw.xyCoord(Image1->ScreenToClient(MousePos));
-  LastZoomTime = NewZoomTime;
-
-  //New window is 0.75 times the current
-//  Zoom(ClientPos, 0.4330127, false);
-  Zoom(LastZoomCoord.x, LastZoomCoord.y, GuiSettings.MouseZoomIn, GuiSettings.MouseZoomIn, false);
+  ZoomPoint(Image1->ScreenToClient(Mouse->CursorPos), GuiSettings.MouseZoomIn, false);
   Handled = true;
 }
 //---------------------------------------------------------------------------
@@ -1243,8 +1234,8 @@ void __fastcall TForm1::FormMouseWheelDown(TObject *Sender,
      MousePos.y < Image1->ClientOrigin.y || MousePos.y > Image1->ClientOrigin.y + Image1->Height)
        return;
 
-  //New window is 2 times the current
-  Zoom(GuiSettings.MouseZoomOut, false);
+  //Zoom out at the point where the cursor is
+  ZoomPoint(Image1->ScreenToClient(Mouse->CursorPos), GuiSettings.MouseZoomOut, false);
   Handled = true;
 }
 //---------------------------------------------------------------------------
@@ -1589,6 +1580,60 @@ bool TForm1::Zoom(double x, double y, double xZoomRate, double yZoomRate, bool C
     Data.SetModified();
     Redraw();
     UpdateMenu();
+
+    if(!MoveAction->Checked)
+      UpdateEval();
+    return true;
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+//Use this function to zoom in at a given position, where the given position stay fixed.
+//ZoomRate = sqrt(Z), where Z is the relative window size
+//If you want the new window to be 1/4 of the current:  Z=0.25 => ZoomRate=0.5
+//If you want the new window to be 4 times the current: Z=4    => ZoomRate=2
+bool TForm1::ZoomPoint(const TPoint &Pos, double ZoomRate, bool ChangeUnits)
+{
+	TAxes &Axes = Data.Axes;
+	double xMin,xMax,yMin,yMax;
+  double x = Draw.xCoord(Pos.x);
+  double y = Draw.yCoord(Pos.y);
+
+	if(Axes.xAxis.LogScl)
+	{
+		xMin = std::exp(std::log(x) - std::log(x / Axes.xAxis.Min) * ZoomRate);
+		xMax = std::exp(std::log(x) + std::log(Axes.xAxis.Max / x) * ZoomRate);
+	}
+	else
+	{
+		xMin = x - (x - Axes.xAxis.Min) * ZoomRate;
+		xMax = x + (Axes.xAxis.Max - x) * ZoomRate;
+	}
+	if(Axes.yAxis.LogScl)
+	{
+		yMin = std::exp(std::log(y) - std::log(y / Axes.yAxis.Min) * ZoomRate);
+		yMax = std::exp(std::log(y) + std::log(Axes.yAxis.Max / y) * ZoomRate);
+	}
+	else
+	{
+		yMin = y - (y - Axes.yAxis.Min) * ZoomRate;
+		yMax = y + (Axes.yAxis.Max - y) * ZoomRate;
+	}
+
+  if(ZoomWindow(xMin, xMax, yMin, yMax, false))
+  {
+    if(ChangeUnits)
+    {
+      Axes.xAxis.TickUnit = Axes.xAxis.LogScl ? std::pow(Axes.xAxis.TickUnit, ZoomRate) : Axes.xAxis.TickUnit * ZoomRate;
+      Axes.yAxis.TickUnit = Axes.yAxis.LogScl ? std::pow(Axes.yAxis.TickUnit, ZoomRate) : Axes.yAxis.TickUnit * ZoomRate;
+      Axes.xAxis.GridUnit = Axes.xAxis.LogScl ? std::pow(Axes.xAxis.GridUnit, ZoomRate) : Axes.xAxis.GridUnit * ZoomRate;
+      Axes.yAxis.GridUnit = Axes.yAxis.LogScl ? std::pow(Axes.yAxis.GridUnit, ZoomRate) : Axes.yAxis.GridUnit * ZoomRate;
+    }
+
+    Data.SetModified();
+    Redraw();
+    UpdateMenu();
+    SetPanelCoordText();
 
     if(!MoveAction->Checked)
       UpdateEval();

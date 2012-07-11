@@ -478,6 +478,7 @@ public:		// User declarations
   bool Zoom(double x, double y, double xZoomRate, double yZoomRate, bool ChangeUnits=true);
   bool Zoom(double ZoomRate, bool ChangeUnits=true);
   bool Zoom(double xZoomRate, double yZoomRate, bool ChangeUnits=true);
+  bool ZoomPoint(const TPoint &Point, double ZoomRate, bool ChangeUnits);
   void ShowStatusError(const String &Str, TColor = clRed, unsigned Timeout = 5000);
   void CancelStatusError();
   void ShowStatusMessage(const String &Str, bool AutoHint=false);
