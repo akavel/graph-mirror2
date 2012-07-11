@@ -12,6 +12,7 @@ import vcl
 import xmlrpc.client
 import getopt
 import collections
+import importlib
 
 # enum values
 Radian = Settings.Radian
@@ -89,24 +90,29 @@ EGraphError = GraphImpl.EGraphError
 # Current version of Graph
 VersionInfo = collections.namedtuple("VersionInfo", ["Major","Minor","Release","ReleaseLevel","Build"])._make(GraphImpl.version_info)
 
+def LoadPlugins(Path):
+    sys.path.append(Path)
+    ModuleNames = []
+    Modules = []
+    AllowedExt = [ i[0] for i in imp.get_suffixes() ]
+    for ModuleName, Ext in [ os.path.splitext(f) for f in os.listdir(Path) ]:
+        if Ext in AllowedExt and not ModuleName in ModuleNames:
+            try:
+                ModuleNames.append(ModuleName)
+                Modules.append(importlib.import_module(ModuleName))
+            except Exception:
+                traceback.print_exc()
+    return Modules
+
 # Function called when Graph is started. It will load the plugins in the Plugins directory. BaseDir is the directory where Graph is installed.
 def InitPlugins(BaseDir):
     global PluginsDir
     global Form1
+    global GraphDir
+    GraphDir = BaseDir
     PluginsDir = BaseDir + '\\Plugins'
     Form1 = GraphImpl.Form1 # Form1 does not exist when Graph is started with /regserver
-    sys.path.append(PluginsDir)
-
-    Modules = []
-    AllowedExt = [ i[0] for i in imp.get_suffixes() ]
-    for ModuleName, Ext in [ os.path.splitext(f) for f in os.listdir(PluginsDir) ]:
-        if Ext in AllowedExt and not ModuleName in Modules:
-            try:
-                Modules.append(ModuleName)
-                __import__(ModuleName)
-
-            except Exception:
-                traceback.print_exc()
+    LoadPlugins(PluginsDir)
 
 # Put the ClearConsole function into the module used in the console.
 sys.modules["__main__"].clear = GraphImpl.ClearConsole
@@ -276,3 +282,5 @@ EndMultiUndo = Utility.EndMultiUndo
 LoadDefault = Utility.LoadDefault
 LoadFromFile = Utility.LoadFromFile
 SaveToFile = Utility.SaveToFile
+Import = Utility.Import
+ImportPointSeries = Utility.ImportPointSeries

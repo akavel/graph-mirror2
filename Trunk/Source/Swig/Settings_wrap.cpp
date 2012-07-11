@@ -10,8 +10,7 @@
 
 #include "Graph.h"
 #include "Unit1.h"
-#undef _DEBUG
-#include <Python.h>
+#include "Python.hpp"
 #define WRAP_PYOBJECTS
 #include "PythonBind.h"
 #include "PyGraph.h"
