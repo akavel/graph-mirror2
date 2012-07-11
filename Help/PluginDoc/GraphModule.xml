@@ -486,6 +486,33 @@
 					</para>
 				</listitem>
 			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>Import (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>Import</property>(<parameter>FileName</parameter>)
+				</term>
+				<listitem>
+					<para>
+						Imports the content of a grf file specified by FileName into the current coordinate system, excluding axes settings.
+						An exception is thrown on errors.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>ImportPointSeries (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>ImportPointSeries</property>(<parameter>FileName, Separator=0</parameter>)
+				</term>
+				<listitem>
+					<para>
+						Imports the content of a text file as one or more point series. <parameter>Separator</parameter> indicates the separator used.
+						It is usually ',', ' ', ';' or '\t'. If <parameter>Separator</parameter> is 0, the actual separator is auto detected from the content of the file.
+						An exception is thrown on errors.
+					</para>
+				</listitem>
+			</varlistentry>
 		</variablelist>
 	</para>
 	<xi:include href="Settings.xml" xpointer="Graph.TProperty" />

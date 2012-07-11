@@ -79,6 +79,10 @@ EndMultiUndo = _Utility.EndMultiUndo
 def LoadDefault() -> "void" :
   return _Utility.LoadDefault()
 LoadDefault = _Utility.LoadDefault
+
+def Import(*args) -> "void" :
+  return _Utility.Import(*args)
+Import = _Utility.Import
 # This file is compatible with both classic and new-style classes.
 
 
@@ -89,4 +93,8 @@ LoadFromFile = _Utility.LoadFromFile
 def SaveToFile(*args) -> "bool" :
   return _Utility.SaveToFile(*args)
 SaveToFile = _Utility.SaveToFile
+
+def ImportPointSeries(*args) -> "void" :
+  return _Utility.ImportPointSeries(*args)
+ImportPointSeries = _Utility.ImportPointSeries
 
