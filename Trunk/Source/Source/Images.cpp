@@ -324,13 +324,37 @@ void FillBitmapInfoHeader(BITMAPINFOHEADER &BitmapHeader, Graphics::TBitmap *Bit
   BitmapHeader.biClrImportant = Colors; //Required indexes
 }
 //---------------------------------------------------------------------------
+unsigned FindNearestColor(RGBQUAD Color, const std::vector<RGBQUAD> &Colors)
+{
+  unsigned Size = Colors.size();
+  unsigned BestDist = -1;
+  unsigned BestIndex = 0;
+  for(unsigned I = 0; I < Size; I++)
+  {
+    RGBQUAD C = Colors[I];
+    unsigned Dist = std::abs(Color.rgbRed - C.rgbRed) +
+                    std::abs(Color.rgbGreen - C.rgbGreen) +
+                    std::abs(Color.rgbBlue - C.rgbBlue);
+    if(Dist < BestDist)
+    {
+      BestIndex = I;
+      BestDist = Dist;
+    }
+  }
+  return BestIndex;
+}
+//---------------------------------------------------------------------------
 unsigned AddToPalette(RGBQUAD Color, std::vector<RGBQUAD> &Colors)
 {
   std::vector<RGBQUAD>::iterator Iter = std::find(Colors.begin(), Colors.end(), Color);
   if(Iter == Colors.end())
   {
-    Colors.push_back(Color);
-    return Colors.size() - 1;
+    if(Colors.size() < 256)
+    {
+      Colors.push_back(Color);
+      return Colors.size() - 1;
+    }
+    return FindNearestColor(Color, Colors); //The palette cannot have more than 256 colors
   }
   return Iter - Colors.begin();
 }
