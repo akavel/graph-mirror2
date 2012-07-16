@@ -4,6 +4,7 @@ Redirect 301 /graph/SetupGraph-4.2.exe http://www.padowan.dk/bin/SetupGraph-4.4.
 
 Redirect 301 /graph/donate.html http://www.padowan.dk/donate
 Redirect 301 /graph/support.html http://forum.padowan.dk
+Redirect 301 /graph/Download.php http://www.padowan.dk/download
 Redirect 301 /graph/download.php http://www.padowan.dk/bin/SetupGraph-4.4.exe
 Redirect 301 /forum http://forum.padowan.dk
 
