@@ -128,6 +128,7 @@ private:	// User declarations
 public:		// User declarations
   __fastcall TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const String &HostApp, const String &HostDoc);
   AnsiString __fastcall GetText();
+  bool GetOleLink();
   void __fastcall SetText(const AnsiString &Str);
   bool IsEmpty();
   void SetBackgroundColor(TColor Color);

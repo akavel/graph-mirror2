@@ -83,6 +83,18 @@ void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int W
   RichEdit->Render(Canvas, Pos, Width);
 }
 //---------------------------------------------------------------------------
+String UpdateRichText(const String &Str)
+{
+  //We need a parent window; just use main form
+  std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
+  RichEdit->Visible = false;
+  RichEdit->Parent = Application->MainForm;
+  TRichEditOle RichEditOle(RichEdit.get());
+  RichEdit->SetRichText(Str);
+  RichEditOle.UpdateAll();
+  return RichEdit->GetRichText();
+}
+//---------------------------------------------------------------------------
 TPoint RichTextSize(const std::string &Str, const TData *Data)
 {
   //We need a parent window; just use main form

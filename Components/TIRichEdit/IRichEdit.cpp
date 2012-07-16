@@ -643,5 +643,10 @@ unsigned TIRichEdit::FindWordBreak(TWordBreak WordBreak, unsigned Pos)
   return Result;
 }
 //---------------------------------------------------------------------------
+bool TIRichEdit::HasOleLink()
+{
+  return RichEditOle->LinkCount > 0;
+}
+//---------------------------------------------------------------------------
 
 
