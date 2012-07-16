@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit5.h"
+#include "Unit1.h"
 #include <float.h>
 //---------------------------------------------------------------------------
 #pragma link "LineSelect"
@@ -127,10 +128,7 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
     Func->To.Value = MakeFloat(Edit4);
 
   if(Func->From.Value >= Func->To.Value)
-  {
-    MessageBox(LoadRes(511), LoadRes(512));
-    return;
-  }
+    Form1->ShowStatusError(LoadRes(511));
 
   if(ToIntDef(Edit6->Text, 1) < 1)
   {

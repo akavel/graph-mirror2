@@ -289,7 +289,6 @@ object Form5: TForm5
         TabOrder = 0
         Anchors = [akLeft]
         ItemHeight = 15
-        ExplicitTop = 5
       end
       object Label13: TLabel
         Left = 167
