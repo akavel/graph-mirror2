@@ -519,6 +519,22 @@ bool TRichEditOle::ObjectSelected()
   return LOG_FUNCTION_CALL(RichEditOle->GetObject(REO_IOB_USE_CP, &Obj, REO_GETOBJ_NO_INTERFACES)) == S_OK;
 }
 //---------------------------------------------------------------------------
+void TRichEditOle::UpdateAll()
+{
+  unsigned Count = GetLinkCount();
+  for(unsigned I = 0; I < Count; I++)
+  {
+  	REOBJECT Obj = {0};
+    Obj.cbStruct = sizeof(Obj);
+    if(LOG_FUNCTION_CALL(RichEditOle->GetObject(I, &Obj, REO_GETOBJ_POLEOBJ)) == S_OK)
+    {
+      if(Obj.dwFlags & REO_LINK)
+        Obj.poleobj->Update();
+      Obj.poleobj->Release();
+    }
+  }
+}
+//---------------------------------------------------------------------------
 
 
 

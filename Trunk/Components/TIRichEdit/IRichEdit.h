@@ -162,6 +162,7 @@ public:
   bool OpenObject();
 	bool PasteSpecial();
 	bool InsertObject();
+  bool HasOleLink();
 
 __published:
   __property bool Transparent = {read=FTransparent, write=SetTransparent, default=false};

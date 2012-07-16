@@ -667,7 +667,8 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
             TTextValue(Draw.xCoord(X)),
             TTextValue(Draw.yCoord(Y)),
             MovingLabel->GetBackgroundColor(),
-            MovingLabel->GetRotation()
+            MovingLabel->GetRotation(),
+            MovingLabel->GetOleLink()
           ));
           UndoList.Push(TUndoChange(MovingLabel, NewLabel));
           Data.Replace(MovingLabel, NewLabel);
@@ -2641,7 +2642,8 @@ void __fastcall TForm1::InsertLabelActionExecute(TObject *Sender)
       TTextValue(Draw.xCoord(Image1->Width / 2)),
       TTextValue(Draw.yCoord(Image1->Height /2)),
       Form6->GetBackgroundColor(),
-      0
+      0,
+      Form6->GetOleLink()
     ));
     Data.Insert(Label);
     Label->Update();
@@ -2740,7 +2742,8 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
           Label->GetXPos(),
           Label->GetYPos(),
           Form6->GetBackgroundColor(),
-          Label->GetRotation()
+          Label->GetRotation(),
+          Form6->GetOleLink()
         ));
         UndoList.Push(TUndoChange(Label, NewLabel));
         Data.Replace(Label, NewLabel);
@@ -3261,7 +3264,8 @@ void __fastcall TForm1::PlacementClick(TObject *Sender)
         TTextValue(0.0),
         TTextValue(0.0),
         TextLabel->GetBackgroundColor(),
-        TextLabel->GetRotation()
+        TextLabel->GetRotation(),
+        TextLabel->GetOleLink()
       ));
       UndoList.Push(TUndoChange(TextLabel, NewLabel));
       Data.Replace(TextLabel, NewLabel);
@@ -3487,7 +3491,8 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
       TextLabel->GetXPos(),
       TextLabel->GetYPos(),
       TextLabel->GetBackgroundColor(),
-      Rotation
+      Rotation,
+      TextLabel->GetOleLink()
     ));
     UndoList.Push(TUndoChange(TextLabel, NewLabel));
     Data.Replace(TextLabel, NewLabel);

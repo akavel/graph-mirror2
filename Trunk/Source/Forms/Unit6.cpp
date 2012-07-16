@@ -396,4 +396,9 @@ void __fastcall TForm6::FormCanResize(TObject *Sender, int &NewWidth, int &NewHe
   ToolBar1->Indent = ToolBar1->Indent + std::max(NewWidth, Constraints->MinWidth) - Width;
 }
 //---------------------------------------------------------------------------
+bool TForm6::GetOleLink()
+{
+  return IRichEdit1->HasOleLink();
+}
+//---------------------------------------------------------------------------
 

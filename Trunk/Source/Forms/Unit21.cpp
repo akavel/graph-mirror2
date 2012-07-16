@@ -49,7 +49,8 @@ void __fastcall TForm21::TntButton1Click(TObject *Sender)
     xPos,
     yPos,
     Label->GetBackgroundColor(),
-    Label->GetRotation()
+    Label->GetRotation(),
+    Label->GetOleLink()
   ));
   UndoList.Push(TUndoChange(Label, NewLabel));
   Data.Replace(Label, NewLabel);

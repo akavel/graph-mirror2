@@ -60,6 +60,7 @@ public:
 	bool CloseActiveObjects(bool SavePrompt);
   bool OpenObject();
   bool ObjectSelected();
+  void UpdateAll(); //Update all linked objects
 
 	__property LONG ObjectCount = {read = GetObjectCount};
 	__property LONG LinkCount = {read = GetLinkCount};

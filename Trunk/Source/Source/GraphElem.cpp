@@ -1029,13 +1029,13 @@ bool TPointSeries::IsDependent(const std::wstring &SymbolName) const
 ////////////////
 TTextLabel::TTextLabel()
   : LabelPlacement(lpUserTopLeft), Rect(0,0,0,0), Rotation(0), xPos(0), yPos(0),
-    BackgroundColor(clDefault)
+    BackgroundColor(clDefault), ContainsOleLink(false)
 {
 }
 //---------------------------------------------------------------------------
-TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation)
+TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation, bool OleLink)
   : Text(Str), LabelPlacement(Placement), xPos(AxPos), yPos(AyPos),
-    BackgroundColor(Color), Rotation(ARotation)
+    BackgroundColor(Color), Rotation(ARotation), ContainsOleLink(OleLink)
 {
   SetShowInLegend(false);
   StatusText = RtfToPlainText(Str);
@@ -1050,6 +1050,7 @@ void TTextLabel::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"Rotation", Rotation, 0U);
   Section.Write(L"Text", ToWString(EncodeEscapeSequence(Text)));
   Section.Write(L"BackgroundColor", BackgroundColor);
+  Section.Write(L"OleLink", ContainsOleLink, false);
 
   TGraphElem::WriteToIni(Section);
 }
@@ -1075,6 +1076,9 @@ void TTextLabel::ReadFromIni(const TConfigFileSection &Section)
   Rotation = Section.Read(L"Rotation", 0U);
   Text = DecodeEscapeSequence(ToString(Section.Read(L"Text", L"ERROR")));
   BackgroundColor = Section.Read(L"BackgroundColor", clNone);
+  ContainsOleLink = Section.Read(L"OleLink", false);
+  if(ContainsOleLink)
+    Text = ToString(UpdateRichText(ToUString(Text)));
 
   StatusText = RtfToPlainText(Text);
 
