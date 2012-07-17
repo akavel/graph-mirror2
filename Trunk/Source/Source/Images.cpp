@@ -89,7 +89,7 @@ void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions 
 
     //Show save icon in status bar
     Form1->SetStatusIcon(iiSave);
-    TCallOnRelease Dummy(&Form1->SetStatusIcon, -1);
+//    TCallOnRelease Dummy(&Form1->SetStatusIcon, -1); // Causes internal compiler error
     Form1->Draw.Wait();
 
     if(ImageFileType == ifMetafile || ImageFileType == ifSvg)
@@ -178,9 +178,11 @@ void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions 
           SaveAsPdf(::ToString(FileName), Bitmap.get(), ::ToString(Form1->Data.GetFileName()), ::ToString(Form1->Data.Axes.Title), ImageOptions.Pdf.Orientation);
       }
     }
+    Form1->SetStatusIcon(-1); //Replaces TCallOnRelease
   }
   catch(EOutOfResources &E)
   {
+    Form1->SetStatusIcon(-1);
     throw ESaveError(LoadStr(RES_OUT_OF_RESOURCES));
   }
 }
