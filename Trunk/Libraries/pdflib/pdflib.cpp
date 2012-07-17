@@ -10,7 +10,7 @@
  |                                                                           |
  *---------------------------------------------------------------------------*/
 
-// $Id: pdflib.cpp,v 1.70 2006/10/04 14:28:53 rjs Exp $
+// $Id: pdflib.cpp,v 1.70.2.5 2008/06/20 14:27:37 stm Exp $
 //
 // in sync with pdflib.h 1.232
 //
@@ -24,13 +24,57 @@
 #pragma warning(disable: 4995)
 #endif
 
-#include "Config.h"
 #include "pdflib.hpp"
+
+#if defined(_MSC_VER) && defined(_MANAGED)
+/*
+ * For .NET managed C++ code, it is possible to use try/catch for exeption
+ * handling. Enable this with the following define:
+ */
+// #define PDFCPP_USE_CPP_TRY_CATCH
+
+/*
+ * As it is not possible to compile the C++ wrapper truly as managed code, we
+ * leave it as unmanaged code, as it is anyway only a thin layer over the
+ * unmanaged PDFlib C DLL.
+ * The reason that it is not possible to make it wholly managed is that even
+ * with C++ try/catch the error handler will be compiled as native code, as
+ * a function pointer is taken of it and passed to the PDFlib C library.
+ */
+#pragma unmanaged
+#endif
 
 using std::string;
 
 #define CHAR(s) (s).c_str()
 #define LEN(s)  ((int) (s).size())
+
+#if defined(PDFCPP_USE_CPP_TRY_CATCH)
+
+static void PDFLIB_CALL
+errorhandler(PDF *p, int errortype, const char* msg)
+{
+  throw PDFlib::Exception(PDF_get_errmsg(p), PDF_get_errnum(p),
+		  PDF_get_apiname(p), PDF_get_opaque(p));
+}
+
+#define PDFCPP_TRY try {
+
+#define PDFCPP_CATCH } catch (PDFlib::Exception &) {\
+  throw;\
+}
+
+#else
+
+#define PDFCPP_TRY	PDF_TRY(p)
+
+#define PDFCPP_CATCH  \
+PDF_CATCH(p) {\
+    throw Exception(PDF_get_errmsg(p), PDF_get_errnum(p),\
+			    PDF_get_apiname(p), PDF_get_opaque(p));\
+}
+
+#endif /* PDFCPP_USE_CPP_TRY_CATCH */
 
 PDFlib::Exception::Exception(string errmsg, int errnum, string apiname,
 	void *opaque)
@@ -45,18 +89,11 @@ int PDFlib::Exception::get_errnum() { return m_errnum; }
 string PDFlib::Exception::get_apiname() { return m_apiname; }
 const void * PDFlib::Exception::get_opaque() { return m_opaque; }
 
-#define PDFCPP_TRY	PDF_TRY(p)
-#define PDFCPP_CATCH  \
-PDF_CATCH(p) {\
-    throw Exception(PDF_get_errmsg(p), PDF_get_errnum(p),\
-			    PDF_get_apiname(p), PDF_get_opaque(p));\
-}
-
 PDFlib::PDFlib(
     allocproc_t allocproc,
     reallocproc_t reallocproc,
     freeproc_t freeproc,
-    void *opaque) throw(PDFlib::Exception)
+    void *opaque)
 {
     m_PDFlib_api = ::PDF_get_api();
 
@@ -67,8 +104,13 @@ PDFlib::PDFlib(
 		"pdflib.cpp", opaque);
     }
 
+#if defined(PDFCPP_USE_CPP_TRY_CATCH)
+    p = m_PDFlib_api->PDF_new2(errorhandler, allocproc,
+    			reallocproc, freeproc, opaque);
+#else
     p = m_PDFlib_api->PDF_new2(NULL, allocproc, reallocproc, freeproc, opaque);
-
+#endif
+    
     if (p == (PDF *)0) {
 	throw Exception("No memory for PDFlib object", 0, "pdflib.cpp", opaque);
     }
@@ -89,7 +131,6 @@ PDFlib::~PDFlib() throw()
 
 void
 PDFlib::activate_item(int id)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_activate_item(p, id);
     PDFCPP_CATCH;
@@ -97,7 +138,6 @@ PDFlib::activate_item(int id)
 
 int
 PDFlib::add_bookmark(string text, int parent, int p_open)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -110,7 +150,7 @@ PDFlib::add_bookmark(string text, int parent, int p_open)
 
 void
 PDFlib::add_launchlink(double llx, double lly, double urx, double ury,
-    string filename) throw(PDFlib::Exception)
+    string filename)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_add_launchlink(p, llx, lly, urx, ury, CHAR(filename));
@@ -119,7 +159,7 @@ PDFlib::add_launchlink(double llx, double lly, double urx, double ury,
 
 void
 PDFlib::add_locallink(double llx, double lly, double urx, double ury, int page,
-    string optlist) throw(PDFlib::Exception)
+    string optlist)
 {
     PDFCPP_TRY
     m_PDFlib_api->PDF_add_locallink(p, llx, lly, urx, ury, page, CHAR(optlist));
@@ -127,7 +167,7 @@ PDFlib::add_locallink(double llx, double lly, double urx, double ury, int page,
 }
 
 void
-PDFlib::add_nameddest(string name, string optlist) throw(PDFlib::Exception)
+PDFlib::add_nameddest(string name, string optlist)
 {
     PDFCPP_TRY
     m_PDFlib_api->PDF_add_nameddest(p, CHAR(name), LEN(name), CHAR(optlist));
@@ -137,7 +177,6 @@ PDFlib::add_nameddest(string name, string optlist) throw(PDFlib::Exception)
 void
 PDFlib::add_note(double llx, double lly, double urx, double ury,
     string contents, string title, string icon, int p_open)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_add_note2(p, llx, lly, urx, ury,
 	CHAR(contents), LEN(contents), CHAR(title), LEN(title), CHAR(icon),
@@ -147,7 +186,7 @@ PDFlib::add_note(double llx, double lly, double urx, double ury,
 
 void
 PDFlib::add_pdflink(double llx, double lly, double urx, double ury,
-    string filename, int page, string optlist) throw(PDFlib::Exception)
+    string filename, int page, string optlist)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_add_pdflink(p, llx, lly, urx, ury, CHAR(filename),
@@ -157,7 +196,7 @@ PDFlib::add_pdflink(double llx, double lly, double urx, double ury,
 
 int
 PDFlib::add_table_cell(int table, int column, int row, string text, 
-    string optlist) throw(PDFlib::Exception)
+    string optlist)
 {
     int retval = 0;
 
@@ -170,7 +209,6 @@ PDFlib::add_table_cell(int table, int column, int row, string text,
 
 int
 PDFlib::add_textflow(int textflow, string text, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -182,7 +220,7 @@ PDFlib::add_textflow(int textflow, string text, string optlist)
 }
 
 void
-PDFlib::add_thumbnail(int image) throw(PDFlib::Exception)
+PDFlib::add_thumbnail(int image)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_add_thumbnail(p, image);
     PDFCPP_CATCH;
@@ -190,7 +228,7 @@ PDFlib::add_thumbnail(int image) throw(PDFlib::Exception)
 
 void
 PDFlib::add_weblink(double llx, double lly, double urx, double ury,
-    string url) throw(PDFlib::Exception)
+    string url)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_add_weblink(p, llx, lly, urx, ury, CHAR(url));
     PDFCPP_CATCH;
@@ -198,7 +236,6 @@ PDFlib::add_weblink(double llx, double lly, double urx, double ury,
 
 void
 PDFlib::arc(double x, double y, double r, double alpha, double beta)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_arc(p, x, y, r, alpha, beta);
     PDFCPP_CATCH;
@@ -206,7 +243,6 @@ PDFlib::arc(double x, double y, double r, double alpha, double beta)
 
 void
 PDFlib::arcn(double x, double y, double r, double alpha, double beta)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_arcn(p, x, y, r, alpha, beta);
     PDFCPP_CATCH;
@@ -215,7 +251,7 @@ PDFlib::arcn(double x, double y, double r, double alpha, double beta)
 void
 PDFlib::attach_file(double llx, double lly, double urx, double ury,
     string filename, string description, string author,
-    string mimetype, string icon) throw(PDFlib::Exception)
+    string mimetype, string icon)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_attach_file2(p, llx, lly, urx, ury, CHAR(filename), 0,
@@ -226,7 +262,6 @@ PDFlib::attach_file(double llx, double lly, double urx, double ury,
 
 int
 PDFlib::begin_document(string filename, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -238,7 +273,6 @@ PDFlib::begin_document(string filename, string optlist)
 
 void
 PDFlib::begin_document_callback(writeproc_t writeproc, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_begin_document_callback(p, writeproc, CHAR(optlist));
@@ -248,7 +282,6 @@ PDFlib::begin_document_callback(writeproc_t writeproc, string optlist)
 void
 PDFlib::begin_font(string fontname, double a, double b,
     double c, double d, double e, double f, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_begin_font(p, CHAR(fontname), 0,
 	a, b, c, d, e, f, CHAR(optlist));
@@ -257,7 +290,7 @@ PDFlib::begin_font(string fontname, double a, double b,
 
 void
 PDFlib::begin_glyph(string glyphname, double wx, double llx, double lly,
-    double urx, double ury) throw(PDFlib::Exception)
+    double urx, double ury)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_begin_glyph(p, CHAR(glyphname), wx, llx,
 	    lly, urx, ury);
@@ -266,7 +299,6 @@ PDFlib::begin_glyph(string glyphname, double wx, double llx, double lly,
 
 int
 PDFlib::begin_item(string tag, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -279,7 +311,6 @@ PDFlib::begin_item(string tag, string optlist)
 
 void
 PDFlib::begin_layer(int layer)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_begin_layer(p, layer);
@@ -287,7 +318,7 @@ PDFlib::begin_layer(int layer)
 }
 
 void
-PDFlib::begin_page(double width, double height) throw(PDFlib::Exception)
+PDFlib::begin_page(double width, double height)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_begin_page(p, width, height);
     PDFCPP_CATCH;
@@ -295,7 +326,6 @@ PDFlib::begin_page(double width, double height) throw(PDFlib::Exception)
 
 void
 PDFlib::begin_page_ext(double width, double height, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_begin_page_ext(p, width, height, CHAR(optlist));
@@ -305,7 +335,7 @@ PDFlib::begin_page_ext(double width, double height, string optlist)
 
 int
 PDFlib::begin_pattern(double width, double height, double xstep, double ystep,
-    int painttype) throw(PDFlib::Exception)
+    int painttype)
 {
     int retval = 0;
 
@@ -320,7 +350,6 @@ PDFlib::begin_pattern(double width, double height, double xstep, double ystep,
 
 int
 PDFlib::begin_template(double width, double height)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -332,7 +361,6 @@ PDFlib::begin_template(double width, double height)
 
 int
 PDFlib::begin_template_ext(double width, double height, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -344,70 +372,70 @@ PDFlib::begin_template_ext(double width, double height, string optlist)
 }
 
 void
-PDFlib::circle(double x, double y, double r) throw(PDFlib::Exception)
+PDFlib::circle(double x, double y, double r)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_circle(p, x, y, r);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::clip() throw(PDFlib::Exception)
+PDFlib::clip()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_clip(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::close() throw(PDFlib::Exception)
+PDFlib::close()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_close(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::close_image(int image) throw(PDFlib::Exception)
+PDFlib::close_image(int image)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_close_image(p, image);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::close_pdi(int doc) throw(PDFlib::Exception)
+PDFlib::close_pdi(int doc)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_close_pdi(p, doc);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::close_pdi_document(int doc) throw(PDFlib::Exception)
+PDFlib::close_pdi_document(int doc)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_close_pdi_document(p, doc);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::close_pdi_page(int page) throw(PDFlib::Exception)
+PDFlib::close_pdi_page(int page)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_close_pdi_page(p, page);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::closepath() throw(PDFlib::Exception)
+PDFlib::closepath()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_closepath(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::closepath_fill_stroke() throw(PDFlib::Exception)
+PDFlib::closepath_fill_stroke()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_closepath_fill_stroke(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::closepath_stroke() throw(PDFlib::Exception)
+PDFlib::closepath_stroke()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_closepath_stroke(p);
     PDFCPP_CATCH;
@@ -415,14 +443,13 @@ PDFlib::closepath_stroke() throw(PDFlib::Exception)
 
 void
 PDFlib::concat(double a, double b, double c, double d, double e, double f)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_concat(p, a, b, c, d, e, f);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::continue_text(string text) throw(PDFlib::Exception)
+PDFlib::continue_text(string text)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_continue_text2(p, CHAR(text), (int) LEN(text));
@@ -431,7 +458,6 @@ PDFlib::continue_text(string text) throw(PDFlib::Exception)
 
 int
 PDFlib::create_3dview(string username, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -443,7 +469,6 @@ PDFlib::create_3dview(string username, string optlist)
 
 int
 PDFlib::create_action(string type, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -455,7 +480,6 @@ PDFlib::create_action(string type, string optlist)
 void
 PDFlib::create_annotation(double llx, double lly, double urx, double ury,
     string type, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_create_annotation(p, llx, lly, urx, ury,
@@ -465,7 +489,6 @@ PDFlib::create_annotation(double llx, double lly, double urx, double ury,
 
 int
 PDFlib::create_bookmark(string text, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -478,7 +501,6 @@ PDFlib::create_bookmark(string text, string optlist)
 void
 PDFlib::create_field(double llx, double lly, double urx, double ury,
     string name, string type, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_create_field(p, llx, lly, urx,
@@ -489,7 +511,6 @@ PDFlib::create_field(double llx, double lly, double urx, double ury,
 
 void
 PDFlib::create_fieldgroup(string name, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_create_fieldgroup(p, CHAR(name), LEN(name),
@@ -498,7 +519,7 @@ PDFlib::create_fieldgroup(string name, string optlist)
 }
 
 int
-PDFlib::create_gstate (string optlist) throw(PDFlib::Exception)
+PDFlib::create_gstate (string optlist)
 {
     int retval = 0;
 
@@ -511,7 +532,7 @@ PDFlib::create_gstate (string optlist) throw(PDFlib::Exception)
 
 void
 PDFlib::create_pvf(string filename, const void *data, size_t size,
-	string optlist) throw(PDFlib::Exception)
+	string optlist)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_create_pvf(p, CHAR(filename), 0, data, size,
@@ -520,7 +541,6 @@ PDFlib::create_pvf(string filename, const void *data, size_t size,
 }
 
 int PDFlib::create_textflow(string text, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -534,7 +554,6 @@ int PDFlib::create_textflow(string text, string optlist)
 void
 PDFlib::curveto(double x1, double y1, double x2, double y2, double x3,
 	double y3)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_curveto(p, x1, y1, x2, y2, x3, y3);
     PDFCPP_CATCH;
@@ -542,7 +561,6 @@ PDFlib::curveto(double x1, double y1, double x2, double y2, double x3,
 
 int
 PDFlib::define_layer(string name, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -553,7 +571,7 @@ PDFlib::define_layer(string name, string optlist)
 }
 
 int
-PDFlib::delete_pvf(string filename) throw(PDFlib::Exception)
+PDFlib::delete_pvf(string filename)
 {
     int retval = 0;
 
@@ -565,7 +583,6 @@ PDFlib::delete_pvf(string filename) throw(PDFlib::Exception)
 
 void
 PDFlib::delete_table(int table, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_delete_table(p, table, CHAR(optlist));
@@ -574,7 +591,6 @@ PDFlib::delete_table(int table, string optlist)
 
 void
 PDFlib::delete_textflow(int textflow)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_delete_textflow(p, textflow);
@@ -584,7 +600,6 @@ PDFlib::delete_textflow(int textflow)
 
 void
 PDFlib::encoding_set_char(string encoding, int slot, string glyphname, int uv)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_encoding_set_char(p, CHAR(encoding), slot,
 	CHAR(glyphname), uv);
@@ -593,7 +608,6 @@ PDFlib::encoding_set_char(string encoding, int slot, string glyphname, int uv)
 
 void
 PDFlib::end_document(string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_end_document(p, CHAR(optlist));
@@ -603,7 +617,6 @@ PDFlib::end_document(string optlist)
 
 void
 PDFlib::end_font()
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_end_font(p);
     PDFCPP_CATCH;
@@ -611,7 +624,6 @@ PDFlib::end_font()
 
 void
 PDFlib::end_glyph()
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_end_glyph(p);
     PDFCPP_CATCH;
@@ -619,7 +631,6 @@ PDFlib::end_glyph()
 
 void
 PDFlib::end_item(int id)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_end_item(p, id);
@@ -628,7 +639,6 @@ PDFlib::end_item(int id)
 
 void
 PDFlib::end_layer()
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_end_layer(p);
@@ -636,7 +646,7 @@ PDFlib::end_layer()
 }
 
 void
-PDFlib::end_page() throw(PDFlib::Exception)
+PDFlib::end_page()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_end_page(p);
     PDFCPP_CATCH;
@@ -644,7 +654,6 @@ PDFlib::end_page() throw(PDFlib::Exception)
 
 void
 PDFlib::end_page_ext(string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_end_page_ext(p, CHAR(optlist));
@@ -653,28 +662,28 @@ PDFlib::end_page_ext(string optlist)
 
 
 void
-PDFlib::end_pattern() throw(PDFlib::Exception)
+PDFlib::end_pattern()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_end_pattern(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::end_template() throw(PDFlib::Exception)
+PDFlib::end_template()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_end_template(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::endpath() throw(PDFlib::Exception)
+PDFlib::endpath()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_endpath(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::fill() throw(PDFlib::Exception)
+PDFlib::fill()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_fill(p);
     PDFCPP_CATCH;
@@ -682,7 +691,6 @@ PDFlib::fill() throw(PDFlib::Exception)
 
 int
 PDFlib::fill_imageblock(int page, string blockname, int image, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -696,7 +704,6 @@ PDFlib::fill_imageblock(int page, string blockname, int image, string optlist)
 
 int
 PDFlib::fill_pdfblock(int page, string blockname, int contents, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -710,7 +717,6 @@ PDFlib::fill_pdfblock(int page, string blockname, int contents, string optlist)
 
 int
 PDFlib::fill_textblock(int page, string blockname, string text, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -723,7 +729,7 @@ PDFlib::fill_textblock(int page, string blockname, string text, string optlist)
 }
 
 void
-PDFlib::fill_stroke() throw(PDFlib::Exception)
+PDFlib::fill_stroke()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_fill_stroke(p);
     PDFCPP_CATCH;
@@ -731,7 +737,6 @@ PDFlib::fill_stroke() throw(PDFlib::Exception)
 
 int
 PDFlib::findfont(string fontname, string encoding, int embed)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -745,7 +750,6 @@ PDFlib::findfont(string fontname, string encoding, int embed)
 
 void
 PDFlib::fit_image (int image, double x, double y, string optlist)
-        throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_fit_image(p, image, x, y, CHAR(optlist));
     PDFCPP_CATCH;
@@ -753,7 +757,6 @@ PDFlib::fit_image (int image, double x, double y, string optlist)
 
 void
 PDFlib::fit_pdi_page (int page, double x, double y, string optlist)
-        throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_fit_pdi_page(p, page, x, y, CHAR(optlist));
     PDFCPP_CATCH;
@@ -762,7 +765,6 @@ PDFlib::fit_pdi_page (int page, double x, double y, string optlist)
 string
 PDFlib::fit_table(int table, double llx, double lly, double urx,
     double ury, string optlist)
-    throw(PDFlib::Exception)
 {
     const char *retval = NULL;
 
@@ -780,7 +782,6 @@ PDFlib::fit_table(int table, double llx, double lly, double urx,
 string
 PDFlib::fit_textflow(int textflow, double llx, double lly, double urx,
     double ury, string optlist)
-    throw(PDFlib::Exception)
 {
     const char *retval = NULL;
 
@@ -797,7 +798,6 @@ PDFlib::fit_textflow(int textflow, double llx, double lly, double urx,
 
 void
 PDFlib::fit_textline(string text, double x, double y, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
         m_PDFlib_api->PDF_fit_textline(p, CHAR(text), (int) LEN(text), x, y,
@@ -806,7 +806,7 @@ PDFlib::fit_textline(string text, double x, double y, string optlist)
 }
 
 string
-PDFlib::get_apiname() throw(PDFlib::Exception)
+PDFlib::get_apiname()
 {
     const char *retval = NULL;
 
@@ -823,7 +823,7 @@ PDFlib::get_apiname() throw(PDFlib::Exception)
 }
 
 const char *
-PDFlib::get_buffer(long *size) throw(PDFlib::Exception)
+PDFlib::get_buffer(long *size)
 {
     const char * retval = NULL;
 
@@ -834,7 +834,7 @@ PDFlib::get_buffer(long *size) throw(PDFlib::Exception)
 }
 
 string
-PDFlib::get_errmsg() throw(PDFlib::Exception)
+PDFlib::get_errmsg()
 {
     const char *retval = NULL;
 
@@ -851,7 +851,7 @@ PDFlib::get_errmsg() throw(PDFlib::Exception)
 }
 
 int
-PDFlib::get_errnum() throw(PDFlib::Exception)
+PDFlib::get_errnum()
 {
     int retval = 0;
 
@@ -862,7 +862,7 @@ PDFlib::get_errnum() throw(PDFlib::Exception)
 }
 
 void *
-PDFlib::get_opaque() throw(PDFlib::Exception)
+PDFlib::get_opaque()
 {
     void * retval = NULL;
 
@@ -873,7 +873,7 @@ PDFlib::get_opaque() throw(PDFlib::Exception)
 }
 
 string
-PDFlib::get_parameter(string key, double modifier) throw(PDFlib::Exception)
+PDFlib::get_parameter(string key, double modifier)
 {
     const char *retval = NULL;
 
@@ -891,7 +891,6 @@ PDFlib::get_parameter(string key, double modifier) throw(PDFlib::Exception)
 
 double
 PDFlib::get_pdi_value(string key, int doc, int page, int reserved)
-    throw(PDFlib::Exception)
 {
     double retval = 0;
 
@@ -905,7 +904,6 @@ PDFlib::get_pdi_value(string key, int doc, int page, int reserved)
 
 string
 PDFlib::get_pdi_parameter(string key, int doc, int page, int reserved, int *len)
-    throw(PDFlib::Exception)
 {
     const char *retval = NULL;
 
@@ -921,7 +919,7 @@ PDFlib::get_pdi_parameter(string key, int doc, int page, int reserved, int *len)
 }
 
 double
-PDFlib::get_value(string key, double modifier) throw(PDFlib::Exception)
+PDFlib::get_value(string key, double modifier)
 {
     double retval = 0;
 
@@ -933,7 +931,6 @@ PDFlib::get_value(string key, double modifier) throw(PDFlib::Exception)
 
 double
 PDFlib::info_font(int font, string keyword, string optlist)
-    throw(PDFlib::Exception)
 {
     double  retval = 0;
     PDFCPP_TRY
@@ -945,7 +942,6 @@ PDFlib::info_font(int font, string keyword, string optlist)
 
 double
 PDFlib::info_matchbox(string boxname, int num, string keyword)
-    throw(PDFlib::Exception)
 {
     double  retval = 0;
     PDFCPP_TRY
@@ -957,7 +953,6 @@ PDFlib::info_matchbox(string boxname, int num, string keyword)
 
 double
 PDFlib::info_table(int table, string keyword)
-    throw(PDFlib::Exception)
 {
     double  retval = 0;
     PDFCPP_TRY
@@ -968,7 +963,6 @@ PDFlib::info_table(int table, string keyword)
 
 double
 PDFlib::info_textflow(int textflow, string keyword)
-    throw(PDFlib::Exception)
 {
     double  retval = 0;
     PDFCPP_TRY
@@ -979,7 +973,6 @@ PDFlib::info_textflow(int textflow, string keyword)
 
 double
 PDFlib::info_textline(string text, string keyword, string optlist)
-    throw(PDFlib::Exception)
 {
     double  retval = 0;
     PDFCPP_TRY
@@ -991,14 +984,14 @@ PDFlib::info_textline(string text, string keyword, string optlist)
 
 
 void
-PDFlib::initgraphics() throw(PDFlib::Exception)
+PDFlib::initgraphics()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_initgraphics(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::lineto(double x, double y) throw(PDFlib::Exception)
+PDFlib::lineto(double x, double y)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_lineto(p, x, y);
     PDFCPP_CATCH;
@@ -1006,7 +999,6 @@ PDFlib::lineto(double x, double y) throw(PDFlib::Exception)
 
 int
 PDFlib::load_3ddata(string filename, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -1018,7 +1010,6 @@ PDFlib::load_3ddata(string filename, string optlist)
 
 int
 PDFlib::load_font(string fontname, string encoding, string optlist)
-        throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -1031,7 +1022,6 @@ PDFlib::load_font(string fontname, string encoding, string optlist)
 
 int
 PDFlib::load_iccprofile(string profilename, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1047,7 +1037,6 @@ PDFlib::load_iccprofile(string profilename, string optlist)
 
 int
 PDFlib::load_image (string imagetype, string filename, string optlist)
-        throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1060,7 +1049,7 @@ PDFlib::load_image (string imagetype, string filename, string optlist)
 }
 
 int
-PDFlib::makespotcolor(string spotname) throw(PDFlib::Exception)
+PDFlib::makespotcolor(string spotname)
 {
     int retval = 0;
 
@@ -1071,7 +1060,7 @@ PDFlib::makespotcolor(string spotname) throw(PDFlib::Exception)
 }
 
 void
-PDFlib::moveto(double x, double y) throw(PDFlib::Exception)
+PDFlib::moveto(double x, double y)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_moveto(p, x, y);
     PDFCPP_CATCH;
@@ -1079,7 +1068,7 @@ PDFlib::moveto(double x, double y) throw(PDFlib::Exception)
 
 int
 PDFlib::open_CCITT(string filename, int width, int height, int BitReverse,
-    int K, int BlackIs1) throw(PDFlib::Exception)
+    int K, int BlackIs1)
 {
     int retval = 0;
 
@@ -1094,7 +1083,7 @@ PDFlib::open_CCITT(string filename, int width, int height, int BitReverse,
 }
 
 int
-PDFlib::open_file(string filename) throw(PDFlib::Exception)
+PDFlib::open_file(string filename)
 {
     int retval = 0;
 
@@ -1107,7 +1096,6 @@ PDFlib::open_file(string filename) throw(PDFlib::Exception)
 int
 PDFlib::open_image(string imagetype, string source, const char *data, long len,
     int width, int height, int components, int bpc, string params)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1123,7 +1111,7 @@ PDFlib::open_image(string imagetype, string source, const char *data, long len,
 
 int
 PDFlib::open_image_file(string imagetype, string filename,
-    string stringparam, int intparam) throw(PDFlib::Exception)
+    string stringparam, int intparam)
 {
     int retval = 0;
 
@@ -1138,7 +1126,7 @@ PDFlib::open_image_file(string imagetype, string filename,
 }
 
 void
-PDFlib::open_mem(writeproc_t writeproc) throw(PDFlib::Exception)
+PDFlib::open_mem(writeproc_t writeproc)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_open_mem(p, writeproc);
     PDFCPP_CATCH;
@@ -1146,7 +1134,6 @@ PDFlib::open_mem(writeproc_t writeproc) throw(PDFlib::Exception)
 
 int
 PDFlib::open_pdi(string filename, string optlist, int reserved)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1160,7 +1147,6 @@ PDFlib::open_pdi(string filename, string optlist, int reserved)
 
 int
 PDFlib::open_pdi_document(string filename, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1174,7 +1160,6 @@ PDFlib::open_pdi_document(string filename, string optlist)
 
 int
 PDFlib::open_pdi_page(int doc, int pagenumber, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
     PDFCPP_TRY
@@ -1186,7 +1171,7 @@ PDFlib::open_pdi_page(int doc, int pagenumber, string optlist)
 }
 
 double
-PDFlib::pcos_get_number(int doc, string path) throw(PDFlib::Exception)
+PDFlib::pcos_get_number(int doc, string path)
 {
     double retval = 0;
 
@@ -1197,8 +1182,8 @@ PDFlib::pcos_get_number(int doc, string path) throw(PDFlib::Exception)
     return retval;
 }
 
-const string
-PDFlib::pcos_get_string(int doc, string path) throw(PDFlib::Exception)
+string
+PDFlib::pcos_get_string(int doc, string path)
 {
     const char *cretval = NULL;
     string retval = "";
@@ -1214,7 +1199,6 @@ PDFlib::pcos_get_string(int doc, string path) throw(PDFlib::Exception)
 
 const unsigned char *
 PDFlib::pcos_get_stream(int doc, int *length, string optlist, string path)
-    throw(PDFlib::Exception)
 {
     const unsigned char *retval = NULL;
 
@@ -1229,7 +1213,6 @@ PDFlib::pcos_get_stream(int doc, int *length, string optlist, string path)
 
 void
 PDFlib::place_image(int image, double x, double y, double p_scale)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_place_image(p, image, x, y, p_scale);
     PDFCPP_CATCH;
@@ -1237,7 +1220,6 @@ PDFlib::place_image(int image, double x, double y, double p_scale)
 
 void
 PDFlib::place_pdi_page(int page, double x, double y, double sx, double sy)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_place_pdi_page(p, page, x, y, sx, sy);
     PDFCPP_CATCH;
@@ -1245,7 +1227,6 @@ PDFlib::place_pdi_page(int page, double x, double y, double sx, double sy)
 
 int
 PDFlib::process_pdi(int doc, int page, string optlist)
-        throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1258,14 +1239,13 @@ PDFlib::process_pdi(int doc, int page, string optlist)
 
 void
 PDFlib::rect(double x, double y, double width, double height)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_rect(p, x, y, width, height);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::restore() throw(PDFlib::Exception)
+PDFlib::restore()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_restore(p);
     PDFCPP_CATCH;
@@ -1273,7 +1253,6 @@ PDFlib::restore() throw(PDFlib::Exception)
 
 void
 PDFlib::resume_page(string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_resume_page(p, CHAR(optlist));
@@ -1282,21 +1261,21 @@ PDFlib::resume_page(string optlist)
 
 
 void
-PDFlib::rotate(double phi) throw(PDFlib::Exception)
+PDFlib::rotate(double phi)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_rotate(p, phi);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::save() throw(PDFlib::Exception)
+PDFlib::save()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_save(p);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::scale(double sx, double sy) throw(PDFlib::Exception)
+PDFlib::scale(double sx, double sy)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_scale(p, sx, sy);
     PDFCPP_CATCH;
@@ -1304,28 +1283,27 @@ PDFlib::scale(double sx, double sy) throw(PDFlib::Exception)
 
 void
 PDFlib::set_border_color(double red, double green, double blue)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_set_border_color(p, red, green, blue);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::set_border_dash(double b, double w) throw(PDFlib::Exception)
+PDFlib::set_border_dash(double b, double w)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_set_border_dash(p, b, w);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::set_border_style(string style, double width) throw(PDFlib::Exception)
+PDFlib::set_border_style(string style, double width)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_set_border_style(p, CHAR(style), width);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setfont(int font, double fontsize) throw(PDFlib::Exception)
+PDFlib::setfont(int font, double fontsize)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setfont(p, font, fontsize);
     PDFCPP_CATCH;
@@ -1333,14 +1311,13 @@ PDFlib::setfont(int font, double fontsize) throw(PDFlib::Exception)
 
 void
 PDFlib::set_gstate(int gstate)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_set_gstate(p, gstate);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::set_info(string key, string value) throw(PDFlib::Exception)
+PDFlib::set_info(string key, string value)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_set_info2(p, CHAR(key), CHAR(value),
@@ -1350,7 +1327,6 @@ PDFlib::set_info(string key, string value) throw(PDFlib::Exception)
 
 void
 PDFlib::set_layer_dependency(string type, string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_set_layer_dependency(p, CHAR(type), CHAR(optlist));
@@ -1359,21 +1335,21 @@ PDFlib::set_layer_dependency(string type, string optlist)
 
 
 void
-PDFlib::set_parameter(string key, string value) throw(PDFlib::Exception)
+PDFlib::set_parameter(string key, string value)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_set_parameter(p, CHAR(key), CHAR(value));
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::set_text_pos(double x, double y) throw(PDFlib::Exception)
+PDFlib::set_text_pos(double x, double y)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_set_text_pos(p, x, y);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::set_value(string key, double value) throw(PDFlib::Exception)
+PDFlib::set_value(string key, double value)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_set_value(p, CHAR(key), value);
     PDFCPP_CATCH;
@@ -1381,7 +1357,7 @@ PDFlib::set_value(string key, double value) throw(PDFlib::Exception)
 
 void
 PDFlib::setcolor(string fstype, string colorspace,
-    double c1, double c2, double c3, double c4) throw(PDFlib::Exception)
+    double c1, double c2, double c3, double c4)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_setcolor(p, CHAR(fstype), CHAR(colorspace), c1, c2,
@@ -1390,42 +1366,42 @@ PDFlib::setcolor(string fstype, string colorspace,
 }
 
 void
-PDFlib::setdash(double b, double w) throw(PDFlib::Exception)
+PDFlib::setdash(double b, double w)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setdash(p, b, w);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setdashpattern(string optlist) throw(PDFlib::Exception)
+PDFlib::setdashpattern(string optlist)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setdashpattern(p, CHAR(optlist));
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setflat(double flatness) throw(PDFlib::Exception)
+PDFlib::setflat(double flatness)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setflat(p, flatness);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setlinecap(int linecap) throw(PDFlib::Exception)
+PDFlib::setlinecap(int linecap)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setlinecap(p, linecap);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setlinejoin(int linejoin) throw(PDFlib::Exception)
+PDFlib::setlinejoin(int linejoin)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setlinejoin(p, linejoin);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setlinewidth(double width) throw(PDFlib::Exception)
+PDFlib::setlinewidth(double width)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setlinewidth(p, width);
     PDFCPP_CATCH;
@@ -1433,21 +1409,20 @@ PDFlib::setlinewidth(double width) throw(PDFlib::Exception)
 
 void
 PDFlib::setmatrix( double a, double b, double c, double d, double e, double f)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setmatrix(p, a, b, c, d, e, f);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setmiterlimit(double miter) throw(PDFlib::Exception)
+PDFlib::setmiterlimit(double miter)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setmiterlimit(p, miter);
     PDFCPP_CATCH;
 }
 
 void
-PDFlib::setpolydash(float *darray, int length) throw(PDFlib::Exception)
+PDFlib::setpolydash(float *darray, int length)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_setpolydash(p, darray, length);
     PDFCPP_CATCH;
@@ -1456,7 +1431,6 @@ PDFlib::setpolydash(float *darray, int length) throw(PDFlib::Exception)
 int
 PDFlib::shading (string shtype, double x0, double y0, double x1, double y1,
     double c1, double c2, double c3, double c4, string optlist)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1469,7 +1443,7 @@ PDFlib::shading (string shtype, double x0, double y0, double x1, double y1,
 }
 
 int
-PDFlib::shading_pattern (int shade, string optlist) throw(PDFlib::Exception)
+PDFlib::shading_pattern (int shade, string optlist)
 {
     int retval = 0;
 
@@ -1481,7 +1455,7 @@ PDFlib::shading_pattern (int shade, string optlist) throw(PDFlib::Exception)
 }
 
 void
-PDFlib::shfill (int shade) throw(PDFlib::Exception)
+PDFlib::shfill (int shade)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_shfill(p, shade);
@@ -1489,7 +1463,7 @@ PDFlib::shfill (int shade) throw(PDFlib::Exception)
 }
 
 void
-PDFlib::show(string text) throw(PDFlib::Exception)
+PDFlib::show(string text)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_show2(p, CHAR(text), (int) LEN(text));
     PDFCPP_CATCH;
@@ -1498,7 +1472,6 @@ PDFlib::show(string text) throw(PDFlib::Exception)
 int
 PDFlib::show_boxed(string text, double left, double top,
     double width, double height, string hmode, string feature)
-    throw(PDFlib::Exception)
 {
     int retval = 0;
 
@@ -1511,7 +1484,7 @@ PDFlib::show_boxed(string text, double left, double top,
 }
 
 void
-PDFlib::show_xy(string text, double x, double y) throw(PDFlib::Exception)
+PDFlib::show_xy(string text, double x, double y)
 {
     PDFCPP_TRY
     	m_PDFlib_api->PDF_show_xy2(p, CHAR(text), (int) LEN(text), x, y);
@@ -1519,7 +1492,7 @@ PDFlib::show_xy(string text, double x, double y) throw(PDFlib::Exception)
 }
 
 void
-PDFlib::skew(double alpha, double beta) throw(PDFlib::Exception)
+PDFlib::skew(double alpha, double beta)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_skew(p, alpha, beta);
     PDFCPP_CATCH;
@@ -1527,7 +1500,6 @@ PDFlib::skew(double alpha, double beta) throw(PDFlib::Exception)
 
 double
 PDFlib::stringwidth(string text, int font, double fontsize)
-    throw(PDFlib::Exception)
 {
     double retval = 0;
 
@@ -1540,7 +1512,7 @@ PDFlib::stringwidth(string text, int font, double fontsize)
 }
 
 void
-PDFlib::stroke() throw(PDFlib::Exception)
+PDFlib::stroke()
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_stroke(p);
     PDFCPP_CATCH;
@@ -1548,7 +1520,6 @@ PDFlib::stroke() throw(PDFlib::Exception)
 
 void
 PDFlib::suspend_page(string optlist)
-    throw(PDFlib::Exception)
 {
     PDFCPP_TRY
 	m_PDFlib_api->PDF_suspend_page(p, CHAR(optlist));
@@ -1556,14 +1527,14 @@ PDFlib::suspend_page(string optlist)
 }
 
 void
-PDFlib::translate(double tx, double ty) throw(PDFlib::Exception)
+PDFlib::translate(double tx, double ty)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_translate(p, tx, ty);
     PDFCPP_CATCH;
 }
 
 string
-PDFlib::utf16_to_utf8(string utf16string) throw(PDFlib::Exception)
+PDFlib::utf16_to_utf8(string utf16string)
 {
     const char *retval = NULL;
 
@@ -1582,7 +1553,6 @@ PDFlib::utf16_to_utf8(string utf16string) throw(PDFlib::Exception)
 
 string
 PDFlib::utf32_to_utf16(string utf32string, string ordering)
-throw(PDFlib::Exception)
 {
     const char *buf;
     int size;
@@ -1601,7 +1571,7 @@ throw(PDFlib::Exception)
 }
 
 string
-PDFlib::utf8_to_utf16(string utf8string, string format) throw(PDFlib::Exception)
+PDFlib::utf8_to_utf16(string utf8string, string format)
 {
     const char *buf;
     int size;
@@ -1620,7 +1590,7 @@ PDFlib::utf8_to_utf16(string utf8string, string format) throw(PDFlib::Exception)
 }
 
 void
-PDFlib::xshow(string text, const double *xadvancelist) throw(PDFlib::Exception)
+PDFlib::xshow(string text, const double *xadvancelist)
 {
     PDFCPP_TRY	m_PDFlib_api->PDF_xshow(p, CHAR(text), (int) LEN(text),
                                                 xadvancelist);

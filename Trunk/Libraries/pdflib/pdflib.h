@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------*
  |              PDFlib - A library for generating PDF on the fly             |
  +---------------------------------------------------------------------------+
- | Copyright (c) 1997-2006 Thomas Merz and PDFlib GmbH. All rights reserved. |
+ | Copyright (c) 1997-2009 Thomas Merz and PDFlib GmbH. All rights reserved. |
  +---------------------------------------------------------------------------+
  |                                                                           |
  |    This software is subject to the PDFlib license. It is NOT in the       |
@@ -10,7 +10,7 @@
  |                                                                           |
  *---------------------------------------------------------------------------*/
 
-/* $Id: pdflib.h,v 1.293.2.1 2006/10/11 14:03:12 rjs Exp $
+/* $Id: pdflib.h,v 1.293.2.63 2011/05/02 11:13:04 rjs Exp $
  *
  * Public function declarations for PDFlib Lite, PDFlib, PDFlib+PDI, and PPS;
  * see PDFlib API reference for details.
@@ -37,8 +37,8 @@ extern "C" {
 
 #define PDFLIB_MAJORVERSION	7		/* major version number */
 #define PDFLIB_MINORVERSION	0       	/* minor version number */
-#define PDFLIB_REVISION		0       	/* revision number */
-#define PDFLIB_VERSIONSTRING	"7.0.0p1"       /* The whole bunch */
+#define PDFLIB_REVISION		5       	/* revision number */
+#define PDFLIB_VERSIONSTRING	"7.0.5p3"       /* The whole bunch */
 
 
 /*
@@ -1284,8 +1284,8 @@ struct PDFlib_api_s {
     void (PDFLIB_CALL * PDF_setflat)(PDF *p, double flatness);
     void (PDFLIB_CALL * PDF_setfont)(PDF *p, int font, double fontsize);
     void (PDFLIB_CALL * PDF_setgray)(PDF *p, double gray);
-    void (PDFLIB_CALL * PDF_setgray_stroke)(PDF *p, double gray);
     void (PDFLIB_CALL * PDF_setgray_fill)(PDF *p, double gray);
+    void (PDFLIB_CALL * PDF_setgray_stroke)(PDF *p, double gray);
     void (PDFLIB_CALL * PDF_setlinecap)(PDF *p, int linecap);
     void (PDFLIB_CALL * PDF_setlinejoin)(PDF *p, int linejoin);
     void (PDFLIB_CALL * PDF_setlinewidth)(PDF *p, double width);
@@ -1512,6 +1512,7 @@ typedef enum
 #pragma deprecated(PDF_open_image)
 #pragma deprecated(PDF_open_image_file)
 #pragma deprecated(PDF_open_mem)
+#pragma deprecated(PDF_open_pdi)
 #pragma deprecated(PDF_place_image)
 #pragma deprecated(PDF_place_pdi_page)
 #pragma deprecated(PDF_set_border_color)
