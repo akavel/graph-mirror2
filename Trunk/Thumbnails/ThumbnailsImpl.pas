@@ -184,7 +184,7 @@ procedure TGraphThumbnailsObjectFactory.UpdateRegistry(Register: Boolean);
 Const
   RegKey = 'GraphFile\ShellEx\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}';
 begin
-  WriteToLog(Format('UpdateRegistry(Register=%u)', [Register]));
+  WriteToLog(Format('UpdateRegistry(Register=%u)', [Integer(Register)]));
   { perform normal registration }
   inherited UpdateRegistry(Register);
   if Register then
