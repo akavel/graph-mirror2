@@ -1,4 +1,6 @@
 library Thumbnails;
+{$WEAKLINKRTTI ON}
+{$RTTI EXPLICIT METHODS([]) PROPERTIES([]) FIELDS([])}
 
 uses
   ComServ,

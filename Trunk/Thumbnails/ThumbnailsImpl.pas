@@ -2,8 +2,8 @@ unit ThumbnailsImpl;
 
 interface
 uses
-  System.Win.ComObj, Winapi.ActiveX, Thumbnails_TLB, System.Win.StdVCL,
-  Winapi.ShlObj, Winapi.Windows, Winapi.ShellAPI;
+  System.Win.ComObj, Winapi.ActiveX, Thumbnails_TLB,
+  Winapi.ShlObj, Winapi.Windows, Vcl.Graphics;
 
 type
   IInitializeWithFile = interface(IUnknown)
@@ -15,6 +15,7 @@ type
   private
     FileName : string;
     Size : TSize;
+    PixelFormat : TPixelFormat;
   protected
     { IInitializeWithFile Methods }
     function IInitializeWithFile.Initialize = ShellInitialize;
@@ -27,8 +28,10 @@ type
     function Extract(var phBmpThumbnail: HBITMAP): HRESULT; stdcall;
 
   public
-    procedure AfterConstruction; override;
-    destructor Destroy; override;
+{$IF Defined(DEBUG)}
+    procedure AfterConstruction; override; {For logging only}
+    destructor Destroy; override;          {For logging only}
+{$IFEND}
   end;
 
   { the new class factory }
@@ -39,8 +42,7 @@ type
 
 implementation
 uses
-  System.SysUtils, Vcl.Dialogs, System.Win.ComServ, System.Win.Registry,
-  System.Classes, Vcl.Graphics;
+  System.SysUtils, System.Win.ComServ, System.Classes;
 
 function ExtractLongPathName(const FileName: string): string;
 var
@@ -50,12 +52,12 @@ begin
 end;
 
 procedure WriteToLog(Str : string);
+{$IF Defined(DEBUG)}
 var
   f: TextFile;
   FileName : TFileName;
   I : Integer;
 begin
-{$IF Defined(DEBUG)}
   for I := 1 to 10 do
     try
       FileName := ChangeFileExt(ExtractLongPathName(GetModuleName(HInstance)), '.log');
@@ -71,8 +73,11 @@ begin
     except
       Sleep(100);
     end;
-{$IFEND}
 end;
+{$ELSE}
+begin
+end;
+{$IFEND}
 
 procedure LogException(E : Exception);
 var
@@ -84,6 +89,7 @@ end;
 
   { TGraphThumbnails }
 
+{$IF Defined(DEBUG)}
 procedure TGraphThumbnails.AfterConstruction;
 begin
   WriteToLog(Format('AfterConstruction(%.8X)', [DWORD(self)]));
@@ -95,6 +101,7 @@ begin
   inherited Destroy;
   WriteToLog(Format('Destroy(%.8X)', [DWORD(self)]));
 end;
+{$IFEND}
 
 function TGraphThumbnails.ShellInitialize(pszFilePath: LPWSTR; grfMode: DWORD):HRESULT;
 begin
@@ -112,6 +119,17 @@ begin
   pdwPriority := IEIT_PRIORITY_NORMAL;
   Size := prgSize;
   pdwFlags := pdwFlags or IEIFLAG_CACHE;
+  case dwRecClrDepth of
+    0..3: PixelFormat := pf1bit;
+    4..7:  PixelFormat := pf4bit;
+    8..14: PixelFormat := pf8bit;
+    15:    PixelFormat := pf15bit;
+    16..23: PixelFormat := pf16bit;
+    24..31: PixelFormat := pf24bit;
+  else
+    PixelFormat := pf32bit;
+  end;
+
   Result := S_OK;
 end;
 
@@ -133,14 +151,21 @@ begin
     Format.tymed := TYMED_GDI;
     OleCheck(OleCreateLinkToFile(PWideChar(FileName), IOleObject,
       OLERENDER_FORMAT, @Format, nil, Storage, OleObject));
+
     R := Rect(0, 0, Size.cx, Size.cy);
     Bitmap := TBitmap.Create;
-    Bitmap.Width := Size.cx;
-    Bitmap.Height := Size.cy;
-    Bitmap.PixelFormat := pf24bit;
-    OleCheck(OleDraw(OleObject, DVASPECT_CONTENT{DVASPECT_THUMBNAIL}, Bitmap.Canvas.Handle, R));
-    phBmpThumbnail := CopyImage(Bitmap.Handle, IMAGE_BITMAP, 0,0,0);
-    Bitmap.Free;
+    Bitmap.Canvas.Lock;
+    try
+      Bitmap.Width := Size.cx;
+      Bitmap.Height := Size.cy;
+      Bitmap.PixelFormat := PixelFormat;
+      OleCheck(OleDraw(OleObject, DVASPECT_CONTENT{DVASPECT_THUMBNAIL}, Bitmap.Canvas.Handle, R));
+      phBmpThumbnail := Bitmap.Handle;
+      Bitmap.ReleaseHandle;
+    finally
+      Bitmap.Canvas.Unlock;
+      FreeAndNil(Bitmap);
+    end;
     Result := S_OK;
     //Warning: Do not attemp to free Storage and OleObject. Delphi will call _Release on interfaces when they go out of scope.
   except
@@ -162,9 +187,6 @@ begin
   WriteToLog(Format('UpdateRegistry(Register=%u)', [Register]));
   { perform normal registration }
   inherited UpdateRegistry(Register);
-
-  { if this server is being registered, register the required key/values
-    to expose it to Explorer }
   if Register then
   begin
     CreateRegKey('.grf', '', 'GraphFile', HKEY_CLASSES_ROOT);
