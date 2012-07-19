@@ -22,15 +22,6 @@
 
     <para>
   		<simplelist>
-  			<member><emphasis role="bold"><application>EasyNSE</application></emphasis></member>
-  			<member>Library for creating shell extensions.</member>
-  			<member><orgname>Copyright &copy; 2005 Cool Breeze Software</orgname></member>
-  			<member><ulink url="http://www.mustangpeak.net"/></member>
-		  </simplelist>
-    </para>
-
-    <para>
-  		<simplelist>
   			<member><emphasis role="bold"><application>PDFlib-Lite</application></emphasis></member>
   			<member>Used to create PDF files.</member>
   			<member><orgname>Copyright &copy; 1997-2005 Thomas Merz &amp; PDFlib GmbH</orgname></member>
