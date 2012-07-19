@@ -1774,6 +1774,8 @@ bool TForm1::DoSave(const String &FileName, bool Remember)
       Result = Data.Save(SaveDialog->FileName.c_str(), Remember);
       if(Result)
         Recent1->FileUsed(SaveDialog->FileName);
+      else
+        MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog->FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
     }
   }
   else
@@ -1781,6 +1783,8 @@ bool TForm1::DoSave(const String &FileName, bool Remember)
     Result = Data.Save(FileName.c_str(), Remember);
     if(Result)
       Recent1->FileUsed(FileName);
+    else
+      MessageBox(LoadRes(RES_FILE_ACCESS, FileName), LoadRes(RES_WRITE_FAILED), MB_ICONSTOP);
   }
   return Result;
 }
