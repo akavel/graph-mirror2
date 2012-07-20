@@ -153,6 +153,7 @@ void __fastcall TForm13::Button1Click(TObject *Sender)
       Func->To.Value = Points.size() - N;
       Func->To.Text = ToWString(Func->To.Value);
       Func->SetSteps(TTextValue(1000));
+      Func->SetLegendText(LoadString(RES_MOVING_AVERAGE));
       BaseFunc = Func;
     }
     else

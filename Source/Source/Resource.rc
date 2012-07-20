@@ -141,6 +141,7 @@ BEGIN
   RES_CAPTION_DELETE      "Confirm delete"
   RES_SHOW                "Show %s"     //Context menu in Calc|Table dialog
   RES_SAVE_OPTIONS        "Options..."  //Button in Save as image dialog
+  RES_MOVING_AVERAGE      "Moving average"
   RES_DELETE              "Are you sure you want to delete %s?"
   RES_GRAPH_FILTER        "Graph files [*.grf]|*.grf|All files [*.*]|*.*"           //Save as dialog
   RES_DATA_FILTER         "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"     //Import from file dialog

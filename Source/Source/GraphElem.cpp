@@ -341,6 +341,8 @@ void TStdFunc::ReadFromIni(const TConfigFileSection &Section)
 //---------------------------------------------------------------------------
 std::wstring TStdFunc::MakeText() const
 {
+  if(Text.size() >= 100)
+    return L"f(x)=" + Text.substr(0, 100) + L"...";
   return L"f(x)=" + Text;
 }
 //---------------------------------------------------------------------------
@@ -415,7 +417,17 @@ void TParFunc::ReadFromIni(const TConfigFileSection &Section)
 //---------------------------------------------------------------------------
 std::wstring TParFunc::MakeText() const
 {
-  return L"x(t)=" + xText + L" , y(t)=" + yText;
+  //Ensure that the text is not too long to show in a dialog box.
+  std::wstring Str = L"x(t)=";
+  if(xText.size() >= 100)
+    Str += xText.substr(0, 100) + L"... , y(t)=";
+  else
+    Str += xText + L", y(t)=";
+  if(yText.size() >= 100)
+    Str += yText.substr(0, 100) + L"...";
+  else
+    Str += yText;
+  return Str;
 }
 //---------------------------------------------------------------------------
 boost::shared_ptr<TBaseFuncType> TParFunc::MakeDifFunc()
@@ -463,7 +475,9 @@ void TPolFunc::ReadFromIni(const TConfigFileSection &Section)
 //---------------------------------------------------------------------------
 std::wstring TPolFunc::MakeText() const
 {
-  return L"r(t)=" + Text;
+  if(Text.size() <= 100)
+    return L"r(t)=" + Text;
+  return L"r(t)=" + Text.substr(0, 100) + L"...";
 }
 //---------------------------------------------------------------------------
 boost::shared_ptr<TBaseFuncType> TPolFunc::MakeDifFunc()

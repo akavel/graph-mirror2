@@ -146,7 +146,7 @@
 #define RES_SHOW                401
 
 #define RES_SAVE_OPTIONS        403
-
+#define RES_MOVING_AVERAGE      404
 #define RES_DELETE              405
 #define RES_GRAPH_FILTER        406
 #define RES_DATA_FILTER         407
