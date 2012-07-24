@@ -47,7 +47,7 @@ class __declspec(uuid("FD536B77-5DF5-448C-90D1-2C04B3C1D1BD")) ATL_NO_VTABLE TOl
   static bool Register(bool AllUsers);
   static void LogException();
 
-  void DrawMetafile(TMetafile *Metafile);
+  void DrawMetafile(TMetafile *Metafile, unsigned ImageWidth, unsigned ImageHeight);
   HMETAFILE ConvertEnhMetaToMeta(HENHMETAFILE hemf);
 
 public:
