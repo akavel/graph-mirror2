@@ -280,10 +280,10 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
   }
 }
 //---------------------------------------------------------------------------
-void TOleServerImpl::DrawMetafile(TMetafile *Metafile)
+void TOleServerImpl::DrawMetafile(TMetafile *Metafile, unsigned ImageWidth, unsigned ImageHeight)
 {
-  Metafile->Width = GetWidth();
-  Metafile->Height = GetHeight();
+  Metafile->Width = ImageWidth;
+  Metafile->Height = ImageHeight;
 
   std::auto_ptr<TMetafileCanvas> MetaCanvas(new TMetafileCanvas(Metafile, 0));
 
@@ -292,7 +292,7 @@ void TOleServerImpl::DrawMetafile(TMetafile *Metafile)
   TDraw DrawMeta(MetaCanvas.get(), &MetaData, false, "OLE Metafile DrawThread");
 
   //Set width and height
-  DrawMeta.SetSize(GetWidth(), GetHeight());
+  DrawMeta.SetSize(ImageWidth, ImageHeight);
   DrawMeta.DrawAll();
   DrawMeta.Wait();
 }
@@ -692,7 +692,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     {
       LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight);
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
-      DrawMetafile(Metafile.get());
+      DrawMetafile(Metafile.get(), ImageWidth, ImageHeight);
 
       pmedium->tymed = TYMED_ENHMF;
       pmedium->hEnhMetaFile = reinterpret_cast<HENHMETAFILE>(Metafile->ReleaseHandle());
@@ -701,7 +701,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     {
       LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight);
       std::auto_ptr<TMetafile> Metafile(new TMetafile);
-      DrawMetafile(Metafile.get());
+      DrawMetafile(Metafile.get(), ImageWidth, ImageHeight);
 
       // Get memory handle
       HGLOBAL hMem = GlobalAlloc(GMEM_SHARE | GMEM_MOVEABLE, sizeof(METAFILEPICT));
@@ -723,7 +723,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::SetColorScheme(
     }
     else if(pFormatetcIn->cfFormat == CF_BITMAP && (pFormatetcIn->tymed & TYMED_GDI))
     {
-      LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight);
+      LOG_DATA("Width=" + ImageWidth + ", Height=" + ImageHeight + ", ImageWidth=" + Form1->Image1->Width + ", ImageHeight=" + Form1->Image1->Height);
       Form1->Draw.Wait();
       std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
       Bitmap->Width = ImageWidth;
@@ -879,7 +879,8 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::DAdvise(
   DEBUG_CALL();
   LOG_ARG("cfFormat=" + ClipboardFormatToStr(pFormatetc->cfFormat) + ", tymed=" + FlagsToStr(TymedList, pFormatetc->tymed) + ", advf=" + FlagsToStr(AdvfList, advf));
 
-  if(pFormatetc->cfFormat != CF_METAFILEPICT &&
+  if(pFormatetc->cfFormat != 0 && //Wildcard, not very well documented
+     pFormatetc->cfFormat != CF_METAFILEPICT &&
      pFormatetc->cfFormat != CF_ENHMETAFILE &&
      pFormatetc->cfFormat != CF_BITMAP &&
      pFormatetc->cfFormat != cfObjectDescriptor &&
