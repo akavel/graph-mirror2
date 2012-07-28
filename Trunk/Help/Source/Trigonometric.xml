@@ -111,7 +111,7 @@
 			<para>
 				For arguments with a large magnitude, the function will begin to lose precision.
 				<function>tan</function> is undefined at <mathphrase>z = p*&pi;/2</mathphrase>,
-				where p is an <glossterm>integer</glossterm>,
+				where <varname>p</varname> is an <glossterm>integer</glossterm>,
 				but the function returns a very large number if <parameter>z</parameter> is near the undefined value.
 			</para>
 		</simplesect>

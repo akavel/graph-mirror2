@@ -42,7 +42,7 @@
 		When you move the mouse to the top of the table, the pointer changes to a down pointing arrow.
 		Now you can select whole columns with the mouse.
 		The whole table may be selected by <action>right clicking</action> and selecting <guimenuitem>Select all</guimenuitem>.
-		It is also possible to select cells by holding down the shift key and using the arrow keys on the keyboard.
+		It is also possible to select cells by holding down the <keycap>Shift</keycap> key and using the arrow keys on the keyboard.
 	</para>
 
 	<para>

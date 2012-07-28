@@ -14,7 +14,7 @@
 	<indexterm><primary>implicit function</primary></indexterm>
 	<para>
 		This dialog is used to insert a relation in the coordinate system.
-		<literal>Relation</literal> is a common name for inequalities and equations, also known as implicit functions.
+		<quote>Relation</quote> is a common name for inequalities and equations, also known as implicit functions.
 		To insert a relation you use the menu item <menuchoice><guimenu>Function</guimenu><guimenuitem>Insert relation...</guimenuitem></menuchoice>.
 		To change an existing relation, you first select it in the <glossterm>function list</glossterm> and use <menuchoice><guimenu>Function</guimenu><guimenuitem>Edit...</guimenuitem></menuchoice>.
 	</para>

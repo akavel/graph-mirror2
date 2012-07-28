@@ -28,6 +28,8 @@
   				<imageobject role="htmlhelp"><imagedata fileref="Integrate.emf"/></imageobject>
   				<imageobject role="html"><imagedata fileref="Integrate.png"/></imageobject>
 				</mediaobject>
+			</para>
+			<para>
 				This integral is the same as the area between the function <parameter>f</parameter> and the x-axis from <parameter>a</parameter> to <parameter>b</parameter>
 				where the area under the axis is counted negative.
 				<parameter>f</parameter> may be any function with the variable indicated as the second argument <parameter>var</parameter>.
@@ -78,6 +80,8 @@
   				<imageobject role="htmlhelp"><imagedata fileref="Sum.emf"/></imageobject>
   				<imageobject role="html"><imagedata fileref="Sum.png"/></imageobject>
 				</mediaobject>
+			</para>
+			<para>
 				<parameter>f</parameter> may be any function with the variable indicated as the second argument <parameter>var</parameter>.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="Integer">integers</glossterm>.
 			</para>
@@ -114,6 +118,8 @@
   				<imageobject role="htmlhelp"><imagedata fileref="Product.emf"/></imageobject>
   				<imageobject role="html"><imagedata fileref="Product.png"/></imageobject>
 				</mediaobject>
+			</para>
+			<para>
 				<parameter>f</parameter> may be any function with the variable indicated as the second argument <parameter>var</parameter>.
 				<parameter>a</parameter> and <parameter>b</parameter> may be any <glossterm linkend="NumericExpression">numeric expressions</glossterm> that evaluate to <glossterm linkend="Integer">integers</glossterm>.
 			</para>

@@ -47,13 +47,13 @@ class docbookXmlMode:
     def __init__(self):
         self.lists = ['itemizedlist', 'orderedlist', 'variablelist',
                       'segmentedlist', 'simplelist', 'calloutlist', 'varlistentry', 'informaltable' ]
-        self.objects = [ 'figure', 'textobject', 'imageobject', 'mediaobject', 'citetitle',
-                         'screenshot', 'function', 'parameter', 'personname', 'mathphrase', 'filename', 'constant', 'email', 'xref', 'varname', 'markup', 'application']
+        self.objects = [ 'figure', 'textobject', 'imageobject', 'mediaobject', 'citetitle', 'literal',
+                         'screenshot', 'function', 'parameter', 'personname', 'mathphrase', 'filename', 'constant', 'email', 'xref', 'markup', 'application']
 
     def getIgnoredTags(self):
         "Returns array of tags to be ignored."
         return  self.objects + self.lists + ['firstname', 'surname', 'personname', 'year', 'holder', 'orgname',
-          'superscript', 'subscript', 'application', 'acronym']
+          'superscript', 'subscript', 'application', 'acronym', 'varname']
 
     def getFinalTags(self):
         "Returns array of tags to be considered 'final'."
