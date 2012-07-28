@@ -282,7 +282,7 @@
 					</term>
 					<listitem>
 						<para>
-							Use this dialog to add a tangent to an already shown function at a user specified point.
+							Use this dialog to add a tangent to an already shown function at a user-specified point.
 							The tangent will be added to the function selected in the <glossterm>function list</glossterm>.
 						</para>
 					</listitem>
@@ -615,7 +615,7 @@
 					</term>
 					<listitem>
 						<para>
-							This dialog fills a table with a user specified range of values and the result of evaluating the selected function for the values.
+							This dialog fills a table with a user-specified range of values and the result of evaluating the selected function for the values.
 						</para>
 					</listitem>
 				</varlistentry>

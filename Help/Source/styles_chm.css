@@ -305,8 +305,10 @@ div.authorgroup {
   margin-top: 3em;
 }
 
-div.simplesect em.parameter {
+div em.parameter,
+div code.varname {
   font-size: 130%;
+  font-style: italic;
 }
 
 
