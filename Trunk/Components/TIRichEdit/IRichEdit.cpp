@@ -616,8 +616,25 @@ bool TIRichEdit::InsertObject()
 //---------------------------------------------------------------------------
 int CALLBACK TIRichEdit::EditWordBreakProc(LPTSTR lpch, int ichCurrent, int cch, int code)
 {
-  //Always wrap
-  return 0;
+  switch(code)
+  {
+    case WB_MOVEWORDLEFT:
+      --ichCurrent;
+      while(--ichCurrent)
+        if(iswspace(lpch[ichCurrent]))
+          return ichCurrent + 1;
+      return 0;
+
+    case WB_MOVEWORDRIGHT:
+      for(;ichCurrent < cch; ichCurrent++)
+        if(iswspace(lpch[ichCurrent]))
+          return ichCurrent + 1;
+      return cch;
+
+    default:
+      //Always wrap
+      return 0;
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TIRichEdit::SetWrapType(TWrapType Value)
@@ -636,11 +653,7 @@ void __fastcall TIRichEdit::SetWrapType(TWrapType Value)
 //---------------------------------------------------------------------------
 unsigned TIRichEdit::FindWordBreak(TWordBreak WordBreak, unsigned Pos)
 {
-  TWrapType OldWrap = WrapType;
-  WrapType = wtWord;
-  unsigned Result = SendMessage(Handle, EM_FINDWORDBREAK, WordBreak, Pos);
-  WrapType = OldWrap;
-  return Result;
+  return SendMessage(Handle, EM_FINDWORDBREAK, WordBreak, Pos);
 }
 //---------------------------------------------------------------------------
 bool TIRichEdit::HasOleLink()
