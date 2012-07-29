@@ -39,6 +39,8 @@ object Form22: TForm22
     ParentFont = False
     TabOrder = 0
     OnKeyDown = IRichEdit1KeyDown
+    OnEnter = IRichEdit1Enter
+    OnExit = IRichEdit1Exit
     OnProtectChange = IRichEdit1ProtectChange
   end
   object PopupMenu1: TPopupActionBar
