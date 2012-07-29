@@ -25,6 +25,8 @@ __published:	// IDE-managed Components
           TShiftState Shift);
   void __fastcall FormShow(TObject *Sender);
   void __fastcall Clear1Click(TObject *Sender);
+  void __fastcall IRichEdit1Enter(TObject *Sender);
+  void __fastcall IRichEdit1Exit(TObject *Sender);
 private:	// User declarations
   int LastIndex;
   int PromptIndex;

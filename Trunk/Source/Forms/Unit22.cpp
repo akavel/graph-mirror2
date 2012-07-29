@@ -37,6 +37,8 @@ void __fastcall TForm22::FormHide(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm22::WriteText(const String &Str, TColor Color)
 {
+  if(IRichEdit1 == NULL) //Handle the case where we are terminating
+    return;
   FAllowChange = true;
   int OldSelStart = IRichEdit1->SelStart;
   IRichEdit1->SelStart = PromptIndex;
@@ -252,6 +254,24 @@ void __fastcall TForm22::WMEnable(TMessage &Message)
   //Ensure that this form is always enabled, even when a modal dialog is shown
 	if(!Message.WParam)
 		EnableWindow(Handle, true);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm22::IRichEdit1Enter(TObject *Sender)
+{
+  //Clear shortcuts conflicting with the rich edit
+  Form1->MoveLeftAction->ShortCut = 0;
+  Form1->MoveRightAction->ShortCut = 0;
+  Form1->MoveLeftAction->SecondaryShortCuts->Clear();
+  Form1->MoveRightAction->SecondaryShortCuts->Clear();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm22::IRichEdit1Exit(TObject *Sender)
+{
+  //Reestablish shortcuts when they no longer conflict with the rich edit
+  Form1->MoveLeftAction->ShortCut = ShortCut(VK_LEFT, TShiftState() << ssCtrl);
+  Form1->MoveRightAction->ShortCut = ShortCut(VK_RIGHT, TShiftState() << ssCtrl);
+  Form1->MoveLeftAction->SecondaryShortCuts->Add("Ctrl+Shift+Left");
+  Form1->MoveRightAction->SecondaryShortCuts->Add("Ctrl+Shift+Right");
 }
 //---------------------------------------------------------------------------
 
