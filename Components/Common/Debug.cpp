@@ -104,8 +104,8 @@ class TDebugStreamBuf : public std::basic_stringbuf<T>
   void Update()
   {
     std::basic_string<T> Str = str();
-    unsigned LastIndex = 0;
-    unsigned Index;
+    size_t LastIndex = 0;
+    size_t Index;
     while((Index = Str.find('\n', LastIndex)) != std::string::npos)
     {
       std::basic_string<T> SubStr = Str.substr(LastIndex, Index-LastIndex);

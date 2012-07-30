@@ -81,8 +81,8 @@ std::wstring TConfigFileSection::Read(const std::wstring &Key, const wchar_t* De
 //Trim spaces around string
 std::wstring TConfigFile::TrimString(const std::wstring &Str)
 {
-  unsigned First = Str.find_first_not_of(L" \t");
-  unsigned Last = Str.find_last_not_of(L" \t\r"); //If Line feed is \r\n, \r may stay and only the \n is detected as end of line
+  size_t First = Str.find_first_not_of(L" \t");
+  size_t Last = Str.find_last_not_of(L" \t\r"); //If Line feed is \r\n, \r may stay and only the \n is detected as end of line
   if(First == std::wstring::npos)
     return std::wstring();
   return std::wstring(Str, First, Last + 1 - First);
@@ -147,7 +147,7 @@ void TConfigFile::LoadFromStream(std::wistream &Stream)
       continue;
     }
 
-    unsigned Pos = Line.find('=');
+    size_t Pos = Line.find('=');
     if(Pos == std::wstring::npos || ConfigData.empty())
       continue; //Ignore Lies with errors
 
@@ -191,7 +191,7 @@ void TConfigFile::SetComment(const std::wstring &Str)
   Comment = Str;
   if(!Comment.empty())
   {
-    unsigned Pos = -1;
+    size_t Pos = -1;
     do
     {
       Comment.insert(Pos+1, L";");
