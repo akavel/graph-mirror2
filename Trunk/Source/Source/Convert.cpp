@@ -204,15 +204,15 @@ void StrToFont(const std::wstring &Str, TFont *Font)
   if(Str.empty())
     return;
 
-  unsigned Pos = Str.find(L',');
+  size_t Pos = Str.find(L',');
   //Get font name from string
   Font->Name = Str.substr(0, Pos).c_str();
 
-  unsigned Pos2 = Str.find(L',', Pos+1);
+  size_t Pos2 = Str.find(L',', Pos+1);
   //Get font size from string
   Font->Size = ToIntDef(Str.substr(Pos+1, Pos2-Pos-1), 10);
 
-  unsigned Pos3 = Str.find(L',', Pos2+1);
+  size_t Pos3 = Str.find(L',', Pos2+1);
   //Get font color from string
   Font->Color = StringToColor(Str.substr(Pos2+1, Pos3-Pos2-1).c_str());
   Font->Style = Font->Style.Clear(); //Clear font style
@@ -459,10 +459,10 @@ std::pair<long double,long double> GetPolarCoord(const Func32::TDblPoint &P, Fun
   return std::make_pair(r, a);
 }
 //---------------------------------------------------------------------------
-unsigned FindEndPar(const std::string &Str, unsigned Pos)
+size_t FindEndPar(const std::string &Str, unsigned Pos)
 {
   unsigned Count = 0;
-  for(unsigned I = Pos; I <= Str.size(); I++)
+  for(size_t I = Pos; I <= Str.size(); I++)
     if(Str[I] == '(')
       Count++;
     else if(Str[I] == ')')
@@ -471,10 +471,10 @@ unsigned FindEndPar(const std::string &Str, unsigned Pos)
   return std::string::npos;
 }
 //---------------------------------------------------------------------------
-unsigned FindEndPar(const std::wstring &Str, unsigned Pos)
+size_t FindEndPar(const std::wstring &Str, unsigned Pos)
 {
   unsigned Count = 0;
-  for(unsigned I = Pos; I <= Str.size(); I++)
+  for(size_t I = Pos; I <= Str.size(); I++)
     if(Str[I] == '(')
       Count++;
     else if(Str[I] == ')')

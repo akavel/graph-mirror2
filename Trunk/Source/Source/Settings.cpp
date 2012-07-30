@@ -232,7 +232,7 @@ void TProperty::Write(TConfigRegistry &Registry)
 TCustomFunction::TCustomFunction(const std::wstring &Str, const std::wstring &AText)
   : Text(AText)
 {
-  unsigned Begin = Str.find('(');
+  size_t Begin = Str.find('(');
   if(Begin == std::wstring::npos)
     Name = CheckAndTrimName(Str, 0);
   else
@@ -240,7 +240,7 @@ TCustomFunction::TCustomFunction(const std::wstring &Str, const std::wstring &AT
     Name = CheckAndTrimName(Str.substr(0, Begin), 0);
 
     ++Begin;
-    unsigned End;
+    size_t End;
     while((End = Str.find(',', Begin)) != std::string::npos)
     {
       Arguments.push_back(CheckAndTrimName(Str.substr(Begin, End - Begin), Begin));
@@ -272,8 +272,8 @@ std::wstring TCustomFunction::GetName() const
 //---------------------------------------------------------------------------
 std::wstring TCustomFunction::CheckAndTrimName(const std::wstring &Str, unsigned Offset)
 {
-  unsigned Begin = Str.find_first_not_of(L" ");
-  unsigned End = Str.find_last_not_of(L" ");
+  size_t Begin = Str.find_first_not_of(L" ");
+  size_t End = Str.find_last_not_of(L" ");
   if(Begin == std::wstring::npos)
     throw ECustomFunctionError(Offset ? cfeEmptyArg : cfeEmptyName, Offset);
 

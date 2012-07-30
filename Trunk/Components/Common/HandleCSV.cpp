@@ -18,7 +18,7 @@ char GetSeparator(const std::string &Str2)
   std::string Str = Trim(Str2);
   for(const char* Ch = Separators; *Ch; Ch++)
   {
-    unsigned n = Str.find(*Ch);
+    size_t n = Str.find(*Ch);
     if(n != std::string::npos && n != 0 && Str[n-1] != ',')
       return *Ch;
   }
@@ -28,8 +28,8 @@ char GetSeparator(const std::string &Str2)
 unsigned CountCols(const std::string &Str, char Separator)
 {
 	unsigned Count = 1;
-  unsigned Pos = 0;
-  unsigned NextPos;
+  size_t Pos = 0;
+  size_t NextPos;
   while((NextPos = Str.find(Separator, Pos)) != std::string::npos)
   {
     if(NextPos != Pos)
@@ -57,12 +57,12 @@ bool ImportCsv(std::istream &Stream, TCsvGrid &CsvGrid, char Separator)
 			continue;
 
 		//Several separators after each other (eg. spaces) are ignored
-		unsigned FirstPos = Line.find_first_not_of(Separator);
-		unsigned Pos = Line.find(Separator, FirstPos);
+		size_t FirstPos = Line.find_first_not_of(Separator);
+		size_t Pos = Line.find(Separator, FirstPos);
 		std::string xText = Trim(Line.substr(FirstPos, Pos - FirstPos));
 		TCsvRow CsvRow;
 		CsvRow.push_back(xText);
-		for(unsigned LastPos = Line.find_first_not_of(Separator, Pos);
+		for(size_t LastPos = Line.find_first_not_of(Separator, Pos);
 				Pos != std::string::npos; LastPos = Pos + 1)
 		{
 			Pos = Line.find(Separator, LastPos);

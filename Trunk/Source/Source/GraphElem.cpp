@@ -1073,7 +1073,7 @@ void TTextLabel::ReadFromIni(const TConfigFileSection &Section)
 {
   LabelPlacement = Section.Read(L"Placement", lpUserTopLeft);
   std::wstring Temp = Section.Read(L"Pos", L"0;0");
-  unsigned n = Temp.find(L";");
+  size_t n = Temp.find(L";");
   if(n == std::string::npos)
   {
     //For backwards compatibility
@@ -1130,11 +1130,11 @@ void TTextLabel::Update()
 //---------------------------------------------------------------------------
 bool TTextLabel::IsDependent(const std::wstring &SymbolName) const
 {
-  unsigned Pos = std::wstring::npos;
+  size_t Pos = std::wstring::npos;
   while((Pos = Text.rfind("%(", Pos-1)) != std::wstring::npos)
     try
 		{
-      unsigned Pos2 = FindEndPar(Text, Pos);
+      size_t Pos2 = FindEndPar(Text, Pos);
       if(Pos2 == std::string::npos)
         break;
       unsigned Length = Pos2 - Pos + 1;

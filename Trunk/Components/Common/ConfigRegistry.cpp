@@ -216,7 +216,7 @@ std::wstring TConfigRegistry::SubKey(unsigned Index)
 void RemoveRegistryKey(const std::wstring &Key, HKEY RootKey)
 {
   //To be implemented
-  unsigned Pos = Key.find(L'\\');
+  size_t Pos = Key.find(L'\\');
   std::wstring ParentKey = Key.substr(0, Pos == std::wstring::npos ? 0 : Pos);
   std::wstring KeyToDelete = Key.substr(Pos + 1, std::wstring::npos);
   TConfigRegistry Registry;

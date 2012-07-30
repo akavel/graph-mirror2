@@ -20,8 +20,8 @@ void SetCompTranslateFunc(TTranslateFunc Func)
 //---------------------------------------------------------------------------
 std::string Trim(const std::string &Str)
 {
-  unsigned Pos1 = Str.find_first_not_of(" ");
-  unsigned Pos2 = Str.find_last_not_of(" ");
+  size_t Pos1 = Str.find_first_not_of(" ");
+  size_t Pos2 = Str.find_last_not_of(" ");
   if(Pos1 == std::string::npos)
     return "";
   if(!Str.empty() && (Pos1 != 0 || Pos2 != Str.size()-1))

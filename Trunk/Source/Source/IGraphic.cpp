@@ -23,10 +23,10 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
     if(Str[I] == '\r')
       Str.erase(I, 1);
 
-  unsigned Pos = std::wstring::npos;
+  size_t Pos = std::wstring::npos;
   while((Pos = Str.rfind(L"%(", Pos-1)) != std::wstring::npos)
   {
-    unsigned Pos2 = FindEndPar(Str, Pos);
+    size_t Pos2 = FindEndPar(Str, Pos);
     if(Pos2 == std::string::npos)
       return;
     unsigned Length = Pos2 - Pos + 1;
