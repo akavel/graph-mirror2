@@ -30,10 +30,10 @@ LanguageCodePage=0
 [Messages]
 
 ; *** Application titles
-SetupAppTitle=Instalar
-SetupWindowTitle=Instalar - %1
-UninstallAppTitle=Desinstalar
-UninstallAppFullTitle=Desinstalar - %1
+SetupAppTitle=Instalación de Graph
+SetupWindowTitle=Instalación de Graph
+UninstallAppTitle=Desinstalación de Graph
+UninstallAppFullTitle=Desinstalación de Graph
 
 ; *** Misc. common
 InformationTitle=Información
@@ -58,7 +58,7 @@ WinVersionTooLowError=Este programa necesita %1 versión %2 o posterior.
 WinVersionTooHighError=Este programa no puede ser instalado en %1 versión %2 o posterior.
 AdminPrivilegesRequired=Debe estar registrado como administrador para instalar este programa.
 PowerUserPrivilegesRequired=Debe estar registrado como administrador, o como miembro del Grupo de Usuarios Avanzados, para poder instalar este programa.
-SetupAppRunningError=El Asistente ha detectado que %1 está en ejecución.%n%nPor favor, cierre el programa y haga clic en Aceptar para continuar, o en Cancelar para salir.
+SetupAppRunningError=El Asistente de instalación ha detectado que %1 está en ejecución.%n%nPor favor, cierre el programa y haga clic en Aceptar para continuar, o en Cancelar para salir.
 UninstallAppRunningError=El Asistente de desinstalación ha detectado que %1 está en ejecución.%n%nPor favor, cierre el programa y haga clic en Aceptar para continuar, o en Cancelar para salir.
 
 ; *** Misc. errors
@@ -66,7 +66,7 @@ ErrorCreatingDir=El Asistente no ha podido crear el directorio "%1"
 ErrorTooManyFilesInDir=Imposible crear un archivo en el directorio "%1" porque éste contiene demasiados archivos
 
 ; *** Setup common messages
-ExitSetupTitle=Salir del Asistente
+ExitSetupTitle=Instalación de Graph
 ExitSetupMessage=La instalación ha sido detenida. Si abandona ahora, el programa no se instalará.%n%nPodrá ejecutar el Asistente en otro momento, y completar la instalación.%n%n¿Desea salir del Asistente?
 AboutSetupMenuItem=&Acerca de la instalación...
 AboutSetupTitle=Acerca de la instalación
@@ -116,7 +116,7 @@ IncorrectPassword=La contraseña introducida no es correcta. Por favor, inténtelo
 ; *** "License Agreement" wizard page
 WizardLicense=Acuerdo de licencia
 LicenseLabel=Por favor, lea la siguiente información importante antes de continuar.
-LicenseLabel3=Por favor, lea el siguiente Acuerdo de licencia. Debe aceptar los términos de este Acuerdo antes de continuar con la instalación.
+LicenseLabel3=Por favor, lea el siguiente Acuerdo de licencia. Debe aceptar los términos de este Acuerdo antes de proseguir con la instalación.
 LicenseAccepted=&Acepto el Acuerdo de licencia
 LicenseNotAccepted=&No acepto el Acuerdo de licencia
 
@@ -137,10 +137,10 @@ UserInfoSerial=Número de &serie:
 UserInfoNameRequired=Debe introducir un nombre.
 
 ; *** "Select Destination Directory" wizard page
-WizardSelectDir=Seleccione la carpeta de destino
+WizardSelectDir=Seleccione directorio de destino
 SelectDirDesc=¿Dónde se instalará [name]?
-SelectDirLabel3=El Asistente instalará [name] en la siguiente carpeta.
-SelectDirBrowseLabel=Para continuar, haga clic en Siguiente. Si desea seleccionar una carpeta diferente, haga clic en Examinar.
+SelectDirLabel3=El Asistente instalará [name] en el directorio indicado.
+SelectDirBrowseLabel=Para continuar, haga clic en Siguiente. Si desea seleccionar un directorio diferente, haga clic en Examinar.
 DiskSpaceMBLabel=Se necesitan, al menos, [mb] MB de espacio libre en el disco duro.
 ToUNCPathname=El Asistente no puede realizar la instalación en un directorio UNC. Si está tratando de instalar el programa en una red, necesitará asignarlo a una unidad de la red.
 InvalidPath=Debe introducir una ruta completa con la letra de la unidad; por ejemplo:%nC:\APP%n%no un directorio UNC en la forma:%n%n\\server\share
@@ -170,7 +170,7 @@ ComponentSize2=%1 MB
 ComponentsDiskSpaceMBLabel=La selección actual necesita, al menos, [mb] MB de espacio libre en el disco duro.
 
 ; *** "Select Additional Tasks" wizard page
-WizardSelectTasks=Seleccione las opciones adicionales de instalación
+WizardSelectTasks=Seleccione opciones adicionales de instalación
 SelectTasksDesc=¿Qué tareas adicionales deben ser ejecutadas?
 SelectTasksLabel2=Seleccione las opciones que desea que el Asistente ejecute mientras instala [name], y haga clic en Siguiente.
 
@@ -188,8 +188,8 @@ NoProgramGroupCheck2=&No crear una carpeta en el menú Inicio
 ; *** "Ready to Install" wizard page
 WizardReady=Preparado para instalar
 ReadyLabel1=El Asistente está listo para iniciar la instalación de [name] en su ordenador.
-ReadyLabel2a=Haga clic en Instalar para iniciar la instalación, o en Atrás si desea revisar o cambiar la configuración.
-ReadyLabel2b=Haga clic en Instalar para iniciar la instalación.
+ReadyLabel2a=Haga clic en Instalar para comenzar la instalación, o en Atrás si desea revisar o cambiar la configuración.
+ReadyLabel2b=Haga clic en Instalar para comenzar la instalación.
 ReadyMemoUserInfo=Información del usuario:
 ReadyMemoDir=Directorio de instalación:
 ReadyMemoType=Tipo de instalación:
@@ -204,13 +204,13 @@ PreviousInstallNotCompleted=La instalación/desinstalación de una versión previa 
 CannotContinue=El Asistente no puede continuar. Por favor, haga clic en Cancelar para salir.
 
 ; *** "Installing" wizard page
-WizardInstalling=Instalando
+WizardInstalling=Instalando...
 InstallingLabel=Por favor, espere mientras el Asistente instala [name] en su ordenador.
 
 ; *** "Setup Completed" wizard page
 FinishedHeadingLabel=Finalizando la instalación de [name]
 FinishedLabelNoIcons=El Asistente ha concluido la instalación de [name] en su ordenador.
-FinishedLabel=El Asistente ha terminado de instalar [name] en su ordenador. Puede abrir el programa con el icono de acceso directo creado.
+FinishedLabel=El Asistente ha terminado de instalar [name] en su ordenador. Puede abrir el programa con el icono creado.
 ClickFinish=Haga clic en Finalizar para concluir el proceso de instalación.
 FinishedRestartLabel=Para completar la instalación de [name] debe reiniciar su ordenador. ¿Desea reiniciar ahora?
 FinishedRestartMessage=Para completar la instalación de [name] debe reiniciar su ordenador.%n%n¿Desea reiniciar ahora?
@@ -291,7 +291,7 @@ UninstallUnknownEntry=Una entrada desconocida (%1) se encontró en el registro de
 ConfirmUninstall=¿Está seguro que desea eliminar completamente %1 y todos sus componentes?
 UninstallOnlyOnWin64=Esta instalación sólo puede ser desinstalada en un sistema operativo Windows de 64 bits.
 OnlyAdminCanUninstall=Este programa sólo puede desinstalarlo un usuario con privilegios de administrador.
-UninstallStatusLabel=Por favor, espere mientras se desinstala %1 de su ordenador.
+UninstallStatusLabel=Por favor, espere mientras %1 se desinstala de su ordenador.
 UninstalledAll=%1 se desinstaló con éxito de su ordenador.
 UninstalledMost=Finalizó la desinstalación de %1.%n%nAlgunos elementos no pudieron ser eliminados, pero puedo hacerlo manualmente.
 UninstalledAndNeedsRestart=Para completar la desinstalación de %1 se requiere reiniciar el ordenador.%n%n¿Desea reiniciarlo ahora?
@@ -313,7 +313,7 @@ StatusUninstalling=Desinstalando %1...
 NameAndVersion=%1 versión %2
 AdditionalIcons=Iconos:
 CreateDesktopIcon=Crear un icono de acceso directo en el &Escritorio
-CreateQuickLaunchIcon=Crear un icono de acceso &rápido
+CreateQuickLaunchIcon=Crear un icono en la barra de Inicio &rápido
 ProgramOnTheWeb=%1 en la Web
 UninstallProgram=Desinstalar %1
 LaunchProgram=Ejecutar %1
