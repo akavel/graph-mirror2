@@ -365,72 +365,77 @@ std::wstring RtfToPlainText(const std::string &Str)
 //---------------------------------------------------------------------------
 std::string ToString(int Value)
 {
-  return AnsiString(Value).c_str();
+  return ToString(AnsiString(Value));
 }
 //---------------------------------------------------------------------------
 std::string ToString(unsigned Value)
 {
-  return AnsiString(Value).c_str();
+  return ToString(AnsiString(Value));
 }
 //---------------------------------------------------------------------------
 std::string ToString(long double Value)
 {
-  return AnsiString(FloatToStr(Value)).c_str();
+  return ToString(FloatToStr(Value));
 }
 //---------------------------------------------------------------------------
 std::string ToString(const std::wstring &Str)
 {
-  return AnsiString(String(Str.c_str())).c_str();
+  AnsiString Str2(Str.c_str(), Str.size());
+  return std::string(Str2.c_str(), Str2.Length());
 }
 //---------------------------------------------------------------------------
 std::string ToString(const String &Str)
 {
-  return AnsiString(Str).c_str();
+  AnsiString Str2(Str);
+  return std::string(Str2.c_str(), Str2.Length());
 }
 //---------------------------------------------------------------------------
 std::string ToString(const wchar_t *Str)
 {
-  return AnsiString(String(Str)).c_str();
+  AnsiString Str2(Str);
+  return std::string(Str2.c_str(), Str2.Length());
 }
 //---------------------------------------------------------------------------
 std::wstring ToWString(int Value)
 {
-  return String(Value).c_str();
+  return ToWString(String(Value));
 }
 //---------------------------------------------------------------------------
 std::wstring ToWString(unsigned Value)
 {
-  return String(Value).c_str();
+  return ToWString(String(Value));
 }
 //---------------------------------------------------------------------------
 std::wstring ToWString(long double Value)
 {
-  return FloatToStr(Value).c_str();
+  return ToWString(FloatToStr(Value));
 }
 //---------------------------------------------------------------------------
 std::wstring ToWString(const std::string &Str)
 {
-  return String(Str.c_str()).c_str();
+  String Str2(Str.c_str(), Str.size());
+  return std::wstring(Str2.c_str(), Str2.Length());
 }
 //--------------------------------------------------------------------------
 std::wstring ToWString(const String &Str)
 {
-  return Str.c_str();
+  return std::wstring(Str.c_str(), Str.Length());
 }
 //--------------------------------------------------------------------------
 std::wstring ToWString(const char *Str)
 {
-  return String(Str).c_str();
+  String Str2(Str);
+  return std::wstring(Str2.c_str(), Str2.Length());
 }
 //--------------------------------------------------------------------------
 String ToUString(const std::wstring &Str)
 {
-  return Str.c_str();
+  return String(Str.c_str(), Str.size());
 }
 //--------------------------------------------------------------------------
 String ToUString(const std::string &Str)
 {
-  return Str.c_str();
+  return String(Str.c_str(), Str.size());
 }
 //--------------------------------------------------------------------------
 String ToUString(long double Value)
