@@ -5,7 +5,7 @@
 			<FrameworkType>VCL</FrameworkType>
 			<MainSource>Thumbnails.dpr</MainSource>
 			<Base>True</Base>
-			<Config Condition="'$(Config)'==''">Release</Config>
+			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Platform Condition="'$(Platform)'==''">Win64</Platform>
 			<TargetedPlatforms>3</TargetedPlatforms>
 			<AppType>Library</AppType>
@@ -76,18 +76,16 @@
 			<DCC_K>false</DCC_K>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win64)'!=''">
-			<VerInfo_DLL>true</VerInfo_DLL>
+			<VerInfo_Keys>CompanyName=;FileDescription=64 bit Graph Shell Extension;FileVersion=2.0.0.0;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Thumbnails.dll;ProductName=Graph;ProductVersion=4.4;Comments=64 bit</VerInfo_Keys>
 			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
 			<DCC_UsePackage>bindcompvcl;vcltouch;VclSmp;vcl;dsnapcon;vclx;vclimg;vclactnband;vcldb;vcldsnap;$(DCC_UsePackage)</DCC_UsePackage>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win32)'!=''">
-			<VerInfo_DLL>true</VerInfo_DLL>
-			<VerInfo_MajorVer>2</VerInfo_MajorVer>
 			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<DCC_UsePackage>bindcompvcl;vcltouch;vcldbx;VclSmp;vcl;IndyCore;IndySystem;CodeSiteExpressPkg;dsnapcon;vclx;svnui;svn;vclimg;fmi;IndyProtocols;bdertl;vclactnband;vcldb;vcldsnap;$(DCC_UsePackage)</DCC_UsePackage>
 			<VerInfo_Locale>1033</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=Shell extension for Graph;FileVersion=2.0.0.0;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Thumbnails.dll;ProductName=Graph;ProductVersion=4.4;Comments=</VerInfo_Keys>
+			<VerInfo_Keys>CompanyName=;FileDescription=32 bit Graph Shell Extension;FileVersion=2.0.0.0;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Thumbnails.dll;ProductName=Graph;ProductVersion=4.4;Comments=32 bit</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -97,9 +95,8 @@
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+			<VerInfo_Keys>CompanyName=;FileDescription=64 bit Graph Shell Extension;FileVersion=2.0.0.0;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Thumbnails.dll;ProductName=Graph;ProductVersion=4.4;Comments=64 bit</VerInfo_Keys>
 			<Debugger_HostApplication>C:\Windows\explorer.exe</Debugger_HostApplication>
-			<Manifest_File>None</Manifest_File>
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
