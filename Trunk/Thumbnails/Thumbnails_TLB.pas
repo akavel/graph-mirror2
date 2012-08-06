@@ -12,10 +12,10 @@ unit Thumbnails_TLB;
 // ************************************************************************ //
 
 // $Rev: 45604 $
-// File generated on 16-07-2012 11:12:06 from Type Library described below.
+// File generated on 23-07-2012 11:03:46 from Type Library described below.
 
 // ************************************************************************  //
-// Type Lib: B:\Graph\Thumbnails\Thumbnails (1)
+// Type Lib: C:\Work\Graph\Thumbnails\Thumbnails (1)
 // LIBID: {C89F00EF-E696-4922-8198-4BD20820627D}
 // LCID: 0
 // Helpfile:
@@ -63,6 +63,7 @@ type
 // Declaration of CoClasses defined in Type Library
 // (NOTE: Here we map each CoClass to its Default Interface)
 // *********************************************************************//
+  GraphThumbnails = IGraphThumbnails;
 
 
 // *********************************************************************//
@@ -108,7 +109,6 @@ class function CoGraphThumbnails.CreateRemote(const MachineName: string): IGraph
 begin
   Result := CreateRemoteComObject(MachineName, CLASS_GraphThumbnails) as IGraphThumbnails;
 end;
-
 
 end.
 

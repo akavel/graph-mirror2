@@ -3,29 +3,50 @@ unit ThumbnailsImpl;
 interface
 uses
   System.Win.ComObj, Winapi.ActiveX, Thumbnails_TLB,
-  Winapi.ShlObj, Winapi.Windows, Vcl.Graphics;
+  Winapi.ShlObj, Winapi.Windows, Vcl.Graphics, StdVcl;
 
 type
+  IThumbnailProvider = interface(IUnknown)
+    ['{e357fccd-a995-4576-b01f-234630154e96}']
+    function GetThumbnail(cx : uint; out hBitmap : HBITMAP; out bitmapType : dword):HRESULT;stdcall;
+  end;
+
+
   IInitializeWithFile = interface(IUnknown)
     ['{b7d14566-0509-4cce-a71f-0a554233bd9b}']
     function Initialize(pszFilePath: LPWSTR; grfMode: DWORD):HRESULT;stdcall;
   end;
 
-  TGraphThumbnails = class(TAutoObject, IGraphThumbnails, IInitializeWithFile, IExtractImage)
+  TGraphThumbnails = class(TAutoObject, IGraphThumbnails, IPersistFile, IExtractImage{, IThumbnailProvider, IInitializeWithFile})
   private
     FileName : string;
     Size : TSize;
     PixelFormat : TPixelFormat;
   protected
-    { IInitializeWithFile Methods }
-    function IInitializeWithFile.Initialize = ShellInitialize;
-    function ShellInitialize(pszFilePath: LPWSTR; grfMode: DWORD):HRESULT;stdcall;
+    function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
+
+    { IPersistFile Methods }
+    function GetClassID(out classID: TCLSID): HResult; stdcall;
+    function GetCurFile(out pszFileName: POleStr): HResult; stdcall;
+    function IsDirty: HResult; stdcall;
+    function Load(pszFileName: POleStr; dwMode: Integer): HResult; stdcall;
+    function Save(pszFileName: POleStr; fRemember: BOOL): HResult; stdcall;
+    function SaveCompleted(pszFileName: POleStr): HResult; stdcall;
 
     { IExtractImage Methods }
     function GetLocation(pszPathBuffer: LPWSTR; cch: DWORD; var pdwPriority: DWORD;
       var prgSize: TSize; dwRecClrDepth: DWORD;
       var pdwFlags: DWORD): HRESULT; stdcall;
     function Extract(var phBmpThumbnail: HBITMAP): HRESULT; stdcall;
+
+    { IInitializeWithFile Methods }
+//    function IInitializeWithFile.Initialize = FileInitialize;
+    function FileInitialize(pszFilePath: LPWSTR; grfMode: DWORD):HRESULT;stdcall;
+
+    { IThumbnailProvider MMethods}
+    function GetThumbnail(cx : uint; out hBitmap : HBITMAP; out bitmapType : dword):HRESULT;stdcall;
 
   public
 {$IF Defined(DEBUG)}
@@ -38,7 +59,15 @@ type
   TGraphThumbnailsObjectFactory = class(TAutoObjectFactory)
   public
     procedure UpdateRegistry(Register: Boolean); override;
+    destructor Destroy; override;          {For logging only}
+  protected
+    function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
   end;
+
+//function DllCanUnloadNow: HResult; stdcall;
+//{$NODEFINE DllCanUnloadNow}
 
 implementation
 uses
@@ -103,12 +132,62 @@ begin
 end;
 {$IFEND}
 
-function TGraphThumbnails.ShellInitialize(pszFilePath: LPWSTR; grfMode: DWORD):HRESULT;
+function TGraphThumbnails.QueryInterface(const IID: TGUID; out Obj): HResult;
 begin
-  WriteToLog(Format('ShellInitialize(%.8X, pszFilePath="%s", grfMode=%d)', [DWORD(self), string(pszFilePath), grfMode]));
-  FileName := pszFilePath;
-  Result := S_OK;
+  Result := inherited QueryInterface(IID, Obj);
+//  WriteToLog(Format('QueryInterface(%.8X, IID=%s, Result=%.8X)', [DWORD(self), GUIDToString(IID), Result]));
 end;
+
+function TGraphThumbnails._AddRef: Integer;
+begin
+  Result := inherited _AddRef;
+//  WriteToLog(Format('AddRef(%.8X):%d', [DWORD(self), Result]));
+end;
+
+function TGraphThumbnails._Release: Integer;
+begin
+  Result := inherited _Release;
+//  WriteToLog(Format('Release(%.8X):%d', [DWORD(self), Result]));
+end;
+
+function TGraphThumbnails.GetClassID(out classID: TCLSID): HResult;
+begin
+  WriteToLog(Format('GetClassID(%.8X)', [DWORD(self)]));
+  classID := CLASS_GraphThumbnails;
+  Result := S_OK
+end;
+
+function TGraphThumbnails.GetCurFile(out pszFileName: POleStr): HResult;
+begin
+  WriteToLog(Format('GetCurFile(%.8X)', [DWORD(self)]));
+  Result := E_NOTIMPL
+end;
+
+function TGraphThumbnails.IsDirty: HResult;
+begin
+  WriteToLog(Format('IsDirty(%.8X)', [DWORD(self)]));
+  Result := E_NOTIMPL
+end;
+
+function TGraphThumbnails.Load(pszFileName: POleStr; dwMode: Integer): HResult;
+begin
+  WriteToLog(Format('Load(%.8X, fileName="%s", Mode=%.8X)', [DWORD(self), pszFileName, dwMode]));
+  FileName := pszFileName;
+  Result := S_OK
+end;
+
+function TGraphThumbnails.Save(pszFileName: POleStr; fRemember: BOOL): HResult;
+begin
+  WriteToLog(Format('Save(%.8X)', [DWORD(self)]));
+  Result := E_NOTIMPL
+end;
+
+function TGraphThumbnails.SaveCompleted(pszFileName: POleStr): HResult;
+begin
+  WriteToLog(Format('SaveCompleted(%.8X)', [DWORD(self)]));
+  Result := E_NOTIMPL
+end;
+
 
 function TGraphThumbnails.GetLocation(pszPathBuffer: LPWSTR; cch: DWORD; var pdwPriority: DWORD;
       var prgSize: TSize; dwRecClrDepth: DWORD;
@@ -137,35 +216,66 @@ function TGraphThumbnails.Extract(var phBmpThumbnail: HBITMAP): HRESULT;
 var
   OleObject: IOleObject;
   Storage : IStorage;
-  R: TRect;
+  DataObject : IDataObject;
   Format : FORMATETC;
-  Bitmap : TBitmap;
+  Medium : STGMEDIUM;
 begin
   try
     WriteToLog(System.SysUtils.Format('Extract(%.8X, phBmpThumbnail=%.8X)', [DWORD(self), phBmpThumbnail]));
     OleCheck(StgCreateDocfile(nil, STGM_READWRITE or STGM_SHARE_EXCLUSIVE or STGM_CREATE or STGM_DELETEONRELEASE, 0, Storage));
     Format.cfFormat := CF_BITMAP;
     Format.ptd := nil;
-    Format.dwAspect := DVASPECT_CONTENT{DVASPECT_THUMBNAIL};
+    Format.dwAspect := {DVASPECT_CONTENT}DVASPECT_THUMBNAIL;
     Format.lindex := -1;
     Format.tymed := TYMED_GDI;
     OleCheck(OleCreateLinkToFile(PWideChar(FileName), IOleObject,
       OLERENDER_FORMAT, @Format, nil, Storage, OleObject));
 
-    R := Rect(0, 0, Size.cx, Size.cy);
-    Bitmap := TBitmap.Create;
-    Bitmap.Canvas.Lock;
-    try
-      Bitmap.Width := Size.cx;
-      Bitmap.Height := Size.cy;
-      Bitmap.PixelFormat := PixelFormat;
-      OleCheck(OleDraw(OleObject, DVASPECT_CONTENT{DVASPECT_THUMBNAIL}, Bitmap.Canvas.Handle, R));
-      phBmpThumbnail := Bitmap.Handle;
-      Bitmap.ReleaseHandle;
-    finally
-      Bitmap.Canvas.Unlock;
-      FreeAndNil(Bitmap);
+    Dataobject := OleObject as IDataObject;
+    OleCheck(DataObject.GetData(Format, Medium));
+    phBmpThumbnail := Medium.hBitmap;
+    Result := S_OK;
+    //Warning: Do not attemp to free Storage and OleObject. Delphi will call _Release on interfaces when they go out of scope.
+  except
+    // Quiet failure
+    on E: Exception do
+    begin
+      LogException(E);
+      Result := E_FAIL;
     end;
+  end;
+end;
+
+
+function TGraphThumbnails.FileInitialize(pszFilePath: LPWSTR; grfMode: DWORD):HRESULT;
+begin
+  WriteToLog(Format('FileInitialize(%.8X, pszFilePath=%s, Mode=%.8X)', [DWORD(self), pszFilePath, grfMode]));
+  FileName := pszFilePath;
+  Result := S_OK;
+end;
+
+function TGraphThumbnails.GetThumbnail(cx : uint; out hBitmap : HBITMAP; out bitmapType : dword):HRESULT;
+var
+  OleObject: IOleObject;
+  Storage : IStorage;
+  DataObject : IDataObject;
+  Format : FORMATETC;
+  Medium : STGMEDIUM;
+begin
+  try
+    WriteToLog(System.SysUtils.Format('GetThumbnail(%.8X, cx=%d)', [DWORD(self), cx]));
+    OleCheck(StgCreateDocfile(nil, STGM_READWRITE or STGM_SHARE_EXCLUSIVE or STGM_CREATE or STGM_DELETEONRELEASE, 0, Storage));
+    Format.cfFormat := CF_BITMAP;
+    Format.ptd := nil;
+    Format.dwAspect := {DVASPECT_CONTENT}DVASPECT_THUMBNAIL;
+    Format.lindex := -1;
+    Format.tymed := TYMED_GDI;
+    OleCheck(OleCreateLinkToFile(PWideChar(FileName), IOleObject,
+      OLERENDER_FORMAT, @Format, nil, Storage, OleObject));
+
+    Dataobject := OleObject as IDataObject;
+    OleCheck(DataObject.GetData(Format, Medium));
+    hBitmap := Medium.hBitmap;
     Result := S_OK;
     //Warning: Do not attemp to free Storage and OleObject. Delphi will call _Release on interfaces when they go out of scope.
   except
@@ -183,6 +293,7 @@ end;
 procedure TGraphThumbnailsObjectFactory.UpdateRegistry(Register: Boolean);
 Const
   RegKey = 'GraphFile\ShellEx\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}';
+//  RegKey = 'Graphfile\ShellEx\{E357FCCD-A995-4576-B01F-234630154E96}';
 begin
   WriteToLog(Format('UpdateRegistry(Register=%u)', [Integer(Register)]));
   { perform normal registration }
@@ -191,11 +302,43 @@ begin
   begin
     CreateRegKey('.grf', '', 'GraphFile', HKEY_CLASSES_ROOT);
     CreateRegKey(RegKey, '', GUIDToString(ClassID), HKEY_CLASSES_ROOT);
+    SHChangeNotify(SHCNE_ASSOCCHANGED, SHCNF_IDLIST, nil, nil);
   end
   else
     DeleteRegKey(RegKey);
 end;
 
+destructor TGraphThumbnailsObjectFactory.Destroy;
+begin
+  WriteToLog('TGraphThumbnailsObjectFactory.Destroy');
+end;
+
+function TGraphThumbnailsObjectFactory.QueryInterface(const IID: TGUID; out Obj): HResult;
+begin
+  Result := inherited QueryInterface(IID, Obj);
+  WriteToLog(Format('TGraphThumbnailsObjectFactory.QueryInterface(%.8X, IID=%s, Result=%.8X)', [DWORD(self), GUIDToString(IID), Result]));
+end;
+
+function TGraphThumbnailsObjectFactory._AddRef: Integer;
+begin
+  Result := inherited _AddRef;
+  WriteToLog(Format('TGraphThumbnailsObjectFactory.AddRef(%.8X):%d', [DWORD(self), Result]));
+end;
+
+function TGraphThumbnailsObjectFactory._Release: Integer;
+begin
+  Result := inherited _Release;
+  WriteToLog(Format('TGraphThumbnailsObjectFactory.Release(%.8X):%d', [DWORD(self), Result]));
+end;
+
+var
+  Count : Integer = 1;
+{
+function DllCanUnloadNow: HResult;
+begin
+  Result := S_FALSE;
+end;
+}
 initialization
   WriteToLog('initialization');
   TGraphThumbnailsObjectFactory.Create(ComServer, TGraphThumbnails,
@@ -203,3 +346,4 @@ initialization
 finalization
   WriteToLog('finalization');
 end.
+
