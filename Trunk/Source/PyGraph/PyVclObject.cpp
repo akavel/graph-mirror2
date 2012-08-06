@@ -24,6 +24,15 @@
 namespace Python
 {
 //---------------------------------------------------------------------------
+/** This object is created when needed and owned by a TComponent object which should
+ *  be monitored for destruction. Delphi objects not derived from TComponent cannot
+ *  be monitored. Only one TObjectDeleteHandler is needed for every object monitored,
+ *  and it can always be found by its name "ObjectDeleteHandler".
+ *
+ *  VclObject objects will register themself to be notified when the referred object
+ *  is destroyed. Events that call Python functions are also tracked for cleanup when
+ *  the monitored object is destroyed.
+ */
 class TObjectDeleteHandler : public TComponent
 {
 	std::deque<TVclObject*> Objects;
@@ -71,6 +80,9 @@ public:
 	}
 };
 //---------------------------------------------------------------------------
+/** Find and optionally create a TObjectDeleteHandler associated to a TComponent
+ *  reffered by a VclObject.
+ */
 TObjectDeleteHandler* FindDeleteHandler(TVclObject *VclObject, bool Create)
 {
 	if(TComponent *Component = dynamic_cast<TComponent*>(VclObject->Instance))
@@ -84,18 +96,29 @@ TObjectDeleteHandler* FindDeleteHandler(TVclObject *VclObject, bool Create)
   return NULL;
 }
 //---------------------------------------------------------------------------
+/** Create a delete handler if it doesn't already exists and register the TVclObject
+ *  object, which the delete handler is attached to.
+ */
 void CreateDeleteHandler(TVclObject *VclObject)
 {
   if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(VclObject, true))
 		DeleteHandler->Register(VclObject);
 }
 //---------------------------------------------------------------------------
+/** Class with function used to assign all events that are python objects.
+ *  There is only one global instance, in fact the instance is not used but is
+ *  necesarry because a closure is needed.
+ */
 struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
 {
 	void __fastcall Invoke(void * UserData, System::DynamicArray<TValue> Args, TValue &Result);
 };
 TPythonCallback *PythonCallback = new TPythonCallback;
 //---------------------------------------------------------------------------
+/** Function called for all events assigned to Python functions.
+ *  The function will convert the arguments passed with the event to Python objects and
+ *  call the Python callback function.
+ */
 void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TValue> Args, TValue &Result)
 {
 	TLockGIL Dummy;
@@ -116,6 +139,9 @@ void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TV
 	  PyErr_Print();
 }
 //---------------------------------------------------------------------------
+/** Create TInvokeInfo object with parameter information for a Delphi event.
+ *  This is used to decode the parameters inside the generic event handler.
+ */
 TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
 {
 	TTypeData *TypeData = reinterpret_cast<TTypeData*>(&TypeInfo->Name[TypeInfo->Name[0]+1]);
@@ -146,6 +172,48 @@ TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
 	return InvokeInfo;
 }
 //---------------------------------------------------------------------------
+/** This creates a weak reference to a callable object. If Func is a bound method,
+ *  this will return a bound method weakproxy Func.__self__ to Func.__func__.
+ *  Otherwise a normal strong reference is stored to Func to make sure the object is
+ *  not destroyed if there are no references, e.g. lambda function.
+ *  \param Func: Callable object used as event.
+ *  \return New reference to event object. NULL if a Python exception has been set.
+ */
+PyObject* CreateWeakEvent(PyObject* Func)
+{
+  if(!PyCallable_Check(Func))
+    return SetErrorString(PyExc_TypeError, "Event must be callable.");
+  if(!PyMethod_Check(Func))
+  { //Not a  bound method
+    Py_INCREF(Func);
+    return Func;
+  }
+
+  PyObject *obj = PyObject_GetAttrString(Func, "__self__");
+  if(obj == NULL)
+    return NULL;
+
+  PyObject *fn = PyObject_GetAttrString(Func, "__func__");
+  if(fn == NULL) //Apparently not a bound method
+  {
+    Py_DECREF(obj);
+    return NULL;
+  }
+  PyObject *proxy = PyWeakref_NewProxy(obj, NULL);
+  Py_DECREF(obj);
+  if(proxy == NULL)
+  {
+    Py_DECREF(fn);
+    return NULL;
+  }
+  PyObject *BoundMethod = PyMethod_New(fn, proxy);
+  Py_DECREF(fn);
+  Py_DECREF(proxy);
+  return BoundMethod;
+}
+//---------------------------------------------------------------------------
+/** Returns a Python string that represent the VclObject.
+ */
 static PyObject *VclObject_Repr(TVclObject* self)
 {
 	try
@@ -166,6 +234,8 @@ static PyObject *VclObject_Repr(TVclObject* self)
 	}
 }
 //---------------------------------------------------------------------------
+/** Returns a list of all properties, methods and public fields of the object.
+ */
 static PyObject* VclObject_Dir(TVclObject *self, PyObject *arg)
 {
 	PyObject *List = PyList_New(0);
@@ -204,6 +274,10 @@ static PyObject* VclObject_Dir(TVclObject *self, PyObject *arg)
 	return List;
 }
 //---------------------------------------------------------------------------
+/** Destructor for the VclObject. If the instance is owned, first remove all objects
+ *  that have the instance as parent, and then free the owned instance.
+ *  If not owned, unregister from the delete handler.
+ */
 static void VclObject_Dealloc(TVclObject* self)
 {
 	if(self->Owned)
@@ -219,6 +293,12 @@ static void VclObject_Dealloc(TVclObject* self)
 	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
 }
 //---------------------------------------------------------------------------
+/** Retrieve a method, property or field. If a property or field is retrieved,
+ *  we try to convert it to a built-in type, else a new VclObject is created to
+ *  refference it without owning it.
+ *  If a method is retrieved, a TVclMethod object is returned, which may be used
+ *  to call the method.
+ */
 PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 {
 	try
@@ -261,6 +341,11 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 	}
 }
 //---------------------------------------------------------------------------
+/** Set the value of a public property or field in a VclObject. If an event is
+ *  set, we use a generic event, which will convert the parameters and call the
+ *  Python event. If the Python event is a bound method, we store a weak reference
+ *  to the instance of the bound method to avoid circular references.
+ */
 int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 {
 	try
@@ -298,9 +383,11 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 				Value = TValue::From<TObject*>(NULL);
 			else
 			{
-				Py_INCREF(v);
 				TMethodImplementation::TInvokeInfo *InvokeInfo = CreateInvokeInfo(TypeInfo);
-				TMethodImplementation *Implementation = new TMethodImplementation(v, InvokeInfo, PythonCallback);
+        PyObject *Func = CreateWeakEvent(v);
+        if(Func == NULL)
+          return -1;
+				TMethodImplementation *Implementation = new TMethodImplementation(Func, InvokeInfo, PythonCallback);
 				TMethod Method = {Implementation->CodeAddress, Implementation}; //Pass InvokeInfo in this, which can be used as another data pointer
 				TValue::Make(&Method, TypeInfo, Value);
 				if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self, true))
@@ -331,6 +418,11 @@ static PyMethodDef VclObject_Methods[] =
 	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
+/** Proxy object for a VCL object. If _owned is set to True, the VCL object is
+ *  owned by the proxy and destroyed when the proxy is destroyed.
+ *  If possible the VCL object will own a delete handler, which will clear the
+ *  reference in the proxy if the VCL object is destroyed before the proxy.
+ */
 PyTypeObject VclObjectType =
 {
 	PyObject_HEAD_INIT(NULL)
@@ -373,6 +465,12 @@ PyTypeObject VclObjectType =
 	0,						             /* tp_new */
 };
 //---------------------------------------------------------------------------
+/** Create new VclObject.
+ *  \param Instance: VCL instance, which the VclObject will be a proxy for.
+ *  \param Owned: If True, Instance will be owned by the proxy and destroyed
+ *                when the proxy is destroyed.
+ *  \return New reference to VclObject.
+ */
 PyObject* VclObject_Create(TObject *Instance, bool Owned)
 {
 	TVclObject *VclObject = PyObject_New(TVclObject, &VclObjectType);
@@ -382,11 +480,18 @@ PyObject* VclObject_Create(TObject *Instance, bool Owned)
 	return reinterpret_cast<PyObject*>(VclObject);
 }
 //---------------------------------------------------------------------------
+/** Return true if O is a VclObject.
+ */
 bool VclObject_Check(PyObject *O)
 {
 	return O->ob_type->tp_repr == VclObjectType.tp_repr;
 }
 //---------------------------------------------------------------------------
+/** Return the VCL object, which the given VclObject is a proxy for.
+ *  \param O: Pointer to a VclObject instance.
+ *  \return VCL object refered to by O. This may be NULL if the object has been destroyed
+ *  \throw EPyVclError if O is not a VclObject.
+ */
 TObject* VclObject_AsObject(PyObject *O)
 {
 	if(O->ob_type->tp_repr != VclObjectType.tp_repr)
