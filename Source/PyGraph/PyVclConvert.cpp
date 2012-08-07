@@ -22,6 +22,12 @@ namespace Python
 TRttiContext Context;
 PyObject *PyVclException = NULL;
 //---------------------------------------------------------------------------
+/** Convert a PyObject to a TValue as used when calling functions and setting properties in a generic way through Delphi RTTI. 
+ *  \param O: PyObject to convert
+ *  \param TypeInfo: The expected return type
+ *  \return A TValue with a value of the type given by TypeInfo.
+ *  \throw EPyVclError on conversion errors.
+ */
 TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 {
 	TValue Result;
@@ -103,6 +109,12 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 	return Result;
 }
 //---------------------------------------------------------------------------
+/** Convert the content for a tuple to a vector of TValue that can be passed to the Delphi RTTI system.
+ *  \param O: This must be a tuple. Not checked.
+ *  \param Values: vector filled with the return values.
+ *  \param Parameters: This must be the expected types for the converted values. The number of elements 
+ *         must be the same as the number of items in the tuple.
+ */
 void TupleToValues(PyObject *O, std::vector<TValue> &Values, const DynamicArray<TRttiParameter*> &Parameters)
 {
 	Values.clear();
@@ -166,6 +178,11 @@ PyObject* ToPyObject(const wchar_t *Str)
   return PyUnicode_FromWideChar(Str, -1);
 }
 //---------------------------------------------------------------------------
+/** Convert a TValue from the Delphi RTTI system to a PyObject*.
+ *  \param V: The value to convert.
+ *  \return New reference to a converted object.
+ *  \throw EPyVclError if the conversion fails.
+ */
 PyObject* ToPyObject(const Rtti::TValue &V)
 {
 	Rtti::TValue &Value = const_cast<Rtti::TValue&>(V);
@@ -280,6 +297,9 @@ template<> int FromPyObject<int>(PyObject *O)
 	return PyLong_AsLong(O);
 }
 //---------------------------------------------------------------------------
+/** Exception handling helper function. Called from a catch(...) section and converts an active 
+ *  C++/Delphi exception to a Python exception.
+ */
 PyObject* PyVclHandleException()
 {
 	try
