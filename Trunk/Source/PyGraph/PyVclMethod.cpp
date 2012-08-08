@@ -24,6 +24,9 @@ struct TVclMethod
 	DynamicArray<TRttiMethod*> Methods;
 };
 //---------------------------------------------------------------------------
+/** Return a string reprecentation of the VCL method.
+ *  \return New reference
+ */
 static PyObject *VclMethod_Repr(TVclMethod* self)
 {
 	String Str = L'<';
@@ -44,6 +47,16 @@ static PyObject *VclMethod_Repr(TVclMethod* self)
 	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
 }
 //---------------------------------------------------------------------------
+/** Call a method of a VCL object or a constructor of a VCL type.
+ *  The methods are considered in order and the first that matches the arguments
+ *  will be used.
+ *  \param Type: The type to construct if the method is a constructor; NULL otherwise.
+ *  \param Instance: The VCL object of the method; NULL if it is a constructor
+ *  \param Methods: The methods to consider
+ *  \param Args: Arguments that will be passed to the method.
+ *  \return The result of the called method or the newly constructed object if it
+ *  is a constructor.
+ */
 TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*> &Methods, PyObject *Args)
 {
 	unsigned MethodCount = Methods.get_length();
@@ -79,7 +92,6 @@ TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*>
 			if(Type == NULL)
 				throw EPyVclError("Cannot call constructor");
 			return Method->Invoke(Type->AsInstance->MetaclassType, Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
-
 		}
 		else if(Method->IsClassMethod || Method->IsStatic)
 			return Method->Invoke(Instance->ClassType(), Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
@@ -90,6 +102,10 @@ TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*>
 	throw EPyVclError("No suitable overload found for the function " + Methods[0]->Name);
 }
 //---------------------------------------------------------------------------
+/** Call the first suitable method refferenced by the VclMethod object.
+ *  Keyword arguments are not allowed as they cannot be mapped to arguemnts to a
+ *  VCL method.
+ */
 static PyObject *VclMethod_Call(TVclMethod* self, PyObject *args, PyObject *keywds)
 {
 	try
@@ -104,12 +120,16 @@ static PyObject *VclMethod_Call(TVclMethod* self, PyObject *args, PyObject *keyw
 	}
 }
 //---------------------------------------------------------------------------
+/** Destructor for VclMethod.
+ */
 static void VclMethod_Dealloc(TVclMethod* self)
 {
 	self->Methods.~DynamicArray();
 	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
 }
 //---------------------------------------------------------------------------
+/** VclMethod is a proxy for one or more methods of a VCL object.
+ */
 PyTypeObject VclMethodType =
 {
 	PyObject_HEAD_INIT(NULL)
@@ -152,6 +172,12 @@ PyTypeObject VclMethodType =
 	0,						             /* tp_new */
 };
 //---------------------------------------------------------------------------
+/** Create new VclMethod object, which is a proxy object to one or more methods of
+ *  a VCL object.
+ *  \param Instance: The VCL object of the methods.
+ *  \param Methods: The methods we are creating a proxy for.
+ *  \return New reference to a VclMethod
+ */
 PyObject* VclMethod_Create(TObject *Instance, const DynamicArray<TRttiMethod*> &Methods)
 {
 	TVclMethod *VclMethod = PyObject_New(TVclMethod, &VclMethodType);
