@@ -24,11 +24,15 @@ struct TVclRef
 	TValue *Value;
 };
 //---------------------------------------------------------------------------
+/** Create string representation of reference object.
+ */
 static PyObject *VclRef_Repr(TVclRef* self)
 {
 	return ToPyObject(L"<Reference to '" + self->Value->ToString() + L"'>");
 }
 //---------------------------------------------------------------------------
+/** Retrieve the value refered to by the reference object.
+ */
 static PyObject* VclRef_GetValue(TVclRef *self, void *closure)
 {
 	try
@@ -41,6 +45,8 @@ static PyObject* VclRef_GetValue(TVclRef *self, void *closure)
 	}
 }
 //---------------------------------------------------------------------------
+/** Set the value refered to by the reference object. This will also validate the type.
+ */
 static int VclRef_SetValue(TVclRef *self, PyObject *value, void *closure)
 {
 	try
@@ -61,6 +67,16 @@ static PyGetSetDef VclRefr_GetSeters[] =
 	{NULL}  /* Sentinel */
 };
 //---------------------------------------------------------------------------
+/** A reference object is used when callback functions like events are created 
+ *  in Python but called from Delphi with a parameter that is a reference.
+ *  For example if Delphi expects a function like this:
+ *  procedure Foo(var Key : Word);
+ *  This may be implemented in Python like this:
+ *  def Foo(Key)
+ *  In this case Key is a reference object, where Key.Value is used to read and write 
+ *  the actual value. This is necessary because it is not possible to change the 
+ *  value of a built-in type in Python.
+ */
 PyTypeObject VclRefType =
 {
 	PyObject_HEAD_INIT(NULL)
@@ -103,6 +119,11 @@ PyTypeObject VclRefType =
 	0,						             /* tp_new */
 };
 //---------------------------------------------------------------------------
+/** Create a new reference object.
+ *  \param Value: Pointer to a value referenced by the reference object. The value
+ *  must exist at least as long as the object refering to it.
+ *  \return New reference
+ */
 PyObject* VclRef_Create(TValue *Value)
 {
 	TVclRef *VclRef = PyObject_New(TVclRef, &VclRefType);
