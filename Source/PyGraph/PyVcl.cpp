@@ -35,6 +35,9 @@ struct TGlobalObjectEntry
 	const char *Name;
 	TObject *Object;
 };
+
+/** List of global VCL objects that should be permanently mapped in PyVcl.vcl
+ */
 TGlobalObjectEntry GlobalObjectList[] =
 {
 	"Application", Application,
@@ -43,6 +46,9 @@ TGlobalObjectEntry GlobalObjectList[] =
 	"Screen", Screen,
 };
 //---------------------------------------------------------------------------
+/** Retrieve a list of available variables, types and functions in PyVcl.vcl.
+ *  \return New reference
+ */
 static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
 {
 	unsigned GlobalCount = sizeof(GlobalObjectList)/sizeof(GlobalObjectList[0]);
@@ -59,6 +65,17 @@ static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
 	return List;
 }
 //---------------------------------------------------------------------------
+/** Retrieve a type, function or global variable from the global vcl object.
+ *  The name is searched in this ordier:
+ *  1. Check the cache if the object already exists and used it if it does.
+ *     Global variables as Application always exist here.
+ *  2. Search for type in custom list of available types.
+ *  3. Try to retrieve it as a registered class in Delphi.
+ *  4. Try to create it as a global function.
+ *  At last the object is stored in the cache for fast retrievel next time.
+ *  A Python exception is thrown if no variable, type or function with the given name is found.
+ *  \return New reference
+ */
 static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 {
 	try
@@ -116,6 +133,10 @@ static PyMethodDef GlobalVcl_Methods[] =
 	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
+/** The vcl object exists because it is not possible to set tp_getattro for a module. 
+ *  The object will be made available for direct import by "import vcl". 
+ *  The object gives access to all VCL types and some global VCL variables and functions.
+ */
 static PyTypeObject GlobalVclType =
 {
 	PyObject_HEAD_INIT(NULL)
@@ -171,6 +192,9 @@ static PyModuleDef PyVclModuleDef =
 	NULL, //m_free
 };
 //---------------------------------------------------------------------------
+/** This creates the vcl object in the PyVcl module. 
+ *  \return New reference
+ */
 PyObject* GlobalVcl_Create()
 {
 	TGlobalVcl *vcl = PyObject_New(TGlobalVcl, &GlobalVclType);
@@ -185,6 +209,10 @@ PyObject* GlobalVcl_Create()
 	return self;
 }
 //---------------------------------------------------------------------------
+/** Initialize the vcl module. This creates all types need by PyVcl and the vcl object,
+ *  which is placed in the list of imported modules.
+ *  This way you can write "import vcl" instead of "from PyVcl import vcl". 
+ */
 PyObject* InitPyVcl()
 {
 	PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
@@ -195,8 +223,10 @@ PyObject* InitPyVcl()
 	PyVclException = PyErr_NewException("vcl.VclError", NULL, NULL);
 	PyModule_AddObject(PyVclModule, "VclError", PyVclException);
 
-	PyObject *Modules = PyImport_GetModuleDict();
 	PyObject *vcl = GlobalVcl_Create();
+	PyModule_AddObject(PyVclModule, "vcl", vcl);
+
+	PyObject *Modules = PyImport_GetModuleDict();
 	PyDict_SetItemString(Modules, "vcl", vcl);
 	Py_DECREF(vcl);
 	return PyVclModule;

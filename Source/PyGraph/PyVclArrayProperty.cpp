@@ -24,6 +24,8 @@ struct TVclArrayProperty
 	int PropertyId;
 };
 //---------------------------------------------------------------------------
+/** Retrieve the number of elements of the array property.
+ */
 Py_ssize_t VclArrayProperty_Length(TVclArrayProperty *self)
 {
 	switch(self->PropertyId)
@@ -44,6 +46,11 @@ Py_ssize_t VclArrayProperty_Length(TVclArrayProperty *self)
 	return 0;
 }
 //---------------------------------------------------------------------------
+/** Get an element of the array property.
+ *  \param self: The array property wrapper, indicating instance and property.
+ *  \param i: The index for the item to get.
+ *  \return New reference to the retrieved object.
+ */
 PyObject* VclArrayProperty_Item(TVclArrayProperty *self, Py_ssize_t i)
 {
 	if(i >= VclArrayProperty_Length(self))
@@ -74,6 +81,8 @@ PyObject* VclArrayProperty_Item(TVclArrayProperty *self, Py_ssize_t i)
 	return NULL;
 }
 //---------------------------------------------------------------------------
+/** Return a string representation of the content of the array property.
+ */
 static PyObject *VclArrayProperty_Repr(TVclArrayProperty* self)
 {
   unsigned Count = VclArrayProperty_Length(self);
@@ -85,6 +94,11 @@ static PyObject *VclArrayProperty_Repr(TVclArrayProperty* self)
 	return Result;
 }
 //---------------------------------------------------------------------------
+/** Set an element of the array property.
+ *  \param self: The array property wrapper, indicating instance and property.
+ *  \param i: The index for the item to set.
+ *  \param v: The value to set. This is checked for corret type.
+ */
 int VclArrayProperty_SetItem(TVclArrayProperty *self, Py_ssize_t i, PyObject *v)
 {
 	try
@@ -133,6 +147,10 @@ PySequenceMethods VclArrayPropertySequence =
 	0, /* sq_inplace_repeat */
 };
 
+/** VclArrayProperty is a wrapper around an array property in a Delphi object.
+ *  This is a wrokaround as the Delphi RTTI does not support access to read/write array
+ *  properties in a generic way.
+ */
 PyTypeObject VclArrayPropertyType =
 {
 	PyObject_HEAD_INIT(NULL)
@@ -175,6 +193,11 @@ PyTypeObject VclArrayPropertyType =
 	0,						             /* tp_new */
 };
 //---------------------------------------------------------------------------
+/** Create a new array property wrapper object.
+ *  \param Instance: This is the VCL object instance that has the array property.
+ *  \param Name: This is the name of the array property.
+ *  \return New reference to an array property wrapper.
+ */
 PyObject* VclArrayProperty_Create(TObject *Instance, const String &Name)
 {
 	int PropertyId = -1;

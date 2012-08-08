@@ -80,7 +80,7 @@ PyObject* SetErrorString(PyObject *Type, const String &Str)
 }
 //---------------------------------------------------------------------------
 } //namespace Python
-
+//Helper functions needed for use of boost::intrusive_ptr<PyObject>
 void boost::intrusive_ptr_add_ref(PyObject *O)
 {
 	if(O)
