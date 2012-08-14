@@ -275,7 +275,7 @@ unsigned TDraw::FindLabels()
 
   if(Axes.yAxis.ShowNumbers)
   {
-		double yMinTickUnit = Axes.yAxis.LogScl ? std::log(Axes.yAxis.Max)/std::log(Axes.yAxis.Min) : (Axes.yAxis.Max - Axes.yAxis.Min) / 100;
+		double yMinTickUnit = Axes.yAxis.LogScl ? std::log10(Axes.yAxis.Max/Axes.yAxis.Min)/10 : (Axes.yAxis.Max - Axes.yAxis.Min) / 100;
 		double yTickUnit = std::max(Axes.yAxis.TickUnit, yMinTickUnit);
 
 		//Calculate font height for numbers
