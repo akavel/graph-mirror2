@@ -3504,8 +3504,8 @@ msgstr ""
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "이 오늘의 유용한 팁은 대부분의 사용자가 알지 못하는 프로그램에 대한 많은 정보를 제공합니다."
 
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 msgstr ""
 
 #. Tip of the Day

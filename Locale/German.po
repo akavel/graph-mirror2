@@ -3440,9 +3440,9 @@ msgstr "Der Thread reagiert nicht."
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Der Tipp des Tages kann Ihnen viele Informationen über das Programm geben, die die meisten Anwender nicht kennen."
 
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "Im Graph-Forum unter <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a> erhalten Sie Unterstützung bei der Bedienung von Graph, können Sie von Programmfehlern berichten oder Verbesserungsvorschläge machen."
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Im Graph-Forum unter <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a> erhalten Sie Unterstützung bei der Bedienung von Graph, können Sie von Programmfehlern berichten oder Verbesserungsvorschläge machen."
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."

@@ -46,9 +46,9 @@
 
 #define HOMEPAGE L"http:\/\/www.padowan.dk"
 #define EMAIL L"graph@padowan.dk"
-#define DOWNLOADPAGE L"http:\/\/www.padowan.dk/graph"
-#define DONATE_PAGE L"http:\/\/www.padowan.dk/graph/donate.html"
-#define SUPPORT_PAGE L"http:\/\/www.padowan.dk/graph/support.html"
+#define DOWNLOADPAGE L"http:\/\/www.padowan.dk/download"
+#define DONATE_PAGE L"http:\/\/www.padowan.dk/donate"
+#define SUPPORT_PAGE L"http:\/\/forum.padowan.dk"
 #define INF_FILE L"http:\/\/www.padowan.dk/graph/GraphVersion.php"
 #define CLIPBOARDFORMAT L"Graph Unicode Data"
 

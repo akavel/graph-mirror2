@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
@@ -3433,9 +3433,9 @@ msgstr "Thread cevap vermiyor."
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Günün ip ucu size birçok kullanıcının bilmediği bilgi verir."
 
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "Graph programinin kullanimi, program hatalari hakkinda forumda bilgi alabilirsiniz forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Graph programinin kullanimi, program hatalari hakkinda forumda bilgi alabilirsiniz forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."

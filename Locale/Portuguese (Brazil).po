@@ -3989,9 +3989,9 @@ msgid "This Tip of the day can give you a lot of information about the program t
 msgstr "Esta 'Dica do dia' pode lhe dar muitas informações sobre o programa, que a maioria dos usuários desconhece."
 
 # "using graph" = no uso do Graph
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "Você pode obter ajuda no uso do Graph, reportar bugs e sugerir melhorias futuras no forum da web: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Você pode obter ajuda no uso do Graph, reportar bugs e sugerir melhorias futuras no forum da web: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 
 # customize = personalizar
 # "on it" = sobre ela = sobre a mesma

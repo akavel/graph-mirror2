@@ -3430,9 +3430,9 @@ msgstr "Nit se ne odziva"
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Nasvet dneva vam lahko pove veliko informacij o programu, ki jih večina uprabnikov ne ve."
 
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "Prijavo napak, podajanje predlogov in pomoč za uporabo programa lahko najdete na spletnem forumu: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Prijavo napak, podajanje predlogov in pomoč za uporabo programa lahko najdete na spletnem forumu: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."

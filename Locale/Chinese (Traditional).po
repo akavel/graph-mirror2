@@ -3525,9 +3525,9 @@ msgstr "執行緒沒有反應"
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "今天的提示給你大部分使用者通常不知道的訊息"
 
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "你可以在<a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>找到更多Graph的幫助，或者回報問題到網站。"
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "你可以在<a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>找到更多Graph的幫助，或者回報問題到網站。"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
