@@ -3429,9 +3429,9 @@ msgstr "Programtråden svarer ikke"
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Dette Dagens tips kan gi deg en masse programinformasjon som de flester ikke kjenner til."
 
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "Du kan finne hjelp for Graph, melde feil og foreslå forbedringer på nettforumet: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Du kan finne hjelp for Graph, melde feil og foreslå forbedringer på nettforumet: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."

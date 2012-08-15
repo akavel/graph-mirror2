@@ -3431,9 +3431,9 @@ msgstr "Nem válaszol."
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "A Nap Ötlete használható, nem közismert információkat ad a program kezeléséről."
 
-#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "A következő webhelyen kaphat segítésget a Graph használatához, jelezhet hibákat, javasolhat fejlesztéseket és javításokat a készítőknek: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "A következő webhelyen kaphat segítésget a Graph használatához, jelezhet hibákat, javasolhat fejlesztéseket és javításokat a készítőknek: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
