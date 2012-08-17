@@ -2312,6 +2312,7 @@ void TForm1::CheckForUpdate(bool StartupCheck)
     int Major = IniFile->ReadInteger("Graph", "Major", 0);
     int Minor = IniFile->ReadInteger("Graph", "Minor", 0);
     int Release = IniFile->ReadInteger("Graph", "Release", 0);
+    int Build = IniFile->ReadInteger("Graph", "Build", 0);
     String DownloadPage = IniFile->ReadString("Graph", "DownloadPage", "http:\/\/www.padowan.dk");
 
     //Check if a newer version is available, or if this is a debug version one with the same version
@@ -2320,7 +2321,7 @@ void TForm1::CheckForUpdate(bool StartupCheck)
       TVersion Version = Info.ProductVersion();
       if(Major > Version.Major || (Major == Version.Major && (Minor > Version.Minor ||
         (Minor == Version.Minor && (Release > Version.Release ||
-        (Release == Version.Release && (Info.FileFlags() & ffDebug)))))))
+        (Release == Version.Release && (Build > Version.Build)))))))
       {
         String VersionString = String(Major) + '.' + Minor;
         if(Release)
