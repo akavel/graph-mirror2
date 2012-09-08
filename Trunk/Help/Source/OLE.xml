@@ -20,27 +20,20 @@
 				<guimenuitem>Copy image</guimenuitem>
 			</menuchoice>
 			in Graph to copy the current content to the clipboard.
-			Afterwards you can select
-			<menuchoice>
-				<guimenu>Edit</guimenu>
-				<guimenuitem>Paste</guimenuitem>
-			</menuchoice>
+			Afterwards you can select	<guimenuitem>Paste</guimenuitem>
 			in Word (or similar in another OLE client) to insert the Graph object from the clipboard.
 			When you double click on the object a new instance of Graph will start where you can edit the object.
 			If you don't want to paste the data as a Graph object into Word, you can use
 			<menuchoice>
-				<guimenu>Edit</guimenu>
+				<guimenu>Paste</guimenu>
 				<guimenuitem>Paste Special...</guimenuitem>
 			</menuchoice>
 			in Word to paste as a picture instead.
 		</para>
 		<para>
-			You may create a new Graph object in Word by choosing the
-			<menuchoice>
-				<guimenu>Insert</guimenu>
-				<guimenuitem>Object...</guimenuitem>
-			</menuchoice>
-			menu item and selecting <guilabel>Graph system</guilabel> as <guilabel>Object type</guilabel>.
+			You may create a new Graph object in Word by choosing
+		  <guimenuitem>Object</guimenuitem>
+			in the toolbar and selecting <guilabel>Graph system</guilabel> as <guilabel>Object type</guilabel>.
 			The same dialog can be used to create an embedded Graph object from an existing grf-file.
 			If you select <guilabel>Link to file</guilabel>, you will get a linked object instead of an embedded object.
 			This way all changes to the object will be reflected in the original grf-file.

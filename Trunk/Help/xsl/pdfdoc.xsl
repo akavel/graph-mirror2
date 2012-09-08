@@ -29,6 +29,16 @@
   <xsl:param name="img.src.path">Images/</xsl:param>
   <xsl:param name="glossary.as.blocks" select="1"/>
 
+  <!-- Add shadings and border to program listings -->
+  <xsl:param name="shade.verbatim" select="1"/>
+  <xsl:attribute-set name="shade.verbatim.style">
+    <xsl:attribute name="background-color">#E0E0E0</xsl:attribute>
+    <xsl:attribute name="border-width">0.5pt</xsl:attribute>
+    <xsl:attribute name="border-style">solid</xsl:attribute>
+    <xsl:attribute name="border-color">#575757</xsl:attribute>
+    <xsl:attribute name="padding">3pt</xsl:attribute>
+  </xsl:attribute-set>
+
   <xsl:param name="formal.title.placement">
     figure after
     example after

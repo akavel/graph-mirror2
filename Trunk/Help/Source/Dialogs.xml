@@ -18,4 +18,5 @@
 	<xi:include href="TableDialog.xml"/>
 	<xi:include href="AnimateDialog.xml"/>
 	<xi:include href="SaveImageDialog.xml"/>
+	<xi:include href="ImportPointSeries.xml"/>
 </chapter>
