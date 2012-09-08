@@ -106,20 +106,18 @@
 				<guimenu>Calc</guimenu>
 				<guimenuitem>Area</guimenuitem>
 			</menuchoice>
-			is selected the dialog is used to calculate the definite integral for the selected function over a specified domain range.
-			For standard functions, parametric functions and tangents the definite integral is the same as the signed area between the graph and the x-axis
+			is selected the dialog is used to calculate the area for the selected function over a specified domain range.
+			For standard and parametric functions and tangents the area is the signed area between the graph and the x-axis
 			(the real x-axis and not necessarily the visible one) for the given range.
+			The area below the x-axis is considered negative. For standard functions and tangents, this is the same as the definite integral.
 		</para>
 		<para>
-			For polar functions, the definite integral is the same as the signed area between the graph in the given range and the origin.
+			For polar functions, the area is the one between the graph in the given range and the origin.
 			The area is considered negative when the angle goes from a higher to a lower value (clockwise).
 		</para>
 		<para>
-			For the other functions the area is considered negative when the graph is below the x-axis or when the function goes from a higher to a lower x-value.
-		</para>
-		<para>
 			You can either enter the range in the edit boxes or select the range with the mouse.
-			The calculated integral will be shown below the range, and the matched area will be marked with a shading in the coordinate system.
+			The calculated area will be shown below the range, and the matched area will be marked with a shading in the coordinate system.
 			The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible.
 			If an estimated relative error less than <mathphrase>10<superscript>-4</superscript></mathphrase> cannot be reached, no result will be shown.
 		</para>

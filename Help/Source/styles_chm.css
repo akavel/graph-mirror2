@@ -339,3 +339,11 @@ dt em.parameter,
 dd em.parameter {
   font-size: 110%;
 }
+
+/* Add shaded background and border to program listings */
+pre.programlisting {
+  background-color: #FFFF99;
+  border: 1px solid #006600;
+  width: 0; /* This will make the width as small as possible to no smaller */
+  padding: 5px; /* Add space between border and content */
+}
