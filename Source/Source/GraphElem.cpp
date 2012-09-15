@@ -816,12 +816,12 @@ void TPointSeries::ReplacePoint(const TPointSeriesPoint &Point, unsigned Index)
   PointList.at(Index) = ConvertPoint(Point);
 }
 //---------------------------------------------------------------------------
-void TPointSeries::DeletePoint(unsigned Index)
+void TPointSeries::DeletePoint(unsigned Index, unsigned Count)
 {
   if(Index >= PointData.size())
     throw std::out_of_range("Index out of range.");
-  PointData.erase(PointData.begin() + Index);
-  PointList.erase(PointList.begin() + Index);
+  PointData.erase(PointData.begin() + Index, PointData.begin() + Index + Count);
+  PointList.erase(PointList.begin() + Index, PointList.begin() + Index + Count);
 }
 //---------------------------------------------------------------------------
 void TPointSeries::WriteToIni(TConfigFileSection &Section) const
@@ -838,6 +838,7 @@ void TPointSeries::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"Font", FontToStr(Font), DEFAULT_POINT_FONT);
   Section.Write(L"LabelPosition", LabelPosition);
   Section.Write(L"PointType", PointType, ptCartesian);
+  Section.Write(L"PointCount", PointList.size());
 
   std::wostringstream Str;
   for(unsigned N = 0; N < PointList.size(); N++)
@@ -904,9 +905,8 @@ void TPointSeries::ReadFromIni(const TConfigFileSection &Section)
   std::wistringstream xStream(Section.Read(L"xErrorBarData", L""));
   std::wistringstream yStream(Section.Read(L"yErrorBarData", L""));
   TTokenizer Token(L"", L',', L'"');
-
-//  std::string SavedByVersion = Section.Read("Graph", "Version", "NA");
-//  bool BackwardCompatibility = SavedByVersion < TVersion("4.0"); //Before 4.0 the number 3,000,000 would be saved as "3e6"
+  unsigned PointCount = Section.Read(L"PointCount", 0U);
+  PointData.reserve(PointCount);
 
   while(Token = Tokens.Next(), Tokens)
   {
@@ -919,10 +919,6 @@ void TPointSeries::ReadFromIni(const TConfigFileSection &Section)
 
     try
     {
-/*      using boost::lexical_cast;
-      if(BackwardCompatibility)
-        PointList.push_back(TPointSeriesPoint(lexical_cast<double>(x), lexical_cast<double>(y), xError.empty() ? 0.0 : lexical_cast<double>(yError), xError.empty() ? 0.0 : lexical_cast<double>(yError)));
-      else*/
       if(!xError.empty())
         XError.Set(xError, GetData());
       if(!yError.empty())

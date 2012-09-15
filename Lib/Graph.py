@@ -89,6 +89,7 @@ EGraphError = GraphImpl.EGraphError
 
 # Current version of Graph
 VersionInfo = collections.namedtuple("VersionInfo", ["Major","Minor","Release","ReleaseLevel","Build"])._make(GraphImpl.version_info)
+Debug = GraphImpl.Debug
 
 def LoadPlugins(Path):
     sys.path.append(Path)

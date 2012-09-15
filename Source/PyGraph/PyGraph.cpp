@@ -548,7 +548,11 @@ void InitPlugins()
 			"sys.stdin = sys.stdout\n"
 
 			"GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
-
+#ifdef _DEBUG
+      "GraphImpl.Debug = True\n"
+#else
+      "GraphImpl.Debug = False\n"
+#endif
 			"sys.path.append('%s\\Lib')\n"
 			"import PyVcl\n"
 			"import vcl\n"

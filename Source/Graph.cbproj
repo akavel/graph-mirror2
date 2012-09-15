@@ -23,6 +23,7 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<ILINK_HeapReserveSize>0x01000000</ILINK_HeapReserveSize>
 			<ILINK_StackReserveSize>0x00400000</ILINK_StackReserveSize>
 			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
 			<BCC_InstructionSet>6</BCC_InstructionSet>
@@ -48,6 +49,7 @@
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<ILINK_HeapReserveSize>0x01000000</ILINK_HeapReserveSize>
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
 			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
 			<FinalOutputDir>..</FinalOutputDir>
@@ -465,7 +467,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">4</VersionInfo>
 						<VersionInfo Name="Release">1</VersionInfo>
-						<VersionInfo Name="Build">538</VersionInfo>
+						<VersionInfo Name="Build">539</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -477,7 +479,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.4.1.538</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.4.1.539</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>

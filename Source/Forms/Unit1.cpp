@@ -2332,7 +2332,7 @@ void TForm1::CheckForUpdate(bool StartupCheck)
         if(MessageBox(Str, LoadRes(540), MB_YESNO) == ID_YES)
           ShellExecute(Handle, NULL, DownloadPage.c_str(), NULL, NULL, SW_SHOWMAXIMIZED);
       }
-      else if(!StartupCheck)
+        else if(!StartupCheck)
         MessageBox(LoadRes(543), LoadRes(542), MB_ICONINFORMATION);
     }
   }

@@ -1,6 +1,6 @@
 import Graph
 
-ShowEvents = True
+ShowEvents = False
 LogFile = "Events.log"
 
 File = open(LogFile, "w") if LogFile else None

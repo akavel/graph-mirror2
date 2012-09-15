@@ -137,6 +137,7 @@ BEGIN
   RES_FILE_READ_ERROR     "Error reading file"
   RES_PRINTER_ERROR       "Printer error"
   RES_INVALID_USE_OF_INF  "Invalid use of infinity. Infinity cannot be used here."
+  RES_OUT_OF_MEMORY       "Not enough memory to complete the operation."
 
   RES_CAPTION_DELETE      "Confirm delete"
   RES_SHOW                "Show %s"     //Context menu in Calc|Table dialog

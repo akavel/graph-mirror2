@@ -18,6 +18,7 @@
 #include "ConfigRegistry.h"
 #include "ICompCommon.h"
 #include "HandleCsv.h"
+#include <boost/tokenizer.hpp>
 //---------------------------------------------------------------------------
 void TData::LoadFromFile(const std::wstring &FileName)
 {
@@ -76,6 +77,10 @@ void TData::LoadFromFile(const std::wstring &FileName)
   catch(Func32::EFuncError &Error)
   {
     throw;
+  }
+  catch(std::bad_alloc &E)
+  {
+    throw EGraphError(LoadString(RES_OUT_OF_MEMORY));
   }
   catch(...)
   {
@@ -278,41 +283,50 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
     return false;
   }
 
-	TCsvGrid CsvGrid;
-	ImportCsv(Stream, CsvGrid, Separator);
+	std::string Line;
+	while(Stream && Line.empty())
+    std::getline(Stream, Line);
+	if(Separator == 0)
+	  Separator = GetSeparator(Line);
+
 	std::vector<std::pair<std::wstring, std::vector<TPointSeriesPoint> > > Points;
-	unsigned Row;
+	unsigned Row = 0;
 	try
 	{
-		unsigned RowCount = CsvGrid.size();
-    unsigned ColCount = CsvGrid.at(1).size();
-    unsigned ColIndex = 0;
-    for(unsigned Col = 1; Col < ColCount; Col++)
+    boost::escaped_list_separator<char> Sep("", std::string(1, Separator), "");
+    unsigned Index = 0;
+    do
     {
-  		Points.push_back(std::make_pair(L"", std::vector<TPointSeriesPoint>()));
-		  for(Row = 0; Row < RowCount; Row++)
-		  {
-			  std::wstring xStr = ToWString(CsvGrid[Row][0]);
-			  if(!xStr.empty() && xStr[0] == L'#')
-			  {
-  			  std::wstring Str = ToWString(CsvGrid[Row].at(Col-1).substr(Col == 1 ? 1 : 0));
-				  if(Points.back().second.empty())
-					  Points.back().first = Str;
-				  else
-					  Points.push_back(std::make_pair(Str, std::vector<TPointSeriesPoint>()));
-			  }
-			  else
-			  {
-  			  std::wstring yStr = ToWString(CsvGrid[Row].at(Col));
-				  if(Property.DecimalSeparator != '.')
-				  {
-					  std::replace(xStr.begin(), xStr.end(), Property.DecimalSeparator, L'.');
-  					std::replace(yStr.begin(), yStr.end(), Property.DecimalSeparator, L'.');
-  				}
-	  			Points.back().second.push_back(TPointSeriesPoint(xStr, yStr));
+      ++Row;
+      boost::tokenizer<boost::escaped_list_separator<char> > tok(Line, Sep);
+      boost::tokenizer<boost::escaped_list_separator<char> >::iterator beg = tok.begin();
+	    std::wstring xStr = ToWString(*beg);
+      if(!xStr.empty() && xStr[0] == L'#')
+      {
+        Index = Points.size();
+        Points.push_back(std::make_pair(xStr.substr(1), std::vector<TPointSeriesPoint>()));
+        while(++beg != tok.end())
+          Points.push_back(std::make_pair(ToWString(*beg), std::vector<TPointSeriesPoint>()));
+      }
+      else
+      {
+        unsigned Col = Index;
+        while(++beg != tok.end())
+		    {
+          if(Col == Points.size())
+     		    Points.push_back(std::make_pair(L"", std::vector<TPointSeriesPoint>()));
+          std::wstring yStr = ToWString(*beg);
+          if(Property.DecimalSeparator != '.')
+          {
+            std::replace(xStr.begin(), xStr.end(), Property.DecimalSeparator, L'.');
+            std::replace(yStr.begin(), yStr.end(), Property.DecimalSeparator, L'.');
+          }
+          Points[Col].second.push_back(TPointSeriesPoint(xStr, yStr));
+          Col++;
         }
 			}
 		}
+	  while(std::getline(Stream, Line));
 	}
 	catch(Func32::EParseError &E)
 	{
@@ -323,6 +337,11 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
 	{
 		MessageBox(LoadRes(526, FileName.c_str(), Row+1), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
 		return false;
+  }
+  catch(std::bad_alloc &E)
+  {
+    MessageBox(LoadRes(RES_OUT_OF_MEMORY), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+    return false;
   }
 
 	unsigned ColorIndex = 0;
@@ -350,7 +369,7 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
 			ebtNone, //yErrorBarType
 			0 //yErrorValue
 		));
-		Series->Assign(Points[I].second);
+		Series->Swap(Points[I].second);
 		Series->SetLegendText(Points[I].first.empty() ? CreatePointSeriesDescription() : Points[I].first);
 		Insert(Series);
 		UndoList.Push(TUndoAdd(Series));
