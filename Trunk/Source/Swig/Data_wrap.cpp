@@ -14117,7 +14117,7 @@ SWIGINTERN PyObject *TTan_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject 
 SWIGINTERN PyObject *_wrap_TPointSeries_InsertDblPoint(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TPointSeries *arg1 = (TPointSeries *) 0 ;
-  Func32::TDblPoint *arg2 = 0 ;
+  Func32::TDblPoint arg2 ;
   int arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14146,7 +14146,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertDblPoint(PyObject *SWIGUNUSEDPARM(
     }
   }
   {
-    Func32::TDblPoint *p = arg2;
+    Func32::TDblPoint *p = &arg2;
     if(!Python::FromTuple(obj1, p->x,p->y))
     SWIG_fail;
   }
@@ -14159,7 +14159,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertDblPoint(PyObject *SWIGUNUSEDPARM(
   _clear87(); //Clear FPU status flags
   _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
   try {
-    (arg1)->InsertDblPoint((Func32::TDblPoint const &)*arg2,arg3);
+    (arg1)->InsertDblPoint(arg2,arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -14232,7 +14232,7 @@ fail:
 SWIGINTERN PyObject *_wrap_TPointSeries_ReplaceDblPoint(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TPointSeries *arg1 = (TPointSeries *) 0 ;
-  Func32::TDblPoint *arg2 = 0 ;
+  Func32::TDblPoint arg2 ;
   unsigned int arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14261,7 +14261,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplaceDblPoint(PyObject *SWIGUNUSEDPARM
     }
   }
   {
-    Func32::TDblPoint *p = arg2;
+    Func32::TDblPoint *p = &arg2;
     if(!Python::FromTuple(obj1, p->x,p->y))
     SWIG_fail;
   }
@@ -14274,7 +14274,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplaceDblPoint(PyObject *SWIGUNUSEDPARM
   _clear87(); //Clear FPU status flags
   _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
   try {
-    (arg1)->ReplaceDblPoint((Func32::TDblPoint const &)*arg2,arg3);
+    (arg1)->ReplaceDblPoint(arg2,arg3);
   }
   catch(std::out_of_range &_e) {
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
@@ -14344,7 +14344,64 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_TPointSeries_DeletePoint(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_TPointSeries_DeletePoint__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TPointSeries *arg1 = (TPointSeries *) 0 ;
+  unsigned int arg2 ;
+  unsigned int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TPointSeries > tempshared1 ;
+  boost::shared_ptr< TPointSeries > *smartarg1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:TPointSeries_DeletePoint",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPointSeries_DeletePoint" "', argument " "1"" of type '" "TPointSeries *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TPointSeries > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TPointSeries > * >(argp1);
+      arg1 = const_cast< TPointSeries * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TPointSeries > * >(argp1);
+      arg1 = const_cast< TPointSeries * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPointSeries_DeletePoint" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "TPointSeries_DeletePoint" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  try {
+    (arg1)->DeletePoint(arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPointSeries_DeletePoint__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TPointSeries *arg1 = (TPointSeries *) 0 ;
   unsigned int arg2 ;
@@ -14389,6 +14446,60 @@ SWIGINTERN PyObject *_wrap_TPointSeries_DeletePoint(PyObject *SWIGUNUSEDPARM(sel
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPointSeries_DeletePoint(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_unsigned_SS_int(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_TPointSeries_DeletePoint__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_boost__shared_ptrT_TPointSeries_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_unsigned_SS_int(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_unsigned_SS_int(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_TPointSeries_DeletePoint__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'TPointSeries_DeletePoint'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    TPointSeries::DeletePoint(unsigned int,unsigned int)\n"
+    "    TPointSeries::DeletePoint(unsigned int)\n");
+  return 0;
 }
 
 

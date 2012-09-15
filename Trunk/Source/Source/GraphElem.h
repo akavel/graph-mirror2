@@ -371,7 +371,7 @@ public:
 	void InsertPoint(const TPointSeriesPoint &Point, int Index=-1, bool AutoUpdate=true);
   void ReplaceDblPoint(const Func32::TDblPoint &Point, unsigned Index);
   void ReplacePoint(const TPointSeriesPoint &Point, unsigned Index);
-  void DeletePoint(unsigned Index);
+  void DeletePoint(unsigned Index, unsigned Count=1);
   const Func32::TDblPoint& GetDblPoint(unsigned Index) const {return PointList.at(Index);}
   const TPointSeriesPoint& GetPoint(unsigned Index) const {return PointData.at(Index);}
   unsigned PointCount() const {return PointData.size();}
@@ -381,6 +381,7 @@ public:
   double GetXError(unsigned Index) const;
   double GetYError(unsigned Index) const;
   void Assign(const TPointData &APointData) {PointData = APointData;}
+  void Swap(TPointData &APointData) {PointData.swap(APointData);}
   void Update();
 
   TErrorBarType GetxErrorBarType() const {return xErrorBarType;}

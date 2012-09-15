@@ -793,19 +793,55 @@ class TPointDataList(collections.MutableSequence):
     def __init__(self, PointSeries):
         self.PointSeries = PointSeries
     def __getitem__(self, key):
+        if isinstance(key, slice):
+          count = self.PointSeries.PointCount()
+          start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
+          stop = count if key.stop is None else (count+key.stop if key.stop < 0 else min(key.stop, count))
+          step = 1 if key.step is None else key.step
+          return [self.PointSeries.GetDblPoint(i) for i in range(start, stop, step)]
         return self.PointSeries.GetDblPoint(key)
     def __len__(self):
         return self.PointSeries.PointCount()
     def insert(self, key, value):
         self.PointSeries.InsertDblPoint(value, key)
     def __setitem__(self, key, value):
-        self.PointSeries.ReplaceDblPoint(value, key)
+        if isinstance(key, slice):
+          count = self.PointSeries.PointCount()
+          start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
+          stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
+          if key.step is None or key.step == 1:
+            self.PointSeries.DeletePoint(start, stop - start)
+            for x in zip(range(start, stop), value):
+              self.PointSeries.InsertPoint(x[0], x[1])
+        else:
+          self.PointSeries.ReplaceDblPoint(value, key)
     def append(self, value):
         self.PointSeries.InsertDblPoint(value, -1)
     def __delitem__(self, key):
-        self.PointSeries.DeletePoint(key)
+        if key is slice:
+          count = self.PointSeries.PointCount()
+          start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
+          stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
+          if key.step is None or key.step == 1:
+            self.PointSeries.DeletePoint(key.start, key.stop - key.start)
+          else:
+            for i in reversed(range(start, stop, key.step)):
+              self.PointSeries.DeletePoint(i)
+        else:
+          self.PointSeries.DeletePoint(key)
     def __repr__(self):
         return repr(list(self))
+    def __eq__(self, other):
+      if self is other:
+        return True
+      if len(other) !=  self.PointSeries.PointCount():
+        return False
+      for i in range(len(other)):
+        if other[i] != self.PointSeries.GetDblPoint(i):
+          return False
+      return True
+    def __ne__(self, other):
+      return not self == other
 
 # This file is compatible with both classic and new-style classes.
 
