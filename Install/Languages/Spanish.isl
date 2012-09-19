@@ -210,7 +210,7 @@ InstallingLabel=Por favor, espere mientras el Asistente instala [name] en su ord
 ; *** "Setup Completed" wizard page
 FinishedHeadingLabel=Finalizando la instalación de [name]
 FinishedLabelNoIcons=El Asistente ha concluido la instalación de [name] en su ordenador.
-FinishedLabel=El Asistente ha terminado de instalar [name] en su ordenador. Puede abrir el programa con el icono creado.
+FinishedLabel=El Asistente ha terminado de instalar [name] en su ordenador. Puede abrir el programa con los accesos directos creados.
 ClickFinish=Haga clic en Finalizar para concluir el proceso de instalación.
 FinishedRestartLabel=Para completar la instalación de [name] debe reiniciar su ordenador. ¿Desea reiniciar ahora?
 FinishedRestartMessage=Para completar la instalación de [name] debe reiniciar su ordenador.%n%n¿Desea reiniciar ahora?
@@ -236,7 +236,7 @@ EntryAbortRetryIgnore=Haga clic en Reintentar para intentar de nuevo, en Ignorar
 ; *** Installation status messages
 StatusCreateDirs=Creando carpetas...
 StatusExtractFiles=Extrayendo archivos...
-StatusCreateIcons=Creando acceso directo...
+StatusCreateIcons=Creando accesos directos...
 StatusCreateIniEntries=Creando entradas INI...
 StatusCreateRegistryEntries=Creando entradas en el Registro...
 StatusRegisterFiles=Registrando archivos...
@@ -311,9 +311,9 @@ StatusUninstalling=Desinstalando %1...
 [CustomMessages]
 
 NameAndVersion=%1 versión %2
-AdditionalIcons=Iconos:
-CreateDesktopIcon=Crear un icono de acceso directo en el &Escritorio
-CreateQuickLaunchIcon=Crear un icono en la barra de Inicio &rápido
+AdditionalIcons=Iconos adicionales:
+CreateDesktopIcon=Crear un acceso directo en el &Escritorio
+CreateQuickLaunchIcon=Crear un acceso directo en la barra de Inicio &rápido
 ProgramOnTheWeb=%1 en la Web
 UninstallProgram=Desinstalar %1
 LaunchProgram=Ejecutar %1
