@@ -372,7 +372,7 @@ public:
   void ReplaceDblPoint(const Func32::TDblPoint &Point, unsigned Index);
   void ReplacePoint(const TPointSeriesPoint &Point, unsigned Index);
   void DeletePoint(unsigned Index, unsigned Count=1);
-  const Func32::TDblPoint& GetDblPoint(unsigned Index) const {return PointList.at(Index);}
+  const Func32::TDblPoint& GetDblPoint(int Index) const {return PointList.at(Index);}
   const TPointSeriesPoint& GetPoint(unsigned Index) const {return PointData.at(Index);}
   unsigned PointCount() const {return PointData.size();}
   const std::vector<TPointSeriesPoint>& GetPointData() const {return PointData;}

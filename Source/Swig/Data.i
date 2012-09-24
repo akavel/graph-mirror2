@@ -258,7 +258,7 @@ public:
   void ReplaceDblPoint(Func32::TDblPoint Point, unsigned Index) throw(std::out_of_range);
   void ReplacePoint(TPointSeriesPoint Point, unsigned Index) throw(std::out_of_range);
   void DeletePoint(unsigned Index, unsigned Count=1) throw(std::out_of_range);
-  const Func32::TDblPoint& GetDblPoint(unsigned Index) const throw(std::out_of_range);
+  const Func32::TDblPoint& GetDblPoint(int Index) const throw(std::out_of_range);
   const TPointSeriesPoint& GetPoint(unsigned Index) const throw(std::out_of_range);
   unsigned PointCount() const;
 };
@@ -367,76 +367,86 @@ struct TData
 
   import collections
   class TPointList(collections.MutableSequence):
-      def __init__(self, PointSeries):
-          self.PointSeries = PointSeries
-      def __getitem__(self, key):
-          return self.PointSeries.GetPoint(key)
-      def __len__(self):
-          return self.PointSeries.PointCount()
-      def insert(self, key, value):
-          self.PointSeries.InsertPoint(value, key)
-      def __setitem__(self, key, value):
-          self.PointSeries.ReplacePoint(value, key)
-      def append(self, value):
-          self.PointSeries.InsertPoint(value, -1)
-      def __delitem__(self, key):
-          self.PointSeries.DeletePoint(key)
-      def __repr__(self):
-          return repr(list(self))
+    def __init__(self, PointSeries):
+      self.PointSeries = PointSeries
+    def __getitem__(self, key):
+      return self.PointSeries.GetPoint(key)
+    def __len__(self):
+      return self.PointSeries.PointCount()
+    def insert(self, key, value):
+      self.PointSeries.InsertPoint(value, key)
+    def __setitem__(self, key, value):
+      self.PointSeries.ReplacePoint(value, key)
+    def append(self, value):
+      self.PointSeries.InsertPoint(value, -1)
+    def __delitem__(self, key):
+      self.PointSeries.DeletePoint(key)
+    def __repr__(self):
+      return repr(list(self))
 
   class TPointDataList(collections.MutableSequence):
-      def __init__(self, PointSeries):
-          self.PointSeries = PointSeries
-      def __getitem__(self, key):
-          if isinstance(key, slice):
-            count = self.PointSeries.PointCount()
-            start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
-            stop = count if key.stop is None else (count+key.stop if key.stop < 0 else min(key.stop, count))
-            step = 1 if key.step is None else key.step
-            return [self.PointSeries.GetDblPoint(i) for i in range(start, stop, step)]
-          return self.PointSeries.GetDblPoint(key)
-      def __len__(self):
-          return self.PointSeries.PointCount()
-      def insert(self, key, value):
-          self.PointSeries.InsertDblPoint(value, key)
-      def __setitem__(self, key, value):
-          if isinstance(key, slice):
-            count = self.PointSeries.PointCount()
-            start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
-            stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
-            if key.step is None or key.step == 1:
-              self.PointSeries.DeletePoint(start, stop - start)
-              for x in zip(range(start, stop), value):
-                self.PointSeries.InsertPoint(x[0], x[1])
-          else:
-            self.PointSeries.ReplaceDblPoint(value, key)
-      def append(self, value):
-          self.PointSeries.InsertDblPoint(value, -1)
-      def __delitem__(self, key):
-          if key is slice:
-            count = self.PointSeries.PointCount()
-            start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
-            stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
-            if key.step is None or key.step == 1:
-              self.PointSeries.DeletePoint(key.start, key.stop - key.start)
-            else:
-              for i in reversed(range(start, stop, key.step)):
-                self.PointSeries.DeletePoint(i)
-          else:
-            self.PointSeries.DeletePoint(key)
-      def __repr__(self):
-          return repr(list(self))
-      def __eq__(self, other):
-        if self is other:
-          return True
-        if len(other) !=  self.PointSeries.PointCount():
-          return False
-        for i in range(len(other)):
-          if other[i] != self.PointSeries.GetDblPoint(i):
-            return False
+    def UnpackSlice(s):
+      count = self.PointSeries.PointCount()
+      start = 0 if key.start is None else (max(count+key.start, 0) if key.start < 0 else key.start)
+      stop = count if key.stop is None else (max(count+key.stop, 0) if key.stop < 0 else min(key.stop, count))
+
+    def __init__(self, PointSeries):
+      self.PointSeries = PointSeries
+    def __getitem__(self, key):
+      if isinstance(key, slice):
+        count = self.PointSeries.PointCount()
+        start = 0 if key.start is None else (max(count+key.start,0) if key.start < 0 else key.start)
+        stop = count if key.stop is None else (max(count+key.stop,0) if key.stop < 0 else min(key.stop, count))
+        step = 1 if key.step is None else key.step
+        return [self.PointSeries.GetDblPoint(i) for i in range(start, stop, step)]
+      return self.PointSeries.GetDblPoint(key)
+    def __len__(self):
+      return self.PointSeries.PointCount()
+    def insert(self, key, value):
+      self.PointSeries.InsertDblPoint(value, key)
+    def __setitem__(self, key, value):
+      if isinstance(key, slice):
+        count = self.PointSeries.PointCount()
+        start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
+        stop = count if key.stop is None else (max(count+key.stop, 0) if key.stop < 0 else min(key.stop, count))
+        if key.step is None or key.step == 1:
+          self.PointSeries.DeletePoint(start, stop - start)
+          for x in zip(value, range(start, start + len(value))):
+            self.PointSeries.InsertDblPoint(x[0], x[1])
+        elif len(range(start, stop, key.step)) == len(value):
+          for x in zip(value, range(start, stop, key.step)):
+            self.PointSeries.ReplaceDblPoint(x[0], x[1])
+        else:
+          raise ValueError("attempt to assign sequence of size %d to extended slice of size %d" % (len(value), len(range(start, stop, key.step))))
+      else:
+        self.PointSeries.ReplaceDblPoint(value, key)
+    def append(self, value):
+      self.PointSeries.InsertDblPoint(value, -1)
+    def __delitem__(self, key):
+      if isinstance(key, slice):
+        count = self.PointSeries.PointCount()
+        start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
+        stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
+        if key.step is None or key.step == 1:
+          self.PointSeries.DeletePoint(key.start, key.stop - key.start)
+        else:
+          for i in reversed(range(start, stop, key.step)):
+            self.PointSeries.DeletePoint(i)
+      else:
+        self.PointSeries.DeletePoint(key)
+    def __repr__(self):
+      return repr(list(self))
+    def __eq__(self, other):
+      if self is other:
         return True
-      def __ne__(self, other):
-        return not self == other
+      if len(other) !=  self.PointSeries.PointCount():
+        return False
+      for i in range(len(other)):
+        if other[i] != self.PointSeries.GetDblPoint(i):
+          return False
+      return True
+    def __ne__(self, other):
+      return not self == other
 }
 
 

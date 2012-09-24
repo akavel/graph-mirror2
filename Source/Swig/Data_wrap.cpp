@@ -14506,12 +14506,12 @@ fail:
 SWIGINTERN PyObject *_wrap_TPointSeries_GetDblPoint(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TPointSeries *arg1 = (TPointSeries *) 0 ;
-  unsigned int arg2 ;
+  int arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   boost::shared_ptr< TPointSeries const > tempshared1 ;
   boost::shared_ptr< TPointSeries const > *smartarg1 = 0 ;
-  unsigned int val2 ;
+  int val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
@@ -14533,11 +14533,11 @@ SWIGINTERN PyObject *_wrap_TPointSeries_GetDblPoint(PyObject *SWIGUNUSEDPARM(sel
       arg1 = const_cast< TPointSeries * >((smartarg1 ? smartarg1->get() : 0));
     }
   }
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPointSeries_GetDblPoint" "', argument " "2"" of type '" "unsigned int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPointSeries_GetDblPoint" "', argument " "2"" of type '" "int""'");
   } 
-  arg2 = static_cast< unsigned int >(val2);
+  arg2 = static_cast< int >(val2);
   
   _clear87(); //Clear FPU status flags
   _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous

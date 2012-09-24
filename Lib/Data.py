@@ -120,7 +120,7 @@ class PointVector(_object):
     def swap(self, *args) -> "void" : return _Data.PointVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< TPoint >::allocator_type" : return _Data.PointVector_get_allocator(self)
     def pop_back(self) -> "void" : return _Data.PointVector_pop_back(self)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_PointVector(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -159,7 +159,7 @@ class CoordSetVector(_object):
     def swap(self, *args) -> "void" : return _Data.CoordSetVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< Func32::TCoordSet< > >::allocator_type" : return _Data.CoordSetVector_get_allocator(self)
     def pop_back(self) -> "void" : return _Data.CoordSetVector_pop_back(self)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_CoordSetVector(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -198,7 +198,7 @@ class UnsignedVector(_object):
     def swap(self, *args) -> "void" : return _Data.UnsignedVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< unsigned int >::allocator_type" : return _Data.UnsignedVector_get_allocator(self)
     def pop_back(self) -> "void" : return _Data.UnsignedVector_pop_back(self)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_UnsignedVector(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -238,7 +238,7 @@ class StringMap(_object):
     def value_iterator(self) -> "swig::SwigPyIterator *" : return _Data.StringMap_value_iterator(self)
     def __setitem__(self, *args) -> "void" : return _Data.StringMap___setitem__(self, *args)
     def asdict(self) -> "PyObject *" : return _Data.StringMap_asdict(self)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_StringMap(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -414,7 +414,7 @@ class TStdFunc(TBaseFuncType):
     __repr__ = _swig_repr
     __swig_getmethods__["Text"] = _Data.TStdFunc_Text_get
     if _newclass:Text = _swig_property(_Data.TStdFunc_Text_get)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_TStdFunc(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -435,7 +435,7 @@ class TParFunc(TBaseFuncType):
     if _newclass:xText = _swig_property(_Data.TParFunc_xText_get)
     __swig_getmethods__["yText"] = _Data.TParFunc_yText_get
     if _newclass:yText = _swig_property(_Data.TParFunc_yText_get)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_TParFunc(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -454,7 +454,7 @@ class TPolFunc(TBaseFuncType):
     __repr__ = _swig_repr
     __swig_getmethods__["Text"] = _Data.TPolFunc_Text_get
     if _newclass:Text = _swig_property(_Data.TPolFunc_Text_get)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_TPolFunc(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -481,7 +481,7 @@ class TTan(TBaseFuncType):
     if _newclass:TangentType = _swig_property(_Data.TTan_TangentType_get, _Data.TTan_TangentType_set)
     __swig_getmethods__["Valid"] = _Data.TTan_Valid_get
     if _newclass:Valid = _swig_property(_Data.TTan_Valid_get)
-    def __init__(self): 
+    def __init__(self):
         this = _Data.new_TTan()
         try: self.this.append(this)
         except: self.this = this
@@ -571,7 +571,7 @@ class TPointSeries(TGraphElem):
     __swig_setmethods__["PointType"] = _Data.TPointSeries_PointType_set
     __swig_getmethods__["PointType"] = _Data.TPointSeries_PointType_get
     if _newclass:PointType = _swig_property(_Data.TPointSeries_PointType_get, _Data.TPointSeries_PointType_set)
-    def __init__(self): 
+    def __init__(self):
         this = _Data.new_TPointSeries()
         try: self.this.append(this)
         except: self.this = this
@@ -618,7 +618,7 @@ class TTextLabel(TGraphElem):
     __swig_setmethods__["Rotation"] = _Data.TTextLabel_Rotation_set
     __swig_getmethods__["Rotation"] = _Data.TTextLabel_Rotation_get
     if _newclass:Rotation = _swig_property(_Data.TTextLabel_Rotation_get, _Data.TTextLabel_Rotation_set)
-    def __init__(self): 
+    def __init__(self):
         this = _Data.new_TTextLabel()
         try: self.this.append(this)
         except: self.this = this
@@ -680,7 +680,7 @@ class TShading(TGraphElem):
     __swig_setmethods__["MarkBorder"] = _Data.TShading_MarkBorder_set
     __swig_getmethods__["MarkBorder"] = _Data.TShading_MarkBorder_get
     if _newclass:MarkBorder = _swig_property(_Data.TShading_MarkBorder_get, _Data.TShading_MarkBorder_set)
-    def __init__(self): 
+    def __init__(self):
         this = _Data.new_TShading()
         try: self.this.append(this)
         except: self.this = this
@@ -715,7 +715,7 @@ class TRelation(TGraphElem):
     __swig_setmethods__["Size"] = _Data.TRelation_Size_set
     __swig_getmethods__["Size"] = _Data.TRelation_Size_get
     if _newclass:Size = _swig_property(_Data.TRelation_Size_get, _Data.TRelation_Size_set)
-    def __init__(self, *args): 
+    def __init__(self, *args):
         this = _Data.new_TRelation(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -772,76 +772,86 @@ TPointSeries.__swig_getmethods__["PointData"] = lambda self: TPointList(self)
 
 import collections
 class TPointList(collections.MutableSequence):
-    def __init__(self, PointSeries):
-        self.PointSeries = PointSeries
-    def __getitem__(self, key):
-        return self.PointSeries.GetPoint(key)
-    def __len__(self):
-        return self.PointSeries.PointCount()
-    def insert(self, key, value):
-        self.PointSeries.InsertPoint(value, key)
-    def __setitem__(self, key, value):
-        self.PointSeries.ReplacePoint(value, key)
-    def append(self, value):
-        self.PointSeries.InsertPoint(value, -1)
-    def __delitem__(self, key):
-        self.PointSeries.DeletePoint(key)
-    def __repr__(self):
-        return repr(list(self))
+  def __init__(self, PointSeries):
+    self.PointSeries = PointSeries
+  def __getitem__(self, key):
+    return self.PointSeries.GetPoint(key)
+  def __len__(self):
+    return self.PointSeries.PointCount()
+  def insert(self, key, value):
+    self.PointSeries.InsertPoint(value, key)
+  def __setitem__(self, key, value):
+    self.PointSeries.ReplacePoint(value, key)
+  def append(self, value):
+    self.PointSeries.InsertPoint(value, -1)
+  def __delitem__(self, key):
+    self.PointSeries.DeletePoint(key)
+  def __repr__(self):
+    return repr(list(self))
 
 class TPointDataList(collections.MutableSequence):
-    def __init__(self, PointSeries):
-        self.PointSeries = PointSeries
-    def __getitem__(self, key):
-        if isinstance(key, slice):
-          count = self.PointSeries.PointCount()
-          start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
-          stop = count if key.stop is None else (count+key.stop if key.stop < 0 else min(key.stop, count))
-          step = 1 if key.step is None else key.step
-          return [self.PointSeries.GetDblPoint(i) for i in range(start, stop, step)]
-        return self.PointSeries.GetDblPoint(key)
-    def __len__(self):
-        return self.PointSeries.PointCount()
-    def insert(self, key, value):
-        self.PointSeries.InsertDblPoint(value, key)
-    def __setitem__(self, key, value):
-        if isinstance(key, slice):
-          count = self.PointSeries.PointCount()
-          start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
-          stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
-          if key.step is None or key.step == 1:
-            self.PointSeries.DeletePoint(start, stop - start)
-            for x in zip(range(start, stop), value):
-              self.PointSeries.InsertPoint(x[0], x[1])
-        else:
-          self.PointSeries.ReplaceDblPoint(value, key)
-    def append(self, value):
-        self.PointSeries.InsertDblPoint(value, -1)
-    def __delitem__(self, key):
-        if key is slice:
-          count = self.PointSeries.PointCount()
-          start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
-          stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
-          if key.step is None or key.step == 1:
-            self.PointSeries.DeletePoint(key.start, key.stop - key.start)
-          else:
-            for i in reversed(range(start, stop, key.step)):
-              self.PointSeries.DeletePoint(i)
-        else:
-          self.PointSeries.DeletePoint(key)
-    def __repr__(self):
-        return repr(list(self))
-    def __eq__(self, other):
-      if self is other:
-        return True
-      if len(other) !=  self.PointSeries.PointCount():
-        return False
-      for i in range(len(other)):
-        if other[i] != self.PointSeries.GetDblPoint(i):
-          return False
+  def UnpackSlice(s):
+    count = self.PointSeries.PointCount()
+    start = 0 if key.start is None else (max(count+key.start, 0) if key.start < 0 else key.start)
+    stop = count if key.stop is None else (max(count+key.stop, 0) if key.stop < 0 else min(key.stop, count))
+
+  def __init__(self, PointSeries):
+    self.PointSeries = PointSeries
+  def __getitem__(self, key):
+    if isinstance(key, slice):
+      count = self.PointSeries.PointCount()
+      start = 0 if key.start is None else (max(count+key.start,0) if key.start < 0 else key.start)
+      stop = count if key.stop is None else (max(count+key.stop,0) if key.stop < 0 else min(key.stop, count))
+      step = 1 if key.step is None else key.step
+      return [self.PointSeries.GetDblPoint(i) for i in range(start, stop, step)]
+    return self.PointSeries.GetDblPoint(key)
+  def __len__(self):
+    return self.PointSeries.PointCount()
+  def insert(self, key, value):
+    self.PointSeries.InsertDblPoint(value, key)
+  def __setitem__(self, key, value):
+    if isinstance(key, slice):
+      count = self.PointSeries.PointCount()
+      start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
+      stop = count if key.stop is None else (max(count+key.stop, 0) if key.stop < 0 else min(key.stop, count))
+      if key.step is None or key.step == 1:
+        self.PointSeries.DeletePoint(start, stop - start)
+        for x in zip(value, range(start, start + len(value))):
+          self.PointSeries.InsertDblPoint(x[0], x[1])
+      elif len(range(start, stop, key.step)) == len(value):
+        for x in zip(value, range(start, stop, key.step)):
+          self.PointSeries.ReplaceDblPoint(x[0], x[1])
+      else:
+        raise ValueError("attempt to assign sequence of size %d to extended slice of size %d" % (len(value), len(range(start, stop, key.step))))
+    else:
+      self.PointSeries.ReplaceDblPoint(value, key)
+  def append(self, value):
+    self.PointSeries.InsertDblPoint(value, -1)
+  def __delitem__(self, key):
+    if isinstance(key, slice):
+      count = self.PointSeries.PointCount()
+      start = 0 if key.start is None else (count+key.start if key.start < 0 else key.start)
+      stop = count if key.stop is None else (count+key.stop if key.stop < 0 else key.stop)
+      if key.step is None or key.step == 1:
+        self.PointSeries.DeletePoint(key.start, key.stop - key.start)
+      else:
+        for i in reversed(range(start, stop, key.step)):
+          self.PointSeries.DeletePoint(i)
+    else:
+      self.PointSeries.DeletePoint(key)
+  def __repr__(self):
+    return repr(list(self))
+  def __eq__(self, other):
+    if self is other:
       return True
-    def __ne__(self, other):
-      return not self == other
+    if len(other) !=  self.PointSeries.PointCount():
+      return False
+    for i in range(len(other)):
+      if other[i] != self.PointSeries.GetDblPoint(i):
+        return False
+    return True
+  def __ne__(self, other):
+    return not self == other
 
 # This file is compatible with both classic and new-style classes.
 
