@@ -1,4 +1,5 @@
 import Graph
+import Test
 
 def Run(Level):
     print("Running point series test...")
@@ -24,4 +25,43 @@ def Run(Level):
     assert Graph.FunctionList[1].Points[5:15:3] == P[5:15:3]
     assert Graph.FunctionList[1].Points[::2] == P[::2]
     assert Graph.FunctionList[1].Points[-15:-5:2] == P[-15:-5:2]
+    assert Graph.FunctionList[1].Points[10:200] == P[10:200]
+    assert Graph.FunctionList[1].Points[-100:10] == P[-100:10]
     assert len(Graph.FunctionList[1].Points) == len(P)
+
+    Graph.FunctionList[1].Points[5:10] = [(1,10), (2,20), (3, 30), (4,40), (5,50)]
+    P[5:10] = [(1,10), (2,20), (3, 30), (4,40), (5,50)]
+    assert Graph.FunctionList[1].Points == P
+
+    Graph.FunctionList[1].Points[7] = (15,80)
+    P[7] = (15, 80)
+    assert Graph.FunctionList[1].Points == P
+
+    Graph.FunctionList[1].Points[5:10] = [(20,15), (21,16), (22, 17)]
+    P[5:10] = [(20,15), (21,16), (22, 17)]
+    assert Graph.FunctionList[1].Points == P
+
+    Graph.FunctionList[1].Points[5:8] = [(30,45), (31,46), (32, 47), (33, 48), (34,49), (35,50)]
+    P[5:8] = [(30,45), (31,46), (32, 47), (33, 48), (34,49), (35,50)]
+    assert Graph.FunctionList[1].Points == P
+
+    del Graph.FunctionList[1].Points[5]
+    del P[5]
+    assert Graph.FunctionList[1].Points == P
+
+    del Graph.FunctionList[1].Points[5:10]
+    del P[5:10]
+    assert Graph.FunctionList[1].Points == P
+
+    with Test.assertRaises(IndexError):
+      Graph.FunctionList[1].Points[200]
+    with Test.assertRaises(IndexError):
+      del Graph.FunctionList[1].Points[200]
+    with Test.assertRaises(SystemError):
+      Graph.FunctionList[1].Points[10] = 5
+    with Test.assertRaises(ValueError):
+      Graph.FunctionList[1].Points[2:10:2] = [(1,2), (3,4), (5,6)]
+
+    Graph.FunctionList[1].Points[2:10:2] = [(1,2), (3,4), (5,6), (7,8)]
+    P[2:10:2] = [(1,2), (3,4), (5,6), (7,8)]
+    assert Graph.FunctionList[1].Points == P
