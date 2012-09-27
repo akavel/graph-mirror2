@@ -1,5 +1,5 @@
-//===========================================================================
-// Copyright � 2003 Ivan Johansen
+﻿//===========================================================================
+// Copyright © 2003 Ivan Johansen
 // MyEdit.cpp
 //===========================================================================
 #include <vcl.h>
@@ -9,6 +9,39 @@
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 static TRegisterClass Dummy(__classid(TMyEdit));
+
+// Map latin characters to Greek characters the same way they are located on a
+// Greek keyboard
+wchar_t Greek[26][2] =
+{
+/* Aa */ L'Α', L'α',
+/* Bb */ L'Β', L'β',
+/* Cc */ L'Ψ', L'ψ',
+/* Dd */ L'Δ', L'δ',
+/* Ee */ L'Ε', L'ε',
+/* Ff */ L'Φ', L'φ',
+/* Gg */ L'Γ', L'γ',
+/* Hh */ L'Η', L'η',
+/* Ii */ L'Ι', L'ι',
+/* Jj */ L'Ξ', L'ξ',
+/* Kk */ L'Κ', L'κ',
+/* Ll */ L'Λ', L'λ',
+/* Mm */ L'Μ', L'μ',
+/* Nn */ L'Ν', L'ν',
+/* Oo */ L'Ο', L'ο',
+/* Pp */ L'Π', L'π',
+/* Qq */ L':', L';',
+/* Rr */ L'Ρ', L'ρ',
+/* Ss */ L'Σ', L'σ',
+/* Tt */ L'Τ', L'τ',
+/* Uu */ L'Θ', L'θ',
+/* Vv */ L'Ω', L'ω',
+/* Ww */ L'΅', L'ς',
+/* Xx */ L'Χ', L'χ',
+/* Yy */ L'Υ', L'υ',
+/* Zz */ L'Ζ', L'ζ',
+};
+
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //
@@ -37,10 +70,14 @@ void __fastcall TMyEdit::KeyPress(Char &Key)
   {
     if(SelLength == 0)
     {
-      int OldSelStart = SelStart;
       if(SelStart > 0)
-        Text = Text.SubString(1, SelStart-1) + ConvertToGreek(Text.SubString(SelStart, 1)) + Text.SubString(SelStart+1, Text.Length()-SelStart-1);
-      SelStart = OldSelStart;
+      {
+        SelStart = SelStart - 1;
+        SelLength = 1;
+        SelText = ConvertToGreek(SelText[1]);
+        SelStart = SelStart + 1;
+        SelLength = 0;
+      }
     }
     else
       SelText = ConvertToGreek(SelText);
@@ -62,13 +99,19 @@ void __fastcall TMyEdit::WMDeadChar(TMessage &Message)
     PostMessage(Handle, WM_KEYUP, VK_SPACE, 0);
 }
 //---------------------------------------------------------------------------
+wchar_t TMyEdit::ConvertToGreek(wchar_t Ch)
+{
+  if(Ch >= L'a' && Ch <= L'z')
+    return Greek[Ch - L'a'][1];
+  if(Ch >= L'A' && Ch <= L'Z')
+    return Greek[Ch - L'A'][0];
+  return Ch;
+}
+//---------------------------------------------------------------------------
 String TMyEdit::ConvertToGreek(String Str)
 {
   for(int I = 1; I <= Str.Length(); I++)
-    if(Str[I] >= L'a' && Str[I] <= L'z')
-      Str[I] += L'\x3B1' - L'a'; //'\x3B1' is the Greek capital lette alpha
-    else if(Str[I] >= L'A' && Str[I] <= L'Z')
-      Str[I] += L'\x391' - L'A'; //'\x391' is the Greek small letter alpha
+    Str[I] = ConvertToGreek(Str[I]);
   return Str;
 }
 //---------------------------------------------------------------------------

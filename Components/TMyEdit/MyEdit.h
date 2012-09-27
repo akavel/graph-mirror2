@@ -22,6 +22,7 @@ private:
   END_MESSAGE_MAP(TEdit)
 protected:
   String ConvertToGreek(String Str);
+  wchar_t ConvertToGreek(wchar_t Ch);
 public:
   __fastcall TMyEdit(TComponent* Owner);
 __published:
