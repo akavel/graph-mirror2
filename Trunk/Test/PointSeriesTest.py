@@ -65,3 +65,7 @@ def Run(Level):
     Graph.FunctionList[1].Points[2:10:2] = [(1,2), (3,4), (5,6), (7,8)]
     P[2:10:2] = [(1,2), (3,4), (5,6), (7,8)]
     assert Graph.FunctionList[1].Points == P
+
+    del Graph.FunctionList[1].Points[2:10:2]
+    del P[2:10:2]
+    assert Graph.FunctionList[1].Points == P
