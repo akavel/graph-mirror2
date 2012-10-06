@@ -991,7 +991,16 @@ bool TGrid::ImportFromFile(const String &FileName, wchar_t DecimalSeparator, wch
 void TGrid::Import(std::istream &Stream, wchar_t DecimalSeparator, wchar_t Separator)
 {
   TCsvGrid CsvGrid;
-  ImportCsv(Stream, CsvGrid, Separator);
+  if(Separator == 0)
+  {
+    std::string Separators = DefaultSeparators;
+    size_t pos = Separators.find(DecimalSeparator);
+    if(pos != std::string::npos)
+      Separators.erase(pos);
+    ImportCsv(Stream, CsvGrid, Separators);
+  }
+  else
+    ImportCsv(Stream, CsvGrid, Separator);
   unsigned ACol = Selection.Left;
   unsigned ARow = Selection.Top;
   if(AutoAddRows && static_cast<unsigned>(RowCount) <= ARow + CsvGrid.size())
@@ -1002,10 +1011,11 @@ void TGrid::Import(std::istream &Stream, wchar_t DecimalSeparator, wchar_t Separ
   for(unsigned Row = 0; Row < CsvGrid.size(); Row++)
     for(unsigned Col = 0; Col < CsvGrid[Row].size(); Col++)
     {
+      std::string &Str = CsvGrid[Row][Col];
       if(DecimalSeparator != L'.')
-        std::replace(CsvGrid[Row][Col].begin(), CsvGrid[Row][Col].end(), (char)DecimalSeparator, '.');
+        std::replace(Str.begin(), Str.end(), (char)DecimalSeparator, '.');
       if((int)Row < RowCount && (int)Col < ColCount)
-        DoSetText(Col+ACol, Row+ARow, CsvGrid[Row][Col].c_str());
+        DoSetText(Col+ACol, Row+ARow, Str.c_str());
     }
 
   AutoAddRows = OldAutoAddRows;
