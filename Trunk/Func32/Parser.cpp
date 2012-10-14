@@ -413,9 +413,9 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 							((DummyExpression >> ',' >> Literal[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
 					|   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
 							',' >> Literal >> ',' >>
-							AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >> ',' >>
+							AssertExpression_p(Expression[TPushBack(SpecialFunc.List)] >> ',') >>
 							AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)] >>
-							f_ch_p(SpecialFunc.EndBracket)
+ 							f_ch_p(SpecialFunc.EndBracket)
 					);
 
 	Parentheses = Bracket[Parentheses.EndBracket = arg1] >>
@@ -433,7 +433,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 				 *(   lexeme_d[as_lower_d["and"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
 					|   lexeme_d[as_lower_d["or"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
 					|   lexeme_d[as_lower_d["xor"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
-					);
+					) >> !Literal[TDoError(ecUnknownVar)];
 
   Sum =
       Term[Sum.List = arg1] >>

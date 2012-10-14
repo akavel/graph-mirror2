@@ -43,10 +43,7 @@ int _RTLENTRY _EXPFUNC std::iswdigit(wint_t c)
 //---------------------------------------------------------------------------
 long double StrToDouble(const char *Str)
 {
-	istringstream Stream(Str);
 	long double Number;
-//  if(Stream >> Number)
-//    return Number;
 	sscanf(Str, "%Lf", &Number);
 	return Number;
 }
@@ -170,7 +167,7 @@ void Test(const std::string &Str, long double x, long double y, TTrigonometry Tr
 }
 //---------------------------------------------------------------------------
 template<typename T>
-void TestErrorEval(const std::wstring &Str, T x, Func32::TErrorCode Error, TTrigonometry Trig = Radian)
+void TestErrorEval(const std::wstring &Str, T x, const Func32::EFuncError &Error, TTrigonometry Trig = Radian)
 {
 	try
 	{
@@ -181,27 +178,27 @@ void TestErrorEval(const std::wstring &Str, T x, Func32::TErrorCode Error, TTrig
 		wcerr << "Function:       " << Str << std::endl;
 		wcerr << "x:              " << setprecision(10) << x << std::endl;
 		wcerr << "Evaluated to:   " << setprecision(10) << f << std::endl;
-		wcerr << "Expected error: " << Error << std::endl << std::endl;
+		wcerr << "Expected error: " << Error.ErrorCode << std::endl << std::endl;
 	}
 	catch(EFuncError &E)
 	{
-		if(E.ErrorCode != Error)
+		if(E.ErrorCode != Error.ErrorCode || (!Error.Str.empty() && E.Str != Error.Str))
 		{
 			wcerr << "Function:       " << Str << std::endl;
 			wcerr << "x:              " << setprecision(10) << x << std::endl;
 			wcerr << "Error code:     " << E.ErrorCode << std::endl;
-			wcerr << "Expected error: " << Error << std::endl << std::endl;
+			wcerr << "Expected error: " << Error.ErrorCode << std::endl << std::endl;
 		}
 	}
 }
 //---------------------------------------------------------------------------
-void TestError(const std::wstring &Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
+void TestError(const std::wstring &Str, long double x, const EFuncError &Error, TTrigonometry Trig = Radian)
 {
 	TestErrorEval<long double>(Str, x, Error, Trig);
 	TestErrorEval<TComplex>(Str, x, Error, Trig);
 }
 //---------------------------------------------------------------------------
-void TestError(const std::string &Str, long double x, TErrorCode Error, TTrigonometry Trig = Radian)
+void TestError(const std::string &Str, long double x, const EFuncError &Error, TTrigonometry Trig = Radian)
 {
 	TestError(ToWString(Str), x, Error, Trig);
 }
@@ -819,6 +816,8 @@ void Test()
 	Test("integrate(1/((1+x)*x^(1/2)),x, 0, inf)", 0, PI);
 	TestEval<long double>(L"integrate(1/x^(2/3),-1,1)", 0, 6);
 	TestErrorEval<TComplex>(L"integrate(1/x^(2/3),-1,1)", 0, ecNoResult);
+  TestError("integrate(t, t, 4test, x)", 0, EFuncError(ecUnknownVar, L"test"));
+  TestError("integrate(t, t, x, 4test)", 0, EFuncError(ecUnknownVar, L"test"));
 //	TestError("sum(x,k+1,0,10)", 0, ecLiteralExpected); To be fixed in Graph 4.5
 //	TestError("sum(x,x+1,0,10)", 0, ecLiteralExpected);
 //	TestError("sum(x,1,0,10)", 0, ecLiteralExpected);
