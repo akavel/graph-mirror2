@@ -268,7 +268,12 @@
 							<entry>Russian</entry>
 							<entry>Yes</entry>
 							<entry>No</entry>
-							<entry><personname>Ivans Leonovs</personname></entry>
+							<entry>
+                <simplelist>
+									<member><personname>Ilya A.</personname></member>
+									<member><personname>Ivans Leonovs</personname></member>
+                </simplelist>
+							</entry>
 						</row>
 
 						<row>
