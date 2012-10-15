@@ -10,12 +10,7 @@ LocalePath = "d:\\Projects\\Graph\\Locale\\"
 def Encode(Str):
     return Str.replace('"', '\\"').replace('\n', ' ')
 
-os.chdir("../Source")
-Files = glob.glob("*.xml")
-os.system(sys.executable + " ..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files))
-os.chdir("../po")
-
-for Language in Languages:
+def CreateLanguage(Language):
     print
     print Language + ":"
     FileName = "GraphHelp_%s.po" % (Language[:Language.find(" ") if Language.find(" ") != -1 else None],)
@@ -47,3 +42,15 @@ for Language in Languages:
                 if Str2 != Str:
                     OutFile.write('msgstr "%s"\n' % (Encode(Str2),))
                     IgnoreNext = True
+
+os.chdir("../Source")
+Files = glob.glob("*.xml")
+os.system(sys.executable + " ..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files))
+os.chdir("../po")
+
+if len(sys.argv) == 1:
+    for Language in Languages:
+        CreateLanguage(Language)
+else:
+    for Language in sys.argv[1:]:
+        CreateLanguage(Language)
