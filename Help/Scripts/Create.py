@@ -5,7 +5,7 @@ import codecs
 import sys
 
 Languages = ["Croatian", "Czech", "Danish", "Dutch", "French", "German", "Italian", "Portuguese (Brazil)", "Slovenian", "Spanish", "Swedish"]
-LocalePath = "d:\\Projects\\Graph\\Locale\\"
+LocalePath = "../../Locale/"
 
 def Encode(Str):
     return Str.replace('"', '\\"').replace('\n', ' ')
@@ -17,13 +17,14 @@ def CreateLanguage(Language):
 
     if os.path.exists(FileName):
         # Merge with old translation
-        os.system("..\\..\\Tools\\msgmerge -U -v -q --backup=off %s GraphHelp.pot  --no-wrap" % (FileName,))
+        os.system("msgmerge -U -v -q --backup=off %s GraphHelp.pot --no-wrap" % (FileName,))
         InFile = FileName
     else:
         InFile = "GraphHelp.pot"
 
-    # This is a hack to trick gettext into laoding the .mo file
-    Lang = gettext.translation(LocalePath + Language, languages=["test"])
+
+    os.system("msgfmt %s -o %s" % (LocalePath + Language + '.po', LocalePath + Language + '.mo'))
+    Lang = gettext.GNUTranslations(open(LocalePath + Language + ".mo"))
     Lang.install()
 
     Lines = codecs.open(InFile, "r", "utf-8").readlines()
@@ -43,9 +44,10 @@ def CreateLanguage(Language):
                     OutFile.write('msgstr "%s"\n' % (Encode(Str2),))
                     IgnoreNext = True
 
+os.environ['PATH'] = os.environ['PATH'] + os.pathsep + '../../Tools'
 os.chdir("../Source")
 Files = glob.glob("*.xml")
-os.system(sys.executable + " ..\\Scripts\\xml2po.py -k -o ..\\po\\GraphHelp.pot " + " ".join(Files))
+os.system(sys.executable + " ../Scripts/xml2po.py -k -o ../po/GraphHelp.pot " + " ".join(Files))
 os.chdir("../po")
 
 if len(sys.argv) == 1:
