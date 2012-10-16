@@ -24,7 +24,7 @@ def CreateLanguage(Language):
 
 
     os.system("msgfmt %s -o %s" % (LocalePath + Language + '.po', LocalePath + Language + '.mo'))
-    Lang = gettext.GNUTranslations(open(LocalePath + Language + ".mo"))
+    Lang = gettext.GNUTranslations(open(LocalePath + Language + ".mo", "rb"))
     Lang.install()
 
     Lines = codecs.open(InFile, "r", "utf-8").readlines()
