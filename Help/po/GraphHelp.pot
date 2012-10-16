@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2012-07-28 00:11Romance Daylight Time\n"
+"POT-Creation-Date: 2012-10-16 21:05Romance Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: <LL@li.org>\n"
@@ -233,11 +233,11 @@ msgstr ""
 msgid "evaluate"
 msgstr ""
 
-#. TableDialog.xml:14(glossterm) OptionsDialog.xml:115(glossterm) MenuItems.xml:286(glossterm) MenuItems.xml:404(glossterm) MenuItems.xml:418(glossterm) MenuItems.xml:551(glossterm) InsertTangentDialog.xml:17(glossterm) InsertShadingDialog.xml:19(glossterm) InsertShadingDialog.xml:97(glossterm) InsertRelationDialog.xml:19(glossterm) InsertPointSeriesDialog.xml:23(glossterm) InsertLabelDialog.xml:27(glossterm) InsertFunctionDialog.xml:18(glossterm) HowToUse.xml:8(primary) HowToUse.xml:42(glossterm) Glossary.xml:44(glossterm) Glossary.xml:45(primary) EvaluateDialog.xml:37(glossterm) 
+#. TableDialog.xml:14(glossterm) OptionsDialog.xml:115(glossterm) MenuItems.xml:288(glossterm) MenuItems.xml:406(glossterm) MenuItems.xml:420(glossterm) MenuItems.xml:553(glossterm) InsertTangentDialog.xml:17(glossterm) InsertShadingDialog.xml:19(glossterm) InsertShadingDialog.xml:97(glossterm) InsertRelationDialog.xml:19(glossterm) InsertPointSeriesDialog.xml:23(glossterm) InsertLabelDialog.xml:27(glossterm) InsertFunctionDialog.xml:18(glossterm) HowToUse.xml:8(primary) HowToUse.xml:42(glossterm) Glossary.xml:44(glossterm) Glossary.xml:45(primary) EvaluateDialog.xml:37(glossterm) 
 msgid "function list"
 msgstr ""
 
-#. TableDialog.xml:15(guimenu) MenuItems.xml:562(guimenu) MenuItems.xml:577(guimenu) MenuItems.xml:593(guimenu) MenuItems.xml:612(guimenu) MenuItems.xml:627(guimenu) HowToUse.xml:48(guimenu) FAQ.xml:221(guimenu) EvaluateDialog.xml:23(guimenu) EvaluateDialog.xml:106(guimenu) EvaluateDialog.xml:133(guimenu) 
+#. TableDialog.xml:15(guimenu) MenuItems.xml:564(guimenu) MenuItems.xml:579(guimenu) MenuItems.xml:595(guimenu) MenuItems.xml:614(guimenu) MenuItems.xml:629(guimenu) HowToUse.xml:48(guimenu) FAQ.xml:221(guimenu) EvaluateDialog.xml:23(guimenu) EvaluateDialog.xml:106(guimenu) EvaluateDialog.xml:131(guimenu) 
 msgid "Calc"
 msgstr ""
 
@@ -257,7 +257,7 @@ msgstr ""
 msgid "When you press the <guibutton>Calc</guibutton> button, the table will be filled with the independent variable in the first column. The rest of the columns depend on the type of function. For a standard function, the table will show f(x), f'(x) and f''(x). For a parametric function, the table will show x(t), y(t), dx/dt, dy/dt and dy/dx. For a polar function, the table will show r(t), x(t), y(t), dr/dt and dy/dx. Unneeded columns can be hidden from the context menu. If the calculations takes a long time, a progress indicator will be shown."
 msgstr ""
 
-#. TableDialog.xml:35(guimenuitem) MenuItems.xml:185(guimenuitem) 
+#. TableDialog.xml:35(guimenuitem) MenuItems.xml:187(guimenuitem) 
 msgid "Copy"
 msgstr ""
 
@@ -318,7 +318,7 @@ msgid "Examples"
 msgstr ""
 
 #. Special.xml:44(para) 
-msgid "<placeholder-1/> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396. More useful is <placeholder-2/>. This will plot the integral of f(s)=s*sin(s) from 0 to x, which is the same as the definite integral of f(x)=x*sin(x)."
+msgid "<placeholder-1/> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396. More useful is <placeholder-2/>. This will plot the definite integral of f(s)=s*sin(s) from 0 to x, which is the same as the indefinite integral of f(x)=x*sin(x)."
 msgstr ""
 
 #. Special.xml:65(primary) 
@@ -469,7 +469,7 @@ msgstr ""
 msgid "bitmap"
 msgstr ""
 
-#. SaveImageDialog.xml:21(guimenu) OptionsDialog.xml:37(guimenu) MenuItems.xml:16(guimenu) MenuItems.xml:30(guimenu) MenuItems.xml:44(guimenu) MenuItems.xml:56(guimenu) MenuItems.xml:68(guimenu) MenuItems.xml:83(guimenu) MenuItems.xml:96(guimenu) MenuItems.xml:113(guimenu) MenuItems.xml:127(guimenu) 
+#. SaveImageDialog.xml:21(guimenu) OptionsDialog.xml:37(guimenu) MenuItems.xml:16(guimenu) MenuItems.xml:30(guimenu) MenuItems.xml:44(guimenu) MenuItems.xml:56(guimenu) MenuItems.xml:68(guimenu) MenuItems.xml:83(guimenu) MenuItems.xml:97(guimenu) MenuItems.xml:115(guimenu) MenuItems.xml:129(guimenu) ImportPointSeries.xml:14(guimenu) 
 msgid "File"
 msgstr ""
 
@@ -701,7 +701,7 @@ msgstr ""
 msgid "The <placeholder-1/> function calculates the logarithm of <placeholder-2/> with base <placeholder-3/>. <placeholder-4/> may be any <placeholder-5/> that evaluates to a <placeholder-6/> or a <placeholder-7/>. If the calculation is done with real numbers, the argument is only defined for <placeholder-8/>&gt;0. When calculating with complex numbers, <placeholder-9/> is defined for all numbers except <placeholder-10/>=0. <placeholder-11/> must evaluate to a positive real number."
 msgstr ""
 
-#. Plugins.xml:4(title) Plugins.xml:13(title) 
+#. Plugins.xml:4(title) Plugins.xml:13(title) MenuItems.xml:644(guimenu) 
 msgid "Plugins"
 msgstr ""
 
@@ -805,11 +805,11 @@ msgstr ""
 msgid "Options dialog"
 msgstr ""
 
-#. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) OLE.xml:25(guimenu) OLE.xml:32(guimenu) MenuItems.xml:143(guimenu) MenuItems.xml:157(guimenu) MenuItems.xml:163(guimenu) MenuItems.xml:171(guimenu) MenuItems.xml:185(guimenu) MenuItems.xml:199(guimenu) MenuItems.xml:213(guimenu) MenuItems.xml:228(guimenu) MenuItems.xml:244(guimenu) AxesDialog.xml:35(guimenu) 
+#. OptionsDialog.xml:13(guimenu) OLE.xml:19(guimenu) MenuItems.xml:145(guimenu) MenuItems.xml:159(guimenu) MenuItems.xml:165(guimenu) MenuItems.xml:173(guimenu) MenuItems.xml:187(guimenu) MenuItems.xml:201(guimenu) MenuItems.xml:215(guimenu) MenuItems.xml:230(guimenu) MenuItems.xml:246(guimenu) AxesDialog.xml:35(guimenu) 
 msgid "Edit"
 msgstr ""
 
-#. OptionsDialog.xml:14(guimenuitem) MenuItems.xml:244(guimenuitem) 
+#. OptionsDialog.xml:14(guimenuitem) MenuItems.xml:246(guimenuitem) 
 msgid "Options..."
 msgstr ""
 
@@ -929,15 +929,15 @@ msgstr ""
 msgid "Check for new version of Graph at startup"
 msgstr ""
 
-#. OptionsDialog.xml:150(guimenu) MenuItems.xml:644(guimenu) MenuItems.xml:658(guimenu) MenuItems.xml:672(guimenu) MenuItems.xml:685(guimenu) MenuItems.xml:698(guimenu) MenuItems.xml:711(guimenu) MenuItems.xml:724(guimenu) MenuItems.xml:737(guimenu) MenuItems.xml:751(guimenu) Introduction.xml:50(guimenu) 
+#. OptionsDialog.xml:150(guimenu) MenuItems.xml:658(guimenu) MenuItems.xml:672(guimenu) MenuItems.xml:686(guimenu) MenuItems.xml:699(guimenu) MenuItems.xml:712(guimenu) MenuItems.xml:725(guimenu) MenuItems.xml:738(guimenu) MenuItems.xml:751(guimenu) MenuItems.xml:765(guimenu) Introduction.xml:50(guimenu) 
 msgid "Help"
 msgstr ""
 
-#. OptionsDialog.xml:151(guisubmenu) MenuItems.xml:698(guisubmenu) MenuItems.xml:711(guisubmenu) MenuItems.xml:724(guisubmenu) MenuItems.xml:737(guisubmenu) 
+#. OptionsDialog.xml:151(guisubmenu) MenuItems.xml:712(guisubmenu) MenuItems.xml:725(guisubmenu) MenuItems.xml:738(guisubmenu) MenuItems.xml:751(guisubmenu) 
 msgid "Internet"
 msgstr ""
 
-#. OptionsDialog.xml:152(guimenuitem) MenuItems.xml:737(guimenuitem) 
+#. OptionsDialog.xml:152(guimenuitem) MenuItems.xml:751(guimenuitem) 
 msgid "Check for update"
 msgstr ""
 
@@ -969,15 +969,15 @@ msgstr ""
 msgid "Graph has been implemented as an OLE (Object Linking and Embedding) server, which means that Graph objects can be placed (embedded) into an OLE client. Many applications can work as OLE clients, for example Microsoft Word."
 msgstr ""
 
-#. OLE.xml:20(guimenuitem) MenuItems.xml:213(guimenuitem) 
+#. OLE.xml:20(guimenuitem) MenuItems.xml:215(guimenuitem) 
 msgid "Copy image"
 msgstr ""
 
-#. OLE.xml:26(guimenuitem) MenuItems.xml:199(guimenuitem) 
+#. OLE.xml:23(guimenuitem) OLE.xml:28(guimenu) MenuItems.xml:201(guimenuitem) 
 msgid "Paste"
 msgstr ""
 
-#. OLE.xml:33(guimenuitem) 
+#. OLE.xml:29(guimenuitem) 
 msgid "Paste Special..."
 msgstr ""
 
@@ -985,43 +985,39 @@ msgstr ""
 msgid "You can use <placeholder-1/> in Graph to copy the current content to the clipboard. Afterwards you can select <placeholder-2/> in Word (or similar in another OLE client) to insert the Graph object from the clipboard. When you double click on the object a new instance of Graph will start where you can edit the object. If you don't want to paste the data as a Graph object into Word, you can use <placeholder-3/> in Word to paste as a picture instead."
 msgstr ""
 
-#. OLE.xml:40(guimenu) 
-msgid "Insert"
+#. OLE.xml:35(guimenuitem) 
+msgid "Object"
 msgstr ""
 
-#. OLE.xml:41(guimenuitem) 
-msgid "Object..."
-msgstr ""
-
-#. OLE.xml:43(guilabel) 
+#. OLE.xml:36(guilabel) 
 msgid "Graph system"
 msgstr ""
 
-#. OLE.xml:43(guilabel) 
+#. OLE.xml:36(guilabel) 
 msgid "Object type"
 msgstr ""
 
-#. OLE.xml:45(guilabel) 
+#. OLE.xml:38(guilabel) 
 msgid "Link to file"
 msgstr ""
 
-#. OLE.xml:37(para) 
-msgid "You may create a new Graph object in Word by choosing the <placeholder-1/> menu item and selecting <placeholder-2/> as <placeholder-3/>. The same dialog can be used to create an embedded Graph object from an existing grf-file. If you select <placeholder-4/>, you will get a linked object instead of an embedded object. This way all changes to the object will be reflected in the original grf-file. If the grf-file is not available you will not be able to edit the object, but you can still see the image in Word."
+#. OLE.xml:33(para) 
+msgid "You may create a new Graph object in Word by choosing <placeholder-1/> in the toolbar and selecting <placeholder-2/> as <placeholder-3/>. The same dialog can be used to create an embedded Graph object from an existing grf-file. If you select <placeholder-4/>, you will get a linked object instead of an embedded object. This way all changes to the object will be reflected in the original grf-file. If the grf-file is not available you will not be able to edit the object, but you can still see the image in Word."
 msgstr ""
 
-#. OLE.xml:49(para) 
+#. OLE.xml:42(para) 
 msgid "To edit a Graph object you must have Graph installed on the system. If Graph is not installed you will still be able to see the image but not edit it."
 msgstr ""
 
-#. OLE.xml:56(title) 
+#. OLE.xml:49(title) 
 msgid "OLE client"
 msgstr ""
 
-#. OLE.xml:61(guimenuitem) 
+#. OLE.xml:54(guimenuitem) 
 msgid "Insert object..."
 msgstr ""
 
-#. OLE.xml:57(para) 
+#. OLE.xml:50(para) 
 msgid "Graph can work as an OLE client as a text label in Graph is an OLE container. This means that you can paste images and OLE objects into the editor used to add labels. As in any other OLE container you can edit the object by double clicking on it. From the context menu you can use <placeholder-1/> to create a new OLE object in the label. The same dialog can be used to create an object from a file. You can for example insert an image file this way. To edit an OLE object the server must be installed on the system, else you will only be able to see object but not edit it."
 msgstr ""
 
@@ -1037,7 +1033,7 @@ msgstr ""
 msgid "shortcuts"
 msgstr ""
 
-#. MenuItems.xml:7(primary) InsertPointSeriesDialog.xml:18(primary) 
+#. MenuItems.xml:7(primary) InsertPointSeriesDialog.xml:18(primary) ImportPointSeries.xml:8(primary) 
 msgid "import"
 msgstr ""
 
@@ -1045,7 +1041,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#. MenuItems.xml:17(keycap) MenuItems.xml:31(keycap) MenuItems.xml:45(keycap) MenuItems.xml:69(keycap) MenuItems.xml:114(keycap) MenuItems.xml:144(keycap) MenuItems.xml:158(keycap) MenuItems.xml:172(keycap) MenuItems.xml:186(keycap) MenuItems.xml:200(keycap) MenuItems.xml:214(keycap) MenuItems.xml:229(keycap) MenuItems.xml:348(keycap) MenuItems.xml:428(keycap) MenuItems.xml:445(keycap) MenuItems.xml:459(keycap) MenuItems.xml:473(keycap) MenuItems.xml:488(keycap) MenuItems.xml:504(keycap) MenuItems.xml:518(keycap) MenuItems.xml:594(keycap) MenuItems.xml:659(keycap) 
+#. MenuItems.xml:17(keycap) MenuItems.xml:31(keycap) MenuItems.xml:45(keycap) MenuItems.xml:69(keycap) MenuItems.xml:116(keycap) MenuItems.xml:146(keycap) MenuItems.xml:160(keycap) MenuItems.xml:174(keycap) MenuItems.xml:188(keycap) MenuItems.xml:202(keycap) MenuItems.xml:216(keycap) MenuItems.xml:231(keycap) MenuItems.xml:350(keycap) MenuItems.xml:430(keycap) MenuItems.xml:447(keycap) MenuItems.xml:461(keycap) MenuItems.xml:475(keycap) MenuItems.xml:490(keycap) MenuItems.xml:506(keycap) MenuItems.xml:520(keycap) MenuItems.xml:596(keycap) MenuItems.xml:673(keycap) 
 msgid "Ctrl"
 msgstr ""
 
@@ -1081,7 +1077,7 @@ msgstr ""
 msgid "Saves the shown coordinate system as an image."
 msgstr ""
 
-#. MenuItems.xml:83(guisubmenu) MenuItems.xml:96(guisubmenu) 
+#. MenuItems.xml:83(guisubmenu) MenuItems.xml:97(guisubmenu) ImportPointSeries.xml:14(guisubmenu) 
 msgid "Import"
 msgstr ""
 
@@ -1093,363 +1089,367 @@ msgstr ""
 msgid "Imports the contents of another Graph file into the current coordinate system."
 msgstr ""
 
-#. MenuItems.xml:96(guimenuitem) 
+#. MenuItems.xml:97(guimenuitem) ImportPointSeries.xml:14(guimenuitem) 
 msgid "Point series..."
 msgstr ""
 
-#. MenuItems.xml:100(para) 
+#. MenuItems.xml:102(para) 
 msgid "Imports one or several point series from a tab, comma or semicolon separated data file. The first column shall contain the x-coordinates. The following columns shall contain the y-coordinates. Graph will create as many point series as there are columns with y-coordinates in the file. There is no limit to the number of point series possible in the data file as long as they share the same x-coordinates."
 msgstr ""
 
-#. MenuItems.xml:113(guimenuitem) 
+#. MenuItems.xml:115(guimenuitem) 
 msgid "Print..."
 msgstr ""
 
-#. MenuItems.xml:118(para) 
+#. MenuItems.xml:120(para) 
 msgid "Sends the coordinate system and graphs to a printer."
 msgstr ""
 
-#. MenuItems.xml:127(guimenuitem) 
+#. MenuItems.xml:129(guimenuitem) 
 msgid "Exit"
 msgstr ""
 
-#. MenuItems.xml:128(keycap) MenuItems.xml:752(keycap) 
+#. MenuItems.xml:130(keycap) MenuItems.xml:766(keycap) 
 msgid "Alt"
 msgstr ""
 
-#. MenuItems.xml:132(para) 
+#. MenuItems.xml:134(para) 
 msgid "Quits the program. You may be asked to save the file."
 msgstr ""
 
-#. MenuItems.xml:143(guimenuitem) MenuItems.xml:163(guimenuitem) 
+#. MenuItems.xml:145(guimenuitem) MenuItems.xml:165(guimenuitem) 
 msgid "Undo"
 msgstr ""
 
-#. MenuItems.xml:148(para) 
+#. MenuItems.xml:150(para) 
 msgid "Use this to undo the last thing you did. You can choose how many undo steps that are saved in the <placeholder-1/> dialog."
 msgstr ""
 
-#. MenuItems.xml:157(guimenuitem) 
+#. MenuItems.xml:159(guimenuitem) 
 msgid "Redo"
 msgstr ""
 
-#. MenuItems.xml:162(para) 
+#. MenuItems.xml:164(para) 
 msgid "Use this to redo the last thing undone. This is only available after you have selected <placeholder-1/>."
 msgstr ""
 
-#. MenuItems.xml:171(guimenuitem) 
+#. MenuItems.xml:173(guimenuitem) 
 msgid "Cut"
 msgstr ""
 
-#. MenuItems.xml:177(glossterm) MenuItems.xml:191(glossterm) MenuItems.xml:205(glossterm) MenuItems.xml:404(glossterm) MenuItems.xml:418(glossterm) MenuItems.xml:538(glossterm) Glossary.xml:33(glossterm) Glossary.xml:34(primary) 
+#. MenuItems.xml:179(glossterm) MenuItems.xml:193(glossterm) MenuItems.xml:207(glossterm) MenuItems.xml:406(glossterm) MenuItems.xml:420(glossterm) MenuItems.xml:540(glossterm) Glossary.xml:33(glossterm) Glossary.xml:34(primary) 
 msgid "graph element"
 msgstr ""
 
-#. MenuItems.xml:176(para) 
+#. MenuItems.xml:178(para) 
 msgid "This will copy the selected <placeholder-1/> to the clipboard. The element will be deleted afterwards."
 msgstr ""
 
-#. MenuItems.xml:190(para) 
+#. MenuItems.xml:192(para) 
 msgid "This will copy the selected <placeholder-1/> to the clipboard."
 msgstr ""
 
-#. MenuItems.xml:204(para) 
+#. MenuItems.xml:206(para) 
 msgid "This will paste an earlier copied <placeholder-1/> from the clipboard into the coordinate system."
 msgstr ""
 
-#. MenuItems.xml:218(para) 
+#. MenuItems.xml:220(para) 
 msgid "Copies the shown coordinate system to the clipboard as an image. You can then paste it into another program, i.e. Microsoft Word."
 msgstr ""
 
-#. MenuItems.xml:228(guimenuitem) AxesDialog.xml:36(guimenuitem) 
+#. MenuItems.xml:230(guimenuitem) AxesDialog.xml:36(guimenuitem) 
 msgid "Axes..."
 msgstr ""
 
-#. MenuItems.xml:234(para) 
+#. MenuItems.xml:236(para) 
 msgid "Edit specifications for the axes, e.g. scale, colors, legend placement, etc."
 msgstr ""
 
-#. MenuItems.xml:249(para) 
+#. MenuItems.xml:251(para) 
 msgid "This will change global settings for Graph, e.g. association of .grf files, showing of tooltips, maximum number of undo stored undo steps, etc."
 msgstr ""
 
-#. MenuItems.xml:261(guimenu) MenuItems.xml:278(guimenu) MenuItems.xml:295(guimenu) MenuItems.xml:313(guimenu) MenuItems.xml:329(guimenu) MenuItems.xml:347(guimenu) MenuItems.xml:364(guimenu) MenuItems.xml:382(guimenu) MenuItems.xml:398(guimenu) MenuItems.xml:412(guimenu) MenuItems.xml:427(guimenu) InsertTrendlineDialog.xml:25(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:18(guimenu) InsertRelationDialog.xml:19(guimenu) InsertPointSeriesDialog.xml:22(guimenu) InsertPointSeriesDialog.xml:23(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:35(guimenu) HowToUse.xml:43(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:189(entry) EvaluateDialog.xml:50(term) CustomFunctionsDialog.xml:16(guimenu) 
+#. MenuItems.xml:263(guimenu) MenuItems.xml:280(guimenu) MenuItems.xml:297(guimenu) MenuItems.xml:315(guimenu) MenuItems.xml:331(guimenu) MenuItems.xml:349(guimenu) MenuItems.xml:366(guimenu) MenuItems.xml:384(guimenu) MenuItems.xml:400(guimenu) MenuItems.xml:414(guimenu) MenuItems.xml:429(guimenu) InsertTrendlineDialog.xml:25(guimenu) InsertTangentDialog.xml:16(guimenu) InsertTangentDialog.xml:17(guimenu) InsertShadingDialog.xml:18(guimenu) InsertShadingDialog.xml:19(guimenu) InsertRelationDialog.xml:18(guimenu) InsertRelationDialog.xml:19(guimenu) InsertPointSeriesDialog.xml:22(guimenu) InsertPointSeriesDialog.xml:23(guimenu) InsertLabelDialog.xml:25(guimenu) InsertLabelDialog.xml:27(guimenu) InsertFunctionDialog.xml:16(guimenu) InsertFunctionDialog.xml:19(guimenu) InsertDerivativeDialog.xml:17(guimenu) HowToUse.xml:35(guimenu) HowToUse.xml:43(guimenu) Glossary.xml:38(guimenu) Glossary.xml:52(guimenu) FunctionList.xml:189(entry) EvaluateDialog.xml:50(term) CustomFunctionsDialog.xml:16(guimenu) 
 msgid "Function"
 msgstr ""
 
-#. MenuItems.xml:261(guimenuitem) InsertFunctionDialog.xml:16(guimenuitem) HowToUse.xml:36(guimenuitem) 
+#. MenuItems.xml:263(guimenuitem) InsertFunctionDialog.xml:16(guimenuitem) HowToUse.xml:36(guimenuitem) 
 msgid "Insert function..."
 msgstr ""
 
-#. MenuItems.xml:262(keycap) 
+#. MenuItems.xml:264(keycap) 
 msgid "Ins"
 msgstr ""
 
-#. MenuItems.xml:267(para) 
+#. MenuItems.xml:269(para) 
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
 msgstr ""
 
-#. MenuItems.xml:278(guimenuitem) 
+#. MenuItems.xml:280(guimenuitem) 
 msgid "Insert tangent..."
 msgstr ""
 
-#. MenuItems.xml:284(para) 
+#. MenuItems.xml:286(para) 
 msgid "Use this dialog to add a tangent to an already shown function at a user-specified point. The tangent will be added to the function selected in the <placeholder-1/>."
 msgstr ""
 
-#. MenuItems.xml:295(guimenuitem) InsertShadingDialog.xml:18(guimenuitem) 
+#. MenuItems.xml:297(guimenuitem) InsertShadingDialog.xml:18(guimenuitem) 
 msgid "Insert shading..."
 msgstr ""
 
-#. MenuItems.xml:301(para) 
+#. MenuItems.xml:303(para) 
 msgid "This menu item is used to add a shading to the selected function. You may choose between different styles of shading and different colors. The shading may be added above the function, below the function, between the function and the x-axis, between the function and the y-axis, inside the function or between two functions."
 msgstr ""
 
-#. MenuItems.xml:313(guimenuitem) InsertDerivativeDialog.xml:17(guimenuitem) 
+#. MenuItems.xml:315(guimenuitem) InsertDerivativeDialog.xml:17(guimenuitem) 
 msgid "Insert f'(x)..."
 msgstr ""
 
-#. MenuItems.xml:319(para) 
+#. MenuItems.xml:321(para) 
 msgid "This dialog is used to add the first derivative to the selected function."
 msgstr ""
 
-#. MenuItems.xml:329(guimenuitem) InsertPointSeriesDialog.xml:22(guimenuitem) 
+#. MenuItems.xml:331(guimenuitem) InsertPointSeriesDialog.xml:22(guimenuitem) 
 msgid "Insert point series..."
 msgstr ""
 
-#. MenuItems.xml:335(para) 
+#. MenuItems.xml:337(para) 
 msgid "Inserts a new point series into the coordinate system. An infinite number of points defined by their x- and y-coordinates may be added. It is possible to choose color, size, and style of the point series."
 msgstr ""
 
-#. MenuItems.xml:347(guimenuitem) InsertTrendlineDialog.xml:25(guimenuitem) 
+#. MenuItems.xml:349(guimenuitem) InsertTrendlineDialog.xml:25(guimenuitem) 
 msgid "Insert trendline..."
 msgstr ""
 
-#. MenuItems.xml:353(para) 
+#. MenuItems.xml:355(para) 
 msgid "Inserts a trendline as the curve of best fit for the selected point series. You may choose between different kinds of functions for the trendline."
 msgstr ""
 
-#. MenuItems.xml:364(guimenuitem) InsertRelationDialog.xml:18(guimenuitem) 
+#. MenuItems.xml:366(guimenuitem) InsertRelationDialog.xml:18(guimenuitem) 
 msgid "Insert relation..."
 msgstr ""
 
-#. MenuItems.xml:370(para) 
+#. MenuItems.xml:372(para) 
 msgid "This inserts an equation or inequality into the coordinate system. Equations and inequalities are used to express relations between x- and y-coordinates with the same operators etc. as for graphs of functions. Relations may be added with different shading styles and colors."
 msgstr ""
 
-#. MenuItems.xml:382(guimenuitem) InsertLabelDialog.xml:25(guimenuitem) 
+#. MenuItems.xml:384(guimenuitem) InsertLabelDialog.xml:25(guimenuitem) 
 msgid "Insert label..."
 msgstr ""
 
-#. MenuItems.xml:388(para) 
+#. MenuItems.xml:390(para) 
 msgid "This will show a dialog, which may be used to create a formatted text label. The label will always be created at the center of the graphing area but can afterwards be dragged to another place with the mouse."
 msgstr ""
 
-#. MenuItems.xml:398(guimenuitem) InsertTangentDialog.xml:17(guimenuitem) InsertShadingDialog.xml:19(guimenuitem) InsertRelationDialog.xml:19(guimenuitem) InsertPointSeriesDialog.xml:23(guimenuitem) InsertLabelDialog.xml:27(guimenuitem) InsertFunctionDialog.xml:19(guimenuitem) 
+#. MenuItems.xml:400(guimenuitem) InsertTangentDialog.xml:17(guimenuitem) InsertShadingDialog.xml:19(guimenuitem) InsertRelationDialog.xml:19(guimenuitem) InsertPointSeriesDialog.xml:23(guimenuitem) InsertLabelDialog.xml:27(guimenuitem) InsertFunctionDialog.xml:19(guimenuitem) 
 msgid "Edit..."
 msgstr ""
 
-#. MenuItems.xml:399(keycap) 
+#. MenuItems.xml:401(keycap) 
 msgid "Enter"
 msgstr ""
 
-#. MenuItems.xml:403(para) 
+#. MenuItems.xml:405(para) 
 msgid "This will show a dialog where you can change the selected <placeholder-1/> in the <placeholder-2/>."
 msgstr ""
 
-#. MenuItems.xml:412(guimenuitem) 
+#. MenuItems.xml:414(guimenuitem) 
 msgid "Delete"
 msgstr ""
 
-#. MenuItems.xml:413(keycap) 
+#. MenuItems.xml:415(keycap) 
 msgid "Del"
 msgstr ""
 
-#. MenuItems.xml:417(para) 
+#. MenuItems.xml:419(para) 
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
 msgstr ""
 
-#. MenuItems.xml:427(guimenuitem) CustomFunctionsDialog.xml:16(guimenuitem) 
+#. MenuItems.xml:429(guimenuitem) CustomFunctionsDialog.xml:16(guimenuitem) 
 msgid "Custom functions..."
 msgstr ""
 
-#. MenuItems.xml:433(para) 
+#. MenuItems.xml:435(para) 
 msgid "This shows a dialog used to create custom functions and constants in addition to the built-in ones."
 msgstr ""
 
-#. MenuItems.xml:444(guimenu) MenuItems.xml:458(guimenu) MenuItems.xml:472(guimenu) MenuItems.xml:487(guimenu) MenuItems.xml:503(guimenu) MenuItems.xml:517(guimenu) MenuItems.xml:533(guimenu) MenuItems.xml:546(guimenu) FAQ.xml:84(guimenu) FAQ.xml:197(guimenu) 
+#. MenuItems.xml:446(guimenu) MenuItems.xml:460(guimenu) MenuItems.xml:474(guimenu) MenuItems.xml:489(guimenu) MenuItems.xml:505(guimenu) MenuItems.xml:519(guimenu) MenuItems.xml:535(guimenu) MenuItems.xml:548(guimenu) FAQ.xml:84(guimenu) FAQ.xml:197(guimenu) 
 msgid "Zoom"
 msgstr ""
 
-#. MenuItems.xml:444(guimenuitem) 
+#. MenuItems.xml:446(guimenuitem) 
 msgid "In"
 msgstr ""
 
-#. MenuItems.xml:449(para) 
+#. MenuItems.xml:451(para) 
 msgid "This will zoom in at the center of the graphing area, so you will see a &frac14; of the previous graphing area."
 msgstr ""
 
-#. MenuItems.xml:458(guimenuitem) 
+#. MenuItems.xml:460(guimenuitem) 
 msgid "Out"
 msgstr ""
 
-#. MenuItems.xml:463(para) 
+#. MenuItems.xml:465(para) 
 msgid "This will zoom out so you see 4 times as much as on the previous graphing area."
 msgstr ""
 
-#. MenuItems.xml:472(guimenuitem) 
+#. MenuItems.xml:474(guimenuitem) 
 msgid "Window"
 msgstr ""
 
-#. MenuItems.xml:477(para) 
+#. MenuItems.xml:479(para) 
 msgid "Hold down the <action>left mouse button</action> while you select the area you want to fill the whole graphing area. <action>Right click</action> or press <keycap>Esc</keycap> to cancel the command."
 msgstr ""
 
-#. MenuItems.xml:487(guimenuitem) FAQ.xml:198(guimenuitem) 
+#. MenuItems.xml:489(guimenuitem) FAQ.xml:198(guimenuitem) 
 msgid "Square"
 msgstr ""
 
-#. MenuItems.xml:492(para) 
+#. MenuItems.xml:494(para) 
 msgid "This changes the y-axis to the same scale as the x-axis. It will make a circle look correctly instead of showing as an ellipse. The axes will stay equally scaled until disabled again."
 msgstr ""
 
-#. MenuItems.xml:503(guimenuitem) 
+#. MenuItems.xml:505(guimenuitem) 
 msgid "Standard"
 msgstr ""
 
-#. MenuItems.xml:508(para) 
+#. MenuItems.xml:510(para) 
 msgid "Returns the axes settings to the same default settings used when creating a new coordinate system."
 msgstr ""
 
-#. MenuItems.xml:517(guimenuitem) FAQ.xml:85(guimenuitem) 
+#. MenuItems.xml:519(guimenuitem) FAQ.xml:85(guimenuitem) 
 msgid "Move system"
 msgstr ""
 
-#. MenuItems.xml:522(para) 
+#. MenuItems.xml:524(para) 
 msgid "When selected the mouse pointer changes to a hand. You may now use the mouse to drag the coordinate system around. Select the menu item again, <action>right click</action> or press <keycap>Esc</keycap> to return to normal mode. As an alternative to this menu item, you may hold down the <keycap>Shift</keycap> key and drag the coordinate system around."
 msgstr ""
 
-#. MenuItems.xml:533(guimenuitem) 
+#. MenuItems.xml:535(guimenuitem) 
 msgid "Fit"
 msgstr ""
 
-#. MenuItems.xml:537(para) 
+#. MenuItems.xml:539(para) 
 msgid "This will change the axes settings to show all parts of the selected <placeholder-1/>."
 msgstr ""
 
-#. MenuItems.xml:546(guimenuitem) 
+#. MenuItems.xml:548(guimenuitem) 
 msgid "Fit all"
 msgstr ""
 
-#. MenuItems.xml:550(para) 
+#. MenuItems.xml:552(para) 
 msgid "This will change the axes settings to show all parts of all the elements in the <placeholder-1/>."
 msgstr ""
 
-#. MenuItems.xml:562(guimenuitem) EvaluateDialog.xml:129(title) EvaluateDialog.xml:134(guimenuitem) 
+#. MenuItems.xml:564(guimenuitem) EvaluateDialog.xml:127(title) EvaluateDialog.xml:132(guimenuitem) 
 msgid "Length of path"
 msgstr ""
 
-#. MenuItems.xml:567(para) 
+#. MenuItems.xml:569(para) 
 msgid "Calculates the distance along the path between two points on the selected graph."
 msgstr ""
 
-#. MenuItems.xml:577(guimenuitem) FAQ.xml:222(guimenuitem) 
+#. MenuItems.xml:579(guimenuitem) FAQ.xml:222(guimenuitem) 
 msgid "Integrate"
 msgstr ""
 
-#. MenuItems.xml:582(para) 
+#. MenuItems.xml:584(para) 
 msgid "Calculates the definite integral for a specified domain range. This is the same as the signed area between the graph and the x-axis."
 msgstr ""
 
-#. MenuItems.xml:593(guimenuitem) Glossary.xml:25(guilabel) EvaluateDialog.xml:8(title) EvaluateDialog.xml:19(title) EvaluateDialog.xml:24(guimenuitem) 
+#. MenuItems.xml:595(guimenuitem) Glossary.xml:25(guilabel) EvaluateDialog.xml:8(title) EvaluateDialog.xml:19(title) EvaluateDialog.xml:24(guimenuitem) 
 msgid "Evaluate"
 msgstr ""
 
-#. MenuItems.xml:599(para) 
+#. MenuItems.xml:601(para) 
 msgid "This will evaluate the selected function for a given value. For standard functions f(x), f'(x) and f''(x) are evaluated. For parametric functions x(t), y(t), dx/dt, dy/dt and dy/dx are evaluated. For polar functions r(t), x(t), y(t), dr/dt and dy/dt are evaluated."
 msgstr ""
 
-#. MenuItems.xml:612(guimenuitem) 
+#. MenuItems.xml:614(guimenuitem) 
 msgid "Table..."
 msgstr ""
 
-#. MenuItems.xml:617(para) 
+#. MenuItems.xml:619(para) 
 msgid "This dialog fills a table with a user-specified range of values and the result of evaluating the selected function for the values."
 msgstr ""
 
-#. MenuItems.xml:627(guimenuitem) 
+#. MenuItems.xml:629(guimenuitem) 
 msgid "Animate..."
 msgstr ""
 
-#. MenuItems.xml:632(para) 
+#. MenuItems.xml:634(para) 
 msgid "This dialog allows you to create an animation from the data in the coordinate system by changing an existing custom constant. This makes it easy to see what happens when the constant changes. The animation may be saved to a disk file."
 msgstr ""
 
-#. MenuItems.xml:644(guimenuitem) 
+#. MenuItems.xml:647(para) 
+msgid "This is a common place for plugins to put menu items that activates the plugin. The menu will not be shown if there are no plugins or the <link linkend=\"Plugins\">plugin system</link> is not available."
+msgstr ""
+
+#. MenuItems.xml:658(guimenuitem) 
 msgid "Contents and index"
 msgstr ""
 
-#. MenuItems.xml:649(para) 
+#. MenuItems.xml:663(para) 
 msgid "Shows the contents and index of the help file."
 msgstr ""
 
-#. MenuItems.xml:658(guimenuitem) FunctionList.xml:7(title) 
+#. MenuItems.xml:672(guimenuitem) FunctionList.xml:7(title) 
 msgid "List of functions"
 msgstr ""
 
-#. MenuItems.xml:663(para) 
+#. MenuItems.xml:677(para) 
 msgid "Shows a list of functions and constants that may be used for plotting graphs."
 msgstr ""
 
-#. MenuItems.xml:672(guimenuitem) FAQ.xml:5(title) 
+#. MenuItems.xml:686(guimenuitem) FAQ.xml:5(title) 
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#. MenuItems.xml:676(para) 
+#. MenuItems.xml:690(para) 
 msgid "This will show a list of frequently asked questions and their answers."
 msgstr ""
 
-#. MenuItems.xml:685(guimenuitem) 
+#. MenuItems.xml:699(guimenuitem) 
 msgid "Tip of the day"
 msgstr ""
 
-#. MenuItems.xml:689(para) 
+#. MenuItems.xml:703(para) 
 msgid "This will show some tips about using Graph in a more optimal way, and certain features of Graph you may not know about."
 msgstr ""
 
-#. MenuItems.xml:698(guimenuitem) 
+#. MenuItems.xml:712(guimenuitem) 
 msgid "Graph web site"
 msgstr ""
 
-#. MenuItems.xml:702(para) 
+#. MenuItems.xml:716(para) 
 msgid "Shows the web site for Graph in your default web browser."
 msgstr ""
 
-#. MenuItems.xml:711(guimenuitem) 
+#. MenuItems.xml:725(guimenuitem) 
 msgid "Support"
 msgstr ""
 
-#. MenuItems.xml:715(para) 
+#. MenuItems.xml:729(para) 
 msgid "Shows the support forum for Graph in your default web browser."
 msgstr ""
 
-#. MenuItems.xml:724(guimenuitem) 
+#. MenuItems.xml:738(guimenuitem) 
 msgid "Donate"
 msgstr ""
 
-#. MenuItems.xml:728(para) 
+#. MenuItems.xml:742(para) 
 msgid "Shows the web page that allows you to donate to the Graph project to support its development."
 msgstr ""
 
-#. MenuItems.xml:741(para) 
+#. MenuItems.xml:755(para) 
 msgid "This will check if a new version of Graph is available. If there is a new version, you will be asked if you want to visit the web site of Graph to download the new version."
 msgstr ""
 
-#. MenuItems.xml:751(guimenuitem) 
+#. MenuItems.xml:765(guimenuitem) 
 msgid "About Graph"
 msgstr ""
 
-#. MenuItems.xml:756(para) 
+#. MenuItems.xml:770(para) 
 msgid "Shows version number, copyright and license information for Graph."
 msgstr ""
 
@@ -2137,7 +2137,7 @@ msgstr ""
 msgid "Insert point series"
 msgstr ""
 
-#. InsertPointSeriesDialog.xml:10(primary) 
+#. InsertPointSeriesDialog.xml:10(primary) ImportPointSeries.xml:9(primary) 
 msgid "point series"
 msgstr ""
 
@@ -2475,6 +2475,30 @@ msgstr ""
 
 #. InsertDerivativeDialog.xml:26(para) 
 msgid "You can select an interval, line style, width in pixels and color for the derivative of the function. The derivative is inserted as a function and can be edited as such. The derivative will not change if you edit the original function."
+msgstr ""
+
+#. ImportPointSeries.xml:7(title) 
+msgid "Import point series"
+msgstr ""
+
+#. ImportPointSeries.xml:12(para) 
+msgid "Graph can import point series from text files there the values are delimited by comma, semicolon, space or tabulator. You use <placeholder-1/> and select the file to import. If you do not specify the type of file, Graph will try to guess the delimitor."
+msgstr ""
+
+#. ImportPointSeries.xml:18(para) 
+msgid "The simplest file looks like this, which uses comma as delimitor: <placeholder-1/> When imported you get a point series with the coordinates: <placeholder-2/>"
+msgstr ""
+
+#. ImportPointSeries.xml:27(para) 
+msgid "A file with more than two columns will be imported as several point series with the same x-coordinates as specified in the first column. Here is an example with semicolon as delimitor: <placeholder-1/> When imported you get 7 point series which all share the same x-coordinates."
+msgstr ""
+
+#. ImportPointSeries.xml:38(para) 
+msgid "You can name the point series by starting the line before the data with # followed by the names separated by the same separator as the data. This can also be used for creating several point series that do not share the same x-coordinates by separating the point series with a # and optionally a name for the following point series. The following shows an example with space as separator: <placeholder-1/> This will create four point series each with four data points named a, b, c and d. a and b will share the same x-coordinates, and c and d will share the same x-coordinates."
+msgstr ""
+
+#. ImportPointSeries.xml:56(para) 
+msgid "Not only numbers, but any valid expression can be imported. The following shows an example with semicolon: <placeholder-1/>"
 msgstr ""
 
 #. Hyperbolic.xml:7(title) FunctionList.xml:246(emphasis) 
@@ -3438,22 +3462,18 @@ msgid "Area"
 msgstr ""
 
 #. EvaluateDialog.xml:103(para) 
-msgid "When <placeholder-1/> is selected the dialog is used to calculate the definite integral for the selected function over a specified domain range. For standard functions, parametric functions and tangents the definite integral is the same as the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range."
+msgid "When <placeholder-1/> is selected the dialog is used to calculate the area for the selected function over a specified domain range. For standard and parametric functions and tangents the area is the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range. The area below the x-axis is considered negative. For standard functions and tangents, this is the same as the definite integral."
 msgstr ""
 
-#. EvaluateDialog.xml:113(para) 
-msgid "For polar functions, the definite integral is the same as the signed area between the graph in the given range and the origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
+#. EvaluateDialog.xml:114(para) 
+msgid "For polar functions, the area is the one between the graph in the given range and the origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
 msgstr ""
 
-#. EvaluateDialog.xml:117(para) 
-msgid "For the other functions the area is considered negative when the graph is below the x-axis or when the function goes from a higher to a lower x-value."
+#. EvaluateDialog.xml:118(para) 
+msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated area will be shown below the range, and the matched area will be marked with a shading in the coordinate system. The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible. If an estimated relative error less than <placeholder-1/> cannot be reached, no result will be shown."
 msgstr ""
 
-#. EvaluateDialog.xml:120(para) 
-msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated integral will be shown below the range, and the matched area will be marked with a shading in the coordinate system. The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible. If an estimated relative error less than <placeholder-1/> cannot be reached, no result will be shown."
-msgstr ""
-
-#. EvaluateDialog.xml:130(para) 
+#. EvaluateDialog.xml:128(para) 
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the distance between two points on the function along the curve. You may either enter the range in the dialog or use the mouse to mark it. The range will be marked in the coordinate system. The calculation is done by converting it to an integration and using Simpson's formula through 1000 iterations."
 msgstr ""
 
@@ -4381,11 +4401,11 @@ msgstr ""
 msgid "Arabic"
 msgstr ""
 
-#. Acknowledgements.xml:80(entry) Acknowledgements.xml:87(entry) Acknowledgements.xml:94(entry) Acknowledgements.xml:101(entry) Acknowledgements.xml:108(entry) Acknowledgements.xml:109(entry) Acknowledgements.xml:115(entry) Acknowledgements.xml:128(entry) Acknowledgements.xml:129(entry) Acknowledgements.xml:140(entry) Acknowledgements.xml:141(entry) Acknowledgements.xml:147(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:154(entry) Acknowledgements.xml:161(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:168(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:181(entry) Acknowledgements.xml:188(entry) Acknowledgements.xml:195(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:207(entry) Acknowledgements.xml:214(entry) Acknowledgements.xml:221(entry) Acknowledgements.xml:228(entry) Acknowledgements.xml:240(entry) Acknowledgements.xml:247(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:262(entry) Acknowledgements.xml:269(entry) Acknowledgements.xml:276(entry) Acknowledgements.xml:288(entry) Acknowledgements.xml:289(entry) Acknowledgements.xml:302(entry) Acknowledgements.xml:303(entry) Acknowledgements.xml:314(entry) Acknowledgements.xml:326(entry) Acknowledgements.xml:333(entry) 
+#. Acknowledgements.xml:80(entry) Acknowledgements.xml:87(entry) Acknowledgements.xml:94(entry) Acknowledgements.xml:101(entry) Acknowledgements.xml:108(entry) Acknowledgements.xml:109(entry) Acknowledgements.xml:115(entry) Acknowledgements.xml:128(entry) Acknowledgements.xml:129(entry) Acknowledgements.xml:140(entry) Acknowledgements.xml:141(entry) Acknowledgements.xml:147(entry) Acknowledgements.xml:148(entry) Acknowledgements.xml:154(entry) Acknowledgements.xml:161(entry) Acknowledgements.xml:162(entry) Acknowledgements.xml:168(entry) Acknowledgements.xml:169(entry) Acknowledgements.xml:181(entry) Acknowledgements.xml:188(entry) Acknowledgements.xml:195(entry) Acknowledgements.xml:196(entry) Acknowledgements.xml:207(entry) Acknowledgements.xml:214(entry) Acknowledgements.xml:221(entry) Acknowledgements.xml:228(entry) Acknowledgements.xml:240(entry) Acknowledgements.xml:247(entry) Acknowledgements.xml:248(entry) Acknowledgements.xml:262(entry) Acknowledgements.xml:269(entry) Acknowledgements.xml:281(entry) Acknowledgements.xml:293(entry) Acknowledgements.xml:294(entry) Acknowledgements.xml:307(entry) Acknowledgements.xml:308(entry) Acknowledgements.xml:319(entry) Acknowledgements.xml:331(entry) Acknowledgements.xml:338(entry) 
 msgid "Yes"
 msgstr ""
 
-#. Acknowledgements.xml:81(entry) Acknowledgements.xml:88(entry) Acknowledgements.xml:95(entry) Acknowledgements.xml:102(entry) Acknowledgements.xml:116(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:182(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:208(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:263(entry) Acknowledgements.xml:270(entry) Acknowledgements.xml:277(entry) Acknowledgements.xml:315(entry) Acknowledgements.xml:327(entry) Acknowledgements.xml:334(entry) 
+#. Acknowledgements.xml:81(entry) Acknowledgements.xml:88(entry) Acknowledgements.xml:95(entry) Acknowledgements.xml:102(entry) Acknowledgements.xml:116(entry) Acknowledgements.xml:155(entry) Acknowledgements.xml:182(entry) Acknowledgements.xml:189(entry) Acknowledgements.xml:208(entry) Acknowledgements.xml:215(entry) Acknowledgements.xml:222(entry) Acknowledgements.xml:229(entry) Acknowledgements.xml:241(entry) Acknowledgements.xml:263(entry) Acknowledgements.xml:270(entry) Acknowledgements.xml:282(entry) Acknowledgements.xml:320(entry) Acknowledgements.xml:332(entry) Acknowledgements.xml:339(entry) 
 msgid "No"
 msgstr ""
 
@@ -4477,35 +4497,35 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#. Acknowledgements.xml:275(entry) 
+#. Acknowledgements.xml:280(entry) 
 msgid "Serbian"
 msgstr ""
 
-#. Acknowledgements.xml:287(entry) 
+#. Acknowledgements.xml:292(entry) 
 msgid "Slovenian"
 msgstr ""
 
-#. Acknowledgements.xml:301(entry) 
+#. Acknowledgements.xml:306(entry) 
 msgid "Spanish"
 msgstr ""
 
-#. Acknowledgements.xml:313(entry) 
+#. Acknowledgements.xml:318(entry) 
 msgid "Swedish"
 msgstr ""
 
-#. Acknowledgements.xml:325(entry) 
+#. Acknowledgements.xml:330(entry) 
 msgid "Turkish"
 msgstr ""
 
-#. Acknowledgements.xml:332(entry) 
+#. Acknowledgements.xml:337(entry) 
 msgid "Vietnamese"
 msgstr ""
 
-#. Acknowledgements.xml:344(title) 
+#. Acknowledgements.xml:349(title) 
 msgid "Miscellaneous"
 msgstr ""
 
-#. Acknowledgements.xml:345(para) 
+#. Acknowledgements.xml:350(para) 
 msgid "The icon for Graph was designed by <placeholder-1/>."
 msgstr ""
 
