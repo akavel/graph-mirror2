@@ -47,7 +47,7 @@ class docbookXmlMode:
     def __init__(self):
         self.lists = ['itemizedlist', 'orderedlist', 'variablelist',
                       'segmentedlist', 'simplelist', 'calloutlist', 'varlistentry', 'informaltable' ]
-        self.objects = [ 'figure', 'textobject', 'imageobject', 'mediaobject', 'citetitle', 'literal',
+        self.objects = [ 'figure', 'textobject', 'imageobject', 'mediaobject', 'citetitle', 'literal', 'programlisting',
                          'screenshot', 'function', 'parameter', 'personname', 'mathphrase', 'filename', 'constant', 'email', 'xref', 'markup', 'application']
 
     def getIgnoredTags(self):
@@ -59,7 +59,7 @@ class docbookXmlMode:
         "Returns array of tags to be considered 'final'."
         return ['para', 'formalpara', 'simpara',
                 'releaseinfo', 'revnumber', 'title', 'ulink',
-                'date', 'term', 'programlisting', 'menuchoice', 'guilabel', 'guimenu', 'guimenuitem', 'glossterm'] + self.objects + self.lists
+                'date', 'term', 'menuchoice', 'guilabel', 'guimenu', 'guimenuitem', 'glossterm'] + self.objects + self.lists
 
     def getSpacePreserveTags(self):
         "Returns array of tags in which spaces are to be preserved."

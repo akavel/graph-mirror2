@@ -18,3 +18,6 @@ Used for mathematical equations. Replaced with <placeholder-n/> and not translat
 
 <literal>
 Input entered by the user. Replaced with <placeholder-n/> and not translated.
+
+<programlisting>
+Used for examples like CSV files and Python scripts. Replaced with <placeholder-n/> and not translated. Space is preserved.

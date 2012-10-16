@@ -7,8 +7,8 @@
 	<title>Import point series</title>
 	<indexterm><primary>import</primary></indexterm>
 	<indexterm><primary>point series</primary></indexterm>
-	<indexterm><primary>csv</primary></indexterm>
-	<indexterm><primary>txt</primary></indexterm>
+	<indexterm><primary><markup>csv</markup></primary></indexterm>
+	<indexterm><primary><markup>txt</markup></primary></indexterm>
 	<para>
 		Graph can import point series from text files there the values are delimited by comma, semicolon, space or tabulator.
 		You use <menuchoice><guimenu>File</guimenu><guisubmenu>Import</guisubmenu><guimenuitem>Point series...</guimenuitem></menuchoice> and select the file to import.
