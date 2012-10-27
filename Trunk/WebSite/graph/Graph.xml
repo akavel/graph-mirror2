@@ -34,26 +34,26 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>Graph</Program_Name>
-		<Program_Version>4.4</Program_Version>
-		<Program_Release_Month>06</Program_Release_Month>
-		<Program_Release_Day>17</Program_Release_Day>
+		<Program_Version>4.4.1</Program_Version>
+		<Program_Release_Month>10</Program_Release_Month>
+		<Program_Release_Day>28</Program_Release_Day>
 		<Program_Release_Year>2012</Program_Release_Year>
 		<Program_Cost_Dollars />
 		<Program_Cost_Other_Code />
 		<Program_Cost_Other />
 		<Program_Type>Freeware</Program_Type>
-		<Program_Release_Status>Minor Update</Program_Release_Status>
+		<Program_Release_Status>New Release</Program_Release_Status>
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
 		<Program_OS_Support>Win2000,Win7 x32,WinVista,WinXP</Program_OS_Support>
 		<Program_Language>English,Arabic,Basque,Chinese,ChineseSimplified,ChineseTraditional,Croatian,Czech,Danish,Dutch,Finnish,French,German,Greek,Hungarian,Italian,Korean,Mongolian,Norwegian,Persian,Polish,Portuguese,Russian,Serbian,Slovenian,Spanish,Swedish,Turkish,Vietnamese</Program_Language>
-		<Program_Change_Info>Bug fixes, new help file, support for plugins</Program_Change_Info>
+		<Program_Change_Info>Bug fixes</Program_Change_Info>
 		<Program_Specific_Category>Education</Program_Specific_Category>
 		<Program_Category_Class>Education::Mathematics</Program_Category_Class>
 		<Program_System_Requirements />
 		<File_Info>
-			<File_Size_Bytes>9967400</File_Size_Bytes>
-			<File_Size_K>9733</File_Size_K>
-			<File_Size_MB>9.51</File_Size_MB>
+			<File_Size_Bytes>10077184</File_Size_Bytes>
+			<File_Size_K>9841</File_Size_K>
+			<File_Size_MB>9.61</File_Size_MB>
 		</File_Info>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>
@@ -86,7 +86,7 @@ It is possible to save the coordinate system and everything on it as an image fi
 			<Application_XML_File_URL>http://www.padowan.dk/graph/Graph.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>http://www.padowan.dk/bin/SetupGraph-4.4.exe</Primary_Download_URL>
+			<Primary_Download_URL>http://www.padowan.dk/bin/SetupGraph-4.4.1.exe</Primary_Download_URL>
 			<Secondary_Download_URL />
 			<Additional_Download_URL_1 />
 			<Additional_Download_URL_2 />
