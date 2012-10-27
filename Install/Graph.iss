@@ -6,7 +6,7 @@ AllowNoIcons=yes
 AppCopyright=Ivan Johansen
 AppMutex=Graph running
 AppName=Graph
-AppVerName=Graph 4.4
+AppVerName=Graph 4.4.1
 AppPublisher=Ivan Johansen
 AppPublisherURL=http://www.padowan.dk
 AppSupportURL=http://www.padowan.dk
@@ -18,10 +18,10 @@ DefaultDirName={pf}\Graph
 DefaultGroupName=Graph
 DisableProgramGroupPage=yes
 InfoBeforeFile=License.txt
-OutputBaseFilename=SetupGraphBeta-4.4.0.532
+OutputBaseFilename=SetupGraphBeta-4.4.1.540
 OutputDir=.
 UninstallDisplayIcon={app}\Graph.exe
-VersionInfoVersion=4.4.0.532
+VersionInfoVersion=4.4.1.540
 PrivilegesRequired=None
 SignTool=SignTool /d $qGraph$q $f
 SetupIconFile=Graph in a box.ico
@@ -66,6 +66,8 @@ Name: "InstallAllUsers"; Description: "{cm:InstallAllUsers}"; Check: HasAdminRig
 Source: "Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "PDFlib.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror restartreplace uninsrestartdelete;
+;Source: "Thumbnails32.dll"; DestDir: "{app}"; DestName: "Thumbnails.dll"; Flags: regserver noregerror restartreplace uninsrestartdelete 32bit;
+;Source: "Thumbnails64.dll"; DestDir: "{app}"; DestName: "Thumbnails.dll"; Flags: regserver noregerror restartreplace uninsrestartdelete 64bit;
 Source: "License.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
 Source: "Help\*.chm"; DestDir: "{app}\Help"; Flags: ignoreversion
@@ -104,7 +106,6 @@ Type: files; Name: "{app}\uninstall.ini"
 Type: files; Name: "{app}\Help\*.gid"
 Type: files; Name: "{app}\Help\*.hlp"
 Type: files; Name: "{app}\Help\*.cnt"
-;Type: files; Name: "{app}\Examples\*.grf"
 Type: files; Name: "{userprograms}\Graph.lnk"
 Type: files; Name: "{commonprograms}\Graph.lnk"
 Type: files; Name: "{app}\Locale\Chinese.mo"

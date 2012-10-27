@@ -49,7 +49,7 @@ try:
   File.write("Build = " + VersionInfo[6:] + "\n")
   File.write("Date = " + datetime.date.today().strftime("%d-%m-%Y\n"))
   File.write("DownloadFile = http://www.padowan.dk/bin/" + FileName + '\n')
-  File.write("DownloadPage = http://www.padowan.dk/graph/Beta.php\n")
+  File.write("DownloadPage = http://www.padowan.dk/beta\n")
 
   # Upload SetupGraphBeta.exe to the server
   ftp = FTP('ftp.padowan.dk')   # connect to host, default port
