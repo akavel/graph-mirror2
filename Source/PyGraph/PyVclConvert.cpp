@@ -22,7 +22,7 @@ namespace Python
 TRttiContext Context;
 PyObject *PyVclException = NULL;
 //---------------------------------------------------------------------------
-/** Convert a PyObject to a TValue as used when calling functions and setting properties in a generic way through Delphi RTTI. 
+/** Convert a PyObject to a TValue as used when calling functions and setting properties in a generic way through Delphi RTTI.
  *  \param O: PyObject to convert
  *  \param TypeInfo: The expected return type
  *  \return A TValue with a value of the type given by TypeInfo.
@@ -92,12 +92,18 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			Result = TValue::From(PyLong_AsLongLong(O));
 			break;
 
+		case tkPointer:
+      if(AnsiString(TypeInfo->Name) == "PWideChar")
+    		TValue::Make(reinterpret_cast<int>(PyUnicode_AsUnicode(O)), TypeInfo, Result);
+      else
+    		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+      break;
+
 		case tkVariant:
 		case tkArray:
 		case tkInterface:
 		case tkDynArray:
 		case tkClassRef:
-		case tkPointer:
 		case tkProcedure:
 		case tkUnknown:
 		case tkMethod:
@@ -297,7 +303,7 @@ template<> int FromPyObject<int>(PyObject *O)
 	return PyLong_AsLong(O);
 }
 //---------------------------------------------------------------------------
-/** Exception handling helper function. Called from a catch(...) section and converts an active 
+/** Exception handling helper function. Called from a catch(...) section and converts an active
  *  C++/Delphi exception to a Python exception.
  */
 PyObject* PyVclHandleException()
