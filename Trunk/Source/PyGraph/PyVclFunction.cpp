@@ -18,7 +18,7 @@
 namespace Python
 {
 //---------------------------------------------------------------------------
-const int MaxArgCount = 2;
+const int MaxArgCount = 5;
 struct TFunctionEntry
 {
 	const wchar_t *Name;
@@ -54,6 +54,9 @@ const TFunctionEntry FunctionList[] =
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
 	{L"ReadComponentResFile", ReadComponentResFile, Rtti<TComponent>(), __delphirtti(String), Rtti<TComponent>()},
 	{L"ObjectTextToBinary", (void __fastcall (*)(TStream*, TStream*))ObjectTextToBinary, NULL, Rtti<TStream>(), Rtti<TStream>()},
+  {L"ShowMessage", ShowMessage, NULL, __delphirtti(String)},
+  {L"CreateMessageDialog", (TForm* __fastcall (*)(const UnicodeString, TMsgDlgType, TMsgDlgButtons, TMsgDlgBtn))&CreateMessageDialog, Rtti<Forms::TForm>(), __delphirtti(String), Rtti<TMsgDlgType>(), Rtti<TMsgDlgButtons>(), Rtti<TMsgDlgBtn>()},
+  {L"MessageDlg", (int __fastcall (*)(const UnicodeString, TMsgDlgType, TMsgDlgButtons, int, TMsgDlgBtn))&MessageDlg, __delphirtti(int), __delphirtti(String), Rtti<TMsgDlgType>(), Rtti<TMsgDlgButtons>(), __delphirtti(int), Rtti<TMsgDlgBtn>()},
 };
 //---------------------------------------------------------------------------
 struct TVclFunction
