@@ -14,13 +14,15 @@
 #include "PyVclMethod.h"
 #include "PyVcl.h"
 #include "PyVclConvert.h"
+#include "PyVclObject.h"
 namespace Python
 {
 //---------------------------------------------------------------------------
 struct TVclMethod
 {
 	PyObject_HEAD
-	TObject *Instance;
+  TObject *Instance;
+	TVclObject *Object; //NULL if we are not bound to a Python object
 	DynamicArray<TRttiMethod*> Methods;
 };
 //---------------------------------------------------------------------------
@@ -113,6 +115,7 @@ static PyObject *VclMethod_Call(TVclMethod* self, PyObject *args, PyObject *keyw
 		if(keywds != NULL)
 			return SetErrorString(PyExc_TypeError, self->Methods[0]->Name + "() does not accept keyword arguments");
 		return ToPyObject(CallMethod(NULL, self->Instance, self->Methods, args));
+		return ToPyObject(CallMethod(NULL, self->Object->Instance, self->Methods, args));
 	}
 	catch(...)
 	{
@@ -125,6 +128,7 @@ static PyObject *VclMethod_Call(TVclMethod* self, PyObject *args, PyObject *keyw
 static void VclMethod_Dealloc(TVclMethod* self)
 {
 	self->Methods.~DynamicArray();
+  Py_XDECREF(reinterpret_cast<PyObject*>(self->Object));
 	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
 }
 //---------------------------------------------------------------------------
@@ -178,11 +182,13 @@ PyTypeObject VclMethodType =
  *  \param Methods: The methods we are creating a proxy for.
  *  \return New reference to a VclMethod
  */
-PyObject* VclMethod_Create(TObject *Instance, const DynamicArray<TRttiMethod*> &Methods)
+PyObject* VclMethod_Create(TVclObject *Object, TObject *Instance, const DynamicArray<TRttiMethod*> &Methods)
 {
 	TVclMethod *VclMethod = PyObject_New(TVclMethod, &VclMethodType);
 	new(&VclMethod->Methods) DynamicArray<TRttiMethod*>(Methods);
-	VclMethod->Instance = Instance;
+  Py_XINCREF(reinterpret_cast<PyObject*>(Object));
+	VclMethod->Object = Object;
+  VclMethod->Instance = Instance;
 	return reinterpret_cast<PyObject*>(VclMethod);
 }
 //---------------------------------------------------------------------------

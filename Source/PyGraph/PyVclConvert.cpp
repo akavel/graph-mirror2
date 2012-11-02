@@ -243,7 +243,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			return Tuple;
 		}
 
-		case tkMethod:
+		case tkMethod: //Event
 		{
 			TMethod Method;
 			Value.ExtractRawDataNoCopy(&Method);
@@ -258,7 +258,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			}
 			String Name = Object->MethodName(Method.Code);
 			TRttiType *Type = Context.GetType(Object->ClassType());
-			return VclMethod_Create(Object, Type->GetMethods(Name));
+			return VclMethod_Create(NULL, Object, Type->GetMethods(Name));
 		}
 
 		case tkInt64:

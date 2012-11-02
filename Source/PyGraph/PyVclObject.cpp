@@ -316,7 +316,7 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 		{
 			DynamicArray<TRttiMethod*> Methods = Type->GetMethods(Name);
 			if(Methods.Length != 0 && !Methods[0]->IsDestructor)
-				return VclMethod_Create(Object, Methods);
+				return VclMethod_Create(self, self->Instance, Methods);
 
 			TRttiField *Field = Type->GetField(Name);
 			if(Field == NULL || Field->Visibility != mvPublic)
