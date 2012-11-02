@@ -105,6 +105,7 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
   				if(Shift.Contains(ssShift))
   				  IRichEdit1->SelLength = Pos - Index - 4;
   				Key = 0;
+          break;
         }
 			}
 			break;
