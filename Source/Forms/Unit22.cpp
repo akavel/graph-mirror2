@@ -94,15 +94,18 @@ void __fastcall TForm22::IRichEdit1KeyDown(TObject *Sender, WORD &Key,
 	{
 		case VK_HOME:
 		{
-			int Index = IRichEdit1->LineIndex(-1);
-			String Str = IRichEdit1->GetText(Index, Index + 4);
-			if(Str == ">>> ")
-			{
-				int Pos = IRichEdit1->SelStart;
-				IRichEdit1->SelStart = Index + 4;
-				if(Shift.Contains(ssShift))
-				  IRichEdit1->SelLength = Pos - Index - 4;
-				Key = 0;
+      for(int Line = IRichEdit1->GetLine(-1); Line >= 0; Line--)
+      {
+			  int Index = IRichEdit1->LineIndex(Line);
+  			String Str = IRichEdit1->GetText(Index, Index + 4);
+  			if(Str == ">>> ")
+   			{
+  				int Pos = IRichEdit1->SelStart;
+	  			IRichEdit1->SelStart = Index + 4;
+  				if(Shift.Contains(ssShift))
+  				  IRichEdit1->SelLength = Pos - Index - 4;
+  				Key = 0;
+        }
 			}
 			break;
 		}
