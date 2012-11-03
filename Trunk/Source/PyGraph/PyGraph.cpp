@@ -139,9 +139,10 @@ class TPluginFunc : public Func32::TBaseCustomFunc
 {
   PyObject *Func;
   unsigned Arguments;
+  std::wstring FuncName;
 public:
-  TPluginFunc(PyObject *AFunc, unsigned AArguments)
-    : Func(AFunc), Arguments(AArguments) {Py_INCREF(Func);}
+  TPluginFunc(PyObject *AFunc, unsigned AArguments, const std::wstring &AFuncName)
+    : Func(AFunc), Arguments(AArguments), FuncName(AFuncName) {Py_INCREF(Func);}
   ~TPluginFunc() {Py_XDECREF(Func);}
   unsigned ArgumentCount() const {return Arguments;}
   long double Call(const long double *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const
@@ -154,7 +155,7 @@ public:
   }
   template<typename T>
   T TPluginFunc::CallCustomFunction(const T *Args, Func32::TTrigonometry Trig, Func32::TErrorCode &ErrorCode, std::wstring &ErrorStr) const;
-  PyObject* GetFunc() {Py_INCREF(Func); return Func;}
+  PyObject* GetFunc() {return Func;}
 };
 //---------------------------------------------------------------------------
 template<typename T>
@@ -177,14 +178,12 @@ T TPluginFunc::CallCustomFunction(const T *Args, Func32::TTrigonometry Trig, Fun
       PyObject *Type, *Value, *Traceback;
       PyErr_Fetch(&Type, &Value, &Traceback);
       if(PyUnicode_Check(Value))
-        ErrorStr = PyUnicode_AsUnicode(Value);
+        ErrorStr = FuncName + L": " + PyUnicode_AsUnicode(Value);
       ErrorCode = Func32::ecExtFuncError;
 
       Py_XDECREF(Type);
       Py_XDECREF(Value);
       Py_XDECREF(Traceback);
- //     PyErr_Print();
- //     PyErr_Clear();
     }
 	}
   Py_XDECREF(CallResult);
@@ -207,7 +206,7 @@ static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
     if(ArgCount)
     {
       long Arguments = PyLong_AsLong(ArgCount);
-      boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Function, Arguments));
+      boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Function, Arguments, Name));
       Form1->Data.CustomFunctions.SymbolList.Add(Name, Func);
       Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func);
       Py_XDECREF(ArgCount);
@@ -233,6 +232,7 @@ static PyObject* PluginGetCustomFunction(PyObject *Self, PyObject *Args)
   if(Func)
   {
     PyObject *Obj = Func->GetFunc();
+    Py_INCREF(Obj);
     return Obj;
   }
   Py_RETURN_NONE;
