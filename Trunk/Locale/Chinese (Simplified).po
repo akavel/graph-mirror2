@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2012-03-05 21:19\n"
-"PO-Revision-Date: 2011-12-22 21:19+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"PO-Revision-Date: 2012-11-07 21:20+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3543,8 +3544,8 @@ msgstr ""
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "今天的提示给你大部分使用者通常不知道的讯息"
 
-#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 msgstr ""
 
 #. Tip of the Day
@@ -3890,7 +3891,9 @@ msgstr "输入原尺寸百分比例"
 #~ msgid "All points"
 #~ msgstr "所有坐标点"
 
-#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgid ""
+#~ "Area or length of path calculated for the given range using Simpson's "
+#~ "formula."
 #~ msgstr "利用 Simpson's 公式计算给定范围的面积或者路径长度。"
 
 #~ msgid "Calculates the area under the path of the selected function."
@@ -3932,10 +3935,13 @@ msgstr "输入原尺寸百分比例"
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "主机回应的讯息为 '%s'"
 
-#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgid ""
+#~ "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "这是函数的二阶导数函数"
 
-#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgid ""
+#~ "You can send suggestions for future versions, bug reports and comments to "
+#~ "graph@padowan.dk"
 #~ msgstr "你可以把建议和错误寄信到 graph@padowan.dk"
 
 #~ msgid "Zoom as much as all points are visible."

@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2012-03-05 21:19\n"
-"PO-Revision-Date: 2011-12-22 21:23+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"PO-Revision-Date: 2012-11-07 21:00+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3630,8 +3631,8 @@ msgstr ""
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr ""
 
-#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 msgstr ""
 
 #. Tip of the Day
@@ -3966,13 +3967,18 @@ msgstr "Podaj procent oryginalnego rozmiaru."
 #~ msgid "Integrate"
 #~ msgstr "Internet"
 
-#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
-#~ msgstr "Pole pod krzywą lub długość krzywej obliczone dla podanego zakresu za pomocą metody Simpsona."
+#~ msgid ""
+#~ "Area or length of path calculated for the given range using Simpson's "
+#~ "formula."
+#~ msgstr ""
+#~ "Pole pod krzywą lub długość krzywej obliczone dla podanego zakresu za "
+#~ "pomocą metody Simpsona."
 
 #~ msgid "Extremum"
 #~ msgstr "Ekstremum"
 
-#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgid ""
+#~ "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Wartość drugiej pochodnej dla podanej wartości."
 
 #~ msgid "Zoom in."
@@ -4085,7 +4091,9 @@ msgstr "Podaj procent oryginalnego rozmiaru."
 #~ msgid "Med Gray"
 #~ msgstr "Średnioszary"
 
-#~ msgid "Insert a text label (select and click in the main window where you want the label)."
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
 #~ msgstr "Wstawia pole tekstowe (Kliknij w miejscu gdzie chcesz je utworzyć)."
 
 #, fuzzy
