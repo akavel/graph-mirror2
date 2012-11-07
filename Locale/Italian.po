@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
 "POT-Creation-Date: 2012-03-05 21:19\n"
-"PO-Revision-Date: 2012-02-05 15:57+0100\n"
-"Last-Translator: Attilio Ridomi <attilio.ridomi@hotmail.it>\n"
+"PO-Revision-Date: 2012-11-07 21:08+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -338,7 +339,6 @@ msgid "Cut"
 msgstr "Taglia"
 
 #. Form1..ActionManager..CutAction("Cut")..Hint
-#, fuzzy
 msgid "Cut the selected function or point series to the clipboard."
 msgstr "Taglia negli appunti la funzione o serie di punti selezionati."
 
@@ -351,7 +351,6 @@ msgid "Copy"
 msgstr "Copia"
 
 #. Form1..ActionManager..CopyAction("Copy")..Hint
-#, fuzzy
 msgid "Copy the selected function or point series to the clipboard."
 msgstr "Copia negli appunti la funzione o serie di punti selezionati."
 
@@ -558,7 +557,6 @@ msgstr "Calcola la lunghezza del percorso tra i due punti dati sulla curva."
 #. Form1..ActionManager..AreaAction("Area")..Caption
 #. AreaFrame..GridPanel1..Label3("Area")..Caption
 #. Shown as title in the Calc|Area dialog when it is undocked
-#, fuzzy
 msgid "Area"
 msgstr "Area"
 
@@ -1393,12 +1391,10 @@ msgid "Above Right"
 msgstr "In alto a destra"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Below Left"
 msgstr "Sotto a sinistra"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
-#, fuzzy
 msgid "Below Right"
 msgstr "Sotto a destra"
 
@@ -2897,7 +2893,6 @@ msgstr "Spazio"
 msgid "An error occurred while evaluating power function."
 msgstr "Errore durante il calcolo della funzione di potenza."
 
-#, fuzzy
 msgid "Tangent to pi/2+n*pi (90+n180 in degrees) is undefined."
 msgstr "La tangente a pi/2+n*pi (90+n180 in gradi) è indefinita."
 
@@ -3437,9 +3432,9 @@ msgstr "Il thread non risponde"
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "I Suggerimenti del Giorno possono fornire molte utili informazioni su Graph che molti ignorano."
 
-#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
-msgstr "Puoi ricevere aiuto, segnalare errori e suggerire futuri miglioramenti di Graph collegandoti al forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
+msgstr "Puoi ricevere aiuto, segnalare errori e suggerire futuri miglioramenti di Graph collegandoti al forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
@@ -3764,14 +3759,21 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 #~ msgid "Calculate definite integral"
 #~ msgstr "Calcola integrale definito"
 
-#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
-#~ msgstr "Area o lunghezza della curva calcolata per l'intervallo dato, usando la formula di Simpson."
+#~ msgid ""
+#~ "Area or length of path calculated for the given range using Simpson's "
+#~ "formula."
+#~ msgstr ""
+#~ "Area o lunghezza della curva calcolata per l'intervallo dato, usando la "
+#~ "formula di Simpson."
 
 #~ msgid "Extremum"
 #~ msgstr "Estremo"
 
-#~ msgid "This is the functions second derivative evaluated for the entered value."
-#~ msgstr "Questa è la derivata seconda della funzione valutata per il valore inserito."
+#~ msgid ""
+#~ "This is the functions second derivative evaluated for the entered value."
+#~ msgstr ""
+#~ "Questa è la derivata seconda della funzione valutata per il valore "
+#~ "inserito."
 
 #~ msgid "Zoom in."
 #~ msgstr "Zoom in avanti."
@@ -3836,8 +3838,12 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Errore di risposta del protocollo %s"
 
-#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-#~ msgstr "Puoi inviare suggerimenti per versioni future, bug reports o commenti a graph@padowan.dk."
+#~ msgid ""
+#~ "You can send suggestions for future versions, bug reports and comments to "
+#~ "graph@padowan.dk"
+#~ msgstr ""
+#~ "Puoi inviare suggerimenti per versioni future, bug reports o commenti a "
+#~ "graph@padowan.dk."
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Seleziona per posizionare l'immagine a centro pagina."
@@ -3899,8 +3905,12 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 #~ msgid "Med Gray"
 #~ msgstr "Grigio medio"
 
-#~ msgid "Insert a text label (select and click in the main window where you want the label)."
-#~ msgstr "Inserisci un'etichetta di testo (seleziona e clicca nella finestra principale dove vuoi l'etichetta di testo)."
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr ""
+#~ "Inserisci un'etichetta di testo (seleziona e clicca nella finestra "
+#~ "principale dove vuoi l'etichetta di testo)."
 
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Taglia negli appunti il testo selezionato"
@@ -3916,7 +3926,8 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 #~ msgstr "Visibile"
 
 #~ msgid "Check to make the selected item visible in the coordinate system."
-#~ msgstr "Spunta per rendere visibile l'oggetto selezionato nel sistema cartesiano."
+#~ msgstr ""
+#~ "Spunta per rendere visibile l'oggetto selezionato nel sistema cartesiano."
 
 #~ msgid "Functions"
 #~ msgstr "Funzioni"
@@ -3931,7 +3942,8 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 #~ msgstr "Ombreggiature"
 
 #~ msgid "No error occurred. You should not see this message."
-#~ msgstr "Nessun errore riscontrato. Non dovresti visualizzare questo messaggio."
+#~ msgstr ""
+#~ "Nessun errore riscontrato. Non dovresti visualizzare questo messaggio."
 
 #~ msgid "Right bracket missing."
 #~ msgstr "Manca la parentesi destra."
@@ -3947,7 +3959,9 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 #~ "Impossibile descrivere il dettaglio per questo errore."
 
 #~ msgid "This error should not occur. Please report this to the programmer."
-#~ msgstr "Il seguente errore non dovrebbe avvenire. Per favore informa il programmatore."
+#~ msgstr ""
+#~ "Il seguente errore non dovrebbe avvenire. Per favore informa il "
+#~ "programmatore."
 
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "E' stata raggiunta la lunghezza massima consentita per il testo."
@@ -3958,5 +3972,9 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 #~ msgid "Unknown Graph data found while pasting clipboard data."
 #~ msgstr "Riscontrati dati di Graph sconosciuti incollando dagli appunti."
 
-#~ msgid "To add actions to your application simply drag and drop from either Categories or Actions onto an existing ActionBar."
-#~ msgstr "Per aggiungere icone alla tua applicazione basta trascinare da Categorie o da Azioni sopra una barra degli strumenti esistente."
+#~ msgid ""
+#~ "To add actions to your application simply drag and drop from either "
+#~ "Categories or Actions onto an existing ActionBar."
+#~ msgstr ""
+#~ "Per aggiungere icone alla tua applicazione basta trascinare da Categorie "
+#~ "o da Azioni sopra una barra degli strumenti esistente."

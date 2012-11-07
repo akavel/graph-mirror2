@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2012-03-05 21:19\n"
-"PO-Revision-Date: 2011-11-20 13:38+0100\n"
-"Last-Translator: Ivan Johansen\n"
+"PO-Revision-Date: 2012-11-07 21:20+0100\n"
+"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3444,8 +3445,8 @@ msgstr "زیر برنامه جواب نمی دهد"
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "نکته روز می تواند اطلاعات زیادی را در مورد برنامه به شما بدهد که اکثر کاربران از آن اطلاع ندارند."
 
-#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+#. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 msgstr ""
 
 #. Tip of the Day
