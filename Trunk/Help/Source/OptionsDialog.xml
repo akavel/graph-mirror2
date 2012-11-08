@@ -86,16 +86,6 @@
 		</varlistentry>
 
 		<varlistentry>
-			<term>Associate .grf files</term>
-			<listitem>
-				<para>
-					A check mark in this field indicates that the file type .grf is associated with this program.
-					The program will automatically start and load the file when you <action>double-click</action> on it in Explorer.
-				</para>
-			</listitem>
-		</varlistentry>
-
-		<varlistentry>
 			<term>Show tooltip</term>
 			<listitem>
 				<para>
