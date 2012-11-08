@@ -44,7 +44,6 @@ __published:	// IDE-managed Components
   TComboBox *ComboBox1;
   TLabel *Label4;
   TComboBox *ComboBox2;
-  TCheckBoxEx *CheckBox1;
   TCheckBoxEx *CheckBox2;
   TCheckBoxEx *CheckBox3;
   TCheckBoxEx *CheckBox4;

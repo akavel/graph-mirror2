@@ -6,7 +6,7 @@ object Form4: TForm4
   BorderIcons = [biMinimize]
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 357
+  ClientHeight = 333
   ClientWidth = 281
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -24,12 +24,12 @@ object Form4: TForm4
   ShowHint = True
   DesignSize = (
     281
-    357)
+    333)
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
     Left = 10
-    Top = 324
+    Top = 300
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -40,7 +40,7 @@ object Form4: TForm4
   end
   object Button2: TButton
     Left = 102
-    Top = 324
+    Top = 300
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -51,7 +51,7 @@ object Form4: TForm4
   end
   object Button3: TButton
     Left = 196
-    Top = 324
+    Top = 300
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -60,10 +60,10 @@ object Form4: TForm4
     OnClick = Button3Click
   end
   object GridPanelEx1: TGridPanelEx
-    Left = 10
+    Left = 13
     Top = 10
     Width = 261
-    Height = 308
+    Height = 280
     BevelInner = bvRaised
     BevelOuter = bvLowered
     ColumnCollection = <
@@ -142,26 +142,20 @@ object Form4: TForm4
       item
         Column = 0
         ColumnSpan = 3
-        Control = CheckBox1
+        Control = CheckBox2
         Row = 6
       end
       item
         Column = 0
         ColumnSpan = 3
-        Control = CheckBox2
+        Control = CheckBox3
         Row = 7
       end
       item
         Column = 0
         ColumnSpan = 3
-        Control = CheckBox3
-        Row = 8
-      end
-      item
-        Column = 0
-        ColumnSpan = 3
         Control = CheckBox4
-        Row = 9
+        Row = 8
       end
       item
         Column = 0
@@ -212,16 +206,12 @@ object Form4: TForm4
       item
         SizeStyle = ssAbsolute
         Value = 28.000000000000000000
-      end
-      item
-        SizeStyle = ssAbsolute
-        Value = 28.000000000000000000
       end>
     TabOrder = 0
     AutoSize = True
     DesignSize = (
       261
-      308)
+      280)
     object Label1: TLabel
       Left = 8
       Top = 11
@@ -284,7 +274,7 @@ object Form4: TForm4
         'Polar')
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 11
+      TabOrder = 10
     end
     object Label2: TLabel
       Left = 8
@@ -428,21 +418,9 @@ object Form4: TForm4
       Sorted = True
       TabOrder = 4
     end
-    object CheckBox1: TCheckBoxEx
-      Left = 8
-      Top = 199
-      Width = 104
-      Height = 17
-      Hint = 'Associate *.grf files with Graph.'
-      Anchors = [akLeft]
-      Caption = 'Associate .grf files'
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 7
-    end
     object CheckBox2: TCheckBoxEx
       Left = 8
-      Top = 227
+      Top = 199
       Width = 77
       Height = 17
       Hint = 'Show the tooltip when the cursor is over an item.'
@@ -450,11 +428,12 @@ object Form4: TForm4
       Caption = 'Show tooltip'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 8
+      TabOrder = 7
+      ExplicitTop = 227
     end
     object CheckBox3: TCheckBoxEx
       Left = 8
-      Top = 255
+      Top = 227
       Width = 133
       Height = 17
       Hint = 
@@ -464,11 +443,12 @@ object Form4: TForm4
       Caption = 'Save workspace on exit'
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 9
+      TabOrder = 8
+      ExplicitTop = 255
     end
     object CheckBox4: TCheckBoxEx
       Left = 8
-      Top = 283
+      Top = 255
       Width = 216
       Height = 17
       Hint = 
@@ -476,7 +456,8 @@ object Form4: TForm4
         'm is started to see if a newer version is available.'
       Anchors = [akLeft]
       Caption = 'Check for new version of Graph at startup'
-      TabOrder = 10
+      TabOrder = 9
+      ExplicitTop = 283
     end
     object CheckBox5: TCheckBoxEx
       Left = 8
