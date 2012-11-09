@@ -1,7 +1,7 @@
 import os
 
-os.system(r"dxgettext ..\Source\Forms\*.dfm ..\Source\Frames\*.dfm ..\Source\Source\Resource.rc \..\Components\TIPrintDialog\*.dfm --nonascii")
-os.system("msgremove default.po -i ignore.po -o temp.po")
+os.system("dxgettext ../Source/Forms/*.dfm ../Source/Frames/*.dfm ../Source/Source/Resource.rc /../Components/TIPrintDialog/*.dfm --nonascii")
+os.system("msgremove default.po -i Ignore.po -o Temp.po")
 
 InFile = open("Temp.po")
 Lines = InFile.readlines()
@@ -43,4 +43,4 @@ for Line in Lines:
 
 InFile.close()
 os.remove("default.po")
-os.remove("temp.po")
+os.remove("Temp.po")
