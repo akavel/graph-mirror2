@@ -1,7 +1,9 @@
 import os
+import sys
 
-os.system("dxgettext ../Source/Forms/*.dfm ../Source/Frames/*.dfm ../Source/Source/Resource.rc /../Components/TIPrintDialog/*.dfm --nonascii")
-os.system("msgremove default.po -i Ignore.po -o Temp.po")
+wine = "wine " if sys.platform.startswith('linux') else ""
+os.system(wine + "dxgettext ../Source/Forms/*.dfm ../Source/Frames/*.dfm ../Source/Source/Resource.rc /../Components/TIPrintDialog/*.dfm --nonascii")
+os.system(wine + "msgremove default.po -i Ignore.po -o Temp.po")
 
 InFile = open("Temp.po")
 Lines = InFile.readlines()
