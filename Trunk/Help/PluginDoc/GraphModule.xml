@@ -78,9 +78,9 @@
 				<listitem>
 					<para>
 						A tuple containing the five components of the version number of Graph: <classname>Major</classname>, <classname>Minor</classname>, <classname>Release</classname>,
-						<classname>ReleaseLevel</classname>, and <classname>Build</classname>.
+						<classname>Build</classname>, and <classname>ReleaseLevel</classname>.
 						All values except <classname>ReleaseLevel</classname> are integers; the release level is <code>'beta'</code> or <code>'final'</code>.
-						The <classname>VersionInfo</classname> value corresponding to the Graph version 4.3 is <code>(4, 3, 0, 'final', 384)</code>.
+						The <classname>VersionInfo</classname> value corresponding to the Graph version 4.3 is <code>(4, 3, 0, 384, 'final')</code>.
 						The components can also be accessed by name, so <code>Graph.VersionInfo[0]</code> is equivalent to <code>Graph.VersionInfo.Major</code> and so on.
 					</para>
 				</listitem>

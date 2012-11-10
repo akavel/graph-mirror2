@@ -88,7 +88,9 @@ EFuncError = GraphImpl.EFuncError
 EGraphError = GraphImpl.EGraphError
 
 # Current version of Graph
-VersionInfo = collections.namedtuple("VersionInfo", ["Major","Minor","Release","ReleaseLevel","Build"])._make(GraphImpl.version_info)
+VersionInfoType = collections.namedtuple("VersionInfoType", ["Major","Minor","Release","Build","ReleaseLevel"])
+VersionInfoType.__eq__ = lambda self, other: self[:len(other)] == other if isinstance(other, tuple) else false
+VersionInfo = VersionInfoType._make(GraphImpl.version_info)
 Debug = GraphImpl.Debug
 
 def LoadPlugins(Path):
