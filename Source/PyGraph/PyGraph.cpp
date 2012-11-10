@@ -547,7 +547,7 @@ void InitPlugins()
 			"sys.stderr = ConsoleWriter(0xFF)\n"
 			"sys.stdin = sys.stdout\n"
 
-			"GraphImpl.version_info = (%d,%d,%d,'%s',%d)\n"
+			"GraphImpl.version_info = (%d,%d,%d,%d,'%s')\n"
 #ifdef _DEBUG
       "GraphImpl.Debug = True\n"
 #else
@@ -559,7 +559,7 @@ void InitPlugins()
 			"import Graph\n"
 			"Graph.InitPlugins('%s')\n"
 			"sys.stdin = sys.stdout\n"
-			, Version.Major, Version.Minor, Version.Release, BetaFinal, Version.Build
+			, Version.Major, Version.Minor, Version.Release, Version.Build, BetaFinal
 			, BaseDir.c_str()
 			, BaseDir.c_str()
 		);
