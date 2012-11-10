@@ -2,7 +2,7 @@
 		<PropertyGroup>
 			<ProjectGuid>{F67008AA-C431-4CFF-8605-CC9792164092}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Release</Config>
+			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>StaticLibrary</AppType>

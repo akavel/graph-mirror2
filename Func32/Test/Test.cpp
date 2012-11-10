@@ -130,7 +130,7 @@ void TestText(const std::wstring &Str, const TSymbolList &SymbolList = TSymbolLi
 }
 //---------------------------------------------------------------------------
 template<typename T>
-void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian, const TSymbolList &SymbolList=TSymbolList())
+void Test(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian, const TSymbolList &SymbolList=TSymbolList())
 {
 	try
 	{
@@ -156,8 +156,8 @@ void TestEval(const std::wstring &Str, T x, T y, TTrigonometry Trig = Radian, co
 //---------------------------------------------------------------------------
 void Test(const std::wstring &Str, long double x, long double y, TTrigonometry Trig = Radian, const std::wstring &ConvToText = L"", const TSymbolList &SymbolList=TSymbolList())
 {
-	TestEval<long double>(Str, x, y, Trig, SymbolList);
-	TestEval<TComplex>(Str, x, y, Trig, SymbolList);
+	Test<long double>(Str, x, y, Trig, SymbolList);
+	Test<TComplex>(Str, x, y, Trig, SymbolList);
 	TestText(ConvToText.empty() ? Str : ConvToText, SymbolList);
 }
 //---------------------------------------------------------------------------
@@ -167,7 +167,7 @@ void Test(const std::string &Str, long double x, long double y, TTrigonometry Tr
 }
 //---------------------------------------------------------------------------
 template<typename T>
-void TestErrorEval(const std::wstring &Str, T x, const Func32::EFuncError &Error, TTrigonometry Trig = Radian)
+void TestError(const std::wstring &Str, T x, const Func32::EFuncError &Error, TTrigonometry Trig = Radian)
 {
 	try
 	{
@@ -194,8 +194,8 @@ void TestErrorEval(const std::wstring &Str, T x, const Func32::EFuncError &Error
 //---------------------------------------------------------------------------
 void TestError(const std::wstring &Str, long double x, const EFuncError &Error, TTrigonometry Trig = Radian)
 {
-	TestErrorEval<long double>(Str, x, Error, Trig);
-	TestErrorEval<TComplex>(Str, x, Error, Trig);
+	TestError<long double>(Str, x, Error, Trig);
+	TestError<TComplex>(Str, x, Error, Trig);
 }
 //---------------------------------------------------------------------------
 void TestError(const std::string &Str, long double x, const EFuncError &Error, TTrigonometry Trig = Radian)
@@ -507,8 +507,8 @@ void Test()
   Test("pi", 0, PI);
   Test("e", 0, EULER);
   TestError("E", 0, ecUnknownVar);
-  TestEval<TComplex>(L"i*i", 0, -1);
-	TestErrorEval<long double>(L"i*i", 0, ecComplexError);
+  Test<TComplex>(L"i*i", 0, -1);
+	TestError<long double>(L"i*i", 0, ecComplexError);
 	Test("1E400*x", 2, StrToDouble("2E400")); //2E400 doesn't work directly with BCC 5.6.4; Fails under Cygwin
 	Test("1E4000", 1, StrToDouble("1E4000")); //2E4000 doesn't work directly with BCC 5.6.4; Fails under Cygwin
 	TestError("1E5000", 1, ecInvalidNumber); //Number too large
@@ -518,9 +518,9 @@ void Test()
   //Test constants
 	Test("e", 0, EULER);
   Test("pi", 0, PI);
-  TestErrorEval<long double>(L"i", 0, ecComplexError);
-	TestEval<TComplex>(L"i", 0, TComplex(0, 1));
-  TestErrorEval(L"undef", 0, ecNotDefError);
+  TestError<long double>(L"i", 0, ecComplexError);
+	Test<TComplex>(L"i", 0, TComplex(0, 1));
+  TestError(L"undef", 0, ecNotDefError);
 
 	//Test functions with arguments
   TestError("round x", 1.2345, ecArgCountError);
@@ -566,28 +566,28 @@ void Test()
 	Test("0^x", 456.789, 0);   //Important test
 	Test("log(x)^2", 100, 4);
 	TestError("x/(x^2-4)", -2, ecDivByZero);
-	TestErrorEval<long double>(L"(-2)^x", 2.2, ecPowCalcError);
-	TestEval<TComplex>(L"(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
-	TestErrorEval<long double>(L"(-2)^x", 2.3, ecPowCalcError);
+	TestError<long double>(L"(-2)^x", 2.2, ecPowCalcError);
+	Test<TComplex>(L"(-2)^x", 2.2, TComplex(3.717265962,2.70075181));
+	TestError<long double>(L"(-2)^x", 2.3, ecPowCalcError);
 	TestError("x^(-1)", 0, ecPowCalcError);
-	TestErrorEval<TComplex>(L"0^x", TComplex(3,1), ecPowCalcError);
-	TestEval<TComplex>(L"0^x", TComplex(3,0), 0);
+	TestError<TComplex>(L"0^x", TComplex(3,1), ecPowCalcError);
+	Test<TComplex>(L"0^x", TComplex(3,0), 0);
 	Test("e^(2x)", 2, M_E*M_E*M_E*M_E);
 	Test("e^2x", 2, M_E*M_E*M_E*M_E); //Same as the above
 	Test("x^2^3", 10, 1E8);
 	Test("(x^2)^3", 10, 1E6);
 	Test("3^x^2", 4, 43046721);
-	TestErrorEval<TComplex>(L"0^x", TComplex(-2.8, 1), ecPowCalcError);
+	TestError<TComplex>(L"0^x", TComplex(-2.8, 1), ecPowCalcError);
 	TestError("x^-2.8", 0, ecPowCalcError);
 	Test("e^x", -10000, 0);
 
 	//Test power with fraction handling
-	TestEval<long double>(L"x^(1/3)", -8, -2);
-	TestEval<TComplex>(L"x^(1/3)", -8, TComplex(1,1.732050807568877));
-	TestEval<long double>(L"x^(2/6)", -8, -2);
-	TestEval<TComplex>(L"x^(2/6)", -8, TComplex(1,1.732050807568877));
-	TestEval<long double>(L"x^(2/3)", -8, 4);
-	TestEval<TComplex>(L"x^(2/3)", -8, TComplex(-2, 3.464101615137755));
+	Test<long double>(L"x^(1/3)", -8, -2);
+	Test<TComplex>(L"x^(1/3)", -8, TComplex(1,1.732050807568877));
+	Test<long double>(L"x^(2/6)", -8, -2);
+	Test<TComplex>(L"x^(2/6)", -8, TComplex(1,1.732050807568877));
+	Test<long double>(L"x^(2/3)", -8, 4);
+	Test<TComplex>(L"x^(2/3)", -8, TComplex(-2, 3.464101615137755));
 	TestError("x^(2/0)", -8, ecDivByZero);
 	Test("x^(2/3)", 0, 0);
 	Test("x^(4/2)", -2, 4);
@@ -611,22 +611,22 @@ void Test()
 	Test("asin(x)", 1, 90, Degree);
 	Test("asin(x)", 0.4, 0.41151684606748801938473789761734);
 	Test("asin(x)", 0.5, PI/6);
-	TestEval<TComplex>(L"asin(x)", 1.5, TComplex(1.570796327, 0.9624236501)); //sign on imag can be both positive and negative
-	TestErrorEval<long double>(L"asin(x)", 1.5, ecArcError);  
-	TestEval<TComplex>(L"asin(x)", TComplex(2.5, 1), TComplex(1.16462351, 1.658693299));
-	
+	Test<TComplex>(L"asin(x)", 1.5, TComplex(1.570796327, 0.9624236501)); //sign on imag can be both positive and negative
+	TestError<long double>(L"asin(x)", 1.5, ecArcError);
+	Test<TComplex>(L"asin(x)", TComplex(2.5, 1), TComplex(1.16462351, 1.658693299));
+
 	Test("acos(x)", 0, PI/2);
 	Test("acos(x)", 0, 90, Degree);
 	Test("acos(x)", 0.4, 1.1592794807274085998465837940224);
-	TestEval<TComplex>(L"acos(x)", 1.5, TComplex(0, 0.9624236501));
-	TestErrorEval<long double>(L"acos(x)", 1.5, ecArcError);
-	TestEval<TComplex>(L"acos(x)", TComplex(2.5, 1), TComplex(0.4061728165, -1.658693299));
-	
+	Test<TComplex>(L"acos(x)", 1.5, TComplex(0, 0.9624236501));
+	TestError<long double>(L"acos(x)", 1.5, ecArcError);
+	Test<TComplex>(L"acos(x)", TComplex(2.5, 1), TComplex(0.4061728165, -1.658693299));
+
 	Test("atan(x)", 1, PI/4);
 	Test("atan(x)", 0, 0);
 	Test("atan(x)", 1, 45, Degree);
-	TestEval<TComplex>(L"atan(x)", TComplex(2.5, 1), TComplex(1.233425856, 0.1236740605));
-	
+	Test<TComplex>(L"atan(x)", TComplex(2.5, 1), TComplex(1.233425856, 0.1236740605));
+
 	Test("asec(x)", -1, PI);
 	Test("asec(x)", -1, 180, Degree);
 	Test("acsc(x)", 1, PI/2);
@@ -647,20 +647,20 @@ void Test()
   Test("sqr(x)", 5, 25);
   Test("sqrt(x)", 100, 10);
   Test("root(3,x)", 125, 5);
-  TestEval<long double>(L"root(3,x)", -27, -3);
-  TestEval<TComplex>(L"root(3,x)", -27, TComplex(1.5, 2.598076211));
-  TestErrorEval<long double>(L"root(3.5, x)", -27, ecPowCalcError);
+  Test<long double>(L"root(3,x)", -27, -3);
+  Test<TComplex>(L"root(3,x)", -27, TComplex(1.5, 2.598076211));
+  TestError<long double>(L"root(3.5, x)", -27, ecPowCalcError);
   Test("root(4,x)", 625, 5);
-  TestErrorEval<long double>(L"root(4,x)", -625, ecPowCalcError);
-	TestEval<TComplex>(L"root(4,x)", -4, TComplex(1, 1));
+  TestError<long double>(L"root(4,x)", -625, ecPowCalcError);
+	Test<TComplex>(L"root(4,x)", -4, TComplex(1, 1));
 
 	Test("fact(x)", 5, 120);
 
 	Test("sign(x)", 7.98, 1);
   Test("sign(x)", -7.98, -1);
 	Test("sign(x)", 0, 0);
-  TestEval<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(SQRT_2, SQRT_2));
-	TestEval<TComplex>(L"sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
+  Test<TComplex>(L"sign(x)", TComplex(5, 5), TComplex(SQRT_2, SQRT_2));
+	Test<TComplex>(L"sign(x)", TComplex(4, -3), TComplex(4.0/5, -3.0/5));
 
   Test("u(x)", 7.98, 1);
 	Test("u(x)", -7.98, 0);
@@ -670,32 +670,36 @@ void Test()
   Test("sinh(x)", 5, 74.20321058);
   Test("cosh(x)", 5, 74.20994852);
 	Test("tanh(x)", 5, 0.999909204);
-	
+
 	Test("asinh(x)", 5, 2.31243834);
 	Test("asinh(x)", 0, 0);
-	TestEval<TComplex>(L"asinh(x)", TComplex(1.5, 0.7), TComplex(1.256224291, 0.3776375126));
+	Test<TComplex>(L"asinh(x)", TComplex(1.5, 0.7), TComplex(1.256224291, 0.3776375126));
 
 	Test("acosh(x)", 5, 2.29243167);
 	Test("acosh(x)", 1, 0);
-	TestEval<TComplex>(L"acosh(x)", -1, TComplex(0, PI));
-	TestEval<TComplex>(L"acosh(x)", TComplex(1.5, 1), TComplex(1.260475188, 0.6644205508));
-	TestErrorEval<long double>(L"acosh(x)", -1, ecACoshError);
+	Test<TComplex>(L"acosh(x)", -1, TComplex(0, PI));
+	Test<TComplex>(L"acosh(x)", TComplex(1.5, 1), TComplex(1.260475188, 0.6644205508));
+	TestError<long double>(L"acosh(x)", -1, ecACoshError);
 
 	Test("atanh(x)", 0.5, 0.54930614);
-	Test("atanh(x)", 0, 0);                         
+	Test("atanh(x)", 0, 0);
 	TestError("atanh(x)", 1, ecATanhError);
 	TestError("atanh(x)", -1, ecATanhError);
-	TestEval<TComplex>(L"atanh(x)", TComplex(2.5, 1), TComplex(0.351335639, 1.415944855));
+	Test<TComplex>(L"atanh(x)", TComplex(2.5, 1), TComplex(0.351335639, 1.415944855));
 
 	Test("abs(x)", -4.67, 4.67);
-	TestEval<TComplex>(L"abs(x)", TComplex(3, 4), 5);
-	TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
-	TestEval<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
-	TestEval<TComplex>(L"conj(x)", TComplex(3, 4), TComplex(3, -4));
-  TestEval<TComplex>(L"re(x)", TComplex(3, 4), 3);
-  TestEval<TComplex>(L"im(x)", TComplex(3, 4), 4);
+	Test<TComplex>(L"abs(x)", TComplex(3, 4), 5);
+	Test<TComplex>(L"arg(x)", TComplex(3, 4), 0.927295218);
+	Test<TComplex>(L"arg(x)", TComplex(3, 4), 53.13010235, Degree);
+	Test<TComplex>(L"conj(x)", TComplex(3, 4), TComplex(3, -4));
+  Test<TComplex>(L"re(x)", TComplex(3, 4), 3);
+  Test<TComplex>(L"im(x)", TComplex(3, 4), 4);
   Test("re(x)", 3, 3);
 	Test("im(x)", 3, 0);
+  TestError<long double>(L"re(e^(i*x))", 1, ecComplexError);
+  TestError<long double>(L"im(e^(i*x))", 1, ecComplexError);
+  Test<TComplex>(L"re(e^(i*x))", 1, 0.5403023059);
+  Test<TComplex>(L"im(e^(i*x))", 1, 0.8414709848);
 
   //Rounding
 	Test("trunc(x)", -4.567, -4);
@@ -814,8 +818,8 @@ void Test()
 	Test("sum(min((k),[6+2])*(2)/2,k,0,x)", 10, 52);
 	Test("sum(sum(k*l,k,1,10),l,1,x)", 2, 165);
 	Test("integrate(1/((1+x)*x^(1/2)),x, 0, inf)", 0, PI);
-	TestEval<long double>(L"integrate(1/x^(2/3),-1,1)", 0, 6);
-	TestErrorEval<TComplex>(L"integrate(1/x^(2/3),-1,1)", 0, ecNoResult);
+	Test<long double>(L"integrate(1/x^(2/3),-1,1)", 0, 6);
+	TestError<TComplex>(L"integrate(1/x^(2/3),-1,1)", 0, ecNoResult);
   TestError("integrate(t, t, 4test, x)", 0, EFuncError(ecUnknownVar, L"test"));
   TestError("integrate(t, t, x, 4test)", 0, EFuncError(ecUnknownVar, L"test"));
 //	TestError("sum(x,k+1,0,10)", 0, ecLiteralExpected); To be fixed in Graph 4.5
@@ -825,13 +829,13 @@ void Test()
   //Test infinity
 	Test("inf", 0, INF);
 	Test("-inf", 0, -INF);
-  TestEval<long double>(L"2*inf", 0, INF);
-  TestEval<TComplex>(L"2*inf", 0, TComplex(INF, NaN));
+  Test<long double>(L"2*inf", 0, INF);
+  Test<TComplex>(L"2*inf", 0, TComplex(INF, NaN));
 	Test("2+inf", 0, INF);
-  TestEval<long double>(L"inf*x", 0, NaN);
-  TestEval<TComplex>(L"inf*x", 0, TComplex(NaN, NaN));
-  TestEval<long double>(L"inf/inf", 0, NaN);
-	TestEval<TComplex>(L"inf/inf", 0, TComplex(NaN, NaN));
+  Test<long double>(L"inf*x", 0, NaN);
+  Test<TComplex>(L"inf*x", 0, TComplex(NaN, NaN));
+  Test<long double>(L"inf/inf", 0, NaN);
+	Test<TComplex>(L"inf/inf", 0, TComplex(NaN, NaN));
 
 	//Combined test cases
 	Test("(1.01^x-1)/0.01", 1, 1);
@@ -865,8 +869,8 @@ void Test()
   Test("zeta(x)", -5, -1.0/252);
 
 	//Test Omega function
-	TestErrorEval<long double>(L"W(x)", -PI/2, ecComplexError);
-	TestEval<TComplex>(L"W(x)", -PI/2, TComplex(0, PI/2));
+	TestError<long double>(L"W(x)", -PI/2, ecComplexError);
+	Test<TComplex>(L"W(x)", -PI/2, TComplex(0, PI/2));
   Test("W(-1/e)", 0, -1);
 	Test("W(x)", 0, 0);
   Test("W(x)", -M_LN2/2, -M_LN2);

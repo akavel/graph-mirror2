@@ -526,7 +526,7 @@ std::complex<T> Pow(const std::complex<T> &a, const std::complex<T> &b)
 	if(!a && !imag(b) && real(b) > 0)
 		return 0; //pow(0,b) seems to give problems with complex numbers
 
-	if(!a && real(b) < 0 || imag(b)) //pow(complex(0), complex(-2.8,0)) crashed with bcc 6.13 (C++ Builder 2009)
+	if(!a && (real(b) < 0 || imag(b))) //pow(complex(0), complex(-2.8,0)) crashed with bcc 6.13 (C++ Builder 2009)
 		return std::numeric_limits<long double>::quiet_NaN();
 
   //Calculations with complex numbers may return a complex number if Temp<0,
