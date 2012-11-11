@@ -28,7 +28,6 @@ __fastcall TForm4::TForm4(TComponent* Owner, TData &AData)
   SetAccelerators(this);
   ScaleForm(this);
 
-  CheckBox1->Checked = CheckAssocation(L".grf", L"GraphFile");
   CheckBox2->Checked = Application->ShowHint;
   CheckBox3->Checked = Property.SavePos;
   CheckBox4->Checked = Property.CheckForUpdate;
@@ -77,13 +76,6 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   Form1->Recent1->MaxFiles = Edit2->Text.ToInt();
   UndoList.SetMaxUndo(Edit3->Text.ToInt());
   Property.ComplexFormat = (TComplexFormat)RadioGroup1->ItemIndex;;
-  if(CheckBox1->Checked)
-  {
-    bool AllUsers = GetRegValue(REGISTRY_KEY, L"InstallAllUsers", HKEY_CURRENT_USER, false);
-    AssociateExt(L".grf", L"", L"GraphFile", LoadString(RES_OLE_GRAPH_SYSTEM), ToWString(Application->ExeName) + L",1", AllUsers);
-  }
-  else
-    RemoveAsociation(L".grf", L"GraphFile", false);
 	Application->ShowHint = CheckBox2->Checked;
 	Form1->TreeView->ToolTips = CheckBox2->Checked;
   Property.SavePos = CheckBox3->Checked;
