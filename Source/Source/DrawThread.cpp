@@ -409,7 +409,7 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
 //---------------------------------------------------------------------------
 HPEN TDrawThread::SetPen(TColor Color, TPenStyle Style, int Width)
 {
-  Width = Size(Width);
+  Width = SizeScale(Width);
   if(Width > 1 && Style != psSolid)
   {
     LOGBRUSH LogBrush;
@@ -895,18 +895,18 @@ void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, const T
       switch(Style)
       {
         case 1:
-          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func.Color, Axes.BackgroundColor, Size(Func.Size + 3));
+          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func.Color, Axes.BackgroundColor, SizeScale(Func.Size + 3));
           break;
 
         case 2:
-          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func.Color, Func.Color, Size(Func.Size + 3));
+          TPointSelect::DrawPoint(Context.GetCanvas(), Pos, 0, Func.Color, Func.Color, SizeScale(Func.Size + 3));
           break;
 
         case 3:
           if(InvertArrow)
-						DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size + 4);
+						DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size);
 					else
-            DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t), Func.Color, Func.Size + 4);
+            DrawArrow(Pos, Func.GetFunc().CalcAngleSlope(t), Func.Color, Func.Size);
           break;
 
         case 4:
@@ -915,6 +915,14 @@ void TDrawThread::DrawEndPoint(const TBaseFuncType &Func, long double t, const T
 
         case 5:
           DrawHalfCircle(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size);
+          break;
+
+        case 6:
+          DrawSquareBracket(Pos, Func.GetFunc().CalcAngleSlope(t), Func.Color, Func.Size);
+          break;
+
+        case 7:
+          DrawSquareBracket(Pos, Func.GetFunc().CalcAngleSlope(t) + M_PI, Func.Color, Func.Size);
           break;
       }
     }
@@ -1064,7 +1072,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
           continue;
 
         //Draw x error bar
-        Context.SetPen(psSolid, clBlack, Size(1));
+        Context.SetPen(psSolid, clBlack, SizeScale(1));
         unsigned I = Iter - PointList.begin();
         double Delta = PointSeries.GetXError(I);
         if(Delta)
@@ -1090,7 +1098,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
         if(PointSeries.GetShowLabels())
         {
           std::wstring Str = str(Format % PointData[I].First % PointData[I].Second);
-          int PointSize = Size(PointSeries.GetSize());
+          int PointSize = SizeScale(PointSeries.GetSize());
           TDraw::DrawPointLabel(Context.GetCanvas(), Pos, PointSize, Str, PointSeries.GetLabelPosition());
         }
       }
@@ -1112,7 +1120,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
       if(Axes.ShowLegend && InsideRect(Draw->LegendRect, Pos))
         continue;
 
-      int PointSize = Size(PointSeries.GetSize());
+      int PointSize = SizeScale(PointSeries.GetSize());
       TColor FillColor = ForceBlack ? clWhite : PointSeries.GetFillColor();
       TColor FrameColor = ForceBlack ? clBlack : PointSeries.GetFrameColor();
 
@@ -1131,22 +1139,18 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
   }
 }
 //---------------------------------------------------------------------------
-void TDrawThread::DrawArrow(const TPoint &Point, long double Angle, TColor Color, unsigned Size)
+void TDrawThread::DrawArrow(const TPoint &P, long double Angle, TColor Color, unsigned Size)
 {
-  Context.SetPen(psSolid, Color, 1);
+  Context.SetPen(psSolid, Color, SizeScale(Size/2+1));
   Context.SetBrush(bsSolid, Color);
 
-  //Adjust angle for visual coordinate system instead of real system
-  long double Angle2 = std::atan(Draw->yScale/Draw->xScale * std::tan(Angle));
-  if(std::abs(std::fmod(Angle, 2.0L*M_PI)) > M_PI_2)
-    Angle2 -= M_PI;
-
-  int Length = 5 + 2*Size;
+  long double Angle2 = RealToVisualAngle(Angle);
+  int Length = SizeScale(13 + 2*Size);
   int dX1 = Length * std::cos(Angle2 + 2.8);
   int dY1 = Length * std::sin(Angle2 + 2.8);
   int dX2 = Length * std::cos(Angle2 - 2.8);
   int dY2 = Length * std::sin(Angle2 - 2.8);
-  TPoint Arrow[] = {TPoint(Point.x + dX1, Point.y - dY1), Point, TPoint(Point.x + dX2, Point.y - dY2)};
+  TPoint Arrow[] = {TPoint(P.x + dX1, P.y - dY1), P, TPoint(P.x + dX2, P.y - dY2)};
   Context.DrawPolygon(Arrow, 3);
 }
 //---------------------------------------------------------------------------
@@ -1158,21 +1162,37 @@ void TDrawThread::LineToAngle(int X, int Y, double Angle, double Length)
   Context.DrawLine(X, Y, X + dX, Y - dY);
 }
 //---------------------------------------------------------------------------
+long double TDrawThread::RealToVisualAngle(long double Angle)
+{
+  //Adjust angle for visual coordinate system instead of real system
+  long double Sin = std::sin(Angle) * Draw->yScale;
+  long double Cos = std::cos(Angle) * Draw->xScale;
+  return std::atan2(Sin, Cos);
+}
+//---------------------------------------------------------------------------
 void TDrawThread::DrawHalfCircle(const TPoint &Point, long double Angle, TColor Color, unsigned Size)
 {
-  Context.SetPen(psSolid, Color, Size);
+  Context.SetPen(psSolid, Color, SizeScale(Size));
+  long double Angle2 = RealToVisualAngle(Angle);
 
-  //Adjust angle for visual coordinate system instead of real system
-  long double Angle2 = std::atan(Draw->yScale/Draw->xScale * std::tan(Angle));
-  if(std::abs(std::fmod(Angle, 2.0L*M_PI)) > M_PI_2)
-    Angle2 -= M_PI;
-
-  int r = 8;
+  int r = SizeScale(3 + Size);
   int a = r * std::sin(Angle2);
   int b = r * std::cos(Angle2);
   TPoint C(Point.x - b, Point.y + a);
 
   Context.DrawArc(C.x - r, C.y - r, C.x + r, C.y + r, C.x + a, C.y + b, C.x - a, C.y - b);
+}
+//---------------------------------------------------------------------------
+void TDrawThread::DrawSquareBracket(const TPoint &P, long double Angle, TColor Color, unsigned Size)
+{
+  Context.SetPen(psSolid, Color, SizeScale(Size));
+  long double Angle2 = RealToVisualAngle(Angle);
+  double Length = SizeScale(3 + Size);
+  double a = Length * std::cos(Angle2);
+  double b = Length * std::sin(Angle2);
+  TPoint Data[] = {TPoint(P.x - b - a + 0.5, P.y - a + b + 0.5), TPoint(P.x - b + 0.5, P.y - a + 0.5),
+                   TPoint(P.x + b + 0.5, P.y + a + 0.5), TPoint(P.x + b - a + 0.5, P.y + a + b + 0.5)};
+  Context.DrawPolyline(Data, 4);
 }
 //---------------------------------------------------------------------------
 void TDrawThread::Visit(TAxesView &AxesView)
@@ -1256,7 +1276,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
     const std::vector<TRect>::iterator End = Points.end();
     for(std::vector<TRect>::iterator Iter = Points.begin(); Iter != End; ++Iter)
     {
-      unsigned Delta = Size(Relation.GetSize());
+      unsigned Delta = SizeScale(Relation.GetSize());
       Iter->Left -= Delta;
       Iter->Right += Delta;
       Iter->Top -= Delta;
@@ -1301,8 +1321,8 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
   bool LogScl1 = Loop ? Axes.xAxis.LogScl : Axes.yAxis.LogScl;
   bool LogScl2 = Loop ? Axes.yAxis.LogScl : Axes.xAxis.LogScl;
 
-  int M1 = Size(Relation.GetSize()) / 2;
-  int M2 = std::max((Size(Relation.GetSize()) + 1) / 2, 1);
+  int M1 = SizeScale(Relation.GetSize()) / 2;
+  int M2 = std::max((SizeScale(Relation.GetSize()) + 1) / 2, 1);
 
   double s1Min = Loop ? Axes.xAxis.Min : Axes.yAxis.Max;
   double s2Min = Loop ? Axes.yAxis.Max : Axes.xAxis.Min;

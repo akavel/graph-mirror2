@@ -469,10 +469,11 @@ object Form5: TForm5
         'Select marker to show at the start of the interval. Only used if' +
         ' an argument range is specified.'
       Style = csOwnerDrawFixed
-      ItemIndex = 0
       TabOrder = 0
       OnDrawItem = ComboBoxDrawItem
       Items.Strings = (
+        ''
+        ''
         ''
         ''
         ''
@@ -491,10 +492,11 @@ object Form5: TForm5
         'n argument range is specified.'
       Style = csOwnerDrawFixed
       Anchors = [akTop, akRight]
-      ItemIndex = 0
       TabOrder = 1
       OnDrawItem = ComboBoxDrawItem
       Items.Strings = (
+        ''
+        ''
         ''
         ''
         ''

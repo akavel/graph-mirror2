@@ -3,7 +3,7 @@
 			<ProjectGuid>{A1226338-C69F-4866-9220-ED350B8C5D17}</ProjectGuid>
 			<MainSource>IComp.cpp</MainSource>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Release</Config>
+			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Library</AppType>

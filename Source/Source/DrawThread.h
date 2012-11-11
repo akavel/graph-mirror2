@@ -41,7 +41,7 @@ private:
 
   void DrawAll();
   HPEN SetPen(TColor Color, TPenStyle Style, int Width);
-  int Size(int I){return I*SizeMul+0.5;};
+  int SizeScale(int I){return I*SizeMul+0.5;};
   void __fastcall Execute();
   bool InsideImage(const TPoint &P);
   template<typename T> bool IsError(Func32::TErrorCode ErrorCode, const Func32::TCoord<T> &Coord);
@@ -53,9 +53,11 @@ private:
   void PrepareFunction(TBaseFuncType *F);
   void DrawArrow(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
   void DrawHalfCircle(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
+  void DrawSquareBracket(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
   void LineToAngle(int X, int Y, double Angle, double Length);
   void ThreadTerminated(TObject*);
   TPoint GetFixedPoint(const TShading &Shade, const TPoint &P);
+  long double RealToVisualAngle(long double Angle);
 
   void DrawPointSeries(const TPointSeries &PointSeries);
   void DrawFunction(const TBaseFuncType &Func);
