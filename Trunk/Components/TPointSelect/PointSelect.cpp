@@ -78,7 +78,7 @@ void TPointSelect::DrawPoint(TCanvas *Canvas, TPoint Pos, int Style, TColor Fram
 	if(Size == 0)
 	  return;
   Canvas->Pen->Color = Size > 2 ? FrameColor : FillColor;
-  Canvas->Pen->Width = Size/10 + 1;
+  Canvas->Pen->Width = Size/8 + 1;
   Canvas->Pen->Style = psSolid;
   Canvas->Brush->Color = FillColor;
   Canvas->Brush->Style = bsSolid;

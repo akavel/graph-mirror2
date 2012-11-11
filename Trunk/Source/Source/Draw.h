@@ -84,7 +84,7 @@ public:
   bool Wait();
   bool Updating();
   void SetSize(int Width, int Height);
-  int Size(int I) const {return I*SizeMul+0.5;}
+  int SizeScale(int I) const {return I*SizeMul+0.5;}
   void SetArea(const TRect &Area);
   void RedrawAxes();
   void DrawAxes();

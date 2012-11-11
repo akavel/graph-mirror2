@@ -19,6 +19,12 @@
 #include <boost/format.hpp>
 #include <MultiMon.hpp>
 //---------------------------------------------------------------------------
+void DrawLine(TCanvas *Canvas, int X1, int Y1, int X2, int Y2)
+{
+  Canvas->MoveTo(X1, Y1);
+  Canvas->LineTo(X2, Y2);
+}
+//---------------------------------------------------------------------------
 void DrawComboBoxEndPoint(TCanvas *Canvas, int Index, const TRect &Rect)
 {
   //Clear drawing area
@@ -48,6 +54,18 @@ void DrawComboBoxEndPoint(TCanvas *Canvas, int Index, const TRect &Rect)
 
     case 5:
       Canvas->Arc(Pos.x + 11, Pos.y - 6, Pos.x - 5, Pos.y + 7, Pos.x + 3, Pos.y - 7, Pos.x + 3, Pos.y + 7);
+      break;
+
+    case 6:
+      DrawLine(Canvas, Pos.x + 2, Pos.y - 5, Pos.x - 4, Pos.y - 5);
+      DrawLine(Canvas, Pos.x + 2, Pos.y - 6, Pos.x + 2, Pos.y + 6);
+      DrawLine(Canvas, Pos.x + 2, Pos.y + 6, Pos.x - 4, Pos.y + 6);
+      break;
+
+    case 7:
+      DrawLine(Canvas, Pos.x - 4, Pos.y - 5, Pos.x + 2, Pos.y - 5);
+      DrawLine(Canvas, Pos.x - 3, Pos.y - 6, Pos.x - 3, Pos.y + 6);
+      DrawLine(Canvas, Pos.x - 3, Pos.y + 6, Pos.x + 2, Pos.y + 6);
       break;
   }
 
