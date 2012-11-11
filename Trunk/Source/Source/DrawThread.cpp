@@ -1141,7 +1141,7 @@ void TDrawThread::DrawPointSeries(const TPointSeries &PointSeries)
 //---------------------------------------------------------------------------
 void TDrawThread::DrawArrow(const TPoint &P, long double Angle, TColor Color, unsigned Size)
 {
-  Context.SetPen(psSolid, Color, SizeScale(Size/2+1));
+  Context.SetPen(psSolid, Color, SizeScale(Size/2+1), psjMiter);
   Context.SetBrush(bsSolid, Color);
 
   long double Angle2 = RealToVisualAngle(Angle);
@@ -1185,7 +1185,7 @@ void TDrawThread::DrawHalfCircle(const TPoint &Point, long double Angle, TColor 
 //---------------------------------------------------------------------------
 void TDrawThread::DrawSquareBracket(const TPoint &P, long double Angle, TColor Color, unsigned Size)
 {
-  Context.SetPen(psSolid, Color, SizeScale(Size));
+  Context.SetPen(psSolid, Color, SizeScale(Size), psjMiter);
   long double Angle2 = RealToVisualAngle(Angle);
   double Length = SizeScale(3 + Size);
   double a = Length * std::cos(Angle2);

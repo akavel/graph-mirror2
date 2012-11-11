@@ -16,6 +16,8 @@ namespace Graph
 {
 typedef void (__closure *TClipCallback)(const TPoint *Points, unsigned Size);
 enum TOutCode {ocInside=0, ocTop=1, ocBottom=2, ocLeft=4, ocRight=8};
+enum TEndCap {ecRound=PS_ENDCAP_ROUND, ecSquare=PS_ENDCAP_SQUARE, ecFlat=PS_ENDCAP_FLAT};
+enum TPenStyleJoin {psjBevel=PS_JOIN_BEVEL, psjMiter=PS_JOIN_MITER, psjRound=PS_JOIN_ROUND}
 
 class TContext
 {
@@ -61,7 +63,7 @@ public:
   void SetFontColor(TColor Color);
   void SetFontName(const std::string &Name);
   void SetBrush(TBrushStyle Style, TColor Color = clWhite);
-  void SetPen(TPenStyle Style, TColor Color, int Width);
+  void SetPen(TPenStyle Style, TColor Color, int Width, TPenStyleJoin Join=psjBevel, TEndCap EndCap=ecFlat);
   void SetGridPen(TColor Color, unsigned Width);
 
   void FillRect(const TRect &Rect);
