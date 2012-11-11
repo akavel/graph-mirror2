@@ -17,7 +17,7 @@ namespace Graph
 typedef void (__closure *TClipCallback)(const TPoint *Points, unsigned Size);
 enum TOutCode {ocInside=0, ocTop=1, ocBottom=2, ocLeft=4, ocRight=8};
 enum TEndCap {ecRound=PS_ENDCAP_ROUND, ecSquare=PS_ENDCAP_SQUARE, ecFlat=PS_ENDCAP_FLAT};
-enum TPenStyleJoin {psjBevel=PS_JOIN_BEVEL, psjMiter=PS_JOIN_MITER, psjRound=PS_JOIN_ROUND}
+enum TPenStyleJoin {psjBevel=PS_JOIN_BEVEL, psjMiter=PS_JOIN_MITER, psjRound=PS_JOIN_ROUND};
 
 class TContext
 {

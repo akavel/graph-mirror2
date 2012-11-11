@@ -3185,25 +3185,25 @@ void __fastcall TForm1::SupportActionExecute(TObject *Sender)
 void __fastcall TForm1::ZoomXInActionExecute(TObject *Sender)
 {
   //Zoom in on x-axis only
-  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn, 1.0);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn, 1.0, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomXOutActionExecute(TObject *Sender)
 {
   //Zoom out on x-axis only
-  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut, 1.0);
+  Zoom(GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut, 1.0, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYInActionExecute(TObject *Sender)
 {
   //Zoom in on y-axis only
-  Zoom(1.0, GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn);
+  Zoom(1.0, GetKeyState(ssShift) ? GuiSettings.MajorZoomIn : GuiSettings.MinorZoomIn, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ZoomYOutActionExecute(TObject *Sender)
 {
   //Zoom out on y-axis only
-  Zoom(1.0, GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut);
+  Zoom(1.0, GetKeyState(ssShift) ? GuiSettings.MajorZoomOut : GuiSettings.MinorZoomOut, false);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::InsertRelationActionExecute(TObject *Sender)
