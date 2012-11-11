@@ -288,7 +288,7 @@ void TContext::SetDeviceOrigin(int X, int Y)
   SetViewportOrgEx(Canvas->Handle, X, Y, NULL);
 }
 //---------------------------------------------------------------------------
-void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
+void TContext::SetPen(TPenStyle Style, TColor Color, int Width, TPenStyleJoin Join, TEndCap EndCap)
 {
   PenStyle = Style;
   PenColor = Color;
@@ -297,7 +297,7 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width)
   if(Width > 1)
   {
     LOGBRUSH LogBrush = {BS_SOLID, Color};
-    Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | PS_ENDCAP_FLAT | PS_JOIN_MITER | Style, Width, &LogBrush, 0, NULL);
+    Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | Style | Join | EndCap, Width, &LogBrush, 0, NULL);
   }
   else
     Canvas->Pen->Handle = CreatePen(Style, Style == psSolid ? Width : 1, Color);
