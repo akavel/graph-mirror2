@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2012-11-07 21:10+0100\n"
-"PO-Revision-Date: 2012-11-07 21:12+0100\n"
+"PO-Revision-Date: 2012-11-12 16:50+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "Language: \n"
@@ -371,19 +371,16 @@ msgid "Area"
 msgstr "Aire"
 
 #. EvaluateDialog.xml:103(para)
-#, fuzzy
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the area for the selected function over a specified domain range. For standard and parametric functions and tangents the area is the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range. The area below the x-axis is considered negative. For standard functions and tangents, this is the same as the definite integral."
-msgstr "Quand <placeholder-1/> est sélectionné, la boîte de dialogue est utilisée pour calculer l'intégrale simple de la fonction choisie sur un domaine donné. Pour des fonctions standards, paramétriques ou des tangentes le résultat est l'aire algébrique comprise entre la courbe et l'axe des x (l'axe des x effectif qui n'est pas nécessairement celui qu'on voit sur le dessin) sur l'intervalle donné."
+msgstr "Quand <placeholder-1/> est sélectionné, la boîte de dialogue est utilisée pour calculer l'aire limitée par la fonction choisie sur un domaine donné. Pour des fonctions standards, paramétriques ou des tangentes le résultat est l'aire algébrique comprise entre la courbe et l'axe des x (l'axe des x effectif qui n'est pas nécessairement celui qu'on voit sur le dessin) sur l'intervalle donné. Une aire sous l'axe des abscisses est considérée comme négative. Pour les fonctions standards et les tangentes c'est la même chose que l'intégrale définie."
 
 #. EvaluateDialog.xml:114(para)
-#, fuzzy
 msgid "For polar functions, the area is the one between the graph in the given range and the origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
 msgstr "Pour les fonctions polaires, l'aire algébrique est celle entre la courbe et les rayons vecteurs aux bornes de l'intervalle donné. L'aire est considérée négative quand l'angle varie d'une plus grande valeur vers une  plus petite (sens horaire)."
 
 #. EvaluateDialog.xml:118(para)
-#, fuzzy
 msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated area will be shown below the range, and the matched area will be marked with a shading in the coordinate system. The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible. If an estimated relative error less than <placeholder-1/> cannot be reached, no result will be shown."
-msgstr "Vous pouvez soit saisir l'intervalle dans la boîte d'édition soit le définir à la souris. L'aire calculée sera affichée sur l'intervalle, et sera marquée par un remplissage dans le repère. Les calculs sont fait en utilisant l'integration de Gauss-Kronrod avec 21 points adaptée avec la meilleure précision possible. Si une estimation de l'erreur inférieure à <placeholder-1/> ne peut être.atteinte, aucun résultat ne sera affiché ."
+msgstr "Vous pouvez soit saisir l'intervalle dans la boîte d'édition soit le définir à la souris. L'aire calculée sera affichée sur l'intervalle, et sera marquée par un remplissage dans le repère. Les calculs sont fait en utilisant l'integration de Gauss-Kronrod avec 21 points adaptée avec la meilleure précision possible. Si une estimation de l'erreur inférieure à <placeholder-1/> ne peut être atteinte, aucun résultat ne sera affiché."
 
 #. EvaluateDialog.xml:127(title) EvaluateDialog.xml:132(guimenuitem) MenuItems.xml:564(guimenuitem)
 msgid "Length of path"
@@ -566,9 +563,8 @@ msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent
 msgstr "La fonction <placeholder-1/> donne l'argument cotangente hyperbolique de <placeholder-2/>. <placeholder-3/> peut être n'importe quelle <placeholder-4/> qui donne un <placeholder-5/> ou un <placeholder-6/>. <placeholder-7/> est la réciproque de <placeholder-8/>, i.e. <placeholder-9/>. Pour les nombres réels <placeholder-10/> n'est pas définie dans l'intervalle [-1;1]."
 
 #. ImportPointSeries.xml:7(title)
-#, fuzzy
 msgid "Import point series"
-msgstr "Insérer une série de points"
+msgstr "Importer une série de points"
 
 #. ImportPointSeries.xml:8(primary) InsertPointSeriesDialog.xml:18(primary) MenuItems.xml:7(primary)
 msgid "import"
@@ -592,23 +588,23 @@ msgstr "Série de points..."
 
 #. ImportPointSeries.xml:12(para)
 msgid "Graph can import point series from text files there the values are delimited by comma, semicolon, space or tabulator. You use <placeholder-1/> and select the file to import. If you do not specify the type of file, Graph will try to guess the delimitor."
-msgstr ""
+msgstr "Graph peut importer des séries de points depuis des fichiers \"texte\" à valeurs délimitées par virgule, point-virgule, espace ou tabulation. Vous utilisez <placeholder-1/> et sélectionnez le fichier à importer. Si vous ne précisez pas le type de séparateur Graph essaiera de le deviner. "
 
 #. ImportPointSeries.xml:18(para)
 msgid "The simplest file looks like this, which uses comma as delimitor: <placeholder-1/> When imported you get a point series with the coordinates: <placeholder-2/>"
-msgstr ""
+msgstr "Le fichier le plus simple ressemble à ceci, avec la virgule pour délimiteur : <placeholder-1/> Quand il est importé voue obtenez une série de points avec les coordonnées : <placeholder-2/>"
 
 #. ImportPointSeries.xml:27(para)
 msgid "A file with more than two columns will be imported as several point series with the same x-coordinates as specified in the first column. Here is an example with semicolon as delimitor: <placeholder-1/> When imported you get 7 point series which all share the same x-coordinates."
-msgstr ""
+msgstr "Un fichier avec plus de deux colonnes sera importé comme plusieurs séries de points dont les abscisses seront les valeurs de la première colonne. Voici un exemple avec le point-virgule pour déliliteur : <placeholder-1/> L'importation donnera 7 séries de points partageant les mêmes abscisses."
 
 #. ImportPointSeries.xml:38(para)
 msgid "You can name the point series by starting the line before the data with # followed by the names separated by the same separator as the data. This can also be used for creating several point series that do not share the same x-coordinates by separating the point series with a # and optionally a name for the following point series. The following shows an example with space as separator: <placeholder-1/> This will create four point series each with four data points named a, b, c and d. a and b will share the same x-coordinates, and c and d will share the same x-coordinates."
-msgstr ""
+msgstr "Vous pouvez nommer les séries de points en commençant la ligne précédant les données par # suivi des noms séparés par le même délimiteur que les données. Ceci peut aussi être utilisé pour créer plusieurs séries de points ne partageant pas les mêmes abscisses en séparant les séries de points par un # avec un nom en option pour la série de points qui suit. Ce qui suit montre un exemple avec l'espace pour séparateur : <placeholder-1/> Cela créera quatre séries de points de chacune quatre points nommées a, b, c et d. a et b d'une part et c et d d'autre part partageront les mêmes abscissses."
 
 #. ImportPointSeries.xml:56(para)
 msgid "Not only numbers, but any valid expression can be imported. The following shows an example with semicolon: <placeholder-1/>"
-msgstr ""
+msgstr "Non seulement des nombres mais toute expression valide peut être importée. Ce qui suit montre un exemple avec le point-virgule : <placeholder-1/>"
 
 #. OLE.xml:4(title)
 msgid "OLE server/client"
@@ -671,7 +667,6 @@ msgid "Link to file"
 msgstr "Lier au fichier"
 
 #. OLE.xml:33(para)
-#, fuzzy
 msgid "You may create a new Graph object in Word by choosing <placeholder-1/> in the toolbar and selecting <placeholder-2/> as <placeholder-3/>. The same dialog can be used to create an embedded Graph object from an existing grf-file. If you select <placeholder-4/>, you will get a linked object instead of an embedded object. This way all changes to the object will be reflected in the original grf-file. If the grf-file is not available you will not be able to edit the object, but you can still see the image in Word."
 msgstr "Vous pouvez créer un nouvel objet Graph dans Word en choisissant l'item <placeholder-1/> du menu en sélectionnant <placeholder-2/> comme <placeholder-3/>. La même boîte de dialogue peut être utilisée pour créer un objet Graph incorporé depuis un fichier .grf existant. Si vous sélectionnez <placeholder-4/>, vous obtiendrez un objet lié à la place d'un objet incorporé. De cette manière tout changement dans l'objet sera répercuté dans le fichier .grf original. Si le fichier .grf n'est pas disponible vous ne pourrez pas éditer l'objet, mais vous en verrez toujours l'image dans Word."
 
@@ -2340,14 +2335,12 @@ msgid "The <placeholder-1/> function returns an approximation for the numerical 
 msgstr "La fonction <placeholder-1/>  donne une valeur approchée de l'intégrale simple de <placeholder-2/> de la variable <placeholder-3/> de <placeholder-4/> à <placeholder-5/>. L'écriture mathématique en est : <placeholder-6/>."
 
 #. Special.xml:32(para)
-#, fuzzy
 msgid "This integral is the same as the area between the function <placeholder-1/> and the x-axis from <placeholder-2/> to <placeholder-3/> where the area under the axis is counted negative. <placeholder-4/> may be any function with the variable indicated as the second argument <placeholder-5/>. <placeholder-6/> and <placeholder-7/> may be any <placeholder-8/> that evaluate to <placeholder-9/> or they can be <placeholder-10/> or <placeholder-11/> to indicate negative or positive infinity. <placeholder-12/> does not calculate the integral exactly. Instead the calculation is done using the Gauss-Kronrod 21-point integration rule adaptively to an estimated relative error less than <placeholder-13/>."
-msgstr "Cette intégrale est identique à l'aire entre la courbe de la fonction <placeholder-1/> et l'axe des x de <placeholder-2/> à <placeholder-3/> où les aires sous l'axe des x sont considérées négatives. <placeholder-4/> peut être n'importe quelle fonction, de la variable  indiquée par le second argument de  <placeholder-5/>. <placeholder-6/> et <placeholder-7/> peuvent être n'importe quelles <placeholder-8/> donnant une approximation de <placeholder-9/> ou peuvent être <placeholder-10/> ou <placeholder-11/> pour indiquer moins ou plus l'infini. une fonction standard et t pour une représentation paramétrique. <placeholder-12/> et <placeholder-13/>  peuvent être n'importe quelles <placeholder-12/> donnant des <placeholder-14/>. <placeholder-15/>  ne donne pas l'intégrale exacte. En fait le calcul est fait avec la règle de Gauss-Kronrod à 21 points pour une erreur relative estimée à moins de <placeholder-16/>."
+msgstr "Cette intégrale est identique à l'aire entre la courbe de la fonction <placeholder-1/> et l'axe des x de <placeholder-2/> à <placeholder-3/> où les aires sous l'axe des x sont considérées négatives. <placeholder-4/> peut être n'importe quelle fonction de la variable  indiquée par le second argument de  <placeholder-5/>. <placeholder-6/> et <placeholder-7/> peuvent être n'importe quelles <placeholder-8/> donnant une approximation de <placeholder-9/> ou peuvent être <placeholder-10/> ou <placeholder-11/> pour indiquer moins ou plus l'infini. <placeholder-12/>  ne donne pas l'intégrale exacte. En fait le calcul est fait avec la règle de Gauss-Kronrod à 21 points pour une erreur relative estimée à moins de <placeholder-13/>."
 
 #. Special.xml:44(para)
-#, fuzzy
 msgid "<placeholder-1/> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396. More useful is <placeholder-2/>. This will plot the definite integral of f(s)=s*sin(s) from 0 to x, which is the same as the indefinite integral of f(x)=x*sin(x)."
-msgstr "<placeholder-1/> intégrera f(t)=t^2-7t+1 de -3 à 15 et donnera 396. <placeholder-2/> est plus utile. Cela tracera l'intégrale de f(s)=s*sin(s) de 0 à x, qui est identique à l'intégrale de f(x)=x*sin(x)."
+msgstr "<placeholder-1/> intégrera f(t)=t^2-7t+1 de -3 à 15 et donnera 396. <placeholder-2/> est plus utile. Cela tracera l'intégrale de f(s)=s*sin(s) de 0 à x, qui est identique une primitive de f(x)=x*sin(x)."
 
 #. Special.xml:65(primary)
 msgid "summation"
@@ -4003,7 +3996,7 @@ msgstr "Cette boîte de dialogue vous permet de créer une animation à partir d
 
 #. MenuItems.xml:647(para)
 msgid "This is a common place for plugins to put menu items that activates the plugin. The menu will not be shown if there are no plugins or the <link linkend=\"Plugins\">plugin system</link> is not available."
-msgstr ""
+msgstr "C'est un endroit où les plugins placent les items qui permettent leur activation. Le menu ne sera pas affiché s'il n'y a pas de plugins ou si le <link linkend=\"Plugins\">système de plugins</link> n'est pas disponible."
 
 #. MenuItems.xml:658(guimenuitem)
 msgid "Contents and index"

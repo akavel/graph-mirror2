@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2012-03-05 21:19\n"
-"PO-Revision-Date: 2012-11-07 21:20+0100\n"
+"PO-Revision-Date: 2012-11-12 17:42+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -3991,9 +3991,8 @@ msgstr "Esta 'Dica do dia' pode lhe dar muitas informações sobre o programa, q
 
 # "using graph" = no uso do Graph
 #. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-#, fuzzy
 msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "Você pode obter ajuda no uso do Graph, reportar bugs e sugerir melhorias futuras no forum da web: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Você pode obter ajuda no uso do Graph, reportar bugs e sugerir melhorias futuras no forum da web: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
 # customize = personalizar
 # "on it" = sobre ela = sobre a mesma

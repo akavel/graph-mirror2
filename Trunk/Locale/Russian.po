@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
 "POT-Creation-Date: 2012-03-05 21:19\n"
-"PO-Revision-Date: 2012-11-07 21:15+0100\n"
+"PO-Revision-Date: 2012-11-12 17:41+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -3440,9 +3440,8 @@ msgid "This Tip of the day can give you a lot of information about the program t
 msgstr "Совет дня может дать вам полезную информацию о программе."
 
 #. www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"  //Tip of the Day
-#, fuzzy
 msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
-msgstr "Вы можете обратиться за помощью по использованию Graph, сообщать об ошибках и предлагать идеи по улучшению программы на форуме: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Вы можете обратиться за помощью по использованию Graph, сообщать об ошибках и предлагать идеи по улучшению программы на форуме: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
 #. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
