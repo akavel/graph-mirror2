@@ -1,5 +1,6 @@
 import os
 import sys
+import glob
 
 wine = "wine " if sys.platform.startswith('linux') else ""
 os.system(wine + "dxgettext ../Source/Forms/*.dfm ../Source/Frames/*.dfm ../Source/Source/Resource.rc /../Components/TIPrintDialog/*.dfm --nonascii")
@@ -44,5 +45,13 @@ for Line in Lines:
         OutFile.write(Line)
 
 InFile.close()
+OutFile.close()
 os.remove("default.po")
 os.remove("Temp.po")
+
+# Update po files unless -no-merge is specified as argument
+if not "-nomerge" in sys.argv:
+    for FileName in glob.glob("*.po"):
+        if FileName != "Ignore.po":
+            print(FileName + ":")
+            os.system('msgmerge -U -v --backup=off "' + FileName + '" Graph.pot --no-wrap')
