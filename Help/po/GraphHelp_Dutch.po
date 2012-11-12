@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2012-11-07 21:10+0100\n"
-"PO-Revision-Date: 2012-11-07 21:12+0100\n"
+"PO-Revision-Date: 2012-11-12 17:36+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "Language: \n"
@@ -655,9 +655,8 @@ msgid "You can use <placeholder-1/> in Graph to copy the current content to the 
 msgstr "Je kunt in Graph <placeholder-1/> gebruiken om de huidige inhoud kopiëren naar het klembord. Daarna kun je in Word <placeholder-2/> kiezen (of iets dergelijks in een andere OLE-client) om de Graph object in te voegen vanaf het klembord. Wanneer u dubbelklikt op het object zal een nieuwe sessie van de Graph beginnen waar je het object kunt bewerken. Als je niet wil dat de gegevens als een Graph object worden geplakt in Word, kun je  in Word  <placeholder-3/> gebruiken om als afbeelding te plakken."
 
 #. OLE.xml:35(guimenuitem)
-#, fuzzy
 msgid "Object"
-msgstr "Object..."
+msgstr "Object"
 
 #. OLE.xml:36(guilabel)
 msgid "Graph system"

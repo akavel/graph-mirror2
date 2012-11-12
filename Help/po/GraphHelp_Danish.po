@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2012-11-07 21:10+0100\n"
-"PO-Revision-Date: 2012-11-07 21:11+0100\n"
+"PO-Revision-Date: 2012-11-12 17:32+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "Language: \n"
@@ -371,17 +371,14 @@ msgid "Area"
 msgstr "Areal"
 
 #. EvaluateDialog.xml:103(para)
-#, fuzzy
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the area for the selected function over a specified domain range. For standard and parametric functions and tangents the area is the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range. The area below the x-axis is considered negative. For standard functions and tangents, this is the same as the definite integral."
-msgstr "Når <placeholder-1/> vælges, bruges vinduet til at beregne det bestemte integral for den valgte funktion over et givet interval. For standardfunktioner, parameterfunktioner og tangenter er det bestemte integral det samme som arealet (med fortegn) mellem grafen for funktionen og x-aksen (den rigtige x-akse er ikke nødvendigvis den, der vises) i det angivne interval."
+msgstr "Når <placeholder-1/> vælges, bruges vinduet til at beregne det bestemte integral for den valgte funktion over et givet interval. For standardfunktioner, parameterfunktioner og tangenter er det bestemte integral det samme som arealet (med fortegn) mellem grafen for funktionen og x-aksen (den rigtige x-akse er ikke nødvendigvis den, der vises) i det angivne interval. Integralet under x-aksen betragtes som negativt. For standardfunktioner og tangenter svarer dette til det bestemte integral."
 
 #. EvaluateDialog.xml:114(para)
-#, fuzzy
 msgid "For polar functions, the area is the one between the graph in the given range and the origin. The area is considered negative when the angle goes from a higher to a lower value (clockwise)."
 msgstr "For polærfunktioner er det bestemte integral det samme som arealet (med fortegn) mellem grafen for funktionen i det angivne interval og koordinatsystemets begyndelsespunkt. Arealet betragtes som negativt, når intervallet går fra en høj værdi til en lavere værdi (med uret)."
 
 #. EvaluateDialog.xml:118(para)
-#, fuzzy
 msgid "You can either enter the range in the edit boxes or select the range with the mouse. The calculated area will be shown below the range, and the matched area will be marked with a shading in the coordinate system. The calculation is done using the Gauss-Kronrod 21-point integration rule adaptively with as much accuracy as possible. If an estimated relative error less than <placeholder-1/> cannot be reached, no result will be shown."
 msgstr "Du kan enten indtaste intervallet i vinduet eller markere det med musen. Det beregnede integral vil blive vist under intervallet, og det tilsvarende areal vil blive markeret med en skravering i koordinatsystemet. Beregningen foretages med Gauss-Kronrods 21-punktsintegrationsregel tilpasset størst mulige nøjagtighed. Hvis en forventet relativ fejl på mindre end <placeholder-1/> ikke kan opnås, bliver der ikke vist noget resultat."
 
@@ -591,23 +588,23 @@ msgstr "Punktserier..."
 
 #. ImportPointSeries.xml:12(para)
 msgid "Graph can import point series from text files there the values are delimited by comma, semicolon, space or tabulator. You use <placeholder-1/> and select the file to import. If you do not specify the type of file, Graph will try to guess the delimitor."
-msgstr ""
+msgstr "Graph kan importere punktserier fra tekstfiler, hvor værdierne er adskilt af komma, semikolon, mellemrum eller tabulator. Brug <placeholder-1/> og vælg hvilken fil, der skal importeres. Hvis ingen filtype vælges, vil Graph prøve at gætte, hvordan værdierne er adskilt."
 
 #. ImportPointSeries.xml:18(para)
 msgid "The simplest file looks like this, which uses comma as delimitor: <placeholder-1/> When imported you get a point series with the coordinates: <placeholder-2/>"
-msgstr ""
+msgstr "Den simpleste fil, som bruger kommaadskillelse, ser således ud: <placeholder-1/> Når den importeres, får man en punktserie med koordinaterne: <placeholder-2/>"
 
 #. ImportPointSeries.xml:27(para)
 msgid "A file with more than two columns will be imported as several point series with the same x-coordinates as specified in the first column. Here is an example with semicolon as delimitor: <placeholder-1/> When imported you get 7 point series which all share the same x-coordinates."
-msgstr ""
+msgstr "En fil med flere end to kolonner importeres som flere punktserier med x-koordinaterne fra første kolonne. Her er et eksempel med semikolonadskillelse: <placeholder-1/> Når den importeres, får man syv punktserier, som alle har de samme x-koordinater."
 
 #. ImportPointSeries.xml:38(para)
 msgid "You can name the point series by starting the line before the data with # followed by the names separated by the same separator as the data. This can also be used for creating several point series that do not share the same x-coordinates by separating the point series with a # and optionally a name for the following point series. The following shows an example with space as separator: <placeholder-1/> This will create four point series each with four data points named a, b, c and d. a and b will share the same x-coordinates, and c and d will share the same x-coordinates."
-msgstr ""
+msgstr "Punktserierne kan navngives ved i linjen før dataserien at skrive # efterfulgt af navnene (adskilt med samme symbol som dataserien). På samme måde kan man oprette flere punktserier med forskellige x-koordinater ved at adskille punktserierne med # og evt. et navn på den efterfølgende punktserie. Her er et eksempel på mellemrumsadskillelse: <placeholder-1/> Dette vil oprette fire punktserier a, b, c og d. a og b vil have samme x-koordinater, og tilsvarende vil c og d have samme x-koordinater."
 
 #. ImportPointSeries.xml:56(para)
 msgid "Not only numbers, but any valid expression can be imported. The following shows an example with semicolon: <placeholder-1/>"
-msgstr ""
+msgstr "Ikke kun tal, men også gyldige udtryk kan importeres. Dette er et eksempel med semikolon: <placeholder-1/> "
 
 #. OLE.xml:4(title)
 msgid "OLE server/client"
@@ -670,9 +667,8 @@ msgid "Link to file"
 msgstr "Link til fil"
 
 #. OLE.xml:33(para)
-#, fuzzy
 msgid "You may create a new Graph object in Word by choosing <placeholder-1/> in the toolbar and selecting <placeholder-2/> as <placeholder-3/>. The same dialog can be used to create an embedded Graph object from an existing grf-file. If you select <placeholder-4/>, you will get a linked object instead of an embedded object. This way all changes to the object will be reflected in the original grf-file. If the grf-file is not available you will not be able to edit the object, but you can still see the image in Word."
-msgstr "Du kan oprette et nyt Graph objekt i Word ved at vælge menupunktet <placeholder-1/> og vælge <placeholder-2/> som <placeholder-3/>. Den samme dialogboks kan bruges til at oprette et Graph objekt fra en eksisterende grf-fil. Hvis du vælger <placeholder-4/>, får du et kædet objekt i stedet for et indbygget objekt. Det betyder, at ændringer til objektet vil blive gemt i den oprindelige grf-fil. Hvis grf-filen ikke er tilgængelig, vil du ikke kunne redigere i objektet men kun kunne se det som et billede i Word."
+msgstr "Du kan oprette et nyt Graph objekt i Word ved at vælge menupunktet <placeholder-1/> og vælge <placeholder-2/> som <placeholder-3/>. Den samme dialogboks kan bruges til at oprette et indbygget Graph-objekt fra en eksisterende grf-fil. Hvis du vælger <placeholder-4/>, får du et kædet objekt i stedet for et indbygget objekt. Det betyder, at ændringer til objektet vil blive gemt i den oprindelige grf-fil. Hvis grf-filen ikke er tilgængelig, vil du ikke kunne redigere i objektet; men du vil stadig kunne se billedet i Word."
 
 #. OLE.xml:42(para)
 msgid "To edit a Graph object you must have Graph installed on the system. If Graph is not installed you will still be able to see the image but not edit it."
@@ -2343,9 +2339,8 @@ msgid "This integral is the same as the area between the function <placeholder-1
 msgstr "Resultatet af integralet er det samme som arealet af punktmængden afgrænset af grafen for <placeholder-1/>, x-aksen og linjerne med ligningerne x = <placeholder-2/> og x = <placeholder-3/>, idet arealer af punktmængder under x-aksen betragtes som negative. <placeholder-4/> kan være et hvilket som helst funktionsudtryk med variablen angivet som det andet argument <placeholder-5/>. <placeholder-6/> og <placeholder-7/> kan være hvilke som helst <placeholder-8/>, der evalueres til <placeholder-9/>, eller de kan være <placeholder-10/> eller <placeholder-11/> for at angive negativ eller positiv uendelig. <placeholder-12/> beregner ikke integralet eksakt, men ved hjælp af Gauss-Kronrods 21-punktsintegrationsregel tilpasset en relativ fejl på mindre end <placeholder-13/>."
 
 #. Special.xml:44(para)
-#, fuzzy
 msgid "<placeholder-1/> will integrate f(t)=t^2-7t+1 from -3 to 15 and evaluate to 396. More useful is <placeholder-2/>. This will plot the definite integral of f(s)=s*sin(s) from 0 to x, which is the same as the indefinite integral of f(x)=x*sin(x)."
-msgstr "<placeholder-1/> vil integrere f(t)=t^2-7t+1 fra -3 til 15 og give 396. <placeholder-2/> er mere brugbar. Dette vil plotte integralet af f(s)=s*sin(s) fra 0 til x, dvs. det samme som det bestemte integral af f(x)=x*sin(x)."
+msgstr "<placeholder-1/> vil integrere f(t)=t^2-7t+1 fra -3 til 15 og give 396. <placeholder-2/> er mere brugbar. Dette vil plotte det bestemte integral af f(s)=s*sin(s) fra 0 til x, dvs. det samme som det bestemte integral af f(x)=x*sin(x)."
 
 #. Special.xml:65(primary)
 msgid "summation"
@@ -4001,7 +3996,7 @@ msgstr "Denne dialogboks giver mulighed for at oprette en animation ud fra datae
 
 #. MenuItems.xml:647(para)
 msgid "This is a common place for plugins to put menu items that activates the plugin. The menu will not be shown if there are no plugins or the <link linkend=\"Plugins\">plugin system</link> is not available."
-msgstr ""
+msgstr "Her vil plugins ofte anbringe menupunkter, som aktiverer det pågældende plugin. Menuen bliver ikke vist, hvis der ikke er nogen plugins, eller hvis <link linkend=\"Plugins\">plugin-systemet</link> ikke er tilgængeligt."
 
 #. MenuItems.xml:658(guimenuitem)
 msgid "Contents and index"
