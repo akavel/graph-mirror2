@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2012-11-07 21:10+0100\n"
-"PO-Revision-Date: 2012-11-07 21:14+0100\n"
+"PO-Revision-Date: 2012-11-13 13:28+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <LL@li.org>\n"
 "Language: \n"
@@ -16,7 +16,7 @@ msgstr "Insticksprogram"
 
 #. Plugins.xml:5(primary)
 msgid "plugins"
-msgstr ""
+msgstr "plugins"
 
 #. Plugins.xml:9(ulink)
 msgid "online"
@@ -367,9 +367,8 @@ msgid "When you click with the mouse on the graphing area you may choose what th
 msgstr ""
 
 #. EvaluateDialog.xml:102(title) EvaluateDialog.xml:107(guimenuitem)
-#, fuzzy
 msgid "Area"
-msgstr "area"
+msgstr "Area"
 
 #. EvaluateDialog.xml:103(para)
 msgid "When <placeholder-1/> is selected the dialog is used to calculate the area for the selected function over a specified domain range. For standard and parametric functions and tangents the area is the signed area between the graph and the x-axis (the real x-axis and not necessarily the visible one) for the given range. The area below the x-axis is considered negative. For standard functions and tangents, this is the same as the definite integral."
@@ -564,9 +563,8 @@ msgid "The <placeholder-1/> function calculates the inverse hyperbolic cotangent
 msgstr ""
 
 #. ImportPointSeries.xml:7(title)
-#, fuzzy
 msgid "Import point series"
-msgstr "Infoga punktserie"
+msgstr "Importera punktserie"
 
 #. ImportPointSeries.xml:8(primary) InsertPointSeriesDialog.xml:18(primary) MenuItems.xml:7(primary)
 msgid "import"
@@ -653,9 +651,8 @@ msgid "You can use <placeholder-1/> in Graph to copy the current content to the 
 msgstr ""
 
 #. OLE.xml:35(guimenuitem)
-#, fuzzy
 msgid "Object"
-msgstr "Objekt..."
+msgstr "Objekt"
 
 #. OLE.xml:36(guilabel)
 msgid "Graph system"
@@ -663,7 +660,7 @@ msgstr "Graph-system"
 
 #. OLE.xml:36(guilabel)
 msgid "Object type"
-msgstr ""
+msgstr "Objekttyp"
 
 #. OLE.xml:38(guilabel)
 msgid "Link to file"
@@ -695,7 +692,7 @@ msgstr "Lägg till skuggning"
 
 #. InsertShadingDialog.xml:9(primary) InsertDerivativeDialog.xml:9(primary) InsertFunctionDialog.xml:9(primary) InsertTangentDialog.xml:9(primary) InsertTrendlineDialog.xml:9(primary) InsertPointSeriesDialog.xml:9(primary) InsertLabelDialog.xml:9(primary)
 msgid "insert"
-msgstr ""
+msgstr "sätta in"
 
 #. InsertShadingDialog.xml:10(primary)
 msgid "shading"
@@ -1323,7 +1320,7 @@ msgstr "tips"
 
 #. FAQ.xml:9(primary)
 msgid "tricks"
-msgstr ""
+msgstr "tips"
 
 #. FAQ.xml:15(para)
 msgid "What are the system requirements of Graph?"
@@ -2327,7 +2324,7 @@ msgstr "Special"
 
 #. Special.xml:11(primary)
 msgid "numerical integral"
-msgstr ""
+msgstr "numerisk integral"
 
 #. Special.xml:13(para)
 msgid "Returns an approximation for the numerical integral of the given expression over the given range."
@@ -2359,7 +2356,7 @@ msgstr ""
 
 #. Special.xml:86(glossterm) Special.xml:124(glossterm)
 msgid "integers"
-msgstr ""
+msgstr "heltal"
 
 #. Special.xml:84(para) Special.xml:122(para)
 msgid "<placeholder-1/> may be any function with the variable indicated as the second argument <placeholder-2/>. <placeholder-3/> and <placeholder-4/> may be any <placeholder-5/> that evaluate to <placeholder-6/>."
@@ -2439,7 +2436,7 @@ msgstr ""
 
 #. Special.xml:320(primary)
 msgid "modulus"
-msgstr ""
+msgstr "modulus"
 
 #. Special.xml:321(primary)
 msgid "remainder"
@@ -2491,7 +2488,7 @@ msgstr "e-post"
 
 #. Introduction.xml:15(primary)
 msgid "bug report"
-msgstr ""
+msgstr "felanmälan"
 
 #. Introduction.xml:18(para)
 msgid "Graph is a program designed to draw graphs of mathematical functions in a coordinate system and similar things. The program is a standard Windows program with menus and dialogs. The program is capable of drawing standard functions, parametric functions, polar functions, tangents, point series, shadings and relations. It is also possible to evaluate a function for a given point, trace a graph with the mouse and much more. For more information on using the program see <placeholder-1/>."
@@ -2594,7 +2591,6 @@ msgid "Help file"
 msgstr "Hjälpfil"
 
 #. Acknowledgements.xml:74(entry)
-#, fuzzy
 msgid "Translators"
 msgstr "Översättare"
 
@@ -2736,7 +2732,7 @@ msgstr "Version <placeholder-1/>"
 
 #. HowToUse.xml:4(title)
 msgid "How to use Graph"
-msgstr ""
+msgstr "Hur man använder Graph"
 
 #. HowToUse.xml:6(primary)
 msgid "use"
@@ -2752,7 +2748,7 @@ msgstr ""
 
 #. HowToUse.xml:10(primary)
 msgid "coordinate system"
-msgstr ""
+msgstr "koordinatsystem"
 
 #. HowToUse.xml:11(primary)
 msgid "status bar"
@@ -2948,7 +2944,7 @@ msgstr ""
 
 #. InsertTrendlineDialog.xml:18(primary)
 msgid "regression"
-msgstr ""
+msgstr "regression"
 
 #. InsertTrendlineDialog.xml:19(primary)
 msgid "SSQ"
@@ -3044,7 +3040,7 @@ msgstr "Dynamiskt medelvärde"
 
 #. InsertTrendlineDialog.xml:126(guilabel) InsertTrendlineDialog.xml:127(guilabel) InsertTrendlineDialog.xml:129(guilabel)
 msgid "Period"
-msgstr ""
+msgstr "Period"
 
 #. InsertTrendlineDialog.xml:124(para)
 msgid "Moving average is a series of straight lines based on the average of the previous points. The <placeholder-1/> determines how many points are used for the average. If <placeholder-2/> is 1 only one point is used, which actually isn't an average. This will draw a line directly between the points. When <placeholder-3/> is larger than 1, the y-coordinate for the line at each point will not be the same as the y-coordinate of the point. Instead it will be an average of the previous points."
@@ -3244,11 +3240,11 @@ msgstr "rotera"
 
 #. InsertLabelDialog.xml:14(primary)
 msgid "special character"
-msgstr ""
+msgstr "Specialtecken"
 
 #. InsertLabelDialog.xml:15(primary)
 msgid "Greek character"
-msgstr ""
+msgstr "Grekisk symbol"
 
 #. InsertLabelDialog.xml:16(primary)
 msgid "insert symbol"
@@ -3324,11 +3320,11 @@ msgstr "konstanter"
 
 #. FunctionList.xml:10(primary)
 msgid "x-variable"
-msgstr ""
+msgstr "x-variabel"
 
 #. FunctionList.xml:11(primary)
 msgid "t-variable"
-msgstr ""
+msgstr "t-variabel"
 
 #. FunctionList.xml:12(primary)
 msgid "Euler's constant"
@@ -3440,7 +3436,7 @@ msgstr ""
 
 #. FunctionList.xml:106(entry)
 msgid "Negation (-)"
-msgstr ""
+msgstr "Negation (-)"
 
 #. FunctionList.xml:107(entry)
 msgid "The negative value of a factor. Example: f(x)=-x"
@@ -3456,7 +3452,7 @@ msgstr ""
 
 #. FunctionList.xml:114(entry)
 msgid "Multiplication (*)"
-msgstr ""
+msgstr "Multiplikation (*)"
 
 #. FunctionList.xml:115(entry)
 msgid "Multiplies two factors. Example: f(x)=2*x"
@@ -3464,7 +3460,7 @@ msgstr ""
 
 #. FunctionList.xml:118(entry)
 msgid "Division (/)"
-msgstr ""
+msgstr "Division (/)"
 
 #. FunctionList.xml:119(entry)
 msgid "Divides two factors. Example: f(x)=2/x"
@@ -3472,7 +3468,7 @@ msgstr ""
 
 #. FunctionList.xml:122(entry)
 msgid "Addition (+)"
-msgstr ""
+msgstr "Addition (+)"
 
 #. FunctionList.xml:123(entry)
 msgid "Adds two terms. Example: f(x)=2+x"
@@ -3480,7 +3476,7 @@ msgstr ""
 
 #. FunctionList.xml:126(entry)
 msgid "Subtraction (-)"
-msgstr ""
+msgstr "Subtraktion (-)"
 
 #. FunctionList.xml:127(entry)
 msgid "Subtracts two terms. Example: f(x)=2-x"
@@ -3848,7 +3844,7 @@ msgstr ""
 
 #. MenuItems.xml:264(keycap)
 msgid "Ins"
-msgstr ""
+msgstr "Ins"
 
 #. MenuItems.xml:269(para)
 msgid "Inserts a function into the coordinate system. Functions may be added with different width and color, and you can choose to only show the graph in a specified interval, and specify other settings too."
@@ -3900,7 +3896,7 @@ msgstr "Ta bort"
 
 #. MenuItems.xml:415(keycap)
 msgid "Del"
-msgstr ""
+msgstr "Del"
 
 #. MenuItems.xml:419(para)
 msgid "This will delete the selected <placeholder-1/> in the <placeholder-2/>."
@@ -4536,7 +4532,7 @@ msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
 
 msgid "Translator:"
 msgstr "Översättare:"
