@@ -11,33 +11,12 @@ try:
   # Test that Graph can be started without some obscure dll files
   os.system("Graph.exe /regserver")
 
-  print("Updating Graph.iss ...")
-  File = open("Graph.iss", "rb")
-  Lines = File.readlines()
-  File.close()
-  VersionInfo = CalcVersionInfo("Graph.exe")
-  BaseFileName = "SetupGraphBeta-" + VersionInfo
-  FileName = BaseFileName + ".exe"
-  Count = 0
-  for Line in Lines:
-    if Line[:18] == b"VersionInfoVersion":
-      Lines[Count] = b"VersionInfoVersion=" + VersionInfo.encode() + b"\n"
-    if Line[:18] == b"OutputBaseFilename":
-      Lines[Count] = b"OutputBaseFilename=" + BaseFileName.encode() + b'\n'
-    Count += 1
-
-  File = open("Graph.iss", "wb")
-  File.writelines(Lines)
-  File.close()
-
-  # Sign Graph.exe
-  Password = getpass()
-  subprocess.check_call(['signtool.exe',  'sign', '/f', 'Certificate.p12', '/p', Password, '/t', 'http://timestamp.comodoca.com/authenticode', '/d', '"Graph"', 'Graph.exe'])
-  SignTool = 'SignTool=signtool.exe sign /f %s\\Certificate.p12 /p %s /t http://timestamp.comodoca.com/authenticode $p' % (os.getcwd(), Password)
-
   # Compile SetupGraphBeta-4.2.0.x.exe
-  print("Compiling", FileName, "...")
-  subprocess.check_call(["c:\\program files\\Inno Setup 5\\iscc.exe", "/Q", "/S%s" % SignTool, "Graph.iss"])
+  print("Compiling...")
+  subprocess.check_call(["c:\\program files\\Inno Setup 5\\iscc.exe", "/Q", "Graph.iss"])
+
+  VersionInfo = CalcVersionInfo("Graph.exe")
+  FileName = "SetupGraphBeta-" + VersionInfo + ".exe"
 
   #Creating GraphBeta.inf
   print("Writing GraphBeta.inf ...")
@@ -52,6 +31,7 @@ try:
   File.write("DownloadPage = http://www.padowan.dk/beta\n")
 
   # Upload SetupGraphBeta.exe to the server
+  Password = getpass()
   ftp = FTP('ftp.padowan.dk')   # connect to host, default port
   ftp.login('padowan.dk', Password)
   ftp.cwd('bin')
@@ -70,4 +50,3 @@ try:
   print("Upload complete!")
 except Exception:
   traceback.print_exception(sys.exc_info()[0], sys.exc_info()[1], sys.exc_info()[2])
-  sys.stdin.readline()
