@@ -37,8 +37,8 @@ __fastcall TForm2::TForm2(TComponent* Owner)
     Copyright->Caption = Info.StringValue(L"LegalCopyright").c_str();
   }
 
-  const wchar_t *EmailStr = L"<a href=\"mailto:" EMAIL L"\">" EMAIL L"</a>";
-  LinkLabel2->Caption = FormatStr(LinkLabel2->Caption, EmailStr);
+  const wchar_t *SupportStr = L"<a href=\"" SUPPORT_PAGE L"\">" SUPPORT_PAGE L"</a>";
+  LinkLabel2->Caption = FormatStr(LinkLabel2->Caption, SupportStr);
   const wchar_t *LinkStr = L"<a href=\"" HOMEPAGE L"\">" HOMEPAGE L"</a>";
   LinkLabel1->Caption = FormatStr(LinkLabel1->Caption, LinkStr);
   if(LinkLabel3->Caption != TranslatorString)
@@ -67,10 +67,7 @@ void __fastcall TForm2::LinkLabel1LinkClick(TObject *Sender, const UnicodeString
 void __fastcall TForm2::LinkLabel2LinkClick(TObject *Sender, const UnicodeString Link,
           TSysLinkType LinkType)
 {
-  std::wstring Str = L"Mailto:";
-  Str += EMAIL;
-  Str += L"?Subject=Bug report/suggestions for Graph " + TVersionInfo().StringValue(L"ProductVersion");
-  ShellExecute(Handle, NULL, Str.c_str(), NULL, NULL, SW_SHOWDEFAULT);
+  ShellExecute(Handle, NULL, Link.c_str(), NULL, NULL, SW_SHOWDEFAULT);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::FormShow(TObject *Sender)
