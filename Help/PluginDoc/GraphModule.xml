@@ -391,6 +391,7 @@
 					<para>
 						This is the currently selected item in the function list.
 						Don't try to change this.
+						Instead you can change <classname>Graph</classname>.<property>FunctionList</property>.<property>Selected</property>.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -439,6 +440,7 @@
 						To plot an element, you just add it to the list.
 						To make sure the undo functionality works, you should not change an element already in the list.
 						Instead you should replace the old element in the list with a new element.
+						<classname>Graph</classname>.<property>FunctionList</property>.<property>Selected</property> can be used to read and set the selected element in the GUI.
 					</para>
 				</listitem>
 			</varlistentry>
