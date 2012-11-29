@@ -1246,11 +1246,11 @@ void __fastcall TForm1::Splitter1DblClick(TObject *Sender)
   for(int I = 0; I < TreeView->Items->Count; I++)
   {
     TTreeNode *Node = TreeView->Items->Item[I];
-    int StrWidth = TreeView->Canvas->TextWidth(Node->Text) + TreeView->Indent * Node->Level;
+    int StrWidth = Node->DisplayRect(true).Right;
     if(StrWidth > MaxWidth)
       MaxWidth = StrWidth;
   }
-  MaxWidth += 30;
+  MaxWidth += 5;
   if(MaxWidth > Width / 2)
     MaxWidth = Width / 2;
   Panel3->Width = MaxWidth;
