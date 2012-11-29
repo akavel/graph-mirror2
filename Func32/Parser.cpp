@@ -182,6 +182,11 @@ struct TDoOperator
 			Elements().insert(Elements().end(), List.begin(), List.end());
 		}
 	}
+
+  void operator ()(wchar_t Ch) const
+  {
+    Elements().push_back(Ident);
+  }
 };
 //---------------------------------------------------------------------------
 struct TDoNegate
@@ -338,7 +343,7 @@ public:
 };
 
 //Valid symbols in addition to 0..9, a..z and A..Z.
-static const std::wstring ValidChars = L"+-*/^=_.,()[]{} \x2212";
+static const std::wstring ValidChars = L"+-*/^=_.,()[]{} \x2212\x03C0";
 //---------------------------------------------------------------------------
 /** Parse the string and store the result. The function is strong exception safe.
  *  \param Str: The string to parse
@@ -389,7 +394,8 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 							| NoCaseSymbols[TAssign(Constant.List)]
 							]
 							| Symbols[TAssign(Constant.List)]
-							) >> eps_p - (alnum_p | '_')] >> !(+ch_p('('))[TDoError(ecParAfterConst)];
+							) >> eps_p - (alnum_p | '_')] >> !(+ch_p('('))[TDoError(ecParAfterConst)]
+      | ch_p(L'\x03C0')[TDoOperator(Constant.List, CodePi)];
 
 	Bracket =	ch_p('(')[Bracket.EndBracket = ')'] |
 						ch_p('[')[Bracket.EndBracket = ']'] |

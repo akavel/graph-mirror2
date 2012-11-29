@@ -1,6 +1,8 @@
 ﻿//---------------------------------------------------------------------------
 #pragma hdrstop
 #include "../Func32.h"
+#define _DLL
+#define __FORCE_INSTANCE
 #include <iostream>
 #include <iomanip>
 #include <sstream>
@@ -9,7 +11,7 @@
 #include <cmath>
 #include <fstream>
 #include <boost/math/special_functions/fpclassify.hpp>
-#include <math.h>
+#include <cmath>
 //---------------------------------------------------------------------------
 using namespace Func32;
 using namespace std;
@@ -521,6 +523,17 @@ void Test()
   TestError<long double>(L"i", 0, ecComplexError);
 	Test<TComplex>(L"i", 0, TComplex(0, 1));
   TestError(L"undef", 0, ecNotDefError);
+
+  //Test pi symbol
+  Test(L"π", 0, PI);
+  Test(L"π(x+2)", 1, 3*PI);
+  Test(L"π*(x+2)", 1, 3*PI);
+  Test(L"πx", 2, 2*PI);
+  Test(L"xπ", 2, 2*PI);
+  Test(L"π*x", 2, 2*PI);
+  Test(L"2π", 1, 2*PI);
+  Test(L"π^2", 1, PI*PI);
+  Test(L"sin 2π", 1, 0);
 
 	//Test functions with arguments
   TestError("round x", 1.2345, ecArgCountError);
@@ -1062,7 +1075,7 @@ int main()
 	_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 #endif
 	std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
-	std::basic_streambuf<char> *OldBuf = std::clog.rdbuf();
+//	std::basic_streambuf<char> *OldBuf = std::clog.rdbuf();
 	try
 	{
 		Test();
@@ -1072,7 +1085,7 @@ int main()
 	{
 		std::cerr << "Unexpected exception!" << std::endl;
 	}
-	std::clog.rdbuf(OldBuf);
+//	std::clog.rdbuf(OldBuf);
 	std::cin.ignore();
 	return 0;
 }
