@@ -1854,51 +1854,60 @@ void __fastcall TForm1::PrintActionExecute(TObject *Sender)
   }
 
   SetStatusIcon(iiPrint);  //Show printer icon in statusbar
-  TCallOnRelease Dummy(&SetStatusIcon, -1);
-  Printer()->Title = Caption; //Set document title
-  Printer()->BeginDoc();      //Start sending to print spooler
-
-  HDC ScreenDC = GetDC(NULL);
-  double xMM = GetDeviceCaps(ScreenDC, HORZSIZE); //Get horizontal width of screen in mm
-  double yMM = GetDeviceCaps(ScreenDC, VERTSIZE); //Get vertical width of screen in mm
-  double xScreenResolution = Screen->Width * 25.4 / xMM; //Get horizontal resolution of screen in pixels per inch
-  double yScreenResolution = Screen->Height * 25.4 / yMM; //Get horizontal resolution of screen in pixels per inch
-  ReleaseDC(NULL, ScreenDC);
-  double xPrinterResolution = GetDeviceCaps(Printer()->Handle, LOGPIXELSX); //Horizontal pixels per inch on printer
-  double yPrinterResolution = GetDeviceCaps(Printer()->Handle, LOGPIXELSY); //Vertical pixels per inch on printer
-  double xSizeMul = xPrinterResolution / xScreenResolution;
-  double ySizeMul = yPrinterResolution / yScreenResolution;
-
-  bool ForceBlack = IPrintDialog1->PrintOutput == poBlackWhite;
-  unsigned Copies = IPrintDialog1->Copies;
-  TRect Area = IPrintDialog1->DrawingArea;
-
-  Draw.AbortUpdate();
-  TData PrintData(Data);
-  TDraw PrintDraw(Printer()->Canvas, &PrintData, ForceBlack, "Printing DrawThread");
-	PrintDraw.SetArea(Area);  //Set drawing area
-  PrintDraw.SetSizeMul(xSizeMul, ySizeMul);
-
-  AbortPrinting = false;
-  for(unsigned I = 0; I < Copies && !AbortPrinting; I++)
+//  TCallOnRelease Dummy(&SetStatusIcon, -1); //May cause ICE in C++ Builder XE
+  try
   {
-    if(I > 0)
-      Printer()->NewPage();
-    PrintDraw.DrawAll();           //Draw graphs
-    while(PrintDraw.Updating())
-    { //Process messages while waiting for draw thread to finish
-      Sleep(100);
-      Application->ProcessMessages();
-      //OnClose set AbortPrinting to signal that we want to close the application
-      if(AbortPrinting)
-        PrintDraw.AbortUpdate();
-    }
-  }
+    Printer()->Title = Caption; //Set document title
+    Printer()->BeginDoc();      //Start sending to print spooler
 
-  if(AbortPrinting)
-    Printer()->Abort();
-  else
-    Printer()->EndDoc();             //End printing
+    HDC ScreenDC = GetDC(NULL);
+    double xMM = GetDeviceCaps(ScreenDC, HORZSIZE); //Get horizontal width of screen in mm
+    double yMM = GetDeviceCaps(ScreenDC, VERTSIZE); //Get vertical width of screen in mm
+    double xScreenResolution = Screen->Width * 25.4 / xMM; //Get horizontal resolution of screen in pixels per inch
+    double yScreenResolution = Screen->Height * 25.4 / yMM; //Get horizontal resolution of screen in pixels per inch
+    ReleaseDC(NULL, ScreenDC);
+    double xPrinterResolution = GetDeviceCaps(Printer()->Handle, LOGPIXELSX); //Horizontal pixels per inch on printer
+    double yPrinterResolution = GetDeviceCaps(Printer()->Handle, LOGPIXELSY); //Vertical pixels per inch on printer
+    double xSizeMul = xPrinterResolution / xScreenResolution;
+    double ySizeMul = yPrinterResolution / yScreenResolution;
+
+    bool ForceBlack = IPrintDialog1->PrintOutput == poBlackWhite;
+    unsigned Copies = IPrintDialog1->Copies;
+    TRect Area = IPrintDialog1->DrawingArea;
+
+    Draw.AbortUpdate();
+    TData PrintData(Data);
+    TDraw PrintDraw(Printer()->Canvas, &PrintData, ForceBlack, "Printing DrawThread");
+    PrintDraw.SetArea(Area);  //Set drawing area
+    PrintDraw.SetSizeMul(xSizeMul, ySizeMul);
+
+    AbortPrinting = false;
+    for(unsigned I = 0; I < Copies && !AbortPrinting; I++)
+    {
+      if(I > 0)
+        Printer()->NewPage();
+      PrintDraw.DrawAll();           //Draw graphs
+      while(PrintDraw.Updating())
+      { //Process messages while waiting for draw thread to finish
+        Sleep(100);
+        Application->ProcessMessages();
+        //OnClose set AbortPrinting to signal that we want to close the application
+        if(AbortPrinting)
+          PrintDraw.AbortUpdate();
+      }
+    }
+
+    if(AbortPrinting)
+      Printer()->Abort();
+    else
+      Printer()->EndDoc();             //End printing
+  }
+  catch(...)
+  {
+    SetStatusIcon(-1);
+    throw;
+  }
+  SetStatusIcon(-1);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ExitActionExecute(TObject *Sender)
