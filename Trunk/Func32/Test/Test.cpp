@@ -1,17 +1,14 @@
 ﻿//---------------------------------------------------------------------------
 #pragma hdrstop
 #include "../Func32.h"
-#define _DLL
-#define __FORCE_INSTANCE
 #include <iostream>
 #include <iomanip>
 #include <sstream>
 #include <cstdarg>
 #include <limits>
 #include <cmath>
-#include <fstream>
 #include <boost/math/special_functions/fpclassify.hpp>
-#include <cmath>
+#include <cstdio>
 //---------------------------------------------------------------------------
 using namespace Func32;
 using namespace std;
@@ -1075,7 +1072,6 @@ int main()
 	_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 #endif
 	std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
-//	std::basic_streambuf<char> *OldBuf = std::clog.rdbuf();
 	try
 	{
 		Test();
@@ -1085,7 +1081,6 @@ int main()
 	{
 		std::cerr << "Unexpected exception!" << std::endl;
 	}
-//	std::clog.rdbuf(OldBuf);
 	std::cin.ignore();
 	return 0;
 }
