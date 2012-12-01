@@ -133,6 +133,7 @@ public:
   std::map<std::wstring,std::wstring> PluginData;
   std::wstring MakeLegendText() const;
   std::wstring MakeText() const;
+  TGraphElemPtr Clone();
 };
 
 %extend TGraphElem
