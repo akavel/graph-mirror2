@@ -66,7 +66,7 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
     case EMR_EXTCREATEPEN:
     {
       EMREXTCREATEPEN *ExtPen = (EMREXTCREATEPEN*)lpEMFR;
-      TPenInfo Pen(ExtPen->elp.elpPenStyle, Pen.Width = ExtPen->elp.elpWidth, SwapColor(ExtPen->elp.elpColor));
+      TPenInfo Pen(ExtPen->elp.elpPenStyle, ExtPen->elp.elpWidth, SwapColor(ExtPen->elp.elpColor));
       PenList[ExtPen->ihPen] = Pen;
       Writer->SetPen(Pen);
       break;
