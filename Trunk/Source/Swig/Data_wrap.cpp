@@ -12064,6 +12064,42 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TGraphElem_Clone(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TGraphElem *arg1 = (TGraphElem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TGraphElem > tempshared1 ;
+  boost::shared_ptr< TGraphElem > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TGraphElemPtr result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TGraphElem_Clone",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TGraphElem_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGraphElem_Clone" "', argument " "1"" of type '" "TGraphElem *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TGraphElem > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TGraphElem > * >(argp1);
+      arg1 = const_cast< TGraphElem * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TGraphElem > * >(argp1);
+      arg1 = const_cast< TGraphElem * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (arg1)->Clone();
+  {
+    resultobj = DownCastSharedPtr(result);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TGraphElem_Visible_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TGraphElem *arg1 = (TGraphElem *) 0 ;
@@ -18353,6 +18389,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TGraphElem__PluginData_get", _wrap_TGraphElem__PluginData_get, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_MakeLegendText", _wrap_TGraphElem_MakeLegendText, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_MakeText", _wrap_TGraphElem_MakeText, METH_VARARGS, NULL},
+	 { (char *)"TGraphElem_Clone", _wrap_TGraphElem_Clone, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_Visible_set", _wrap_TGraphElem_Visible_set, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_Visible_get", _wrap_TGraphElem_Visible_get, METH_VARARGS, NULL},
 	 { (char *)"TGraphElem_ShowInLegend_set", _wrap_TGraphElem_ShowInLegend_set, METH_VARARGS, NULL},

@@ -120,7 +120,7 @@ class PointVector(_object):
     def swap(self, *args) -> "void" : return _Data.PointVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< TPoint >::allocator_type" : return _Data.PointVector_get_allocator(self)
     def pop_back(self) -> "void" : return _Data.PointVector_pop_back(self)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_PointVector(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -159,7 +159,7 @@ class CoordSetVector(_object):
     def swap(self, *args) -> "void" : return _Data.CoordSetVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< Func32::TCoordSet< > >::allocator_type" : return _Data.CoordSetVector_get_allocator(self)
     def pop_back(self) -> "void" : return _Data.CoordSetVector_pop_back(self)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_CoordSetVector(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -198,7 +198,7 @@ class UnsignedVector(_object):
     def swap(self, *args) -> "void" : return _Data.UnsignedVector_swap(self, *args)
     def get_allocator(self) -> "std::vector< unsigned int >::allocator_type" : return _Data.UnsignedVector_get_allocator(self)
     def pop_back(self) -> "void" : return _Data.UnsignedVector_pop_back(self)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_UnsignedVector(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -238,7 +238,7 @@ class StringMap(_object):
     def value_iterator(self) -> "swig::SwigPyIterator *" : return _Data.StringMap_value_iterator(self)
     def __setitem__(self, *args) -> "void" : return _Data.StringMap___setitem__(self, *args)
     def asdict(self) -> "PyObject *" : return _Data.StringMap_asdict(self)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_StringMap(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -314,6 +314,7 @@ class TGraphElem(_object):
     if _newclass:_PluginData = _swig_property(_Data.TGraphElem__PluginData_get, _Data.TGraphElem__PluginData_set)
     def MakeLegendText(self) -> "std::wstring" : return _Data.TGraphElem_MakeLegendText(self)
     def MakeText(self) -> "std::wstring" : return _Data.TGraphElem_MakeText(self)
+    def Clone(self) -> "TGraphElemPtr" : return _Data.TGraphElem_Clone(self)
     __swig_setmethods__["Visible"] = _Data.TGraphElem_Visible_set
     __swig_getmethods__["Visible"] = _Data.TGraphElem_Visible_get
     if _newclass:Visible = _swig_property(_Data.TGraphElem_Visible_get, _Data.TGraphElem_Visible_set)
@@ -414,7 +415,7 @@ class TStdFunc(TBaseFuncType):
     __repr__ = _swig_repr
     __swig_getmethods__["Text"] = _Data.TStdFunc_Text_get
     if _newclass:Text = _swig_property(_Data.TStdFunc_Text_get)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_TStdFunc(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -435,7 +436,7 @@ class TParFunc(TBaseFuncType):
     if _newclass:xText = _swig_property(_Data.TParFunc_xText_get)
     __swig_getmethods__["yText"] = _Data.TParFunc_yText_get
     if _newclass:yText = _swig_property(_Data.TParFunc_yText_get)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_TParFunc(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -454,7 +455,7 @@ class TPolFunc(TBaseFuncType):
     __repr__ = _swig_repr
     __swig_getmethods__["Text"] = _Data.TPolFunc_Text_get
     if _newclass:Text = _swig_property(_Data.TPolFunc_Text_get)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_TPolFunc(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -481,7 +482,7 @@ class TTan(TBaseFuncType):
     if _newclass:TangentType = _swig_property(_Data.TTan_TangentType_get, _Data.TTan_TangentType_set)
     __swig_getmethods__["Valid"] = _Data.TTan_Valid_get
     if _newclass:Valid = _swig_property(_Data.TTan_Valid_get)
-    def __init__(self):
+    def __init__(self): 
         this = _Data.new_TTan()
         try: self.this.append(this)
         except: self.this = this
@@ -571,7 +572,7 @@ class TPointSeries(TGraphElem):
     __swig_setmethods__["PointType"] = _Data.TPointSeries_PointType_set
     __swig_getmethods__["PointType"] = _Data.TPointSeries_PointType_get
     if _newclass:PointType = _swig_property(_Data.TPointSeries_PointType_get, _Data.TPointSeries_PointType_set)
-    def __init__(self):
+    def __init__(self): 
         this = _Data.new_TPointSeries()
         try: self.this.append(this)
         except: self.this = this
@@ -618,7 +619,7 @@ class TTextLabel(TGraphElem):
     __swig_setmethods__["Rotation"] = _Data.TTextLabel_Rotation_set
     __swig_getmethods__["Rotation"] = _Data.TTextLabel_Rotation_get
     if _newclass:Rotation = _swig_property(_Data.TTextLabel_Rotation_get, _Data.TTextLabel_Rotation_set)
-    def __init__(self):
+    def __init__(self): 
         this = _Data.new_TTextLabel()
         try: self.this.append(this)
         except: self.this = this
@@ -680,7 +681,7 @@ class TShading(TGraphElem):
     __swig_setmethods__["MarkBorder"] = _Data.TShading_MarkBorder_set
     __swig_getmethods__["MarkBorder"] = _Data.TShading_MarkBorder_get
     if _newclass:MarkBorder = _swig_property(_Data.TShading_MarkBorder_get, _Data.TShading_MarkBorder_set)
-    def __init__(self):
+    def __init__(self): 
         this = _Data.new_TShading()
         try: self.this.append(this)
         except: self.this = this
@@ -715,7 +716,7 @@ class TRelation(TGraphElem):
     __swig_setmethods__["Size"] = _Data.TRelation_Size_set
     __swig_getmethods__["Size"] = _Data.TRelation_Size_get
     if _newclass:Size = _swig_property(_Data.TRelation_Size_get, _Data.TRelation_Size_set)
-    def __init__(self, *args):
+    def __init__(self, *args): 
         this = _Data.new_TRelation(*args)
         try: self.this.append(this)
         except: self.this = this
