@@ -231,7 +231,7 @@ void TDraw::DrawPolyline(TConstPointIter Begin, TConstPointIter End, TPenStyle S
   if(End - Begin >= 2)
   {
     Context.SetBrush(bsClear); //Enable drawing of other than solid lines on win9x
-    Context.SetPen(Style, ForceBlack ? clBlack : Color, SizeScale(LineSize));
+    Context.SetPen(Style, ForceBlack ? clBlack : Color, SizeScale(LineSize), Style == psSolid ? ecFlat : ecRound);
     Context.DrawPolyline(&*Begin, End - Begin, AxesRect);
   }
 }
@@ -846,7 +846,7 @@ void TDrawLegend::Visit(TBaseFuncType &Func)
 {
   TPenStyle Style = Func.DrawType == dtDots ? psDot : Func.Style;
   Draw->Context.SetBrush(bsClear); //Enable drawing of other than solid lines on win9x
-  Draw->Context.SetPen(Style, Draw->ForceBlack ? clBlack : Func.Color, Size(Func.Size));
+  Draw->Context.SetPen(Style, Draw->ForceBlack ? clBlack : Func.Color, Size(Func.Size), Style == psSolid ? ecFlat : ecRound);
   Draw->Context.DrawLine(TPoint(x, y), TPoint(x + TextWidth, y));
 
   Draw->Context.DrawText(Func.MakeLegendText(), x, y - TextHeight - Size(1));
