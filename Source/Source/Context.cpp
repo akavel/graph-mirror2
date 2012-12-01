@@ -288,7 +288,7 @@ void TContext::SetDeviceOrigin(int X, int Y)
   SetViewportOrgEx(Canvas->Handle, X, Y, NULL);
 }
 //---------------------------------------------------------------------------
-void TContext::SetPen(TPenStyle Style, TColor Color, int Width, TPenStyleJoin Join, TEndCap EndCap)
+void TContext::SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap, TPenStyleJoin Join)
 {
   PenStyle = Style;
   PenColor = Color;
