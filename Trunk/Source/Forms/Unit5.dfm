@@ -277,7 +277,7 @@ object Form5: TForm5
         Height = 13
         Anchors = []
         Caption = 'Line style:'
-        FocusControl = ExtColorBox1
+        FocusControl = LineSelect1
         Layout = tlCenter
       end
       object LineSelect1: TLineSelect
