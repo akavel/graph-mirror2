@@ -172,29 +172,63 @@ void TSvgWriter::WritePen()
   if((Pen.Style &  PS_STYLE_MASK) == PS_NULL)
     Stream << " stroke=\"none\"";
   else
-    Stream << " stroke=\"#" << std::hex << std::setw(6) << Pen.Color << "\" stroke-width=\"" << std::dec << Pen.Width << "\"";
-
-  switch(Pen.Style &  PS_STYLE_MASK)
   {
-    case PS_DASH:
-      Stream << " stroke-dasharray=\"5,5\" ";
-      break;
+    Stream << " stroke=\"#" << std::hex << std::setw(6) << Pen.Color << "\" stroke-width=\"" << std::dec << Pen.Width << "\"";
+    unsigned DotSize = (Pen.Style & PS_ENDCAP_MASK) == PS_ENDCAP_FLAT ? 4 : 1;
+    switch(Pen.Style &  PS_STYLE_MASK)
+    {
+      case PS_DASH:
+        Stream << " stroke-dasharray=\"20,10\"";
+        break;
 
-    case PS_DOT:
-      Stream << " stroke-dasharray=\"1,5\" stroke-linecap=\"round\" ";
-      break;
+      case PS_DOT:
+        Stream << " stroke-dasharray=\"" << DotSize << ",10\"";
+        break;
 
-    case PS_DASHDOT:
-      Stream << " stroke-dasharray=\"5,5,1,5\" stroke-linecap=\"round\" ";
-      break;
+      case PS_DASHDOT:
+        Stream << " stroke-dasharray=\"20,10," << DotSize << ",10\"";
+        break;
 
-    case PS_DASHDOTDOT:
-      Stream << " stroke-dasharray=\"5,5,1,5,1,5\" stroke-linecap=\"round\" ";
-      break;
+      case PS_DASHDOTDOT:
+        Stream << " stroke-dasharray=\"20,10," << DotSize << ",10," << DotSize << ",10\"";
+        break;
 
-    case PS_SOLID:
-    default:
-      break;
+      case PS_SOLID:
+      default:
+        break;
+    }
+
+    switch(Pen.Style & PS_ENDCAP_MASK)
+    {
+      case PS_ENDCAP_ROUND:
+      default:
+        Stream << " stroke-linecap=\"round\"";
+        break;
+
+      case PS_ENDCAP_SQUARE:
+        Stream << " stroke-linecap=\"square\"";
+        break;
+
+      case PS_ENDCAP_FLAT:
+        Stream << " stroke-linecap=\"butt\"";
+        break;
+    }
+
+    switch(Pen.Style & PS_JOIN_MASK)
+    {
+      case PS_JOIN_ROUND:
+      default:
+        Stream << " stroke-linejoin=\"round\"";
+        break;
+
+      case PS_JOIN_BEVEL:
+        Stream << " stroke-linejoin=\"bevel\"";
+        break;
+
+      case PS_JOIN_MITER:
+        Stream << " stroke-linejoin=\"miter\"";
+        break;
+    }
   }
   Stream << std::dec;
 }
