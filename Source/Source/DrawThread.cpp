@@ -407,19 +407,6 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
   }
 }
 //---------------------------------------------------------------------------
-HPEN TDrawThread::SetPen(TColor Color, TPenStyle Style, int Width)
-{
-  Width = SizeScale(Width);
-  if(Width > 1 && Style != psSolid)
-  {
-    LOGBRUSH LogBrush;
-    LogBrush.lbStyle = BS_SOLID;
-    LogBrush.lbColor = ForceBlack ? clBlack : Color;
-    return ExtCreatePen(PS_GEOMETRIC | Style, Width, &LogBrush, 0, NULL);
-  }
-  return CreatePen(Style, Width, ForceBlack ? clBlack : Color);
-}
-//---------------------------------------------------------------------------
 void TDrawThread::Visit(TShading &Shade)
 {
   if(Shade.Region.get() == NULL)
