@@ -6,7 +6,7 @@ wine = "wine " if sys.platform.startswith('linux') else ""
 os.system(wine + "dxgettext ../Source/Forms/*.dfm ../Source/Frames/*.dfm ../Source/Source/Resource.rc /../Components/TIPrintDialog/*.dfm --nonascii")
 os.system(wine + "msgremove default.po -i Ignore.po -o Temp.po")
 
-InFile = open("Temp.po")
+InFile = open("Temp.po", "rU")
 Lines = InFile.readlines()
 List = {}
 for I in range(len(Lines) - 1, 0, -1):
@@ -15,7 +15,7 @@ for I in range(len(Lines) - 1, 0, -1):
         MsgId = Line[7:-1]
     if Line[:2] == "#.":
         List[Line[3:]] = MsgId
-
+print(List)
 OutFile = open("Graph.pot", "w")
 RcFile = open("../Source/Source/Resource.rc")
 RcLines = RcFile.readlines()
