@@ -15,7 +15,7 @@ for I in range(len(Lines) - 1, 0, -1):
         MsgId = Line[7:-1]
     if Line[:2] == "#.":
         List[Line[3:]] = MsgId
-print(List)
+
 OutFile = open("Graph.pot", "w")
 RcFile = open("../Source/Source/Resource.rc")
 RcLines = RcFile.readlines()
