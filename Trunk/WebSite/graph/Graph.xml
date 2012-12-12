@@ -34,9 +34,9 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>Graph</Program_Name>
-		<Program_Version>4.4.1</Program_Version>
-		<Program_Release_Month>10</Program_Release_Month>
-		<Program_Release_Day>28</Program_Release_Day>
+		<Program_Version>4.4.2</Program_Version>
+		<Program_Release_Month>12</Program_Release_Month>
+		<Program_Release_Day>20</Program_Release_Day>
 		<Program_Release_Year>2012</Program_Release_Year>
 		<Program_Cost_Dollars />
 		<Program_Cost_Other_Code />
@@ -51,8 +51,8 @@
 		<Program_Category_Class>Education::Mathematics</Program_Category_Class>
 		<Program_System_Requirements />
 		<File_Info>
-			<File_Size_Bytes>10077184</File_Size_Bytes>
-			<File_Size_K>9841</File_Size_K>
+			<File_Size_Bytes>10073712</File_Size_Bytes>
+			<File_Size_K>9837</File_Size_K>
 			<File_Size_MB>9.61</File_Size_MB>
 		</File_Info>
 		<Expire_Info>
@@ -86,7 +86,7 @@ It is possible to save the coordinate system and everything on it as an image fi
 			<Application_XML_File_URL>http://www.padowan.dk/graph/Graph.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>http://www.padowan.dk/bin/SetupGraph-4.4.1.exe</Primary_Download_URL>
+			<Primary_Download_URL>http://www.padowan.dk/bin/SetupGraph-4.4.2.exe</Primary_Download_URL>
 			<Secondary_Download_URL />
 			<Additional_Download_URL_1 />
 			<Additional_Download_URL_2 />
