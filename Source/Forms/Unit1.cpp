@@ -488,8 +488,11 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
       break;
 
     case mbMiddle:
-      //Move coordinate system to the center without changing the scale
-			Zoom(0, 0, 0.5, 0.5, false);
+      UndoList.Push(TUndoAxes(Data));
+      MovePos = Func32::TDblPoint(Draw.xCoord(X), Draw.yCoord(Y));
+      SetCursorState(csMoving);
+      if(TControl *Control = dynamic_cast<TControl*>(Sender))
+        SetCaptureControl(Control);
       break;
   }
 }
@@ -639,69 +642,78 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
   if(Shift.Contains(ssDouble))
     return;
 
-  if(Button == mbLeft)
-    switch(CursorState)
-    {
-      case csMoving:
-        SetCursorState(csMove);
-        break;
-
-      case csMoveLabel:
+  switch(Button)
+  {
+    case mbLeft:
+      switch(CursorState)
       {
-        Image2->Visible = false;
-        MovingLabel->ChangeVisible(); //Works because we can only move a visible label
+        case csMoving:
+          SetCursorState(csMove);
+          break;
 
-        //Only if label was actually moved
-        if(Image2->Left != MovingLabel->GetRect().Left || Image2->Top != MovingLabel->GetRect().Top)
+        case csMoveLabel:
         {
-          int X = Image2->Left;
-          int Y = Image2->Top;
-          if(MovingLabelPlacement == lpUserTopRight || MovingLabelPlacement == lpUserBottomRight)
-            X += Image2->Width;
-          if(MovingLabelPlacement == lpUserBottomLeft || MovingLabelPlacement == lpUserBottomRight)
-						Y += Image2->Height;
+          Image2->Visible = false;
+          MovingLabel->ChangeVisible(); //Works because we can only move a visible label
 
-          boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
-            MovingLabel->GetText(),
-            MovingLabelPlacement,
-            TTextValue(Draw.xCoord(X)),
-            TTextValue(Draw.yCoord(Y)),
-            MovingLabel->GetBackgroundColor(),
-            MovingLabel->GetRotation(),
-            MovingLabel->GetOleLink()
-          ));
-          UndoList.Push(TUndoChange(MovingLabel, NewLabel));
-          Data.Replace(MovingLabel, NewLabel);
-          NewLabel->Update();
-          NewLabel->UpdateRect(Image2->Left, Image2->Top); //Needed so we don't have to wait for label to be redrawn
-          MovingLabel.reset();
-          Data.SetModified();
+          //Only if label was actually moved
+          if(Image2->Left != MovingLabel->GetRect().Left || Image2->Top != MovingLabel->GetRect().Top)
+          {
+            int X = Image2->Left;
+            int Y = Image2->Top;
+            if(MovingLabelPlacement == lpUserTopRight || MovingLabelPlacement == lpUserBottomRight)
+              X += Image2->Width;
+            if(MovingLabelPlacement == lpUserBottomLeft || MovingLabelPlacement == lpUserBottomRight)
+              Y += Image2->Height;
+
+            boost::shared_ptr<TTextLabel> NewLabel(new TTextLabel(
+              MovingLabel->GetText(),
+              MovingLabelPlacement,
+              TTextValue(Draw.xCoord(X)),
+              TTextValue(Draw.yCoord(Y)),
+              MovingLabel->GetBackgroundColor(),
+              MovingLabel->GetRotation(),
+              MovingLabel->GetOleLink()
+            ));
+            UndoList.Push(TUndoChange(MovingLabel, NewLabel));
+            Data.Replace(MovingLabel, NewLabel);
+            NewLabel->Update();
+            NewLabel->UpdateRect(Image2->Left, Image2->Top); //Needed so we don't have to wait for label to be redrawn
+            MovingLabel.reset();
+            Data.SetModified();
+          }
+
+          UpdateMenu();
+          Redraw();
+          SetCursorState(csIdle);
+          break;
         }
 
-        UpdateMenu();
-        Redraw();
-        SetCursorState(csIdle);
-        break;
+        case csMoveLegend:
+          Image2->Visible = false;
+          Data.Axes.ShowLegend = true;
+          UndoList.Push(TUndoAxes(Data));
+          Data.Axes.LegendPlacement = LegendPlacement;
+          Data.Axes.LegendPos = Draw.xyCoord(Image2->Left, Image2->Top);
+          Data.SetModified();
+          Redraw();
+          SetCursorState(csIdle);
+          break;
+
+        case csZoomWindow:
+          SetCursorState(csIdle);
+          if(X != xZoom && Y != yZoom)
+            //Zoom to user selected window;don't change coordinates
+            ZoomWindow(Draw.xCoord(Shape1->Left), Draw.xCoord(Shape1->Left+Shape1->Width), Draw.yCoord(Shape1->Top+Shape1->Height), Draw.yCoord(Shape1->Top));
+          break;
       }
+      break;
 
-      case csMoveLegend:
-        Image2->Visible = false;
-        Data.Axes.ShowLegend = true;
-        UndoList.Push(TUndoAxes(Data));
-				Data.Axes.LegendPlacement = LegendPlacement;
-        Data.Axes.LegendPos = Draw.xyCoord(Image2->Left, Image2->Top);
-        Data.SetModified();
-        Redraw();
-        SetCursorState(csIdle);
-        break;
-
-      case csZoomWindow:
-        SetCursorState(csIdle);
-        if(X != xZoom && Y != yZoom)
-          //Zoom to user selected window;don't change coordinates
-          ZoomWindow(Draw.xCoord(Shape1->Left), Draw.xCoord(Shape1->Left+Shape1->Width), Draw.yCoord(Shape1->Top+Shape1->Height), Draw.yCoord(Shape1->Top));
-        break;
-    }
+    case mbMiddle:
+      SetCursorState(csIdle);
+      SetCaptureControl(NULL);
+      break;
+  }
 }
 //---------------------------------------------------------------------------
 bool TForm1::AskSave(void)
@@ -2504,6 +2516,8 @@ void __fastcall TForm1::ToolBar_CustomizeClick(TObject *Sender)
   Form->ToolbarsTab->TabVisible = false;
   Form->OptionsTab->TabVisible = false;
   Form->SeparatorBtn->Visible = false;
+  Form->CatList->ItemIndex = Form->CatList->Items->Count - 1;
+  Form->CatList->OnClick(Form->CatList);
   SetAccelerators(Form);
 }
 //---------------------------------------------------------------------------
