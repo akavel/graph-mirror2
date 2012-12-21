@@ -134,6 +134,7 @@ object Form15: TForm15
     PopupMenu = PopupMenu1
     TabOrder = 4
     MinColWidth = 64
+    ExportFixedRows = False
     ColWidths = (
       64
       64
