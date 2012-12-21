@@ -207,7 +207,8 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 
 		case tkEnumeration:
 		{
-			if(AnsiString(Value.TypeInfo->Name) == "Boolean")
+      AnsiString Name = Value.TypeInfo->Name;
+			if(Name == "Boolean" || Name == "bool")
 				return ToPyObject(static_cast<bool>(Value.AsOrdinal()));
 			TRttiEnumerationType *Type = static_cast<TRttiEnumerationType*>(Context.GetType(Value.TypeInfo));
 			int Ordinal = Value.AsOrdinal();
