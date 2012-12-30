@@ -272,7 +272,7 @@ void __fastcall TForm5::ComboBoxDrawItem(TWinControl *Control, int Index,
 //---------------------------------------------------------------------------
 void __fastcall TForm5::ComboBox4Change(TObject *Sender)
 {
-  LineSelect1->Enabled = ComboBox4->ItemIndex == 0;
+  LineSelect1->Enabled = ComboBox4->ItemIndex != 1;
 }
 //---------------------------------------------------------------------------
 
