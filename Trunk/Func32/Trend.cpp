@@ -494,8 +494,8 @@ double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func)
     { //Ignore errors and continue without using the affected point
     }
 
-  if(St == 0) //Prevent division by zero. St==0 means that the line is a perfect fit.
-    return 1;
+  if(St == 0) //Prevent division by zero.
+    return Sy == 0 ? 1 : std::numeric_limits<double>::quiet_NaN(); //Sy==0,St==0 means that the line is a perfect fit.
   return 1 - Sy/St;
 }
 //---------------------------------------------------------------------------
