@@ -71,6 +71,14 @@ except AttributeError:
 def GetAxes() -> "Graph::TAxes *" :
   return _Settings.GetAxes()
 GetAxes = _Settings.GetAxes
+
+def SetThreadCount(*args) -> "void" :
+  return _Settings.SetThreadCount(*args)
+SetThreadCount = _Settings.SetThreadCount
+
+def GetThreadCount() -> "unsigned int" :
+  return _Settings.GetThreadCount()
+GetThreadCount = _Settings.GetThreadCount
 Radian = _Settings.Radian
 Degree = _Settings.Degree
 asNone = _Settings.asNone
@@ -362,6 +370,8 @@ TAxes.NumberFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_Numb
 TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
 TAxes.LegendFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LegenFont_get(self), owned=False))
 TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_TitleFont_get(self), owned=False))
+TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(count)
+TPlotSettings.__swig_getmethods__["ThreadCount"] = lambda self: GetThreadCount()
 
 # This file is compatible with both classic and new-style classes.
 

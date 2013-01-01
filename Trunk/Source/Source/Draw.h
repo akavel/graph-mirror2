@@ -13,6 +13,12 @@
 #include "Data.h"
 #include "Context.h"
 #include <boost/function.hpp>
+
+namespace Thread
+{
+class TIEvent;
+class TCriticalSectionObject;
+}
 namespace Graph
 {
 class TDrawThread;
@@ -38,12 +44,21 @@ class TDraw
   TRect AxesRect;         //Rectangle where the coordinate system is shown
   TData *Data;
   TAxes &Axes;
-  TDrawThread *Thread;
   TRect LegendRect;
   bool ForceBlack;
   double SizeMul;
   TOnCompleteEvent OnComplete;
   std::vector<TLabelInfo> yLabelInfo;
+  std::string ThreadName;
+
+  //Thread variables and functions
+  std::vector<TDrawThread*> Threads;
+  LONG IdleThreadCount; //Must be aligned on a 32-bit boundary
+  boost::shared_ptr<Thread::TIEvent> IdleEvent; //Signalet when all threads are idle
+  LONG EvalIndex; //Next elem to evaluate
+  LONG PlotIndex; //Next elem to plot
+  void IncThreadInIdle(); // Called from worker threads
+  TGraphElemPtr GetNextEvalElem(); //Called from worker threads
 
   //Temp variables
   double xAxisCross, yAxisCross;
@@ -81,7 +96,7 @@ public:
   Func32::TDblPoint xyCoord(int x, int y) const {return Func32::TDblPoint(xCoord(x), yCoord(y));}
   Func32::TDblPoint xyCoord(const TPoint &P) const {return xyCoord(P.x, P.y);}
   bool AbortUpdate();
-  bool Wait();
+  bool Wait(bool WaitInfinitely=true);
   bool Updating();
   void SetSize(int Width, int Height);
   int SizeScale(int I) const {return I*SizeMul+0.5;}
@@ -97,6 +112,8 @@ public:
   const TRect& GetLegendRect() const {return LegendRect;}
   void SetCanvas(TCanvas *Canvas) {Context.SetCanvas(Canvas);}
   const TRect& GetAxesRect() const {return AxesRect;}
+  void SetThreadCount(unsigned Count);
+  unsigned GetThreadCount() const {return Threads.size();}
 };
 } //namespace Graph
 #endif

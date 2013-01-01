@@ -1,5 +1,6 @@
 %module Settings
 %include "std_wstring.i"
+%include "attribute.i"
 %import "Types.i"
 
 %begin %{
@@ -15,6 +16,8 @@
 
 %inline %{
 static Graph::TAxes* GetAxes() {return &Form1->Data.Axes;}
+static void SetThreadCount(unsigned Count) {Form1->Draw.SetThreadCount(Count);}
+static unsigned GetThreadCount() {return Form1->Draw.GetThreadCount();}
 %}
 
 namespace Func32
@@ -27,6 +30,7 @@ namespace Graph
 enum TAxesStyle {asNone, asCrossed, asBoxed};
 enum TLegendPlacement {lpCustom, lpTopRight, lpBottomRight, lpTopLeft, lpBottomLeft};
 enum TNumberPlacement {npCenter, npBefore};
+}
 
 %nodefault TAxis;
 %nodefault TAxes;
@@ -127,7 +131,6 @@ const TProperty Property;
 const TGuiFormatSettings GuiFormatSettings;
 const TPlotSettings PlotSettings;
 const TGuiSettings GuiSettings;
-} //namespace Graph
 
 %pythoncode
 {
@@ -136,4 +139,6 @@ const TGuiSettings GuiSettings;
   TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
   TAxes.LegendFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LegenFont_get(self), owned=False))
   TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_TitleFont_get(self), owned=False))
+  TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(count)
+  TPlotSettings.__swig_getmethods__["ThreadCount"] = lambda self: GetThreadCount()
 }

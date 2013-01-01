@@ -4,7 +4,7 @@
 //---------------------------------------------------------------------------
 #include "IThread.h"
 //---------------------------------------------------------------------------
-class TSerialThread : public TIThread
+class TSerialThread : public Thread::TIThread
 {
   class TSerialHandler *SerialHandler;
   OVERLAPPED Overlapped;

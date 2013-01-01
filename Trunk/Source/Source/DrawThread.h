@@ -12,15 +12,13 @@
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include "IThread.h"
-#include "VclObject.h"
-#include <SyncObjs.hpp>
 #pragma warn -8130
 //---------------------------------------------------------------------------
 namespace Graph
 {
-enum TDrawMessage {dmTerminate=WM_USER, dmDrawAll, dmDrawFunc};
+enum TDrawMessage {dmTerminate=WM_USER, dmDrawAll};
 
-class TDrawThread : public TIThread, public TGraphElemVisitor
+class TDrawThread : public Thread::TIThread, public TGraphElemVisitor
 {
 private:
   TData *Data;
@@ -81,10 +79,9 @@ private:
   void CreateInequality(TRelation &Relation);
 
 public:
-  TIEvent IdleEvent;
 
   __fastcall TDrawThread(TDraw *ADraw);
-  void AbortUpdate() {if(!IdleEvent.TestEvent()) Aborted = true;}
+  void AbortUpdate() {Aborted = true;}
   bool IsAborted() const {return Aborted;}
 };
 //---------------------------------------------------------------------------

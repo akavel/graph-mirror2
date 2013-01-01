@@ -84,7 +84,7 @@ public:
   unsigned ElemCount() const {return TopElem->ChildCount();}
   TGraphElemPtr GetElem(unsigned Index) const;
   boost::shared_ptr<TBaseFuncType> GetFuncFromIndex(unsigned Index) const;
-  const boost::shared_ptr<TTopGraphElem>& GetTopElem() const {return TopElem;}
+  const TTopGraphElemPtr& GetTopElem() const {return TopElem;}
   TGraphElemPtr Back() const {return GetElem(ElemCount()-1);}
 
   const std::wstring& GetFileName() const {return GrfName;}

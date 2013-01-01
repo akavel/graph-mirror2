@@ -76,7 +76,7 @@
 TForm1 *Form1;
 const TCursor crMoveHand1 = 1;
 const TCursor crMoveHand2 = 2;
-::TMutex GlobalMutex(L"Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
+Thread::TMutex GlobalMutex(L"Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: IsResizing(0), TForm(Owner), Updating(0), StatusIcon(-1), CursorState(csIdle),
@@ -233,7 +233,7 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 	if(Property.CheckForUpdate)
   {
     ShowStatusError(LoadRes(520), clGreen, 0);
-		CallFromThread(&CheckForUpdate, true, &CancelStatusError);
+		Thread::CallFromThread(&CheckForUpdate, true, &CancelStatusError);
   }
   PostMessage(Handle, WM_USER, 0, 0);
 
@@ -960,10 +960,6 @@ void TForm1::UpdateMenu()
   ZoomFitAction->Enabled = dynamic_cast<TBaseFuncType*>(Elem.get()) || dynamic_cast<TPointSeries*>(Elem.get()) || dynamic_cast<TRelation*>(Elem.get());
 //  ZoomFitAllAction->Enabled = ZoomFitAction->Enabled;
   ZoomSquareAction->Enabled = Data.Axes.xAxis.LogScl == Data.Axes.yAxis.LogScl;
-
-#ifdef LIMITED_EDITION
-  InsertDifAction->Enabled = false;
-#endif
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
