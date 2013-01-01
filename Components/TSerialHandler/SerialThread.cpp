@@ -7,7 +7,7 @@
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
 TSerialThread::TSerialThread(TSerialHandler *ASerialHandler)
-  : TIThread(false), SerialHandler(ASerialHandler)
+  : Thread::TIThread(false), SerialHandler(ASerialHandler)
 {
 }
 //---------------------------------------------------------------------------

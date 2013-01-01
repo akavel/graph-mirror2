@@ -14,6 +14,8 @@
 #include <cmath>
 #include "DrawThread.h"
 #include "PointSelect.h"
+#include "IThread.h"
+
 namespace Graph
 {
 //Windows 2000/XP uses signed 32 bit numbers (Says Windows SDK). It looks like only only 21 bits are used (signed).
@@ -52,24 +54,20 @@ struct TDrawLegend : public TGraphElemVisitor
   void Visit(TAxesView &AxesView) {};
 };
 //---------------------------------------------------------------------------
-TDraw::TDraw(TCanvas *Canvas, TData *pData, bool AForceBlack, const std::string &ThreadName) :
+TDraw::TDraw(TCanvas *Canvas, TData *pData, bool AForceBlack, const std::string &AThreadName) :
   Context(Canvas), Data(pData), AxesRect(0, 0, 0, 0), OnComplete(NULL),
-  SizeMul(1), ForceBlack(AForceBlack), Axes(Data->Axes), Thread(NULL), Width(0), Height(0)
+  SizeMul(1), ForceBlack(AForceBlack), Axes(Data->Axes), Width(0), Height(0),
+  ThreadName(AThreadName), IdleEvent(new Thread::TIEvent), IdleThreadCount(0),
+  EvalIndex(0), PlotIndex(0)
 {
-  //Make sure everything is initialized before creating thread
-  Thread = new TDrawThread(this);
-  Wait(); //Wait for thread to be running before setting name
-  Thread->SetName(ThreadName);
+  SetThreadCount(1);
 }
 //---------------------------------------------------------------------------
 TDraw::~TDraw()
 {
   if(!AbortUpdate())
     return; //Return if thread is stuck
-  Thread->IdleEvent.ResetEvent();
-  Thread->PostMessage(dmTerminate);
-  Thread->WaitFor();
-  delete Thread;
+  SetThreadCount(0);
 }
 //---------------------------------------------------------------------------
 //Converts an x-coordinate to a pixel value
@@ -128,13 +126,6 @@ double TDraw::yPointExact(long double y) const
   return (Axes.yAxis.Max - y) * yScale + AxesRect.Top;
 }
 //---------------------------------------------------------------------------
-void TDraw::DrawFunc(const TGraphElem *F)
-{
-  DrawLegend();
-  Thread->IdleEvent.ResetEvent();
-  Thread->PostMessage(dmDrawFunc, reinterpret_cast<unsigned>(F));
-}
-//---------------------------------------------------------------------------
 void TDraw::DrawAll()
 {
   AbortUpdate();
@@ -142,16 +133,14 @@ void TDraw::DrawAll()
 
   RedrawAxes();
 
-#ifdef LIMITED_EDITION
-  Context.SetFont("Times New Roman", 10, clBlack);
-  std::string Str = "Graph Limited School Edition";
-  Context.DrawText(Str, 0, Height - Context.GetTextHeight(Str));
-#endif
-
   if(Data->ElemCount() != 0)
   {
-    Thread->IdleEvent.ResetEvent();
-    Thread->PostMessage(dmDrawAll);
+    IdleEvent->ResetEvent();
+    IdleThreadCount = 0;
+    EvalIndex = 0;
+    PlotIndex = 0;
+    for(unsigned I = 0; I < Threads.size(); I++)
+      Threads[I]->PostMessage(dmDrawAll);
   }
 }
 //---------------------------------------------------------------------------
@@ -183,23 +172,26 @@ double TDraw::yCoord(int y) const
 //---------------------------------------------------------------------------
 bool TDraw::AbortUpdate()
 {
-  Thread->AbortUpdate();
-  return Wait();
+  if(IdleEvent->TestEvent())
+    return true;
+  for(unsigned I = 0; I < Threads.size(); I++)
+    Threads[I]->AbortUpdate();
+  return Wait(false);
 }
 //---------------------------------------------------------------------------
-bool TDraw::Wait()
+bool TDraw::Wait(bool WaitInfinitely)
 {
   static bool AbortWait = false;
   if(!AbortWait)
   {
     bool Loop;
-    if(!Thread->IsAborted())
-      Thread->IdleEvent.WaitFor(); //Wait infinitely
+    if(WaitInfinitely)
+      IdleEvent->WaitFor(); //Wait infinitely
     else
       do
       {
 				Loop = false;
-        if(Thread->IdleEvent.WaitFor(1000) == wrTimeout)
+        if(IdleEvent->WaitFor(1000) == wrTimeout)
           if(MessageBox(LoadRes(559), LoadRes(560), MB_RETRYCANCEL|MB_ICONSTOP) == IDCANCEL)
             AbortWait = true;
           else
@@ -211,7 +203,7 @@ bool TDraw::Wait()
 //---------------------------------------------------------------------------
 bool TDraw::Updating()
 {
-  return !Thread->IdleEvent.TestEvent();
+  return !IdleEvent->TestEvent();
 }
 //---------------------------------------------------------------------------
 //Selects the drawing area
@@ -353,9 +345,6 @@ void TDraw::PreCalcYAxis()
   if(Axes.AxesStyle == asBoxed)
   {
     AxesRect.Bottom = Height - NumberHeight - SizeScale(4);
-#ifdef LIMITED_EDITION
-    AxesRect.Bottom -= Size(15); //Make space for "Graph Limited School Edition" text at the bottom
-#endif
   }
 
   if(Axes.yAxis.LogScl)
@@ -967,6 +956,40 @@ void TDraw::DrawPointLabel(TCanvas *Canvas, TPoint Pos, int PointSize, const std
   }
 
   Canvas->TextOut(Pos.x, Pos.y, Label.c_str());
+}
+//---------------------------------------------------------------------------
+void TDraw::SetThreadCount(unsigned Count)
+{
+  while(Count > Threads.size())
+  {
+    Threads.push_back(new TDrawThread(this));
+    Threads.back()->SetName(ThreadName + "[" + ToString(Threads.size() - 1) + "]");
+    Threads.back()->Start();
+  }
+
+  while(Count < Threads.size())
+  {
+    Threads.back()->AbortUpdate();
+    Threads.back()->Terminate();
+    Threads.back()->PostMessage(dmTerminate);
+    Threads.back()->WaitFor();
+    delete Threads.back();
+    Threads.pop_back();
+  }
+}
+//---------------------------------------------------------------------------
+void TDraw::IncThreadInIdle()
+{
+  if(InterlockedIncrement(&IdleThreadCount) == static_cast<LONG>(Threads.size()))
+    IdleEvent->SetEvent();
+}
+//---------------------------------------------------------------------------
+TGraphElemPtr TDraw::GetNextEvalElem()
+{
+  const TTopGraphElemPtr &Top = Data->GetTopElem();
+  if(EvalIndex == static_cast<LONG>(Top->ChildCount()))
+    return TGraphElemPtr();
+  return Top->GetChild(InterlockedIncrement(&EvalIndex)-1);
 }
 //---------------------------------------------------------------------------
 } //namespace Graph

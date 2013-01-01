@@ -43,7 +43,7 @@ inline bool TDrawThread::InsideImage(const TPoint &P)
 }
 //---------------------------------------------------------------------------
 __fastcall TDrawThread::TDrawThread(TDraw *ADraw)
- : TIThread(false),
+ : Thread::TIThread(true),
    Data(ADraw->Data), AxesRect(ADraw->AxesRect), Aborted(false),
    ForceBlack(ADraw->ForceBlack), SizeMul(ADraw->SizeMul),
    Draw(ADraw), Context(ADraw->Context), Axes(ADraw->Axes)
@@ -53,7 +53,6 @@ __fastcall TDrawThread::TDrawThread(TDraw *ADraw)
 void __fastcall TDrawThread::Execute()
 {
 	randomize();
-	SetThreadName("DrawThread");
 
   while(!Terminated)
   {
@@ -62,11 +61,10 @@ void __fastcall TDrawThread::Execute()
       if(Aborted)
         ClearMessageQueue();
       if(!HasMessage())
-        IdleEvent.SetEvent();
+        Draw->IncThreadInIdle();
       Aborted = false;
       TMessage Message;
       GetMessage(Message);
-      IdleEvent.ResetEvent();
 
       //No need to prepare drawings if we are just terminating
       if(Message.Msg == dmTerminate)
@@ -81,10 +79,6 @@ void __fastcall TDrawThread::Execute()
       {
         case dmDrawAll:
           DrawAll();
-          break;
-
-        case dmDrawFunc:
-          reinterpret_cast<TGraphElem*>(Message.WParam)->Accept(*this);
           break;
       }
     }
@@ -109,9 +103,11 @@ void __fastcall TDrawThread::Execute()
 //---------------------------------------------------------------------------
 void TDrawThread::DrawAll()
 {
-  for(unsigned I = 0; I < Data->ElemCount() && !Aborted; I++)
+  while(!Aborted)
   {
-    const boost::shared_ptr<TGraphElem> &Elem = Data->GetElem(I);
+    TGraphElemPtr Elem = Draw->GetNextEvalElem();
+    if(!Elem)
+      return;
     unsigned Count = Elem->ChildCount();
     for(unsigned N = 0; N < Count && !Aborted; N++)
     {

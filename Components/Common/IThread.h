@@ -4,7 +4,8 @@
 //---------------------------------------------------------------------------
 #include <SyncObjs.hpp>
 #include <string>
-
+namespace Thread
+{
 //Used to name the thread in the debugger;
 //Warning: Thread must be running before name can be set; else it will be ignored
 inline void SetThreadName(const std::string &Name, DWORD ThreadID = -1)
@@ -54,6 +55,27 @@ class TIThread : public TThread
     void __fastcall Synchronized() {Method(Data);}
   };
 
+  template<typename TClassMethod>
+  class TQueueHelper
+  {
+    TClassMethod Method;
+  public:
+    TQueueHelper(const TClassMethod &AMethod)
+      : Method(AMethod) {}
+    void __fastcall Synchronized() {Method(); delete this;}
+  };
+
+  template<typename T, typename TClassMethod>
+  class TQueueHelper1
+  {
+    TClassMethod Method;
+    T Data;
+  public:
+    TQueueHelper1(const TClassMethod &AMethod, const T &AData)
+      : Method(AMethod), Data(AData) {}
+    void __fastcall Synchronized() {Method(Data); delete this;}
+  };
+
   void __fastcall DoTerminate()
   {
     FFinished = true;
@@ -63,6 +85,7 @@ class TIThread : public TThread
 protected:
   TIThread(bool CreateSuspended = false) : TThread(CreateSuspended), FFinished(false) {}
 //  using TThread::Synchronize;
+  using TThread::Queue;
 
   template<typename TClassMethod> void Synchronize(TClassMethod Method)
   {
@@ -82,20 +105,34 @@ protected:
     TThread::Synchronize(&Helper.Synchronized);
   }
 
+  template<typename TClassMethod> void Queue(const TClassMethod &Method)
+  {
+    TQueueHelper<TClassMethod> *Helper = new TQueueHelper<TClassMethod>(Method);
+    TThread::Queue(&Helper->Synchronized);
+  }
+
+  template<typename T, typename TClassMethod> void Queue(const TClassMethod &Method, const T &Ref)
+  {
+    TQueueHelper1<const T, TClassMethod> *Helper = new TQueueHelper1<const T, TClassMethod>(Method, Ref);
+    TThread::Queue(&Helper->Synchronized);
+  }
+
   bool GetMessage(TMessage &Message)
   {
     MSG Msg;
-    BOOL Result = ::GetMessage(&Msg, NULL, 0, 0);
+    int Result = ::GetMessage(&Msg, NULL, 0, 0);
+    if(Result == -1)
+			RaiseLastOSError();
     Message.Msg = Msg.message;
     Message.WParam = Msg.wParam;
     Message.LParam = Msg.lParam;
     return Result;
   }
 
-  void ClearMessageQueue()
+  void ClearMessageQueue(UINT FirstMessage=0, UINT LastMessage=0)
   {
     MSG Msg;
-    while(PeekMessage(&Msg, NULL, 0, 0, PM_REMOVE));
+    while(PeekMessage(&Msg, NULL, FirstMessage, LastMessage, PM_REMOVE));
   }
 
   bool HasMessage()
@@ -111,9 +148,9 @@ public:
   }
 
   //WARNING: Msg must not be below WM_USER
-  bool PostMessage(unsigned Msg, unsigned WParam=0, unsigned LParam=0)
+  void PostMessage(unsigned Msg, unsigned WParam=0, unsigned LParam=0)
   {
-    return PostThreadMessage(ThreadID, Msg, WParam, LParam);
+    Win32Check(PostThreadMessage(ThreadID, Msg, WParam, LParam));
   }
 
   __property bool Finished={read=FFinished};
@@ -137,6 +174,7 @@ public:
     CloseHandle(Handle);
   }
 
+  HANDLE GetHandle() {return Handle;}
   void SetEvent()
   {
     ::SetEvent(Handle);
@@ -158,21 +196,31 @@ public:
   }
 
   //Timeout is in milliseconds
-  //Note: Timeout is not a real timeout. It may take longer time if Synchronize()
-  //messages are handled. When it is the timeout from the last handled message
   TWaitResult WaitFor(unsigned Timeout = INFINITE)
   {
     if(GetCurrentThreadId() != MainThreadID)
       return WaitForSingleObject(Handle, Timeout) == WAIT_TIMEOUT	? wrTimeout : wrSignaled;
 
+    DWORD EndTime = GetTickCount() + Timeout;
     unsigned WaitResult = 0;
     MSG Msg;
     do
     {
       PeekMessage(&Msg, 0, 0, 0, PM_NOREMOVE);
       ::Sleep(0);
-      CheckSynchronize();
-      WaitResult = MsgWaitForMultipleObjects(1, &Handle, false, Timeout, QS_POSTMESSAGE);
+      DWORD NewTimeout;
+      DWORD Time = GetTickCount();
+      if(Timeout == INFINITE)
+        NewTimeout = INFINITE;
+      else
+        NewTimeout = Time > EndTime ? 0 : EndTime - Time;
+#if __BORLANDC__ >= 0x0560
+      if(GetCurrentThreadId() == MainThreadID)
+        CheckSynchronize();
+      WaitResult = MsgWaitForMultipleObjects(1, &Handle, false, NewTimeout, QS_POSTMESSAGE);
+#else
+      WaitResult = MsgWaitForMultipleObjects(1, &Handle, false, NewTimeout, QS_SENDMESSAGE);
+#endif
       Win32Check(WaitResult != WAIT_FAILED);
     } while(WaitResult == WAIT_OBJECT_0 + 1);
 
@@ -187,17 +235,38 @@ class TMutex
   TMutex(const TMutex&);
 
 public:
-  TMutex(const Char *Name, bool InitialOwner = false)
+  TMutex(const wchar_t *Name, bool InitialOwner = false)
   {
     Handle = CreateMutex(NULL, InitialOwner, Name);
     if(Handle == NULL)
-      RaiseLastOSError();
+			RaiseLastOSError();
   }
 
   ~TMutex()
   {
     CloseHandle(Handle);
   }
+};
+//---------------------------------------------------------------------------
+class TCriticalSectionObject
+{
+  CRITICAL_SECTION Section;
+public:
+  TCriticalSectionObject() {InitializeCriticalSection(&Section);}
+  ~TCriticalSectionObject() {DeleteCriticalSection(&Section);}
+  void Acquire() {EnterCriticalSection(&Section);}
+  void Release() {LeaveCriticalSection(&Section);}
+};
+//---------------------------------------------------------------------------
+class TCriticalSection
+{
+  TCriticalSectionObject &Section;
+  bool Acquired;
+public:
+  TCriticalSection(TCriticalSectionObject &ASection)
+    : Section(ASection), Acquired(true) {Section.Acquire();}
+  ~TCriticalSection() {if(Acquired) Section.Release();}
+  void Release() {Section.Release(); Acquired = false;}
 };
 //---------------------------------------------------------------------------
 //Creates a new thread and calls Method with Arg as parameter in the context of the new thread
@@ -242,4 +311,5 @@ void CallFromThread(TMethod Method, const TArg &Arg)
   CallFromThread(Method, Arg, static_cast<void (*)()>(NULL));
 }
 //---------------------------------------------------------------------------
+} //namespace Thread
 #endif

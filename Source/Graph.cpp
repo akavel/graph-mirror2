@@ -24,9 +24,9 @@
 #include "StackTrace.h"
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
-USEFORM("Frames\TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
 USEFORM("Frames\TTanFrame.cpp", TanFrame); /* TFrame: File Type */
 USEFORM("Frames\TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
+USEFORM("Frames\TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
 USEFORM("Forms\Unit1.cpp", Form1);
 USEFORM("Forms\Unit10.cpp", Form10);
 USEFORM("Forms\Unit13.cpp", Form13);
@@ -88,7 +88,7 @@ WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
     Application->MainFormOnTaskBar = true;
     Application->Title = "Graph";
     Application->CreateForm(__classid(TForm1), &Form1);
-    Application->Run();
+     Application->Run();
   }
   catch (Exception &E)
   {

@@ -101,6 +101,8 @@ public:
   TGraphElemPtr GetChild(unsigned Index) const {return ChildList.at(Index);} //Don't return a reference as it might be invalid while in use
   unsigned ChildCount() const {return ChildList.size();}
   TGraphElemPtr GetParent() const {return Parent.lock();}
+  std::vector<TGraphElemPtr>::const_iterator Begin() const {return ChildList.begin();}
+  std::vector<TGraphElemPtr>::const_iterator End() const {return ChildList.end();}
 
   virtual int GetVisible() const {return Visible;}
   virtual void ChangeVisible() {Visible = !Visible;}
@@ -127,6 +129,7 @@ public:
   const TData& GetData() const {return *Data;}
   bool IsDependent(const std::wstring &SymbolName) const {return false;}
 };
+typedef boost::shared_ptr<TTopGraphElem> TTopGraphElemPtr;
 
 enum TLabelPlacement
 {
