@@ -108,7 +108,8 @@ std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue)
 // TGraphElem //
 ////////////////
 TGraphElem::TGraphElem(const TGraphElem &Elem)
-  : Visible(Elem.Visible), ShowInLegend(Elem.ShowInLegend), LegendText(Elem.LegendText)
+  : Visible(Elem.Visible), ShowInLegend(Elem.ShowInLegend), LegendText(Elem.LegendText),
+    UpdateFinished(false)
 {
   //Do not copy ChildList; It must be copyed from the derived class to be able to call SetParentFunc()
 }
@@ -255,6 +256,7 @@ void TBaseFuncType::ReadFromIni(const TConfigFileSection &Section)
 //---------------------------------------------------------------------------
 void TBaseFuncType::ClearCache()
 {
+  SetUpdateFinished(false);
   Points.clear();
   PointNum.clear();
 	sList.clear();
@@ -732,6 +734,7 @@ void TShading::Update()
 //---------------------------------------------------------------------------
 void TShading::ClearCache()
 {
+  SetUpdateFinished(false);
   Region.reset();
 }
 //---------------------------------------------------------------------------
@@ -754,6 +757,7 @@ TPointSeries::TPointSeries(TColor AFrameColor, TColor AFillColor, TColor ALineCo
     xErrorBarType(XErrorBarType), xErrorValue(XErrorValue), yErrorBarType(YErrorBarType), yErrorValue(YErrorValue)
 {
   SetLegendText(L"Point series");
+  SetUpdateFinished();
 }
 //---------------------------------------------------------------------------
 void TPointSeries::InsertDblPoint(const Func32::TDblPoint &Point, int Index)
@@ -1041,6 +1045,7 @@ TTextLabel::TTextLabel()
   : LabelPlacement(lpUserTopLeft), Rect(0,0,0,0), Rotation(0), xPos(0), yPos(0),
     BackgroundColor(clDefault), ContainsOleLink(false)
 {
+  SetUpdateFinished();
 }
 //---------------------------------------------------------------------------
 TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation, bool OleLink)
@@ -1271,6 +1276,7 @@ long double TRelation::Eval(long double x, long double y)
 //---------------------------------------------------------------------------
 void TRelation::ClearCache()
 {
+  SetUpdateFinished(false);
   Region.reset();
   BoundingRegion.reset();
 }

@@ -15,6 +15,7 @@
 #include "DrawThread.h"
 #include "PointSelect.h"
 #include "IThread.h"
+#include "Unit1.h"
 
 namespace Graph
 {
@@ -58,9 +59,12 @@ TDraw::TDraw(TCanvas *Canvas, TData *pData, bool AForceBlack, const std::string 
   Context(Canvas), Data(pData), AxesRect(0, 0, 0, 0), OnComplete(NULL),
   SizeMul(1), ForceBlack(AForceBlack), Axes(Data->Axes), Width(0), Height(0),
   ThreadName(AThreadName), IdleEvent(new Thread::TIEvent), IdleThreadCount(0),
-  EvalIndex(0), PlotIndex(0)
+  EvalIndex(0), DrawElem(this)
 {
-  SetThreadCount(1);
+  SetThreadCount(System::CPUCount);
+  //Ensure that the threads has created the queues before trying to send
+  //messages to them.
+  Wait();
 }
 //---------------------------------------------------------------------------
 TDraw::~TDraw()
@@ -138,9 +142,11 @@ void TDraw::DrawAll()
     IdleEvent->ResetEvent();
     IdleThreadCount = 0;
     EvalIndex = 0;
-    PlotIndex = 0;
+    DrawElem.ClearPlotIndex();
     for(unsigned I = 0; I < Threads.size(); I++)
       Threads[I]->PostMessage(dmDrawAll);
+    Form1->BeginUpdate();
+    Form1->ShowStatusMessage(LoadRes(RES_UPDATE));
   }
 }
 //---------------------------------------------------------------------------
@@ -223,7 +229,8 @@ void TDraw::DrawPolyline(TConstPointIter Begin, TConstPointIter End, TPenStyle S
   if(End - Begin >= 2)
   {
     Context.SetBrush(bsClear); //Enable drawing of other than solid lines on win9x
-    Context.SetPen(Style, ForceBlack ? clBlack : Color, SizeScale(LineSize), Style == psSolid ? ecFlat : ecRound);
+    Context.SetPen(Style, ForceBlack ? clBlack : Color, SizeScale(LineSize), ecSquare, psjRound);
+//    Context.SetPen(Style, ForceBlack ? clBlack : Color, SizeScale(LineSize), Style == psSolid ? ecFlat : ecRound);
     Context.DrawPolyline(&*Begin, End - Begin, AxesRect);
   }
 }
@@ -550,7 +557,7 @@ void TDraw::DrawAxes()
 	}
 
 	//If axes are diabled, don't draw axes, numbers and labels
-	if(Axes.AxesStyle == ::asNone)
+	if(Axes.AxesStyle == Graph::asNone)
 		return;
 
 	//Make sure texts are written on transperent background
@@ -962,6 +969,8 @@ void TDraw::SetThreadCount(unsigned Count)
 {
   while(Count > Threads.size())
   {
+    //The thread is created suspended so we can add it to the Threads vector
+    //before the thread starts running.
     Threads.push_back(new TDrawThread(this));
     Threads.back()->SetName(ThreadName + "[" + ToString(Threads.size() - 1) + "]");
     Threads.back()->Start();
@@ -969,7 +978,6 @@ void TDraw::SetThreadCount(unsigned Count)
 
   while(Count < Threads.size())
   {
-    Threads.back()->AbortUpdate();
     Threads.back()->Terminate();
     Threads.back()->PostMessage(dmTerminate);
     Threads.back()->WaitFor();
@@ -978,10 +986,29 @@ void TDraw::SetThreadCount(unsigned Count)
   }
 }
 //---------------------------------------------------------------------------
+void __fastcall TDraw::EndUpdate()
+{
+  try
+  {
+    Form1->EndUpdate();
+    Form1->ShowStatusMessage("");
+    Form1->UpdateEval();
+    if(OnComplete)
+      OnComplete();
+  }
+  catch(Exception &E)
+  {
+    Form1->ShowStatusError("Internal error. Unexpected exception: " + E.Message);
+  }
+}
+//---------------------------------------------------------------------------
 void TDraw::IncThreadInIdle()
 {
   if(InterlockedIncrement(&IdleThreadCount) == static_cast<LONG>(Threads.size()))
+  {
     IdleEvent->SetEvent();
+    TThread::Synchronize(NULL, &EndUpdate);
+  }
 }
 //---------------------------------------------------------------------------
 TGraphElemPtr TDraw::GetNextEvalElem()

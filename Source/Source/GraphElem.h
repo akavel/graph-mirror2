@@ -72,6 +72,7 @@ class TGraphElem : public boost::enable_shared_from_this<TGraphElem>
   std::wstring LegendText;
   std::vector<TGraphElemPtr> ChildList;
   TWeakGraphElemPtr Parent;
+  bool UpdateFinished;
 
   void SetParent(const TGraphElemPtr &AParent) {Parent = AParent;}
 
@@ -81,7 +82,7 @@ protected:
 public:
   std::map<std::wstring,std::wstring> PluginData;
 
-  TGraphElem() : Visible(true), ShowInLegend(true) {}
+  TGraphElem() : Visible(true), ShowInLegend(true), UpdateFinished(false) {}
   TGraphElem(const TGraphElem &Elem);
   virtual ~TGraphElem() {}
   virtual std::wstring MakeLegendText() const {return LegendText.empty() ? MakeText() : LegendText;}
@@ -103,6 +104,8 @@ public:
   TGraphElemPtr GetParent() const {return Parent.lock();}
   std::vector<TGraphElemPtr>::const_iterator Begin() const {return ChildList.begin();}
   std::vector<TGraphElemPtr>::const_iterator End() const {return ChildList.end();}
+  bool IsUpdateFinished() const {return UpdateFinished;}
+  void SetUpdateFinished(bool Value=true) {UpdateFinished = Value;}
 
   virtual int GetVisible() const {return Visible;}
   virtual void ChangeVisible() {Visible = !Visible;}
