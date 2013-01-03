@@ -63,7 +63,7 @@ public:
   void SetFontColor(TColor Color);
   void SetFontName(const std::string &Name);
   void SetBrush(TBrushStyle Style, TColor Color = clWhite);
-  void SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap=ecFlat, TPenStyleJoin Join=psjBevel);
+  void SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap=ecRound, TPenStyleJoin Join=psjRound);
   void SetGridPen(TColor Color, unsigned Width);
 
   void FillRect(const TRect &Rect);

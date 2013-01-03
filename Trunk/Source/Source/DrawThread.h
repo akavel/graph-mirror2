@@ -42,25 +42,10 @@ private:
   void __fastcall Execute();
   bool InsideImage(const TPoint &P);
   template<typename T> bool IsError(Func32::TErrorCode ErrorCode, const Func32::TCoord<T> &Coord);
-  void __fastcall BeginUpdate();
-  void __fastcall EndUpdate();
-  void DrawEndPoints(const TBaseFuncType &Func);
-  void DrawEndPoint(const TBaseFuncType &Func, long double t, const TPoint &Pos, unsigned Style, bool InvertArrow);
-  void DrawEndPoint(const TBaseFuncType &Func, long double t, unsigned Style, bool InvertArrow);
   void PrepareFunction(TBaseFuncType *F);
-  void DrawArrow(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
-  void DrawHalfCircle(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
-  void DrawSquareBracket(const TPoint &Point, long double Angle, TColor Color, unsigned Size);
-  void LineToAngle(int X, int Y, double Angle, double Length);
   void ThreadTerminated(TObject*);
   TPoint GetFixedPoint(const TShading &Shade, const TPoint &P);
-  long double RealToVisualAngle(long double Angle);
 
-  void DrawPointSeries(const TPointSeries &PointSeries);
-  void DrawFunction(const TBaseFuncType &Func);
-  void DrawShade(const TShading &Shade);
-  void DrawLabel(TTextLabel &Label);
-  void DrawRelation(const TRelation &Relation);
   void EquationLoop(TRelation &Relation, std::vector<TRect> &Points, bool Loop);
   static bool CheckResult1(const long double Result[3]);
   static bool CheckResult2(const long double Result[3]);

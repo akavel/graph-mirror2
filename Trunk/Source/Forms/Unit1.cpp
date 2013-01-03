@@ -79,7 +79,7 @@ const TCursor crMoveHand2 = 2;
 Thread::TMutex GlobalMutex(L"Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
-	: IsResizing(0), TForm(Owner), Updating(0), StatusIcon(-1), CursorState(csIdle),
+	: IsResizing(0), TForm(Owner), Updating(1), StatusIcon(-1), CursorState(csIdle),
     FixedImages(ImageList1->Count), Draw(Image1->Canvas, &Data, false, "DrawThread"), AbortPrinting(false)
 {
 	if(0)

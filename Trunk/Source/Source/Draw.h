@@ -13,6 +13,7 @@
 #include "Data.h"
 #include "Context.h"
 #include <boost/function.hpp>
+#include "DrawElem.h"
 
 namespace Thread
 {
@@ -38,12 +39,14 @@ class TDraw
 {
   friend TDrawThread;
   friend class TDrawLegend;
+  friend class TDrawElem;
   TContext Context;
   double xScale, yScale;  //The scale of x-axis and y-axis
   int Width, Height;      //Width and height of image
   TRect AxesRect;         //Rectangle where the coordinate system is shown
   TData *Data;
   TAxes &Axes;
+  TDrawElem DrawElem;
   TRect LegendRect;
   bool ForceBlack;
   double SizeMul;
@@ -56,7 +59,6 @@ class TDraw
   LONG IdleThreadCount; //Must be aligned on a 32-bit boundary
   boost::shared_ptr<Thread::TIEvent> IdleEvent; //Signalet when all threads are idle
   LONG EvalIndex; //Next elem to evaluate
-  LONG PlotIndex; //Next elem to plot
   void IncThreadInIdle(); // Called from worker threads
   TGraphElemPtr GetNextEvalElem(); //Called from worker threads
 
@@ -74,6 +76,7 @@ class TDraw
   static double GetMinValue(double Unit, double Min, double Max, double AxisCross, bool Log);
   static std::wstring MakeNumber(double Number, bool MultiplyByPi);
   unsigned FindLabels();
+  void __fastcall EndUpdate();
 
   TDraw(const TDraw&); //Not implemented
   TDraw& operator=(const TDraw&); //Not implemented
