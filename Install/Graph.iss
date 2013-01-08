@@ -1,5 +1,5 @@
 ﻿#define GraphFileVer GetFileVersion("Graph.exe")
-#define GraphProductVer GetStringFileInfo("Graph.exe", "ProductVersion")
+#define GraphProductVer GetFileProductVersion("Graph.exe")
 
 [Setup]
 AllowNoIcons=yes
@@ -22,7 +22,7 @@ OutputBaseFilename=SetupGraphBeta-{#GraphFileVer}
 OutputDir=.
 UninstallDisplayIcon={app}\Graph.exe
 VersionInfoVersion={#GraphFileVer}
-VersionInfoProductVersion={#GraphProductVer}
+VersionInfoProductTextVersion={#GraphProductVer}
 PrivilegesRequired=None
 ;SignTool=SignTool /d $qGraph$q $f
 SetupIconFile=Graph in a box.ico
