@@ -59,7 +59,7 @@ class TDraw
   LONG IdleThreadCount; //Must be aligned on a 32-bit boundary
   boost::shared_ptr<Thread::TIEvent> IdleEvent; //Signalet when all threads are idle
   LONG EvalIndex; //Next elem to evaluate
-  void IncThreadInIdle(); // Called from worker threads
+  void IncThreadInIdle(bool Init); // Called from worker threads
   TGraphElemPtr GetNextEvalElem(); //Called from worker threads
 
   //Temp variables

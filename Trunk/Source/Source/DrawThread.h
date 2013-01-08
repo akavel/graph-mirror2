@@ -24,10 +24,9 @@ private:
   TData *Data;
   TDraw *Draw;
   TAxes &Axes;
-  TRect AxesRect;
+  const TRect &AxesRect;
   TContext &Context;
-  bool ForceBlack;
-  double SizeMul;
+  const double &SizeMul;
   volatile bool Aborted;
 
   int xPoint(long double x) const {return Draw->xPoint(x);}

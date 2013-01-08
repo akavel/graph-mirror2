@@ -75,10 +75,6 @@ GetAxes = _Settings.GetAxes
 def SetThreadCount(*args) -> "void" :
   return _Settings.SetThreadCount(*args)
 SetThreadCount = _Settings.SetThreadCount
-
-def GetThreadCount() -> "unsigned int" :
-  return _Settings.GetThreadCount()
-GetThreadCount = _Settings.GetThreadCount
 Radian = _Settings.Radian
 Degree = _Settings.Degree
 asNone = _Settings.asNone
@@ -328,6 +324,9 @@ class TPlotSettings(_object):
     __swig_setmethods__["TickLength"] = _Settings.TPlotSettings_TickLength_set
     __swig_getmethods__["TickLength"] = _Settings.TPlotSettings_TickLength_get
     if _newclass:TickLength = _swig_property(_Settings.TPlotSettings_TickLength_get, _Settings.TPlotSettings_TickLength_set)
+    __swig_setmethods__["ThreadCount"] = _Settings.TPlotSettings_ThreadCount_set
+    __swig_getmethods__["ThreadCount"] = _Settings.TPlotSettings_ThreadCount_get
+    if _newclass:ThreadCount = _swig_property(_Settings.TPlotSettings_ThreadCount_get, _Settings.TPlotSettings_ThreadCount_set)
 TPlotSettings_swigregister = _Settings.TPlotSettings_swigregister
 TPlotSettings_swigregister(TPlotSettings)
 
@@ -370,8 +369,7 @@ TAxes.NumberFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_Numb
 TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
 TAxes.LegendFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LegenFont_get(self), owned=False))
 TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_TitleFont_get(self), owned=False))
-TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(count)
-TPlotSettings.__swig_getmethods__["ThreadCount"] = lambda self: GetThreadCount()
+TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(self, count)
 
 # This file is compatible with both classic and new-style classes.
 

@@ -79,7 +79,7 @@ const TCursor crMoveHand2 = 2;
 Thread::TMutex GlobalMutex(L"Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
-	: IsResizing(0), TForm(Owner), Updating(1), StatusIcon(-1), CursorState(csIdle),
+	: IsResizing(0), TForm(Owner), Updating(0), StatusIcon(-1), CursorState(csIdle),
     FixedImages(ImageList1->Count), Draw(Image1->Canvas, &Data, false, "DrawThread"), AbortPrinting(false)
 {
 	if(0)
@@ -94,6 +94,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     out << "CmdLine: " << ::ToString(CmdLine) << std::endl;
   }
 
+  Draw.SetOnComplete(&UpdateEval);
   SetCompTranslateFunc(gettext);
 	SetApplicationExceptionHandler(true);
 	InitDebug();
@@ -1502,12 +1503,16 @@ void __fastcall TForm1::BeginUpdate()
   Updating++;
   if(Panel2->Cursor == crDefault)
     Screen->Cursor = crAppStart;
+  ShowStatusMessage(LoadRes(RES_UPDATE));
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::EndUpdate()
 {
   if(--Updating == 0)
+  {
     Screen->Cursor = crDefault;
+    ShowStatusMessage("");
+  }
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ApplicationEventsActivate(TObject *Sender)
@@ -2932,7 +2937,7 @@ bool TForm1::LoadFromFile(const String &FileName, bool AddToRecent, bool ShowErr
   return true;
 }
 //---------------------------------------------------------------------------
-bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
+void __fastcall TForm1::OpenPreviewDialog1PreviewFile(
       TOpenPreviewDialog *Dialog, const String &FileName,
       TCanvas *Canvas, const TRect &Rect)
 {
@@ -2964,7 +2969,7 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
   Canvas->FillRect(Rect);
 
   if(!PreviewDraw)
-    return true;
+    return;
 
   try
   {
@@ -2972,6 +2977,11 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
   }
   catch(std::exception &E)
   { //Ignore errors
+    PreviewDraw->AbortUpdate();
+    Canvas->Brush->Style = bsSolid;
+    Canvas->Brush->Color = clWhite;
+    Canvas->FillRect(Rect);
+    return;
   }
 
   PreviewData.Axes.ShowLegend = false; //Always disable legend for preview
@@ -2986,7 +2996,6 @@ bool __fastcall TForm1::OpenPreviewDialog1PreviewFile(
   PreviewDraw->SetCanvas(Canvas);
   PreviewDraw->SetSize(Rect.Width(), Rect.Height());
   PreviewDraw->DrawAll();
-  return true;
 }
 //---------------------------------------------------------------------------
 void TForm1::LoadDefault()

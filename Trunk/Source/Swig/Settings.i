@@ -16,8 +16,7 @@
 
 %inline %{
 static Graph::TAxes* GetAxes() {return &Form1->Data.Axes;}
-static void SetThreadCount(unsigned Count) {Form1->Draw.SetThreadCount(Count);}
-static unsigned GetThreadCount() {return Form1->Draw.GetThreadCount();}
+static void SetThreadCount(TPlotSettings &Settings, int Count) {if(Count >= 1) Form1->Draw.SetThreadCount(Count), Settings.ThreadCount = Count;}
 %}
 
 namespace Func32
@@ -112,6 +111,7 @@ struct TPlotSettings
   int yNumberDist;
   int TickWidth;
   int TickLength;
+  int ThreadCount;
 };
 
 %nodefault TGuiSettings;
@@ -139,6 +139,5 @@ const TGuiSettings GuiSettings;
   TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
   TAxes.LegendFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LegenFont_get(self), owned=False))
   TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_TitleFont_get(self), owned=False))
-  TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(count)
-  TPlotSettings.__swig_getmethods__["ThreadCount"] = lambda self: GetThreadCount()
+  TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(self, count)
 }

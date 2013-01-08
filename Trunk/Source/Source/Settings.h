@@ -212,6 +212,7 @@ struct TPlotSettings
   int yNumberDist;
   int TickWidth;
   int TickLength;
+  int ThreadCount;
   TPlotSettings();
 };
 

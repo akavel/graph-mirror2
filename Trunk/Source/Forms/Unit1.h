@@ -333,7 +333,7 @@ __published:	// IDE-managed Components
   void __fastcall SaveCopyAsActionExecute(TObject *Sender);
   void __fastcall TreeViewKeyDown(TObject *Sender, WORD &Key,
     TShiftState Shift);
-  bool __fastcall OpenPreviewDialog1PreviewFile(TOpenPreviewDialog *Dialog,
+  void __fastcall OpenPreviewDialog1PreviewFile(TOpenPreviewDialog *Dialog,
     const String &FileName, TCanvas *Canvas, const TRect &Rect);
   void __fastcall OpenPreviewDialog1Show(TObject *Sender);
   void __fastcall OpenPreviewDialog1Close(TObject *Sender);

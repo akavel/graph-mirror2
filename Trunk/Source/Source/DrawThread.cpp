@@ -44,14 +44,14 @@ inline bool TDrawThread::InsideImage(const TPoint &P)
 __fastcall TDrawThread::TDrawThread(TDraw *ADraw)
  : Thread::TIThread(true),
    Data(ADraw->Data), AxesRect(ADraw->AxesRect), Aborted(false),
-   ForceBlack(ADraw->ForceBlack), SizeMul(ADraw->SizeMul),
-   Draw(ADraw), Context(ADraw->Context), Axes(ADraw->Axes)
+   SizeMul(ADraw->SizeMul), Draw(ADraw), Context(ADraw->Context), Axes(ADraw->Axes)
 {
 }
 //---------------------------------------------------------------------------
 void __fastcall TDrawThread::Execute()
 {
 	randomize();
+  bool Init = true;
 
   while(!Terminated)
   {
@@ -59,18 +59,16 @@ void __fastcall TDrawThread::Execute()
     {
       if(Aborted)
         ClearMessageQueue();
-      if(!HasMessage())
-        Draw->IncThreadInIdle();
       Aborted = false;
+      if(!HasMessage())
+        Draw->IncThreadInIdle(Init);
+      Init = false;
       TMessage Message;
       GetMessage(Message);
 
       //No need to prepare drawings if we are just terminating
       if(Message.Msg == dmTerminate)
         return;
-
-      AxesRect = Draw->AxesRect;
-      SizeMul = Draw->SizeMul;
 
       switch(Message.Msg)
       {
