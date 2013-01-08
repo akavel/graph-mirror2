@@ -571,7 +571,7 @@ TGuiFormatSettings::TGuiFormatSettings()
 /////////////////////
 TPlotSettings::TPlotSettings()
   : AxisWidth(2), GridWidth(1), xNumberDist(4), yNumberDist(7), TickWidth(1),
-    TickLength(5)
+    TickLength(5), ThreadCount(System::CPUCount)
 {
 }
 //---------------------------------------------------------------------------

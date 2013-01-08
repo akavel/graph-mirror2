@@ -59,9 +59,9 @@ TDraw::TDraw(TCanvas *Canvas, TData *pData, bool AForceBlack, const std::string 
   Context(Canvas), Data(pData), AxesRect(0, 0, 0, 0), OnComplete(NULL),
   SizeMul(1), ForceBlack(AForceBlack), Axes(Data->Axes), Width(0), Height(0),
   ThreadName(AThreadName), IdleEvent(new Thread::TIEvent), IdleThreadCount(0),
-  EvalIndex(0), DrawElem(this)
+  EvalIndex(0), DrawElem(this, AForceBlack, AxesRect, Data->Axes, Context)
 {
-  SetThreadCount(System::CPUCount);
+  SetThreadCount(PlotSettings.ThreadCount);
   //Ensure that the threads has created the queues before trying to send
   //messages to them.
   Wait();
@@ -146,7 +146,6 @@ void TDraw::DrawAll()
     for(unsigned I = 0; I < Threads.size(); I++)
       Threads[I]->PostMessage(dmDrawAll);
     Form1->BeginUpdate();
-    Form1->ShowStatusMessage(LoadRes(RES_UPDATE));
   }
 }
 //---------------------------------------------------------------------------
@@ -991,8 +990,6 @@ void __fastcall TDraw::EndUpdate()
   try
   {
     Form1->EndUpdate();
-    Form1->ShowStatusMessage("");
-    Form1->UpdateEval();
     if(OnComplete)
       OnComplete();
   }
@@ -1002,12 +999,13 @@ void __fastcall TDraw::EndUpdate()
   }
 }
 //---------------------------------------------------------------------------
-void TDraw::IncThreadInIdle()
+void TDraw::IncThreadInIdle(bool Init)
 {
   if(InterlockedIncrement(&IdleThreadCount) == static_cast<LONG>(Threads.size()))
   {
     IdleEvent->SetEvent();
-    TThread::Synchronize(NULL, &EndUpdate);
+    if(!Init)
+      TThread::Synchronize(NULL, &EndUpdate);
   }
 }
 //---------------------------------------------------------------------------

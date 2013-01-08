@@ -33,9 +33,9 @@ template<typename T> inline bool TDrawElem::IsError(Func32::TErrorCode ErrorCode
     (Axes.xAxis.LogScl && real(Coord.x) <= 0) || (Axes.yAxis.LogScl && real(Coord.y) <= 0);
 }
 //---------------------------------------------------------------------------
-TDrawElem::TDrawElem(TDraw *ADraw)
- : AxesRect(ADraw->AxesRect), ForceBlack(ADraw->ForceBlack),
-   Draw(ADraw), Context(ADraw->Context), Axes(ADraw->Axes), PlotIndex(0)
+TDrawElem::TDrawElem(TDraw *ADraw, bool AForceBlack, const TRect &AAxesRect, const TAxes &AAxes, TContext &AContext)
+ : AxesRect(AAxesRect), ForceBlack(AForceBlack),
+   Draw(ADraw), Context(AContext), Axes(AAxes), PlotIndex(0)
 {
 }
 //---------------------------------------------------------------------------

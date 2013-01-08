@@ -3074,8 +3074,7 @@ namespace swig {
 
 
 static Graph::TAxes* GetAxes() {return &Form1->Data.Axes;}
-static void SetThreadCount(unsigned Count) {Form1->Draw.SetThreadCount(Count);}
-static unsigned GetThreadCount() {return Form1->Draw.GetThreadCount();}
+static void SetThreadCount(TPlotSettings &Settings, int Count) {if(Count >= 1) Form1->Draw.SetThreadCount(Count), Settings.ThreadCount = Count;}
 
 
 #include <limits.h>
@@ -3169,94 +3168,6 @@ SWIG_CanCastAsInteger(double *d, double min, double max) {
 
 
 SWIGINTERN int
-SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
-{
-  if (PyInt_Check(obj)) {
-    long v = PyInt_AsLong(obj);
-    if (v >= 0) {
-      if (val) *val = v;
-      return SWIG_OK;
-    } else {
-      return SWIG_OverflowError;
-    }
-  } else if (PyLong_Check(obj)) {
-    unsigned long v = PyLong_AsUnsignedLong(obj);
-    if (!PyErr_Occurred()) {
-      if (val) *val = v;
-      return SWIG_OK;
-    } else {
-      PyErr_Clear();
-    }
-  }
-#ifdef SWIG_PYTHON_CAST_MODE
-  {
-    int dispatch = 0;
-    unsigned long v = PyLong_AsUnsignedLong(obj);
-    if (!PyErr_Occurred()) {
-      if (val) *val = v;
-      return SWIG_AddCast(SWIG_OK);
-    } else {
-      PyErr_Clear();
-    }
-    if (!dispatch) {
-      double d;
-      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
-      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
-	if (val) *val = (unsigned long)(d);
-	return res;
-      }
-    }
-  }
-#endif
-  return SWIG_TypeError;
-}
-
-
-SWIGINTERN int
-SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
-{
-  unsigned long v;
-  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v > UINT_MAX)) {
-      return SWIG_OverflowError;
-    } else {
-      if (val) *val = static_cast< unsigned int >(v);
-    }
-  }  
-  return res;
-}
-
-
-  #define SWIG_From_long   PyInt_FromLong 
-
-
-SWIGINTERNINLINE PyObject* 
-SWIG_From_unsigned_SS_long  (unsigned long value)
-{
-  return (value > LONG_MAX) ?
-    PyLong_FromUnsignedLong(value) : PyInt_FromLong(static_cast< long >(value)); 
-}
-
-
-SWIGINTERNINLINE PyObject *
-SWIG_From_unsigned_SS_int  (unsigned int value)
-{    
-  return SWIG_From_unsigned_SS_long  (value);
-}
-
-
-SWIGINTERNINLINE PyObject *
-SWIG_From_int  (int value)
-{    
-  return SWIG_From_long  (value);
-}
-
-
-  #define SWIG_From_double   PyFloat_FromDouble 
-
-
-SWIGINTERN int
 SWIG_AsVal_long (PyObject *obj, long* val)
 {
   if (PyInt_Check(obj)) {
@@ -3293,6 +3204,35 @@ SWIG_AsVal_long (PyObject *obj, long* val)
 #endif
   return SWIG_TypeError;
 }
+
+
+SWIGINTERN int
+SWIG_AsVal_int (PyObject * obj, int *val)
+{
+  long v;
+  int res = SWIG_AsVal_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v < INT_MIN || v > INT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< int >(v);
+    }
+  }  
+  return res;
+}
+
+
+  #define SWIG_From_long   PyInt_FromLong 
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_int  (int value)
+{    
+  return SWIG_From_long  (value);
+}
+
+
+  #define SWIG_From_double   PyFloat_FromDouble 
 
 
 SWIGINTERN int
@@ -3431,18 +3371,77 @@ SWIG_From_std_wstring  (const std::wstring& s)
 
 
 SWIGINTERN int
-SWIG_AsVal_int (PyObject * obj, int *val)
+SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
 {
-  long v;
-  int res = SWIG_AsVal_long (obj, &v);
+  if (PyInt_Check(obj)) {
+    long v = PyInt_AsLong(obj);
+    if (v >= 0) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      return SWIG_OverflowError;
+    }
+  } else if (PyLong_Check(obj)) {
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      PyErr_Clear();
+    }
+  }
+#ifdef SWIG_PYTHON_CAST_MODE
+  {
+    int dispatch = 0;
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_AddCast(SWIG_OK);
+    } else {
+      PyErr_Clear();
+    }
+    if (!dispatch) {
+      double d;
+      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
+      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
+	if (val) *val = (unsigned long)(d);
+	return res;
+      }
+    }
+  }
+#endif
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
   if (SWIG_IsOK(res)) {
-    if ((v < INT_MIN || v > INT_MAX)) {
+    if ((v > UINT_MAX)) {
       return SWIG_OverflowError;
     } else {
-      if (val) *val = static_cast< int >(v);
+      if (val) *val = static_cast< unsigned int >(v);
     }
   }  
   return res;
+}
+
+
+SWIGINTERNINLINE PyObject* 
+SWIG_From_unsigned_SS_long  (unsigned long value)
+{
+  return (value > LONG_MAX) ?
+    PyLong_FromUnsignedLong(value) : PyInt_FromLong(static_cast< long >(value)); 
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_unsigned_SS_int  (unsigned int value)
+{    
+  return SWIG_From_unsigned_SS_long  (value);
 }
 
 
@@ -3513,32 +3512,31 @@ fail:
 
 SWIGINTERN PyObject *_wrap_SetThreadCount(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  unsigned int arg1 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
+  TPlotSettings *arg1 = 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:SetThreadCount",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "SetThreadCount" "', argument " "1"" of type '" "unsigned int""'");
+  if (!PyArg_ParseTuple(args,(char *)"OO:SetThreadCount",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_TPlotSettings,  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetThreadCount" "', argument " "1"" of type '" "TPlotSettings &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SetThreadCount" "', argument " "1"" of type '" "TPlotSettings &""'"); 
+  }
+  arg1 = reinterpret_cast< TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SetThreadCount" "', argument " "2"" of type '" "int""'");
   } 
-  arg1 = static_cast< unsigned int >(val1);
-  SetThreadCount(arg1);
+  arg2 = static_cast< int >(val2);
+  SetThreadCount(*arg1,arg2);
   resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_GetThreadCount(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)":GetThreadCount")) SWIG_fail;
-  result = (unsigned int)GetThreadCount();
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -6816,6 +6814,58 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TPlotSettings_ThreadCount_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TPlotSettings *arg1 = (TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_ThreadCount_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_ThreadCount_set" "', argument " "1"" of type '" "TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_ThreadCount_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->ThreadCount = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_ThreadCount_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TPlotSettings *arg1 = (TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_ThreadCount_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_ThreadCount_get" "', argument " "1"" of type '" "TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< TPlotSettings * >(argp1);
+  result = (int) ((arg1)->ThreadCount);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *TPlotSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -7306,7 +7356,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"GetAxes", _wrap_GetAxes, METH_VARARGS, NULL},
 	 { (char *)"SetThreadCount", _wrap_SetThreadCount, METH_VARARGS, NULL},
-	 { (char *)"GetThreadCount", _wrap_GetThreadCount, METH_VARARGS, NULL},
 	 { (char *)"TAxis_Min_set", _wrap_TAxis_Min_set, METH_VARARGS, NULL},
 	 { (char *)"TAxis_Min_get", _wrap_TAxis_Min_get, METH_VARARGS, NULL},
 	 { (char *)"TAxis_Max_set", _wrap_TAxis_Max_set, METH_VARARGS, NULL},
@@ -7433,6 +7482,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TPlotSettings_TickWidth_get", _wrap_TPlotSettings_TickWidth_get, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_TickLength_set", _wrap_TPlotSettings_TickLength_set, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_TickLength_get", _wrap_TPlotSettings_TickLength_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_ThreadCount_set", _wrap_TPlotSettings_ThreadCount_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_ThreadCount_get", _wrap_TPlotSettings_ThreadCount_get, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_swigregister", TPlotSettings_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MajorZoomIn_set", _wrap_TGuiSettings_MajorZoomIn_set, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MajorZoomIn_get", _wrap_TGuiSettings_MajorZoomIn_get, METH_VARARGS, NULL},

@@ -9,7 +9,7 @@
 //---------------------------------------------------------------------------
 class TOpenPreviewDialog;
 
-typedef bool __fastcall (__closure *TPreviewFileEvent)(TOpenPreviewDialog *Dialog, const String &FileName, TCanvas *Canvas, const TRect &Rect);
+typedef void __fastcall (__closure *TPreviewFileEvent)(TOpenPreviewDialog *Dialog, const String &FileName, TCanvas *Canvas, const TRect &Rect);
 
 class TOpenPreviewDialog : public TOpenDialog
 {

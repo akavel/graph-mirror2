@@ -16,7 +16,7 @@ class TDrawElem : public TGraphElemVisitor
 {
 private:
   TDraw *Draw;
-  TAxes &Axes;
+  const TAxes &Axes;
   TRect AxesRect;
   TContext &Context;
   bool ForceBlack;
@@ -57,7 +57,7 @@ private:
   void Visit(TAxesView &AxesView);
 
 public:
-  TDrawElem(TDraw *ADraw);
+  TDrawElem::TDrawElem(TDraw *ADraw, bool AForceBlack, const TRect &AAxesRect, const TAxes &AAxes, TContext &Context);
   void DrawNext();
   void ClearPlotIndex() {PlotIndex = 0;}
 };
