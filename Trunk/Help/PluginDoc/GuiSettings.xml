@@ -100,6 +100,17 @@
 						</para>
 					</listitem>
 				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TPlotSettings</classname>.<property>ThreadCount</property></term>
+					<listitem>
+						<indexterm><primary>ThreadCount (Graph.TPlotSettings attribute)</primary></indexterm>
+						<para>
+							The number of threads used for plotting.
+							<property>ThreadCount</property> is at least 1 and the default is the number of CPU cores detected.
+						</para>
+					</listitem>
+				</varlistentry>
 			</variablelist>
 		</para>
 	</section>
