@@ -144,7 +144,10 @@ void TDraw::DrawAll()
     EvalIndex = 0;
     DrawElem.ClearPlotIndex();
     for(unsigned I = 0; I < Threads.size(); I++)
+    {
+      Threads[I]->ClearAborted();
       Threads[I]->PostMessage(dmDrawAll);
+    }
     Form1->BeginUpdate();
   }
 }

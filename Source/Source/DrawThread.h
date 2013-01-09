@@ -67,6 +67,7 @@ public:
   __fastcall TDrawThread(TDraw *ADraw);
   void AbortUpdate() {Aborted = true;}
   bool IsAborted() const {return Aborted;}
+  void ClearAborted() {Aborted = false;}
 };
 //---------------------------------------------------------------------------
 } //namespace Graph
