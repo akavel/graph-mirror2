@@ -209,6 +209,25 @@
 			<qandaentry>
 				<question>
 					<para>
+						Why do circles look like ellipses?
+					</para>
+				</question>
+				<answer>
+					<para>
+						That is probably because the axes are not equally scaled.
+						You can either change the size of the window until the axes scales equally or select
+						<menuchoice>
+							<guimenu>Zoom</guimenu>
+							<guimenuitem>Square</guimenuitem>
+						</menuchoice>
+						in the menu to change the y-axis to scale equal to the x-axis.
+					</para>
+				</answer>
+			</qandaentry>
+
+			<qandaentry>
+				<question>
+					<para>
 						How do I calculate the area between two functions?
 					</para>
 				</question>
