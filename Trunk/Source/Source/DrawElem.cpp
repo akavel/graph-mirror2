@@ -51,11 +51,17 @@ void TDrawElem::DrawNext()
   while(PlotIndex < Count)
   {
     TGraphElemPtr Elem = Top->GetChild(PlotIndex);
-    if(!Elem->GetVisible())
-      PlotIndex++;
-    else if(Elem->IsUpdateFinished())
+    if(Elem->IsUpdateFinished())
     {
-      Elem->Accept(*this);
+      unsigned Count = Elem->ChildCount();
+      for(unsigned N = 0; N < Count; N++)
+      {
+        const TGraphElemPtr &Child = Elem->GetChild(N);
+        if(Child->GetVisible())
+          Child->Accept(*this);
+      }
+      if(Elem->GetVisible())
+        Elem->Accept(*this);
       PlotIndex++;
     }
     else
