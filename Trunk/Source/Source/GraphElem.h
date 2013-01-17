@@ -448,6 +448,7 @@ public:
   bool MarkBorder;
 
   TShading();
+  TShading(const TShading &O);
   std::wstring MakeText() const;
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);

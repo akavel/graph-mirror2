@@ -637,12 +637,19 @@ TShading::TShading()
   SetLegendText(L"Shading");
 }
 //---------------------------------------------------------------------------
+TShading::TShading(const TShading &O)
+  : ShadeStyle(O.ShadeStyle), BrushStyle(O.BrushStyle), Color(O.Color),
+  ExtendMinToIntercept(O.ExtendMinToIntercept), ExtendMaxToIntercept(O.ExtendMaxToIntercept),
+  ExtendMin2ToIntercept(O.ExtendMin2ToIntercept), ExtendMax2ToIntercept(O.ExtendMax2ToIntercept),
+  MarkBorder(O.MarkBorder), sMin(O.sMin), sMax(O.sMax), sMin2(O.sMin2), sMax2(O.sMax2)
+{
+}
+//---------------------------------------------------------------------------
 TGraphElemPtr TShading::Clone() const
 {
 	TShading *Shading = new TShading(*this);
   //Func2 will be updated later in the copy constructor of TData when all functions
   //has been copied.
-	Shading->Func2 = Func2;
 	return CloneHelper(Shading);
 }
 //---------------------------------------------------------------------------
