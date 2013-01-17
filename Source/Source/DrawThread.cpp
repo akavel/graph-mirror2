@@ -102,6 +102,9 @@ void TDrawThread::DrawAll()
     TGraphElemPtr Elem = Draw->GetNextEvalElem();
     if(!Elem)
       return;
+    if(Elem->GetVisible() && !Aborted)
+      Elem->Accept(*this);
+
     unsigned Count = Elem->ChildCount();
     for(unsigned N = 0; N < Count && !Aborted; N++)
     {
@@ -109,15 +112,10 @@ void TDrawThread::DrawAll()
       if(Child->GetVisible())
         Child->Accept(*this);
     }
-    if(Elem->GetVisible() && !Aborted)
-    {
-      Elem->Accept(*this);
-      if(!Aborted)
-      {
-        Elem->SetUpdateFinished();
-        Queue(&Draw->DrawElem.DrawNext);
-      }
-    }
+
+    if(!Aborted)
+      Elem->SetUpdateFinished();
+    Queue(&Draw->DrawElem.DrawNext);
   }
 }
 //---------------------------------------------------------------------------
