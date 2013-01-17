@@ -115,11 +115,11 @@ void LogUncaughtCppException(const char *Message, const char *Thread)
   File << "Date: " << DateTimeToStr(Now()) << std::endl;
   if(Thread)
     File << "Thread: " << Thread << std::endl;
-  File << "Exception name: " << __ThrowExceptionName() << std::endl;
+  File << "Exception name: " << (__ThrowExceptionName() ? __ThrowExceptionName() : "NULL") << std::endl;
   if(Message)
     File << "Message: " << Message << std::endl;
-  File << "File: " << __ThrowFileName() << std::endl;
-  File << "Line: " << __ThrowLineNumber() << std::endl;
+  File << "File: " << (__ThrowFileName() ? __ThrowFileName() : "NULL") << std::endl;
+  File << "Line: " << (__ThrowLineNumber() ? __ThrowLineNumber() : -1) << std::endl;
   File << "-----------------------------------------" << std::endl << std::endl;
 
 //  Application->ShowException(E);
