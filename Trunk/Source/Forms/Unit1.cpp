@@ -1252,14 +1252,39 @@ void __fastcall TForm1::FormMouseWheelDown(TObject *Sender,
 void __fastcall TForm1::Splitter1DblClick(TObject *Sender)
 {
   int MaxWidth = Splitter1->MinSize;
-  for(int I = 0; I < TreeView->Items->Count; I++)
+
+  SCROLLINFO ScrollInfo = {sizeof(ScrollInfo), SIF_RANGE};
+  SCROLLBARINFO ScrollBarInfo = {sizeof(ScrollBarInfo)};
+
+  // To find the whole (scrollable) width of the tree control,
+  // we determine the range of the scrollbar.
+  // Unfortunately when a scrollbar isn't needed (and is invisible),
+  // its range isn't zero (but rather 0 to 100),
+  // so we need to specifically ignore it then.
+  // Only if the scrollbar is displayed
+  if(GetScrollInfo(TreeView->Handle, SB_HORZ, &ScrollInfo) &&
+     GetScrollBarInfo(TreeView->Handle, OBJID_HSCROLL, &ScrollBarInfo) &&
+    (ScrollBarInfo.rgstate[0] & STATE_SYSTEM_INVISIBLE) == 0)
   {
-    TTreeNode *Node = TreeView->Items->Item[I];
-    int StrWidth = Node->DisplayRect(true).Right;
-    if(StrWidth > MaxWidth)
-      MaxWidth = StrWidth;
+    MaxWidth = ScrollInfo.nMax - ScrollInfo.nMin + 6;
   }
-  MaxWidth += 5;
+  else
+  {
+    for(int I = 0; I < TreeView->Items->Count; I++)
+    {
+      TTreeNode *Node = TreeView->Items->Item[I];
+      int StrWidth = Node->DisplayRect(true).Right;
+      if(StrWidth > MaxWidth)
+        MaxWidth = StrWidth;
+    }
+    MaxWidth += 5;
+  }
+
+  //If the vertical scroll bar is visible, add the width of this scroll bar
+  if(GetScrollBarInfo(TreeView->Handle, OBJID_VSCROLL, &ScrollBarInfo) &&
+    (ScrollBarInfo.rgstate[0] & STATE_SYSTEM_INVISIBLE) == 0)
+    MaxWidth += GetSystemMetrics(SM_CXVSCROLL);
+
   if(MaxWidth > Width / 2)
     MaxWidth = Width / 2;
   Panel3->Width = MaxWidth;
