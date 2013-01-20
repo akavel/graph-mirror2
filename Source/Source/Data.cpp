@@ -26,7 +26,6 @@
 
 namespace Graph
 {
-TUndoList UndoList(50);
 //---------------------------------------------------------------------------
 TData::TData() : TopElem(new TTopGraphElem(this))
 {
