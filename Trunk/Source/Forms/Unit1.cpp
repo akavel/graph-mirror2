@@ -419,6 +419,7 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button,
 							Series->InsertDblPoint(Draw.xyCoord(X, Y));
 							UndoList.Push(TUndoAddPoint(Series));
               Data.SetModified();
+              Python::ExecutePluginEvent(Python::peChanged, Elem);
 							Redraw(); //We need to redraw everything; Smooth lines may have changed
 					    UpdateMenu();
             }
@@ -2009,6 +2010,7 @@ void __fastcall TForm1::PasteActionExecute(TObject *Sender)
   Draw.AbortUpdate();
 	GraphClipboard.Paste(Data);
   Data.SetModified();
+  Python::ExecutePluginEvent(Python::peNewElem, Data.Back());
   UpdateTreeView(Data.Back());
   UpdateMenu();
   UpdateEval();
@@ -2152,7 +2154,7 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
   if(Result == mrOk)
   {
     Data.SetModified();
-    Python::ExecutePluginEvent(Python::peChanged, Item);
+    Python::ExecutePluginEvent(Python::peChanged, GetGraphElem(TreeView->Selected));
     UpdateTreeView();
     Redraw();
   }
