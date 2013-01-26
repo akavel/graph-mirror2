@@ -374,8 +374,8 @@ public:
   TCoord<TComplex> Calc(TComplex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double x) const;
-  double CalcArea(double xMin, double xMax, double RelError) const;
-  double CalcArc(double xMin, double xMax, double RelError) const;
+  double CalcArea(double xMin, double xMax, double RelError=1E-4) const;
+  double CalcArc(double xMin, double xMax, double RelError=1E-4) const;
   long double CalcAngleSlope(long double s) const;
 
   TFunc* MakeDifPtr() const;
@@ -454,8 +454,8 @@ public:
   TCoord<TComplex> Calc(TComplex, ECalcError &E) const; //throw()
 
   long double CalcSlope(long double t) const;
-  double CalcArea(double sMin, double sMax, double RelError) const;
-  double CalcArc(double tMin, double tMax, double RelError) const;
+  double CalcArea(double sMin, double sMax, double RelError=1E-4) const;
+  double CalcArc(double tMin, double tMax, double RelError=1E-4) const;
   long double CalcAngleSlope(long double s) const;
 
   TParamFunc* MakeDifPtr() const;
@@ -528,8 +528,8 @@ public:
 
   long double CalcSlope(long double t) const;
   long double CalcR(long double t) const;
-  double CalcArc(double tMin, double tMax, double RelError) const;
-  double CalcArea(double tMin, double tMax, double RelError) const;
+  double CalcArc(double tMin, double tMax, double RelError=1E-4) const;
+  double CalcArea(double tMin, double tMax, double RelError=1E-4) const;
   long double CalcAngleSlope(long double s) const;
 
   TPolarFunc* MakeDifPtr() const;

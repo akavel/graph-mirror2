@@ -21,6 +21,8 @@ using namespace std;
 #define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_OVERFLOW | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
 #define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
 
+#define ASSERT(x) (x) ? (void)0 : AssertFailed(#x, __LINE__)
+
 const long double NaN = numeric_limits<long double>::quiet_NaN(); //0.0/0.0;
 const long double INF = numeric_limits<long double>::infinity();
 inline long double real(long double x) {return x;}
@@ -39,6 +41,11 @@ int _RTLENTRY _EXPFUNC std::iswdigit(wint_t c)
 }
 
 #endif
+//---------------------------------------------------------------------------
+void AssertFailed(const char *Str, int Line)
+{
+  std::cerr << "Evaluation check failed at line " << Line << ": " << Str << std::endl;
+}
 //---------------------------------------------------------------------------
 long double StrToDouble(const char *Str)
 {
@@ -1072,6 +1079,8 @@ void Test()
 	//Test several known problems
 	TestParamFunc(L"t", L"dsafd");
 	TestParamFunc(L"dsafd", L"t");
+
+  ASSERT(::IsEqual(TFunc(L"abs(2/(10.352+1)/(1 - (1-2/(10.352+1))*e^(i*pi*x)))^3").CalcArea(0.02,0.06), 0.02403087587));
 }
 //---------------------------------------------------------------------------
 std::wstringstream DebugStreamBuf;
