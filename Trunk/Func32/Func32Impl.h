@@ -194,26 +194,16 @@ struct TMakeTextData
   unsigned Decimals;
 };
 
-template<typename T>
-struct TGSLFunction
-{
-  TConstIterator Func;
-  TDynData<T> &DynData;
-  long double *Value;
-  TGSLFunction(TConstIterator AFunc, TDynData<T> &ADynData, long double *AValue)
-    : Func(AFunc), DynData(ADynData), Value(AValue) {}
-};
-
 class TFuncData
 {
   std::vector<TElem> Data;
 
   template<typename T>
   static T CalcFunc(TConstIterator &Iter, TDynData<T> &DynData);
-	template<typename T>
+	template<typename T,typename T2>
 	static double CalcGSLFunc(double x, void *Params);
-  template<typename T>
-  static double Integrate(TConstIterator Func, double Min, double Max, double RelError, TDynData<T> &DynData, long double *Value);
+  template<typename T, typename T2>
+  static double Integrate(TConstIterator Func, double Min, double Max, double RelError, TDynData<T> &DynData, T2 *Value);
   void AddDif(TConstIterator Iter, const TElem &Var, TTrigonometry Trigonometry, unsigned Level);
   static std::wstring MakeText(TConstIterator Iter);
   static void CreateText(TMakeTextData &TextData, bool AddPar=false);
