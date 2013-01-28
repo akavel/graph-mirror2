@@ -139,6 +139,9 @@ void TDraw::DrawAll()
 
   if(Data->ElemCount() != 0)
   {
+    unsigned Count = Data->ElemCount();
+    for(unsigned I = 0; I < Count; I++)
+      Data->GetElem(I)->SetUpdateFinished(false);
     IdleEvent->ResetEvent();
     IdleThreadCount = 0;
     EvalIndex = 0;
@@ -1015,9 +1018,10 @@ void TDraw::IncThreadInIdle(bool Init)
 TGraphElemPtr TDraw::GetNextEvalElem()
 {
   const TTopGraphElemPtr &Top = Data->GetTopElem();
-  if(EvalIndex == static_cast<LONG>(Top->ChildCount()))
-    return TGraphElemPtr();
-  return Top->GetChild(InterlockedIncrement(&EvalIndex)-1);
+  int NewIndex = InterlockedIncrement(&EvalIndex);
+  if(NewIndex <= static_cast<LONG>(Top->ChildCount()))
+    return Top->GetChild(NewIndex - 1);
+  return TGraphElemPtr();
 }
 //---------------------------------------------------------------------------
 } //namespace Graph

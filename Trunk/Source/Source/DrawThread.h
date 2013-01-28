@@ -37,6 +37,7 @@ private:
   void CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds, bool LogScl);
 
   void DrawAll();
+  bool EvalNext();
   int SizeScale(int I){return I*SizeMul+0.5;};
   void __fastcall Execute();
   bool InsideImage(const TPoint &P);
