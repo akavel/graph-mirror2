@@ -95,28 +95,31 @@ void __fastcall TDrawThread::Execute()
   }
 }
 //---------------------------------------------------------------------------
+bool TDrawThread::EvalNext()
+{
+  TGraphElemPtr Elem = Draw->GetNextEvalElem();
+  if(!Elem)
+    return false;
+  if(Elem->GetVisible() && !Aborted)
+    Elem->Accept(*this);
+
+  unsigned Count = Elem->ChildCount();
+  for(unsigned N = 0; N < Count && !Aborted; N++)
+  {
+    const TGraphElemPtr &Child = Elem->GetChild(N);
+    if(Child->GetVisible())
+      Child->Accept(*this);
+  }
+
+  if(!Aborted)
+    Elem->SetUpdateFinished();
+  return !Aborted && !Terminated;
+}
+//---------------------------------------------------------------------------
 void TDrawThread::DrawAll()
 {
-  while(!Aborted && !Terminated)
-  {
-    TGraphElemPtr Elem = Draw->GetNextEvalElem();
-    if(!Elem)
-      return;
-    if(Elem->GetVisible() && !Aborted)
-      Elem->Accept(*this);
-
-    unsigned Count = Elem->ChildCount();
-    for(unsigned N = 0; N < Count && !Aborted; N++)
-    {
-      const TGraphElemPtr &Child = Elem->GetChild(N);
-      if(Child->GetVisible())
-        Child->Accept(*this);
-    }
-
-    if(!Aborted)
-      Elem->SetUpdateFinished();
+  while(EvalNext())
     Queue(&Draw->DrawElem.DrawNext);
-  }
 }
 //---------------------------------------------------------------------------
 void TDrawThread::PrepareFunction(TBaseFuncType *F)
@@ -423,9 +426,12 @@ void TDrawThread::CreateShade(TShading &Shade)
 {
   TBaseFuncType *F = dynamic_cast<TBaseFuncType*>(Shade.GetParent().get());
 
-  PrepareFunction(F);
+  //If the shading is attached to a Func2, we continue evaluating until
+  //Func2 has been evaluated so we can use the data from it.
   if(Shade.Func2)
-    PrepareFunction(Shade.Func2.get());
+    while(!Shade.Func2->IsUpdateFinished())
+      if(!EvalNext())
+        return;
 
 	if(F->sList.empty() || (Shade.Func2.get() && Shade.Func2->sList.empty()))
     return;
