@@ -17,7 +17,7 @@ class TDrawElem : public TGraphElemVisitor
 private:
   TDraw *Draw;
   const TAxes &Axes;
-  TRect AxesRect;
+  const TRect &AxesRect;
   TContext &Context;
   bool ForceBlack;
   unsigned PlotIndex; //Next elem to plot
