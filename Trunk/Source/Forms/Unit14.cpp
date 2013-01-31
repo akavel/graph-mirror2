@@ -174,27 +174,28 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
   ));
   PointSeries->SetLegendText(ToWString(Edit1->Text));
 
-  for(int Row = 1; Row < Grid->RowCount; Row++)
+  unsigned Count = DataPoints.size();
+  for(int I = 0; I < Count; I++)
   {
-    DataPoints[Row-1].First = Trim(DataPoints[Row-1].First);
-    DataPoints[Row-1].Second = Trim(DataPoints[Row-1].Second);
-    if(DataPoints[Row-1].First.empty() && DataPoints[Row-1].Second.empty())
+    DataPoints[I].First = Trim(DataPoints[I].First);
+    DataPoints[I].Second = Trim(DataPoints[I].Second);
+    if(DataPoints[I].First.empty() && DataPoints[I].Second.empty())
       continue;
 
-    if(DataPoints[Row-1].First.empty() || DataPoints[Row-1].Second.empty())
+    if(DataPoints[I].First.empty() || DataPoints[I].Second.empty())
     {
-      Grid->Col = DataPoints[Row-1].Second.empty();
-      Grid->Row = Row;
+      Grid->Col = DataPoints[I].Second.empty();
+      Grid->Row = I + 1;
       Grid->SetFocus();
       MessageBox(LoadRes(534), LoadRes(533));
       return;
     }
 
     //Just for validation
-    CellToDouble(Grid, 0, Row);
-    CellToDouble(Grid, 1, Row);
+    CellToDouble(Grid, 0, I+1);
+    CellToDouble(Grid, 1, I+1);
 
-    PointSeries->InsertPoint(DataPoints[Row-1], -1, false);
+    PointSeries->InsertPoint(DataPoints[I], -1, false);
   }
 
   if(PointSeries->PointCount() == 0)
@@ -248,6 +249,7 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
     ComboBox1->ItemIndex = P->GetLabelPosition();
     RadioGroup1->ItemIndex = P->GetPointType();
 
+    DataPoints.reserve(P->GetPointData().size() + 10); //Make space for a little extra
     DataPoints = P->GetPointData(); //Create a working copy of all data
 
     CheckBox3->Checked = P->GetxErrorBarType() != ebtNone;
@@ -446,7 +448,9 @@ void TForm14::UpdateErrorBars()
 //---------------------------------------------------------------------------
 std::wstring& TForm14::GetText(int ACol, int ARow)
 {
-  DataPoints.resize(std::max(Grid->RowCount - 1, ARow));
+  unsigned NewSize = std::max(Grid->RowCount - 2, ARow);
+  if(NewSize != DataPoints.size())
+    DataPoints.resize(NewSize);
   switch(ACol)
   {
     case 0: return DataPoints[ARow-1].First;
