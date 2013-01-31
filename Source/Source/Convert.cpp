@@ -315,7 +315,7 @@ double CellToDouble(TGrid *Grid, int Col, int Row)
     //First try to convert as a number as optimization. If it fails parse using Calc()
     double Result;
     String Str = Grid->Cells[Col][Row];
-    if(Str.Pos("e") == -1 && TryStrToFloat(Str, Result))
+    if(Str.Pos("e") == 0 && TryStrToFloat(Str, Result))
       return Result;
     return Form1->Data.Calc(ToWString(Str));
   }
