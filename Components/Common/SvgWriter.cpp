@@ -102,6 +102,26 @@ void TSvgWriter::Polygon(const POINTS *Points, int Count, TPolyFillMode PolyFill
   Stream << "\" />\n";
 }
 //---------------------------------------------------------------------------
+void TSvgWriter::PolyPolygon(const POINTS *Points, const unsigned long *Counts, int PolyCount, TPolyFillMode PolyFillMode)
+{
+  Stream << "    <path";
+  WritePen();
+  WriteBrush();
+  if(PolyFillMode == pfmEvenOdd)
+    Stream << " fill-rule=\"evenodd\"";
+  Stream << " d=\"";
+  const POINTS *P = Points;
+  for(int I = 0; I < PolyCount; I++)
+  {
+    Stream << "M " << P->x << "," << P->y << " L ";
+    P++;
+    for(unsigned J = 1; J < Counts[I]; J++, P++)
+      Stream << P->x << "," << P->y << " ";
+    Stream << "z ";
+  }
+  Stream << "\" />\n";
+}
+//---------------------------------------------------------------------------
 void TSvgWriter::Rectangle(const RECTL &Rect)
 {
   Stream << "    <rect";

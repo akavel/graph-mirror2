@@ -32,6 +32,7 @@ public:
   void EndOfFile();
   void Line(int X1, int Y1, int X2, int Y2);
   void Polygon(const POINTS *Points, int Count, TPolyFillMode PolyFillMode);
+  void PolyPolygon(const POINTS *Points, const unsigned long *Counts, int PolyCount, TPolyFillMode PolyFillMode);
   void Polyline(const POINTS *Points, int Count);
   void Rectangle(const RECTL &Rect);
   void Arc(const RECTL &Box, const POINTL &Start, const POINTL &End);

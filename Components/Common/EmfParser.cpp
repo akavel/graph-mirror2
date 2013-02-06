@@ -95,6 +95,13 @@ void TEmfParser::HandleRecord(const ENHMETARECORD *lpEMFR)
       break;
     }
 
+    case EMR_POLYPOLYGON16:
+    {
+      EMRPOLYPOLYGON16 *Polygon = (EMRPOLYPOLYGON16*)lpEMFR;
+      Writer->PolyPolygon(Polygon->apts + Polygon->nPolys - 1, Polygon->aPolyCounts, Polygon->nPolys, PolyFillMode);
+      break;
+    }
+
     case EMR_EXTCREATEFONTINDIRECTW:
     {
       EMREXTCREATEFONTINDIRECTW *ExtFont = (EMREXTCREATEFONTINDIRECTW*)lpEMFR;
