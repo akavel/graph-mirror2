@@ -45,6 +45,7 @@ public:
   void DrawPolygon(const std::vector<TPoint> &Points, const TRect &Rect);
   void DrawPolygon(const TPoint *Points, unsigned Size);
   void DrawPolygon(const TPoint *Points, unsigned Size, const TRect &Rect);
+  void DrawPolyPolygon(const std::vector<TPoint> &Points, const std::vector<int> &Counts);
 
   void DrawLine(int X1, int Y1, int X2, int Y2);
   void DrawLine(const TPoint &P1, const TPoint &P2);
