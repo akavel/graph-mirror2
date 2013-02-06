@@ -1280,7 +1280,8 @@ long double TRelation::Eval(long double x, long double y)
 void TRelation::ClearCache()
 {
   Region.reset();
-  BoundingRegion.reset();
+  PolygonPoints.clear();
+  PolygonCount.clear();
 }
 //---------------------------------------------------------------------------
 void TRelation::Update()
