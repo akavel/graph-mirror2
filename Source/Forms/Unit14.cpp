@@ -175,7 +175,7 @@ void __fastcall TForm14::Button1Click(TObject *Sender)
   PointSeries->SetLegendText(ToWString(Edit1->Text));
 
   unsigned Count = DataPoints.size();
-  for(int I = 0; I < Count; I++)
+  for(unsigned I = 0; I < Count; I++)
   {
     DataPoints[I].First = Trim(DataPoints[I].First);
     DataPoints[I].Second = Trim(DataPoints[I].Second);
