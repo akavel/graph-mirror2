@@ -473,16 +473,12 @@ void TDrawElem::Visit(TRelation &Relation)
   Draw->SetClippingRegion();
   TColor Color = ForceBlack ? clBlack : Relation.GetColor();
   Context.SetBrush(Relation.GetRelationType() == rtInequality ? Relation.GetBrushStyle() : bsSolid, Color);
-  Context.DrawRegion(*Relation.Region);
-
-  //Draw a frame around inequalities using BoundingRegion
-  //Warning: Do not try to use DrawFrameRegion(), which calls FrameRgn(), which
-  //may be extremely slow for complex regions. Actually DrawRegion() can be slow too.
-  if(Relation.BoundingRegion)
-  {
-    Context.SetBrush(bsSolid, Color);
-    Context.DrawRegion(*Relation.BoundingRegion);
-  }
+  Context.SetPen(psSolid, Color,
+    Relation.GetRelationType() == rtInequality && Relation.GetBrushStyle() == bsSolid ? 1 : SizeScale(Relation.GetSize()));
+  if(Relation.Region)
+    Context.DrawRegion(*Relation.Region);
+  else
+    Context.DrawPolyPolygon(Relation.PolygonPoints, Relation.PolygonCount);
 }
 //---------------------------------------------------------------------------
 } //namespace Graph

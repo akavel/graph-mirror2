@@ -16,7 +16,8 @@
 #include <values.h>
 #include <algorithm>
 #include <ctime>
-#include <float.h>
+#include <cfloat>
+#include <set>
 #include "IGraphic.h"
 #include "StackTrace.h"
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
@@ -762,6 +763,115 @@ void TDrawThread::Visit(TAxesView &AxesView)
 {
 }
 //---------------------------------------------------------------------------
+struct TCompY
+{
+  inline bool operator()(const TPoint &P1, const TPoint &P2) const
+  {
+    return P1.y == P2.y ? P1.x < P2.x : P1.y < P2.y;
+  }
+};
+//---------------------------------------------------------------------------
+struct TCompX
+{
+  inline bool operator()(const TPoint &P1, const TPoint &P2) const
+  {
+    return P1.x == P2.x ? P1.y < P2.y : P1.x < P2.x;
+  }
+};
+//---------------------------------------------------------------------------
+void RemoveSharedVertice(std::set<TPoint,TCompY> &Points, const TPoint &P)
+{
+  std::set<TPoint,TCompY>::iterator Iter = Points.find(P);
+  if(Iter != Points.end())
+    Points.erase(Iter);
+  else
+    Points.insert(P);
+}
+//---------------------------------------------------------------------------
+//Converted from Python script found at
+//http://stackoverflow.com/questions/13746284/merging-multiple-adjacent-rectangles-into-one-polygon
+void RegionToPolygons(const std::vector<TRect> &Region, std::vector<TPoint> &PolygonPoints, std::vector<int> &PolygonCount)
+{
+  std::set<TPoint,TCompY> yPoints;
+  for(std::vector<TRect>::const_iterator RectIter = Region.begin(); RectIter != Region.end(); ++RectIter)
+  {
+    RemoveSharedVertice(yPoints, RectIter->TopLeft());
+    RemoveSharedVertice(yPoints, RectIter->BottomRight());
+    RemoveSharedVertice(yPoints, TPoint(RectIter->Right, RectIter->Top));
+    RemoveSharedVertice(yPoints, TPoint(RectIter->Left, RectIter->Bottom));
+  }
+
+  std::map<TPoint,TPoint,TCompY> hEdges;
+  std::set<TPoint,TCompY>::const_iterator Iter = yPoints.begin();
+  while(Iter != yPoints.end())
+  {
+    int Y = Iter->y;
+    while(Iter != yPoints.end() && Iter->y == Y)
+    {
+      const TPoint &P = *Iter;
+      ++Iter;
+      hEdges.insert(std::make_pair(P, *Iter));
+      hEdges.insert(std::make_pair(*Iter, P));
+      ++Iter;
+    }
+  }
+
+  std::map<TPoint,TPoint,TCompX> vEdges;
+  std::set<TPoint,TCompX> xPoints(yPoints.begin(), yPoints.end());
+  std::set<TPoint,TCompX>::const_iterator Iter2 = xPoints.begin();
+  while(Iter2 != xPoints.end())
+  {
+    int X = Iter2->x;
+    while(Iter2 != xPoints.end() && Iter2->x == X)
+    {
+      const TPoint &P = *Iter2;
+      ++Iter2;
+      vEdges.insert(std::make_pair(P, *Iter2));
+      vEdges.insert(std::make_pair(*Iter2, P));
+      ++Iter2;
+    }
+  }
+
+  //Get all the polygons
+  while(!hEdges.empty())
+  {
+    std::vector<std::pair<TPoint,int> > Polygon;
+    Polygon.push_back(std::make_pair(hEdges.begin()->first,0)); //We can start with any point.
+    hEdges.erase(hEdges.begin());
+
+    while(true)
+    {
+      if(Polygon.back().second == 0)
+      {
+        std::map<TPoint,TPoint,TCompX>::iterator NextVertex = vEdges.find(Polygon.back().first);
+        Polygon.push_back(std::make_pair(NextVertex->second, 1));
+        vEdges.erase(NextVertex);
+      }
+      else
+      {
+        std::map<TPoint,TPoint,TCompY>::iterator NextVertex = hEdges.find(Polygon.back().first);
+        Polygon.push_back(std::make_pair(NextVertex->second, 0));
+        hEdges.erase(NextVertex);
+      }
+
+      if(Polygon.front() == Polygon.back())
+      {
+        //Closed polygon
+        Polygon.erase(Polygon.end()-1);
+        break;
+      }
+    }
+    //Remove implementation-markers from the polygon.
+    PolygonCount.push_back(Polygon.size());
+    for(unsigned I = 0; I < Polygon.size(); I++)
+    {
+      PolygonPoints.push_back(Polygon[I].first);
+      hEdges.erase(Polygon[I].first);
+      vEdges.erase(Polygon[I].first);
+    }
+  }
+}
+//---------------------------------------------------------------------------
 void TDrawThread::CreateInequality(TRelation &Relation)
 {
   bool xLogScl = Axes.xAxis.LogScl;
@@ -805,9 +915,9 @@ void TDrawThread::CreateInequality(TRelation &Relation)
               XStart = X2;
             else
               Points.push_back(TRect(
-                XStart <= AxesRect.Left ? -100 : XStart + 1,
+                XStart <= AxesRect.Left ? -100 : XStart,
                 Y <= AxesRect.Top ? -100 : Y,
-                X2,
+                X2 - 1,
                 Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
             break;
           }
@@ -822,34 +932,16 @@ void TDrawThread::CreateInequality(TRelation &Relation)
       return;
     if(LastResult)
       Points.push_back(TRect(
-        XStart <= AxesRect.Left ? -100 : XStart + 1,
+        XStart <= AxesRect.Left ? -100 : XStart,
         Y <= AxesRect.Top ? -100 : Y,
         AxesRect.Right + 100,
         Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
     yLogScl ? y *= dy : y += dy;
   }
 
-  Relation.Region.reset(new TRegion(Points));
-
-  if(Relation.GetBrushStyle() != bsSolid && Relation.GetSize() > 0)
-  {
-    //Create bounding region as a region Delta pixels large than the real region, and subtract the real region
-    //to get the bounding region
-    const std::vector<TRect>::iterator End = Points.end();
-    for(std::vector<TRect>::iterator Iter = Points.begin(); Iter != End; ++Iter)
-    {
-      unsigned Delta = SizeScale(Relation.GetSize());
-      Iter->Left -= Delta;
-      Iter->Right += Delta;
-      Iter->Top -= Delta;
-      Iter->Bottom += Delta;
-    }
-
-    Relation.BoundingRegion.reset(new TRegion(Points));
-    *Relation.BoundingRegion -= *Relation.Region;
-  }
-  else
-    Relation.BoundingRegion.reset(); //Don't draw frame when brush style is bsSolid
+  Relation.PolygonPoints.clear();
+  Relation.PolygonCount.clear();
+  RegionToPolygons(Points, Relation.PolygonPoints, Relation.PolygonCount);
 }
 //---------------------------------------------------------------------------
 //Check if there is a possibility for a zero point in f(x,y).
@@ -955,7 +1047,6 @@ void TDrawThread::EquationLoop(TRelation &Relation, std::vector<TRect> &Points, 
 //---------------------------------------------------------------------------
 void TDrawThread::CreateEquation(TRelation &Relation)
 {
-
   std::vector<TRect> Points;
   Points.reserve(500);
 
