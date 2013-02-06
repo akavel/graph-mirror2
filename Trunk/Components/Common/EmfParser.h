@@ -62,6 +62,7 @@ public:
   virtual void EndOfFile()=0;
   virtual void Line(int X1, int Y1, int X2, int Y2)=0;
   virtual void Polygon(const POINTS *Points, int Count, TPolyFillMode PolyFillMode)=0;
+  virtual void PolyPolygon(const POINTS *Points, const unsigned long *Counts, int PolyCount, TPolyFillMode PolyFillMode)=0;
   virtual void Polyline(const POINTS *Points, int Count)=0;
   virtual void Rectangle(const RECTL &Rect)=0;
   virtual void Ellipse(const RECTL &Rect)=0;
