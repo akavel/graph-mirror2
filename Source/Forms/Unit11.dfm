@@ -146,6 +146,7 @@ object Form11: TForm11
       Align = alRight
       Alignment = taRightJustify
       Caption = 'Width:'
+      FocusControl = Edit4
       Layout = tlCenter
       ExplicitHeight = 13
     end
