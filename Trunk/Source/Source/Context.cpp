@@ -299,8 +299,10 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap, 
     LOGBRUSH LogBrush = {BS_SOLID, Color};
     Canvas->Pen->Handle = ExtCreatePen(PS_GEOMETRIC | Style | Join | EndCap, Width, &LogBrush, 0, NULL);
   }
+  else if(Width == 1)
+    Canvas->Pen->Handle = CreatePen(Style, 1, Color);
   else
-    Canvas->Pen->Handle = CreatePen(Style, Style == psSolid ? Width : 1, Color);
+    Canvas->Pen->Handle = CreatePen(psClear, 0, clWhite);
 }
 //---------------------------------------------------------------------------
 static bool UseThinGridLines = GetRegValue(REGISTRY_KEY, L"UseThinGridLines", HKEY_CURRENT_USER, false);
@@ -349,6 +351,14 @@ void TContext::DrawPolygon(const std::vector<TPoint> &Points, const TRect &Rect)
 {
   if(!Points.empty())
     DrawPolygon(&Points.front(), Points.size(), Rect);
+}
+//---------------------------------------------------------------------------
+void TContext::DrawPolyPolygon(const std::vector<TPoint> &Points, const std::vector<int> &Counts)
+{
+  SetPolyFillMode(Canvas->Handle, ALTERNATE);
+  if(!Counts.empty() && !Points.empty())
+    PolyPolygon(Canvas->Handle, &Points[0], &Counts[0], Counts.size());
+  Changed();
 }
 //---------------------------------------------------------------------------
 void TContext::FillRect(const TRect &Rect)
