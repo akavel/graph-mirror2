@@ -707,6 +707,9 @@ class TRelation(TGraphElem):
     __swig_setmethods__["BrushStyle"] = _Data.TRelation_BrushStyle_set
     __swig_getmethods__["BrushStyle"] = _Data.TRelation_BrushStyle_get
     if _newclass:BrushStyle = _swig_property(_Data.TRelation_BrushStyle_get, _Data.TRelation_BrushStyle_set)
+    __swig_setmethods__["LineStyle"] = _Data.TRelation_LineStyle_set
+    __swig_getmethods__["LineStyle"] = _Data.TRelation_LineStyle_get
+    if _newclass:LineStyle = _swig_property(_Data.TRelation_LineStyle_get, _Data.TRelation_LineStyle_set)
     __swig_getmethods__["RelationType"] = _Data.TRelation_RelationType_get
     if _newclass:RelationType = _swig_property(_Data.TRelation_RelationType_get)
     __swig_getmethods__["Text"] = _Data.TRelation_Text_get

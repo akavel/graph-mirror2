@@ -473,12 +473,12 @@ void TDrawElem::Visit(TRelation &Relation)
   Draw->SetClippingRegion();
   TColor Color = ForceBlack ? clBlack : Relation.GetColor();
   Context.SetBrush(Relation.GetRelationType() == rtInequality ? Relation.GetBrushStyle() : bsSolid, Color);
-  Context.SetPen(psSolid, Color,
+  Context.SetPen(Relation.GetLineStyle(), Color,
     Relation.GetRelationType() == rtInequality && Relation.GetBrushStyle() == bsSolid ? 1 : SizeScale(Relation.GetSize()));
   if(Relation.Region)
     Context.DrawRegion(*Relation.Region);
   else
-    Context.DrawPolyPolygon(Relation.PolygonPoints, Relation.PolygonCount);
+    Context.DrawPolyPolygon(Relation.GetPolygonPoints(), Relation.GetPolygonCounts());
 }
 //---------------------------------------------------------------------------
 } //namespace Graph

@@ -471,10 +471,11 @@ class TRelation : public TGraphElem
   unsigned Size;
   TBrushStyle BrushStyle;
   TRelationType RelationType;
+  TPenStyle LineStyle;
+  std::vector<TPoint> PolygonPoints;
+  std::vector<int> PolygonCounts;
 
 public:
-  std::vector<TPoint> PolygonPoints;
-  std::vector<int> PolygonCount;
   boost::shared_ptr<class TRegion> Region;
 
   TRelation();
@@ -487,6 +488,7 @@ public:
   boost::shared_ptr<TGraphElem> Clone() const {return CloneHelper(new TRelation(*this));}
   void SetConstraints(const std::wstring &AConstraintsText, const Func32::TSymbolList &SymbolList);
   void Update();
+  void SetPoints(std::vector<TPoint> &APolygonPoints, std::vector<int> &APolygonCounts); //This will steal the content of the vectors
 
   TColor GetColor() const {return Color;}
   void SetColor(TColor Value) {Color = Value;}
@@ -501,6 +503,10 @@ public:
   unsigned GetSize() const {return Size;}
   void SetSize(unsigned Value) {Size = Value;}
   bool IsDependent(const std::wstring &SymbolName) const;
+  TPenStyle GetLineStyle() const {return LineStyle;}
+  void SetLineStyle(TPenStyle PenStyle) {LineStyle = PenStyle;}
+  const std::vector<TPoint>& GetPolygonPoints() const {return PolygonPoints;}
+  const std::vector<int>& GetPolygonCounts() const {return PolygonCounts;}
 };
 
 class TAxesView : public TGraphElem
