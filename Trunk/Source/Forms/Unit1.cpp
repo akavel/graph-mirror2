@@ -380,7 +380,8 @@ void TForm1::Redraw(void)
   Image1->Canvas->Brush->Style = bsSolid;
   //Set background color
   Image1->Canvas->Brush->Color = Data.Axes.BackgroundColor;
-  //Clear area
+  //Remove clipping region and clear area
+  SelectClipRgn(Image1->Canvas->Handle, NULL);
   Image1->Canvas->FillRect(Rect(0,0,Image1->Width,Image1->Height));
   Draw.DrawAll();
 }
