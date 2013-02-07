@@ -939,9 +939,10 @@ void TDrawThread::CreateInequality(TRelation &Relation)
     yLogScl ? y *= dy : y += dy;
   }
 
-  Relation.PolygonPoints.clear();
-  Relation.PolygonCount.clear();
-  RegionToPolygons(Points, Relation.PolygonPoints, Relation.PolygonCount);
+  std::vector<TPoint> PolygonPoints;
+  std::vector<int> PolygonCounts;
+  RegionToPolygons(Points, PolygonPoints, PolygonCounts);
+  Relation.SetPoints(PolygonPoints, PolygonCounts);
 }
 //---------------------------------------------------------------------------
 //Check if there is a possibility for a zero point in f(x,y).

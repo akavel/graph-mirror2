@@ -14,6 +14,7 @@
 #pragma link "ShadeSelect"
 #pragma link "MyEdit"
 #pragma link "ExtColorBox"
+#pragma link "LineSelect"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm11::TForm11(TComponent* Owner, TData &AData)
@@ -23,6 +24,7 @@ __fastcall TForm11::TForm11(TComponent* Owner, TData &AData)
   ScaleForm(this);
 
   ShadeSelect1->ShadeStyle = static_cast<TBrushStyle>(Property.DefaultRelation.Style);
+  LineSelect1->LineStyle = psSolid;
   ExtColorBox1->Selected = Property.DefaultRelation.Color;
   UpDown1->Position = Property.DefaultRelation.Size;
   FlipForm(this);
@@ -55,7 +57,7 @@ int TForm11::EditRelation(const boost::shared_ptr<TRelation> &ARelation)
   UpDown1->Position = Relation->GetSize();
   ExtColorBox1->Selected = Relation->GetColor();
   ShadeSelect1->ShadeStyle = Relation->GetBrushStyle();
-
+  LineSelect1->LineStyle = Relation->GetLineStyle();
   return ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -93,6 +95,7 @@ void __fastcall TForm11::Button1Click(TObject *Sender)
       NewRelation->SetSize(1);
     NewRelation->SetColor(ExtColorBox1->Selected);
     NewRelation->SetBrushStyle(ShadeSelect1->ShadeStyle);
+    NewRelation->SetLineStyle(LineSelect1->LineStyle);
 
     Data.AbortUpdate();
     if(Relation)

@@ -5807,6 +5807,10 @@ SWIG_From_std_string  (const std::string& s)
 #define TRelation_BrushStyle_set(self_, val_) self_->SetBrushStyle(val_)
   
 
+#define TRelation_LineStyle_get(self_) self_->GetLineStyle()
+#define TRelation_LineStyle_set(self_, val_) self_->SetLineStyle(val_)
+  
+
 #define TRelation_RelationType_get(self_) self_->GetRelationType()
   
 
@@ -17823,6 +17827,82 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TRelation_LineStyle_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  TPenStyle arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TRelation_LineStyle_set",&obj0,&obj1)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_LineStyle_set" "', argument " "1"" of type '" "TRelation *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TRelation_LineStyle_set" "', argument " "2"" of type '" "TPenStyle""'");
+  } 
+  arg2 = static_cast< TPenStyle >(val2);
+  TRelation_LineStyle_set(arg1,arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TRelation_LineStyle_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TRelation *arg1 = (TRelation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  boost::shared_ptr< TRelation > tempshared1 ;
+  boost::shared_ptr< TRelation > *smartarg1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TPenStyle result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TRelation_LineStyle_get",&obj0)) SWIG_fail;
+  {
+    int newmem = 0;
+    res1 = SWIG_ConvertPtrAndOwn(obj0, &argp1, SWIGTYPE_p_boost__shared_ptrT_TRelation_t, 0 |  0 , &newmem);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TRelation_LineStyle_get" "', argument " "1"" of type '" "TRelation *""'"); 
+    }
+    if (newmem & SWIG_CAST_NEW_MEMORY) {
+      tempshared1 = *reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      delete reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >(tempshared1.get());
+    } else {
+      smartarg1 = reinterpret_cast< boost::shared_ptr<  TRelation > * >(argp1);
+      arg1 = const_cast< TRelation * >((smartarg1 ? smartarg1->get() : 0));
+    }
+  }
+  result = (TPenStyle)TRelation_LineStyle_get(arg1);
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TRelation_RelationType_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TRelation *arg1 = (TRelation *) 0 ;
@@ -18544,6 +18624,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TRelation_Color_get", _wrap_TRelation_Color_get, METH_VARARGS, NULL},
 	 { (char *)"TRelation_BrushStyle_set", _wrap_TRelation_BrushStyle_set, METH_VARARGS, NULL},
 	 { (char *)"TRelation_BrushStyle_get", _wrap_TRelation_BrushStyle_get, METH_VARARGS, NULL},
+	 { (char *)"TRelation_LineStyle_set", _wrap_TRelation_LineStyle_set, METH_VARARGS, NULL},
+	 { (char *)"TRelation_LineStyle_get", _wrap_TRelation_LineStyle_get, METH_VARARGS, NULL},
 	 { (char *)"TRelation_RelationType_get", _wrap_TRelation_RelationType_get, METH_VARARGS, NULL},
 	 { (char *)"TRelation_Text_get", _wrap_TRelation_Text_get, METH_VARARGS, NULL},
 	 { (char *)"TRelation_Constraints_get", _wrap_TRelation_Constraints_get, METH_VARARGS, NULL},

@@ -1156,12 +1156,12 @@ bool TTextLabel::IsDependent(const std::wstring &SymbolName) const
 // TRelation //
 ///////////////
 TRelation::TRelation()
-  : Color(clGreen), BrushStyle(bsBDiagonal), Size(1)
+  : Color(clGreen), BrushStyle(bsBDiagonal), Size(1), LineStyle(psSolid)
 {
 }
 //---------------------------------------------------------------------------
 TRelation::TRelation(const std::wstring &AText, const std::wstring &AConstraints, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : Text(AText), Color(clGreen), BrushStyle(bsFDiagonal), Size(1)
+  : Text(AText), Color(clGreen), BrushStyle(bsFDiagonal), Size(1), LineStyle(psSolid)
 {
   std::vector<std::wstring> Args;
   Args.push_back(L"x");
@@ -1189,7 +1189,8 @@ TRelation::TRelation(const std::wstring &AText, const std::wstring &AConstraints
 TRelation::TRelation(const TRelation &Relation)
   : TGraphElem(Relation), Text(Relation.Text), ConstraintsText(Relation.ConstraintsText),
     Func(Relation.Func), Constraints(Relation.Constraints), RelationType(Relation.RelationType),
-    Color(Relation.Color), BrushStyle(Relation.BrushStyle), Size(Relation.Size)
+    Color(Relation.Color), BrushStyle(Relation.BrushStyle), Size(Relation.Size),
+    LineStyle(Relation.LineStyle)
 {
 }
 //---------------------------------------------------------------------------
@@ -1198,6 +1199,7 @@ void TRelation::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"Relation", Text);
   Section.Write(L"Constraints", ConstraintsText, std::wstring());
   Section.Write(L"Style", BrushStyle);
+  Section.Write(L"LineStyle", LineStyle);
   Section.Write(L"Color", Color);
   Section.Write(L"Size", Size, 1U);
 
@@ -1211,6 +1213,7 @@ void TRelation::ReadFromIni(const TConfigFileSection &Section)
   Text = Section.Read(L"Relation", L"");
   ConstraintsText = Section.Read(L"Constraints", L"");
   BrushStyle = Section.Read(L"Style", bsBDiagonal);
+  LineStyle = Section.Read(L"LineStyle", psSolid);
   Color = Section.Read(L"Color", clGreen);
   Size = Section.Read(L"Size", 1);
   std::vector<std::wstring> Args;
@@ -1281,7 +1284,7 @@ void TRelation::ClearCache()
 {
   Region.reset();
   PolygonPoints.clear();
-  PolygonCount.clear();
+  PolygonCounts.clear();
 }
 //---------------------------------------------------------------------------
 void TRelation::Update()
@@ -1295,6 +1298,14 @@ void TRelation::Update()
 bool TRelation::IsDependent(const std::wstring &SymbolName) const
 {
   return Func.IsDependent(SymbolName) || Constraints.IsDependent(SymbolName);
+}
+//---------------------------------------------------------------------------
+void TRelation::SetPoints(std::vector<TPoint> &APolygonPoints, std::vector<int> &APolygonCounts)
+{
+  PolygonPoints.clear();
+  PolygonCounts.clear();
+  PolygonPoints.swap(APolygonPoints);
+  PolygonCounts.swap(APolygonCounts);
 }
 //---------------------------------------------------------------------------
 ///////////////

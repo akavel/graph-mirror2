@@ -817,6 +817,18 @@
 
 				<varlistentry>
 					<term>
+						<indexterm><primary>LineStyle (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>LineStyle</property>
+					</term>
+					<listitem>
+						<para>
+							This is a <classname>vcl.TPenStyle</classname> that specifies the line style used to draw equations and the border around inequalities.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
 						<indexterm><primary>Color (Graph.TRelation attribute)</primary></indexterm>
 						<classname>TRelation</classname>.<property>Color</property>
 					</term>
