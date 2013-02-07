@@ -355,7 +355,7 @@ void __fastcall TForm14::Change(TObject *Sender)
 //---------------------------------------------------------------------------
 HPEN TForm14::SetPen(TColor Color, TPenStyle Style, int Width)
 {
-  if(Win32Platform == VER_PLATFORM_WIN32_NT && Width > 1)
+  if(Width > 1)
   {
     unsigned long DashStyle[] = {16, 8};
     LOGBRUSH LogBrush;
@@ -365,7 +365,7 @@ HPEN TForm14::SetPen(TColor Color, TPenStyle Style, int Width)
       return ExtCreatePen(PS_GEOMETRIC | PS_USERSTYLE, Width, &LogBrush, sizeof(DashStyle)/sizeof(*DashStyle), DashStyle);
     return ExtCreatePen(PS_GEOMETRIC | Style, Width, &LogBrush, 0, NULL);
   }
-  return CreatePen(Style, Width, Color);
+  return CreatePen(Width == 0 ? psClear : Style, Width, Color);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Button3Click(TObject *Sender)
