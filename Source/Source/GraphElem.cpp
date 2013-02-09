@@ -1156,12 +1156,13 @@ bool TTextLabel::IsDependent(const std::wstring &SymbolName) const
 // TRelation //
 ///////////////
 TRelation::TRelation()
-  : Color(clGreen), BrushStyle(bsBDiagonal), Size(1), LineStyle(psSolid)
+  : Color(clGreen), BrushStyle(bsBDiagonal), Size(1), LineStyle(psSolid), Alpha(100)
 {
 }
 //---------------------------------------------------------------------------
 TRelation::TRelation(const std::wstring &AText, const std::wstring &AConstraints, const Func32::TSymbolList &SymbolList, Func32::TTrigonometry Trig)
-  : Text(AText), Color(clGreen), BrushStyle(bsFDiagonal), Size(1), LineStyle(psSolid)
+  : Text(AText), Color(clGreen), BrushStyle(bsFDiagonal), Size(1), LineStyle(psSolid),
+    Alpha(100)
 {
   std::vector<std::wstring> Args;
   Args.push_back(L"x");
@@ -1190,7 +1191,7 @@ TRelation::TRelation(const TRelation &Relation)
   : TGraphElem(Relation), Text(Relation.Text), ConstraintsText(Relation.ConstraintsText),
     Func(Relation.Func), Constraints(Relation.Constraints), RelationType(Relation.RelationType),
     Color(Relation.Color), BrushStyle(Relation.BrushStyle), Size(Relation.Size),
-    LineStyle(Relation.LineStyle)
+    LineStyle(Relation.LineStyle), Alpha(Relation.Alpha)
 {
 }
 //---------------------------------------------------------------------------
@@ -1201,6 +1202,7 @@ void TRelation::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"Style", BrushStyle);
   Section.Write(L"LineStyle", LineStyle);
   Section.Write(L"Color", Color);
+  Section.Write(L"Alpha", Alpha);
   Section.Write(L"Size", Size, 1U);
 
   TGraphElem::WriteToIni(Section);
@@ -1215,6 +1217,7 @@ void TRelation::ReadFromIni(const TConfigFileSection &Section)
   BrushStyle = Section.Read(L"Style", bsBDiagonal);
   LineStyle = Section.Read(L"LineStyle", psSolid);
   Color = Section.Read(L"Color", clGreen);
+  Alpha = Section.Read(L"Alpha", 100);
   Size = Section.Read(L"Size", 1);
   std::vector<std::wstring> Args;
   Args.push_back(L"x");

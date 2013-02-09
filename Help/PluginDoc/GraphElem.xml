@@ -841,6 +841,18 @@
 
 				<varlistentry>
 					<term>
+						<indexterm><primary>Alpha (Graph.TRelation attribute)</primary></indexterm>
+						<classname>TRelation</classname>.<property>Alpha</property>
+					</term>
+					<listitem>
+						<para>
+							This specifies the alpha channel for the relation in percent if it is an inequality, but it does not affect the border around the inequality.
+						</para>
+					</listitem>
+				</varlistentry>
+
+				<varlistentry>
+					<term>
 						<indexterm><primary>RelationType (Graph.TRelation attribute)</primary></indexterm>
 						<classname>TRelation</classname>.<property>RelationType</property>
 					</term>

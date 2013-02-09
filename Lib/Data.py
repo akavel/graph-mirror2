@@ -704,6 +704,9 @@ class TRelation(TGraphElem):
     __swig_setmethods__["Color"] = _Data.TRelation_Color_set
     __swig_getmethods__["Color"] = _Data.TRelation_Color_get
     if _newclass:Color = _swig_property(_Data.TRelation_Color_get, _Data.TRelation_Color_set)
+    __swig_setmethods__["Alpha"] = _Data.TRelation_Alpha_set
+    __swig_getmethods__["Alpha"] = _Data.TRelation_Alpha_get
+    if _newclass:Alpha = _swig_property(_Data.TRelation_Alpha_get, _Data.TRelation_Alpha_set)
     __swig_setmethods__["BrushStyle"] = _Data.TRelation_BrushStyle_set
     __swig_getmethods__["BrushStyle"] = _Data.TRelation_BrushStyle_get
     if _newclass:BrushStyle = _swig_property(_Data.TRelation_BrushStyle_get, _Data.TRelation_BrushStyle_set)

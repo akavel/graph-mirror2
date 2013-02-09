@@ -472,6 +472,7 @@ class TRelation : public TGraphElem
   TBrushStyle BrushStyle;
   TRelationType RelationType;
   TPenStyle LineStyle;
+  unsigned Alpha;
   std::vector<TPoint> PolygonPoints;
   std::vector<int> PolygonCounts;
 
@@ -505,6 +506,8 @@ public:
   bool IsDependent(const std::wstring &SymbolName) const;
   TPenStyle GetLineStyle() const {return LineStyle;}
   void SetLineStyle(TPenStyle PenStyle) {LineStyle = PenStyle;}
+  unsigned GetAlpha() const {return Alpha;}
+  void SetAlpha(unsigned AAlpha) {Alpha = AAlpha;}
   const std::vector<TPoint>& GetPolygonPoints() const {return PolygonPoints;}
   const std::vector<int>& GetPolygonCounts() const {return PolygonCounts;}
 };
