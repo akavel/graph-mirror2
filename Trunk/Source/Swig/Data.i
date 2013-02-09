@@ -302,6 +302,7 @@ public:
 enum TRelationType {rtEquation, rtInequality};
 
 %attribute(TRelation, TColor, Color, GetColor, SetColor);
+%attribute(TRelation, unsigned, Alpha, GetAlpha, SetAlpha);
 %attribute(TRelation, TBrushStyle, BrushStyle, GetBrushStyle, SetBrushStyle);
 %attribute(TRelation, TPenStyle, LineStyle, GetLineStyle, SetLineStyle);
 %attribute(TRelation, TRelationType, RelationType, GetRelationType);
