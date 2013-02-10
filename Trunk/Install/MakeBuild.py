@@ -13,9 +13,10 @@ try:
   # Test that Graph can be started without some obscure dll files
   os.system("Graph.exe /regserver")
 
+  Password = getpass()
+
   # Sign Graph.exe
-  if "/sign" in sys.argv:
-    subprocess.check_call(['signtool.exe',  'sign', '/f', 'IvanMøllerJohansen.crt', '/t', 'http://timestamp.comodoca.com/authenticode', '/d', '"Graph"', 'Graph.exe'])
+  subprocess.check_call(['signtool.exe',  'sign', '/f', 'Certificate.p12', '/t', 'http://time.certum.pl', '/d', '"Graph"', '/p', Password, 'Graph.exe'])
 
   # Compile SetupGraphBeta-4.2.0.x.exe
   print("Compiling...")
@@ -25,8 +26,7 @@ try:
   FileName = "SetupGraphBeta-" + VersionInfo + ".exe"
 
   # Sign SetupGraphBeta-x.x.x.exe
-  if "/sign" in sys.argv:
-    subprocess.check_call(['signtool.exe',  'sign', '/f', 'IvanMøllerJohansen.crt', '/t', 'http://timestamp.comodoca.com/authenticode', '/d', '"Graph"', FileName])
+  subprocess.check_call(['signtool.exe',  'sign', '/f', 'Certificate.p12', '/t', 'http://time.certum.pl', '/d', '"Graph"', '/p', Password, FileName])
 
   #Creating GraphBeta.inf
   print("Writing GraphBeta.inf ...")
@@ -41,7 +41,6 @@ try:
   File.write("DownloadPage = http://www.padowan.dk/beta\n")
 
   # Upload SetupGraphBeta.exe to the server
-  Password = getpass()
   ftp = FTP('ftp.padowan.dk')   # connect to host, default port
   ftp.login('padowan.dk', Password)
   ftp.cwd('bin')
