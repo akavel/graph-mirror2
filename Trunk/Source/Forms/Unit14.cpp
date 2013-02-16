@@ -448,7 +448,7 @@ void TForm14::UpdateErrorBars()
 //---------------------------------------------------------------------------
 std::wstring& TForm14::GetText(int ACol, int ARow)
 {
-  unsigned NewSize = std::max(Grid->RowCount - 2, ARow);
+  unsigned NewSize = std::max(std::max(Grid->RowCount - 2, ARow), static_cast<int>(DataPoints.size()));
   if(NewSize != DataPoints.size())
     DataPoints.resize(NewSize);
   switch(ACol)
