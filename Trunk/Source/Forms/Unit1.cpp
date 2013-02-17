@@ -3565,6 +3565,17 @@ void __fastcall TForm1::AnimateActionExecute(TObject *Sender)
   CreateForm<TForm19>(Data, Image1->Width, Image1->Height)->ShowModal();
 }
 //---------------------------------------------------------------------------
+void CallScriptNewElem(const TGraphElemPtr &Elem)
+{
+  unsigned Count = Elem->ChildCount();
+  for(unsigned I = 0; I < Count; I++)
+  {
+    TGraphElemPtr Child = Elem->GetChild(I);
+    Python::ExecutePluginEvent(Python::peNewElem, Child);
+    CallScriptNewElem(Child);
+  }
+}
+//---------------------------------------------------------------------------
 void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
 {
   OpenPreviewDialog1->Filter = LoadRes(RES_GRAPH_FILTER);
@@ -3578,6 +3589,7 @@ void __fastcall TForm1::ImportGraphFileActionExecute(TObject *Sender)
       for(unsigned I = Count; I < Data.ElemCount(); I++)
         UndoList.Push(TUndoAdd(Data.GetElem(I)));
       UndoList.EndMultiUndo();
+      CallScriptNewElem(Data.GetTopElem());
       UpdateTreeView();
       UpdateMenu();
       Redraw();
