@@ -19,6 +19,7 @@
 #include "ICompCommon.h"
 #include "HandleCsv.h"
 #include <boost/tokenizer.hpp>
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 void TData::LoadFromFile(const std::wstring &FileName)
 {
@@ -374,6 +375,7 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
 		Insert(Series);
 		UndoList.Push(TUndoAdd(Series));
 		Series->Update();
+    Python::ExecutePluginEvent(Python::peNewElem, static_cast<TGraphElemPtr>(Series));
 		ColorIndex = ++ColorIndex % (sizeof(Colors)/sizeof(TColor));
 		Style = (Style+1) % 7;
 		LineStyle = (LineStyle+1) % 5;
