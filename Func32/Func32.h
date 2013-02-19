@@ -84,7 +84,7 @@ enum TErrorCode
   ecComplexError    =  6, //!< Some error ocoured because the value had an imaginary part
   ecDivByZero       =  7, //!< Division by zero
   ecArcError        =  8, //!< Inverse trogonometric function out of range [-1;1]
-  ecNotDefError     =  9, //!< Position not defined; returned by Sign(x) or U(x) if x=0, or by Undef
+  ecNotDefError     =  9, //!< Position not defined; returned by Undef or if(a,b) when a=0
   ecATanhError      = 10, //!< atanh(x) is only defined for x=]-1;1] for real numbers
   ecACoshError      = 11, //!< acosh(x) is undefined for z < 1 for real numbers
   ecArgError        = 12, //!< arg(0) is undefined
