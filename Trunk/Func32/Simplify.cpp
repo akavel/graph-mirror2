@@ -60,8 +60,6 @@ static const TSimplify Table[TableSize] =
 
   {CodeLn, Codee, CodeIgnore, 1},
 	{CodeLog, 10, CodeIgnore, 1},
-	{CodeSqrt, CodeSqr, CodeIgnore, CodePar1Par},
-	{CodeSqr, CodeSqrt, CodeIgnore, CodePar1Par},
 	{CodeSqr, CodeNeg, CodeIgnore, CodeSqr, CodePar1Par},
 	{CodeIntegrate, 0, CodeIgnore, 0},
 };
