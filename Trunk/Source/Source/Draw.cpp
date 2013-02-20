@@ -133,7 +133,9 @@ double TDraw::yPointExact(long double y) const
 void TDraw::DrawAll()
 {
   AbortUpdate();
+  Context.SetCanvas(Context.GetCanvas());
   Context.DestroyClipRect(); //Remove all clipping regions; Must be done if printing more than one page
+  Context.SetSmoothingMode(PlotSettings.SmoothingMode);
 
   RedrawAxes();
 
