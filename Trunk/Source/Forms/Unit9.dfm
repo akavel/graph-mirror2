@@ -1,6 +1,8 @@
 object Form9: TForm9
   Left = 449
   Top = 279
+  AlphaBlend = True
+  AlphaBlendValue = 240
   BiDiMode = bdLeftToRight
   BorderIcons = [biSystemMenu]
   BorderStyle = bsToolWindow
@@ -159,37 +161,37 @@ object Form9: TForm9
       ExplicitHeight = 102
       inherited Label1: TLabel
         Width = 26
-        Height = 21
+        Height = 22
         ExplicitWidth = 26
       end
       inherited Label2: TLabel
-        Top = 38
-        Height = 21
-        ExplicitTop = 39
+        Top = 39
+        Height = 22
+        ExplicitTop = 38
       end
       inherited Label3: TLabel
-        Top = 68
+        Top = 70
         Width = 22
-        Height = 24
-        ExplicitTop = 70
+        Height = 22
+        ExplicitTop = 68
         ExplicitWidth = 22
       end
       inherited Edit3: TEdit
         Left = 34
-        Top = 68
+        Top = 70
         Width = 146
-        Height = 24
+        Height = 22
         ExplicitLeft = 34
-        ExplicitTop = 68
+        ExplicitTop = 70
         ExplicitWidth = 146
       end
       inherited Panel1: TPanel
         Left = 34
         Width = 146
-        Height = 21
+        Height = 22
         ExplicitLeft = 34
         ExplicitWidth = 146
-        ExplicitHeight = 21
+        ExplicitHeight = 22
         inherited Edit1: TMyEdit
           Width = 131
           OnChange = Edit1Change
@@ -197,19 +199,20 @@ object Form9: TForm9
         end
         inherited UpDown1: TUpDownEx
           Left = 131
+          Top = 0
           OnUpDown = UpDownExUpDown
           ExplicitLeft = 131
         end
       end
       inherited Panel2: TPanel
         Left = 34
-        Top = 38
+        Top = 39
         Width = 146
-        Height = 21
+        Height = 22
         ExplicitLeft = 34
-        ExplicitTop = 38
+        ExplicitTop = 39
         ExplicitWidth = 146
-        ExplicitHeight = 21
+        ExplicitHeight = 22
         inherited Edit2: TMyEdit
           Width = 131
           OnChange = Edit1Change
