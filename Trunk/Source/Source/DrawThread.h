@@ -49,6 +49,8 @@ private:
   void EquationLoop(TRelation &Relation, std::vector<TRect> &Points, bool Loop);
   static bool CheckResult1(const long double Result[3]);
   static bool CheckResult2(const long double Result[3]);
+  void ShowStatusError(const String &Str);
+  void SynchronizedShowStatusError(const String &Str);
 
   //Draw elements
   void Visit(TBaseFuncType &Func);

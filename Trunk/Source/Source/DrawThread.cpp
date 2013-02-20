@@ -81,17 +81,17 @@ void __fastcall TDrawThread::Execute()
     catch(Exception &E)
     {
       LogUncaughtException(this, &E);
-      Synchronize(&Form1->ShowStatusError, String("Internal error. Log file Graph.err created."));
+      ShowStatusError("Internal error. Log file Graph.err created.");
     }
     catch(std::exception &E)
     {
       LogUncaughtCppException(E.what(), "DrawThread");
-      Synchronize(&Form1->ShowStatusError, String("Internal error. Log file Graph.err created."));
+      ShowStatusError("Internal error. Log file Graph.err created.");
     }
     catch(...)
     {
       LogUncaughtCppException(NULL, "DrawThread");
-      Synchronize(&Form1->ShowStatusError, String("Internal error. Log file Graph.err created."));
+      ShowStatusError("Internal error. Log file Graph.err created.");
     }
   }
 }
@@ -371,15 +371,15 @@ void TDrawThread::CalcFunc(TBaseFuncType &F, double sMin, double sMax, double ds
   }
   catch(Exception &E)
   {
-    Synchronize(&Form1->ShowStatusError, "Internal error. Unexpected exception: " + E.Message);
+    ShowStatusError("Internal error. Unexpected exception: " + E.Message);
   }
   catch(std::exception &E)
   {
-    Synchronize(&Form1->ShowStatusError, "Internal error. Unexpected exception: " + String(E.what()));
+    ShowStatusError("Internal error. Unexpected exception: " + String(E.what()));
   }
   catch(...)
   {
-    Synchronize(&Form1->ShowStatusError, String("Internal error. Unknown exception"));
+    ShowStatusError("Internal error. Unknown exception");
   }
 }
 //---------------------------------------------------------------------------
@@ -865,7 +865,7 @@ void RegionToPolygons(const std::vector<TRect> &Region, std::vector<TPoint> &Pol
     PolygonCount.push_back(Polygon.size());
     for(unsigned I = 0; I < Polygon.size(); I++)
     {
-      PolygonPoints.push_back(Polygon[I].first);
+      PolygonPoints.push_back(TPoint(Polygon[I].first.x / 2, Polygon[I].first.y));
       hEdges.erase(Polygon[I].first);
       vEdges.erase(Polygon[I].first);
     }
@@ -915,9 +915,9 @@ void TDrawThread::CreateInequality(TRelation &Relation)
               XStart = X2;
             else
               Points.push_back(TRect(
-                XStart <= AxesRect.Left ? -100 : XStart,
+                XStart <= AxesRect.Left ? -100 : XStart*2,
                 Y <= AxesRect.Top ? -100 : Y,
-                X2 - 1,
+                X2*2 - 1,
                 Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
             break;
           }
@@ -932,7 +932,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
       return;
     if(LastResult)
       Points.push_back(TRect(
-        XStart <= AxesRect.Left ? -100 : XStart,
+        XStart <= AxesRect.Left ? -100 : XStart*2,
         Y <= AxesRect.Top ? -100 : Y,
         AxesRect.Right + 100,
         Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
@@ -1060,13 +1060,26 @@ void TDrawThread::CreateEquation(TRelation &Relation)
 //---------------------------------------------------------------------------
 void TDrawThread::Visit(TRelation &Relation)
 {
-  if(!Relation.Region)
+  if(Relation.GetRelationType() == rtEquation)
   {
-    if(Relation.GetRelationType() == rtEquation)
+    if(!Relation.Region)
       CreateEquation(Relation);
-    else
-      CreateInequality(Relation);
   }
+  else
+    if(Relation.GetPolygonPoints().empty())
+      CreateInequality(Relation);
+}
+//---------------------------------------------------------------------------
+void TDrawThread::SynchronizedShowStatusError(const String &Str)
+{
+  Form1->ShowStatusError(Str);
+}
+//---------------------------------------------------------------------------
+void TDrawThread::ShowStatusError(const String &Str)
+{
+  //Synchronizing directly to Form1->ShowStatusError will sometimes
+  //cause an ICE on C++ Builder XE
+  Synchronize(&SynchronizedShowStatusError, Str);
 }
 //---------------------------------------------------------------------------
 } //namespace Graph
