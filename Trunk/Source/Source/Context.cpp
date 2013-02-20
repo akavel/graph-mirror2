@@ -11,6 +11,10 @@
 #pragma hdrstop
 #include "Context.h"
 #include "ConfigRegistry.h"
+#pragma warn -8022 //Remove warning in gdiplus.h
+#include "gdiplus.h"
+#pragma warn .8022 //Set warning back to default
+#pragma link "gdiplus.lib"
 //---------------------------------------------------------------------------
 struct TPointHandler
 {
@@ -22,7 +26,45 @@ static TPoint Crop(TOutCode OutCode, const TRect &Rect);
 static TOutCode CompOutCode(const TPoint &P, const TRect &Rect);
 static void ClipToRect(TClipCallback ClipCallback, const TPoint *Points, unsigned Size, const TRect &Rect, bool DoCrop);
 //---------------------------------------------------------------------------
-void TContext::DrawPolyline(const std::vector<TPoint> &Points)
+TContext::TContext(Graphics::TCanvas *ACanvas)
+ : Canvas(ACanvas), Handle(), SmoothingMode(0)
+{
+  Gdiplus::GdiplusStartupInput StartupInput;
+  Gdiplus::GdiplusStartup(&Token, &StartupInput, NULL);
+  Pen.reset(new Gdiplus::Pen(Gdiplus::Color()));
+  CheckHandle();
+}
+//---------------------------------------------------------------------------
+TContext::~TContext()
+{
+  //Ensure that all GDI+ objects are deleted before we call GdiplusShutdown()
+  Gr.reset();
+  Brush.reset();
+  Pen.reset();
+  Gdiplus::GdiplusShutdown(Token);
+}
+//---------------------------------------------------------------------------
+void TContext::CheckHandle()
+{
+  if(Canvas != NULL)
+  {
+    HDC NewHandle = Canvas->Handle;
+    if(Handle != NewHandle)
+    {
+      Gr.reset(new Gdiplus::Graphics(NewHandle));
+      Handle = NewHandle;
+      Gr->SetSmoothingMode(static_cast<Gdiplus::SmoothingMode>(SmoothingMode));
+    }
+  }
+}
+//---------------------------------------------------------------------------
+void TContext::SetCanvas(TCanvas *ACanvas)
+{
+  Canvas = ACanvas;
+  CheckHandle();
+}
+//---------------------------------------------------------------------------
+ void TContext::DrawPolyline(const std::vector<TPoint> &Points)
 {
   if(!Points.empty())
     DrawPolyline(&Points.front(), Points.size());
@@ -30,14 +72,17 @@ void TContext::DrawPolyline(const std::vector<TPoint> &Points)
 //---------------------------------------------------------------------------
 void TContext::DrawPolyline(const TPoint *Points, unsigned Size)
 {
-  unsigned WinLimit = PenWidth > 1 ? 4096 : 16384; //An undocumented limit in Windows
+/*  unsigned WinLimit = PenWidth > 1 ? 4096 : 16384; //An undocumented limit in Windows
   while(Size > WinLimit)
   {
     Canvas->Polyline(Points, WinLimit - 1);
     Points += WinLimit;
     Size -= WinLimit;
   }
-  Canvas->Polyline(Points, Size - 1);
+  Canvas->Polyline(Points, Size - 1);*/
+  CheckHandle();
+  Gr->DrawLines(Pen.get(), reinterpret_cast<const Gdiplus::Point*>(Points), Size);
+  Changed();
 }
 //---------------------------------------------------------------------------
 //Return value indicating position of P related to Rect
@@ -210,11 +255,49 @@ void TContext::SetFontColor(TColor Color)
   Canvas->Font->Color = Color;
 }
 //---------------------------------------------------------------------------
-void TContext::SetBrush(TBrushStyle Style, TColor Color)
+void TContext::SetBrush(TBrushStyle Style, TColor Color, unsigned Alpha)
 {
   Canvas->Brush->Color = Color;
   Canvas->Brush->Style = Style;
   SetBkColor(Canvas->Handle, clWhite);  //Workaround for bug in TCanvas.CreateBrush()
+  Gdiplus::Color Color2(255, Color & 0xFF, (Color >> 8) & 0xFF, (Color >> 16) & 0xFF);
+  Gdiplus::Color Color3(0,0,0,0);
+  switch(Style)
+  {
+    case bsSolid:
+      Brush.reset(new Gdiplus::SolidBrush(Color2));
+      break;
+
+    case bsHorizontal:
+      Brush.reset(new Gdiplus::HatchBrush(Gdiplus::HatchStyleHorizontal, Color2, Color3));
+      break;
+
+    case bsVertical:
+      Brush.reset(new Gdiplus::HatchBrush(Gdiplus::HatchStyleVertical, Color2, Color3));
+      break;
+
+    case bsFDiagonal:
+      Brush.reset(new Gdiplus::HatchBrush(Gdiplus::HatchStyleForwardDiagonal, Color2, Color3));
+      break;
+
+    case bsBDiagonal:
+      Brush.reset(new Gdiplus::HatchBrush(Gdiplus::HatchStyleBackwardDiagonal, Color2, Color3));
+      break;
+
+    case bsCross:
+      Brush.reset(new Gdiplus::HatchBrush(Gdiplus::HatchStyleCross, Color2, Color3));
+      break;
+
+    case bsDiagCross:
+      Brush.reset(new Gdiplus::HatchBrush(Gdiplus::HatchStyleDiagonalCross, Color2, Color3));
+      break;
+  }
+}
+//---------------------------------------------------------------------------
+void unsigned TContext::SetSmoothingMode(int ASmoothingMode)
+{
+  SmoothingMode = ASmoothingMode;
+  Gr->SetSmoothingMode(static_cast<Gdiplus::SmoothingMode>(SmoothingMode));
 }
 //---------------------------------------------------------------------------
 TSize TContext::GetTextExtent(const std::string &Str)
@@ -303,6 +386,21 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap, 
     Canvas->Pen->Handle = CreatePen(Style, 1, Color);
   else
     Canvas->Pen->Handle = CreatePen(psClear, 0, clWhite);
+
+  Pen->SetColor(Gdiplus::Color(Color & 0xFF, (Color >> 8) & 0xFF, (Color >> 16) & 0xFF));
+  Pen->SetWidth(Width);
+  switch(Style)
+  {
+    case psInsideFrame:
+    case psUserStyle:
+    case psAlternate:
+    case psClear:
+    case psSolid: Pen->SetDashStyle(Gdiplus::DashStyleSolid); break;
+    case psDash:  Pen->SetDashStyle(Gdiplus::DashStyleDash); break;
+    case psDot:   Pen->SetDashStyle(Gdiplus::DashStyleDot); break;
+    case psDashDot: Pen->SetDashStyle(Gdiplus::DashStyleDashDot); break;
+    case psDashDotDot: Pen->SetDashStyle(Gdiplus::DashStyleDashDotDot); break;
+  }
 }
 //---------------------------------------------------------------------------
 static bool UseThinGridLines = GetRegValue(REGISTRY_KEY, L"UseThinGridLines", HKEY_CURRENT_USER, false);
@@ -355,9 +453,26 @@ void TContext::DrawPolygon(const std::vector<TPoint> &Points, const TRect &Rect)
 //---------------------------------------------------------------------------
 void TContext::DrawPolyPolygon(const std::vector<TPoint> &Points, const std::vector<int> &Counts)
 {
-  SetPolyFillMode(Canvas->Handle, ALTERNATE);
-  if(!Counts.empty() && !Points.empty())
-    PolyPolygon(Canvas->Handle, &Points[0], &Counts[0], Counts.size());
+  CheckHandle();
+//  SetPolyFillMode(Canvas->Handle, ALTERNATE);
+  if(Counts.empty() || Points.empty())
+    return;
+//    PolyPolygon(Canvas->Handle, &Points[0], &Counts[0], Counts.size());
+  Gdiplus::GraphicsPath Path(Gdiplus::FillModeAlternate);
+  const Gdiplus::Point *P = reinterpret_cast<const Gdiplus::Point*>(&Points[0]);
+  for(unsigned I = 0; I < Counts.size(); I++)
+  {
+    Path.AddPolygon(P, Counts[I]);
+    P += Counts[I];
+  }
+  Gr->FillPath(Brush.get(), &Path);
+  Gr->DrawPath(Pen.get(), &Path);
+//  std::vector<TPoint> Data;
+//  for(unsigned I = 0; I < Points.size(); I+=2)
+//    Data.push_back(Points[I]);
+//  Status = Gr->DrawPolygon(Pen.get(), reinterpret_cast<const Gdiplus::Point*>(&Data[0]), Data.size());
+//  Status = Gr->DrawPolygon(Pen.get(), reinterpret_cast<const Gdiplus::Point*>(Data), 3);
+//  Gr->DrawEllipse(Pen.get(),50,50,300,300);
   Changed();
 }
 //---------------------------------------------------------------------------
