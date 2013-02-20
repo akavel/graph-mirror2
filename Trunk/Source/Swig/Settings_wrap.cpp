@@ -6866,6 +6866,58 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TPlotSettings_SmoothingMode_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TPlotSettings *arg1 = (TPlotSettings *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:TPlotSettings_SmoothingMode_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_SmoothingMode_set" "', argument " "1"" of type '" "TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< TPlotSettings * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TPlotSettings_SmoothingMode_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->SmoothingMode = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TPlotSettings_SmoothingMode_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TPlotSettings *arg1 = (TPlotSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TPlotSettings_SmoothingMode_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TPlotSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TPlotSettings_SmoothingMode_get" "', argument " "1"" of type '" "TPlotSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< TPlotSettings * >(argp1);
+  result = (int) ((arg1)->SmoothingMode);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *TPlotSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -7484,6 +7536,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TPlotSettings_TickLength_get", _wrap_TPlotSettings_TickLength_get, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_ThreadCount_set", _wrap_TPlotSettings_ThreadCount_set, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_ThreadCount_get", _wrap_TPlotSettings_ThreadCount_get, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_SmoothingMode_set", _wrap_TPlotSettings_SmoothingMode_set, METH_VARARGS, NULL},
+	 { (char *)"TPlotSettings_SmoothingMode_get", _wrap_TPlotSettings_SmoothingMode_get, METH_VARARGS, NULL},
 	 { (char *)"TPlotSettings_swigregister", TPlotSettings_swigregister, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MajorZoomIn_set", _wrap_TGuiSettings_MajorZoomIn_set, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MajorZoomIn_get", _wrap_TGuiSettings_MajorZoomIn_get, METH_VARARGS, NULL},

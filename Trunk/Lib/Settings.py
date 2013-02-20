@@ -327,6 +327,9 @@ class TPlotSettings(_object):
     __swig_setmethods__["ThreadCount"] = _Settings.TPlotSettings_ThreadCount_set
     __swig_getmethods__["ThreadCount"] = _Settings.TPlotSettings_ThreadCount_get
     if _newclass:ThreadCount = _swig_property(_Settings.TPlotSettings_ThreadCount_get, _Settings.TPlotSettings_ThreadCount_set)
+    __swig_setmethods__["SmoothingMode"] = _Settings.TPlotSettings_SmoothingMode_set
+    __swig_getmethods__["SmoothingMode"] = _Settings.TPlotSettings_SmoothingMode_get
+    if _newclass:SmoothingMode = _swig_property(_Settings.TPlotSettings_SmoothingMode_get, _Settings.TPlotSettings_SmoothingMode_set)
 TPlotSettings_swigregister = _Settings.TPlotSettings_swigregister
 TPlotSettings_swigregister(TPlotSettings)
 
