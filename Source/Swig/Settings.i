@@ -112,6 +112,7 @@ struct TPlotSettings
   int TickWidth;
   int TickLength;
   int ThreadCount;
+  int SmoothingMode;
 };
 
 %nodefault TGuiSettings;

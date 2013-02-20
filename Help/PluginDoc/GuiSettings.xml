@@ -111,6 +111,43 @@
 						</para>
 					</listitem>
 				</varlistentry>
+
+				<varlistentry>
+					<term><classname>TPlotSettings</classname>.<property>SmoothingMode</property></term>
+					<listitem>
+						<indexterm><primary>SmoothingMode (Graph.TPlotSettings attribute)</primary></indexterm>
+						<para>
+							This specifies the rendering quality of lines. The following values are valid:
+							<informaltable>
+ 								<tgroup cols="2">
+									<colspec colnum="1" colwidth="*"/>
+									<colspec colnum="2" colwidth="*"/>
+									<thead>
+										<row>
+										<entry>Value</entry>
+										<entry>Description</entry>
+									</row>
+								</thead>
+ 								<tbody>
+    				  		<row>
+    				    		<entry>0, 1, 3</entry>
+    				    		<entry>Specifies that smoothing is not applied.</entry>
+    				  		</row>
+    				  		<row>
+    				    		<entry>2, 4</entry>
+    				    		<entry>Specifies that smoothing is applied using an 8 X 4 box filter.</entry>
+    				  		</row>
+    				  		<row>
+    				    		<entry>5</entry>
+    				    		<entry>Specifies that smoothing is applied using an 8 X 8 box filter</entry>
+    				  		</row>
+								</tbody>
+							</tgroup>
+						</informaltable>
+
+						</para>
+					</listitem>
+				</varlistentry>
 			</variablelist>
 		</para>
 	</section>

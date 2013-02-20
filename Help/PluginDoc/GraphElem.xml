@@ -235,7 +235,7 @@
 					<listitem>
 						<para>
 							This evaluates the function at the specified independent variable <parameter>t</parameter>.
-							The result is a tuple if the (x,y) coordinate pair.
+							The result is a tuple with the (x,y) coordinate pair.
 						</para>
 					</listitem>
 				</varlistentry>
