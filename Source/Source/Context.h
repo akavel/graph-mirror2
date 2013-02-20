@@ -11,7 +11,15 @@
 #define ContextH
 #include <vector>
 #include <string>
-#include <boost/shared_ptr.hpp>
+#include <boost/scoped_ptr.hpp>
+
+namespace Gdiplus
+{
+  class Graphics;
+  class Brush;
+  class Pen;
+}
+
 namespace Graph
 {
 typedef void (__closure *TClipCallback)(const TPoint *Points, unsigned Size);
@@ -21,19 +29,27 @@ enum TPenStyleJoin {psjBevel=PS_JOIN_BEVEL, psjMiter=PS_JOIN_MITER, psjRound=PS_
 
 class TContext
 {
+  ULONG_PTR Token;
   Graphics::TCanvas *Canvas;
+  HDC Handle;
   TPenStyle PenStyle;
   TColor PenColor;
   int PenWidth;
+  int SmoothingMode;
+  boost::scoped_ptr<Gdiplus::Graphics> Gr;
+  boost::scoped_ptr<Gdiplus::Brush> Brush;
+  boost::scoped_ptr<Gdiplus::Pen> Pen;
 
   TContext(const TContext&); //Not implemented
   TContext& operator=(const TContext&); //Not implemented
   void DrawPolyline(const std::vector<TPoint> &Points);
+  void CheckHandle();
 
 public:
-  TContext(Graphics::TCanvas *ACanvas) : Canvas(ACanvas) {}
+  TContext(Graphics::TCanvas *ACanvas);
+  ~TContext();
   TCanvas* GetCanvas() {return Canvas;}
-  void SetCanvas(TCanvas *ACanvas) {Canvas = ACanvas;}
+  void SetCanvas(TCanvas *ACanvas);
 
   static void ClipLine(TPoint &P1, TPoint &P2, const TRect &Rect);
   static TPoint ClipLine(const TPoint &P1, const TPoint &P2, const TRect &Rect);
@@ -63,9 +79,10 @@ public:
   void SetFont(const std::string &Name, unsigned Size, TColor Color, TFontStyles Style = TFontStyles());
   void SetFontColor(TColor Color);
   void SetFontName(const std::string &Name);
-  void SetBrush(TBrushStyle Style, TColor Color = clWhite);
+  void SetBrush(TBrushStyle Style, TColor Color = clWhite, unsigned Alpha=100);
   void SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap=ecRound, TPenStyleJoin Join=psjRound);
   void SetGridPen(TColor Color, unsigned Width);
+  void unsigned SetSmoothingMode(int SmoothingMode);
 
   void FillRect(const TRect &Rect);
 
