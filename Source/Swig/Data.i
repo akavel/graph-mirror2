@@ -185,7 +185,10 @@ class TStdFunc : public TBaseFuncType
 %extend TStdFunc {
   TStdFunc(const std::wstring &Str) throw(Func32::EFuncError)
   {
-    return new TStdFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TData &Data = Form1->Data;
+    boost::shared_ptr<TStdFunc> Func(new TStdFunc(Str, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
+    Data.AddToHiddenList(Func);
+    return Func.get(); //This is okay because TStdFunc derives from boost::enable_shared_from_this
   }
 }
 
