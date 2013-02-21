@@ -64,7 +64,7 @@ inline bool IsZero(TComplex c)
 	return ::IsZero(real(c)) && ::IsZero(imag(c));
 }
 //---------------------------------------------------------------------------
-inline bool IsEqual(long double a, long double b)
+bool IsEqual(long double a, long double b)
 {
 	if(boost::math::isnan(a) && boost::math::isnan(b))
 		return true;
@@ -79,12 +79,12 @@ inline bool IsEqual(long double a, long double b)
   return ::IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
 }
 //---------------------------------------------------------------------------
-inline bool IsEqual(long double a, long double b, int SignificantDigits)
+bool IsEqual(long double a, long double b, int SignificantDigits)
 {
-  int Order = std::log10(a) - SignificantDigits;
-  if(std::abs(Order) > 100)
+  if(a < -1E100 || a > 1E100 || a == 0 || (a < 1E-100 && a > -1E-100))
     return ::IsEqual(a, b);
-  return std::abs(a-b) < std::pow10(Order);
+  int Order = std::log10(abs(a)) - SignificantDigits;
+  return std::abs(a-b) < pow10(static_cast<long double>(Order));
 }
 //---------------------------------------------------------------------------
 inline bool IsEqual(TComplex a, TComplex b)
