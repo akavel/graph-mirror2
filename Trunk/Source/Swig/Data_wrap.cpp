@@ -5525,7 +5525,10 @@ SWIGINTERN int TGraphElem_ThisPtr(TGraphElem const *self){return reinterpret_cas
 #define TStdFunc_Text_get(self_) *new std::wstring(self_->GetText())
   
 SWIGINTERN TStdFunc *new_TStdFunc(std::wstring const &Str){
-    return new TStdFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TData &Data = Form1->Data;
+    boost::shared_ptr<TStdFunc> Func(new TStdFunc(Str, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry));
+    Data.AddToHiddenList(Func);
+    return Func.get(); //This is okay because TStdFunc derives from boost::enable_shared_from_this
   }
 
 struct SWIG_null_deleter {

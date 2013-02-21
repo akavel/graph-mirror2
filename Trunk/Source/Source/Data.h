@@ -33,7 +33,8 @@ class TData
   mutable bool Modified;
   mutable std::wstring GrfName;
   TAbortUpdateEvent OnAbortUpdate;
-  boost::shared_ptr<TTopGraphElem> TopElem;
+  TTopGraphElemPtr TopElem;
+  TTopGraphElemPtr HiddenItems;
 
   void SaveData(TConfigFile &IniFile) const;
   const TData& operator=(const TData&);             //Not implemented
@@ -103,6 +104,7 @@ public:
   }
 
   bool IsDependent(const std::wstring &Expression, const std::wstring &SymbolName) const;
+  void AddToHiddenList(const TGraphElemPtr &Elem);
 };
 //---------------------------------------------------------------------------
 //extern TData Data;

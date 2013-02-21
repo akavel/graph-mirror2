@@ -27,12 +27,13 @@
 namespace Graph
 {
 //---------------------------------------------------------------------------
-TData::TData() : TopElem(new TTopGraphElem(this))
+TData::TData() : TopElem(new TTopGraphElem(this)), HiddenItems(new TTopGraphElem(this))
 {
 }
 //---------------------------------------------------------------------------
  TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
-  Modified(false), OnAbortUpdate(NULL), TopElem(OldData.TopElem->Clone(this))
+  Modified(false), OnAbortUpdate(NULL),
+  TopElem(OldData.TopElem->Clone(this)), HiddenItems(new TTopGraphElem(this))
 {
   for(unsigned int I = 0; I < TopElem->ChildCount(); I++)
     for(unsigned J = 0; J < TopElem->GetChild(I)->ChildCount(); J++)
@@ -607,6 +608,11 @@ bool TData::IsDependent(const std::wstring &Expression, const std::wstring &Symb
   {
     return false;
   }
+}
+//---------------------------------------------------------------------------
+void TData::AddToHiddenList(const TGraphElemPtr &Elem)
+{
+  HiddenItems->InsertChild(Elem, -1);
 }
 //---------------------------------------------------------------------------
 } //namespace Graph
