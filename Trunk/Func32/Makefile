@@ -1,4 +1,8 @@
+ifeq ($(shell uname),Darwin)
+BOOST = /opt/local/include
+else
 BOOST = /usr/include/boost
+endif
 GSL = /usr/include/gsl
 
 SRC= Parser.cpp TBaseFunc.cpp Calc.cpp Differentiate.cpp MakeText.cpp Simplify.cpp Utility.cpp TFunc.cpp TParamFunc.cpp TPolarFunc.cpp Trend.cpp TFuncData.cpp TCustomFunc.cpp TSymbolList.cpp
