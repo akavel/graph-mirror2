@@ -76,7 +76,7 @@ bool IsEqual(long double a, long double b)
 	frexp(a, &a_exp);
 	frexp(b, &b_exp);
 	frexp(a - b, &exp);
-  return ::IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
+  return ::IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 22);
 }
 //---------------------------------------------------------------------------
 bool IsEqual(long double a, long double b, int SignificantDigits)
@@ -84,7 +84,7 @@ bool IsEqual(long double a, long double b, int SignificantDigits)
   if(a < -1E100 || a > 1E100 || a == 0 || (a < 1E-100 && a > -1E-100))
     return ::IsEqual(a, b);
   int Order = std::log10(abs(a)) - SignificantDigits;
-  return std::abs(a-b) < pow10(static_cast<long double>(Order));
+  return std::abs(a-b) < pow(10.0L, Order);
 }
 //---------------------------------------------------------------------------
 inline bool IsEqual(TComplex a, TComplex b)
@@ -639,7 +639,7 @@ void Test()
 	Test(L"acos(x)", 0, PI/2);
 	Test(L"acos(x)", 0, 90, Degree);
 	Test(L"acos(x)", 0.4, 1.1592794807274085998465837940224);
-	TestEval<TComplex>(L"acos(x)", 1.5, TComplex(0, 0.9624236501));
+	TestEval<TComplex>(L"acos(x)", 1.5, TComplex(0, 0.9624236501));  //Fails on OSX, don't know why
 	TestErrorEval<long double>(L"acos(x)", 1.5, ecArcError);
 	TestEval<TComplex>(L"acos(x)", TComplex(2.5, 1), TComplex(0.4061728165, -1.658693299));
 
