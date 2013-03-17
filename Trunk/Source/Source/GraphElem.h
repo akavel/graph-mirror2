@@ -275,6 +275,7 @@ public:
   const Func32::TFunc& GetFunc() const {return Func;}
   const std::wstring& GetText() const {return Text;}
 };
+typedef boost::shared_ptr<TStdFunc> TStdFuncPtr;
 
 class TParFunc : public TBaseFuncType
 {
