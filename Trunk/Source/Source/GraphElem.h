@@ -133,6 +133,7 @@ public:
   const TData& GetData() const {return *Data;}
   bool IsDependent(const std::wstring &SymbolName) const {return false;}
 };
+typedef boost::shared_ptr<TTopGraphElem> TTopGraphElemPtr;
 
 enum TLabelPlacement
 {
