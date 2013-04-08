@@ -241,18 +241,18 @@ String GetTempFileName(const String &Prefix, const String &Ext)
 //---------------------------------------------------------------------------
 void LoadLanguage(const String &Lang)
 {
-  String Path = ExtractFilePath(Application->ExeName);
+	String Path = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
   UseLanguage(Lang); //dxGetText will not update translation unless language has been changed
-  DefaultInstance->bindtextdomainToFile("default", Path + "locale\\" + Lang + ".mo");
+  DefaultInstance->bindtextdomainToFile("default", Path + "\\locale\\" + Lang + ".mo");
 	String HelpFile = DefaultInstance->GetTranslationProperty("Help-file");
 	if(HelpFile.IsEmpty() )
-		HelpFile = Path + "Help\\Graph-" + Lang + ".chm";
+		HelpFile = Path + "\\Help\\Graph-" + Lang + ".chm";
 	else
-	  HelpFile = Path + "Help\\" + HelpFile;
+	  HelpFile = Path + "\\Help\\" + HelpFile;
 	if(FileExists(HelpFile))
     Application->HelpFile = HelpFile;
   else
-    Application->HelpFile = Path + "Help\\Graph-English.chm";
+    Application->HelpFile = Path + "\\Help\\Graph-English.chm";
 }
 //---------------------------------------------------------------------------
 struct TTimerClass
