@@ -557,6 +557,7 @@ void InitPlugins()
 			"import PyVcl\n"
 			"import vcl\n"
 			"import Graph\n"
+      "from imp import reload\n"
 			"Graph.InitPlugins('%s')\n"
 			"sys.stdin = sys.stdout\n"
 			, Version.Major, Version.Minor, Version.Release, Version.Build, BetaFinal
