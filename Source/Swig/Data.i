@@ -185,7 +185,9 @@ class TStdFunc : public TBaseFuncType
 %extend TStdFunc {
   TStdFunc(const std::wstring &Str) throw(Func32::EFuncError)
   {
-    return new TStdFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TStdFunc *F = new TStdFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    F->SetData(&Form1->Data);
+    return F;
   }
 }
 
@@ -199,7 +201,9 @@ class TParFunc : public TBaseFuncType
 %extend TParFunc {
   TParFunc(const std::wstring &xStr, const std::wstring &yStr) throw(Func32::EFuncError)
   {
-    return new TParFunc(xStr, yStr, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TParFunc *F = new TParFunc(xStr, yStr, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    F->SetData(&Form1->Data);
+    return F;
   }
 }
 
@@ -212,7 +216,9 @@ class TPolFunc : public TBaseFuncType
 %extend TPolFunc {
   TPolFunc(const std::wstring &Str) throw(Func32::EFuncError)
   {
-    return new TPolFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TPolFunc *F = new TPolFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    F->SetData(&Form1->Data);
+    return F;
   }
 }
 

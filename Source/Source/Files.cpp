@@ -165,7 +165,7 @@ void TData::Import(TConfigFile &IniFile)
   FormatSettings.DecimalSeparator = '.';
 
   //ElemList must be empty when reading shades and tangents from file
-  boost::shared_ptr<TTopGraphElem> Temp(new TTopGraphElem(this));
+  boost::shared_ptr<TTopGraphElem> Temp(new TTopGraphElem);
   Temp.swap(TopElem);
   try
   {
