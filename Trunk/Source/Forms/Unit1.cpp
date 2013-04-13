@@ -3776,7 +3776,8 @@ void __fastcall TForm1::SaveDialogEx1Close(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ScriptDocActionExecute(TObject *Sender)
 {
-  ShowHelp("", ExtractFilePath(Application->ExeName) + "Help\\PluginDoc.chm");
+  String BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
+  ShowHelp("", BaseDir + "\\Help\\PluginDoc.chm");
 }
 //---------------------------------------------------------------------------
 
