@@ -5525,7 +5525,9 @@ SWIGINTERN int TGraphElem_ThisPtr(TGraphElem const *self){return reinterpret_cas
 #define TStdFunc_Text_get(self_) *new std::wstring(self_->GetText())
   
 SWIGINTERN TStdFunc *new_TStdFunc(std::wstring const &Str){
-    return new TStdFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TStdFunc *F = new TStdFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    F->SetData(&Form1->Data);
+    return F;
   }
 
 struct SWIG_null_deleter {
@@ -5547,13 +5549,17 @@ struct SWIG_null_deleter {
 #define TParFunc_yText_get(self_) *new std::wstring(self_->GetyText())
   
 SWIGINTERN TParFunc *new_TParFunc(std::wstring const &xStr,std::wstring const &yStr){
-    return new TParFunc(xStr, yStr, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TParFunc *F = new TParFunc(xStr, yStr, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    F->SetData(&Form1->Data);
+    return F;
   }
 
 #define TPolFunc_Text_get(self_) *new std::wstring(self_->GetText())
   
 SWIGINTERN TPolFunc *new_TPolFunc(std::wstring const &Str){
-    return new TPolFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    TPolFunc *F = new TPolFunc(Str, Form1->Data.CustomFunctions.SymbolList, Form1->Data.Axes.Trigonometry);
+    F->SetData(&Form1->Data);
+    return F;
   }
 
 #define TTan_Valid_get(self_) self_->IsValid()

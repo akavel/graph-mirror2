@@ -74,6 +74,7 @@ class TGraphElem : public boost::enable_shared_from_this<TGraphElem>
   std::vector<TGraphElemPtr> ChildList;
   TWeakGraphElemPtr Parent;
   bool UpdateFinished;
+  const TData *Data;
 
   void SetParent(const TGraphElemPtr &AParent) {Parent = AParent;}
 
@@ -94,7 +95,8 @@ public:
   virtual TGraphElemPtr Clone() const = 0;
   virtual void ClearCache();
   virtual void Update();
-  virtual const TData& GetData() const {BOOST_ASSERT(!Parent.expired()); return Parent.lock()->GetData();}
+  const TData& GetData() const {BOOST_ASSERT(Data); return *Data;}
+  void SetData(const TData *AData) {Data = AData;}
 
   void InsertChild(const TGraphElemPtr &Elem, int Index = -1);
   void ReplaceChild(unsigned Index, const TGraphElemPtr &Elem);
@@ -120,17 +122,13 @@ public:
 
 class TTopGraphElem : public TGraphElem
 {
-  const TData *Data;
-
 public:
-  TTopGraphElem(const TData *AData) : Data(AData) {}
+  TTopGraphElem() {}
   std::wstring MakeText() const {return L"";}
   void WriteToIni(TConfigFileSection &Section) const {};
   void ReadFromIni(const TConfigFileSection &Section) {};
   void Accept(TGraphElemVisitor&) {};
   TGraphElemPtr Clone() const {throw "Not implemented!";;}
-  TTopGraphElemPtr Clone(const TData *AData) const;
-  const TData& GetData() const {return *Data;}
   bool IsDependent(const std::wstring &SymbolName) const {return false;}
 };
 typedef boost::shared_ptr<TTopGraphElem> TTopGraphElemPtr;

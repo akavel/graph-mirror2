@@ -109,7 +109,7 @@ std::wostream& operator<<(std::wostream &Stream, const TTextValue &TextValue)
 ////////////////
 TGraphElem::TGraphElem(const TGraphElem &Elem)
   : Visible(Elem.Visible), ShowInLegend(Elem.ShowInLegend), LegendText(Elem.LegendText),
-    UpdateFinished(false)
+    UpdateFinished(false), Data(NULL)
 {
   //Do not copy ChildList; It must be copyed from the derived class to be able to call SetParentFunc()
 }
@@ -157,6 +157,7 @@ void TGraphElem::InsertChild(const TGraphElemPtr &Elem, int Index)
   else
     ChildList.insert(ChildList.begin() + Index, Elem);
   Elem->SetParent(shared_from_this());
+  Elem->SetData(&GetData());
 }
 //---------------------------------------------------------------------------
 void TGraphElem::ReplaceChild(unsigned Index, const TGraphElemPtr &Elem)
@@ -167,6 +168,7 @@ void TGraphElem::ReplaceChild(unsigned Index, const TGraphElemPtr &Elem)
   ChildList[Index]->SetParent(boost::shared_ptr<TBaseFuncType>());
   ChildList[Index] = Elem;
   Elem->SetParent(shared_from_this());
+  Elem->SetData(&GetData());
 }
 //---------------------------------------------------------------------------
 unsigned TGraphElem::GetChildIndex(const TGraphElemPtr &Elem) const
@@ -190,17 +192,6 @@ void TGraphElem::ClearCache()
 void TGraphElem::Update()
 {
   std::for_each(ChildList.begin(), ChildList.end(), boost::mem_fn(&TGraphElem::Update));
-}
-//---------------------------------------------------------------------------
-///////////////////
-// TTopGraphElem //
-///////////////////
-boost::shared_ptr<TTopGraphElem> TTopGraphElem::Clone(const TData *AData) const
-{
-  boost::shared_ptr<TTopGraphElem> Result =
-		boost::static_pointer_cast<TTopGraphElem>(CloneHelper(new TTopGraphElem(*this)));
-  Result->Data = AData;
-  return Result;
 }
 //---------------------------------------------------------------------------
 ///////////////////
@@ -493,6 +484,7 @@ boost::shared_ptr<TBaseFuncType> TPolFunc::MakeDifFunc()
 // TTan //
 //////////
 TTan::TTan()
+  : TangentType(ttTangent), a(NAN), q(NAN)
 {
   DrawType = dtLines;
 }

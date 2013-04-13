@@ -27,13 +27,15 @@
 namespace Graph
 {
 //---------------------------------------------------------------------------
-TData::TData() : TopElem(new TTopGraphElem(this))
+TData::TData() : TopElem(new TTopGraphElem)
 {
+  TopElem->SetData(this);
 }
 //---------------------------------------------------------------------------
  TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
-  Modified(false), OnAbortUpdate(NULL), TopElem(OldData.TopElem->Clone(this))
+  Modified(false), OnAbortUpdate(NULL), TopElem(new TTopGraphElem(*OldData.TopElem))
 {
+  TopElem->SetData(this);
   for(unsigned int I = 0; I < TopElem->ChildCount(); I++)
     for(unsigned J = 0; J < TopElem->GetChild(I)->ChildCount(); J++)
       if(TShading *Shade = dynamic_cast<TShading*>(TopElem->GetChild(I)->GetChild(J).get()))
