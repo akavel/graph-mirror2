@@ -13,6 +13,7 @@ import xmlrpc.client
 import getopt
 import collections
 import importlib
+import winreg
 
 # enum values
 Radian = Settings.Radian
@@ -243,6 +244,34 @@ class PluginDataType(collections.MutableMapping):
 TGraphElem.PluginData = property(lambda self: PluginDataType(self._PluginData))
 TGraphElem.ChildList = property(lambda self: ChildListType(self))
 PluginData = PluginDataType(Data.GetPluginData())
+
+class GlobalPluginDataType(collections.MutableMapping):
+  def __init__(self):
+    self.key = winreg.CreateKey(winreg.HKEY_CURRENT_USER, 'Software\\Ivan\\Graph\\PluginData')
+  def __len__(self):
+    return winreg.QueryInfoKey(self.key)[1]
+  def __getitem__(self, key): 
+    try:
+      return xmlrpc.client.loads("\n".join(winreg.QueryValueEx(self.key, key)[0]))[0]
+    except:
+      raise KeyError(key)
+  def __setitem__(self, key, value):
+    try:
+      winreg.SetValueEx(self.key, key, 0, winreg.REG_MULTI_SZ, xmlrpc.client.dumps(value).split('\n'))
+    except:
+      raise KeyError(key)
+  def __delitem__(self, key):
+    try:
+      winreg.DeleteValue(self.key, key)
+    except:
+      raise KeyError(key)
+  def __iter__(self):
+    for index in range(winreg.QueryInfoKey(self.key)[1]):
+      yield winreg.EnumValue(self.key, index)[0]
+  def __repr__(self):
+    return repr(dict(self))
+    
+GlobalPluginData = GlobalPluginDataType()    
 
 Constants = ConstantsType()
 CustomFunctions = CustomFunctionsType()
