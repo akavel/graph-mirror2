@@ -1468,10 +1468,11 @@ void TForm1::UpdateTreeView(const boost::shared_ptr<TGraphElem> &Selected)
   PostMessage(TreeView->Handle, WM_HSCROLL, SB_TOP, 0);
 }
 //---------------------------------------------------------------------------
-void TForm1::ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem)
+void TForm1::ChangeVisible(TGraphElemPtr GraphElem)
 {
   if(GraphElem)
   {
+    UndoList.Push(TUndoChangeVisible(GraphElem));
     GraphElem->ChangeVisible();
     switch(GraphElem->GetVisible())
     {
@@ -1480,6 +1481,7 @@ void TForm1::ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem)
       case 1:  TreeView->Selected->StateIndex =  iiChecked; break;
     }
     Data.SetModified();
+    UpdateMenu();
     Redraw();
   }
 }

@@ -1325,12 +1325,9 @@ int TAxesView::GetVisible() const
 {
   switch(GetData().Axes.AxesStyle)
   {
-    case asCrossed:
-      return 1;
-    case asBoxed:
-      return -1;
-    default:
-      return 0;
+    case asCrossed: return 1;
+    case asBoxed:   return -1;
+    default:        return 0;
   }
 }
 //---------------------------------------------------------------------------
@@ -1352,6 +1349,17 @@ void TAxesView::ChangeVisible()
     default:
       Data.Axes.AxesStyle = asCrossed;
       break;
+  }
+}
+//---------------------------------------------------------------------------
+void TAxesView::SetVisible(int Value)
+{
+  TData &Data = const_cast<TData&>(GetData());
+  switch(Value)
+  {
+    case 1: Data.Axes.AxesStyle = asCrossed; break;
+    case -1: Data.Axes.AxesStyle = asBoxed; break;
+    default: Data.Axes.AxesStyle = asNone; break;
   }
 }
 //---------------------------------------------------------------------------

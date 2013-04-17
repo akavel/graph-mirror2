@@ -112,7 +112,7 @@ public:
 
   virtual int GetVisible() const {return Visible;}
   virtual void ChangeVisible() {Visible = !Visible;}
-  void SetVisible(int AVisible) {Visible = AVisible;}
+  virtual void SetVisible(int AVisible) {Visible = AVisible;}
   bool GetShowInLegend() const {return ShowInLegend;}
   void SetShowInLegend(bool Value) {ShowInLegend = Value;}
   std::wstring GetLegendText() const {return LegendText;}
@@ -522,6 +522,7 @@ public:
   void Accept(TGraphElemVisitor &v) {v.Visit(*this);}
   TGraphElemPtr Clone() const {return CloneHelper(new TAxesView(*this));}
   int GetVisible() const;
+  void SetVisible(int Value);
   void ChangeVisible();
   const TAxes& GetAxes() const;
   bool IsDependent(const std::wstring &SymbolName) const;
