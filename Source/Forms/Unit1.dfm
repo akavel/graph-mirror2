@@ -149,15 +149,21 @@ object Form1: TForm1
   TextHeight = 13
   object ActionToolBar1: TActionToolBar
     Left = 0
-    Top = 23
+    Top = 25
     Width = 624
     Height = 30
     ActionManager = ActionManager
-    ColorMap.HighlightColor = 14410210
-    ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    Color = clMenuBar
+    ColorMap.HighlightColor = clWhite
+    ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebTop, ebBottom]
     EdgeOuter = esLowered
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     PopupMenu = PopupMenu2
     Spacing = 0
   end
@@ -165,15 +171,15 @@ object Form1: TForm1
     Left = 0
     Top = 0
     Width = 624
-    Height = 23
+    Height = 25
     ParentCustomHint = False
     UseSystemFont = False
     ActionManager = ActionManager
-    ColorMap.HighlightColor = 14410210
-    ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    Color = clMenuBar
+    ColorMap.HighlightColor = clWhite
+    ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -209,16 +215,16 @@ object Form1: TForm1
   end
   object Panel5: TPanel
     Left = 0
-    Top = 53
+    Top = 55
     Width = 624
-    Height = 372
+    Height = 370
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
     object Splitter1: TMySplitter
       Left = 161
       Top = 0
-      Height = 269
+      Height = 267
       AutoSnap = False
       Beveled = True
       MinSize = 120
@@ -228,7 +234,7 @@ object Form1: TForm1
     end
     object Splitter2: TSplitter
       Left = 0
-      Top = 269
+      Top = 267
       Width = 624
       Height = 3
       Cursor = crVSplit
@@ -240,7 +246,7 @@ object Form1: TForm1
       Left = 164
       Top = 0
       Width = 460
-      Height = 269
+      Height = 267
       Align = alClient
       BevelOuter = bvNone
       FullRepaint = False
@@ -253,7 +259,7 @@ object Form1: TForm1
         Left = 0
         Top = 0
         Width = 460
-        Height = 269
+        Height = 267
         Align = alClient
         ParentShowHint = False
         ShowHint = False
@@ -269,7 +275,7 @@ object Form1: TForm1
         Left = 0
         Top = 0
         Width = 460
-        Height = 269
+        Height = 267
         Style = psDot
         Mode = pmNot
         X = 30
@@ -296,7 +302,7 @@ object Form1: TForm1
         Left = 0
         Top = 0
         Width = 460
-        Height = 269
+        Height = 267
         Brush.Color = 13395660
         Brush.Style = bsBDiagonal
         Points.Strings = (
@@ -314,6 +320,7 @@ object Form1: TForm1
         OnMouseUp = Image1MouseUp
         ExplicitLeft = -3
         ExplicitTop = 6
+        ExplicitHeight = 269
       end
       object Image2: TImage
         Left = 344
@@ -329,7 +336,7 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 269
+      Height = 267
       Align = alLeft
       BevelOuter = bvNone
       DragKind = dkDock
@@ -338,7 +345,7 @@ object Form1: TForm1
         Left = 0
         Top = 0
         Width = 161
-        Height = 269
+        Height = 267
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -369,7 +376,7 @@ object Form1: TForm1
       end
       object Panel1: TPanel
         Left = 0
-        Top = 269
+        Top = 267
         Width = 161
         Height = 0
         Align = alBottom
@@ -393,7 +400,7 @@ object Form1: TForm1
     end
     object Panel6: TPanel
       Left = 0
-      Top = 272
+      Top = 270
       Width = 624
       Height = 100
       Align = alBottom
@@ -583,7 +590,7 @@ object Form1: TForm1
     Left = 208
     Top = 216
     Bitmap = {
-      494C01010B000D00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B000D00080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -990,7 +997,7 @@ object Form1: TForm1
     Left = 208
     Top = 256
     Bitmap = {
-      494C01013D003F00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013D003F00080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000000001000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

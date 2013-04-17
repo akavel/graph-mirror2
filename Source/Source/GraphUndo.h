@@ -118,6 +118,16 @@ TUndoObject<T> MakeUndoObject(T &OrgObject)
   return TUndoObject<T>(OrgObject, OrgObject);
 }
 
+class TUndoChangeVisible
+{
+  TGraphElemPtr Elem;
+  int Visible;
+public:
+  TUndoChangeVisible(const TGraphElemPtr &AElem)
+    : Elem(AElem), Visible(Elem->GetVisible()) {}
+  void operator()(TUndoList &UndoList);
+};
+
 extern TUndoList UndoList;
 //---------------------------------------------------------------------------
 } //namespace Graph

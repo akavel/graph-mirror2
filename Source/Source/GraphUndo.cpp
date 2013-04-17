@@ -79,4 +79,11 @@ void TUndoAddPoint::operator()(TUndoList &UndoList)
   Python::ExecutePluginEvent(Python::peChanged, TGraphElemPtr(Series));
 }
 //---------------------------------------------------------------------------
+void TUndoChangeVisible::operator()(TUndoList &UndoList)
+{
+  UndoList.Push(TUndoChangeVisible(Elem));
+  Elem->SetVisible(Visible);
+  Python::ExecutePluginEvent(Python::peChanged, Elem);
+}
+//---------------------------------------------------------------------------
 } //namespace Graph
