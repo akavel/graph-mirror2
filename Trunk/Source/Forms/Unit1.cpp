@@ -1481,6 +1481,7 @@ void TForm1::ChangeVisible(TGraphElemPtr GraphElem)
       case 1:  TreeView->Selected->StateIndex =  iiChecked; break;
     }
     Data.SetModified();
+    Python::ExecutePluginEvent(Python::peChanged, GraphElem);
     UpdateMenu();
     Redraw();
   }
@@ -2672,8 +2673,10 @@ void __fastcall TForm1::Tree_ShowInLegendClick(TObject *Sender)
 {
   if(TreeView->Selected)
   {
-    boost::shared_ptr<TGraphElem> GraphElem = GetGraphElem(TreeView->Selected);
+    TGraphElemPtr GraphElem = GetGraphElem(TreeView->Selected);
+    UndoList.Push(TUndoChangeShowInLegend(GraphElem));
     GraphElem->SetShowInLegend(Tree_ShowInLegend->Checked);
+    Python::ExecutePluginEvent(Python::peChanged, GraphElem);
     Data.SetModified();
     Redraw();
   }

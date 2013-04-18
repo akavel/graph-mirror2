@@ -124,7 +124,17 @@ class TUndoChangeVisible
   int Visible;
 public:
   TUndoChangeVisible(const TGraphElemPtr &AElem)
-    : Elem(AElem), Visible(Elem->GetVisible()) {}
+    : Elem(AElem), Visible(AElem->GetVisible()) {}
+  void operator()(TUndoList &UndoList);
+};
+
+class TUndoChangeShowInLegend
+{
+  TGraphElemPtr Elem;
+  bool ShowInLegend;
+public:
+  TUndoChangeShowInLegend(const TGraphElemPtr &AElem)
+    : Elem(AElem), ShowInLegend(AElem->GetShowInLegend()) {}
   void operator()(TUndoList &UndoList);
 };
 

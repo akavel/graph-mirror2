@@ -86,4 +86,11 @@ void TUndoChangeVisible::operator()(TUndoList &UndoList)
   Python::ExecutePluginEvent(Python::peChanged, Elem);
 }
 //---------------------------------------------------------------------------
+void TUndoChangeShowInLegend::operator()(TUndoList &UndoList)
+{
+  UndoList.Push(TUndoChangeShowInLegend(Elem));
+  Elem->SetShowInLegend(ShowInLegend);
+  Python::ExecutePluginEvent(Python::peChanged, Elem);
+}
+//---------------------------------------------------------------------------
 } //namespace Graph
