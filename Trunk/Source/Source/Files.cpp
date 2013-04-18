@@ -166,6 +166,7 @@ void TData::Import(TConfigFile &IniFile)
 
   //ElemList must be empty when reading shades and tangents from file
   boost::shared_ptr<TTopGraphElem> Temp(new TTopGraphElem);
+  Temp->SetData(this);
   Temp.swap(TopElem);
   try
   {
