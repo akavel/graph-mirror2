@@ -86,6 +86,7 @@ static unsigned ChildCount(const TGraphElemPtr &Elem) {return Elem->ChildCount()
 static TGraphElemPtr GetChild(const TGraphElemPtr &Elem, unsigned Index) {return Elem->GetChild(Index);}
 static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index)
 {
+  Form1->Data.AbortUpdate();
   UndoList.Push(TUndoDel(Elem->GetChild(Index), Elem, Index));
   Elem->RemoveChild(Index);
   Form1->UpdateTreeView();
@@ -93,6 +94,7 @@ static void RemoveChild(const TGraphElemPtr &Elem, unsigned Index)
 
 static void InsertChild(const TGraphElemPtr &Elem, const TGraphElemPtr &Child, int Index)
 {
+  Form1->Data.AbortUpdate();
   UndoList.BeginMultiUndo();
   TGraphElemPtr Parent = Child->GetParent();
   if(Parent)
@@ -105,6 +107,7 @@ static void InsertChild(const TGraphElemPtr &Elem, const TGraphElemPtr &Child, i
 
 static void ReplaceChild(const TGraphElemPtr &Elem, unsigned Index, const TGraphElemPtr &Child)
 {
+  Form1->Data.AbortUpdate();
   UndoList.Push(TUndoChange(Elem->GetChild(Index), Child));
   Elem->ReplaceChild(Index, Child);
   Form1->UpdateTreeView();
