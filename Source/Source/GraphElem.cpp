@@ -1361,6 +1361,7 @@ void TAxesView::SetVisible(int Value)
     case -1: Data.Axes.AxesStyle = asBoxed; break;
     default: Data.Axes.AxesStyle = asNone; break;
   }
+  Data.ClearCache();
 }
 //---------------------------------------------------------------------------
 const TAxes& TAxesView::GetAxes() const
