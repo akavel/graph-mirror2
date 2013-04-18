@@ -84,7 +84,7 @@ protected:
 public:
   std::map<std::wstring,std::wstring> PluginData;
 
-  TGraphElem() : Visible(true), ShowInLegend(true), UpdateFinished(false) {}
+  TGraphElem() : Visible(true), ShowInLegend(true), UpdateFinished(false), Data(NULL) {}
   TGraphElem(const TGraphElem &Elem);
   virtual ~TGraphElem() {}
   virtual std::wstring MakeLegendText() const {return LegendText.empty() ? MakeText() : LegendText;}
@@ -96,7 +96,7 @@ public:
   virtual void ClearCache();
   virtual void Update();
   const TData& GetData() const {BOOST_ASSERT(Data); return *Data;}
-  void SetData(const TData *AData) {Data = AData;}
+  void SetData(const TData *AData);
 
   void InsertChild(const TGraphElemPtr &Elem, int Index = -1);
   void ReplaceChild(unsigned Index, const TGraphElemPtr &Elem);

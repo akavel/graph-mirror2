@@ -18,6 +18,7 @@
 #include "GuiUtil.h"
 #include <boost/lexical_cast.hpp>
 #include <boost/mem_fn.hpp>
+#include <boost/bind.hpp>
 //---------------------------------------------------------------------------
 namespace Graph
 {
@@ -114,6 +115,12 @@ TGraphElem::TGraphElem(const TGraphElem &Elem)
   //Do not copy ChildList; It must be copyed from the derived class to be able to call SetParentFunc()
 }
 //---------------------------------------------------------------------------
+void TGraphElem::SetData(const TData *AData)
+{
+  Data = AData;
+  std::for_each(ChildList.begin(), ChildList.end(), boost::bind(&TGraphElem::SetData, _1, Data));
+}
+//---------------------------------------------------------------------------
 void TGraphElem::WriteToIni(TConfigFileSection &Section) const
 {
   Section.Write(L"Visible", Visible, true);
@@ -157,7 +164,7 @@ void TGraphElem::InsertChild(const TGraphElemPtr &Elem, int Index)
   else
     ChildList.insert(ChildList.begin() + Index, Elem);
   Elem->SetParent(shared_from_this());
-  Elem->SetData(&GetData());
+  Elem->SetData(Data);
 }
 //---------------------------------------------------------------------------
 void TGraphElem::ReplaceChild(unsigned Index, const TGraphElemPtr &Elem)
