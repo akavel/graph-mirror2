@@ -449,7 +449,8 @@
 					</term>
 					<listitem>
 						<para>
-							This will zoom in at the center of the graphing area, so you will see a &frac14; of the previous graphing area.
+							This will zoom in at the center of the graphing area, so you will see 81% of the previous graphing area.
+              If you hold down <keycap>Shift</keycap> it will zoom in more, so you see 25% of the previous graphing area. 
 						</para>
 					</listitem>
 				</varlistentry>
@@ -463,7 +464,8 @@
 					</term>
 					<listitem>
 						<para>
-							This will zoom out so you see 4 times as much as on the previous graphing area.
+							This will zoom out so you see 1.23 times as much as on the previous graphing area.
+              If you hold down <keycap>Shift</keycap> it will zoom out more, so you see 4 times the previous graphing area. 
 						</para>
 					</listitem>
 				</varlistentry>
@@ -775,4 +777,80 @@
 			</variablelist>
 		</para>
 	</simplesect>
+  
+  <simplesect>
+    <title>Shortcuts</title>
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><keycombo><keycap>Shift</keycap><mousebutton>Drag</mousebutton></keycombo></term>
+          <listitem>
+            <para>
+              This allows you to move the coordinate system around. 
+              It is basically the same as selecting <menuchoice><guimenu>Zoom</guimenu><guimenuitem>Move system</guimenuitem></menuchoice> in the menu.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><action>Scroll wheel</action></term>
+          <listitem>
+            <para>
+              You can use the scroll wheel on the mouse to zoom in and out at the position of the cursor in the graphing area.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><keycombo><keycap>Ctrl</keycap><keycap>Arrow</keycap></keycombo></term>
+          <listitem>
+            <para>
+              Hold down <keycap>Ctrl</keycap> while you use the arrow keys to move the view around in small step. 
+              If you also hold down <keycap>Shift</keycap> you can move in larger steps.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><keycombo><keycap>Ctrl</keycap><keycap>Home</keycap></keycombo></term>
+          <listitem>
+            <para>
+              This zooms in on the x-axis in small steps.
+              If you also hold down <keycap>Shift</keycap> you can zoom in larger steps.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><keycombo><keycap>Ctrl</keycap><keycap>End</keycap></keycombo></term>
+          <listitem>
+            <para>
+              This zooms out on the x-axis in small steps.
+              If you also hold down <keycap>Shift</keycap> you can zoom in larger steps.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><keycombo><keycap>Ctrl</keycap><keycap>PgUp</keycap></keycombo></term>
+          <listitem>
+            <para>
+              This zooms in on the y-axis in small steps.
+              If you also hold down <keycap>Shift</keycap> you can zoom in larger steps.            
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><keycombo><keycap>Ctrl</keycap><keycap>PgDn</keycap></keycombo></term>
+          <listitem>
+            <para>
+              This zooms out on the y-axis in small steps.
+              If you also hold down <keycap>Shift</keycap> you can zoom in larger steps.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </simplesect>
 </chapter>
