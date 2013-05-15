@@ -15,17 +15,13 @@ class TransformDialog(Gui.SimpleDialog):
 
     def OnOk(self, sender):
         P = Graph.TPointSeries()
-        Graph.CustomFunctions["x"] = lambda n: Graph.Selected.Points[int(n)][0]
-        Graph.CustomFunctions["y"] = lambda n: Graph.Selected.Points[int(n)][1]
+        Locals = {"x": lambda n: Graph.Selected.Points[int(n)][0], "y": lambda n: Graph.Selected.Points[int(n)][1]}
         for n in range(len(Graph.Selected.Points)):
-            Graph.CustomFunctions["n"] = lambda: n
-            x = Graph.Eval(self.edit1.Text) if self.edit1.Text != "" else Graph.Selected.Points[n][0]
-            y = Graph.Eval(self.edit2.Text) if self.edit2.Text != "" else Graph.Selected.Points[n][1]
+            Locals["n"] = n
+            x = Graph.Eval(self.edit1.Text, Locals=Locals) if self.edit1.Text != "" else Graph.Selected.Points[n][0]
+            y = Graph.Eval(self.edit2.Text, Locals=Locals) if self.edit2.Text != "" else Graph.Selected.Points[n][1]
             P.Points.append((x, y))
         Graph.FunctionList.append(P)
-        del Graph.CustomFunctions["x"]
-        del Graph.CustomFunctions["y"]
-        del Graph.CustomFunctions["n"]
         Graph.Redraw()
         self.Close()
 

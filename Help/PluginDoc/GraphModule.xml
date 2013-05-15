@@ -340,15 +340,17 @@
 			<varlistentry>
 				<term>
 					<indexterm><primary>Eval (in module Graph)</primary></indexterm>
-					<classname>Graph</classname>.<property>Eval</property>(<parameter>Expression</parameter> [, <parameter>Trigonometry</parameter>])
+					<classname>Graph</classname>.<property>Eval</property>(<parameter>Expression</parameter> [, <parameter>Trigonometry</parameter>, <parameter>Locals</parameter>])
 				</term>
 				<listitem>
 					<para>
 						Evaluates <parameter>Expression</parameter>, which is a string with an expression like "sin(0.3)+3^2.5".
 						The expression is evaluated using real numbers only and the result is returned as a floating point number.
-						<parameter>Trigonometry</parameter> can be <classname>Graph.Radian</classname> or <classname>Graph.Degree</classname>.
-						If <parameter>Trigonometry</parameter> is not specified, the value in <classname>Graph.Axes.Trigonometry</classname> will be used.
+						<parameter>Trigonometry</parameter> can be <classname>Graph</classname>.<property>Radian</property> or <classname>Graph</classname>.<property>Degree</property>.
+						If <parameter>Trigonometry</parameter> is not specified, the value in <classname>Graph</classname>.<property>Axes</property>.<property>Trigonometry</property> will be used.
 						The function will raise the exception <classname>Graph</classname>.<property>EFuncError</property> if an error occurs.
+            If <parameter>Locals</parameter> is specified, it must be a dictionary where the key is a function name and the value is a Python function or number.
+            It is similar to <classname>Graph</classname>.<property>CustomFunctions</property> but is only used while evaluating the expression.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -356,7 +358,7 @@
 			<varlistentry>
 				<term>
 					<indexterm><primary>EvalComplex (in module Graph)</primary></indexterm>
-					<classname>Graph</classname>.<property>EvalComplex</property>(<parameter>Expression</parameter> [, <parameter>Trigonometry</parameter>])
+					<classname>Graph</classname>.<property>EvalComplex</property>(<parameter>Expression</parameter> [, <parameter>Trigonometry</parameter>, <parameter>Locals</parameter>])
 				</term>
 				<listitem>
 					<para>
