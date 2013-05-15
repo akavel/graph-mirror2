@@ -40,6 +40,7 @@ PYTHON_WRAP(_typeobject, PySlice_Type)
 PYTHON_WRAP(_typeobject, PyComplex_Type)
 PYTHON_WRAP(_typeobject, PyFunction_Type)
 PYTHON_WRAP(_typeobject, PyMethod_Type)
+PYTHON_WRAP(_typeobject, PyDict_Type)
 PYTHON_WRAP(PyObject*, PyExc_TypeError)
 PYTHON_WRAP(PyObject*, PyExc_KeyError)
 PYTHON_WRAP(PyObject*, PyExc_AttributeError)
@@ -102,6 +103,7 @@ namespace boost
 #define PySlice_Type Python::PySlice_Type
 #define PyComplex_Type Python::PyComplex_Type
 #define PyMethod_Type Python::PyMethod_Type
+#define PyDict_Type Python::PyDict_Type
 #define PyExc_TypeError Python::PyExc_TypeError
 #define PyExc_KeyError Python::PyExc_KeyError
 #define PyExc_AttributeError Python::PyExc_AttributeError

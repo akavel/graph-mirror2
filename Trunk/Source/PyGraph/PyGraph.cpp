@@ -191,29 +191,47 @@ T TPluginFunc::CallCustomFunction(const T *Args, Func32::TTrigonometry Trig, Fun
   return Result;
 }
 //---------------------------------------------------------------------------
-static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
+int GetFunctionArgumentCount(PyObject *Function)
 {
-  //The number of arguments are in func_code.co_argcount
-  const wchar_t *Name;
-  PyObject *Function;
-  if(!PyArg_ParseTuple(Args, "uO!", &Name, &PyFunction_Type, &Function))
-    return NULL;
-
+  int Arguments = -1;
   PyObject *FuncCode = PyObject_GetAttrString(Function, "__code__");
   if(FuncCode)
   {
     PyObject *ArgCount = PyObject_GetAttrString(FuncCode, "co_argcount");
     if(ArgCount)
     {
-      long Arguments = PyLong_AsLong(ArgCount);
-      boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Function, Arguments, Name));
-      Form1->Data.CustomFunctions.SymbolList.Add(Name, Func);
-      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func);
+      Arguments = PyLong_AsLong(ArgCount);
       Py_XDECREF(ArgCount);
     }
     Py_XDECREF(FuncCode);
   }
-	Py_RETURN_NONE;
+  return Arguments;
+}
+//---------------------------------------------------------------------------
+static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
+{
+  try
+  {
+    //The number of arguments are in func_code.co_argcount
+    const wchar_t *Name;
+    PyObject *Function;
+    if(!PyArg_ParseTuple(Args, "uO!", &Name, &PyFunction_Type, &Function))
+      return NULL;
+
+    int Arguments = GetFunctionArgumentCount(Function);
+    if(Arguments != -1)
+    {
+      boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Function, Arguments, Name));
+      Form1->Data.CustomFunctions.SymbolList.Add(Name, Func);
+      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func);
+    }
+    Py_RETURN_NONE;
+  }
+  catch(Func32::EFuncError &E)
+  {
+    PyErr_SetString(PyEFuncError, ToString(GetErrorMsg(E)).c_str());
+    return NULL;
+  }
 }
 //---------------------------------------------------------------------------
 static PyObject* PluginGetCustomFunction(PyObject *Self, PyObject *Args)
@@ -244,6 +262,12 @@ static PyObject* PluginDelCustomFunction(PyObject *Self, PyObject *Args)
   if(Name == NULL)
 		return NULL;
 
+  if(!Form1->Data.CustomFunctions.GlobalSymbolList.Exists(Name))
+  {
+    PyErr_SetString(PyExc_KeyError, AnsiString(Name).c_str());
+    return NULL;
+  }
+
   Form1->Data.CustomFunctions.SymbolList.Erase(Name);
   Form1->Data.CustomFunctions.GlobalSymbolList.Erase(Name);
   Py_RETURN_NONE;
@@ -262,14 +286,41 @@ static PyObject* PluginGetCustomFunctionNames(PyObject *Self, PyObject *Args)
   return Names;
 }
 //---------------------------------------------------------------------------
-static PyObject* PluginEval(PyObject *Self, PyObject *Args)
+static PyObject* PluginEval(PyObject *Self, PyObject *Args, PyObject *Kwds)
 {
   try
   {
+		static char *kwlist[] = {"Expression", "Trigonometry", "Locals", NULL};
     int Degrees = Form1->Data.Axes.Trigonometry == Func32::Degree;
+    PyObject *Locals = NULL;
     const wchar_t *Expression;
-    if(!PyArg_ParseTuple(Args, "u|i", &Expression, &Degrees))
+    if(!PyArg_ParseTupleAndKeywords(Args, Kwds, "u|iO!", kwlist, &Expression, &Degrees, &PyDict_Type, &Locals))
       return NULL;
+
+    if(Locals != NULL)
+    {
+      Func32::TSymbolList SymbolList = Form1->Data.CustomFunctions.SymbolList;
+      Py_ssize_t Pos = 0;
+      PyObject *Key, *Value;
+      while(PyDict_Next(Locals, &Pos, &Key, &Value))
+      {
+        std::wstring Name = PyUnicode_AsUnicode(Key);
+        double FloatValue = PyFloat_AsDouble(Value);
+        if(!PyErr_Occurred())
+          SymbolList.Add(Name, FloatValue);
+        else
+        {
+          PyErr_Clear();
+          int Arguments = GetFunctionArgumentCount(Value);
+          if(Arguments == -1)
+            return NULL;
+
+          boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Value, Arguments, Name));
+          SymbolList.Add(Name, Func);
+        }
+      }
+      return PyFloat_FromDouble(Func32::Eval(Expression, SymbolList, Degrees ? Func32::Degree : Func32::Radian));
+    }
 
     return PyFloat_FromDouble(Func32::Eval(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian));
   }
@@ -280,16 +331,45 @@ static PyObject* PluginEval(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
-static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args)
+static PyObject* PluginEvalComplex(PyObject *Self, PyObject *Args, PyObject *Kwds)
 {
   try
   {
+		static char *kwlist[] = {"Expression", "Trigonometry", "Locals", NULL};
     int Degrees = Form1->Data.Axes.Trigonometry == Func32::Degree;
+    PyObject *Locals = NULL;
     const wchar_t *Expression;
-    if(!PyArg_ParseTuple(Args, "u|i", &Expression, &Degrees))
+    if(!PyArg_ParseTupleAndKeywords(Args, Kwds, "u|iO!", kwlist, &Expression, &Degrees, &PyDict_Type, &Locals))
       return NULL;
 
-    Func32::TComplex Result = Func32::EvalComplex(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian);
+    Func32::TComplex Result;
+    if(Locals != NULL)
+    {
+      Func32::TSymbolList SymbolList = Form1->Data.CustomFunctions.SymbolList;
+      Py_ssize_t Pos = 0;
+      PyObject *Key, *Value;
+      while(PyDict_Next(Locals, &Pos, &Key, &Value))
+      {
+        std::wstring Name = PyUnicode_AsUnicode(Key);
+        Func32::TComplex ComplexValue(PyComplex_RealAsDouble(Value), PyComplex_ImagAsDouble(Value));
+        if(!PyErr_Occurred())
+          SymbolList.Add(Name, ComplexValue);
+        else
+        {
+          PyErr_Clear();
+          int Arguments = GetFunctionArgumentCount(Value);
+          if(Arguments == -1)
+            return NULL;
+
+          boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Value, Arguments, Name));
+          SymbolList.Add(Name, Func);
+        }
+      }
+
+      Result = Func32::EvalComplex(Expression, SymbolList, Degrees ? Func32::Degree : Func32::Radian);
+    }
+    else
+      Result = Func32::EvalComplex(Expression, Form1->Data.CustomFunctions.SymbolList, Degrees ? Func32::Degree : Func32::Radian);
     return PyComplex_FromDoubles(real(Result), imag(Result));
   }
   catch(Func32::EFuncError &E)
@@ -447,8 +527,8 @@ static PyMethodDef GraphMethods[] = {
 	{"WriteToConsole",            PluginWriteToConsole, METH_VARARGS, ""},
 	{"ClearConsole",              PluginClearConsole, METH_NOARGS, "Clear the Python console."},
 	{"InputQuery",                PluginInputQuery, METH_VARARGS, ""},
-	{"Eval",                      PluginEval, METH_VARARGS, "Evaluates an expression and returns the result as a real number."},
-	{"EvalComplex",               PluginEvalComplex, METH_VARARGS, "Evaluates an expression and returns the result as a complex number."},
+	{"Eval",                      (PyCFunction)PluginEval, METH_VARARGS | METH_KEYWORDS, "Evaluates an expression and returns the result as a real number."},
+	{"EvalComplex",               (PyCFunction)PluginEvalComplex, METH_VARARGS | METH_KEYWORDS, "Evaluates an expression and returns the result as a complex number."},
 	{"Update",                    PluginUpdate, METH_NOARGS, "Updated the graphing area."},
 	{"SetConstant",               PluginSetConstant, METH_VARARGS, ""},
 	{"GetConstant",               PluginGetConstant, METH_O, ""},
