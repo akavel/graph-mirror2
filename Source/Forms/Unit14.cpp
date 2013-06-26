@@ -13,6 +13,8 @@
 #include "Unit14.h"
 #include "ConfigRegistry.h"
 #include "ICompCommon.h"
+#include "PyGraph.h"
+#include "PyVclObject.h"
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include <boost/format.hpp>
 //---------------------------------------------------------------------------
@@ -79,6 +81,7 @@ void __fastcall TForm14::FormShow(TObject *Sender)
   //Grid needs do receive focus from something else
   Button1->SetFocus();
   Grid->SetFocus();
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Popup_CutClick(TObject *Sender)

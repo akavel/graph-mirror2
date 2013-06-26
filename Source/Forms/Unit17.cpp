@@ -166,4 +166,9 @@ void __fastcall TForm17::Popup_ExportClick(TObject *Sender)
 			MessageBox(LoadRes(RES_FILE_ACCESS, SaveDialog1->FileName), LoadStr(RES_WRITE_FAILED), MB_ICONSTOP);
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm17::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
 

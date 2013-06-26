@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit6.h"
 #include "SymbolForm.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "IFontBox"
 #pragma link "IRichEdit"
@@ -151,6 +152,7 @@ bool TForm6::IsEmpty()
 void __fastcall TForm6::FormShow(TObject *Sender)
 {
   UpdateFont();
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::RichEdit1KeyPress(TObject *Sender, char &Key)

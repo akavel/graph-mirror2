@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit18.h"
 #include "ConfigRegistry.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
@@ -152,6 +153,9 @@ void TImageOptions::SaveSettings() const
   }
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm18::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
 

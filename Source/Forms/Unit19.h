@@ -47,6 +47,7 @@ __published:	// IDE-managed Components
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall TntEditKeyPress(TObject *Sender, char &Key);
   void __fastcall ComboBox1Change(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   TData Data;
   Graph::TAnimationInfo &AnimationInfo;

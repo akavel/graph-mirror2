@@ -16,6 +16,7 @@ object Form10: TForm10
   Position = poMainFormCenter
   ShowHint = True
   OnClose = FormClose
+  OnShow = FormShow
   DesignSize = (
     422
     210)

@@ -28,6 +28,7 @@ __published:	// IDE-managed Components
   TLabel *Label3;
   void __fastcall TntButton1Click(TObject *Sender);
   void __fastcall ComboBox1Change(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   TLabelPlacement OldPlacement;
   boost::shared_ptr<TTextLabel> Label;

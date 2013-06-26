@@ -57,6 +57,7 @@ __published:	// IDE-managed Components
     void __fastcall Button3Click(TObject *Sender);
   void __fastcall ComboBoxDrawItem(TWinControl *Control, int Index,
           TRect &Rect, TOwnerDrawState State);
+  void __fastcall FormShow(TObject *Sender);
 
 private:	// User declarations
     TData &Data;

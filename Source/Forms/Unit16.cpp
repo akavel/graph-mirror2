@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit16.h"
+#include "PyGraph.h"
 #include <float.h>
 //---------------------------------------------------------------------------
 #pragma link "ShadeSelect"
@@ -238,6 +239,7 @@ void __fastcall TForm16::FormShow(TObject *Sender)
 {
   PageControl1->ActivePageIndex = 0;
   ShowFuncList();
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm16::Button3Click(TObject *Sender)

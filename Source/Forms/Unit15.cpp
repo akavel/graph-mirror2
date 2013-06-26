@@ -12,6 +12,7 @@
 #include "Unit15.h"
 #include <cmath>
 #include "ConfigRegistry.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "Grid"
 #pragma link "ProgressForm"
@@ -302,6 +303,11 @@ void __fastcall TForm15::Button1Click(TObject *Sender)
 	SetRegValue(REGISTRY_KEY "\\Table", L"From", HKEY_CURRENT_USER, Edit1->Text.c_str());
 	SetRegValue(REGISTRY_KEY "\\Table", L"To", HKEY_CURRENT_USER, Edit2->Text.c_str());
 	SetRegValue(REGISTRY_KEY "\\Table", L"dx", HKEY_CURRENT_USER, Edit3->Text.c_str());
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm15::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 

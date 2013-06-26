@@ -16,6 +16,7 @@ object Form17: TForm17
   OldCreateOrder = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   DesignSize = (
     442
     364)

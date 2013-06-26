@@ -15,6 +15,7 @@ object Form21: TForm21
   OldCreateOrder = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

@@ -22,6 +22,7 @@ object Form4: TForm4
   ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   DesignSize = (
     281
     333)
@@ -62,7 +63,7 @@ object Form4: TForm4
   object GridPanelEx1: TGridPanelEx
     Left = 13
     Top = 10
-    Width = 261
+    Width = 296
     Height = 280
     BevelInner = bvRaised
     BevelOuter = bvLowered
@@ -210,7 +211,7 @@ object Form4: TForm4
     TabOrder = 0
     AutoSize = True
     DesignSize = (
-      261
+      296
       280)
     object Label1: TLabel
       Left = 8
@@ -260,9 +261,9 @@ object Form4: TForm4
     end
     object RadioGroup1: TRadioGroupEx
       AlignWithMargins = True
-      Left = 160
+      Left = 177
       Top = 12
-      Width = 92
+      Width = 110
       Height = 76
       Hint = 'Format used when complex numbers are shown.'
       Anchors = [akTop, akRight, akBottom]
@@ -421,7 +422,7 @@ object Form4: TForm4
     object CheckBox2: TCheckBoxEx
       Left = 8
       Top = 199
-      Width = 77
+      Width = 95
       Height = 17
       Hint = 'Show the tooltip when the cursor is over an item.'
       Anchors = [akLeft]
@@ -429,12 +430,11 @@ object Form4: TForm4
       ParentShowHint = False
       ShowHint = True
       TabOrder = 7
-      ExplicitTop = 227
     end
     object CheckBox3: TCheckBoxEx
       Left = 8
       Top = 227
-      Width = 133
+      Width = 151
       Height = 17
       Hint = 
         'Save the size of the main window when the program exits. This is' +
@@ -444,12 +444,11 @@ object Form4: TForm4
       ParentShowHint = False
       ShowHint = True
       TabOrder = 8
-      ExplicitTop = 255
     end
     object CheckBox4: TCheckBoxEx
       Left = 8
       Top = 255
-      Width = 216
+      Width = 234
       Height = 17
       Hint = 
         'If checked the program will contact a web server when the progra' +
@@ -457,12 +456,11 @@ object Form4: TForm4
       Anchors = [akLeft]
       Caption = 'Check for new version of Graph at startup'
       TabOrder = 9
-      ExplicitTop = 283
     end
     object CheckBox5: TCheckBoxEx
       Left = 8
       Top = 169
-      Width = 143
+      Width = 161
       Height = 17
       Hint = 
         'Use a custom decimal separator instead of the default from the W' +
@@ -475,7 +473,7 @@ object Form4: TForm4
       OnClick = CheckBox5Click
     end
     object Edit4: TEdit
-      Left = 157
+      Left = 174
       Top = 167
       Width = 20
       Height = 21

@@ -74,6 +74,7 @@ PlotSettings = Settings.PlotSettings
 GuiSettings = Settings.GuiSettings
 
 Selected = None
+ModalForm = None
 TGraphElem = Data.TGraphElem
 TBaseFuncType = Data.TBaseFuncType
 TStdFunc = Data.TStdFunc
@@ -292,6 +293,10 @@ def HandleOnSelect(Elem):
     global Selected
     Selected = Elem
 
+def HandleOnShowForm(Form):
+  global ModalForm
+  ModalForm = Form
+    
 OnNew = []
 OnLoad = []
 OnSelect = [HandleOnSelect]
@@ -306,7 +311,8 @@ OnCustomFunctions = []
 OnNewElem = []
 OnChanged = []
 OnMoved = []
-EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate, OnDelete, OnAxesChanged, OnZoom, OnOptionsChanged, OnCustomFunctions, OnNewElem, OnChanged, OnMoved]
+OnShowForm = [HandleOnShowForm]
+EventList = [OnNew, OnLoad, OnSelect, OnClose, OnEdit, OnAnimate, OnDelete, OnAxesChanged, OnZoom, OnOptionsChanged, OnCustomFunctions, OnNewElem, OnChanged, OnMoved, OnShowForm]
 
 # Imports from Utility
 BeginMultiUndo = Utility.BeginMultiUndo

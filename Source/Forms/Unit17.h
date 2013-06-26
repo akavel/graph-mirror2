@@ -59,6 +59,7 @@ __published:	// IDE-managed Components
   void __fastcall Popup_SelectClick(TObject *Sender);
   void __fastcall Popup_ImportClick(TObject *Sender);
   void __fastcall Popup_ExportClick(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   TData &Data;
 

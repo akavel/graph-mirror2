@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit7.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "LineSelect"
 #pragma link "ExtColorBox"
@@ -89,6 +90,9 @@ void __fastcall TForm7::Button3Click(TObject *Sender)
   Application->HelpContext(HelpContext);
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm7::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
 

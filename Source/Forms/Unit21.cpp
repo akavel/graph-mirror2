@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit21.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
 #pragma resource "*.dfm"
@@ -83,6 +84,11 @@ void __fastcall TForm21::ComboBox1Change(TObject *Sender)
   Edit1->Text = xPos;
   Edit2->Text = yPos;
   OldPlacement = NewPlacement;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm21::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 

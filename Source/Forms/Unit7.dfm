@@ -18,6 +18,7 @@ object Form7: TForm7
   ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton

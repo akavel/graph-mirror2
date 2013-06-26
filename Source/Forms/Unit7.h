@@ -44,6 +44,7 @@ __published:	// IDE-managed Components
   TExtColorBox *ExtColorBox1;
   void __fastcall Button1Click(TObject *Sender);
   void __fastcall Button3Click(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 
 private:	// User declarations
   boost::shared_ptr<TBaseFuncType> Func;

@@ -222,6 +222,7 @@
 					<indexterm><primary>OnNewElem (in module Graph)</primary></indexterm>
 					<indexterm><primary>OnChanged (in module Graph)</primary></indexterm>
 					<indexterm><primary>OnMoved (in module Graph)</primary></indexterm>
+					<indexterm><primary>OnShowForm (in module Graph)</primary></indexterm>
 					<classname>Graph</classname>.<property>OnNew</property>
 				</term>
 				<term><classname>Graph</classname>.<property>OnLoad</property></term>
@@ -237,6 +238,7 @@
 				<term><classname>Graph</classname>.<property>OnNewElem</property></term>
 				<term><classname>Graph</classname>.<property>OnChanged</property></term>
 				<term><classname>Graph</classname>.<property>OnMoved</property></term>
+				<term><classname>Graph</classname>.<property>OnShowForm</property></term>
 				<listitem>
 					<para>
 						<informaltable>
@@ -329,6 +331,11 @@
     				    		<entry>OnMoved</entry>
     				    		<entry>Function(<parameter>Elem</parameter>)</entry>
     				    		<entry>Called when the user has moved an element in the function list.</entry>
+    				  		</row>
+    				  		<row>
+    				    		<entry>OnShowForm</entry>
+    				    		<entry>Function(<parameter>Form</parameter>)</entry>
+    				    		<entry>Called when a new modal window is shown. <parameter>Form</parameter> is the new window, which is a descendant from <property>TForm</property>.</entry>
     				  		</row>
 								</tbody>
 							</tgroup>

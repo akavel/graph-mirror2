@@ -26,6 +26,7 @@ __published:	// IDE-managed Components
   TButton *Button1;
   TButton *Button2;
   void __fastcall Button1Click(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   TData &Data;
   bool AllowReplace;

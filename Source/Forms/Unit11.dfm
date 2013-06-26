@@ -18,6 +18,7 @@ object Form11: TForm11
   ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   DesignSize = (
     396
     243)

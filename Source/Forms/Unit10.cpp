@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit10.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "LinkLabelEx"
 #pragma resource "*.dfm"
@@ -58,6 +59,11 @@ void __fastcall TForm10::LinkLabel1LinkClick(TObject *Sender, const UnicodeStrin
 {
   if(LinkType == sltURL)
     ShellExecute(Handle, NULL, Link.c_str(), NULL, NULL, SW_SHOWMAXIMIZED);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm10::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 

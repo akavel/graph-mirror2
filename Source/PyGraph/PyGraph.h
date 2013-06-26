@@ -31,12 +31,13 @@ namespace Python
     peCustomFunctionsChanged,
     peNewElem,
     peChanged,
-    peMoved
+    peMoved,
+    peShowForm
   };
 
   extern PyObject *PyEFuncError;
   extern PyObject *PyEGraphError;
-	typedef boost::variant<int, double, std::wstring, PyObject*> TPyVariant;
+	typedef boost::variant<int, double, std::wstring, PyObject*, TObject*> TPyVariant;
 
 	void InitPlugins();
 	bool ExecutePythonCommand(const String &Command);
@@ -48,6 +49,12 @@ namespace Python
 	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, TPyVariant V3);
 
 	PyObject* ToPyObject(const TVariant &Variant);
+	template<typename T1>
+	PyObject* CreateTuple(const T1 &V1)
+	{
+		return Py_BuildValue("N", ToPyObject(V1));
+	}
+
 	template<typename T1, typename T2>
 	PyObject* CreateTuple(const T1 &V1, const T2 &V2)
 	{
