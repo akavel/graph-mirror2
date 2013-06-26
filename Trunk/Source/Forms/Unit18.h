@@ -45,6 +45,7 @@ __published:	// IDE-managed Components
   void __fastcall TrackBar1Change(TObject *Sender);
   void __fastcall Edit3Change(TObject *Sender);
   void __fastcall RadioGroup3Click(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   int ScreenWidth;
   int ScreenHeight;

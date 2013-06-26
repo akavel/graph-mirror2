@@ -12,6 +12,7 @@
 #include "Unit5.h"
 #include "Unit1.h"
 #include <float.h>
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "LineSelect"
 #pragma link "MyEdit"
@@ -275,5 +276,9 @@ void __fastcall TForm5::ComboBox4Change(TObject *Sender)
   LineSelect1->Enabled = ComboBox4->ItemIndex != 1;
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm5::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
 

@@ -282,7 +282,9 @@ void TForm19::GetSymbolDependent(const std::wstring &SymbolName, std::vector<TGr
     GetSymbolDependent(SymbolName, List, Elem->GetChild(I));
 }
 //---------------------------------------------------------------------------
-
-
-
+void __fastcall TForm19::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
 

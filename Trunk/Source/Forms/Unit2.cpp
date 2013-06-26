@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit2.h"
 #include "VersionInfo.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "SymbolDialog"
 #pragma link "LinkLabelEx"
@@ -75,6 +76,8 @@ void __fastcall TForm2::FormShow(TObject *Sender)
   //Must be done in FormShow() under Windows Vista because a handle is needed to auto size a TLinkLabelEx
   if(LinkLabel3->Visible)
     ClientHeight = ClientHeight + LinkLabel3->Height + 10;
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
+
 

@@ -23,6 +23,7 @@ object Form15: TForm15
   Position = poMainFormCenter
   ShowHint = True
   OnResize = FormResize
+  OnShow = FormShow
   DesignSize = (
     322
     469)

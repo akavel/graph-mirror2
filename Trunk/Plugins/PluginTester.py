@@ -1,6 +1,6 @@
 import Graph
 
-ShowEvents = False
+ShowEvents = True
 LogFile = "Events.log"
 
 File = open(LogFile, "w") if LogFile else None
@@ -28,5 +28,6 @@ Graph.OnCustomFunctions.append(EventLogger("OnCustomFunctions"))
 Graph.OnNewElem.append(EventLogger("OnNewElem"))
 Graph.OnChanged.append(EventLogger("OnChanged"))
 Graph.OnMoved.append(EventLogger("OnMoved"))
+Graph.OnShowForm.append(EventLogger("OnShowForm"))
 File.write("PluginTester loaded!\n")
 

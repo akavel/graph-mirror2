@@ -35,10 +35,6 @@ object Form3: TForm3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'x-axis'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GridPanel1: TGridPanelEx
         Left = 0
         Top = 0
@@ -271,7 +267,7 @@ object Form3: TForm3
         object CheckBox4: TCheckBoxEx
           Left = 173
           Top = 64
-          Width = 61
+          Width = 79
           Height = 32
           Hint = 'Determine the tick unit automatically.'
           Align = alLeft
@@ -280,9 +276,9 @@ object Form3: TForm3
           OnClick = CheckBoxClick
         end
         object CheckBox6: TCheckBoxEx
-          Left = 239
+          Left = 257
           Top = 64
-          Width = 71
+          Width = 89
           Height = 32
           Hint = 'Show tick marks on the x-axis.'
           Align = alLeft
@@ -292,7 +288,7 @@ object Form3: TForm3
         object CheckBox5: TCheckBoxEx
           Left = 173
           Top = 96
-          Width = 61
+          Width = 79
           Height = 32
           Hint = 'Set the grid unit to the same as the tick unit.'
           Align = alLeft
@@ -301,9 +297,9 @@ object Form3: TForm3
           OnClick = CheckBoxClick
         end
         object CheckBox7: TCheckBoxEx
-          Left = 239
+          Left = 257
           Top = 96
-          Width = 66
+          Width = 84
           Height = 32
           Hint = 'Show vertical grid lines.'
           Align = alLeft
@@ -321,7 +317,7 @@ object Form3: TForm3
           object CheckBox3: TCheckBoxEx
             Left = 0
             Top = 0
-            Width = 48
+            Width = 66
             Height = 32
             Hint = 
               'Show the label at the right side of the graphing area, above the' +
@@ -335,9 +331,9 @@ object Form3: TForm3
           end
           object Edit5: TMyEdit
             AlignWithMargins = True
-            Left = 48
+            Left = 66
             Top = 5
-            Width = 171
+            Width = 153
             Height = 21
             Hint = 'Edit the label for the axis here.'
             Margins.Left = 0
@@ -366,11 +362,12 @@ object Form3: TForm3
             Left = 0
             Top = 0
             Width = 102
-            Height = 13
+            Height = 32
             Align = alLeft
             Caption = 'The x-axis cross at y='
             FocusControl = Edit6
             Layout = tlCenter
+            ExplicitHeight = 13
           end
           object Edit6: TMyEdit
             AlignWithMargins = True
@@ -389,7 +386,7 @@ object Form3: TForm3
         object CheckBox1: TCheckBoxEx
           Left = 6
           Top = 128
-          Width = 101
+          Width = 119
           Height = 28
           Hint = 'Use logarithmic scale on the x-axis.'
           Align = alLeft
@@ -402,7 +399,7 @@ object Form3: TForm3
         object CheckBox2: TCheckBoxEx
           Left = 6
           Top = 156
-          Width = 89
+          Width = 107
           Height = 28
           Hint = 'Show units on the x-axis.'
           Align = alLeft
@@ -415,7 +412,7 @@ object Form3: TForm3
         object CheckBox17: TCheckBoxEx
           Left = 173
           Top = 156
-          Width = 135
+          Width = 153
           Height = 28
           Hint = 'Show units on the selected axis as a fraction multiplied by pi.'
           Align = alLeft
@@ -432,10 +429,6 @@ object Form3: TForm3
     end
     object TabSheet2: TTabSheet
       Caption = 'y-axis'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GridPanel2: TGridPanelEx
         Left = 0
         Top = 0
@@ -669,7 +662,7 @@ object Form3: TForm3
         object CheckBox11: TCheckBoxEx
           Left = 173
           Top = 64
-          Width = 61
+          Width = 79
           Height = 32
           Hint = 'Determine the tick unit automatically.'
           Align = alLeft
@@ -678,19 +671,20 @@ object Form3: TForm3
           OnClick = CheckBoxClick
         end
         object CheckBox13: TCheckBoxEx
-          Left = 239
+          Left = 257
           Top = 64
-          Width = 71
+          Width = 89
           Height = 32
           Hint = 'Show tick marks on the y-axis.'
           Align = alLeft
           Caption = 'Show ticks'
           TabOrder = 10
+          ExplicitLeft = 239
         end
         object CheckBox12: TCheckBoxEx
           Left = 173
           Top = 96
-          Width = 61
+          Width = 79
           Height = 32
           Hint = 'Set the grid unit to the same as the tick unit.'
           Align = alLeft
@@ -699,9 +693,9 @@ object Form3: TForm3
           OnClick = CheckBoxClick
         end
         object CheckBox14: TCheckBoxEx
-          Left = 239
+          Left = 257
           Top = 96
-          Width = 66
+          Width = 84
           Height = 32
           Hint = 'Show horizontal grid lines.'
           Align = alLeft
@@ -709,6 +703,7 @@ object Form3: TForm3
           ParentShowHint = False
           ShowHint = True
           TabOrder = 11
+          ExplicitLeft = 239
         end
         object Panel3: TPanel
           Left = 173
@@ -721,7 +716,7 @@ object Form3: TForm3
           object CheckBox10: TCheckBoxEx
             Left = 0
             Top = 0
-            Width = 48
+            Width = 66
             Height = 32
             Hint = 
               'Show the label at the top of the graphing area, to the right of ' +
@@ -785,7 +780,7 @@ object Form3: TForm3
         object CheckBox8: TCheckBoxEx
           Left = 6
           Top = 128
-          Width = 101
+          Width = 119
           Height = 28
           Hint = 'Use logarithmic scale for the y-axis.'
           Align = alLeft
@@ -798,7 +793,7 @@ object Form3: TForm3
         object CheckBox9: TCheckBoxEx
           Left = 6
           Top = 156
-          Width = 89
+          Width = 107
           Height = 28
           Hint = 'Show units on the y-axis.'
           Align = alLeft
@@ -811,7 +806,7 @@ object Form3: TForm3
         object CheckBox18: TCheckBoxEx
           Left = 173
           Top = 156
-          Width = 135
+          Width = 153
           Height = 28
           Hint = 'Show units on the selected axis as a fraction multiplied by pi.'
           Align = alLeft
@@ -829,10 +824,6 @@ object Form3: TForm3
     object TabSheet3: TTabSheet
       Caption = 'Settings'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         396
         185)
@@ -847,7 +838,7 @@ object Form3: TForm3
       object CheckBox15: TCheckBoxEx
         Left = 8
         Top = 40
-        Width = 81
+        Width = 99
         Height = 17
         Hint = 'Select to show a legend in the coordinate system.'
         Caption = 'Show legend'
@@ -937,7 +928,7 @@ object Form3: TForm3
       object CheckBox19: TCheckBoxEx
         Left = 152
         Top = 40
-        Width = 170
+        Width = 188
         Height = 17
         Hint = 
           'Check this to use complex numbers for calculations. Notice that ' +
@@ -1143,7 +1134,7 @@ object Form3: TForm3
   object CheckBox16: TCheckBoxEx
     Left = 8
     Top = 239
-    Width = 93
+    Width = 111
     Height = 17
     Hint = 'Select this to use these settings as defaults in the future.'
     Anchors = [akLeft, akBottom]

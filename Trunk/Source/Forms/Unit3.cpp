@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit1.h"
 #include "Unit3.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "ExtColorBox"
 #pragma link "MyEdit"
@@ -285,6 +286,7 @@ void __fastcall TForm3::FormShow(TObject *Sender)
 {
   PageControl1->ActivePageIndex = 0;
   Edit1->SetFocus();
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm3::RadioGroup1Click(TObject *Sender)

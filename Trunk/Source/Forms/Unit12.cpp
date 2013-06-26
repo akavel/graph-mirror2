@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit12.h"
+#include "PyGraph.h"
 #include <float.h>
 //---------------------------------------------------------------------------
 #pragma link "LineSelect"
@@ -161,6 +162,11 @@ void __fastcall TForm12::ComboBoxDrawItem(TWinControl *Control, int Index,
 {
   if(TCustomComboBox *ComboBox = dynamic_cast<TCustomComboBox*>(Control))
     DrawComboBoxEndPoint(ComboBox->Canvas, Index, Rect);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm12::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 

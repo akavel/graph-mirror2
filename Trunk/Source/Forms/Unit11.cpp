@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit11.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "ShadeSelect"
 #pragma link "MyEdit"
@@ -129,6 +130,11 @@ void __fastcall TForm11::Edit4KeyPress(TObject *Sender, char &Key)
 {
   if(!std::isdigit(Key) && Key != '\b')
     Key = 0;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm11::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 

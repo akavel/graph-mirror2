@@ -10,6 +10,7 @@
 #include "Graph.h"
 #pragma hdrstop
 #include "Unit8.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
@@ -109,6 +110,11 @@ void __fastcall TForm8::Button1Click(TObject *Sender)
       return;
     }
   ModalResult = mrOk;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm8::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 

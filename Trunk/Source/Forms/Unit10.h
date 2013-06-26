@@ -34,6 +34,7 @@ __published:	// IDE-managed Components
   void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
   void __fastcall LinkLabel1LinkClick(TObject *Sender, const UnicodeString Link,
           TSysLinkType LinkType);
+  void __fastcall FormShow(TObject *Sender);
 
 private:	// User declarations
 

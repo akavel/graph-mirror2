@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit13.h"
 #include "Unit8.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "LineSelect"
 #pragma link "MyRadioButton"
@@ -382,6 +383,9 @@ void __fastcall TForm13::Popup_ExportClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-
-
+void __fastcall TForm13::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
 

@@ -3786,5 +3786,3 @@ void __fastcall TForm1::ScriptDocActionExecute(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-

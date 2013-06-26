@@ -18,6 +18,7 @@ object Form13: TForm13
   ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   DesignSize = (
     508
     298)
@@ -555,7 +556,7 @@ object Form13: TForm13
   object CheckBox1: TCheckBoxEx
     Left = 360
     Top = 168
-    Width = 70
+    Width = 72
     Height = 17
     Hint = 
       'Type a value in the Intercept box to specify the point where you' +

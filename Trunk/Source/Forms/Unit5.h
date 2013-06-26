@@ -69,6 +69,7 @@ __published:	// IDE-managed Components
   void __fastcall ComboBox1KeyPress(TObject *Sender, char &Key);
   void __fastcall ComboBoxDrawItem(TWinControl *Control, int Index, TRect &Rect, TOwnerDrawState State);
   void __fastcall ComboBox4Change(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   struct TTempData
   {

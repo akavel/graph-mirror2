@@ -15,6 +15,7 @@
 #include "Unit1.h"
 #include "Unit4.h"
 #include "ConfigRegistry.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "CheckBoxEx"
 #pragma link "GridPanelEx"
@@ -119,6 +120,11 @@ void __fastcall TForm4::CheckBox5Click(TObject *Sender)
 {
   Edit4->Enabled = CheckBox5->Checked;
 	Edit4->Color = CheckBox5->Checked ? clWindow : clBtnFace;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm4::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
 }
 //---------------------------------------------------------------------------
 

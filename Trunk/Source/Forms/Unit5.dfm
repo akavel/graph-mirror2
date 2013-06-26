@@ -19,6 +19,7 @@ object Form5: TForm5
   ParentBiDiMode = False
   Position = poMainFormCenter
   ShowHint = True
+  OnShow = FormShow
   DesignSize = (
     353
     424)

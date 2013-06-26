@@ -75,6 +75,7 @@ __published:	// IDE-managed Components
   void __fastcall TrackBar1KeyPress(TObject *Sender, char &Key);
   void __fastcall Saveimageas1Click(TObject *Sender);
   void __fastcall Saveimagesequence1Click(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
   bool BackwardDirection;
   double Min;

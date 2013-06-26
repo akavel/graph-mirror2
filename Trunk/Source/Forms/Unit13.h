@@ -95,6 +95,7 @@ __published:	// IDE-managed Components
   void __fastcall CheckBox1Click(TObject *Sender);
         void __fastcall Popup_ImportClick(TObject *Sender);
         void __fastcall Popup_ExportClick(TObject *Sender);
+  void __fastcall FormShow(TObject *Sender);
 
 private:	// User declarations
   boost::shared_ptr<TPointSeries> Series;

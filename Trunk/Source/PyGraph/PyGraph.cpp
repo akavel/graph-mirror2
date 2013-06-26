@@ -214,16 +214,26 @@ static PyObject* PluginSetCustomFunction(PyObject *Self, PyObject *Args)
   {
     //The number of arguments are in func_code.co_argcount
     const wchar_t *Name;
-    PyObject *Function;
-    if(!PyArg_ParseTuple(Args, "uO!", &Name, &PyFunction_Type, &Function))
+    PyObject *Value;
+    if(!PyArg_ParseTuple(Args, "uO", &Name, &Value))
       return NULL;
 
-    int Arguments = GetFunctionArgumentCount(Function);
-    if(Arguments != -1)
+    Func32::TComplex ComplexValue(PyComplex_RealAsDouble(Value), PyComplex_ImagAsDouble(Value));
+    if(!PyErr_Occurred())
     {
-      boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Function, Arguments, Name));
-      Form1->Data.CustomFunctions.SymbolList.Add(Name, Func);
-      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func);
+      Form1->Data.CustomFunctions.SymbolList.Add(Name, ComplexValue);
+      Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, ComplexValue);
+    }
+    else
+    {
+      PyErr_Clear();
+      int Arguments = GetFunctionArgumentCount(Value);
+      if(Arguments != -1)
+      {
+        boost::shared_ptr<TPluginFunc> Func(new TPluginFunc(Value, Arguments, Name));
+        Form1->Data.CustomFunctions.SymbolList.Add(Name, Func);
+        Form1->Data.CustomFunctions.GlobalSymbolList.Add(Name, Func);
+      }
     }
     Py_RETURN_NONE;
   }
@@ -246,12 +256,21 @@ static PyObject* PluginGetCustomFunction(PyObject *Self, PyObject *Args)
     return NULL;
   }
 
-  boost::shared_ptr<TPluginFunc> Func = boost::dynamic_pointer_cast<TPluginFunc>(Form1->Data.CustomFunctions.GlobalSymbolList.Get(Name));
-  if(Func)
+  Func32::TBaseCustomFuncPtr Func = Form1->Data.CustomFunctions.GlobalSymbolList.Get(Name);
+  boost::shared_ptr<TPluginFunc> PluginFunc = boost::dynamic_pointer_cast<TPluginFunc>(Func);
+  if(PluginFunc)
   {
-    PyObject *Obj = Func->GetFunc();
+    PyObject *Obj = PluginFunc->GetFunc();
     Py_INCREF(Obj);
     return Obj;
+  }
+  //We assume it is a constant if it is not a plugin function
+  boost::shared_ptr<Func32::TCustomFunc> CustomFunc = boost::dynamic_pointer_cast<Func32::TCustomFunc>(Func);
+  if(CustomFunc)
+  {
+    std::vector<Func32::TComplex> Args;
+    Func32::TComplex Value = CustomFunc->Calc(Args);
+    return imag(Value) ? PyComplex_FromDoubles(real(Value), imag(Value)) : PyFloat_FromDouble(real(Value));
   }
   Py_RETURN_NONE;
 }
@@ -681,6 +700,10 @@ PyObject* ToPyObject(const TPyVariant &Variant)
 	  Py_INCREF(*Value);
 		return *Value;
 	}
+  if(TObject *const*Object = boost::get<TObject*>(&Variant))
+  {
+    return VclObject_Create(*Object, false);
+  }
   return NULL;
 }
 //---------------------------------------------------------------------------

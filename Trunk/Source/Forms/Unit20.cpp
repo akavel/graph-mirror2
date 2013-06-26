@@ -15,6 +15,7 @@
 #include <Jpeg.hpp>
 #include <PngImage.hpp>
 #include "ConfigRegistry.h"
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "MediaPlayerEx"
 #pragma resource "*.dfm"
@@ -260,5 +261,9 @@ void TForm20::SaveFrame(const String &FileName, int FilterIndex)
   MediaPlayer1->DisplayRect = DisplayRect; 
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TForm20::FormShow(TObject *Sender)
+{
+  ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
 
