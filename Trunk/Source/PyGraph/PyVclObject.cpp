@@ -299,7 +299,7 @@ static void VclObject_Dealloc(TVclObject* self)
  *  If a method is retrieved, a TVclMethod object is returned, which may be used
  *  to call the method.
  */
-PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
+static PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 {
 	try
 	{
@@ -346,7 +346,7 @@ PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
  *  Python event. If the Python event is a bound method, we store a weak reference
  *  to the instance of the bound method to avoid circular references.
  */
-int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
+static int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 {
 	try
 	{
@@ -406,6 +406,11 @@ int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v)
 	}
 }
 //---------------------------------------------------------------------------
+static int VclObject_Bool(TVclObject *self)
+{
+  return self->Instance != NULL;
+}
+//---------------------------------------------------------------------------
 static PyMemberDef VclObject_Members[] =
 {
 	{"_owned", T_BOOL, offsetof(TVclObject, Owned), 0, "Indicates if the VCL object is freed when the proxy is destroyed"},
@@ -416,6 +421,47 @@ static PyMethodDef VclObject_Methods[] =
 {
 	{"__dir__", (PyCFunction)VclObject_Dir, METH_NOARGS, ""},
 	{NULL, NULL, 0, NULL}
+};
+//---------------------------------------------------------------------------
+static PyNumberMethods VclObject_NumberMethods =
+{
+  NULL, /* nb_add */
+  NULL, /* nb_subtract */
+  NULL, /* nb_multiply */
+  NULL, /* nb_remainder */
+  NULL, /* nb_divmod */
+  NULL, /* nb_power */
+  NULL, /* nb_negative */
+  NULL, /* nb_positive */
+  NULL, /* nb_absolute */
+  (inquiry)VclObject_Bool, /* nb_bool */
+  NULL, /* nb_invert */
+  NULL, /* nb_lshift */
+  NULL, /* nb_rshift */
+  NULL, /* nb_and */
+  NULL, /* nb_xor */
+  NULL, /* nb_or */
+  NULL, /* nb_int */
+  NULL, /* nb_reserved */
+  NULL, /* nb_float */
+
+  NULL, /* nb_inplace_add */
+  NULL, /* nb_inplace_subtract */
+  NULL, /* nb_inplace_multiply */
+  NULL, /* nb_inplace_remainder */
+  NULL, /* nb_inplace_power */
+  NULL, /* nb_inplace_lshift */
+  NULL, /* nb_inplace_rshift */
+  NULL, /* nb_inplace_and */
+  NULL, /* nb_inplace_xor */
+  NULL, /* nb_inplace_or */
+
+  NULL, /* nb_floor_divide */
+  NULL, /* nb_true_divide */
+  NULL, /* nb_inplace_floor_divide */
+  NULL, /* nb_inplace_true_divide */
+
+  NULL, /* nb_index */
 };
 //---------------------------------------------------------------------------
 /** Proxy object for a VCL object. If _owned is set to True, the VCL object is
@@ -435,7 +481,7 @@ PyTypeObject VclObjectType =
 	0,                         /* tp_setattr */
 	0,                         /* tp_compare */
 	(reprfunc)VclObject_Repr,  /* tp_repr */
-	0,                         /* tp_as_number */
+	&VclObject_NumberMethods,  /* tp_as_number */
 	0,                         /* tp_as_sequence */
 	0,                         /* tp_as_mapping */
 	0,                         /* tp_hash */
