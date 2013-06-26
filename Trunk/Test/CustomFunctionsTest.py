@@ -6,6 +6,8 @@ def Run(Level):
   with Test.assertRaises(Graph.EFuncError):
     Graph.CustomFunctions["f("] = lambda x: 2
 
+  Graph.CustomFunctions["const"] = 5  
+    
   with Test.assertRaises(Graph.EFuncError):
     Graph.Eval("x+y")  
   assert Graph.Eval("x+y", Locals={"x":2, "y":3}) == 5  
