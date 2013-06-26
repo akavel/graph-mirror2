@@ -23,7 +23,7 @@ def CreateLanguage(Language):
         InFile = "GraphHelp.pot"
 
 
-    os.system("msgfmt %s -o %s" % (LocalePath + Language + '.po', LocalePath + Language + '.mo'))
+    os.system('msgfmt "%s" -o "%s"' % (LocalePath + Language + '.po', LocalePath + Language + '.mo'))
     Lang = gettext.GNUTranslations(open(LocalePath + Language + ".mo", "rb"))
     Lang.install()
 
