@@ -52,7 +52,6 @@
 			<ILINK_HeapReserveSize>0x01000000</ILINK_HeapReserveSize>
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
 			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
-			<FinalOutputDir>..</FinalOutputDir>
 			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
 			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
 			<DCC_Optimize>false</DCC_Optimize>
@@ -360,7 +359,7 @@
 			</CppCompile>
 			<CppCompile Include="Source\DrawElem.cpp">
 				<DependentOn>Source\DrawElem.h</DependentOn>
-				<BuildOrder>76</BuildOrder>
+				<BuildOrder>77</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Source\DrawThread.cpp">
 				<DependentOn>Source\DrawThread.h</DependentOn>
@@ -374,7 +373,8 @@
 				<BuildOrder>42</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Source\GraphUndo.cpp">
-				<BuildOrder>77</BuildOrder>
+				<DependentOn>Source\GraphUndo.h</DependentOn>
+				<BuildOrder>76</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Source\GuiHelper.cpp">
 				<DependentOn>Source\GuiHelper.h</DependentOn>

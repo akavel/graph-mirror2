@@ -10,7 +10,7 @@
 #ifndef PyVclObjectH
 #define PyVclObjectH
 //---------------------------------------------------------------------------
-#include "Python.h"
+#include "Python.hpp"
 namespace Python
 {
 	struct TVclObject

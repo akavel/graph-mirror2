@@ -7,14 +7,14 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include "Graph.h"
+#include <vcl.h>
 #pragma hdrstop
 #define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
 #include "PythonBind.h"
 #include "python.hpp"
-#include "ConfigRegistry.h"
 #include <Rtti.hpp>
 #include "PyVclObject.h"
+#include <float.h>
 #pragma link "python32.lib"
 //---------------------------------------------------------------------------
 namespace Python

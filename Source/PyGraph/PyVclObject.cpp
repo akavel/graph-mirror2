@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include "Graph.h"
+#include <vcl.h>
 #pragma hdrstop
 #include "Python.hpp"
 #include <structmember.h>
@@ -20,6 +20,8 @@
 #include "PyVclConvert.h"
 #include "PyVclArrayProperty.h"
 #include "PyVclRef.h"
+#include <deque>
+#include <algorithm>
 
 namespace Python
 {

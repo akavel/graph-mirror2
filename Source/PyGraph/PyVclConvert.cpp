@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include "Graph.h"
+#include <vcl.h>
 #pragma hdrstop
 #include "Python.hpp"
 #include "PyVclConvert.h"
@@ -99,11 +99,11 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
     		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
       break;
 
+		case tkClassRef:
 		case tkVariant:
 		case tkArray:
 		case tkInterface:
 		case tkDynArray:
-		case tkClassRef:
 		case tkProcedure:
 		case tkUnknown:
 		case tkMethod:
@@ -164,10 +164,10 @@ PyObject* ToPyObject(const String &Str)
 	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
 }
 //---------------------------------------------------------------------------
-PyObject* ToPyObject(const Func32::TComplex &Value)
+/*PyObject* ToPyObject(const Func32::TComplex &Value)
 {
 	return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
-}
+}*/
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(TObject *Object)
 {
@@ -288,11 +288,11 @@ template<> double FromPyObject<double>(PyObject *O)
   return PyFloat_AsDouble(O);
 }
 //---------------------------------------------------------------------------
-template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
+/*template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
 {
   Py_complex V = PyComplex_AsCComplex(O);
 	return Func32::TComplex(V.real, V.imag);
-}
+} */
 //---------------------------------------------------------------------------
 template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 {
