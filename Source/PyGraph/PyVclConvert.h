@@ -34,7 +34,6 @@ namespace Python
 	inline PyObject* ToPyObject(long double Value) {return ToPyObject(static_cast<double>(Value));}
 	PyObject* ToPyObject(const std::wstring &Str);
 	PyObject* ToPyObject(const String &Str);
-//	PyObject* ToPyObject(const Func32::TComplex &Value);
 	PyObject* ToPyObject(const Rtti::TValue &Value);
 	PyObject* ToPyObject(TObject *Object);
 	PyObject* ToPyObject(const char *Str);
@@ -46,7 +45,6 @@ namespace Python
 	template<> inline unsigned FromPyObject<unsigned>(PyObject *O) {return FromPyObject<int>(O);}
 	template<> inline TColor FromPyObject<TColor>(PyObject *O) {return static_cast<TColor>(FromPyObject<int>(O));}
 	template<> inline long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
-//	template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
 	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
 	template<typename T> inline bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
 

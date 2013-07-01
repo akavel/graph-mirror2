@@ -47,6 +47,8 @@ namespace Python
 	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1);
 	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2);
 	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, TPyVariant V3);
+	PyObject* ToPyObject(const Func32::TComplex &Value);
+	template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
 
 	PyObject* ToPyObject(const TVariant &Variant);
 	template<typename T1>

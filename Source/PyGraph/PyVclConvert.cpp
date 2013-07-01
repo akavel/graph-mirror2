@@ -164,11 +164,6 @@ PyObject* ToPyObject(const String &Str)
 	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
 }
 //---------------------------------------------------------------------------
-/*PyObject* ToPyObject(const Func32::TComplex &Value)
-{
-	return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
-}*/
-//---------------------------------------------------------------------------
 PyObject* ToPyObject(TObject *Object)
 {
 	return VclObject_Create(Object, false);
@@ -287,12 +282,6 @@ template<> double FromPyObject<double>(PyObject *O)
       return PyComplex_RealAsDouble(O);
   return PyFloat_AsDouble(O);
 }
-//---------------------------------------------------------------------------
-/*template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
-{
-  Py_complex V = PyComplex_AsCComplex(O);
-	return Func32::TComplex(V.real, V.imag);
-} */
 //---------------------------------------------------------------------------
 template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 {
