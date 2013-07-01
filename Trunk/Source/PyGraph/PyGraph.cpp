@@ -785,6 +785,17 @@ void ConvertException()
 	}
 }
 //---------------------------------------------------------------------------
+template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
+{
+  Py_complex V = PyComplex_AsCComplex(O);
+	return Func32::TComplex(V.real, V.imag);
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(const Func32::TComplex &Value)
+{
+	return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
+}
+//---------------------------------------------------------------------------
 } //namespace Python
 
 
