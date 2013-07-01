@@ -3,7 +3,7 @@
 			<ProjectGuid>{83C28049-A225-408A-83AB-2FB99DF42339}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
 			<MainSource>Graph.cpp</MainSource>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
@@ -43,7 +43,7 @@
 			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib;IComp.lib</AllPackageLibs>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT</Defines>
-			<IncludePath>..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;PyGraph;$(IncludePath)</IncludePath>
+			<IncludePath>..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;..\PyVcl;$(IncludePath)</IncludePath>
 			<ILINK_LibraryPath>..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
@@ -137,6 +137,45 @@
 			</DelphiCompile>
 			<CppCompile Include="..\Libraries\pdflib\pdflib.cpp">
 				<BuildOrder>66</BuildOrder>
+			</CppCompile>
+			<DelphiCompile Include="..\PyVcl\FindClass.pas">
+				<BuildOrder>67</BuildOrder>
+			</DelphiCompile>
+			<CppCompile Include="..\PyVcl\PythonBind.cpp">
+				<DependentOn>..\PyVcl\PythonBind.h</DependentOn>
+				<BuildOrder>69</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVcl.cpp">
+				<DependentOn>..\PyVcl\PyVcl.h</DependentOn>
+				<BuildOrder>70</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclArrayProperty.cpp">
+				<DependentOn>..\PyVcl\PyVclArrayProperty.h</DependentOn>
+				<BuildOrder>71</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclConvert.cpp">
+				<DependentOn>..\PyVcl\PyVclConvert.h</DependentOn>
+				<BuildOrder>72</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclFunction.cpp">
+				<DependentOn>..\PyVcl\PyVclFunction.h</DependentOn>
+				<BuildOrder>73</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclMethod.cpp">
+				<DependentOn>..\PyVcl\PyVclMethod.h</DependentOn>
+				<BuildOrder>74</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclObject.cpp">
+				<DependentOn>..\PyVcl\PyVclObject.h</DependentOn>
+				<BuildOrder>75</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclRef.cpp">
+				<DependentOn>..\PyVcl\PyVclRef.h</DependentOn>
+				<BuildOrder>76</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclType.cpp">
+				<DependentOn>..\PyVcl\PyVclType.h</DependentOn>
+				<BuildOrder>77</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="Forms\Unit1.cpp">
 				<Form>Form1</Form>
@@ -295,45 +334,6 @@
 			<ResFiles Include="Icons.res">
 				<BuildOrder>63</BuildOrder>
 			</ResFiles>
-			<DelphiCompile Include="PyGraph\FindClass.pas">
-				<BuildOrder>68</BuildOrder>
-			</DelphiCompile>
-			<CppCompile Include="PyGraph\PyGraph.cpp">
-				<DependentOn>PyGraph\PyGraph.h</DependentOn>
-				<BuildOrder>64</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PythonBind.cpp">
-				<DependentOn>PyGraph\PythonBind.h</DependentOn>
-				<BuildOrder>65</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVcl.cpp">
-				<DependentOn>PyGraph\PyVcl.h</DependentOn>
-				<BuildOrder>66</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVclArrayProperty.cpp">
-				<BuildOrder>72</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVclConvert.cpp">
-				<DependentOn>PyGraph\PyVclConvert.h</DependentOn>
-				<BuildOrder>73</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVclFunction.cpp">
-				<BuildOrder>71</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVclMethod.cpp">
-				<DependentOn>PyGraph\PyVclMethod.h</DependentOn>
-				<BuildOrder>68</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVclObject.cpp">
-				<BuildOrder>69</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVclRef.cpp">
-				<DependentOn>PyGraph\PyVclRef.h</DependentOn>
-				<BuildOrder>74</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="PyGraph\PyVclType.cpp">
-				<BuildOrder>70</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="Source\Clipboard.cpp">
 				<BuildOrder>34</BuildOrder>
 			</CppCompile>
@@ -396,6 +396,10 @@
 			<CppCompile Include="Source\OleServerImpl.cpp">
 				<DependentOn>Source\OleServerImpl.h</DependentOn>
 				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Source\PyGraph.cpp">
+				<DependentOn>Source\PyGraph.h</DependentOn>
+				<BuildOrder>77</BuildOrder>
 			</CppCompile>
 			<ResourceCompile Include="Source\Resource.rc">
 				<Form>Resource.res</Form>
