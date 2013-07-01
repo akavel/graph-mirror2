@@ -10,7 +10,7 @@
 #ifndef PyVclArrayPropertyH
 #define PyVclArrayPropertyH
 //---------------------------------------------------------------------------
-#include "Python.h"
+#include "Python.hpp"
 namespace Python
 {
 	extern PyTypeObject VclArrayPropertyType;

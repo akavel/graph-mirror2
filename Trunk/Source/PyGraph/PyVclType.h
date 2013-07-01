@@ -10,7 +10,7 @@
 #ifndef PyVclTypeH
 #define PyVclTypeH
 //---------------------------------------------------------------------------
-#include "Python.h"
+#include "Python.hpp"
 namespace Python
 {
 	PyObject* VclType_Create(TRttiType *Type);

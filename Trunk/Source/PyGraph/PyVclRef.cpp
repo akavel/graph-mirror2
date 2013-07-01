@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include "Graph.h"
+#include <vcl.h>
 #pragma hdrstop
 #include "Python.hpp"
 #include <Rtti.hpp>

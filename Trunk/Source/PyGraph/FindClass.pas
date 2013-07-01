@@ -12,13 +12,13 @@ procedure RegisterType(TypeInfo : PTypeInfo);
 
 implementation
 uses Forms, StdCtrls, Types, Graphics, SysUtils, ActnList, ExtCtrls, Math,
-  WideStrUtils, ClipBrd, DBXJSONReflect, Mask, Controls, HelpIntfs, IniFiles, Grids,
+  WideStrUtils, ClipBrd, Mask, Controls, HelpIntfs, IniFiles, Grids,
   DateUtils, SyncObjs,Masks, Menus, Dialogs, Printers, Registry, VarUtils, DockTabSet,
   Variants, ZLib, AppEvnts, GraphUtil, CategoryButtons, Buttons, StdActns, ExtActns,
   Contnrs, ButtonGroup, CaptionedDockTree, ImgList, Character, StrUtils, ConvUtils,
   ListActns, Generics.Defaults, Generics.Collections, IOUtils, ValEdit, ToolWin,
   Tabs, MaskUtils, Messages, Rtti, ExtDlgs, IMouse, Diagnostics, Themes, Timespan,
-  WideStrings;
+  WideStrings, ComCtrls;
 
 var
   TypeList : TStringList;
@@ -1044,6 +1044,7 @@ begin
   TypeList.AddObject('TResizeStyle', TypeInfo(TResizeStyle));
   TypeList.AddObject('TResource', TypeInfo(TResource));
   TypeList.AddObject('TResourceStream', TypeInfo(TResourceStream));
+  TypeList.AddObject('TRichEdit', TypeInfo(TRichEdit));
   TypeList.AddObject('TRichEditAction', TypeInfo(TRichEditAction));
   TypeList.AddObject('TRichEditAlignCenter', TypeInfo(TRichEditAlignCenter));
   TypeList.AddObject('TRichEditAlignLeft', TypeInfo(TRichEditAlignLeft));

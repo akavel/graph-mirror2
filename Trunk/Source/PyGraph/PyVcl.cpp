@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include "Graph.h"
+#include <vcl.h>
 #pragma hdrstop
 #include <Rtti.hpp>
 #include "PyVcl.h"
@@ -15,7 +15,6 @@
 #include "python.hpp"
 #include <structmember.h>
 #include "PyVclConvert.h"
-#include "ExtColorBox.h"
 #include "FindClass.hpp"
 #include <OleCtrls.hpp>
 #include <clipbrd.hpp>
@@ -115,6 +114,16 @@ static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 	}
 }
 //---------------------------------------------------------------------------
+/** Replacement for TApplication::CreateForm() that doesn't fit into the system
+ *  \return New reference to VclObject with a weak reference to a newly created TForm.
+ */
+static PyObject* GlobalVcl_CreateForm(TVclObject *self, PyObject *arg)
+{
+  TForm *Form;
+  Application->CreateForm(__classid(TForm), &Form);
+  return VclObject_Create(Form, false);
+}
+//---------------------------------------------------------------------------
 struct TGlobalVcl
 {
 	PyObject_HEAD
@@ -129,6 +138,7 @@ static PyMemberDef GlobalVcl_Members[] =
 //---------------------------------------------------------------------------
 static PyMethodDef GlobalVcl_Methods[] =
 {
+	{"CreateForm", (PyCFunction)GlobalVcl_CreateForm, METH_NOARGS, "Replacement for TApplication::CreateForm()"},
 	{"__dir__", (PyCFunction)GlobalVcl_Dir, METH_NOARGS, ""},
 	{NULL, NULL, 0, NULL}
 };
