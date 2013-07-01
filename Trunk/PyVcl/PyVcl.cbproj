@@ -64,47 +64,47 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
+			<DelphiCompile Include="FindClass.pas">
+				<BuildOrder>10</BuildOrder>
+			</DelphiCompile>
 			<CppCompile Include="Main.cpp">
 				<BuildOrder>0</BuildOrder>
 			</CppCompile>
-			<DelphiCompile Include="..\Source\PyGraph\FindClass.pas">
-				<BuildOrder>10</BuildOrder>
-			</DelphiCompile>
-			<CppCompile Include="..\Source\PyGraph\PythonBind.cpp">
-				<DependentOn>..\Source\PyGraph\PythonBind.h</DependentOn>
+			<CppCompile Include="PythonBind.cpp">
+				<DependentOn>PythonBind.h</DependentOn>
+				<BuildOrder>1</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PyVcl.cpp">
+				<DependentOn>PyVcl.h</DependentOn>
 				<BuildOrder>2</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVcl.cpp">
-				<DependentOn>..\Source\PyGraph\PyVcl.h</DependentOn>
+			<CppCompile Include="PyVclArrayProperty.cpp">
+				<DependentOn>PyVclArrayProperty.h</DependentOn>
 				<BuildOrder>3</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVclArrayProperty.cpp">
-				<DependentOn>..\Source\PyGraph\PyVclArrayProperty.h</DependentOn>
+			<CppCompile Include="PyVclConvert.cpp">
+				<DependentOn>PyVclConvert.h</DependentOn>
 				<BuildOrder>4</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVclConvert.cpp">
-				<DependentOn>..\Source\PyGraph\PyVclConvert.h</DependentOn>
+			<CppCompile Include="PyVclFunction.cpp">
+				<DependentOn>PyVclFunction.h</DependentOn>
 				<BuildOrder>5</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVclFunction.cpp">
-				<DependentOn>..\Source\PyGraph\PyVclFunction.h</DependentOn>
+			<CppCompile Include="PyVclMethod.cpp">
+				<DependentOn>PyVclMethod.h</DependentOn>
 				<BuildOrder>6</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVclMethod.cpp">
-				<DependentOn>..\Source\PyGraph\PyVclMethod.h</DependentOn>
+			<CppCompile Include="PyVclObject.cpp">
+				<DependentOn>PyVclObject.h</DependentOn>
 				<BuildOrder>7</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVclObject.cpp">
-				<DependentOn>..\Source\PyGraph\PyVclObject.h</DependentOn>
+			<CppCompile Include="PyVclRef.cpp">
+				<DependentOn>PyVclRef.h</DependentOn>
 				<BuildOrder>8</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVclRef.cpp">
-				<DependentOn>..\Source\PyGraph\PyVclRef.h</DependentOn>
+			<CppCompile Include="PyVclType.cpp">
+				<DependentOn>PyVclType.h</DependentOn>
 				<BuildOrder>9</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Source\PyGraph\PyVclType.cpp">
-				<DependentOn>..\Source\PyGraph\PyVclType.h</DependentOn>
-				<BuildOrder>10</BuildOrder>
 			</CppCompile>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>

@@ -2,7 +2,7 @@
 #include <vcl.h>
 #pragma hdrstop
 #undef _DEBUG
-#include <Python.hpp>
+#include "Python.hpp"
 #include "PyVcl.h"
 #include "PythonBind.h"
 #include <float.h>
