@@ -10,7 +10,6 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "Python.hpp"
-#include <Rtti.hpp>
 #include "PythonBind.h"
 #include "PyVclRef.h"
 #include "PyVclConvert.h"

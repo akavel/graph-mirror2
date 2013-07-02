@@ -12,7 +12,6 @@
 #define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
 #include "PythonBind.h"
 #include "python.hpp"
-#include <Rtti.hpp>
 #include "PyVclObject.h"
 #include <float.h>
 #pragma link "python32.lib"

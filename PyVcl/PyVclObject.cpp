@@ -11,9 +11,11 @@
 #pragma hdrstop
 #include "Python.hpp"
 #include <structmember.h>
-#define private public
+#define private public   //Because TMethodImplementation::FInvokeInfo is private in XE
+#define protected public //Because TMethodImplementation::FInvokeInfo is protected in XE4
 #include <Rtti.hpp>
 #undef private
+#undef protected
 #include "PyVclObject.h"
 #include "PyVclMethod.h"
 #include "PyVcl.h"

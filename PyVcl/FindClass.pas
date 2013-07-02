@@ -18,7 +18,11 @@ uses Forms, StdCtrls, Types, Graphics, SysUtils, ActnList, ExtCtrls, Math,
   Contnrs, ButtonGroup, CaptionedDockTree, ImgList, Character, StrUtils, ConvUtils,
   ListActns, Generics.Defaults, Generics.Collections, IOUtils, ValEdit, ToolWin,
   Tabs, MaskUtils, Messages, Rtti, ExtDlgs, IMouse, Diagnostics, Themes, Timespan,
-  WideStrings, ComCtrls;
+  WideStrings, ComCtrls
+{$IF CompilerVersion > 23.0}
+  , Actions, UITypes
+{$IFEND}
+  ;
 
 var
   TypeList : TStringList;
@@ -53,7 +57,6 @@ begin
   TypeList.AddObject('Currency', TypeInfo(Currency));
   TypeList.AddObject('DelayLoadInfo', TypeInfo(DelayLoadInfo));
   TypeList.AddObject('DelayLoadProc', TypeInfo(DelayLoadProc));
-  TypeList.AddObject('DelayedLoadHook', TypeInfo(DelayedLoadHook));
   TypeList.AddObject('EAbort', TypeInfo(EAbort));
   TypeList.AddObject('EAbstractError', TypeInfo(EAbstractError));
   TypeList.AddObject('EAccessViolation', TypeInfo(EAccessViolation));
@@ -750,7 +753,6 @@ begin
   TypeList.AddObject('THandleObject', TypeInfo(THandleObject));
   TypeList.AddObject('THandleObjectArray', TypeInfo(THandleObjectArray));
   TypeList.AddObject('THandleStream', TypeInfo(THandleStream));
-  TypeList.AddObject('THashItem', TypeInfo(THashItem));
   TypeList.AddObject('THashedStringList', TypeInfo(THashedStringList));
   TypeList.AddObject('THeader', TypeInfo(THeader));
   TypeList.AddObject('THeapStatus', TypeInfo(THeapStatus));
@@ -1333,7 +1335,6 @@ begin
   TypeList.AddObject('UnitEntryTable', TypeInfo(UnitEntryTable));
   TypeList.AddObject('Variant', TypeInfo(Variant));
   TypeList.AddObject('WordRec', TypeInfo(WordRec));
-  TypeList.AddObject('dliNotification', TypeInfo(dliNotification));
 end;
 
 begin

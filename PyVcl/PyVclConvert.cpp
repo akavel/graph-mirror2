@@ -10,10 +10,10 @@
 #include <vcl.h>
 #pragma hdrstop
 #include "Python.hpp"
-#include "PyVclConvert.h"
 #define private public
 #include <Rtti.hpp>
 #undef private
+#include "PyVclConvert.h"
 #include "PyVclObject.h"
 #include "PyVclMethod.h"
 //---------------------------------------------------------------------------

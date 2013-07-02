@@ -3,14 +3,8 @@
 #define PyVclConvertH
 #include "PythonBind.h"
 #include <vector>
+#include <Rtti.hpp>
 //---------------------------------------------------------------------------
-namespace Rtti
-{
-	struct TValue;
-	struct TRttiContext;
-	struct TRttiParameter;
-}
-
 namespace Python
 {
 	class EPyVclError : public Exception

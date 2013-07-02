@@ -9,7 +9,6 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
 #pragma hdrstop
-#include <Rtti.hpp>
 #include "PyVcl.h"
 #include <ActnMan.hpp>
 #include "python.hpp"
@@ -261,6 +260,9 @@ public:
 	}
 };
 TComponentFinder *ComponentFinder = new TComponentFinder;
+#if __BORLANDC__ > 0x0640
+namespace System {
+#endif
 namespace Classes
 {
 TComponent* __fastcall TStream::ReadComponent(TComponent *Instance)
@@ -270,5 +272,8 @@ TComponent* __fastcall TStream::ReadComponent(TComponent *Instance)
 	return Reader->ReadRootComponent(Instance);
 }
 }
+#if __BORLANDC__ > 0x0640
+}
+#endif
 //---------------------------------------------------------------------------
 
