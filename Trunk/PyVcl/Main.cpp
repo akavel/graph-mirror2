@@ -4,7 +4,6 @@
 #include "Python.hpp"
 #include "PyVcl.h"
 #include "PythonBind.h"
-#include <float.h>
 //---------------------------------------------------------------------------
 #pragma argsused
 int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason, void* lpReserved)
@@ -14,11 +13,8 @@ int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason, void* lpReserved
 //---------------------------------------------------------------------------
 PyMODINIT_FUNC __stdcall PyInit_PyVcl(void)
 {
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
   Application->Initialize();
-  PyObject *Result = Python::InitPyVcl();
-	_control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
-  return Result;
+  return Python::InitPyVcl();
 }
 //---------------------------------------------------------------------------
 /* Replacement for TWinControl::DestroyWindowHandle() in Controls.pas.
