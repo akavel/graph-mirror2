@@ -114,7 +114,6 @@ static PyObject *VclMethod_Call(TVclMethod* self, PyObject *args, PyObject *keyw
 		if(keywds != NULL)
 			return SetErrorString(PyExc_TypeError, self->Methods[0]->Name + "() does not accept keyword arguments");
 		return ToPyObject(CallMethod(NULL, self->Instance, self->Methods, args));
-		return ToPyObject(CallMethod(NULL, self->Object->Instance, self->Methods, args));
 	}
 	catch(...)
 	{
