@@ -22,6 +22,14 @@ namespace Python
 TRttiContext Context;
 PyObject *PyVclException = NULL;
 //---------------------------------------------------------------------------
+String GetTypeName(PyObject *O)
+{
+  PyObject *Str = PyObject_Str(reinterpret_cast<PyObject*>(O->ob_type));
+  if(Str != NULL)
+    return FromPyObject<String>(Str);
+  return "";
+}
+//---------------------------------------------------------------------------
 /** Convert a PyObject to a TValue as used when calling functions and setting properties in a generic way through Delphi RTTI.
  *  \param O: PyObject to convert
  *  \param TypeInfo: The expected return type
@@ -39,7 +47,7 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			else if(O == Py_None || PyLong_Check(O))
 				Result = TValue::From((TObject*)(O == Py_None ? NULL : PyLong_AsLong(O)));
 			else
-				throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+				throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 			break;
 
 		case tkEnumeration:
@@ -285,7 +293,23 @@ template<> double FromPyObject<double>(PyObject *O)
 //---------------------------------------------------------------------------
 template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 {
-	return PyUnicode_AsUnicode(O);
+  std::wstring Str(PyUnicode_GetSize(O), ' ');
+  if(Str.size() == 0)
+    return Str;
+  if(PyUnicode_AsWideChar(O, &Str[0], Str.size()) == -1)
+    return std::wstring();
+	return Str;
+}
+//---------------------------------------------------------------------------
+template<> String FromPyObject<String>(PyObject *O)
+{
+  String Str;
+  Str.SetLength(PyUnicode_GetSize(O));
+  if(Str.Length() == 0)
+    return Str;
+  if(PyUnicode_AsWideChar(O, &Str[1], Str.Length()) == -1)
+    return "";
+	return Str;
 }
 //---------------------------------------------------------------------------
 template<> int FromPyObject<int>(PyObject *O)
