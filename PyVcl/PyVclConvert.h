@@ -40,6 +40,7 @@ namespace Python
 	template<> inline TColor FromPyObject<TColor>(PyObject *O) {return static_cast<TColor>(FromPyObject<int>(O));}
 	template<> inline long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
 	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
+	template<> String FromPyObject<String>(PyObject *O);
 	template<typename T> inline bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
 
 	PyObject* PyVclHandleException();

@@ -55,11 +55,11 @@ static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
 	PyObject *List = PyList_New(TypeList->Count + GlobalCount + GlobalFunctionCount);
 	int Index;
 	for(Index = 0; Index < TypeList->Count; Index++)
-		PyList_SET_ITEM(List, Index, ToPyObject(TypeList->Strings[Index]));
+		PyList_SetItem(List, Index, ToPyObject(TypeList->Strings[Index]));
 	for(unsigned I = 0; I < GlobalCount; I++, Index++)
-		PyList_SET_ITEM(List, Index, ToPyObject(GlobalObjectList[I].Name));
+		PyList_SetItem(List, Index, ToPyObject(GlobalObjectList[I].Name));
 	for(unsigned I = 0; I < GlobalFunctionCount; I++, Index++)
-		PyList_SET_ITEM(List, Index, ToPyObject(GetVclFunctionName(I)));
+		PyList_SetItem(List, Index, ToPyObject(GetVclFunctionName(I)));
 	return List;
 }
 //---------------------------------------------------------------------------
@@ -83,7 +83,7 @@ static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 			return Result;
 
 		PyErr_Clear();
-		String Name = PyUnicode_AsUnicode(attr_name);
+		String Name = FromPyObject<String>(attr_name);
 		TRttiType *Type = Context.GetType(LookUpClass(Name));
 		if(Type == NULL)
 		{
