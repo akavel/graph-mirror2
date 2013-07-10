@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Spanish Help File 4.4\n"
 "POT-Creation-Date: 2012-11-07 21:10+0100\n"
-"PO-Revision-Date: 2012-11-07 21:14+0100\n"
+"PO-Revision-Date: 2013-07-10 08:14+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team:  <fran_oliver@ono.com>\n"
 "Language: es_ES\n"
@@ -655,6 +655,7 @@ msgid "You can use <placeholder-1/> in Graph to copy the current content to the 
 msgstr "Desde Graph puedes emplear <placeholder-1/> para copiar el sistema de coordenadas activo en el Portapapeles. Así, desde MS Word –u otro cliente OLE– selecciona <placeholder-2/> (o equivalente) para insertar el objeto de Graph desde el Portapapeles. Recuerda que cuando hagas doble clic sobre dicho objeto se abrirá una ejecución del programa, que te permitirá editarlo. Ahora bien, si no deseas pegar el elemento como un objeto de Graph, utiliza <placeholder-3/> en MS Word para insertarlo como una imagen."
 
 #. OLE.xml:35(guimenuitem)
+#, fuzzy
 msgid "Object"
 msgstr "Objeto"
 
@@ -2734,7 +2735,7 @@ msgstr "El icono de Graph ha sido diseñado por <placeholder-1/>."
 
 #. Version.xml:2(subtitle)
 msgid "Version <placeholder-1/>"
-msgstr "Versión <placeholder-1/> "
+msgstr "Versión <placeholder-1/>"
 
 #. HowToUse.xml:4(title)
 msgid "How to use Graph"
