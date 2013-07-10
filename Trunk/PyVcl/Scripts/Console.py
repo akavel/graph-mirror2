@@ -6,6 +6,7 @@ class ConsoleForm:
     self.LastIndex = 0
     self.Command = ""
     self.TextCache = [""]
+    self.CacheIndex = 0
     self.IndentLevel = 0
     
     self.Form = vcl.TForm(None, OnClose=self.Close, Width=600) 
@@ -59,12 +60,24 @@ class ConsoleForm:
     self.RichEdit.SelStart = OldSelStart + IndexChange
     self.RichEdit.SelLength = 0
   
+  def HandlePaste(self):
+    if self.RichEdit.SelStart >= self.LastIndex:
+      Lines = vcl.Clipboard.AsText.split("\r\n")
+      for Str in Lines:
+        self.RichEdit.SelText = Str
+        if len(Lines) > 1:
+          self.HandleNewLine()
+    
   def KeyDown(self, Sender, Key, Shift):
     if (Shift == "ssCtrl" and Key.Value == ord("V")) or (Shift == "ssShift" and Key.Value == 0x2D): #0x2D=VK_INSERT
-      pass
+      self.HandlePaste()
+      Key.Value = 0
     elif Shift == "ssCtrl" and Key.Value == ord("C"):
       if self.RichEdit.SelLength == 0:
         self.KeyboardInterrupt()
+    if (Shift == "ssCtrl" and Key.Value == ord("X")) or (Shift == "ssShift" and Key.Value == 0x2E): #0x2E=VK_DELETE
+      if self.RichEdit.SelStart < self.LastIndex:
+        Key.Value = 0        
     elif Key.Value == 0x08: #Backspace  
       if self.RichEdit.SelStart <= self.LastIndex:
         Key.Value = 0
@@ -79,16 +92,18 @@ class ConsoleForm:
     elif Shift == "" and Key.Value == 0x26: #VK_UP
       if self.RichEdit.ActiveLineNo == self.RichEdit.Lines.Count - 1:
         if self.CacheIndex > 0:
-          self.RichEdit.SelStart = self.LastIndex
-          self.RichEdit.SelLength = 0x7FFFFFFF
           if self.CacheIndex == len(self.TextCache) - 1:
             self.TextCache[-1] = self.GetUserString()
           self.CacheIndex -= 1 
           self.SetUserString(self.TextCache[self.CacheIndex])
         Key.Value = 0
     elif Shift == "" and Key.Value == 0x28: #VK_DOWN
-      pass
-    
+      if self.RichEdit.ActiveLineNo == self.RichEdit.Lines.Count - 1:
+        if self.CacheIndex < len(self.TextCache) - 1:
+          self.CacheIndex += 1
+          self.SetUserString(self.TextCache[self.CacheIndex])
+        Key.Value = 0    
+        
   def KeyPress(self, Sender, Key):
     if self.RichEdit.SelStart < self.LastIndex:
       Key.Value = "\0"
