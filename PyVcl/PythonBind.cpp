@@ -81,20 +81,12 @@ PyObject* SetErrorString(PyObject *Type, const String &Str)
 //Helper functions needed for use of boost::intrusive_ptr<PyObject>
 void boost::intrusive_ptr_add_ref(PyObject *O)
 {
-	if(O)
-	{
-		Python::TLockGIL Dummy;
-		Py_INCREF(O);
-	}
+  Py_INCREF(O);
 }
 //---------------------------------------------------------------------------
 void boost::intrusive_ptr_release(PyObject *O)
 {
-	if(O)
-	{
-		Python::TLockGIL Dummy;
-		Py_DECREF(O);
-	}
+  Py_DECREF(O);
 }
 //---------------------------------------------------------------------------
 
