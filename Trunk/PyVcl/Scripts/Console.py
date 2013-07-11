@@ -68,15 +68,25 @@ class ConsoleForm:
           self.HandleNewLine()
     
   def KeyDown(self, Sender, Key, Shift):
-    if (Shift == "ssCtrl" and Key.Value == ord("V")) or (Shift == "ssShift" and Key.Value == 0x2D): #0x2D=VK_INSERT
+    if (Shift == {"ssCtrl"} and Key.Value == ord("V")) or (Shift == {"ssShift"} and Key.Value == 0x2D): #0x2D=VK_INSERT
       self.HandlePaste()
       Key.Value = 0
-    elif Shift == "ssCtrl" and Key.Value == ord("C"):
+    elif Shift == {"ssCtrl"} and Key.Value == ord("C"):
       if self.RichEdit.SelLength == 0:
         self.KeyboardInterrupt()
-    if (Shift == "ssCtrl" and Key.Value == ord("X")) or (Shift == "ssShift" and Key.Value == 0x2E): #0x2E=VK_DELETE
+    if (Shift == {"ssCtrl"} and Key.Value == ord("X")) or (Shift == {"ssShift"} and Key.Value == 0x2E): #0x2E=VK_DELETE
       if self.RichEdit.SelStart < self.LastIndex:
         Key.Value = 0        
+    elif Key.Value == 0x24: #VK_HOME
+      Pos2 = 0
+      while Pos2 != -1:
+        Pos = Pos2 + 4
+        Pos2 = self.RichEdit.FindText(">>> ", Pos, self.RichEdit.SelStart - Pos + 4, "") 
+      PosEnd = self.RichEdit.SelStart
+      self.RichEdit.SelStart = Pos
+      if Shift == {"ssShift"}:
+        self.RichEdit.SelLength = PosEnd - Pos
+      Key.Value = 0  
     elif Key.Value == 0x08: #Backspace  
       if self.RichEdit.SelStart <= self.LastIndex:
         Key.Value = 0
@@ -86,9 +96,9 @@ class ConsoleForm:
     elif Key.Value == 0x0D: #VK_RETURN
       self.HandleNewLine()
       Key.Value = 0
-    elif Shift == "" and Key.Value == 0x1B: #VK_ESCAPE
+    elif not Shift and Key.Value == 0x1B: #VK_ESCAPE
       self.SetUserString("");
-    elif Shift == "" and Key.Value == 0x26: #VK_UP
+    elif not Shift and Key.Value == 0x26: #VK_UP
       if self.RichEdit.ActiveLineNo == self.RichEdit.Lines.Count - 1:
         if self.CacheIndex > 0:
           if self.CacheIndex == len(self.TextCache) - 1:
@@ -96,7 +106,7 @@ class ConsoleForm:
           self.CacheIndex -= 1 
           self.SetUserString(self.TextCache[self.CacheIndex])
         Key.Value = 0
-    elif Shift == "" and Key.Value == 0x28: #VK_DOWN
+    elif not Shift and Key.Value == 0x28: #VK_DOWN
       if self.RichEdit.ActiveLineNo == self.RichEdit.Lines.Count - 1:
         if self.CacheIndex < len(self.TextCache) - 1:
           self.CacheIndex += 1

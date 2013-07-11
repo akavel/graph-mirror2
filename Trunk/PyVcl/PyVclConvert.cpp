@@ -51,16 +51,26 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			break;
 
 		case tkEnumeration:
-			if(PyUnicode_Check(O))
-				TValue::Make(GetEnumValue(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
 			if(PyLong_Check(O))
 				TValue::Make(PyLong_AsLong(O), TypeInfo, Result);
+      else
+				TValue::Make(GetEnumValue(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
 			break;
 
 		case tkSet:
-			TValue::Make(StringToSet(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
+    {
+      String SetStr;
+      if(PySet_Check(O))
+      {
+        TPyObjectPtr Sep = ToPyObjectPtr(",");
+        TPyObjectPtr Str(PyUnicode_Join(Sep.get(), O), false);
+        SetStr = PyUnicode_AsUnicode(Str.get());
+      }
+      else
+        SetStr = PyUnicode_AsUnicode(O);
+			TValue::Make(StringToSet(TypeInfo, SetStr), TypeInfo, Result);
 			break;
-
+    }
 		case tkInteger:
 			Result = TValue::From(PyLong_AsUnsignedLongMask(O));
 			break;
@@ -225,8 +235,12 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			return VclObject_Create(Value.AsObject(), false);
 
 		case tkSet:
-			return ToPyObject(SetToString(Value.TypeInfo, *static_cast<int*>(Value.GetReferenceToRawData()), false));
-
+    {
+      TPyObjectPtr SetStr = ToPyObjectPtr(SetToString(Value.TypeInfo, *static_cast<int*>(Value.GetReferenceToRawData()), false));
+      TPyObjectPtr Sep = ToPyObjectPtr(",");
+      TPyObjectPtr List(PyUnicode_Split(SetStr.get(), Sep.get(), -1), false);
+      return PySet_New(List.get());
+    }
 		case tkChar:
 			return ToPyObject(Value.AsType<char>());
 

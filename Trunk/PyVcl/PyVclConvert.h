@@ -32,6 +32,8 @@ namespace Python
 	PyObject* ToPyObject(TObject *Object);
 	PyObject* ToPyObject(const char *Str);
 	PyObject* ToPyObject(const wchar_t *Str);
+  template<typename T>
+  TPyObjectPtr ToPyObjectPtr(const T &Value) {return TPyObjectPtr(ToPyObject(Value), false);}
 
 	template<typename T> T FromPyObject(PyObject *O);
 	template<> int FromPyObject<int>(PyObject *O);
