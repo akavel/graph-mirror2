@@ -1,4 +1,4 @@
-from PyVcl import vcl
+import vcl
 import sys
    
 class ConsoleForm:
@@ -16,7 +16,6 @@ class ConsoleForm:
     self.RichEdit.Font.Name = "Courier New"
     self.RichEdit.Font.Size = 10
     self.OldWindowProc = self.RichEdit.WindowProc
-#    self.RichEdit.WindowProc=self.WindowProc     
     
     self.PopupMenu = vcl.TPopupMenu(None)
     self.PopupMenu.Items.Add(vcl.TMenuItem(self.PopupMenu, Caption="Clear", _owned=False, OnClick=self.Clear))

@@ -11,7 +11,7 @@ int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason, void* lpReserved
   return 1;
 }
 //---------------------------------------------------------------------------
-PyMODINIT_FUNC __stdcall PyInit_PyVcl(void)
+PyMODINIT_FUNC __stdcall PyInit_vcl(void)
 {
   Application->Initialize();
   return Python::InitPyVcl();

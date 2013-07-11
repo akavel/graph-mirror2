@@ -36,7 +36,7 @@ struct TGlobalObjectEntry
 
 /** List of global VCL objects that should be permanently mapped in PyVcl.vcl
  */
-TGlobalObjectEntry GlobalObjectList[] =
+static TGlobalObjectEntry GlobalObjectList[] =
 {
 	"Application", Application,
 	"Mouse", Mouse,
@@ -47,7 +47,7 @@ TGlobalObjectEntry GlobalObjectList[] =
 /** Retrieve a list of available variables, types and functions in PyVcl.vcl.
  *  \return New reference
  */
-static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
+static PyObject* VclModule_Dir(PyObject *self, PyObject *arg)
 {
 	unsigned GlobalCount = sizeof(GlobalObjectList)/sizeof(GlobalObjectList[0]);
 	unsigned GlobalFunctionCount = GetVclFunctionCount();
@@ -74,7 +74,7 @@ static PyObject* GlobalVcl_Dir(TVclObject *self, PyObject *arg)
  *  A Python exception is thrown if no variable, type or function with the given name is found.
  *  \return New reference
  */
-static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
+static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
 {
 	try
 	{
@@ -92,10 +92,7 @@ static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 				Type = Context.GetType(Class);
     }
 		if(Type != NULL)
-		{
-//		if(Class->InheritsFrom(__classid(Exception)))
 			Result = VclType_Create(Type);
-		}
 		else
 			Result = VclFunction_Create(Name);
 		if(Result == NULL)
@@ -116,41 +113,28 @@ static PyObject* GlobalVcl_GetAttro(PyObject *self, PyObject *attr_name)
 /** Replacement for TApplication::CreateForm() that doesn't fit into the system
  *  \return New reference to VclObject with a weak reference to a newly created TForm.
  */
-static PyObject* GlobalVcl_CreateForm(TVclObject *self, PyObject *arg)
+static PyObject* VclModule_CreateForm(PyObject *self, PyObject *arg)
 {
   TForm *Form;
   Application->CreateForm(__classid(TForm), &Form);
   return VclObject_Create(Form, false);
 }
 //---------------------------------------------------------------------------
-struct TGlobalVcl
+static PyMethodDef VclModule_Methods[] =
 {
-	PyObject_HEAD
-	PyObject *Dict;
-};
-//---------------------------------------------------------------------------
-static PyMemberDef GlobalVcl_Members[] =
-{
-	{"__dict__", T_OBJECT, offsetof(TGlobalVcl, Dict), READONLY},
-	{NULL, 0, 0, 0}
-};
-//---------------------------------------------------------------------------
-static PyMethodDef GlobalVcl_Methods[] =
-{
-	{"CreateForm", (PyCFunction)GlobalVcl_CreateForm, METH_NOARGS, "Replacement for TApplication::CreateForm()"},
-	{"__dir__", (PyCFunction)GlobalVcl_Dir, METH_NOARGS, ""},
+	{"CreateForm", VclModule_CreateForm, METH_NOARGS, "Replacement for TApplication::CreateForm()"},
+	{"__dir__", VclModule_Dir, METH_NOARGS, ""},
 	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
-/** The vcl object exists because it is not possible to set tp_getattro for a module. 
- *  The object will be made available for direct import by "import vcl". 
- *  The object gives access to all VCL types and some global VCL variables and functions.
+/** This type derives from PyModule_Type (module in Python) and is used as the class
+ *  of the vcl module to make it possible to set tp_getattro.
  */
-static PyTypeObject GlobalVclType =
+static PyTypeObject VclModuleType =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vcl.Vcl",        	 			 /* tp_name */
-	sizeof(TGlobalVcl), 			 /* tp_basicsize */
+	"vclmodule",        	 		 /* tp_name */
+	0, /* Initialized later */ /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	0, 												 /* tp_dealloc */
 	0,                         /* tp_print */
@@ -164,25 +148,25 @@ static PyTypeObject GlobalVclType =
 	0,                         /* tp_hash */
 	0, 												 /* tp_call */
 	0,                         /* tp_str */
-	GlobalVcl_GetAttro,   		 /* tp_getattro */
+	VclModule_GetAttro,   		 /* tp_getattro */
 	PyObject_GenericSetAttr,	 /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	"Global VCL types and methods", /* tp_doc */
+	"Module wrapping the Visual Component Library (VCL)", /* tp_doc */
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
 	0,		                     /* tp_richcompare */
 	0,		                     /* tp_weaklistoffset */
 	0,		                     /* tp_iter */
 	0,		                     /* tp_iternext */
-	GlobalVcl_Methods,         /* tp_methods */
-	GlobalVcl_Members,         /* tp_members */
+	VclModule_Methods,         /* tp_methods */
+	0,                         /* tp_members */
 	0,       									 /* tp_getset */
 	0,                         /* tp_base */
 	0,                         /* tp_dict */
 	0,                         /* tp_descr_get */
 	0,                         /* tp_descr_set */
-	offsetof(TGlobalVcl, Dict),/* tp_dictoffset */
+	0,                         /* tp_dictoffset */
 	0,						             /* tp_init */
 	0,                         /* tp_alloc */
 	0,						             /* tp_new */
@@ -191,7 +175,7 @@ static PyTypeObject GlobalVclType =
 static PyModuleDef PyVclModuleDef =
 {
 	PyModuleDef_HEAD_INIT,
-	"PyVcl",           //m_name
+	"vcl",           //m_name
 	"Module wrapping the Visual Component Library (VCL)", //m_doc
 	-1, //m_size
 	NULL, //m_methods
@@ -201,44 +185,39 @@ static PyModuleDef PyVclModuleDef =
 	NULL, //m_free
 };
 //---------------------------------------------------------------------------
-/** This creates the vcl object in the PyVcl module. 
- *  \return New reference
- */
-PyObject* GlobalVcl_Create()
-{
-	TGlobalVcl *vcl = PyObject_New(TGlobalVcl, &GlobalVclType);
-	vcl->Dict = NULL;
-	PyObject *self = reinterpret_cast<PyObject*>(vcl);
-	for(unsigned I = 0; I < sizeof(GlobalObjectList)/sizeof(GlobalObjectList[0]); I++)
-	{
-		PyObject *NewObject = VclObject_Create(GlobalObjectList[I].Object, false);
-		PyObject_SetAttrString(self, GlobalObjectList[I].Name, NewObject);
-		Py_DECREF(NewObject);
-	}
-	return self;
-}
-//---------------------------------------------------------------------------
-/** Initialize the vcl module. This creates all types need by PyVcl and the vcl object,
- *  which is placed in the list of imported modules.
- *  This way you can write "import vcl" instead of "from PyVcl import vcl". 
+/** Initialize PyVcl. This creates the vcl module, which is an instance of VclModuleType
+ *  that is derived from the module class.
+ *  \return New reference to the vcl module.
  */
 PyObject* InitPyVcl()
 {
-	PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
-	if(PyType_Ready(&GlobalVclType) < 0 || PyType_Ready(&VclMethodType) < 0 ||
+  //VclModuleType derives from PyModule_Type and VclModuleType must therefore have
+  //the same size.
+  VclModuleType.tp_basicsize = PyModule_Type.tp_basicsize;
+  VclModuleType.tp_base = &PyModule_Type;
+	if(PyType_Ready(&VclModuleType) < 0 || PyType_Ready(&VclMethodType) < 0 ||
 		PyType_Ready(&VclObjectType) < 0 || PyType_Ready(&VclFunctionType) < 0 ||
 		PyType_Ready(&VclArrayPropertyType) < 0 || PyType_Ready(&VclRefType) < 0)
 		return NULL;
+
+  //Module must be created by PyModule_Create().
+  //See http://bugs.python.org/issue18426
+	PyObject *PyVclModule = PyModule_Create(&PyVclModuleDef);
+	for(unsigned I = 0; I < sizeof(GlobalObjectList)/sizeof(GlobalObjectList[0]); I++)
+	{
+		PyObject *NewObject = VclObject_Create(GlobalObjectList[I].Object, false);
+		PyObject_SetAttrString(PyVclModule, GlobalObjectList[I].Name, NewObject);
+		Py_DECREF(NewObject);
+	}
+
 	PyVclException = PyErr_NewException("vcl.VclError", NULL, NULL);
-	PyModule_AddObject(PyVclModule, "VclError", PyVclException);
+  Py_INCREF(PyVclException);
+	PyModule_AddObject(PyVclModule, "VclError", PyVclException); //This steals a reference
 
-	PyObject *vcl = GlobalVcl_Create();
-	PyModule_AddObject(PyVclModule, "vcl", vcl);
-
-	PyObject *Modules = PyImport_GetModuleDict();
-	PyDict_SetItemString(Modules, "vcl", vcl);
-	Py_DECREF(vcl);
-	return PyVclModule;
+  //Nasty hack: Change vcl module to be an instance of VclModuleType instead of
+  //PyModule_Type (module).
+  PyVclModule->ob_type = &VclModuleType;
+	return PyErr_Occurred() ? NULL : PyVclModule;
 }
 //---------------------------------------------------------------------------
 } //Namespace Python
