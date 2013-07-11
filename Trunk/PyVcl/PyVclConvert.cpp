@@ -330,6 +330,14 @@ PyObject* PyVclHandleException()
 	{
 		SetErrorString(PyExc_IndexError, E.Message);
 	}
+  catch(DynArrayOutOfRange &E)
+  {
+		PyErr_SetString(PyVclException, "Invalid number of indexes in dynamic array");
+  }
+  catch(DynArrayException &E)
+  {
+		PyErr_SetString(PyVclException, "Unknown dynamic array exception");
+  }
 	catch(Exception &E)
 	{
 		SetErrorString(PyVclException, E.Message);

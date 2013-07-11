@@ -9,18 +9,22 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
 #pragma hdrstop
-#define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
+//#define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
 #include "PythonBind.h"
 #include "python.hpp"
 #include "PyVclObject.h"
-#include <float.h>
+//#include <float.h>
+#ifdef _WIN64
+#pragma link "python32.a"
+#else
 #pragma link "python32.lib"
+#endif
 //---------------------------------------------------------------------------
 namespace Python
 {
-HINSTANCE PythonInstance = NULL;
+//HINSTANCE PythonInstance = NULL;
 //---------------------------------------------------------------------------
-template<typename T>
+/*template<typename T>
 T& GetPythonAddress(const char *Name)
 {
   if(IsPythonInstalled())
@@ -37,7 +41,7 @@ bool IsPythonInstalled()
     Result = PythonInstance != NULL;
   }
   return Result;
-}
+}*/
 //---------------------------------------------------------------------------
 PyObject* PyReturnNone()
 {
@@ -47,28 +51,28 @@ PyObject* PyReturnNone()
 //---------------------------------------------------------------------------
 TLockGIL::TLockGIL()
 {
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK);
+//  _control87(PYTHON_FPU_CONTROL, FPU_MASK);
   State = PyGILState_Ensure();
 }
 //---------------------------------------------------------------------------
 TLockGIL::~TLockGIL()
 {
   PyGILState_Release(static_cast<PyGILState_STATE>(State));
-  _clear87();
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+//  _clear87();
+//  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 }
 //---------------------------------------------------------------------------
 TUnlockGIL::TUnlockGIL()
 {
   State = PyEval_SaveThread();
-  _clear87();
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+//  _clear87();
+//  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 }
 //---------------------------------------------------------------------------
 TUnlockGIL::~TUnlockGIL()
 {
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK);
-  PyEval_RestoreThread(State);
+//  _control87(PYTHON_FPU_CONTROL, FPU_MASK);
+//  PyEval_RestoreThread(State);
 }
 //---------------------------------------------------------------------------
 PyObject* SetErrorString(PyObject *Type, const String &Str)

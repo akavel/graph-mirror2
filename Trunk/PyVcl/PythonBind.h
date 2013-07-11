@@ -22,9 +22,9 @@ typedef _object PyObject;
 
 namespace Python
 {
-template<typename T> T& GetPythonAddress(const char *Name);
+//template<typename T> T& GetPythonAddress(const char *Name);
 
-#ifndef PYTHON_WRAP
+/*#ifndef PYTHON_WRAP
 #define PYTHON_WRAP(type,name) extern type& name;
 #endif
 PYTHON_WRAP(_typeobject, PyBool_Type)
@@ -62,7 +62,7 @@ PYTHON_WRAP(PyObject, _Py_FalseStruct)
 PYTHON_WRAP(PyObject, _Py_NotImplementedStruct)
 
 bool IsPythonInstalled();
-
+*/
 class TLockGIL
 {
 	/*PyGILState_STATE*/int State;
