@@ -5,10 +5,9 @@
 #define OLD_DEBUG _DEBUG
 #undef _DEBUG
 #endif
-#define __STDC__
-#define HAVE_ROUND
+
 #include "Python.h"
-#undef __STDC__
+
 #ifdef OLD_DEBUG
 #define _DEBUG OLD_DEBUG
 #endif
