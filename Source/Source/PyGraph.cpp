@@ -594,7 +594,7 @@ extern "C" PyObject* PyInit__Utility();
 _inittab Modules[] =
 {
 	{"GraphImpl", InitGraphImpl},
-	{"PyVcl", InitPyVcl},
+	{"vcl", InitPyVcl},
 	{"_Settings", PyInit__Settings},
 	{"_Data", PyInit__Data},
 	{"_Utility", PyInit__Utility},
@@ -653,7 +653,6 @@ void InitPlugins()
       "GraphImpl.Debug = False\n"
 #endif
 			"sys.path.append('%s\\Lib')\n"
-			"import PyVcl\n"
 			"import vcl\n"
 			"import Graph\n"
       "from imp import reload\n"
