@@ -27,7 +27,7 @@ class ConsoleForm:
     x = CharWidth * 4
     for I in range(0, 22): 
       x += CharWidth * 2
-      self.RichEdit.Paragraph.Tab[I] = x
+#      self.RichEdit.Paragraph.Tab[I] = x
     
     self.WritePrompt()   
     self.stdout = sys.stdout
@@ -152,7 +152,9 @@ class ConsoleForm:
         self.Command += "\n"
         if Str != "" and Str[-1] == ":":
           self.IndentLevel += 1
-    except:
+    except SystemExit:
+      vcl.Application.Terminate()
+    except Exception:
       import traceback
       TraceBack = traceback.format_exception(*sys.exc_info())
       self.WriteText(TraceBack[0], 0xFF)
