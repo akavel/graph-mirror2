@@ -34,12 +34,14 @@ namespace Python
  *  and it can always be found by its name "ObjectDeleteHandler".
  *
  *  VclObject objects will register themself to be notified when the referred object
- *  is destroyed. Events that call Python functions are also tracked for cleanup when
+ *  is destroyed. Only one VCL object is registered. This object is reused instead of creating
+ *  more proxy objects to the same instance.
+ *  Events that call Python functions are also tracked for cleanup when
  *  the monitored object is destroyed.
  */
 class TObjectDeleteHandler : public TComponent
 {
-	std::deque<TVclObject*> Objects;
+	TVclObject* VclObject;
   std::deque<TMethodImplementation*> MethodImplementations;
 public:
 	__fastcall TObjectDeleteHandler(TComponent *AOwner) : TComponent(AOwner)
@@ -49,10 +51,10 @@ public:
 
 	__fastcall ~TObjectDeleteHandler()
 	{
-		for(std::deque<TVclObject*>::iterator Iter = Objects.begin(); Iter != Objects.end(); ++Iter)
+		if(VclObject)
 		{
-			(*Iter)->Instance = NULL;
-			(*Iter)->Owned = false;
+			VclObject->Instance = NULL;
+			VclObject->Owned = false;
     }
 
 		for(std::deque<TMethodImplementation*>::iterator Iter = MethodImplementations.begin(); Iter != MethodImplementations.end(); ++Iter)
@@ -63,14 +65,9 @@ public:
     }
 	}
 
-	void Register(TVclObject *VclObject) {Objects.push_back(VclObject);}
+  TVclObject* GetVclObject() {return VclObject;}
+	void SetVclObject(TVclObject *AVclObject) {VclObject = AVclObject;}
   void Register(TMethodImplementation *Impl) {MethodImplementations.push_back(Impl);}
-	void Unregister(TVclObject *VclObject)
-	{
-		std::deque<TVclObject*>::iterator Iter = std::find(Objects.begin(), Objects.end(), VclObject);
-		if(Iter != Objects.end())
-		  Objects.erase(Iter);
-	}
 	void Unregister(TMethodImplementation *Impl)
 	{
 		std::deque<TMethodImplementation*>::iterator Iter = std::find(MethodImplementations.begin(), MethodImplementations.end(), Impl);
@@ -84,12 +81,11 @@ public:
 	}
 };
 //---------------------------------------------------------------------------
-/** Find and optionally create a TObjectDeleteHandler associated to a TComponent
- *  reffered by a VclObject.
+/** Find and optionally create a TObjectDeleteHandler associated to a TComponent.
  */
-TObjectDeleteHandler* FindDeleteHandler(TVclObject *VclObject, bool Create)
+TObjectDeleteHandler* FindDeleteHandler(TObject *Object, bool Create)
 {
-	if(TComponent *Component = dynamic_cast<TComponent*>(VclObject->Instance))
+	if(TComponent *Component = dynamic_cast<TComponent*>(Object))
 	{
 		TObjectDeleteHandler *DeleteHandler =
 			dynamic_cast<TObjectDeleteHandler*>(Component->FindComponent("ObjectDeleteHandler"));
@@ -105,8 +101,8 @@ TObjectDeleteHandler* FindDeleteHandler(TVclObject *VclObject, bool Create)
  */
 void CreateDeleteHandler(TVclObject *VclObject)
 {
-  if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(VclObject, true))
-		DeleteHandler->Register(VclObject);
+  if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(VclObject->Instance, true))
+		DeleteHandler->SetVclObject(VclObject);
 }
 //---------------------------------------------------------------------------
 /** Class with function used to assign all events that are python objects.
@@ -303,8 +299,8 @@ static void VclObject_Dealloc(TVclObject* self)
 		delete self->Instance;
 	}
 	else
-    if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self, false))
-	  	DeleteHandler->Unregister(self);
+    if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self->Instance, false))
+	  	DeleteHandler->SetVclObject(NULL);
 	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
 }
 //---------------------------------------------------------------------------
@@ -390,7 +386,7 @@ static int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v
 			TObject *Object = static_cast<TObject*>(Method.Data);
 			if(TMethodImplementation *Impl = dynamic_cast<TMethodImplementation*>(Object))
 			{
-				if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self, false))
+				if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self->Instance, false))
 					DeleteHandler->Unregister(Impl);
 			}
 
@@ -405,7 +401,7 @@ static int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v
 				TMethodImplementation *Implementation = new TMethodImplementation(Func, InvokeInfo, PythonCallback);
 				TMethod Method = {Implementation->CodeAddress, Implementation}; //Pass InvokeInfo in this, which can be used as another data pointer
 				TValue::Make(&Method, TypeInfo, Value);
-				if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self, true))
+				if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self->Instance, true))
 					DeleteHandler->Register(Implementation);
 			}
 		}
@@ -557,11 +553,25 @@ PyTypeObject VclObjectType =
  */
 PyObject* VclObject_Create(TObject *Instance, bool Owned)
 {
-	TVclObject *VclObject = PyObject_New(TVclObject, &VclObjectType);
-	VclObject->Instance = Instance;
-	VclObject->Owned = Owned;
-  CreateDeleteHandler(VclObject);
-	return reinterpret_cast<PyObject*>(VclObject);
+  TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(Instance, true);
+	TVclObject *VclObject = NULL;
+  if(DeleteHandler)
+    VclObject = DeleteHandler->GetVclObject();
+  if(VclObject != NULL)
+  {
+    if(Owned)
+      VclObject->Owned = true;
+    Py_INCREF(VclObject);
+  }
+  else
+  {
+    VclObject = PyObject_New(TVclObject, &VclObjectType);
+	  VclObject->Instance = Instance;
+	  VclObject->Owned = Owned;
+    if(DeleteHandler)
+      DeleteHandler->SetVclObject(VclObject);
+  }
+  return reinterpret_cast<PyObject*>(VclObject);
 }
 //---------------------------------------------------------------------------
 /** Return true if O is a VclObject.
