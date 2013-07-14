@@ -421,6 +421,29 @@ static int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v
 	}
 }
 //---------------------------------------------------------------------------
+static PyObject* VclObject_RichCompare(TVclObject *self, PyObject *other, int op)
+{
+  if(op == Py_EQ)
+  {
+    if(!VclObject_Check(other))
+      Py_RETURN_FALSE;
+    if(self->Instance == reinterpret_cast<TVclObject*>(other)->Instance)
+      Py_RETURN_TRUE;
+    Py_RETURN_FALSE;
+  }
+
+  if(op == Py_NE)
+  {
+    if(!VclObject_Check(other))
+      Py_RETURN_TRUE;
+    if(self->Instance == reinterpret_cast<TVclObject*>(other)->Instance)
+      Py_RETURN_FALSE;
+    Py_RETURN_TRUE;
+  }
+
+  return PyErr_Format(PyExc_TypeError, "unorderable types: %s() < %s()", self->ob_base.ob_type->tp_name, other->ob_type->tp_name);
+}
+//---------------------------------------------------------------------------
 static int VclObject_Bool(TVclObject *self)
 {
   return self->Instance != NULL;
@@ -494,7 +517,7 @@ PyTypeObject VclObjectType =
 	0,                         /* tp_print */
 	0,                         /* tp_getattr */
 	0,                         /* tp_setattr */
-	0,                         /* tp_compare */
+	0,                         /* tp_reserved */
 	(reprfunc)VclObject_Repr,  /* tp_repr */
 	&VclObject_NumberMethods,  /* tp_as_number */
 	0,                         /* tp_as_sequence */
@@ -509,7 +532,7 @@ PyTypeObject VclObjectType =
 	"VCL object",       			 /* tp_doc */
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
-	0,		                     /* tp_richcompare */
+	(richcmpfunc)VclObject_RichCompare, /* tp_richcompare */
 	0,		                     /* tp_weaklistoffset */
 	0,		                     /* tp_iter */
 	0,		                     /* tp_iternext */
