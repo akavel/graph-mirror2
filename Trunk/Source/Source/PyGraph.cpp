@@ -33,12 +33,22 @@ namespace Python
 PyObject *PyEFuncError = NULL;
 PyObject *PyEGraphError = NULL;
 //---------------------------------------------------------------------------
-void PrintException()
+void PrintException(bool ShowTraceback=true)
 {
-  PyObject *Type, *Value, *Traceback;
-  PyErr_Fetch(&Type, &Value, &Traceback);
-  PyErr_Restore(Type, Value, NULL);
-  Py_XDECREF(Traceback);
+	if(PyErr_ExceptionMatches(PyExc_SystemExit))
+  {
+    PyErr_Clear();
+    Form1->Close();
+    return;
+  }
+
+  if(!ShowTraceback)
+  {
+    PyObject *Type, *Value, *Traceback;
+    PyErr_Fetch(&Type, &Value, &Traceback);
+    PyErr_Restore(Type, Value, NULL);
+    Py_XDECREF(Traceback);
+  }
   PyErr_Print();
 }
 //---------------------------------------------------------------------------
@@ -55,7 +65,7 @@ bool ExecutePythonCommand(const String &Command)
     {
       PyObject *Code = PyObject_CallFunction(Function, "us", Command.c_str(), "<console>");
       if(Code == NULL)
-        PrintException();
+        PrintException(false);
       else if(Code == Py_None)
         Result = false;
       else
@@ -66,7 +76,7 @@ bool ExecutePythonCommand(const String &Command)
       	  PyObject *Dict = PyModule_GetDict(MainModule);
           PyObject *Temp = PyEval_EvalCode(Code, Dict, Dict);
           if(Temp == NULL)
-						PyErr_Print();
+            PrintException();
           Py_XDECREF(Temp);
         }
       }
@@ -76,7 +86,7 @@ bool ExecutePythonCommand(const String &Command)
     Py_DECREF(Module);
   }
   else
-    PyErr_Print();
+    PrintException();
   return Result;
 }
 //---------------------------------------------------------------------------

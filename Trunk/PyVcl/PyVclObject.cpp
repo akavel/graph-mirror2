@@ -140,7 +140,18 @@ void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TV
 		Result = ToValue(PyResult, NULL); //Bug: Type of result missing
 	Py_XDECREF(PyResult);
 	if(PyResult == NULL)
-	  PyErr_Print();
+  {
+    if(PyErr_ExceptionMatches(PyExc_SystemExit))
+    {
+      if(Application->MainForm)
+        Application->MainForm->Close();
+      else
+        Application->Terminate();
+      PyErr_Clear();
+    }
+    else
+	    PyErr_Print();
+  }
 }
 //---------------------------------------------------------------------------
 /** Create TInvokeInfo object with parameter information for a Delphi event.
