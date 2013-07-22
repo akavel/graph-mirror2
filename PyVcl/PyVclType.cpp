@@ -62,7 +62,7 @@ int VclType_Init(TVclObject *self, PyObject *args, PyObject *kwds)
 	return 0;
 }
 //---------------------------------------------------------------------------
-/** Create a new a new VclType object representing a Delphi class.
+/** Create a new VclType object representing a Delphi class.
  *  This could for example be vcl.TForm
  *  \param Type: The Delphi class to preresent.
  *  \return New reference to a type object.

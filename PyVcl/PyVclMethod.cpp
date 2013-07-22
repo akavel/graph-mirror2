@@ -73,10 +73,13 @@ TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*>
 		std::vector<TValue> Parameters;
 		int ParamCount = PyTuple_Size(Args);
 		if(ParamCount != ParameterTypes.Length)
+    {
 			if(MethodCount == 1)
 				throw EPyVclError(Method->Name + "() takes exactly " + ParameterTypes.get_length() + " arguments (" + ParamCount + " given)");
 			else
 				continue;
+    }
+
 		try
 		{
 			TupleToValues(Args, Parameters, ParameterTypes);
