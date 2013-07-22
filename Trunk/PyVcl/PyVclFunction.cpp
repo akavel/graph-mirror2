@@ -88,8 +88,9 @@ static PyObject *VclFunction_Call(TVclFunction* self, PyObject *args, PyObject *
 			throw EPyVclError("Function does not accept keyword arguments");
 		DynamicArray<TValue> Arguments;
 
-		int Count;
-		for(Count=0; Count < MaxArgCount && self->Function->Args[Count] != NULL; Count++);
+		int Count = 0;
+		while(Count < MaxArgCount && self->Function->Args[Count] != NULL)
+      Count++;
 		Arguments.Length = Count;
 		if(Count != PyTuple_Size(args))
 			throw EPyVclError("Function argument count mismatch!");

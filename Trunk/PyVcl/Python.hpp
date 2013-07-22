@@ -6,7 +6,11 @@
 #undef _DEBUG
 #endif
 
+#define HAVE_ROUND
+#define __STDC__
+#define HAVE_SSIZE_T
 #include "Python.h"
+#undef __STDC__
 
 #ifdef OLD_DEBUG
 #define _DEBUG OLD_DEBUG

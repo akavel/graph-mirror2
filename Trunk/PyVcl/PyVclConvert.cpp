@@ -298,10 +298,12 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 template<> double FromPyObject<double>(PyObject *O)
 {
 	if(PyComplex_Check(O))
+  {
     if(PyComplex_ImagAsDouble(O) != 0)
       PyErr_SetString(PyExc_TypeError, "complex number has an imaginary part");
 		else
       return PyComplex_RealAsDouble(O);
+  }
   return PyFloat_AsDouble(O);
 }
 //---------------------------------------------------------------------------

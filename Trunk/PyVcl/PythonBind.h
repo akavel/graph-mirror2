@@ -9,7 +9,6 @@
 //---------------------------------------------------------------------------
 #ifndef PythonBindH
 #define PythonBindH
-#include <boost/intrusive_ptr.hpp>
 //---------------------------------------------------------------------------
 struct _object;
 struct _typeobject;
@@ -19,6 +18,21 @@ typedef _object PyObject;
 #define PYTHON_FPU_CONTROL MCW_EM | IC_PROJECTIVE | RC_NEAR | PC_53
 #define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
 #define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
+
+#ifdef _WIN64
+#define SET_PYTHON_CPU_MASK()
+#define SET_DEFAULT_CPU_MASK()
+#else
+#define SET_PYTHON_CPU_MASK() _control87(PYTHON_FPU_CONTROL, FPU_MASK)
+#define SET_DEFAULT_CPU_MASK() _clear87(), _control87(DEFAULT_FPU_CONTROL, FPU_MASK)
+#endif
+
+namespace boost
+{
+	void intrusive_ptr_add_ref(PyObject *O);
+	void intrusive_ptr_release(PyObject *O);
+}
+#include <boost/intrusive_ptr.hpp>
 
 namespace Python
 {
@@ -84,13 +98,8 @@ public:
 	typedef boost::intrusive_ptr<PyObject> TPyObjectPtr;
 
 	PyObject* SetErrorString(PyObject *Type, const String &Str);
-}
+} //namespace Python
 
-namespace boost
-{
-	void intrusive_ptr_add_ref(PyObject *O);
-	void intrusive_ptr_release(PyObject *O);
-}
 
 #ifdef WRAP_PYOBJECTS
 #define PyBool_Type Python::PyBool_Type
