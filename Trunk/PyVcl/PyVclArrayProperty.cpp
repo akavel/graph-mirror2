@@ -151,7 +151,7 @@ PySequenceMethods VclArrayPropertySequence =
  *  This is a wrokaround as the Delphi RTTI does not support access to read/write array
  *  properties in a generic way.
  */
-PyTypeObject VclArrayPropertyType =
+PyTypeObject VclIndexedProperty_Type =
 {
 	PyObject_HEAD_INIT(NULL)
 	"vcl.VclArrayProperty",  	 /* tp_name */
@@ -198,7 +198,7 @@ PyTypeObject VclArrayPropertyType =
  *  \param Name: This is the name of the array property.
  *  \return New reference to an array property wrapper.
  */
-PyObject* VclArrayProperty_Create(TObject *Instance, const String &Name)
+PyObject* VclIndexedProperty_Create(TObject *Instance, const String &Name)
 {
 	int PropertyId = -1;
 	if(Name == "Items" && dynamic_cast<TCollection*>(Instance))
@@ -215,7 +215,7 @@ PyObject* VclArrayProperty_Create(TObject *Instance, const String &Name)
 	  PropertyId = 5;
 	else
 		return NULL;
-	TVclArrayProperty *VclProperty = PyObject_New(TVclArrayProperty, &VclArrayPropertyType);
+	TVclArrayProperty *VclProperty = PyObject_New(TVclArrayProperty, &VclIndexedProperty_Type);
 	VclProperty->Instance = Instance;
 	VclProperty->PropertyId = PropertyId;
 	return reinterpret_cast<PyObject*>(VclProperty);

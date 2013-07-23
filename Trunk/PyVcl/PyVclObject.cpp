@@ -20,7 +20,7 @@
 #include "PyVclMethod.h"
 #include "PyVcl.h"
 #include "PyVclConvert.h"
-#include "PyVclArrayProperty.h"
+#include "PyVclIndexedProperty.h"
 #include "PyVclRef.h"
 #include <deque>
 #include <algorithm>
@@ -167,7 +167,7 @@ TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
 	if(TypeData->MethodKind == mkFunction)
 	{
 		Index += TypeData->ParamList[Index] + 1;
-		Index += 4;
+		Index += sizeof(void*);
 	}
 	Typinfo::TCallConv CallConv = static_cast<Typinfo::TCallConv>(TypeData->ParamList[Index]);
 	Index++;
@@ -177,7 +177,7 @@ TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
 	{
 		TTypeInfo *ParamType = **(TTypeInfo***)&TypeData->ParamList[Index];
 		InvokeInfo->AddParameter(ParamType, ParamFlags[I].Contains(Typinfo::pfVar));
-		Index += 4;
+		Index += sizeof(void*);
 	}
 	InvokeInfo->Seal();
 	return InvokeInfo;
@@ -332,7 +332,7 @@ static PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 			TRttiField *Field = Type->GetField(Name);
 			if(Field == NULL || Field->Visibility != mvPublic)
 			{
-				PyObject *ArrayProperty = VclArrayProperty_Create(Object, Name);
+				PyObject *ArrayProperty = VclIndexedProperty_Create(Object, Name);
 				if(ArrayProperty != NULL)
 					return ArrayProperty;
 				PyObject *Result = PyObject_GenericGetAttr(reinterpret_cast<PyObject*>(self), attr_name);
@@ -417,6 +417,12 @@ static int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v
 	}
 }
 //---------------------------------------------------------------------------
+/** Compares two VCL proxy objects. Unordered compare (<, <=, >, >=) is not
+ *  supported. Two proxy objects are equal if they refer to the same VCL object.
+ *  \param self: The VCL proxy object.
+ *  \param other: VCL proxy object to compare with.
+ *  \return True or False depending on the compare operator.
+ */
 static PyObject* VclObject_RichCompare(TVclObject *self, PyObject *other, int op)
 {
   if(op == Py_EQ)
@@ -440,9 +446,98 @@ static PyObject* VclObject_RichCompare(TVclObject *self, PyObject *other, int op
   return PyErr_Format(PyExc_TypeError, "unorderable types: %s() < %s()", self->ob_base.ob_type->tp_name, other->ob_type->tp_name);
 }
 //---------------------------------------------------------------------------
+/** Convert the object to True or False.
+ *  \param self: The VCL proxy object.
+ *  \return True if it is bound to an instance.
+ */
 static int VclObject_Bool(TVclObject *self)
 {
   return self->Instance != NULL;
+}
+//---------------------------------------------------------------------------
+/** Helper function for VclObject_Subscript() and VclObject_SetSubscript().
+ *  \param self: VCL object to get default indexed property for.
+ *  \return The default indexed property for the object if one exists.
+ *  \throw EPyVclError on any error.
+ */
+#if __BCPLUSPLUS__ >= 0x640
+static TRttiIndexedProperty* GetDefaultIndexedProeprty(TVclObject *self)
+{
+  if(self->Instance == NULL)
+    throw EPyVclError("Referenced object has been deleted.");
+  TRttiType *Type = Context.GetType(self->Instance->ClassType());
+  System::DynamicArray<TRttiIndexedProperty*>  Properties = Type->GetIndexedProperties();
+  for(int I = 0; I < Properties.Length; I++)
+    if(Properties[I]->IsDefault)
+      return Properties[I];
+  throw EPyVclError("Instance of class '" + String(Type->Name) + "' has no default indexed property.");
+}
+#endif
+//---------------------------------------------------------------------------
+/** Get an element of the default indexed property if it exists.
+ *  \param self: The VCL proxy object.
+ *  \param key: The subscription index. May be a tuple.
+ *  \return New reference to the retrieved object.
+ */
+static PyObject* VclObject_Subscript(TVclObject *self, PyObject *key)
+{
+#if __BCPLUSPLUS__ >= 0x640
+	try
+	{
+    TRttiIndexedProperty *Property = GetDefaultIndexedProeprty(self);
+    if(!Property->IsReadable)
+      throw EPyVclError("Default indexed property is not readable.");
+    DynamicArray<TRttiParameter*> ParameterTypes = Property->ReadMethod->GetParameters();
+    std::vector<TValue> Parameters;
+    if(PyTuple_Check(key))
+      TupleToValues(key, Parameters, ParameterTypes);
+    else
+      Parameters.push_back(ToValue(key, ParameterTypes[0]->ParamType->Handle));
+    return ToPyObject(Property->GetValue(self->Instance, &Parameters[0], Parameters.size()-1));
+	}
+	catch(...)
+	{
+		return PyVclHandleException();
+	}
+#else
+  return SetErrorString(NotImplementedError, "Not supported by this compiler");
+#endif
+}
+//---------------------------------------------------------------------------
+/** Set an element of the default indexed property if it exists.
+ *  \param self: The VCL proxy object.
+ *  \param key: The subscription index. May be a tuple.
+ *  \param v: The value to set. This is checked for corret type.
+ *  \return 0 on success and -1 on failure.
+ */
+static int VclObject_SetSubscript(TVclObject *self, PyObject *key, PyObject *v)
+{
+#if __BCPLUSPLUS__ >= 0x640
+	try
+	{
+    TRttiIndexedProperty *Property = GetDefaultIndexedProeprty(self);
+    if(!Property->IsWritable)
+      throw EPyVclError("Property is not writable.");
+    DynamicArray<TRttiParameter*> ParameterTypes = Property->WriteMethod->GetParameters();
+    std::vector<TValue> Parameters;
+    if(PyTuple_Check(key))
+      TupleToValues(key, Parameters, ParameterTypes);
+    else
+      Parameters.push_back(ToValue(key, ParameterTypes[0]->ParamType->Handle));
+    Property->SetValue(
+      self->Instance,
+      &Parameters[0], Parameters.size()-1,
+      ToValue(v, Property->PropertyType->Handle));
+    return 0;
+	}
+	catch(...)
+	{
+		PyVclHandleException();
+		return -1;
+	}
+#else
+  return SetErrorString(NotImplementedError, "Not supported by this compiler");
+#endif
 }
 //---------------------------------------------------------------------------
 static PyMemberDef VclObject_Members[] =
@@ -498,12 +593,19 @@ static PyNumberMethods VclObject_NumberMethods =
   NULL, /* nb_index */
 };
 //---------------------------------------------------------------------------
+PyMappingMethods VclObject_Mapping =
+{
+  0, /* mp_length */
+  (binaryfunc)VclObject_Subscript, /* mp_subscript */
+  (objobjargproc)VclObject_SetSubscript, /* mp_ass_subscript */
+};
+//---------------------------------------------------------------------------
 /** Proxy object for a VCL object. If _owned is set to True, the VCL object is
  *  owned by the proxy and destroyed when the proxy is destroyed.
  *  If possible the VCL object will own a delete handler, which will clear the
  *  reference in the proxy if the VCL object is destroyed before the proxy.
  */
-PyTypeObject VclObjectType =
+PyTypeObject VclObject_Type =
 {
 	PyObject_HEAD_INIT(NULL)
 	"vcl.VclObject",        	 /* tp_name */
@@ -517,7 +619,7 @@ PyTypeObject VclObjectType =
 	(reprfunc)VclObject_Repr,  /* tp_repr */
 	&VclObject_NumberMethods,  /* tp_as_number */
 	0,                         /* tp_as_sequence */
-	0,                         /* tp_as_mapping */
+	&VclObject_Mapping,        /* tp_as_mapping */
 	0,                         /* tp_hash */
 	0, 												 /* tp_call */
 	0,                         /* tp_str */
@@ -565,7 +667,7 @@ PyObject* VclObject_Create(TObject *Instance, bool Owned)
   }
   else
   {
-    VclObject = PyObject_New(TVclObject, &VclObjectType);
+    VclObject = PyObject_New(TVclObject, &VclObject_Type);
 	  VclObject->Instance = Instance;
 	  VclObject->Owned = Owned;
     if(DeleteHandler)
@@ -578,7 +680,7 @@ PyObject* VclObject_Create(TObject *Instance, bool Owned)
  */
 bool VclObject_Check(PyObject *O)
 {
-	return O->ob_type->tp_repr == VclObjectType.tp_repr;
+	return O->ob_type->tp_repr == VclObject_Type.tp_repr;
 }
 //---------------------------------------------------------------------------
 /** Return the VCL object, which the given VclObject is a proxy for.
@@ -588,7 +690,7 @@ bool VclObject_Check(PyObject *O)
  */
 TObject* VclObject_AsObject(PyObject *O)
 {
-	if(O->ob_type->tp_repr != VclObjectType.tp_repr)
+	if(O->ob_type->tp_repr != VclObject_Type.tp_repr)
 		throw EPyVclError("Object is not a VclObject type");
 	return reinterpret_cast<TVclObject*>(O)->Instance;
 }

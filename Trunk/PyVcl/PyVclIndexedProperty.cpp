@@ -17,7 +17,7 @@
 namespace Python
 {
 //---------------------------------------------------------------------------
-struct TVclArrayProperty
+struct TVclIndexedProperty
 {
 	PyObject_HEAD
 	TObject *Instance;
@@ -29,7 +29,7 @@ struct TVclArrayProperty
  *  \param key: The subscription index. May be a tuple
  *  \return New reference to the retrieved object.
  */
-PyObject* VclArrayProperty_Subscript(TVclArrayProperty *self, PyObject *key)
+static PyObject* VclIndexedProperty_Subscript(TVclIndexedProperty *self, PyObject *key)
 {
 	try
 	{
@@ -52,7 +52,7 @@ PyObject* VclArrayProperty_Subscript(TVclArrayProperty *self, PyObject *key)
 /** Return a string representation of the content of the array property.
  *  \param self: The array property wrapper, indicating instance and property RTTI.
  */
-static PyObject *VclArrayProperty_Repr(TVclArrayProperty* self)
+static PyObject *VclIndexedProperty_Repr(TVclIndexedProperty* self)
 {
   return ToPyObject("<Indexed property '" + self->IndexedProperty->Name + "'>");
 }
@@ -63,7 +63,7 @@ static PyObject *VclArrayProperty_Repr(TVclArrayProperty* self)
  *  \param v: The value to set. This is checked for corret type.
  *  \return 0 on success and -1 on failure.
  */
-int VclArrayProperty_SetSubscript(TVclArrayProperty *self, PyObject *key, PyObject *v)
+static int VclIndexedProperty_SetSubscript(TVclIndexedProperty *self, PyObject *key, PyObject *v)
 {
 	try
 	{
@@ -88,32 +88,32 @@ int VclArrayProperty_SetSubscript(TVclArrayProperty *self, PyObject *key, PyObje
 	}
 }
 //---------------------------------------------------------------------------
-PyMappingMethods VclArrayPropertyMapping =
+PyMappingMethods VclIndexedProperty_Mapping =
 {
   0, /* mp_length */
-  (binaryfunc)VclArrayProperty_Subscript, /* mp_subscript */
-  (objobjargproc)VclArrayProperty_SetSubscript, /* mp_ass_subscript */
+  (binaryfunc)VclIndexedProperty_Subscript, /* mp_subscript */
+  (objobjargproc)VclIndexedProperty_SetSubscript, /* mp_ass_subscript */
 };
-
+//---------------------------------------------------------------------------
 /** VclArrayProperty is a wrapper around an array property in a Delphi object.
  *  This is a wrokaround as the Delphi RTTI does not support access to read/write array
  *  properties in a generic way.
  */
-PyTypeObject VclArrayPropertyType =
+PyTypeObject VclIndexedProperty_Type =
 {
 	PyObject_HEAD_INIT(NULL)
 	"vcl.VclArrayProperty",  	 /* tp_name */
-	sizeof(TVclArrayProperty), /* tp_basicsize */
+	sizeof(TVclIndexedProperty), /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	0, 												 /* tp_dealloc */
 	0,                         /* tp_print */
 	0,                         /* tp_getattr */
 	0,                         /* tp_setattr */
 	0,                         /* tp_compare */
-	(reprfunc)VclArrayProperty_Repr,  /*tp_repr */
+	(reprfunc)VclIndexedProperty_Repr,  /*tp_repr */
 	0, 												 /* tp_as_number */
 	0,                         /* tp_as_sequence */
-	&VclArrayPropertyMapping,  /* tp_as_mapping */
+	&VclIndexedProperty_Mapping,  /* tp_as_mapping */
 	0,                         /* tp_hash */
 	0, 												 /* tp_call */
 	0,                         /* tp_str */
@@ -146,7 +146,7 @@ PyTypeObject VclArrayPropertyType =
  *  \param Name: This is the name of the array property.
  *  \return New reference to an array property wrapper.
  */
-PyObject* VclArrayProperty_Create(TObject *Instance, const String &Name)
+PyObject* VclIndexedProperty_Create(TObject *Instance, const String &Name)
 {
   TRttiType *Type = Context.GetType(Instance->ClassType());
   if(Type == NULL)
@@ -154,7 +154,7 @@ PyObject* VclArrayProperty_Create(TObject *Instance, const String &Name)
   TRttiIndexedProperty *Property = Type->GetIndexedProperty(Name);
   if(Property == NULL || Property->Visibility == mvPrivate || Property->Visibility == mvProtected)
 		return NULL;
-	TVclArrayProperty *VclProperty = PyObject_New(TVclArrayProperty, &VclArrayPropertyType);
+	TVclIndexedProperty *VclProperty = PyObject_New(TVclIndexedProperty, &VclIndexedProperty_Type);
 	VclProperty->Instance = Instance;
 	VclProperty->IndexedProperty = Property;
 	return reinterpret_cast<PyObject*>(VclProperty);

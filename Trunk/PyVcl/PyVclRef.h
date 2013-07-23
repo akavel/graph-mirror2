@@ -6,7 +6,7 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-	extern PyTypeObject VclRefType;
+	extern PyTypeObject VclRef_Type;
 	PyObject* VclRef_Create(TValue *Value);
 }
 #endif

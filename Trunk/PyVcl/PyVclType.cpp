@@ -79,7 +79,7 @@ PyObject* VclType_Create(TRttiType *Type)
 	VclType->Type.tp_doc = "VCL type";
 	VclType->Type.tp_new = VclType_New;
 	VclType->Type.tp_init = reinterpret_cast<initproc>(VclType_Init);
-	VclType->Type.tp_base = &VclObjectType;
+	VclType->Type.tp_base = &VclObject_Type;
 	VclType->Type.tp_flags = Py_TPFLAGS_DEFAULT;
 	VclType->RttiType = Type;
 	if(PyType_Ready(&VclType->Type) < 0)
