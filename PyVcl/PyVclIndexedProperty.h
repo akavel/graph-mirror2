@@ -13,9 +13,9 @@
 #include "Python.hpp"
 namespace Python
 {
-	extern PyTypeObject VclArrayPropertyType;
+	extern PyTypeObject VclIndexedProperty_Type;
 
-	PyObject* VclArrayProperty_Create(TObject *Instance, const String &Name);
+	PyObject* VclIndexedProperty_Create(TObject *Instance, const String &Name);
 }
 //---------------------------------------------------------------------------
 #endif

@@ -110,6 +110,8 @@
         <LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <Debugger_CWD>B:\Graph\PyVcl\Debug\Win64</Debugger_CWD>
+        <Debugger_RunParams>B:\Graph\PyVcl\Scripts\Console.py</Debugger_RunParams>
         <Debugger_HostApplication>c:\python32_64\python.exe</Debugger_HostApplication>
         <LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib</LinkPackageStatics>
     </PropertyGroup>
@@ -123,9 +125,6 @@
         </DelphiCompile>
         <CppCompile Include="Main.cpp">
             <BuildOrder>1</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="NewPyVclArrayProperty.cpp">
-            <BuildOrder>2</BuildOrder>
         </CppCompile>
         <CppCompile Include="PythonBind.cpp">
             <DependentOn>PythonBind.h</DependentOn>
@@ -142,6 +141,9 @@
         <CppCompile Include="PyVclFunction.cpp">
             <DependentOn>PyVclFunction.h</DependentOn>
             <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PyVclIndexedProperty.cpp">
+            <BuildOrder>10</BuildOrder>
         </CppCompile>
         <CppCompile Include="PyVclMethod.cpp">
             <DependentOn>PyVclMethod.h</DependentOn>

@@ -135,7 +135,7 @@ static void VclMethod_Dealloc(TVclMethod* self)
 //---------------------------------------------------------------------------
 /** VclMethod is a proxy for one or more methods of a VCL object.
  */
-PyTypeObject VclMethodType =
+PyTypeObject VclMethod_Type =
 {
 	PyObject_HEAD_INIT(NULL)
 	"vcl.VclMethod",        	 /* tp_name */
@@ -185,7 +185,7 @@ PyTypeObject VclMethodType =
  */
 PyObject* VclMethod_Create(TVclObject *Object, TObject *Instance, const DynamicArray<TRttiMethod*> &Methods)
 {
-	TVclMethod *VclMethod = PyObject_New(TVclMethod, &VclMethodType);
+	TVclMethod *VclMethod = PyObject_New(TVclMethod, &VclMethod_Type);
 	new(&VclMethod->Methods) DynamicArray<TRttiMethod*>(Methods);
   Py_XINCREF(reinterpret_cast<PyObject*>(Object));
 	VclMethod->Object = Object;

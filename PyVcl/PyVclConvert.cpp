@@ -236,10 +236,15 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 
 		case tkSet:
     {
-      TPyObjectPtr SetStr = ToPyObjectPtr(SetToString(Value.TypeInfo, *static_cast<int*>(Value.GetReferenceToRawData()), false));
-      TPyObjectPtr Sep = ToPyObjectPtr(",");
-      TPyObjectPtr List(PyUnicode_Split(SetStr.get(), Sep.get(), -1), false);
-      return PySet_New(List.get());
+      String Str = SetToString(Value.TypeInfo, *static_cast<int*>(Value.GetReferenceToRawData()), false);
+      if(Str.Length() > 0)
+      {
+        TPyObjectPtr SetStr = ToPyObjectPtr(Str);
+        TPyObjectPtr Sep = ToPyObjectPtr(",");
+        TPyObjectPtr List(PyUnicode_Split(SetStr.get(), Sep.get(), -1), false);
+        return PySet_New(List.get());
+      }
+      return PySet_New(NULL);
     }
 		case tkChar:
 			return ToPyObject(Value.AsType<char>());

@@ -47,7 +47,7 @@ template <typename T> inline PTypeInfo Rtti()
  *  \Warning: Don't use __delphirtti() on classes. It may make it impossible to access
  *  properties on that class through RTTI. See QC #90773
  */
-const TFunctionEntry FunctionList[] =
+static const TFunctionEntry FunctionList[] =
 {
 	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
@@ -109,7 +109,7 @@ static PyObject *VclFunction_Call(TVclFunction* self, PyObject *args, PyObject *
 //---------------------------------------------------------------------------
 /** A VclFunction is a proxy of a global VCL function made availabe to PyVcl.
  */
-PyTypeObject VclFunctionType =
+PyTypeObject VclFunction_Type =
 {
 	PyObject_HEAD_INIT(NULL)
 	"vcl.VclFunction",       	 /* tp_name */
@@ -161,7 +161,7 @@ PyObject* VclFunction_Create(const String &Name)
 	for(unsigned I = 0; I < sizeof(FunctionList) / sizeof(FunctionList[0]); I++)
 		if(Name == FunctionList[I].Name)
 		{
-			TVclFunction *VclFunction = PyObject_New(TVclFunction, &VclFunctionType);
+			TVclFunction *VclFunction = PyObject_New(TVclFunction, &VclFunction_Type);
 			VclFunction->Function = &FunctionList[I];
 			return reinterpret_cast<PyObject*>(VclFunction);
 		}

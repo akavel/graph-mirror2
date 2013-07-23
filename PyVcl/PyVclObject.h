@@ -20,7 +20,7 @@ namespace Python
 		char Owned; //bool
 	};
 
-	extern PyTypeObject VclObjectType;
+	extern PyTypeObject VclObject_Type;
 
 	PyObject* VclObject_Create(TObject *Instance, bool Owned);
 	bool VclObject_Check(PyObject *O);

@@ -21,7 +21,7 @@
 #include "PyVclObject.h"
 #include "PyVClType.h"
 #include "PyVclFunction.h"
-#include "PyVclArrayProperty.h"
+#include "PyVclIndexedProperty.h"
 #include <RTLConsts.hpp>
 #include "PyVclRef.h"
 
@@ -130,7 +130,7 @@ static PyMethodDef VclModule_Methods[] =
 /** This type derives from PyModule_Type (module in Python) and is used as the class
  *  of the vcl module to make it possible to set tp_getattro.
  */
-static PyTypeObject VclModuleType =
+static PyTypeObject VclModule_Type =
 {
 	PyObject_HEAD_INIT(NULL)
 	"vclmodule",        	 		 /* tp_name */
@@ -193,11 +193,11 @@ PyObject* InitPyVcl()
 {
   //VclModuleType derives from PyModule_Type and VclModuleType must therefore have
   //the same size.
-  VclModuleType.tp_basicsize = PyModule_Type.tp_basicsize;
-  VclModuleType.tp_base = &PyModule_Type;
-	if(PyType_Ready(&VclModuleType) < 0 || PyType_Ready(&VclMethodType) < 0 ||
-		PyType_Ready(&VclObjectType) < 0 || PyType_Ready(&VclFunctionType) < 0 ||
-		PyType_Ready(&VclArrayPropertyType) < 0 || PyType_Ready(&VclRefType) < 0)
+  VclModule_Type.tp_basicsize = PyModule_Type.tp_basicsize;
+  VclModule_Type.tp_base = &PyModule_Type;
+	if(PyType_Ready(&VclModule_Type) < 0 || PyType_Ready(&VclMethod_Type) < 0 ||
+		PyType_Ready(&VclObject_Type) < 0 || PyType_Ready(&VclFunction_Type) < 0 ||
+		PyType_Ready(&VclIndexedProperty_Type) < 0 || PyType_Ready(&VclRef_Type) < 0)
 		return NULL;
 
   //Module must be created by PyModule_Create().
@@ -216,7 +216,7 @@ PyObject* InitPyVcl()
 
   //Nasty hack: Change vcl module to be an instance of VclModuleType instead of
   //PyModule_Type (module).
-  PyVclModule->ob_type = &VclModuleType;
+  PyVclModule->ob_type = &VclModule_Type;
 	return PyErr_Occurred() ? NULL : PyVclModule;
 }
 //---------------------------------------------------------------------------

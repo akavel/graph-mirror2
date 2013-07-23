@@ -76,7 +76,7 @@ static PyGetSetDef VclRefr_GetSeters[] =
  *  the actual value. This is necessary because it is not possible to change the 
  *  value of a built-in type in Python.
  */
-PyTypeObject VclRefType =
+PyTypeObject VclRef_Type =
 {
 	PyObject_HEAD_INIT(NULL)
 	"vcl.VclRef",        	 		 /* tp_name */
@@ -125,7 +125,7 @@ PyTypeObject VclRefType =
  */
 PyObject* VclRef_Create(TValue *Value)
 {
-	TVclRef *VclRef = PyObject_New(TVclRef, &VclRefType);
+	TVclRef *VclRef = PyObject_New(TVclRef, &VclRef_Type);
 	VclRef->Value = Value;
 	return reinterpret_cast<PyObject*>(VclRef);
 }
