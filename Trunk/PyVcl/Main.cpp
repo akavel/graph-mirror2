@@ -4,6 +4,7 @@
 #include "Python.hpp"
 #include "PyVcl.h"
 #include "PythonBind.h"
+#include <Math.hpp>
 //---------------------------------------------------------------------------
 #pragma argsused
 int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason, void* lpReserved)
@@ -13,6 +14,9 @@ int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason, void* lpReserved
 //---------------------------------------------------------------------------
 PyMODINIT_FUNC __stdcall PyInit_vcl(void)
 {
+  //We need to mask the InvalidOp SSE exception to prevent math.sqrt(-1) in Python from
+  //raising a C++ exception. It only seems to be a problem with 64 bit Python.
+  SetSSEExceptionMask(GetSSEExceptionMask() << exInvalidOp);
   Application->Initialize();
   return Python::InitPyVcl();
 }
