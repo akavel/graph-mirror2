@@ -27,7 +27,9 @@ struct TVclRef
  */
 static PyObject *VclRef_Repr(TVclRef* self)
 {
-	return ToPyObject(L"<Reference to '" + self->Value->ToString() + L"'>");
+  if(self->Value != NULL)
+  	return ToPyObject(L"<Reference to '" + self->Value->ToString() + L"'>");
+  return ToPyObject(L"<Reference to freed value>");
 }
 //---------------------------------------------------------------------------
 /** Retrieve the value refered to by the reference object.
@@ -36,6 +38,8 @@ static PyObject* VclRef_GetValue(TVclRef *self, void *closure)
 {
 	try
 	{
+    if(self->Value == NULL)
+      Py_RETURN_NONE;
 		return ToPyObject(*self->Value);
 	}
 	catch(...)
@@ -50,6 +54,8 @@ static int VclRef_SetValue(TVclRef *self, PyObject *value, void *closure)
 {
 	try
 	{
+    if(self->Value == NULL)
+      throw EPyVclError("Trying to set value for broken reference.");
 		*self->Value = ToValue(value, self->Value->TypeInfo);
 		return 0;
 	}
@@ -128,6 +134,40 @@ PyObject* VclRef_Create(TValue *Value)
 	TVclRef *VclRef = PyObject_New(TVclRef, &VclRef_Type);
 	VclRef->Value = Value;
 	return reinterpret_cast<PyObject*>(VclRef);
+}
+//---------------------------------------------------------------------------
+/** Returns true if O is a VclRef object.
+ */
+bool VclRef_Check(PyObject *O)
+{
+  return O->ob_type == &VclRef_Type;
+}
+//---------------------------------------------------------------------------
+/** Return the value which the given VclRef object is a reference for.
+ *  \param O: Pointer to a VclRef object.
+ *  \return Value refered to by O.
+ *  \throw EPyVclError if O is not a VclRef object.
+ */
+const TValue& VclRef_AsValue(PyObject *O)
+{
+  if(O->ob_type == &VclRef_Type)
+  {
+    if(reinterpret_cast<TVclRef*>(O)->Value == NULL)
+      throw EPyVclError("Value referenced by VclRef has been freed.");
+    return *reinterpret_cast<TVclRef*>(O)->Value;
+  }
+  throw EPyVclError("Object is not a vcl.VclRef object.");
+}
+//---------------------------------------------------------------------------
+/** Invalidate the reference inside the VclRef object.
+ *  \param O: Pointer to a VclRef object.
+ *  \throw EPyVclError if O is not a VclRef object.
+ */
+void VclRef_Invalidate(PyObject *O)
+{
+  if(O->ob_type != &VclRef_Type)
+    throw EPyVclError("Object is not a vcl.VclRef object.");
+  reinterpret_cast<TVclRef*>(O)->Value = NULL;
 }
 //---------------------------------------------------------------------------
 } //namespace Python

@@ -131,6 +131,15 @@ void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TV
 	for(int I = 0; I < Count; I++)
 		PyTuple_SET_ITEM(PyArgs, I, Params[I+1].FByRefParam ? VclRef_Create(&Args[I+1]) : ToPyObject(Args[I+1]));
 	PyObject *PyResult = PyObject_CallObject(Object, PyArgs);
+
+  //Invalidate all VclREf objects used as arguments
+	for(int I = 0; I < Count; I++)
+  {
+    PyObject *Arg = PyTuple_GET_ITEM(PyArgs, I);
+    if(VclRef_Check(Arg))
+      VclRef_Invalidate(Arg);
+  }
+
 	Py_XDECREF(PyArgs);
 	if(PyResult != NULL && PyResult != Py_None)
 		Result = ToValue(PyResult, NULL); //Bug: Type of result missing
