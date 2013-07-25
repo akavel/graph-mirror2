@@ -16,6 +16,8 @@
 #include "PyVclConvert.h"
 #include "PyVclObject.h"
 #include "PyVclMethod.h"
+#include "PyVclClosure.h"
+#include "PyVclRef.h"
 //---------------------------------------------------------------------------
 namespace Python
 {
@@ -38,6 +40,9 @@ String GetTypeName(PyObject *O)
  */
 TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 {
+  if(VclRef_Check(O))
+    return VclRef_AsValue(O);
+
 	TValue Result;
 	switch(TypeInfo->Kind)
 	{
@@ -279,9 +284,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 				Py_IncRef(Result);
 				return Result;
 			}
-			String Name = Object->MethodName(Method.Code);
-			TRttiType *Type = Context.GetType(Object->ClassType());
-			return VclMethod_Create(NULL, Object, Type->GetMethods(Name));
+      return VclClosure_Create(Value);
 		}
 
 		case tkInt64:

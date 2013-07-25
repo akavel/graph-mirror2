@@ -18,6 +18,7 @@
 #include <OleCtrls.hpp>
 #include <clipbrd.hpp>
 #include "PyVClMethod.h"
+#include "PyVClClosure.h"
 #include "PyVclObject.h"
 #include "PyVClType.h"
 #include "PyVclFunction.h"
@@ -197,7 +198,8 @@ PyObject* InitPyVcl()
   VclModule_Type.tp_base = &PyModule_Type;
 	if(PyType_Ready(&VclModule_Type) < 0 || PyType_Ready(&VclMethod_Type) < 0 ||
 		PyType_Ready(&VclObject_Type) < 0 || PyType_Ready(&VclFunction_Type) < 0 ||
-		PyType_Ready(&VclIndexedProperty_Type) < 0 || PyType_Ready(&VclRef_Type) < 0)
+		PyType_Ready(&VclIndexedProperty_Type) < 0 || PyType_Ready(&VclRef_Type) < 0 ||
+    PyType_Ready(&VclClosure_Type) < 0)
 		return NULL;
 
   //Module must be created by PyModule_Create().
