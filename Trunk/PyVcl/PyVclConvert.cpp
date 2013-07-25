@@ -267,7 +267,11 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			DynamicArray<TRttiField*> Fields = Type->GetFields();
 			PyObject *Tuple = PyTuple_New(Fields.Length);
 			for(int I = 0; I < Fields.Length; I++)
-				PyTuple_SET_ITEM(Tuple, I, ToPyObject(Fields[I]->GetValue(Data)));
+        //Some fields (arrays?) do not have RTTI
+        if(Fields[I]->FieldType != NULL)
+  				PyTuple_SET_ITEM(Tuple, I, ToPyObject(Fields[I]->GetValue(Data)));
+        else
+  				PyTuple_SET_ITEM(Tuple, I, (Py_INCREF(Py_None), Py_None));
 			return Tuple;
 		}
 
@@ -281,7 +285,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			if(TMethodImplementation *Impl = dynamic_cast<TMethodImplementation*>(Object))
 			{
 				PyObject *Result = static_cast<PyObject*>(Impl->FUserData);
-				Py_IncRef(Result);
+				Py_INCREF(Result);
 				return Result;
 			}
       return VclClosure_Create(Value);
