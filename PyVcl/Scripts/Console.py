@@ -126,6 +126,15 @@ class ConsoleForm:
     self.IndentLevel = 0
     self.CacheIndex = len(self.TextCache) - 1
   
+  def ShowException(self, StartLine):
+    import traceback
+    TraceBack = traceback.format_exception(*sys.exc_info())
+    self.WriteText(TraceBack[0], 0xFF)
+    for Str in TraceBack[StartLine:]: self.WriteText(Str, 0xFF)
+    self.WritePrompt()
+    self.Command = ""
+    self.IndentLevel = 0
+
   def HandleNewLine(self):  
     Str = self.GetUserString()
     self.RichEdit.SelStart = 0x7FFFFFFF
@@ -153,14 +162,10 @@ class ConsoleForm:
           self.IndentLevel += 1
     except SystemExit:
       vcl.Application.Terminate()
+    except SyntaxError:
+      self.ShowException(6)
     except Exception:
-      import traceback
-      TraceBack = traceback.format_exception(*sys.exc_info())
-      self.WriteText(TraceBack[0], 0xFF)
-      for Str in TraceBack[2:]: self.WriteText(Str, 0xFF)
-      self.WritePrompt()
-      self.Command = ""
-      self.IndentLevel = 0
+      self.ShowException(2)
     self.RichEdit.SelText = "\t" * self.IndentLevel  
     
   def WritePrompt(self, Str=">>> "):
