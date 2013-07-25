@@ -15,7 +15,6 @@ class ConsoleForm:
       OnKeyDown=self.KeyDown, OnKeyPress=self.KeyPress)      
     self.RichEdit.Font.Name = "Courier New"
     self.RichEdit.Font.Size = 10
-    self.OldWindowProc = self.RichEdit.WindowProc
     
     self.PopupMenu = vcl.TPopupMenu(None)
     self.PopupMenu.Items.Add(vcl.TMenuItem(self.PopupMenu, Caption="Clear", _owned=False, OnClick=self.Clear))
@@ -181,10 +180,7 @@ class ConsoleForm:
   
   def ShowModal(self):
     return self.Form.ShowModal()
-    
-  def WindowProc(self, Message):
-    self.OldWindowProc(Message)
-    
+        
 if __name__ == "__main__":
   Form = ConsoleForm()
   Form.ShowModal()
