@@ -47,7 +47,7 @@
 	#define _DEBUG_ERROR2(mesg, where) Func32::LogDebugString("error " mesg " at ", where)
 #else
 	#define BOOST_DISABLE_ASSERTS
-	#ifdef __BCPLUSPLUS__
+	#if defined(__BCPLUSPLUS__) && defined(_WIN32) && !defined(_WIN64)
 		//Nasty hack: C++ Builder does not inline functions with throw specifications
 		#undef throw
 		#define throw(...)

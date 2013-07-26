@@ -18,7 +18,12 @@
 #include <boost/math/complex/atan.hpp>
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_errno.h>
+
+//Workaround for C++ Builder XE4 64 bit compiler. See QC #117415
+#include <boost/tr1/detail/config.hpp>
+#undef BOOST_HAS_TR1_COMPLEX_OVERLOADS
 #include <boost/tr1/complex.hpp>
+
 #define BOOST_THREAD_USE_LIB //Needed by thread.hpp
 #include <boost/thread.hpp>
 //Disable Warnings: "Condition is always true/false", "Unreachable code"
@@ -29,7 +34,7 @@
 #define PI    3.141592653589793238462643L
 namespace Func32
 {
-//The using derectives are necessary because names in std:: will not be used if they are found in Func32::
+//The using directives are necessary because names in std:: will not be used if they are found in Func32::
 using namespace std;
 using std::pow;
 using std::fmod;
