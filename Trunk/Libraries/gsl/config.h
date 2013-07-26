@@ -88,7 +88,7 @@
 #define HAVE_IEEE_DENORMALS 1
 
 /* Define if you have inline */
-#define HAVE_INLINE 1
+//#define HAVE_INLINE 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1

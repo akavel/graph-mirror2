@@ -1095,7 +1095,7 @@ void Test()
 std::wstringstream DebugStreamBuf;
 int main()
 {
-#ifdef __BORLANDC__
+#if defined(__BORLANDC__) && !defined(_WIN64)
 	_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
 #endif
 	std::wclog.rdbuf(DebugStreamBuf.rdbuf()); //Write debug messages to stringstream instead of console
