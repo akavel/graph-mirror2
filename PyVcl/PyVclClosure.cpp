@@ -47,6 +47,7 @@ static PyObject *VclClosure_Repr(TVclClosure* self)
  */
 static PyObject *VclClosure_Call(TVclClosure* self, PyObject *args, PyObject *keywds)
 {
+#if __BORLANDC_ >= 0x0640
 	try
 	{
     TRttiType *Type = Context.GetType(self->Callable.TypeInfo);
@@ -64,6 +65,9 @@ static PyObject *VclClosure_Call(TVclClosure* self, PyObject *args, PyObject *ke
 	{
 		return PyVclHandleException();
 	}
+#else
+  return SetErrorString(PyExc_NotImplementedError, "Not supported by this compiler version.");
+#endif
 }
 //---------------------------------------------------------------------------
 /** Destructor for VclClosure.
