@@ -16,7 +16,7 @@ PyMODINIT_FUNC __stdcall PyInit_vcl(void)
 {
   //We need to mask the InvalidOp SSE exception to prevent math.sqrt(-1) in Python from
   //raising a C++ exception. It only seems to be a problem with 64 bit Python.
-  SetSSEExceptionMask(GetSSEExceptionMask() << exInvalidOp);
+  SetExceptionMask(GetExceptionMask() << exInvalidOp);
   Application->Initialize();
   return Python::InitPyVcl();
 }

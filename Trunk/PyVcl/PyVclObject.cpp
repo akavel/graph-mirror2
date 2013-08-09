@@ -509,7 +509,7 @@ static PyObject* VclObject_Subscript(TVclObject *self, PyObject *key)
 		return PyVclHandleException();
 	}
 #else
-  return SetErrorString(NotImplementedError, "Not supported by this compiler");
+  return SetErrorString(PyExc_NotImplementedError, "Not supported by this compiler");
 #endif
 }
 //---------------------------------------------------------------------------
@@ -545,7 +545,8 @@ static int VclObject_SetSubscript(TVclObject *self, PyObject *key, PyObject *v)
 		return -1;
 	}
 #else
-  return SetErrorString(NotImplementedError, "Not supported by this compiler");
+  SetErrorString(PyExc_NotImplementedError, "Not supported by this compiler");
+  return -1;
 #endif
 }
 //---------------------------------------------------------------------------
