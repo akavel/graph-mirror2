@@ -38,3 +38,7 @@ tr.question td {
 tr.answer td {
    vertical-align: top;
 }
+
+pre.programlisting {
+  width: auto; /* Width=0 only works for chm files. */
+}
