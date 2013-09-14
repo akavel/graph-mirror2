@@ -28,6 +28,7 @@ class TConfigRegistry
   static std::wstring GetKey(const std::wstring &Key);
   unsigned GetValueSize(const std::wstring &Name, unsigned ValueType = REG_NONE) const;
   unsigned GetValueSize(const std::string &Name, unsigned ValueType = REG_NONE) const;
+  TConfigRegistry(const TConfigRegistry&);
 
 public:
   TConfigRegistry() : Handle(NULL) {}
