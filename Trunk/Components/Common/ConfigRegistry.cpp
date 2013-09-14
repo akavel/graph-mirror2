@@ -14,6 +14,10 @@
 #include <vector>
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
+/** Check the result of a registry operation.
+ *  \param ErrorCode: The result to check.
+ *  \throw ERegistryError if the ErrorCode is not ERROR_SUCCESS.
+ */
 void CheckRegistryResult(DWORD ErrorCode)
 {
   if(ErrorCode != ERROR_SUCCESS)
@@ -24,6 +28,12 @@ void CheckRegistryResult(DWORD ErrorCode)
   }
 }
 //---------------------------------------------------------------------------
+/** Create new TConfigRegistry.
+ *  \param Key: Name of key to open.
+ *  \param RootKey: Root key. Defaults to HKEY_CURRENT_USER.
+ *  \param Create: If true, attempts to create the key if doesn't exist.
+ *  \throw ERegistryError if Create is true and the key could not be created.
+ */
 TConfigRegistry::TConfigRegistry(const std::wstring &Key, HKEY RootKey, bool Create)
   : Handle(NULL)
 {
@@ -33,6 +43,8 @@ TConfigRegistry::TConfigRegistry(const std::wstring &Key, HKEY RootKey, bool Cre
     RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, KEY_READ, &Handle);
 }
 //---------------------------------------------------------------------------
+/** Replaces / with \ in key name.
+ */
 std::wstring TConfigRegistry::GetKey(const std::wstring &Key)
 {
   //Replace '/' in Key with '\\'
@@ -41,18 +53,30 @@ std::wstring TConfigRegistry::GetKey(const std::wstring &Key)
   return Result;
 }
 //---------------------------------------------------------------------------
+/** Create a new sub key.
+ *  \param Key: Name of new sub key.
+ *  \param RootKey: Root key. Defaults to HKEY_CURRENT_USER.
+ *  \return true if the key was created or already existed. false on error.
+ */
 bool TConfigRegistry::CreateKey(const std::wstring &Key, HKEY RootKey)
 {
   CloseKey();
   return RegCreateKeyEx(RootKey, GetKey(Key).c_str(), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &Handle, NULL) == ERROR_SUCCESS;
 }
 //---------------------------------------------------------------------------
+/** Open a sub key.
+ *  \param Key: Name of sub key to open.
+ *  \param RootKey: Root key. Defaults to HKEY_CURRENT_USER.
+ *  \param ReadOnly: If true (default), the key is opened with read only access.
+ */
 bool TConfigRegistry::OpenKey(const std::wstring &Key, HKEY RootKey, bool ReadOnly)
 {
   CloseKey();
   return RegOpenKeyEx(RootKey, GetKey(Key).c_str(), 0, ReadOnly ? KEY_READ : KEY_ALL_ACCESS, &Handle) == ERROR_SUCCESS;
 }
 //---------------------------------------------------------------------------
+/** Close the key handle if it is open.
+ */
 void TConfigRegistry::CloseKey()
 {
   if(Handle)
@@ -60,21 +84,37 @@ void TConfigRegistry::CloseKey()
   Handle = NULL;
 }
 //---------------------------------------------------------------------------
+/** Write a value to the open key.
+ *  \param Name: Value name.
+ *  \param Value: Value to set.
+ */
 void TConfigRegistry::Write(const std::string &Name, const std::string &Value)
 {
   RegSetValueExA(Handle, Name.c_str(), 0, REG_SZ, reinterpret_cast<const BYTE*>(Value.c_str()), Value.size() + 1);
 }
 //---------------------------------------------------------------------------
+/** Write a value to the open key.
+ *  \param Name: Value name.
+ *  \param Value: Value to set.
+ */
 void TConfigRegistry::Write(const std::wstring &Name, const std::wstring &Value)
 {
   RegSetValueEx(Handle, Name.c_str(), 0, REG_SZ, reinterpret_cast<const BYTE*>(Value.c_str()), 2*(Value.size() + 1));
 }
 //---------------------------------------------------------------------------
+/** Write a value to the open key.
+ *  \param Name: Value name.
+ *  \param Value: Value to set.
+ */
 void TConfigRegistry::Write(const std::wstring &Name, int Value)
 {
   RegSetValueEx(Handle, Name.c_str(), 0, REG_DWORD, reinterpret_cast<const BYTE*>(&Value), sizeof(Value));
 }
 //---------------------------------------------------------------------------
+/** Write a value to the open key.
+ *  \param Name: Value name.
+ *  \param Value: Value to set.
+ */
 void TConfigRegistry::Write(const std::string &Name, int Value)
 {
   RegSetValueExA(Handle, Name.c_str(), 0, REG_DWORD, reinterpret_cast<const BYTE*>(&Value), sizeof(Value));
@@ -241,14 +281,26 @@ bool RegKeyExists(const std::wstring &Key, HKEY RootKey)
 //---------------------------------------------------------------------------
 void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Value)
 {
-  TConfigRegistry Registry(Key, RootKey, true);
-  Registry.Write(ValueName, Value);
+  try
+  {
+    TConfigRegistry Registry(Key, RootKey, true);
+    Registry.Write(ValueName, Value);
+  }
+  catch(ERegistryError &E)
+  {
+  }
 }
 //---------------------------------------------------------------------------
 void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, unsigned Value)
 {
-  TConfigRegistry Registry(Key, RootKey, true);
-  Registry.Write(ValueName, Value);
+  try
+  {
+    TConfigRegistry Registry(Key, RootKey, true);
+    Registry.Write(ValueName, Value);
+  }
+  catch(ERegistryError &E)
+  {
+  }
 }
 //---------------------------------------------------------------------------
 
