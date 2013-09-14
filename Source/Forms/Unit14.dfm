@@ -33,8 +33,8 @@ object Form14: TForm14
     FocusControl = Edit1
   end
   object Button1: TButton
-    Left = 208
-    Top = 521
+    Left = 141
+    Top = 523
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -68,8 +68,8 @@ object Form14: TForm14
     OnSetText = GridSetText
   end
   object Button2: TButton
-    Left = 296
-    Top = 521
+    Left = 222
+    Top = 523
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -112,7 +112,7 @@ object Form14: TForm14
   end
   object Button3: TButton
     Left = 384
-    Top = 521
+    Top = 523
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
@@ -591,6 +591,17 @@ object Form14: TForm14
         end
       end
     end
+  end
+  object Button4: TButton
+    Left = 303
+    Top = 523
+    Width = 75
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = 'Apply'
+    Enabled = False
+    TabOrder = 7
+    OnClick = Button4Click
   end
   object PopupMenu1: TPopupActionBar
     OnPopup = PopupMenu1Popup
