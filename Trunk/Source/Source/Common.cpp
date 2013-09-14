@@ -180,8 +180,8 @@ void GetLanguageList(TStrings *List)
   TempList->Add("English"); //We always have English
 
   TSearchRec SearchRec;
-  String Path = ExtractFilePath(Application->ExeName) + "locale\\";
-  int Result = FindFirst(Path + "*.mo", faReadOnly | faArchive, SearchRec);
+  String BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
+  int Result = FindFirst(BaseDir + "\\Locale\\*.mo", faReadOnly | faArchive, SearchRec);
   while(Result == 0)
   {
     TempList->Add(SearchRec.Name.SubString(1, SearchRec.Name.Length() - 3));
