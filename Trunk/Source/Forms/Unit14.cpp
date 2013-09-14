@@ -125,109 +125,7 @@ void __fastcall TForm14::GridEditorKeyPress(TInplaceEdit *InplaceEdit,
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Button1Click(TObject *Sender)
 {
-  TErrorBarType xErrorBarType, yErrorBarType;
-  double xErrorValue = 0, yErrorValue = 0;
-  if(!CheckBox3->Checked)
-    xErrorBarType = ebtNone;
-  else if(RadioButton1->Checked)
-  {
-    xErrorValue = MakeFloat(Edit4, LoadRes(RES_POSITIVE, RadioButton1->Caption), 0);
-    xErrorBarType = ebtFixed;
-  }
-  else if(RadioButton2->Checked)
-  {
-    xErrorValue = MakeFloat(Edit5, LoadRes(RES_POSITIVE, RadioButton2->Caption), 0);
-    xErrorBarType = ebtRelative;
-  }
-  else
-    xErrorBarType = ebtCustom;
-
-  if(!CheckBox4->Checked)
-    yErrorBarType = ebtNone;
-  else if(RadioButton4->Checked)
-  {
-    yErrorValue = MakeFloat(Edit6, LoadRes(RES_POSITIVE, RadioButton4->Caption), 0);
-    yErrorBarType = ebtFixed;
-  }
-  else if(RadioButton5->Checked)
-  {
-    yErrorValue = MakeFloat(Edit7, LoadRes(RES_POSITIVE, RadioButton5->Caption), 0);
-    yErrorBarType = ebtRelative;
-  }
-  else
-    yErrorBarType = ebtCustom;
-
-  boost::shared_ptr<TPointSeries> PointSeries(new TPointSeries(
-    clBlack,
-    ExtColorBox1->Selected,
-    ExtColorBox2->Selected,
-    Edit2->Text.ToInt(),
-    Edit3->Text.ToInt(),
-    PointSelect1->ItemIndex,
-    LineSelect1->LineStyle,
-    FromGuiAlgorithm[ComboBox2->ItemIndex],
-    CheckBox2->Checked,
-    FontDialog1->Font,
-    static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex),
-    RadioGroup1->ItemIndex ? ptPolar : ptCartesian,
-    xErrorBarType,
-    xErrorValue,
-    yErrorBarType,
-    yErrorValue
-  ));
-  PointSeries->SetLegendText(ToWString(Edit1->Text));
-
-  unsigned Count = DataPoints.size();
-  for(unsigned I = 0; I < Count; I++)
-  {
-    DataPoints[I].First = Trim(DataPoints[I].First);
-    DataPoints[I].Second = Trim(DataPoints[I].Second);
-    if(DataPoints[I].First.empty() && DataPoints[I].Second.empty())
-      continue;
-
-    if(DataPoints[I].First.empty() || DataPoints[I].Second.empty())
-    {
-      Grid->Col = DataPoints[I].Second.empty();
-      Grid->Row = I + 1;
-      Grid->SetFocus();
-      MessageBox(LoadRes(534), LoadRes(533));
-      return;
-    }
-
-    //Just for validation
-    CellToDouble(Grid, 0, I+1);
-    CellToDouble(Grid, 1, I+1);
-
-    PointSeries->InsertPoint(DataPoints[I], -1, false);
-  }
-
-  if(PointSeries->PointCount() == 0)
-  {
-    MessageBox(LoadRes(536), LoadRes(533), MB_ICONWARNING);
-    return;
-  }
-
-  if(Series)
-  {
-    PointSeries->SetVisible(Series->GetVisible());
-    PointSeries->SetShowInLegend(Series->GetShowInLegend());
-    int Index = Data.GetIndex(Series);
-    UndoList.Push(TUndoChange(Series, PointSeries));
-    Data.Replace(Series, PointSeries);
-  }
-  else
-  {
-    UndoList.Push(TUndoAdd(PointSeries));
-    Data.Insert(PointSeries);
-  }
-
-  PointSeries->Update();
-  Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, Edit2->Text.ToInt());
-  Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, Edit3->Text.ToInt());
-  if(FontChanged)
-    Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
-  SetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, FromGuiAlgorithm[ComboBox2->ItemIndex]);
-
+  Button4Click(Sender);
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
@@ -291,6 +189,7 @@ int TForm14::EditPointSeries(const boost::shared_ptr<TPointSeries> &P)
         break;
     }
   }
+  Button4->Enabled = true;
   return ShowModal();
 }
 //---------------------------------------------------------------------------
@@ -502,6 +401,112 @@ void __fastcall TForm14::RadioGroup1Click(TObject *Sender)
 {
   Grid->Invalidate();
   PaintBox1->Invalidate();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm14::Button4Click(TObject *Sender)
+{
+  TErrorBarType xErrorBarType, yErrorBarType;
+  double xErrorValue = 0, yErrorValue = 0;
+  if(!CheckBox3->Checked)
+    xErrorBarType = ebtNone;
+  else if(RadioButton1->Checked)
+  {
+    xErrorValue = MakeFloat(Edit4, LoadRes(RES_POSITIVE, RadioButton1->Caption), 0);
+    xErrorBarType = ebtFixed;
+  }
+  else if(RadioButton2->Checked)
+  {
+    xErrorValue = MakeFloat(Edit5, LoadRes(RES_POSITIVE, RadioButton2->Caption), 0);
+    xErrorBarType = ebtRelative;
+  }
+  else
+    xErrorBarType = ebtCustom;
+
+  if(!CheckBox4->Checked)
+    yErrorBarType = ebtNone;
+  else if(RadioButton4->Checked)
+  {
+    yErrorValue = MakeFloat(Edit6, LoadRes(RES_POSITIVE, RadioButton4->Caption), 0);
+    yErrorBarType = ebtFixed;
+  }
+  else if(RadioButton5->Checked)
+  {
+    yErrorValue = MakeFloat(Edit7, LoadRes(RES_POSITIVE, RadioButton5->Caption), 0);
+    yErrorBarType = ebtRelative;
+  }
+  else
+    yErrorBarType = ebtCustom;
+
+  boost::shared_ptr<TPointSeries> PointSeries(new TPointSeries(
+    clBlack,
+    ExtColorBox1->Selected,
+    ExtColorBox2->Selected,
+    Edit2->Text.ToInt(),
+    Edit3->Text.ToInt(),
+    PointSelect1->ItemIndex,
+    LineSelect1->LineStyle,
+    FromGuiAlgorithm[ComboBox2->ItemIndex],
+    CheckBox2->Checked,
+    FontDialog1->Font,
+    static_cast<Graph::TLabelPosition>(ComboBox1->ItemIndex),
+    RadioGroup1->ItemIndex ? ptPolar : ptCartesian,
+    xErrorBarType,
+    xErrorValue,
+    yErrorBarType,
+    yErrorValue
+  ));
+  PointSeries->SetLegendText(ToWString(Edit1->Text));
+
+  unsigned Count = DataPoints.size();
+  for(unsigned I = 0; I < Count; I++)
+  {
+    DataPoints[I].First = Trim(DataPoints[I].First);
+    DataPoints[I].Second = Trim(DataPoints[I].Second);
+    if(DataPoints[I].First.empty() && DataPoints[I].Second.empty())
+      continue;
+
+    if(DataPoints[I].First.empty() || DataPoints[I].Second.empty())
+    {
+      Grid->Col = DataPoints[I].Second.empty();
+      Grid->Row = I + 1;
+      Grid->SetFocus();
+      MessageBox(LoadRes(534), LoadRes(533));
+      return;
+    }
+
+    //Just for validation
+    CellToDouble(Grid, 0, I+1);
+    CellToDouble(Grid, 1, I+1);
+
+    PointSeries->InsertPoint(DataPoints[I], -1, false);
+  }
+
+  if(PointSeries->PointCount() == 0)
+  {
+    MessageBox(LoadRes(536), LoadRes(533), MB_ICONWARNING);
+    return;
+  }
+
+  if(Series)
+  {
+    PointSeries->SetVisible(Series->GetVisible());
+    PointSeries->SetShowInLegend(Series->GetShowInLegend());
+    int Index = Data.GetIndex(Series);
+    UndoList.Push(TUndoChange(Series, PointSeries));
+    Data.Replace(Series, PointSeries);
+  }
+  else
+  {
+    UndoList.Push(TUndoAdd(PointSeries));
+    Data.Insert(PointSeries);
+  }
+
+  PointSeries->Update();
+  Property.DefaultPoint.Set(PointSelect1->ItemIndex, ExtColorBox1->Selected, Edit2->Text.ToInt());
+  Property.DefaultPointLine.Set(LineSelect1->LineStyle, ExtColorBox2->Selected, Edit3->Text.ToInt());
+  if(FontChanged)
+    Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
+  SetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, FromGuiAlgorithm[ComboBox2->ItemIndex]);
 }
 //---------------------------------------------------------------------------
 
