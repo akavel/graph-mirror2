@@ -27,9 +27,10 @@ HINSTANCE PythonInstance = NULL;
 template<typename T>
 T& GetPythonAddress(const char *Name)
 {
+  static T Dummy;
   if(IsPythonInstalled())
     return *reinterpret_cast<T*>(GetProcAddress(PythonInstance, Name));
-  throw Exception("Cannot retrive address for " + String(Name));
+  return Dummy;
 }
 //---------------------------------------------------------------------------
 bool IsPythonInstalled()
