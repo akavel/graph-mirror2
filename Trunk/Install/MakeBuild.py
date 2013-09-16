@@ -20,7 +20,7 @@ try:
 
   # Compile SetupGraphBeta-4.2.0.x.exe
   print("Compiling...")
-  subprocess.check_call(["c:\\program files\\Inno Setup 5\\iscc.exe", "/Q", "Graph.iss"])
+  subprocess.check_call(["c:\\program files (x86)\\Inno Setup 5\\iscc.exe", "/Q", "Graph.iss"])
 
   VersionInfo = CalcVersionInfo("Graph.exe")
   FileName = "SetupGraphBeta-" + VersionInfo + ".exe"
