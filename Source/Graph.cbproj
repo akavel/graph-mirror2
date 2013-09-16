@@ -3,7 +3,7 @@
 			<ProjectGuid>{83C28049-A225-408A-83AB-2FB99DF42339}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
 			<MainSource>Graph.cpp</MainSource>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
@@ -29,7 +29,7 @@
 			<BCC_InstructionSet>6</BCC_InstructionSet>
 			<ILINK_MapFileType>None</ILINK_MapFileType>
 			<ILINK_OSVersion>5.0</ILINK_OSVersion>
-			<ILINK_DelayLoadDll>PDFlib.dll;$(ILINK_DelayLoadDll)</ILINK_DelayLoadDll>
+			<ILINK_DelayLoadDll>PDFlib.dll;Python32.dll;$(ILINK_DelayLoadDll)</ILINK_DelayLoadDll>
 			<BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
 			<BCC_StopBatchAfterErrors>10</BCC_StopBatchAfterErrors>
 			<PackageImports>vcl.bpi;rtl.bpi;bcbie.bpi;vclx.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;bdertl.bpi;vcldbx.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;Tee.bpi;TeeDB.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inet.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DataSnapServer.bpi;DbxClientDriver.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi</PackageImports>
@@ -152,6 +152,10 @@
 			<CppCompile Include="..\PyVcl\PyVclArrayProperty.cpp">
 				<DependentOn>..\PyVcl\PyVclArrayProperty.h</DependentOn>
 				<BuildOrder>71</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\PyVcl\PyVclClosure.cpp">
+				<DependentOn>..\PyVcl\PyVclClosure.h</DependentOn>
+				<BuildOrder>78</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="..\PyVcl\PyVclConvert.cpp">
 				<DependentOn>..\PyVcl\PyVclConvert.h</DependentOn>
@@ -413,6 +417,9 @@
 				<DependentOn>Source\StackTrace.h</DependentOn>
 				<BuildOrder>33</BuildOrder>
 			</CppCompile>
+			<DelphiCompile Include="Source\SystemCppException.pas">
+				<BuildOrder>79</BuildOrder>
+			</DelphiCompile>
 			<CppCompile Include="Swig\Data_wrap.cpp">
 				<BuildOrder>65</BuildOrder>
 			</CppCompile>
@@ -424,32 +431,32 @@
 			</CppCompile>
 			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Frames\TTanFrame.dfm"/>
-			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
-			<FormResources Include="Forms\Unit6.dfm"/>
 			<FormResources Include="Forms\Unit7.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Forms\Unit6.dfm"/>
 			<FormResources Include="Forms\Unit4.dfm"/>
 			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
-			<FormResources Include="Frames\TEvalFrame.dfm"/>
 			<FormResources Include="Frames\TParFuncFrame.dfm"/>
+			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
+			<FormResources Include="Frames\TEvalFrame.dfm"/>
 			<FormResources Include="Forms\Unit9.dfm"/>
 			<FormResources Include="Frames\TAreaFrame.dfm"/>
 			<FormResources Include="Forms\Unit18.dfm"/>
 			<FormResources Include="Forms\Unit19.dfm"/>
-			<FormResources Include="Forms\Unit16.dfm"/>
 			<FormResources Include="Forms\Unit17.dfm"/>
-			<FormResources Include="Forms\Unit2.dfm"/>
+			<FormResources Include="Forms\Unit15.dfm"/>
+			<FormResources Include="Forms\Unit16.dfm"/>
 			<FormResources Include="Forms\Unit22.dfm"/>
 			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit20.dfm"/>
 			<FormResources Include="Forms\Unit21.dfm"/>
-			<FormResources Include="Forms\Unit15.dfm"/>
+			<FormResources Include="Forms\Unit2.dfm"/>
+			<FormResources Include="Forms\Unit20.dfm"/>
 			<FormResources Include="Forms\Unit1.dfm"/>
-			<FormResources Include="Forms\Unit10.dfm"/>
 			<FormResources Include="Forms\Unit13.dfm"/>
 			<FormResources Include="Forms\Unit14.dfm"/>
-			<FormResources Include="Forms\Unit11.dfm"/>
 			<FormResources Include="Forms\Unit12.dfm"/>
+			<FormResources Include="Forms\Unit10.dfm"/>
+			<FormResources Include="Forms\Unit11.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -478,7 +485,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">5</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">548</VersionInfo>
+						<VersionInfo Name="Build">550</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -490,7 +497,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.5.0.548</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.5.0.550</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>

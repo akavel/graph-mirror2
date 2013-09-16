@@ -72,6 +72,7 @@ PYTHON_WRAP(PyObject*, PyExc_ValueError)
 PYTHON_WRAP(PyObject*, PyExc_ZeroDivisionError)
 PYTHON_WRAP(PyObject*, PyExc_NotImplementedError)
 PYTHON_WRAP(PyObject*, PyExc_StopIteration)
+PYTHON_WRAP(PyObject*, PyExc_SystemExit)
 PYTHON_WRAP(PyObject, _Py_NoneStruct)
 PYTHON_WRAP(PyObject, _Py_TrueStruct)
 PYTHON_WRAP(PyObject, _Py_FalseStruct)
@@ -132,6 +133,7 @@ public:
 #define PyExc_ZeroDivisionError Python::PyExc_ZeroDivisionError
 #define PyExc_NotImplementedError Python::PyExc_NotImplementedError
 #define PyExc_StopIteration Python::PyExc_StopIteration
+#define PyExc_SystemExit Python::PyExc_SystemExit
 #define _Py_NoneStruct Python::_Py_NoneStruct
 #define _Py_TrueStruct &Python::_Py_TrueStruct
 #define _Py_FalseStruct &Python::_Py_FalseStruct
