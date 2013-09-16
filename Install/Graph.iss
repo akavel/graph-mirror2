@@ -30,8 +30,8 @@ SetupIconFile=Graph in a box.ico
 [Languages]
 Name: "Arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
 Name: "Basque"; MessagesFile: "compiler:Languages\Basque.isl"
-Name: "Chinese_Simplified"; MessagesFile: "compiler:Languages\ChineseSimp.isl"
-Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages\ChineseTrad.isl"
+Name: "Chinese_Simplified"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
+Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages\ChineseTraditional.isl"
 Name: "Croatian"; MessagesFile:  "compiler:Languages\Croatian.isl"
 Name: "Czech"; MessagesFile:  "compiler:Languages\Czech.isl"
 Name: "Danish"; MessagesFile: "compiler:Languages\Danish.isl"
@@ -51,7 +51,7 @@ Name: "Polish"; MessagesFile:  "compiler:Languages\Polish.isl"
 Name: "Portuguese_Brazil"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "Portuguese_Portugal"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "Russian"; MessagesFile: "compiler:Languages\Russian.isl"
-Name: "Serbian"; MessagesFile: "compiler:Languages\Serbian.isl"
+Name: "Serbian"; MessagesFile: "compiler:Languages\SerbianLatin.isl"
 Name: "Slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "Spanish"; MessagesFile: "Languages\Spanish.isl"
 Name: "Swedish"; MessagesFile:  "compiler:Languages\Swedish.isl"
@@ -65,17 +65,22 @@ Name: "InstallAllUsers"; Description: "{cm:InstallAllUsers}"; Check: HasAdminRig
 
 [Files]
 Source: "Graph.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "PDFlib.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror restartreplace uninsrestartdelete;
+Source: "..\PDFlib.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Thumbnails.dll"; DestDir: "{app}"; Flags: regserver noregerror restartreplace uninsrestartdelete;
 ;Source: "Thumbnails32.dll"; DestDir: "{app}"; DestName: "Thumbnails.dll"; Flags: regserver noregerror restartreplace uninsrestartdelete 32bit;
 ;Source: "Thumbnails64.dll"; DestDir: "{app}"; DestName: "Thumbnails.dll"; Flags: regserver noregerror restartreplace uninsrestartdelete 64bit;
 Source: "License.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
-Source: "Help\*.chm"; DestDir: "{app}\Help"; Flags: ignoreversion
-Source: "Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
-Source: "Plugins\*.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
-Source: "Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
-Source: "Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
+Source: "..\Examples\*.grf"; DestDir: "{app}\Examples"; Flags: ignoreversion
+Source: "..\Help\*.chm"; DestDir: "{app}\Help"; Flags: ignoreversion
+Source: "..\Locale\*.mo"; DestDir: "{app}\Locale"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\Circle.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\Revolution.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\ShowConsole.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\SortPointSeries.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\Statistics.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\Transform.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
 
 [Icons]
 Name: "{userprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
