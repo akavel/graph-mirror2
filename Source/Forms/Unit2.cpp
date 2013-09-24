@@ -31,6 +31,9 @@ __fastcall TForm2::TForm2(TComponent* Owner)
   {
     TVersion FileVersion = Info.FileVersion();
     Label3->Caption = LoadRes(RES_BUILD, FileVersion.Build);
+    #ifdef _DEBUG
+    Label3->Caption = Label3->Caption + " (Debug)";
+    #endif
     FileVersion.Build = 0;
     Version->Caption = ToUString(LoadRes(RES_VERSION, FileVersion.Text()));
     if(Info.FileFlags() & ffDebug)
