@@ -2347,7 +2347,7 @@ void TForm1::CheckForUpdate(bool StartupCheck)
 		std::auto_ptr<TMemoryStream> Stream(new TMemoryStream);
 		std::auto_ptr<TIdHTTP> IdHTTP(new TIdHTTP(NULL));
 
-		IdHTTP->Request->UserAgent = (L"Mozilla/3.0 (compatible; Graph " + Info.StringValue(L"ProductVersion") + L')').c_str();
+		IdHTTP->Request->UserAgent = (L"Mozilla/3.0 (compatible; Graph " + Info.StringValue(L"FileVersion") + L')').c_str();
 		IdHTTP->HandleRedirects = true;
 
 		std::wstring Url = GetRegValue(REGISTRY_KEY, L"InfFile", HKEY_CURRENT_USER, INF_FILE);
