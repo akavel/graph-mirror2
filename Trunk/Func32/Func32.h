@@ -136,14 +136,17 @@ enum TErrorCode
 /*! \brief This class and its decendents are only used for throwing exceptions. This
  *  specific class is used when one of the decendents doesn't fit.
  */
-struct EFuncError : public std::exception
+class EFuncError : public std::exception
 {
+protected:
+  mutable std::string ErrorStr; //!< Only used by what()
+public:
   TErrorCode ErrorCode; //!<The error code indicating the precise cause of the error.
-  std::wstring Str;      //!< A text supplement to the error code; Can be an unknown variable name
+  std::wstring Str;     //!< A text supplement to the error code; Can be an unknown variable name
   EFuncError(TErrorCode AErrorCode) : ErrorCode(AErrorCode) {}
   EFuncError(TErrorCode AErrorode, const std::wstring &AStr) : ErrorCode(AErrorode), Str(AStr) {}
   ~EFuncError() throw() {} //Required by g++ 3.3.3
-  const char* what() const throw() {return "Func32::EFuncError";}
+  const char* what() const throw();
 };
 
 //!Type used to indicate where an error occured.

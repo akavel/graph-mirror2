@@ -277,6 +277,7 @@ bool ArgCountValid(TIdent Ident, unsigned Args);
 const TFuncData& GetDif(TIdent Ident);
 std::vector<TElem>::const_iterator FindEnd(std::vector<TElem>::const_iterator Iter);
 std::wstring ToLower(const std::wstring &Str);
+std::string ToString(int Value);
 bool IsEqual(long double a, long double b);
 //---------------------------------------------------------------------------
 class TCompareStringNoCase
