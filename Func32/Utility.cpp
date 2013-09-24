@@ -292,6 +292,13 @@ std::wstring ToLower(const std::wstring &Str)
   return Result;
 }
 //---------------------------------------------------------------------------
+std::string ToString(int Value)
+{
+  std::ostringstream Stream;
+  Stream << Value;
+  return Stream.str();
+}
+//---------------------------------------------------------------------------
 bool IsValidName(const std::wstring &Name)
 {
   if(Name.empty())
@@ -337,6 +344,17 @@ void LogDebugString(const char *Str, const char *Str2)
 {
 	std::clog << Str << Str2 << std::endl;
 	BOOST_ASSERT(0);
+}
+//---------------------------------------------------------------------------
+/** Function returning a description of the error.
+ */
+const char* EFuncError::what() const throw()
+{
+  ErrorStr = "Func32::EFuncError(" + ToString(ErrorCode);
+  if(!Str.empty())
+    ErrorStr += std::string(", ") + std::string(Str.begin(), Str.end());
+  ErrorStr += ")";
+  return ErrorStr.c_str();
 }
 //---------------------------------------------------------------------------
 } //namespace Func32
