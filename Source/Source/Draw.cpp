@@ -385,8 +385,8 @@ void TDraw::PreCalcYAxis()
     }
   }
 
-  xAxisCross = Axes.AxesStyle == asBoxed ? (Axes.yAxis.LogScl ? 0.1 : 0) : Axes.xAxis.AxisCross;
-  yAxisCross = Axes.AxesStyle == asBoxed ? (Axes.xAxis.LogScl ? 0.1 : 0) : Axes.yAxis.AxisCross;
+  xAxisCross = Axes.AxesStyle == asBoxed ? (Axes.yAxis.LogScl ? 1 : 0) : Axes.xAxis.AxisCross;
+  yAxisCross = Axes.AxesStyle == asBoxed ? (Axes.xAxis.LogScl ? 1 : 0) : Axes.yAxis.AxisCross;
   yTickMin = GetMinValue(Axes.yAxis.TickUnit, Axes.yAxis.Min, Axes.yAxis.Max, xAxisCross, Axes.yAxis.LogScl);
   yPixelCross = Axes.AxesStyle == asBoxed ? AxesRect.Bottom : yPoint(xAxisCross);
 
