@@ -388,6 +388,7 @@ __published:	// IDE-managed Components
   void __fastcall TreeViewMouseLeave(TObject *Sender);
   void __fastcall SaveDialogEx1Close(TObject *Sender);
   void __fastcall ScriptDocActionExecute(TObject *Sender);
+  void __fastcall ApplicationEventsModalBegin(TObject *Sender);
 
 
 private:	// User declarations
