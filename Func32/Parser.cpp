@@ -543,10 +543,6 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
   {
     throw;
   }
-  catch(...)
-  {
-    throw EFuncError(ecInternalError);
-  }
 }
 //---------------------------------------------------------------------------
 void TFuncData::HandleParseError(const EParseError &E, const wchar_t* Where, unsigned Pos)
