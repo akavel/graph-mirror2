@@ -934,7 +934,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
       Points.push_back(TRect(
         XStart <= AxesRect.Left ? -100 : XStart*2,
         Y <= AxesRect.Top ? -100 : Y,
-        AxesRect.Right + 100,
+        AxesRect.Right * 2+ 100,
         Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
     yLogScl ? y *= dy : y += dy;
   }
