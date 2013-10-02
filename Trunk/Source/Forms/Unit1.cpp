@@ -1359,6 +1359,14 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       Python::ShowPythonConsole(true);
       break;
 
+    case VK_F12:
+      if(Shift.Contains(ssCtrl) && Shift.Contains(ssAlt))
+      {
+        double x=0;
+        double y=5/x;
+      }
+      break;
+
     case VK_SHIFT:
       if(CursorState == csIdle)
         SetCursorState(csMove);
@@ -3783,6 +3791,14 @@ void __fastcall TForm1::ScriptDocActionExecute(TObject *Sender)
 {
   String BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str()).c_str();
   ShowHelp("", BaseDir + "\\Help\\PluginDoc.chm");
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::ApplicationEventsModalBegin(TObject *Sender)
+{
+  //Something seems to sometimes change the FPU Control Word so we reset it back to the default
+  //once in a while. It only happens on very few computers.
+  //See http://forum.padowan.dk/viewtopic.php?pid=2438#p2438
+  SET_DEFAULT_CPU_MASK();
 }
 //---------------------------------------------------------------------------
 
