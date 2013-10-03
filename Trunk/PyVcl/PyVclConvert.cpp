@@ -356,10 +356,14 @@ PyObject* PyVclHandleException()
 	}
   //WARNING: The 64 bit compiler in C++ Builder XE4 does not handle catch of exceptions
   //derived from Exception correctly. See QC #116246
-/*	catch(EListError &E)
+	catch(EStringListError &E)
 	{
 		SetErrorString(PyExc_IndexError, E.Message);
-	}*/
+	}
+	catch(EListError &E)
+	{
+		SetErrorString(PyExc_IndexError, E.Message);
+	}
   catch(DynArrayOutOfRange &E)
   {
 		PyErr_SetString(PyVclException, "Invalid number of indexes in dynamic array");
@@ -370,8 +374,6 @@ PyObject* PyVclHandleException()
   }
 	catch(Exception &E)
 	{
-    if(dynamic_cast<EListError*>(&E))
-  		SetErrorString(PyExc_IndexError, E.Message);
 		SetErrorString(PyVclException, E.Message);
 	}
 	catch(std::exception &E)
