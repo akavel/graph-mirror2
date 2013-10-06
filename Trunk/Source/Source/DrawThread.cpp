@@ -19,7 +19,6 @@
 #include <cfloat>
 #include <set>
 #include "IGraphic.h"
-#include "StackTrace.h"
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include <boost/tr1/complex.hpp>
 
@@ -56,42 +55,24 @@ void __fastcall TDrawThread::Execute()
 
   while(!Terminated)
   {
-    try
-    {
-      if(Aborted)
-        ClearMessageQueue();
-      Aborted = false;
-      if(!HasMessage())
-        Draw->IncThreadInIdle(Init);
-      Init = false;
-      TMessage Message;
-      GetMessage(Message);
+    if(Aborted)
+      ClearMessageQueue();
+    Aborted = false;
+    if(!HasMessage())
+      Draw->IncThreadInIdle(Init);
+    Init = false;
+    TMessage Message;
+    GetMessage(Message);
 
-      //No need to prepare drawings if we are just terminating
-      if(Message.Msg == dmTerminate)
-        return;
+    //No need to prepare drawings if we are just terminating
+    if(Message.Msg == dmTerminate)
+      return;
 
-      switch(Message.Msg)
-      {
-        case dmDrawAll:
-          DrawAll();
-          break;
-      }
-    }
-    catch(Exception &E)
+    switch(Message.Msg)
     {
-      LogUncaughtException(this, &E);
-      ShowStatusError("Internal error. Log file Graph.err created.");
-    }
-    catch(std::exception &E)
-    {
-      LogUncaughtCppException(E.what(), "DrawThread");
-      ShowStatusError("Internal error. Log file Graph.err created.");
-    }
-    catch(...)
-    {
-      LogUncaughtCppException(NULL, "DrawThread");
-      ShowStatusError("Internal error. Log file Graph.err created.");
+      case dmDrawAll:
+        DrawAll();
+        break;
     }
   }
 }

@@ -48,7 +48,6 @@
 #include "IThread.h"
 #include "Debug.h"
 #include <iostream>
-#include "StackTrace.h"
 #include "ConfigFile.h"
 #include "ConfigRegistry.h"
 #include <TypInfo.hpp>
@@ -96,10 +95,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
   Draw.SetOnComplete(&UpdateEval);
   SetCompTranslateFunc(gettext);
-	SetApplicationExceptionHandler(true);
 	InitDebug();
-#else
-	SetApplicationExceptionHandler(false);
 #endif
 
 	Font->Name = "MS Shell Dlg";
@@ -3370,12 +3366,6 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
     for(int I = 0; I < Tree_Rotation->Count; I++)
       Tree_Rotation->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
   }
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::ApplicationEventsException(TObject *Sender,
-      Exception *E)
-{
-  LogUncaughtException(Sender, E);
 }
 //---------------------------------------------------------------------------
 void TForm1::MoveAndSnapLegend(int dx, int dy, bool Snap)
