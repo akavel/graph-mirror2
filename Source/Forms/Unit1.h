@@ -360,8 +360,6 @@ __published:	// IDE-managed Components
   void __fastcall PlacementClick(TObject *Sender);
   void __fastcall PopupMenu3Popup(TObject *Sender);
   void __fastcall PopupMenu1Popup(TObject *Sender);
-  void __fastcall ApplicationEventsException(TObject *Sender,
-          Exception *E);
   void __fastcall RotationClick(TObject *Sender);
   void __fastcall AnimateActionExecute(TObject *Sender);
   void __fastcall ImportGraphFileActionExecute(TObject *Sender);
