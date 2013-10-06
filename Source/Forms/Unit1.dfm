@@ -173,12 +173,13 @@ object Form1: TForm1
     Width = 624
     Height = 25
     ParentCustomHint = False
+    UseSystemFont = False
     ActionManager = ActionManager
     Color = clMenuBar
     ColorMap.HighlightColor = clWhite
     ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clMenuText
+    Font.Color = clBlack
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
@@ -571,7 +572,7 @@ object Form1: TForm1
   end
   object ApplicationEvents: TApplicationEvents
     OnActivate = ApplicationEventsActivate
-    OnException = ApplicationEventsException
+    OnModalBegin = ApplicationEventsModalBegin
     OnShowHint = ApplicationEventsShowHint
     OnSettingChange = ApplicationEventsSettingChange
     Left = 288
@@ -589,7 +590,7 @@ object Form1: TForm1
     Left = 208
     Top = 216
     Bitmap = {
-      494C01010B000D000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B000D001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -996,7 +997,7 @@ object Form1: TForm1
     Left = 208
     Top = 256
     Bitmap = {
-      494C01013D003F000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013D003F001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000000001000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
