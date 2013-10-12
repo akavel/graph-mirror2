@@ -98,10 +98,9 @@
 %define HANDLE_FPU(function)
 %exception function
 %{
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   $action
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
 %}
 %enddef
 

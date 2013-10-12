@@ -20,11 +20,11 @@ typedef _object PyObject;
 #define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
 
 #ifdef _WIN64
-#define SET_PYTHON_CPU_MASK()
-#define SET_DEFAULT_CPU_MASK()
+#define SET_PYTHON_FPU_MASK()
+#define SET_DEFAULT_FPU_MASK()
 #else
-#define SET_PYTHON_CPU_MASK() _control87(PYTHON_FPU_CONTROL, FPU_MASK)
-#define SET_DEFAULT_CPU_MASK() _clear87(), _control87(DEFAULT_FPU_CONTROL, FPU_MASK)
+#define SET_PYTHON_FPU_MASK() _control87(PYTHON_FPU_CONTROL, FPU_MASK)
+#define SET_DEFAULT_FPU_MASK() _clear87(), _control87(DEFAULT_FPU_CONTROL, FPU_MASK)
 #endif
 
 namespace boost
