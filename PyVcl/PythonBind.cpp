@@ -52,25 +52,25 @@ PyObject* PyReturnNone()
 //---------------------------------------------------------------------------
 TLockGIL::TLockGIL()
 {
-  SET_PYTHON_CPU_MASK();
+  SET_PYTHON_FPU_MASK();
   State = PyGILState_Ensure();
 }
 //---------------------------------------------------------------------------
 TLockGIL::~TLockGIL()
 {
   PyGILState_Release(static_cast<PyGILState_STATE>(State));
-  SET_DEFAULT_CPU_MASK();
+  SET_DEFAULT_FPU_MASK();
 }
 //---------------------------------------------------------------------------
 TUnlockGIL::TUnlockGIL()
 {
   State = PyEval_SaveThread();
-  SET_DEFAULT_CPU_MASK();
+  SET_DEFAULT_FPU_MASK();
 }
 //---------------------------------------------------------------------------
 TUnlockGIL::~TUnlockGIL()
 {
-  SET_PYTHON_CPU_MASK();
+  SET_PYTHON_FPU_MASK();
   PyEval_RestoreThread(State);
 }
 //---------------------------------------------------------------------------

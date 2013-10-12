@@ -621,7 +621,7 @@ void InitPlugins()
 
 		Form22 = new TForm22(Application);
 		Form1->ScriptDocAction->Visible = true;
-		_control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+		SET_PYTHON_FPU_MASK(); //Set the FPU Control Word to what Python expects
 		PyImport_ExtendInittab(Modules);
 		static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
 		Py_SetProgramName(ExeName.c_str());
@@ -675,8 +675,7 @@ void InitPlugins()
 
 		int Result = PyRun_SimpleString(PythonCommands.c_str());
 		PyEval_SaveThread();
-		_clear87();
-		_control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+    SET_PYTHON_FPU_MASK();
 		PythonInitialized = true;
 	}
 	else
@@ -690,9 +689,10 @@ void UnloadPlugin()
 {
 	if(PythonInitialized)
 	{
-		_control87(PYTHON_FPU_CONTROL, FPU_MASK);
+    SET_PYTHON_FPU_MASK();
 		PyGILState_Ensure();
 		Py_Finalize();
+    SET_DEFAULT_FPU_MASK();
 	}
 }
 //---------------------------------------------------------------------------

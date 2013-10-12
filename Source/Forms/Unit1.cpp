@@ -3788,7 +3788,7 @@ void __fastcall TForm1::ApplicationEventsModalBegin(TObject *Sender)
   //Something seems to sometimes change the FPU Control Word so we reset it back to the default
   //once in a while. It only happens on very few computers.
   //See http://forum.padowan.dk/viewtopic.php?pid=2438#p2438
-  SET_DEFAULT_CPU_MASK();
+  SET_DEFAULT_FPU_MASK();
 }
 //---------------------------------------------------------------------------
 
