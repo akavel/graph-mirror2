@@ -487,7 +487,7 @@ public:		// User declarations
 
   void SetCross(int X, int Y);
   void SetCrossPos(long double x, long double y);
-  void ChangeLanguage(const String &Ext);
+  void ChangeLanguage(const String &Ext, bool Force=false);
   void ActivateOleUserInterface();
 
   boost::shared_ptr<TGraphElem> GetGraphElem(TTreeNode *Node);

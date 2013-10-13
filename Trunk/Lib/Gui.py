@@ -1,19 +1,21 @@
 # Module with utility functions and classes for helping with GUI dialogs.
 import vcl
-
+import Utility
+import Graph
 """Helper class for creating dialogs. When you derive from this class, your dialog will get an OK button and a Cancel button if ShowCancel is True,
    both at the bottom right of the dialog. A panel will fill the rest of the dialog where you can fill in your content.
 """
 class SimpleDialog:
     def __init__(self, ShowCancel=True, **keywords):
         self.form = vcl.TForm(None, **keywords)
+        self.Name = self.__class__.__name__
         self.Position = "poMainFormCenter"
         self.BorderStyle = "bsDialog"
         self.BorderIcons = "biSystemMenu"
         self.panel = vcl.TPanel(None, Parent=self.form, BevelInner="bvRaised", BevelOuter="bvLowered", Left=8, Top=8, Width=self.ClientWidth - 16, Height=self.ClientHeight - 50, Caption="", Anchors="akLeft,akTop,akRight,akBottom")
-        self.button1 = vcl.TButton(None, Parent=self.form, Caption = "OK", Anchors = "akRight,akBottom", Default=True, OnClick=self.OnOk, Top=self.ClientHeight-32, Left=self.ClientWidth-176)
+        self.button1 = vcl.TButton(None, Parent=self.form, Caption = Utility.GetText("OK"), Anchors = "akRight,akBottom", Default=True, OnClick=self.OnOk, Top=self.ClientHeight-32, Left=self.ClientWidth-176)
         if ShowCancel:
-            self.button2 = vcl.TButton(None, Parent=self.form, Caption="Cancel", Anchors="akRight,akBottom", ModalResult=1, Cancel=True, Top=self.ClientHeight-32, Left=self.ClientWidth-88)
+            self.button2 = vcl.TButton(None, Parent=self.form, Caption=Utility.GetText("Cancel"), Anchors="akRight,akBottom", ModalResult=1, Cancel=True, Top=self.ClientHeight-32, Left=self.ClientWidth-88)
         else:
             self.button2 = None
             self.button1.Cancel = True
@@ -22,6 +24,7 @@ class SimpleDialog:
         self.OnShow = self.FormOnShow
 
     def FormOnShow(self, sender):
+        Graph.ExecuteEvent(14, (self.form,))
         self.button1.TabOrder = 100
         if self.button2:
             self.button2.TabOrder = 101
@@ -41,4 +44,4 @@ class SimpleDialog:
         try:
             return getattr(self.form, name)
         except:
-            return object.__getattr__(self, name)
+            return object.__getattribute__(self, name)

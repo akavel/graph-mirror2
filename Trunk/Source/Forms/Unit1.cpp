@@ -793,15 +793,17 @@ void TForm1::LoadSettings(void)
   IPrintDialog1->Orientation = Registry.Read("Orientation", poPortrait);
 	UndoList.SetMaxUndo(Registry.Read("MaxUndo", 50));
 
+  if(Registry.ValueExists(L"Language"))
+    Property.Language = Registry.Read(L"Language", L"English");
+  else
+    Property.Language = GetRegValue(REGISTRY_KEY, L"Language", HKEY_LOCAL_MACHINE, L"English");
+
   Python::InitPlugins();
 
   if(Registry.ValueExists(L"ToolBar"))
     CreateToolBar(Registry.Read(L"ToolBar", L"").c_str());
 
-  if(Registry.ValueExists(L"Language"))
-    ChangeLanguage(Registry.Read(L"Language", L"English").c_str());
-  else
-    ChangeLanguage(GetRegValue(REGISTRY_KEY, L"Language", HKEY_LOCAL_MACHINE, L"English").c_str());
+  ChangeLanguage(ToUString(Property.Language), Property.Language != L"English");
 
   StartToolBar = GetToolBar(); //Save shown toolbar
 
@@ -1300,7 +1302,7 @@ void __fastcall TForm1::TreeViewChange(TObject *Sender, TTreeNode *Node)
   Selected = Elem;
 }
 //---------------------------------------------------------------------------
-void TForm1::ChangeLanguage(const String &Lang)
+void TForm1::ChangeLanguage(const String &Lang, bool Force)
 {
   if(Lang.IsEmpty())
     return;
@@ -1314,7 +1316,7 @@ void TForm1::ChangeLanguage(const String &Lang)
   SysLocale.MiddleEast = Mode;
   Application->BiDiMode = Mode;
 
-  if(Lang != ToUString(Property.Language))
+  if(Force || Lang != ToUString(Property.Language))
     Translate();
 
   //Necesarry to update all hot keys

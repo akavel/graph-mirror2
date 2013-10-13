@@ -540,7 +540,67 @@
 					</para>
 				</listitem>
 			</varlistentry>
-		</variablelist>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>GetText (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>GetText</property>(<parameter>Str</parameter>)
+				</term>
+				<listitem>
+					<para>
+            Translates the text given by <parameter>Str</parameter> to the currently selected language using the translation file for Graph.
+            If there is no translation, the same string is returned.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>GetLanguageList (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>GetLanguageList</property>()
+				</term>
+				<listitem>
+					<para>
+            Searches the Locales directory for installed translation files and returns a list of the languages found.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>CreateTranslations (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>CreateTranslations</property>(<parameter>TranslationList</parameter>)
+				</term>
+				<listitem>
+					<para>
+            Used for creating translations. 
+            This is an alternative to the <classname>gettext</classname> module, which uses po-files.
+            <parameter>TranslationList</parameter> must be a dictionary where the key is the language. 
+            The value is another dictionary with the original text as key and the translation as value.
+            The function returns an object for handling the translation.
+            This object has one interesting method, <property>gettext</property>(), which called with a text will use the
+            <parameter>TranslationList</parameter> to translate into the currently active language.
+            If no translation is found, it will try to translate using the translations in Graph. 
+            If no translation is found here either, the original string is returned.
+            <example>
+            <title>Example</title>
+            <programlisting>
+import Graph
+import vcl            
+TranslationTexts = { 
+  "Danish": {"Value": "Værdi", "Enter a value" : "Indtast en værdi"},
+  "German": {"Value": "Wert", "Enter a value": "Geben Sie einen Wert"},
+  "Spanish": {"Value": "valor", "Enter a value": "Introduzca un valor"},
+}
+_ = Graph.CreateTranslations(TranslationTexts).gettext        
+Edit = vcl.TEdit(None, Text=_("Value"), Hint=_("Enter a value")) # Use custom translation
+Button = vcl.TButton(None, Caption=_("Cancel")) # Use the translations from Graph
+            </programlisting>
+            </example>
+					</para>
+				</listitem>
+			</varlistentry>
+    </variablelist>
 	</para>
 	<xi:include href="Settings.xml" xpointer="Graph.TProperty" />
 	<xi:include href="Settings.xml" xpointer="Graph.TAxis" />

@@ -26,5 +26,7 @@
   bool SaveToFile(const std::wstring &FileName, bool Remember = true) {return Form1->Data.Save(FileName, Remember);}
   void ImportPointSeries(const std::wstring &FileName, char Separator = 0) {Form1->Data.ImportPointSeries(FileName, Separator);}
   void Import(const std::wstring &FileName) {Form1->Data.Import(FileName);}
+  std::wstring GetText(const wchar_t *Str) {return gettext(Str).c_str();}
+  void ChangeLanguage(const std::wstring &Language) {Form1->ChangeLanguage(ToUString(Language));}
 %}
 
