@@ -548,6 +548,20 @@ static PyObject* PluginSaveAsImage(PyObject *Self, PyObject *Args, PyObject *Kwd
   }
 }
 //---------------------------------------------------------------------------
+static PyObject* PluginGetLanguageList(PyObject *Self, PyObject *Args)
+{
+  try
+  {
+    TStringList *List = new TStringList;
+    GetLanguageList(List);
+    return VclObject_Create(List, true);
+  }
+  catch(...)
+  {
+    return ConvertException();
+  }
+}
+//---------------------------------------------------------------------------
 static PyMethodDef GraphMethods[] = {
 	{"SetCustomFunction",         PluginSetCustomFunction, METH_VARARGS, ""},
 	{"GetCustomFunction",         PluginGetCustomFunction, METH_O, ""},
@@ -564,6 +578,7 @@ static PyMethodDef GraphMethods[] = {
 	{"DelConstant",               PluginDelConstant, METH_O, ""},
 	{"GetConstantNames",          PluginGetConstantNames, METH_NOARGS, ""},
 	{"SaveAsImage",               (PyCFunction)PluginSaveAsImage, METH_VARARGS | METH_KEYWORDS, "Saves the graphing area to an image file."},
+  {"GetLanguageList",           PluginGetLanguageList, METH_NOARGS, "Get list of detected languages."},
 	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -774,7 +789,7 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, 
   return false;
 }
 //---------------------------------------------------------------------------
-void ConvertException()
+PyObject* ConvertException()
 {
   try
   {
@@ -792,6 +807,7 @@ void ConvertException()
   {
     PyErr_SetString(PyExc_RuntimeError, "Unknown exception");
 	}
+  return NULL;
 }
 //---------------------------------------------------------------------------
 template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)

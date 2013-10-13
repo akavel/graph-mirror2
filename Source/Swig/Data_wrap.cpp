@@ -11566,10 +11566,9 @@ SWIGINTERN PyObject *_wrap_Redraw(PyObject *SWIGUNUSEDPARM(self), PyObject *args
   
   if (!PyArg_ParseTuple(args,(char *)":Redraw")) SWIG_fail;
   
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   Redraw();
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
   
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -13569,8 +13568,7 @@ SWIGINTERN PyObject *_wrap_new_TStdFunc(PyObject *SWIGUNUSEDPARM(self), PyObject
     arg1 = ptr;
   }
   
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   try {
     result = (TStdFunc *)new_TStdFunc((std::wstring const &)*arg1);
   }
@@ -13580,7 +13578,7 @@ SWIGINTERN PyObject *_wrap_new_TStdFunc(PyObject *SWIGUNUSEDPARM(self), PyObject
     
   }
   
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
   
   {
     boost::shared_ptr<  TStdFunc > *smartresult = result ? new boost::shared_ptr<  TStdFunc >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
@@ -13738,8 +13736,7 @@ SWIGINTERN PyObject *_wrap_new_TParFunc(PyObject *SWIGUNUSEDPARM(self), PyObject
     arg2 = ptr;
   }
   
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   try {
     result = (TParFunc *)new_TParFunc((std::wstring const &)*arg1,(std::wstring const &)*arg2);
   }
@@ -13749,7 +13746,7 @@ SWIGINTERN PyObject *_wrap_new_TParFunc(PyObject *SWIGUNUSEDPARM(self), PyObject
     
   }
   
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
   
   {
     boost::shared_ptr<  TParFunc > *smartresult = result ? new boost::shared_ptr<  TParFunc >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
@@ -13860,8 +13857,7 @@ SWIGINTERN PyObject *_wrap_new_TPolFunc(PyObject *SWIGUNUSEDPARM(self), PyObject
     arg1 = ptr;
   }
   
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   try {
     result = (TPolFunc *)new_TPolFunc((std::wstring const &)*arg1);
   }
@@ -13871,7 +13867,7 @@ SWIGINTERN PyObject *_wrap_new_TPolFunc(PyObject *SWIGUNUSEDPARM(self), PyObject
     
   }
   
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
   
   {
     boost::shared_ptr<  TPolFunc > *smartresult = result ? new boost::shared_ptr<  TPolFunc >(result SWIG_NO_NULL_DELETER_SWIG_POINTER_NEW) : 0;
@@ -14209,8 +14205,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertDblPoint(PyObject *SWIGUNUSEDPARM(
   } 
   arg3 = static_cast< int >(val3);
   
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   try {
     (arg1)->InsertDblPoint(arg2,arg3);
   }
@@ -14218,7 +14213,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_InsertDblPoint(PyObject *SWIGUNUSEDPARM(
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
   
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
   
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -14324,8 +14319,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplaceDblPoint(PyObject *SWIGUNUSEDPARM
   } 
   arg3 = static_cast< unsigned int >(val3);
   
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   try {
     (arg1)->ReplaceDblPoint(arg2,arg3);
   }
@@ -14333,7 +14327,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_ReplaceDblPoint(PyObject *SWIGUNUSEDPARM
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
   
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
   
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -14592,8 +14586,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_GetDblPoint(PyObject *SWIGUNUSEDPARM(sel
   } 
   arg2 = static_cast< int >(val2);
   
-  _clear87(); //Clear FPU status flags
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);   //Reset FPU exception state to the previous
+  SET_DEFAULT_FPU_MASK();
   try {
     result = (Func32::TDblPoint *) &((TPointSeries const *)arg1)->GetDblPoint(arg2);
   }
@@ -14601,7 +14594,7 @@ SWIGINTERN PyObject *_wrap_TPointSeries_GetDblPoint(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
   }
   
-  _control87(PYTHON_FPU_CONTROL, FPU_MASK); //Set the FPU Control Word to what Python expects
+  SET_PYTHON_FPU_MASK();
   
   {
     Func32::TDblPoint *p = result;

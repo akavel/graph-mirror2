@@ -3072,6 +3072,8 @@ namespace swig {
   bool SaveToFile(const std::wstring &FileName, bool Remember = true) {return Form1->Data.Save(FileName, Remember);}
   void ImportPointSeries(const std::wstring &FileName, char Separator = 0) {Form1->Data.ImportPointSeries(FileName, Separator);}
   void Import(const std::wstring &FileName) {Form1->Data.Import(FileName);}
+  std::wstring GetText(const wchar_t *Str) {return gettext(Str).c_str();}
+  void ChangeLanguage(const std::wstring &Language) {Form1->ChangeLanguage(ToUString(Language));}
 
 
 #include <wchar.h>
@@ -3443,6 +3445,33 @@ SWIG_AsVal_char (PyObject * obj, char *val)
     }
   }
   return res;
+}
+
+
+
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_FromWCharPtrAndSize(const wchar_t * carray, size_t size)
+{
+  if (carray) {
+    if (size > INT_MAX) {
+      swig_type_info* pwchar_descriptor = SWIG_pwchar_descriptor();
+      return pwchar_descriptor ?
+	SWIG_InternalNewPointerObj(const_cast< wchar_t * >(carray), pwchar_descriptor, 0) : SWIG_Py_Void();
+    } else {
+      return PyUnicode_FromWideChar(carray, static_cast< int >(size));
+    }
+  } else {
+    return SWIG_Py_Void();
+  }
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_std_wstring  (const std::wstring& s)
+{
+  return SWIG_FromWCharPtrAndSize(s.data(), s.size());
 }
 
 #ifdef __cplusplus
@@ -3905,6 +3934,59 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_GetText(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  wchar_t *arg1 = (wchar_t *) 0 ;
+  int res1 ;
+  wchar_t *buf1 = 0 ;
+  int alloc1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::wstring result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GetText",&obj0)) SWIG_fail;
+  res1 = SWIG_AsWCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GetText" "', argument " "1"" of type '" "wchar_t const *""'");
+  }
+  arg1 = reinterpret_cast< wchar_t * >(buf1);
+  result = GetText((wchar_t const *)arg1);
+  resultobj = SWIG_From_std_wstring(static_cast< std::wstring >(result));
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ChangeLanguage(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::wstring *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ChangeLanguage",&obj0)) SWIG_fail;
+  {
+    std::wstring *ptr = (std::wstring *)0;
+    res1 = SWIG_AsPtr_std_wstring(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ChangeLanguage" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ChangeLanguage" "', argument " "1"" of type '" "std::wstring const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  ChangeLanguage((std::wstring const &)*arg1);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"BeginMultiUndo", _wrap_BeginMultiUndo, METH_VARARGS, NULL},
@@ -3914,6 +3996,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SaveToFile", _wrap_SaveToFile, METH_VARARGS, NULL},
 	 { (char *)"ImportPointSeries", _wrap_ImportPointSeries, METH_VARARGS, NULL},
 	 { (char *)"Import", _wrap_Import, METH_VARARGS, NULL},
+	 { (char *)"GetText", _wrap_GetText, METH_VARARGS, NULL},
+	 { (char *)"ChangeLanguage", _wrap_ChangeLanguage, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

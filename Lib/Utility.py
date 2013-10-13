@@ -83,6 +83,14 @@ LoadDefault = _Utility.LoadDefault
 def Import(*args) -> "void" :
   return _Utility.Import(*args)
 Import = _Utility.Import
+
+def GetText(*args) -> "std::wstring" :
+  return _Utility.GetText(*args)
+GetText = _Utility.GetText
+
+def ChangeLanguage(*args) -> "void" :
+  return _Utility.ChangeLanguage(*args)
+ChangeLanguage = _Utility.ChangeLanguage
 # This file is compatible with both classic and new-style classes.
 
 

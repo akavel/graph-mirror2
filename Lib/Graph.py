@@ -322,3 +322,34 @@ LoadFromFile = Utility.LoadFromFile
 SaveToFile = Utility.SaveToFile
 Import = Utility.Import
 ImportPointSeries = Utility.ImportPointSeries
+GetText = Utility.GetText
+ChangeLanguage = Utility.ChangeLanguage
+
+import gettext
+class DictTranslations(gettext.NullTranslations):
+  def __init__(self, Texts):
+    gettext.NullTranslations.__init__(self)
+    self.Texts = Texts
+    
+  def gettext(self, Message):
+    Messages = self.Texts.get(Property.Language, {})
+    tmsg = Messages.get(Message)
+    if tmsg is None:
+      if self._fallback:
+        return self._fallback.gettext(Message)
+      return Message
+    return tmsg    
+  
+class InternalTranslations(gettext.NullTranslations):
+  def gettext(self, Message):
+    return Utility.GetText(Message)
+InternalTranslationsObject = InternalTranslations()
+    
+def CreateTranslations(Texts):
+  t = DictTranslations(Texts)
+  t.add_fallback(InternalTranslationsObject)
+  return t
+  
+def GetLanguageList():
+  L = GraphImpl.GetLanguageList()
+  return list(L.Strings)  

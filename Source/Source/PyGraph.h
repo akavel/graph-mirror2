@@ -99,7 +99,7 @@ namespace Python
 		return FromPyObject(O1, V1) && FromPyObject(O2, V2) && FromPyObject(O3, V3) && FromPyObject(O4, V4);
 	}
 
-	void ConvertException();
+	PyObject* ConvertException();
 	void UnloadPlugin();
 }
 #endif
