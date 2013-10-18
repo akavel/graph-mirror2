@@ -342,6 +342,34 @@ public:
 	}
 };
 
+//Parser that accepts the first character in a symbol
+struct TFirstSymbolChar : public char_parser<TFirstSymbolChar>
+{
+  typedef TFirstSymbolChar self_t;
+  template <typename CharT>
+  bool test(CharT ch) const
+  {
+    return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_';
+  }
+};
+const TFirstSymbolChar FirstSymbolChar = TFirstSymbolChar();
+
+//Parser that accepts any character in a symbol following the first.
+struct TSymbolChar : public char_parser<TSymbolChar>
+{
+  typedef TSymbolChar self_t;
+  template <typename CharT>
+  bool test(CharT ch) const
+  {
+    return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') ||
+      ch == '_' || (ch >= '0' && ch <= '9');
+  }
+};
+const TSymbolChar SymbolChar = TSymbolChar();
+
+rule<wide_phrase_scanner_t> Literal = FirstSymbolChar >> *SymbolChar;
+rule<wide_phrase_scanner_t> MinusSign = L'-' | ch_p(L'\x2212'); //0x2212 = Unicode symbol Minus
+
 //Valid symbols in addition to 0..9, a..z and A..Z.
 static const std::wstring ValidChars = L"+-*/^=_.,()[]{} \x2212\x03C0";
 //---------------------------------------------------------------------------
@@ -377,14 +405,11 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 	rule<wide_phrase_scanner_t, TContext::context_t> Term, Expression, Factor, Constant,
 		Function, Parentheses, Power, FactorSeq, Sum, Neg, Relation, SpecialFunc;
 	rule<wide_phrase_scanner_t, TContext2::context_t> Bracket;
-	rule<wide_phrase_scanner_t> Literal, MinusSign, DummyExpression;
 
 	//DummyExpression accepts everything until it finds a comma. It is used to jump
 	//over the first expression in a special function like sum.
-	DummyExpression = *(comment_nest_p('(', ')') | comment_nest_p('[', ']') | ~ch_p(','));
-
-	Literal = alpha_p >> *alnum_p;
-	MinusSign = '-' | ch_p(L'\x2212'); //0x2212 = Unicode symbol Minus
+	rule<wide_phrase_scanner_t> DummyExpression =
+    *(comment_nest_p('(', ')') | comment_nest_p('[', ']') | ~ch_p(','));
 
 	//A constant may not be followed by a alpha-numeric character
 	//A constant may not be followed a a parenthesis
@@ -394,7 +419,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 							| NoCaseSymbols[TAssign(Constant.List)]
 							]
 							| Symbols[TAssign(Constant.List)]
-							) >> eps_p - (alnum_p | '_')] >> !(+ch_p('('))[TDoError(ecParAfterConst)]
+							) >> lexeme_d[eps_p - SymbolChar]] >> !(+ch_p('('))[TDoError(ecParAfterConst)]
       | ch_p(L'\x03C0')[TDoOperator(Constant.List, CodePi)];
 
 	Bracket =	ch_p('(')[Bracket.EndBracket = ')'] |
@@ -404,7 +429,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 	//A function name may not be followd by character og digit, because they should be part of the name.
 	//If an alphanumeric character is found afterwards, the pushed function is popped
 	Function =
-			lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> eps_p - (alnum_p | '_')]] >>
+			lexeme_d[as_lower_d[FuncSymbols[PushFront(Function.List)][Function.Arg = 1] >> eps_p - SymbolChar]] >>
 					(   Bracket[Function.EndBracket = arg1] >>
 							Expression[TPushBack(Function.List)] >>
 							*(',' >> AssertExpression_p(Expression)[TPushBack(Function.List)])[++Function.Arg] >>
@@ -436,9 +461,9 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 
 	Expression =
 			Relation[Expression.List = arg1] >>
-				 *(   lexeme_d[as_lower_d["and"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
-					|   lexeme_d[as_lower_d["or"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
-					|   lexeme_d[as_lower_d["xor"] >> eps_p - (alnum_p | '_')] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
+				 *(   lexeme_d[as_lower_d["and"] >> eps_p - SymbolChar] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeAnd)])
+					|   lexeme_d[as_lower_d["or"] >> eps_p - SymbolChar] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeOr)])
+					|   lexeme_d[as_lower_d["xor"] >> eps_p - SymbolChar] >> AssertExpression_p(Relation[TDoOperator(Expression.List, CodeXor)])
 					) >> !Literal[TDoError(ecUnknownVar)];
 
   Sum =

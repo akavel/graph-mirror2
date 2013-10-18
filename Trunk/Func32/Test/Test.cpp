@@ -540,6 +540,7 @@ void Test()
   Test(L"xπ", 2, 2*PI);
   Test(L"π*x", 2, 2*PI);
   Test(L"2π", 1, 2*PI);
+  Test(L"π2", 1, 2*PI);
   Test(L"π^2", 1, PI*PI);
   Test(L"sin 2π", 1, 0);
 
