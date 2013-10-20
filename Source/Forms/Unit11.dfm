@@ -186,6 +186,9 @@ object Form11: TForm11
       Top = 46
       Width = 81
       Height = 22
+      Hint = 
+        'Select line style used to draw equations and the border of inequ' +
+        'alities.'
       TabOrder = 2
     end
     object Edit4: TEdit
