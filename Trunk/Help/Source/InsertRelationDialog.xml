@@ -82,6 +82,7 @@
 					Here you may select a shading style for inequalities, color and width for equations.
 					The shading <guilabel>Style</guilabel> is only used for inequalities and is ignored for equations.
 					To see overlapping inequalities they must use different styles.
+          The <guilabel>Line style</guilabel> indicates the type of line drawn for equations and the border line for inequalities.
 					The <guilabel>Width</guilabel> indicates the size of the line drawn for equations and the width of the border line for inequalities.
 					For inequalities the width can be set to 0 to avoid drawing the border line.
 				</para>
