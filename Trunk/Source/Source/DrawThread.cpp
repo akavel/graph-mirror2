@@ -846,7 +846,7 @@ void RegionToPolygons(const std::vector<TRect> &Region, std::vector<TPoint> &Pol
     PolygonCount.push_back(Polygon.size());
     for(unsigned I = 0; I < Polygon.size(); I++)
     {
-      PolygonPoints.push_back(TPoint(Polygon[I].first.x / 2, Polygon[I].first.y));
+      PolygonPoints.push_back(TPoint(Polygon[I].first.x, Polygon[I].first.y));
       hEdges.erase(Polygon[I].first);
       vEdges.erase(Polygon[I].first);
     }
@@ -857,7 +857,7 @@ void TDrawThread::CreateInequality(TRelation &Relation)
 {
   bool xLogScl = Axes.xAxis.LogScl;
   bool yLogScl = Axes.yAxis.LogScl;
-  int dX = (Draw->Width > 1200) ? (Draw->Width > 2400 ? Draw->Width / 120 : 2 ) : 1;
+  int dX = (Draw->Width > 1500) ? (Draw->Width > 2400 ? Draw->Width / 120 : 2 ) : 1;
   std::exp(1.0); //Workaround for stupid bug in bcc 5.6.4
   double dx = xLogScl ? std::exp(dX/Draw->xScale) : dX/Draw->xScale;
   double dx2 = xLogScl ? std::exp(1/Draw->xScale) : 1/Draw->xScale;
@@ -896,9 +896,9 @@ void TDrawThread::CreateInequality(TRelation &Relation)
               XStart = X2;
             else
               Points.push_back(TRect(
-                XStart <= AxesRect.Left ? -100 : XStart*2,
+                XStart <= AxesRect.Left ? -100 : XStart,
                 Y <= AxesRect.Top ? -100 : Y,
-                X2*2 - 1,
+                X2,
                 Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
             break;
           }
@@ -913,9 +913,9 @@ void TDrawThread::CreateInequality(TRelation &Relation)
       return;
     if(LastResult)
       Points.push_back(TRect(
-        XStart <= AxesRect.Left ? -100 : XStart*2,
+        XStart <= AxesRect.Left ? -100 : XStart,
         Y <= AxesRect.Top ? -100 : Y,
-        AxesRect.Right * 2+ 100,
+        AxesRect.Right + 100,
         Y >= AxesRect.Bottom ? AxesRect.Bottom + 100 : Y + 1));
     yLogScl ? y *= dy : y += dy;
   }
