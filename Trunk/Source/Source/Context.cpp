@@ -373,6 +373,7 @@ void TContext::SetDeviceOrigin(int X, int Y)
 //---------------------------------------------------------------------------
 void TContext::SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap, TPenStyleJoin Join)
 {
+  static const Gdiplus::REAL DashArray[] = {10, 5};
   PenStyle = Style;
   PenColor = Color;
   PenWidth = Width;
@@ -396,7 +397,7 @@ void TContext::SetPen(TPenStyle Style, TColor Color, int Width, TEndCap EndCap, 
     case psAlternate:
     case psClear:
     case psSolid: Pen->SetDashStyle(Gdiplus::DashStyleSolid); break;
-    case psDash:  Pen->SetDashStyle(Gdiplus::DashStyleDash); break;
+    case psDash:  Pen->SetDashPattern(DashArray, 2); break;
     case psDot:   Pen->SetDashStyle(Gdiplus::DashStyleDot); break;
     case psDashDot: Pen->SetDashStyle(Gdiplus::DashStyleDashDot); break;
     case psDashDotDot: Pen->SetDashStyle(Gdiplus::DashStyleDashDotDot); break;
