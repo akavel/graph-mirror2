@@ -9,7 +9,11 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#include "Unit1.h"
 #include <delayimp.h>
+#ifdef MADEXCEPT
+#include <madexcept.hpp>
+#endif
 //---------------------------------------------------------------------------
 class EDllLoadError : public Exception
 {
@@ -49,5 +53,32 @@ void _RTLENTRY _EXPFUNC std::_assert(char * cond, char * file, int line)
 	boost::assertion_failed(cond, NULL, file, line);
 #endif
 }
+//---------------------------------------------------------------------------
+#ifdef MADEXCEPT
+class TMadExceptHandler
+{
+public:
+  TMadExceptHandler();
+  ~TMadExceptHandler();
+  void __fastcall ExceptHandler(_di_IMEException exceptIntf, bool &handled);
+};
+TMadExceptHandler MadExceptHandler;
+//---------------------------------------------------------------------------
+TMadExceptHandler::TMadExceptHandler()
+{
+  RegisterExceptionHandler(&MadExceptHandler.ExceptHandler, stDontSync);
+}
+//---------------------------------------------------------------------------
+TMadExceptHandler::~TMadExceptHandler()
+{
+  UnregisterExceptionHandler(MadExceptHandler.ExceptHandler);
+}
+//---------------------------------------------------------------------------
+void __fastcall TMadExceptHandler::ExceptHandler(_di_IMEException exceptIntf, bool &handled)
+{
+  if(!Form1->Data.GetFileName().empty())
+    exceptIntf->AdditionalAttachments->Add(Form1->Data.GetFileName().c_str());
+}
+#endif //MADEXCEPT
 //---------------------------------------------------------------------------
 
