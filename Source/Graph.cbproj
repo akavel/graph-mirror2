@@ -3,7 +3,7 @@
 			<ProjectGuid>{83C28049-A225-408A-83AB-2FB99DF42339}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
 			<MainSource>Graph.cpp</MainSource>
-			<Config Condition="'$(Config)'==''">Release</Config>
+			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
@@ -42,7 +42,7 @@
 			<Multithreaded>true</Multithreaded>
 			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib;IComp.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</AllPackageLibs>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-			<Defines>STRICT</Defines>
+			<Defines>STRICT;MADEXCEPT;$(Defines)</Defines>
 			<IncludePath>..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;..\PyVcl;$(IncludePath)</IncludePath>
 			<ILINK_LibraryPath>..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
@@ -426,34 +426,34 @@
 			<CppCompile Include="Swig\Utility_wrap.cpp">
 				<BuildOrder>67</BuildOrder>
 			</CppCompile>
-			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Frames\TTanFrame.dfm"/>
 			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
+			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Forms\Unit6.dfm"/>
 			<FormResources Include="Forms\Unit7.dfm"/>
-			<FormResources Include="Forms\Unit4.dfm"/>
 			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Forms\Unit3.dfm"/>
+			<FormResources Include="Forms\Unit4.dfm"/>
 			<FormResources Include="Frames\TEvalFrame.dfm"/>
 			<FormResources Include="Frames\TParFuncFrame.dfm"/>
-			<FormResources Include="Forms\Unit9.dfm"/>
 			<FormResources Include="Frames\TAreaFrame.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Forms\Unit9.dfm"/>
 			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit18.dfm"/>
-			<FormResources Include="Forms\Unit15.dfm"/>
 			<FormResources Include="Forms\Unit16.dfm"/>
-			<FormResources Include="Forms\Unit19.dfm"/>
+			<FormResources Include="Forms\Unit14.dfm"/>
+			<FormResources Include="Forms\Unit15.dfm"/>
 			<FormResources Include="Forms\Unit21.dfm"/>
 			<FormResources Include="Forms\Unit22.dfm"/>
-			<FormResources Include="Forms\Unit2.dfm"/>
 			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Forms\Unit14.dfm"/>
-			<FormResources Include="Forms\Unit1.dfm"/>
+			<FormResources Include="Forms\Unit19.dfm"/>
+			<FormResources Include="Forms\Unit2.dfm"/>
 			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit13.dfm"/>
-			<FormResources Include="Forms\Unit10.dfm"/>
 			<FormResources Include="Forms\Unit11.dfm"/>
+			<FormResources Include="Forms\Unit1.dfm"/>
+			<FormResources Include="Forms\Unit10.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
