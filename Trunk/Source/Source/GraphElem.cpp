@@ -311,7 +311,7 @@ TStdFunc::TStdFunc(const std::wstring &AText, const Func32::TSymbolList &SymbolL
 }
 //---------------------------------------------------------------------------
 TStdFunc::TStdFunc(const Func32::TFunc &AFunc)
-  : Text(AFunc.MakeText()), Func(AFunc)
+  : Text(AFunc.MakeText(L"x", 12)), Func(AFunc)
 {
 }
 //---------------------------------------------------------------------------
