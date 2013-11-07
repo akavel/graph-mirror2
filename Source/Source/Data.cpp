@@ -33,7 +33,7 @@ TData::TData() : TopElem(new TTopGraphElem)
 }
 //---------------------------------------------------------------------------
  TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
-  Modified(false), OnAbortUpdate(NULL), TopElem(new TTopGraphElem(*OldData.TopElem))
+  Modified(false), OnAbortUpdate(NULL), TopElem(boost::dynamic_pointer_cast<TTopGraphElem>(OldData.TopElem->Clone()))
 {
   TopElem->SetData(this);
   for(unsigned int I = 0; I < TopElem->ChildCount(); I++)

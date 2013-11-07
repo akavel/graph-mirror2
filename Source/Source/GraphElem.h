@@ -128,7 +128,7 @@ public:
   void WriteToIni(TConfigFileSection &Section) const {};
   void ReadFromIni(const TConfigFileSection &Section) {};
   void Accept(TGraphElemVisitor&) {};
-  TGraphElemPtr Clone() const {throw "Not implemented!";;}
+  TGraphElemPtr Clone() const {return CloneHelper(new TTopGraphElem(*this));}
   bool IsDependent(const std::wstring &SymbolName) const {return false;}
 };
 typedef boost::shared_ptr<TTopGraphElem> TTopGraphElemPtr;
