@@ -426,34 +426,34 @@
 			<CppCompile Include="Swig\Utility_wrap.cpp">
 				<BuildOrder>67</BuildOrder>
 			</CppCompile>
+			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Frames\TTanFrame.dfm"/>
 			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
-			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Forms\Unit6.dfm"/>
 			<FormResources Include="Forms\Unit7.dfm"/>
-			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
 			<FormResources Include="Forms\Unit4.dfm"/>
+			<FormResources Include="Forms\Unit5.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
 			<FormResources Include="Frames\TEvalFrame.dfm"/>
 			<FormResources Include="Frames\TParFuncFrame.dfm"/>
-			<FormResources Include="Frames\TAreaFrame.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
 			<FormResources Include="Forms\Unit9.dfm"/>
+			<FormResources Include="Frames\TAreaFrame.dfm"/>
+			<FormResources Include="Forms\Unit3.dfm"/>
 			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit18.dfm"/>
-			<FormResources Include="Forms\Unit16.dfm"/>
-			<FormResources Include="Forms\Unit14.dfm"/>
 			<FormResources Include="Forms\Unit15.dfm"/>
+			<FormResources Include="Forms\Unit16.dfm"/>
+			<FormResources Include="Forms\Unit19.dfm"/>
 			<FormResources Include="Forms\Unit21.dfm"/>
 			<FormResources Include="Forms\Unit22.dfm"/>
-			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Forms\Unit19.dfm"/>
 			<FormResources Include="Forms\Unit2.dfm"/>
+			<FormResources Include="Forms\Unit20.dfm"/>
+			<FormResources Include="Forms\Unit14.dfm"/>
+			<FormResources Include="Forms\Unit1.dfm"/>
 			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit13.dfm"/>
-			<FormResources Include="Forms\Unit11.dfm"/>
-			<FormResources Include="Forms\Unit1.dfm"/>
 			<FormResources Include="Forms\Unit10.dfm"/>
+			<FormResources Include="Forms\Unit11.dfm"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -482,7 +482,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">5</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">555</VersionInfo>
+						<VersionInfo Name="Build">556</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -494,7 +494,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.5.0.555</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.5.0.556</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>
