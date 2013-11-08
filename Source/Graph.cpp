@@ -27,6 +27,7 @@
 #pragma link "madListModules"
 #pragma link "FPU"
 #pragma link "UserLog"
+#pragma link "DisplayInfo"
 #endif
 #include <tchar.h>
 #include <atl\atlmod.h>
