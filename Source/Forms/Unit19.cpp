@@ -181,6 +181,7 @@ void __fastcall TForm19::Button1Click(TObject *Sender)
     for(std::set<TColor>::iterator Iter = GraphColors.begin(); Iter != GraphColors.end(); ++Iter)
       Colors.push_back(ColorToRGBQUAD(*Iter));
 
+    Python::TLockGIL Dummy;   //We need to hold the GIL to release DataObject
 		Python::TPyObjectPtr DataObject(Python::IsPythonInstalled() ? ToPyObject(Data) : NULL, false);
     int LastColorCount = -1; //Use invalid value as default to force writing of colors in the first loop
     for(unsigned I = 0; I < StepCount; I++)

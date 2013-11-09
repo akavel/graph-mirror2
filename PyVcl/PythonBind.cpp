@@ -52,26 +52,40 @@ PyObject* PyReturnNone()
 //---------------------------------------------------------------------------
 TLockGIL::TLockGIL()
 {
-  SET_PYTHON_FPU_MASK();
-  State = PyGILState_Ensure();
+  if(IsPythonInstalled())
+  {
+    SET_PYTHON_FPU_MASK();
+    State = PyGILState_Ensure();
+  }
+  else
+    State = NULL;
 }
 //---------------------------------------------------------------------------
 TLockGIL::~TLockGIL()
 {
-  PyGILState_Release(static_cast<PyGILState_STATE>(State));
-  SET_DEFAULT_FPU_MASK();
+  if(State != NULL)
+  {
+    PyGILState_Release(static_cast<PyGILState_STATE>(State));
+    SET_DEFAULT_FPU_MASK();
+  }
 }
 //---------------------------------------------------------------------------
 TUnlockGIL::TUnlockGIL()
 {
-  State = PyEval_SaveThread();
-  SET_DEFAULT_FPU_MASK();
+  if(IsPythonInstalled())
+  {
+    State = PyEval_SaveThread();
+    SET_DEFAULT_FPU_MASK();
+  }
 }
 //---------------------------------------------------------------------------
 TUnlockGIL::~TUnlockGIL()
 {
-  SET_PYTHON_FPU_MASK();
-  PyEval_RestoreThread(State);
+  if(IsPythonInstalled())
+  {
+    SET_PYTHON_FPU_MASK();
+    PyEval_RestoreThread(State);
+  }
 }
 //---------------------------------------------------------------------------
 PyObject* SetErrorString(PyObject *Type, const String &Str)
@@ -81,7 +95,8 @@ PyObject* SetErrorString(PyObject *Type, const String &Str)
 }
 //---------------------------------------------------------------------------
 } //namespace Python
-//Helper functions needed for use of boost::intrusive_ptr<PyObject>
+//Helper functions needed for use of boost::intrusive_ptr<PyObject> (TPyObjectPtr)
+//Warning: Using TPyObjectPtr requires that you have the GIL
 void boost::intrusive_ptr_add_ref(PyObject *O)
 {
   Py_INCREF(O);
