@@ -96,6 +96,7 @@ public:
 	~TUnlockGIL();
 };
 
+  //Using TPyObjectPtr requires that you have the GIL
 	typedef boost::intrusive_ptr<PyObject> TPyObjectPtr;
 
 	PyObject* SetErrorString(PyObject *Type, const String &Str);
