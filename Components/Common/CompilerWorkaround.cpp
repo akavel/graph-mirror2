@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <ActnMan.hpp>
 #include <Themes.hpp>
+#include <Rtti.hpp>
 //---------------------------------------------------------------------------
 /* Workaround for problem with support for Unicode filenames in std::fstream in CB2009.
  * It looks like the file fiopen.cpp is not compiled for Unicode support.
@@ -123,31 +124,74 @@ void __fastcall Actnman::TCustomActionControl::SetSelected(bool Value)
 //---------------------------------------------------------------------------
 //Fix for minor bug in DrawCloseButton() inside TDockTree::PaintDockFrame().
 //twCloseButtonNormal will draw a button where the cross is not scaled under Windows 7,
-//which makes it look ugly. Instead we use twSmallCloseButtonNormal, which shows
-//a small button correctly.
+//which makes it look ugly. Instead we use twSmallCloseButtonNormal when the button is small.
+//TDockTree::FGrabberSize can only be changed through RTTI.
+//TDockTree::AdjustDockRect() is using the GrabberSize constant instead of the FGrabberSize member.
 class TFixedDockTree : public TDockTree
 {
-	void DrawThemedCloseButton(TCanvas *Canvas, int Left, int Top);
+	void DrawThemedCloseButton(TCanvas *Canvas, int Left, int Top, int Size);
+  void DrawThemedGrabber(TCanvas *Canvas, TThemedRebar GripperType, int Left, int Top, int Right, int Bottom);
 protected:
 	void __fastcall PaintDockFrame(TCanvas *TCanvas, TControl *Control, const TRect &Rect);
+  void __fastcall AdjustDockRect(TControl *Control, TRect &ARect);
+public:
+  __fastcall TFixedDockTree(TWinControl *DockSite);
 };
 
-void TFixedDockTree::DrawThemedCloseButton(TCanvas *Canvas, int Left, int Top)
+__fastcall TFixedDockTree::TFixedDockTree(TWinControl *DockSite)
+  : TDockTree(DockSite)
 {
-	TRect DrawRect(Left, Top, Left+10, Top+10);
-	//Use twSmallCloseButtonNormal instead of twCloseButtonNormal
-	TThemedElementDetails Details = ThemeServices()->GetElementDetails(twSmallCloseButtonNormal);
+  TRttiContext Context;
+  TRttiType *DockTreeType = Context.GetType(__classid(TDockTree));
+  TRttiField *GrabberSize = DockTreeType->GetField("FGrabberSize");
+  GrabberSize->SetValue(this, TValue::From((Screen->PixelsPerInch * 12) / 96));
+}
+
+void TFixedDockTree::DrawThemedCloseButton(TCanvas *Canvas, int Left, int Top, int Size)
+{
+	TRect DrawRect(Left, Top, Left+Size, Top+Size);
+	TThemedWindow ButtonType = Size < 15 ? twSmallCloseButtonNormal : twCloseButtonNormal;
+	TThemedElementDetails Details = ThemeServices()->GetElementDetails(ButtonType);
 	ThemeServices()->DrawElement(Canvas->Handle, Details, DrawRect, NULL);
+}
+
+void TFixedDockTree::DrawThemedGrabber(TCanvas *Canvas, TThemedRebar GripperType, int Left, int Top, int Right, int Bottom)
+{
+  TRect DrawRect(Left, Top, Right, Bottom);
+  TThemedElementDetails Details = ThemeServices()->GetElementDetails(GripperType);
+  ThemeServices()->DrawElement(Canvas->Handle, Details, DrawRect);
 }
 
 void __fastcall TFixedDockTree::PaintDockFrame(TCanvas *Canvas, TControl *Control, const TRect &Rect)
 {
-	TDockTree::PaintDockFrame(Canvas, Control, Rect);
 	if(ThemeServices()->ThemesEnabled)
+  {
+    int GrabberSize = (Screen->PixelsPerInch * 12) / 96;
+    int GrabberWidth = (Screen->PixelsPerInch * 10) / 96;
 		if(DockSite->Align == alTop || DockSite->Align == alBottom)
-			DrawThemedCloseButton(Canvas, Rect.Left+1, Rect.Top+1);
+    {
+			DrawThemedCloseButton(Canvas, Rect.Left+1, Rect.Top+1, GrabberWidth);
+      DrawThemedGrabber(Canvas, trGripperVert, Rect.Left+1, Rect.Top+GrabberSize+1, Rect.Left+GrabberWidth, Rect.Bottom-2);
+    }
 		else
-			DrawThemedCloseButton(Canvas, Rect.Right-11, Rect.Top+1);
+    {
+			DrawThemedCloseButton(Canvas, Rect.Right-11, Rect.Top+1, GrabberWidth);
+      DrawThemedGrabber(Canvas, trGripper, Rect.Left+2, Rect.Top+1,  Rect.Right-GrabberSize-2, Rect.Top+GrabberWidth);
+    }
+  }
+  else
+  	TDockTree::PaintDockFrame(Canvas, Control, Rect);
+}
+
+void __fastcall TFixedDockTree::AdjustDockRect(TControl *Control, TRect &ARect)
+{
+  int GrabberSize = (Screen->PixelsPerInch * 12) / 96;
+//Allocate room for the caption on the left if docksite is horizontally
+//oriented, otherwise allocate room for the caption on the top. }
+  if(DockSite->Align == alTop || DockSite->Align == alBottom)
+    ARect.Left += GrabberSize;
+  else
+    ARect.Top += GrabberSize;
 }
 //---------------------------------------------------------------------------
 class TInitWorkaround
