@@ -175,7 +175,7 @@ void __fastcall TFixedDockTree::PaintDockFrame(TCanvas *Canvas, TControl *Contro
     }
 		else
     {
-			DrawThemedCloseButton(Canvas, Rect.Right-11, Rect.Top+1, GrabberWidth);
+			DrawThemedCloseButton(Canvas, Rect.Right-GrabberWidth-1, Rect.Top+1, GrabberWidth);
       DrawThemedGrabber(Canvas, trGripper, Rect.Left+2, Rect.Top+1,  Rect.Right-GrabberSize-2, Rect.Top+GrabberWidth);
     }
   }
