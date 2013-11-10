@@ -77,6 +77,28 @@ const TCursor crMoveHand1 = 1;
 const TCursor crMoveHand2 = 2;
 Thread::TMutex GlobalMutex(L"Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
 //---------------------------------------------------------------------------
+//Scale all images in List so the images become IconWidth width and heigh
+void ScaleImageList(TImageList *List, int IconWidth)
+{
+  std::auto_ptr<TImageList> TempList(new TImageList(NULL));
+  TempList->SetSize(IconWidth, IconWidth);
+  std::auto_ptr<Graphics::TBitmap> Bitmap2(new Graphics::TBitmap);
+  Bitmap2->Width = IconWidth;
+  Bitmap2->Height = IconWidth;
+  TColor OldBkColor = List->BkColor;
+  List->BkColor = clPurple;
+
+  for(int I = 0; I < List->Count; I++)
+  {
+    std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+    List->GetBitmap(I, Bitmap.get());
+    Bitmap2->Canvas->StretchDraw(TRect(0, 0, IconWidth, IconWidth), Bitmap.get());
+    TempList->AddMasked(Bitmap2.get(), clPurple);
+  }
+  List->BkColor = OldBkColor;
+  List->Assign(TempList.get());
+}
+//---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: IsResizing(0), TForm(Owner), Updating(0), StatusIcon(-1), CursorState(csIdle),
     FixedImages(ImageList1->Count), Draw(Image1->Canvas, &Data, false, "DrawThread"), AbortPrinting(false)
@@ -135,6 +157,16 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	LoadSettings();
 	ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
 
+  if(PixelsPerInch != 96)
+  {
+    int IconWidth = MulDiv(16, PixelsPerInch, 96);
+    ScaleImageList(ImageList2, IconWidth);
+    ScaleImageList(ImageList1, IconWidth);
+    TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
+    ActionToolBar1->VertMargin = IconWidth / 8;
+    ActionMainMenuBar1->Spacing = IconWidth / 2;
+  }
+
 	//Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
 	Form9.reset(new TForm9(this));
 
@@ -161,6 +193,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 	//We need to use something in HTMLHelpViewer.pas to make sure it is linked in
 	ViewerName = "HTML Help Viewer";
+
+  StatusBar1->Panels->Items[1]->Width = (StatusBar1->Panels->Items[1]->Width * PixelsPerInch) / 96;
 
 	BOOST_ASSERT(MoveHand1);
 	BOOST_ASSERT(MoveHand2);
@@ -3218,7 +3252,6 @@ void __fastcall TForm1::LegendPlacementClick(TObject *Sender)
 {
   if(TMenuItem *MenuItem = dynamic_cast<TMenuItem*>(Sender))
   {
-    MenuItem->Checked = true;
     Data.Axes.LegendPlacement = static_cast<TLegendPlacement>(MenuItem->MenuIndex + 1);
     Data.SetModified();
     Redraw();
@@ -3235,13 +3268,12 @@ void __fastcall TForm1::Legend_ShowClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::PopupMenu4Popup(TObject *Sender)
 {
+  //Warning: RadioItem does not work when Images are assigned
   Legend_Show->Checked = Data.Axes.ShowLegend;
-
-  if(Data.Axes.LegendPlacement > lpCustom && Data.Axes.LegendPlacement <= Legend_Placement->Count)
-    Legend_Placement->Items[Data.Axes.LegendPlacement - 1]->Checked = true;
-  else //Remove all check marks
-    for(int I = 0; I < Legend_Placement->Count; I++)
-      Legend_Placement->Items[I]->Checked = false;
+  int Index = Data.Axes.LegendPlacement > lpCustom &&
+    Data.Axes.LegendPlacement <= Legend_Placement->Count ? Data.Axes.LegendPlacement - 1 : -1;
+  for(int I = 0; I < Legend_Placement->Count; I++)
+    Legend_Placement->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::SupportActionExecute(TObject *Sender)
@@ -3793,4 +3825,5 @@ void __fastcall TForm1::ApplicationEventsModalBegin(TObject *Sender)
   SET_DEFAULT_FPU_MASK();
 }
 //---------------------------------------------------------------------------
+
 

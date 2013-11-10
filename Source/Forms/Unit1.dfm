@@ -590,7 +590,7 @@ object Form1: TForm1
     Left = 208
     Top = 216
     Bitmap = {
-      494C01010B000D001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010B000D00300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -997,7 +997,7 @@ object Form1: TForm1
     Left = 208
     Top = 256
     Bitmap = {
-      494C01013D003F001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013D003F00300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000000001000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4221,6 +4221,7 @@ object Form1: TForm1
     Top = 256
   end
   object PopupMenu4: TPopupActionBar
+    Images = ImageList2
     OnPopup = PopupMenu4Popup
     Left = 208
     Top = 176
@@ -4240,31 +4241,22 @@ object Form1: TForm1
       Caption = 'Placement'
       object Legend_TopRight: TMenuItem
         Caption = 'Top Right'
-        Checked = True
-        GroupIndex = 1
         Hint = 'Show the legend in the upper right corner.'
-        RadioItem = True
         OnClick = LegendPlacementClick
       end
       object Legend_BottomRight: TMenuItem
         Caption = 'Bottom Right'
-        GroupIndex = 1
         Hint = 'Show the legend in the bottom right corner.'
-        RadioItem = True
         OnClick = LegendPlacementClick
       end
       object Legend_TopLeft: TMenuItem
         Caption = 'Top Left'
-        GroupIndex = 1
         Hint = 'Show the legend in the upper left corner.'
-        RadioItem = True
         OnClick = LegendPlacementClick
       end
       object Legend_BottomLeft: TMenuItem
         Caption = 'Bottom Left'
-        GroupIndex = 1
         Hint = 'Show the legend in the bottom left corner.'
-        RadioItem = True
         OnClick = LegendPlacementClick
       end
     end
