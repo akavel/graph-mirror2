@@ -18,8 +18,8 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#pragma package(smart_init) // madExcept
 #ifdef MADEXCEPT
+#pragma package(smart_init) // madExcept
 #pragma link "madExcept"
 #pragma link "madLinkDisAsm"
 #pragma link "madListHardware"
