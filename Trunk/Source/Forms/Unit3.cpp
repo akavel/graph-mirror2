@@ -232,21 +232,21 @@ void __fastcall TForm3::Button3Click(TObject *Sender)
   Application->HelpContext(HelpContext);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::BitBtn1Click(TObject *Sender)
+void __fastcall TForm3::Button7Click(TObject *Sender)
 {
   FontDialog1->Font->Assign(TitleFont);
   if(FontDialog1->Execute())
     TitleFont->Assign(FontDialog1->Font);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::BitBtn2Click(TObject *Sender)
+void __fastcall TForm3::Button4Click(TObject *Sender)
 {
   FontDialog1->Font->Assign(LabelFont);
   if(FontDialog1->Execute())
     LabelFont->Assign(FontDialog1->Font);
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::BitBtn3Click(TObject *Sender)
+void __fastcall TForm3::Button5Click(TObject *Sender)
 {
   FontDialog1->Font->Assign(NumberFont);
   if(FontDialog1->Execute())
@@ -275,7 +275,7 @@ void __fastcall TForm3::CheckBoxClick(TObject *Sender)
   UpdateEnabledControls();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::BitBtn4Click(TObject *Sender)
+void __fastcall TForm3::Button6Click(TObject *Sender)
 {
   FontDialog1->Font->Assign(LegendFont);
   if(FontDialog1->Execute())
@@ -333,5 +333,6 @@ void __fastcall TForm3::CheckBox15Click(TObject *Sender)
   RadioGroup3->Enabled = CheckBox15->Checked;
 }
 //---------------------------------------------------------------------------
+
 
 

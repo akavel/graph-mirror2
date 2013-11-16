@@ -165,6 +165,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
     TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
     ActionToolBar1->VertMargin = IconWidth / 8;
     ActionMainMenuBar1->Spacing = IconWidth / 2;
+    ActionToolBar1->Spacing = MulDiv(5, PixelsPerInch, 96);
   }
 
 	//Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
