@@ -225,4 +225,14 @@ int _RTLENTRY _EXPFUNC std::iswdigit(wchar_t c)
 	return IsType(c, _IS_DIG);
 }
 //---------------------------------------------------------------------------
+//Workaround for access violation when right Alt (Alt Gr) is pressed on a
+//MacBook Pro with Windows 8.1 running under Parallels. See QC #120388
+namespace Menus
+{
+bool __fastcall IsAltGRPressed()
+{
+  return false;
+}
+}
+//---------------------------------------------------------------------------
 
