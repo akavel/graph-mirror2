@@ -143,6 +143,7 @@
 #define RES_PRINTER_ERROR       338
 #define RES_INVALID_USE_OF_INF  339
 #define RES_OUT_OF_MEMORY       340
+#define RES_PRINTING_ABORTED    341
 
 #define RES_CAPTION_DELETE      400
 #define RES_SHOW                401
