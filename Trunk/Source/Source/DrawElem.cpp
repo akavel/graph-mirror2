@@ -46,26 +46,33 @@ inline int TDrawElem::SizeScale(int I){return I*Draw->SizeMul+0.5;}
 //---------------------------------------------------------------------------
 void TDrawElem::DrawNext()
 {
-  const TTopGraphElemPtr &Top = Draw->Data->GetTopElem();
-  unsigned Count = Top->ChildCount();
-  while(PlotIndex < Count)
+  try
   {
-    TGraphElemPtr Elem = Top->GetChild(PlotIndex);
-    if(Elem->IsUpdateFinished())
+    const TTopGraphElemPtr &Top = Draw->Data->GetTopElem();
+    unsigned Count = Top->ChildCount();
+    while(PlotIndex < Count)
     {
-      unsigned Count = Elem->ChildCount();
-      for(unsigned N = 0; N < Count; N++)
+      TGraphElemPtr Elem = Top->GetChild(PlotIndex);
+      if(Elem->IsUpdateFinished())
       {
-        const TGraphElemPtr &Child = Elem->GetChild(N);
-        if(Child->GetVisible())
-          Child->Accept(*this);
+        unsigned Count = Elem->ChildCount();
+        for(unsigned N = 0; N < Count; N++)
+        {
+          const TGraphElemPtr &Child = Elem->GetChild(N);
+          if(Child->GetVisible())
+            Child->Accept(*this);
+        }
+        if(Elem->GetVisible())
+          Elem->Accept(*this);
+        PlotIndex++;
       }
-      if(Elem->GetVisible())
-        Elem->Accept(*this);
-      PlotIndex++;
+      else
+        break;
     }
-    else
-      break;
+  }
+  catch(EPrinter &)
+  {
+    ShowStatusError(LoadRes(RES_PRINTING_ABORTED));
   }
 }
 //---------------------------------------------------------------------------
