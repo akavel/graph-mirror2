@@ -1,0 +1,90 @@
+unit UserLog;
+
+interface
+
+implementation
+
+uses
+  madExcept, AppEvnts, Classes, Messages, Forms, Menus, Windows, SysUtils;
+
+type
+  TUserLogging = class
+  private
+    UserLogStr : string;
+    KeyLogStr : string;
+    ApplicationEvents : TApplicationEvents;
+    HookHandle : HHOOK;
+    procedure ActionExecute(Action : TBasicAction; var Handled : boolean);
+    class function StaticKeyboardHook(code: Integer; wparam: WPARAM; lparam: LPARAM): LRESULT stdcall; static;
+    function KeyboardHook(code: Integer; wparam: WPARAM; lparam: LPARAM): LRESULT;
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function GetUserLog : string;
+  end;
+
+var
+  UserLogging : TUserLogging;
+
+constructor TUserLogging.Create;
+begin
+  inherited;
+  ApplicationEvents := TApplicationEvents.Create(nil);
+  ApplicationEvents.OnActionExecute := ActionExecute;
+  HookHandle := SetWindowsHookEx(WH_KEYBOARD, StaticKeyboardHook, 0, GetCurrentThreadId);
+end;
+
+destructor TUserLogging.Destroy;
+begin
+  ApplicationEvents.Free;
+  UnhookWindowsHookEx(HookHandle);
+  inherited;
+end;  
+
+class function TUserLogging.StaticKeyboardHook(code: Integer; wparam: WPARAM; lparam: LPARAM): LRESULT stdcall;
+begin
+  Result := UserLogging.KeyboardHook(code, wparam, lparam);
+end;
+
+function TUserLogging.KeyboardHook(code: Integer; wparam: WPARAM; lparam: LPARAM): LRESULT;
+begin
+  //Only react on key press and not on key release
+  if (code = HC_ACTION) and (lparam and $80000000 = 0)then
+   if (wparam = VK_MENU) or (wparam = VK_CONTROL) or (wparam = VK_SHIFT) then
+     KeyLogStr := KeyLogStr + ShortCutToText(ShortCut(wparam, [])) + ', '
+   else
+     KeyLogStr := KeyLogStr + ShortCutToText(ShortCut(wparam, KeyDataToShiftState(lparam))) + ', ';
+  Result := CallNextHookEx(HookHandle, code, wparam, lparam);
+end;
+
+procedure TUserLogging.ActionExecute(Action : TBasicAction; var Handled : boolean);
+begin
+  if Action.Name <> '' then
+  begin
+    if KeyLogStr <> '' then
+    begin
+      UserLogStr := UserLogStr + KeyLogStr + #13;
+      KeyLogStr := '';
+    end;
+    UserLogStr := UserLogStr + Action.Name + #13;
+  end;
+end;
+
+function TUserLogging.GetUserLog : string;
+begin
+  Result := UserLogStr + KeyLogStr;
+end;
+
+function GetUserLog : string;
+begin
+  Result := UserLogging.GetUserLog;
+end;  
+
+initialization
+  RegisterBugReportPlugin('UserLog', 'User logging', GetUserLog);
+  UserLogging := TUserLogging.Create;  
+finalization
+  UnregisterBugReportPlugin('UserLog');
+  UserLogging.Free;
+end.

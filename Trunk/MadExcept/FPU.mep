@@ -1,0 +1,39 @@
+unit FPU;
+
+interface
+
+implementation
+
+uses madExcept, madDumpObj, SysUtils, Classes, Windows;
+
+const
+  CONTEXT_FLOATING_POINT : uint32 = $00010000 or $00000008;
+
+function GetFPUData(const exceptIntf: IMEException) : string;
+var
+  I, J : Integer;
+  Float : Windows._FLOATING_SAVE_AREA;
+begin
+  result := '';
+  Float := exceptIntf.Context.FloatSave;
+  if exceptIntf.Context.ContextFlags and CONTEXT_FLOATING_POINT = CONTEXT_FLOATING_POINT then
+    with exceptIntf.Context.FloatSave do
+      begin
+        for I := 0 To 7 do
+        begin
+          result := result + 'ST' + IntToStr(I) + ' = ';
+          for J := I*10 + 9 downto I*10 do
+            result := result + IntToHex(RegisterArea[J], 2);
+          result := result + #13;
+        end;
+        result := result + 'CTRL = ' + IntToHex(ControlWord, 4) + #13;
+        result := result + 'STAT = ' + IntToHex(StatusWord, 4) + #13;
+        result := result + 'TAGS = ' + IntToHex(TagWord, 4) + #13;
+      end;
+end;
+
+initialization
+  RegisterBugReportPlugin('FPU', 'FPU logging', GetFPUData);
+finalization
+  UnregisterBugReportPlugin('FPU');  
+end.

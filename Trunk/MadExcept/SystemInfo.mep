@@ -1,0 +1,1835 @@
+{-------------------------------------------------------------}
+{----Purpose : VCL wrapper for SPI SystemParameterInfo API.   }
+{    By      : Ir. G.W. van der Vegt                          }
+{    For     : Myself                                         }
+{-------------------------------------------------------------}
+{ ddmmyy   comment                                            }
+{ -------- ---------------------------------------------------}
+{ 08052001-Initial version.                                   }
+{ 09052001-Added some more calls.                             }
+{         -Added CRT emulation.                               }
+{ 28052001-Added Wrappers for Accessibility and Desktop.      }
+{         -Implemeted GetDeskWallPaper.                       }
+{         -found missing SPI_* constants in winDK's winuser.h.}
+{         -Implemented Input (still some ME constants unknown.}
+{         -Made sure calls return default value when API      }
+{          fails.                                             }
+{         -Implemented SPI_GETDEFAULTINPUTLANG. Returns 1033  }
+{          in my case.                                        }
+{         -Implemented SPI_MOUSE as an Object.                }
+{         -Implemented SPI_GETANIMATION.                      }
+{         -Corrected broken SPI_WORKAREA.                     }
+{ 19062005-madshi: now works as a madExcept 3.0 plugin        }
+{ 10072005-madshi: some little adjustments for new 3.0 beta   }
+{-------------------------------------------------------------}
+{ 1.       SPI_GETMINIMIZEDMETRICS   //ObjectWrapper          }
+{ 2.       SPI_GETNONCLIENTSMETRICS  //ObjectWrapper          }
+{ 3.       SPI_GETMOUSECLICKLOCK     //ME                     }
+{ 4.       SPI_GETMOUSECLICKLOCKTIME //ME                     }
+{ 5.       SPI_GETMOUSESONAR         //ME                     }
+{ 6.       SPI_GETMOUSEVANHISH       //ME                     }
+{-------------------------------------------------------------}
+
+unit SystemInfo;
+
+interface
+
+function GetSystemSettingsInfo : string;
+
+implementation
+
+uses Windows, SysUtils, madExcept, madDumpObj;
+
+{$M+}
+
+{-------------------------------------------------------------}
+
+//AccessTimeout
+  
+type
+  spiAccessTimeoutFlags = set of (atfOnOffFeedBack,
+                                  atfTimeOutOn);
+  spiAccessTimeout = class
+  private
+    fAccessTimeout : TAccessTimeout;
+    function GetTimeOutMSec: DWORD;
+    function GetFlags: spiAccessTimeoutFlags;
+    procedure Update;
+  published
+    property flags         : spiAccessTimeoutFlags read GetFlags;
+    property TimeOutMSec   : DWORD                 read GetTimeOutMSec;
+  end;
+
+{-------------------------------------------------------------}
+
+//FilterKeys
+
+type
+  spiFilterKeyFlags = set of (fkfAvailable,
+                              fkfClickOn,
+                              fkfFilterKeysOn,
+                              fkfFilterSession,
+                              fkfHotKeyActive,
+                              fkfHotKeySound,
+                              fkfConfirmHotKey,
+                              fkfIndicator);
+  spiFilterKeys = class
+  private
+    fFilterKeys : TFilterKeys;
+    function GetBounceMSec: DWORD;
+    function GetDelayMSec: DWORD;
+    function GetFlags: spiFilterKeyFlags;
+    function GetRepeatMSec: DWORD;
+    function GetWaitMSec: DWORD;
+    procedure Update;
+  published
+    property flags      : spiFilterKeyFlags read GetFlags;
+    property WaitMSec   : DWORD             read GetWaitMSec;   
+    property DelayMSec  : DWORD             read GetDelayMSec;  
+    property RepeatMSec : DWORD             read GetRepeatMSec; 
+    property BounceMSec : DWORD             read GetBounceMSec;
+  end;
+
+{-------------------------------------------------------------}
+
+//HighConstrast
+  
+type
+  spiHighContrastFlags = set of (hfcAvailable,
+                                 hfcConfirmHotKey,
+                                 hfcHighConstrastOn,
+                                 hfcHotKeyActive,
+                                 hfcHotKeyAvailable,
+                                 hfcHotKeySound,
+                                 hfcIndicator);
+
+  spiHighContrast = class
+  private
+    fHighContrast : THighContrast;
+    function GetDefaultScheme: String;
+    function GetFlags: spiHighContrastFlags;
+    procedure Update;
+  published
+    property flags         : spiHighContrastFlags read GetFlags;
+    property DefaultScheme : String               read GetDefaultScheme;
+  end;
+
+{-------------------------------------------------------------}
+
+//MouseKeys
+
+type
+  spiMouseKeyFlags = set of (mkfAvailable,
+                             mkfConfirmHotKey,
+                             mkfHotKeyActive,
+                             mkfHotKeySound,
+                             mkfIndicator,
+                             mkfMouseKeysOn,
+                             mkfModifiers,
+                             mkfMouseMode,
+                             mkfReplaceNumbers,
+                             mkfLeftButtonSel,
+                             mkfRightButtonSel,
+                             mkfLeftButtonDown,
+                             mkfRightButtonDown);
+
+  spiMouseKeys = class
+  private
+    fMouseKeys : TMouseKeys;
+    function GetFlags: spiMouseKeyFlags;
+    procedure Update;
+    function GetMaxSpeed: Dword;
+    function GetTimeToMaxSpeed: Dword;
+    function GetCtrlSpeed: Dword;
+  published
+    property flags          : spiMouseKeyFlags read GetFlags;          
+    property MaxSpeed       : Dword            read GetMaxSpeed;       
+    property TimeToMaxSpeed : Dword            read GetTimeToMaxSpeed; 
+    property CtrlSpeed      : Dword            read GetCtrlSpeed;
+  end;
+
+{-------------------------------------------------------------}
+
+//SerialKeys
+
+type
+  spiSerialKeysFlags = set of (serkfAvailable,
+                              serkfIndicator,
+                              serkfSerialKeysOn);
+
+  spiSerialKeys = class
+  private
+    fSerialKeys : TSerialKeys;
+    function GetFlags: spiSerialKeysFlags;
+    procedure Update;
+    function GetActivePort: String;
+    function GetActive: Dword;
+    function GetBaudRate: Dword;
+    function GetPort: String;
+    function GetPortState: Dword;
+  published
+    property flags          : spiSerialKeysFlags read GetFlags;      
+    property ActivePort     : String             read GetActivePort; 
+    property Port           : String             read GetPort;       
+    property BaudRate       : Dword              read GetBaudRate;   
+    property PortState      : Dword              read GetPortState;  
+    property Active         : Dword              read GetActive;
+  end;
+
+{-------------------------------------------------------------}
+
+//SoundSentry
+
+type
+  spiSoundSentryFlags = set of (ssfAvailable,
+                                ssfIndicator,
+                                ssfSoundSentryOn);
+
+  spiSoundSentry = class
+  private
+    fSoundSentry : TSoundSentry;
+    function GetFlags: spiSoundSentryFlags;
+    procedure Update;
+    function GetGrafEffect: Dword;
+    function GetGrafEffectColor: Dword;
+    function GetGrafEffectMSec: Dword;
+    function GetTextEffect: Dword;
+    function GetTextEffectColorBits: Dword;
+    function GetTextEffectMSec: Dword;
+    function GetWindowsEffect: Dword;
+    function GetWindowsEffectDLL: String;
+    function GetWindowsEffectMSec: Dword;
+    function GetWindowsEffectOrdinal: Dword;
+  published
+    property flags                : spiSoundSentryFlags read GetFlags;
+    property TextEffect           : Dword               read GetTextEffect;           
+    property TextEffectMSec       : Dword               read GetTextEffectMSec;
+    property TextEffectColorBits  : Dword               read GetTextEffectColorBits;  
+    property GrafEffect           : Dword               read GetGrafEffect;           
+    property GrafEffectMSec       : Dword               read GetGrafEffectMSec;       
+    property GrafEffectColor      : Dword               read GetGrafEffectColor;      
+    property WindowsEffect        : Dword               read GetWindowsEffect;        
+    property WindowsEffectMSec    : Dword               read GetWindowsEffectMSec;    
+    property WindowsEffectDLL     : String              read GetWindowsEffectDLL;     
+    property WindowsEffectOrdinal : Dword               read GetWindowsEffectOrdinal; 
+  end;
+
+{-------------------------------------------------------------}
+
+//StickyKeys
+
+type
+  spiStickyKeysFlags = set of (skfAudibleFeedback,
+                               skfAvailable,
+                               skfConfirmHotkey,
+                               skfHotkeyActive,
+                               skfHotkeySound,
+                               skfIndicator,
+                               skfStickyKeysOn,
+                               skfTriState,
+                               skfTwoKeysOff,
+                               skfLAltLatched,
+                               skfLCtlLatched,
+                               skfLShiftLatched,
+                               skfRAltLatched,
+                               skfRCtlLatched,
+                               skfRShiftLatched,
+                               skfTCtlLatched,
+                               skfLAltLocked,
+                               skfLCtlLocked,
+                               skfLShiftLocked,
+                               skfRAltLocked,
+                               skfRCtlLocked,
+                               skfRShiftLocked,
+                               skfLWinLatched,
+                               sfRWinLatched,
+                               skfLWinLocked,
+                               skfRWinLocked);
+
+  spiStickyKeys = class
+  private
+    fStickyKeys : TStickyKeys;
+    function GetFlags: spiStickyKeysFlags;
+    procedure Update;
+  published
+    property flags : spiStickyKeysFlags read GetFlags;
+  end;
+
+{-------------------------------------------------------------}
+
+//ToggleKeys
+
+type
+  spiToggleKeysFlags = set of (tkfAvailable,
+                               tkfConfirmHotkey,
+                               tkfhotkeyActive,
+                               tkfHotkeySound,
+                               tkfIndicator,
+                               tkfToggleKeysOn);
+
+  spiToggleKeys = class
+  private
+    fToggleKeys : TToggleKeys;
+    function GetFlags: spiToggleKeysFlags;
+    procedure Update;
+  published
+    property flags: spiToggleKeysFlags read GetFlags;
+  end;
+
+{-------------------------------------------------------------}
+
+//Rect
+
+type
+  spiRect = class
+  private
+    fRect : TRect;
+    function GetBottom: Integer;
+    function GetBottomRight: TPoint;
+    function GetLeft: Integer;
+    function GetRight: Integer;
+    function GetTop: Integer;
+    function GetTopLeft: TPoint;
+    procedure SetRect(const Value: TRect);
+  public
+    property _Rect               : TRect write SetRect;
+  published
+    property Left                : Integer read GetLeft;
+    property Top                 : Integer read GetTop;
+    property Right               : Integer read GetRight;
+    property Bottom              : Integer read GetBottom;
+    property TopLeft             : TPoint  read GetTopLeft;
+    property BottomRight         : TPoint  read GetBottomRight;
+  end;
+
+{-------------------------------------------------------------}
+
+//WorkArea
+
+type
+  spiWorkArea = class
+  private
+    fRect : spiRect;
+    procedure Update;
+    function GetRect: spiRect;
+  public
+    constructor Create(); reintroduce;
+  published
+    property Rect  : spiRect read GetRect;
+  end;
+
+{-------------------------------------------------------------}
+
+//LogFont
+
+type
+  spiLogFont = class
+  private
+    fLogFont : LogFont;
+    function GetEscapement: Longint;
+    function GetHeight: Longint;
+    function GetItalics: Boolean;
+    function GetOrientation: Longint;
+    function GetWeight: Longint;
+    function GetWidth: Longint;
+    function GetCharset: Byte;
+    function GetClipPrecision: Byte;
+    function GetFaceName: String;
+    function GetOutPrecision: Byte;
+    function GetPitchAndFamily: Byte;
+    function GetQuality: Byte;
+    function GetStrikeout: Boolean;
+    procedure SetLogFont(const Value: LogFont);
+  public  
+    property _LogFont            : LogFont  write SetLogFont;
+  published
+    property Height              : Longint  read GetHeight;
+    property Width               : Longint  read GetWidth;          
+    property Escapement          : Longint  read GetEscapement;     
+    property Orientation         : Longint  read GetOrientation;    
+    property Weight              : Longint  read GetWeight;         
+    property Italics             : Boolean  read GetItalics;
+    property Strikeout           : Boolean  read GetStrikeout;      
+    property CharSet             : Byte     read GetCharset;        
+    property OutPrecision        : Byte     read GetOutPrecision;   
+    property ClipPrecision       : Byte     read GetClipPrecision;  
+    property Quality             : Byte     read GetQuality;        
+    property PitchAndFamily      : Byte     read GetPitchAndFamily; 
+    property FaceName            : String   read GetFaceName;       
+  end;
+
+{-------------------------------------------------------------}
+
+//IconMetrics
+
+type
+  spiIconMetrics = class
+  private
+    fIconMetrics : TIconMetrics;
+    fLogFont : spiLogFont;
+    procedure Update;
+    function GetHorzSpacing: Integer;
+    function GetLogFont: spiLogFont;
+    function GetTitleWrap: Boolean;
+    function GetVertSpacing: Integer;
+  public
+    constructor Create(); reintroduce;
+  published
+    property HorzSpacing         : Integer    read GetHorzSpacing;
+    property VertSpacing         : Integer    read GetVertSpacing; 
+    property TitleWrap           : Boolean    read GetTitleWrap;
+    property LogFont             : spiLogFont read GetLogFont;     
+  end;
+
+{-------------------------------------------------------------}
+
+//IconTitleLogFont
+
+type
+  spiIconTitleLogFont = class
+  private
+    fLogFont : spiLogFont;
+    procedure Update;
+    function GetLogFont: spiLogFont;
+  public
+    constructor Create(); reintroduce;
+  published
+    property LogFont  : spiLogFont read GetLogFont;
+  end;
+
+{-------------------------------------------------------------}
+
+//Mouse
+
+type
+  spiMouseEvent = Array[1..3] of Integer;
+
+type
+  spiMouse = class
+  private
+    fMouse : spiMouseEvent;
+    procedure Update;
+    function GetAcceleration: Integer;
+    function GetThresholdX: Integer;
+    function GetThresholdY: Integer;
+  public
+    constructor Create(); reintroduce;
+  published
+    property ThresholdX   : Integer  read GetThresholdX;    
+    property ThresholdY   : Integer  read GetThresholdY;    
+    property Acceleration : Integer  read GetAcceleration;
+  end;
+
+{-------------------------------------------------------------}
+
+//Animation
+
+type
+  spiAnimation = class
+  private
+    fAnimation: tagANIMATIONINFO;
+    procedure Update;
+    function GetMinAnimation: Boolean;
+  public
+    constructor Create(); reintroduce;
+  published
+    property MinAnimation : Boolean  read GetMinAnimation;
+  end;
+
+{-------------------------------------------------------------}
+
+//Accessibility Wrapper
+
+type
+  SpiAccessibilityInfo = class
+  private
+    fFilterKeys    : spiFilterKeys;
+    fAccessTimeOut : spiAccessTimeout;
+    fHighContrast  : spiHighContrast;
+    fMouseKeys     : spiMouseKeys;
+    fSerialKeys    : spiSerialKeys;
+    fSoundSentry   : spiSoundSentry;
+    fStickyKeys    : spiStickyKeys;
+    fToggleKeys    : spiToggleKeys;
+    function GetScreenReader: Boolean;
+    function GetShowSounds: Boolean;
+{
+    function GetMouseClickLock: Boolean;
+    function GetMouseClickLockTime: Dword;
+    function GetMouseSonar: Boolean;
+    function GetMouseVanish: Boolean;
+}
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property AccessTimeOut : spiAccessTimeout read fAccessTimeout;         
+    property FilterKeys    : spiFilterKeys    read fFilterKeys;            
+    property HighConstrast : spiHighContrast  read fHighContrast;          
+//  property MouseClickLock : Boolean         read GetMouseClickLock;      
+//  property MouseClickLockTime : Dword       read GetMouseClickLockTime;  
+    property MouseKeys     : spiMouseKeys     read fMouseKeys;             
+//  property MouseSonar    : Boolean          read GetMouseSonar;          
+//  property MouseVanish   : Boolean          read GetMouseVanish;         
+    property ScreenReader  : Boolean          read GetScreenReader;        
+    property SerialKeys    : spiSerialKeys    read fSerialKeys;            
+    property ShowSounds    : Boolean          read GetShowSounds;          
+    property SoundSentry   : spiSoundSentry   read fSoundSentry;           
+    property StickyKeys    : spiStickyKeys    read fStickyKeys;            
+    property ToggleKeys    : spiToggleKeys    read fToggleKeys;
+  end;
+
+{-------------------------------------------------------------}
+
+//Desktop Wrapper
+
+type
+  SpiDesktopInfo = class
+  private
+    fWorkArea: spiWorkArea;
+    function GetDesktopWallPaper: String;
+    function GetFontSmoothing: Boolean;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property DesktopWallPaper : String      read GetDesktopWallPaper;
+    property FontSmoothing    : Boolean     read GetFontSmoothing;
+    property WorkArea         : spiWorkArea read fWorkArea;
+  end;
+
+{-------------------------------------------------------------}
+
+//Icon Wrapper
+
+type
+  SPiIconInfo = class
+  private
+    fIconMetrics      : spiIconMetrics;
+    fIconTitleLogFont : spiIconTitleLogFont;
+    function GetIconHorizontalSpacing: Integer;
+    function GetIconTitleWrap: Boolean;
+    function GetIconVerticalSpacing: Integer;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property IconMetrics           : spiIconMetrics      read fIconMetrics;             
+    property IconTitleLogFont      : spiIconTitleLogFont read fIconTitleLogFont;        
+    property IconTitleWrap         : Boolean             read GetIconTitleWrap;         
+    property IconHorizontalSpacing : Integer             read GetIconHorizontalSpacing; 
+    property IconVerticalSpacing   : Integer             read GetIconVerticalSpacing;   
+  end;
+
+{-------------------------------------------------------------}
+
+//Input Wrapper
+
+type
+  SpiInputInfo = class
+  private
+    fMouse : spiMouse;
+    function  GetBeep: Boolean;
+    function GetKeyboardCues: Boolean;
+    function GetKeyboardDelay: Integer;
+    function GetKeyboardPref: Boolean;
+    function GetKeyboardSpeed: Dword;
+    function GetMouseHoverHeight: UINT;
+    function GetMouseSpeed: Integer;
+    function GetMouseHoverTime: UINT;
+    function GetMouseHoverWidth: UINT;
+    function GetMouseTrails: Integer;
+    function GetSnapToDefButton: Boolean;
+    function GetWheelScrollLines: UINT;
+    function GetDefaultInputLang: Word;
+    function GetMouse: spiMouse;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property Beep                 : Boolean  read GetBeep;
+    property DefaultInputLanguage : Word     read GetDefaultInputLang; 
+    property KeyboardCues         : Boolean  read GetKeyboardCues;     
+    property KeyboardDelay        : Integer  read GetKeyboardDelay;    
+    property KeyboardPref         : Boolean  read GetKeyboardPref;     
+    property KeyboardSpeed        : Dword    read GetKeyboardSpeed;    
+    property Mouse                : spiMouse read GetMouse;            
+    property MouseHoverHeight     : UINT     read GetMouseHoverHeight; 
+    property MouseHoverTime       : UINT     read GetMouseHoverTime;   
+    property MouseHoverWidth      : UINT     read GetMouseHoverWidth;  
+    property MouseSpeed           : Integer  read GetMouseSpeed;       
+    property MouseTrails          : Integer  read GetMouseTrails;      
+    property SnapToDefButton      : Boolean  read GetSnapToDefButton;  
+    property WheelScrollLines     : UINT     read GetWheelScrollLines; 
+  end;
+
+{-------------------------------------------------------------}
+
+//Menu Wrapper
+
+type
+  SpiDropAlignment = (Left,Right);
+  
+type
+  SpiMenuInfo = class
+  private
+    function GetMenuDropAlignment: SpiDropAlignment;
+    function GetMenuFade: Boolean;
+    function GetMenuShowDelay: Dword;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property MenuDropAlignment   : SpiDropAlignment read GetMenuDropAlignment;
+    property MenuFade            : Boolean          read GetMenuFade;         
+    property MenuShowDelay       : Dword            read GetMenuShowDelay;    
+  end;
+
+{-------------------------------------------------------------}
+
+//Power Wrapper
+
+type
+  SpiPowerInfo = class
+  private
+    function GetLowPowerActive: Boolean;
+    function GetLowPowerTimeout: Integer;
+    function GetPowerOffActive: Boolean;
+    function GetPowerOffTimeout: Integer;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property LowPowerActive         : Boolean read GetLowPowerActive;
+    property LowPowerTimeout        : Integer read GetLowPowerTimeout;
+    property PowerOffActive         : Boolean read GetPowerOffActive;  
+    property PowerOffTimeout        : Integer read GetPowerOffTimeout; 
+  end;
+
+{-------------------------------------------------------------}
+
+//Screen Saver Wrapper
+
+type
+  SpiScreenSaverInfo = class
+  private
+    function GetScreenSaveActive: Boolean;
+    function GetScreenSaverRunning: Boolean;
+    function GetScreenSaveTimeout: Integer;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property ScreenSaveActive         : Boolean read GetScreenSaveActive;
+    property ScreenSaverRunning       : Boolean read GetScreenSaverRunning;
+    property ScreenSaveTimeout        : Integer read GetScreenSaveTimeout;   
+  end;
+
+{-------------------------------------------------------------}
+
+//UIEffects Wrapper
+
+type
+  SpiUIEffectsInfo = class
+  private
+    function GetComboBoxAnimation: Boolean;
+    function GetCursorShadow: Boolean;
+    function GetGradientCaptions: Boolean;
+    function GetGuiEffects: Boolean;
+    function GetHotTracking: Boolean;
+    function GetListBoxSmoothScrolling: Boolean;
+    function GetMenuAnimation: Boolean;
+    function GetMenuUnderlines: Boolean;
+    function GetSelectionFade: Boolean;
+    function GetTooltipAnimation: Boolean;
+    function GetTooltipFade: Boolean;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property ComboBoxAnimation      : Boolean read GetComboBoxAnimation;
+    property CursorShadow           : Boolean read GetCursorShadow;           
+    property GradientCaptions       : Boolean read GetGradientCaptions;       
+    property HotTracking            : Boolean read GetHotTracking;            
+    property ListBoxSmoothScrolling : Boolean read GetListBoxSmoothScrolling; 
+    property MenuAnimation          : Boolean read GetMenuAnimation;          
+    property MenuUnderlines         : Boolean read GetMenuUnderlines;         
+    property SelectionFade          : Boolean read GetSelectionFade;          
+    property TooltipAnimation       : Boolean read GetTooltipAnimation;       
+    property TooltipFade            : Boolean read GetTooltipFade;            
+    property GuiEffects             : Boolean read GetGuiEffects;             
+  end;
+
+{-------------------------------------------------------------}
+
+//Windows Wrapper
+
+type
+  SpiWindowsInfo = class
+  private
+    fAnimation : spiAnimation;
+    function GetActiveWindowTracking: Boolean;
+    function GetActiveWndTrkTimeout: Dword;
+    function GetActiveWndTrkZOrder: Boolean;
+    function GetBorder: Integer;
+    function GetCaretWidth: Dword;
+    function GetDragFullWindows: Boolean;
+    function GetForegroundFlashCount: Dword;
+    function GetForeGroundLockTimeout: Dword;
+    function GetShowImeUi: Boolean;
+    function GetAnimation: spiAnimation;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+//Window parameter
+    property ActiveWindowTracking      : Boolean read GetActiveWindowTracking;
+    property ActiveWndTrkZOrder        : Boolean read GetActiveWndTrkZOrder;    
+    property ActiveWndTrkTimeout       : Dword   read GetActiveWndTrkTimeout;   
+    property Animation                 : spiAnimation read GetAnimation;        
+    property Border                    : Integer read GetBorder;                
+    property CaretWidth                : Dword   read GetCaretWidth;            
+    property DragFullWindows           : Boolean read GetDragFullWindows;
+    property ForegroundFlashCount      : Dword   read GetForegroundFlashCount;  
+    property ForeGroundLockTimeout     : Dword   read GetForeGroundLockTimeout; 
+  //MinimizedMetrics
+  //NonClientMetrics
+    property ShowImeUi                 : Boolean read GetShowImeUi;
+  end;
+{-------------------------------------------------------------}
+
+//Windows9x Wrapper
+
+type
+  SpiWindows9xInfo = class
+  private
+    function GetWindowsExtension: Boolean;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(); reintroduce;
+  published
+    { Published declarations }
+    property WindowsExtension  : Boolean read GetWindowsExtension;
+  end;
+
+{-------------------------------------------------------------}
+
+type
+  TSystemParametersInfo = class
+  private
+    fAccessibility : SpiAccessibilityInfo;
+    fDesktop       : SpiDesktopInfo;
+    fIcon          : SpiIconInfo;
+    fInput         : SpiInputInfo;
+    fMenu          : SpiMenuInfo;
+    fPower         : SpiPowerInfo;
+    fScreenSaver   : SpiScreenSaverInfo;
+    fUIEffects     : SpiUIEffectsInfo;
+    fWindows       : SpiWindowsInfo;
+    fWindows9x     : SpiWindows9xInfo;
+    { Private declarations }
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create;
+  published
+    { Published declarations }
+  //SubComponents
+    property Accessibility : SpiAccessibilityInfo read fAccessibility; 
+    property Desktop       : SpiDesktopInfo       read fDesktop;       
+    property Icon          : SpiIconInfo          read fIcon;          
+    property Input         : SpiInputInfo         read fInput;         
+    property Menu          : SpiMenuInfo          read fMenu;          
+    property Power         : SpiPowerInfo         read fPower;         
+    property ScreenSaver   : SpiScreenSaverInfo   read fScreenSaver;   
+    property UIEffects     : SpiUIEffectsInfo     read fUIEffects;     
+    property Windows       : SpiWindowsInfo       read fWindows;
+    property Windows9x     : SpiWindows9xInfo     read fWindows9x;     
+  end;
+
+{$M-}
+
+//Missing SPI_* constants
+const
+  SPI_GETDRAGFULLWINDOWS  =    38;
+  SPI_GETKEYBOARDPREF     =    68;
+  SPI_GETMENUSHOWDELAY    =   106;
+  SPI_GETDESKWALLPAPER    =   115;
+  SPI_GETKEYBOARDCUES     = $100A;
+  SPI_GETMENUFADE         = $1012;
+  SPI_GETCURSORSHADOW     = $101A;
+  SPI_GETUIEFFECTS        = $103E;
+  SPI_GETSELECTIONFADE    = $1014;
+  SPI_GETTOOLTIPANIMATION = $1016;
+  SPI_GETTOOLTIPFADE      = $1018;
+  SPI_GETCARETWIDTH       = $2006;
+//SPI_GETMOUSECLICKLOCK     =   ?;
+//SPI_GETMOUSECLICKLOCKTIME =   ?;
+//SPI_GETMOUSESONAR         =   ?;
+//SPI_GETMOUSEVANHISH       =   ?;
+
+function SpiBool(uiAction : UINT) : Boolean;
+var
+  b    : BOOL;
+begin
+  if not(SystemParametersInfo(uiAction,0,@b,Ord(False)))
+    then Result:=False
+    else Result:=b;
+end;
+      
+function SpiWord(uiAction : UINT) : Word;
+begin
+  if not(SystemParametersInfo(uiAction,0,@Result,Ord(False)))
+    then Result:=0;
+end;
+
+function SpiInteger(uiAction : UINT) : Integer;
+begin
+  if not(SystemParametersInfo(uiAction,0,@Result,Ord(False)))
+    then Result:=0;
+end;
+  
+function SpiUINT(uiAction : UINT) : UINT;
+begin
+  if not(SystemParametersInfo(uiAction,0,@Result,Ord(False)))
+    then Result:=0;
+end;
+  
+function SpiDWORD(uiAction : UINT) : DWord;
+begin
+  if not(SystemParametersInfo(uiAction,0,@Result,Ord(False)))
+    then Result:=0;
+end;
+  
+{ TSystemParametersInfo }
+
+constructor TSystemParametersInfo.Create;
+begin
+  inherited;
+  fAccessibility    :=SpiAccessibilityInfo.Create();
+  fDesktop          :=SpiDesktopInfo.Create();
+  fIcon             :=SpiIconInfo.Create();
+  fInput            :=SpiInputInfo.Create();
+  fMenu             :=SpiMenuInfo.Create();
+  fPower            :=SpiPowerInfo.Create();
+  fScreenSaver      :=SpiScreenSaverInfo.Create();
+  fUIEffects        :=SpiUIEffectsInfo.Create();
+  fWindows          :=SpiWindowsInfo.Create();
+  fWindows9x        :=SpiWindows9xInfo.Create();
+end;
+
+{ spiFilterKeys }
+
+function spiFilterKeys.GetBounceMSec: DWORD;
+begin
+  Update;
+  Result:=fFilterKeys.iBounceMSec;
+end;
+
+function spiFilterKeys.GetDelayMSec: DWORD;
+begin
+  Update;
+  Result:=fFilterKeys.iDelayMSec;
+end;
+
+function spiFilterKeys.GetFlags: spiFilterKeyFlags;
+begin
+  Update;
+  Result:=[];
+  if ((FKF_AVAILABLE     and fFilterKeys.dwFlags)<>0) then Include(Result,fkfAvailable);
+  if ((FKF_CLICKON       and fFilterKeys.dwFlags)<>0) then Include(Result,fkfClickOn);
+  if ((FKF_FILTERKEYSON  and fFilterKeys.dwFlags)<>0) then Include(Result,fkfFilterKeysOn);
+  if ((FKF_HOTKEYACTIVE  and fFilterKeys.dwFlags)<>0) then Include(Result,fkfHotKeyactive);
+  if ((FKF_HOTKEYSOUND   and fFilterKeys.dwFlags)<>0) then Include(Result,fkfHotKeySound);
+  if ((FKF_CONFIRMHOTKEY and fFilterKeys.dwFlags)<>0) then Include(Result,fkfConfirmHotKey);
+  if ((FKF_INDICATOR     and fFilterKeys.dwFlags)<>0) then Include(Result,fkfIndicator);
+end;
+
+function spiFilterKeys.GetRepeatMSec: DWORD;
+begin
+  Update;
+  Result:=fFilterKeys.iRepeatMSec;
+end;
+
+function spiFilterKeys.GetWaitMSec: DWORD;
+begin
+  Update;
+  Result:=fFilterKeys.iWaitMSec;
+end;
+
+procedure spiFilterKeys.Update;
+begin
+  ZeroMemory(@fFilterKeys,Sizeof(fFilterKeys));
+  fFilterKeys.cbSize:=Sizeof(fFilterKeys);
+  SystemParametersInfo(SPI_GETFILTERKEYS,Sizeof(fFilterKeys),@fFilterKeys,Ord(False));
+end;
+
+{ spiAccessTimeout }
+
+function spiAccessTimeout.GetFlags: spiAccessTimeoutFlags;
+begin
+  Update;
+  Result:=[];
+  if ((ATF_ONOFFFEEDBACK and fAccessTimeout.dwFlags)<>0) then Include(Result,atfOnOffFeedBack);
+  if ((ATF_TIMEOUTON     and fAccessTimeout.dwFlags)<>0) then Include(Result,atfTimeOutOn);
+end;
+
+function spiAccessTimeout.GetTimeOutMSec: DWORD;
+begin
+  Update;
+  Result:=fAccessTimeout.iTimeOutMSec;
+end;
+
+procedure spiAccessTimeout.Update;
+begin
+  ZeroMemory(@fAccessTimeout,Sizeof(fAccessTimeout));
+  fAccessTimeout.cbSize:=Sizeof(fAccessTimeout);
+  SystemParametersInfo(SPI_GETACCESSTIMEOUT,Sizeof(fAccessTimeout),@fAccessTimeout,Ord(False));
+end;
+
+{ spiHighConstrast }
+
+function spiHighContrast.GetDefaultScheme: String;
+begin
+  Update;
+  Result:=fHighContrast.lpszDefaultScheme;
+end;
+
+function spiHighContrast.GetFlags: spiHighContrastFlags;
+begin
+  Update;
+  Result:=[];
+  if ((HCF_AVAILABLE       and fHighContrast.dwFlags)<>0) then Include(Result,hfcAvailable);
+  if ((HCF_CONFIRMHOTKEY   and fHighContrast.dwFlags)<>0) then Include(Result,hfcConfirmHotKey);
+  if ((HCF_HIGHCONTRASTON  and fHighContrast.dwFlags)<>0) then Include(Result,hfcHighConstrastOn);
+  if ((HCF_HOTKEYACTIVE    and fHighContrast.dwFlags)<>0) then Include(Result,hfcHotKeyActive);
+  if ((HCF_HOTKEYAVAILABLE and fHighContrast.dwFlags)<>0) then Include(Result,hfcHotKeyAvailable);
+  if ((HCF_HOTKEYSOUND     and fHighContrast.dwFlags)<>0) then Include(Result,hfcHotKeySound);
+  if ((HCF_INDICATOR       and fHighContrast.dwFlags)<>0) then Include(Result,hfcIndicator);
+end;
+
+procedure spiHighContrast.Update;
+begin
+  ZeroMemory(@fHighContrast,Sizeof(fHighContrast));
+  fHighContrast.cbSize:=Sizeof(fHighContrast);
+  SystemParametersInfo(SPI_GETHIGHCONTRAST,Sizeof(fHighContrast),@fHighContrast,Ord(False));
+end;
+
+{ spiMouseKeys }
+
+function spiMouseKeys.GetCtrlSpeed: Dword;
+begin
+  Update;
+  Result:=fMouseKeys.iCtrlSpeed;
+end;
+
+function spiMouseKeys.GetFlags: spiMouseKeyFlags;
+begin
+  Update;
+  Result:=[];
+  if ((MKF_AVAILABLE       and fMouseKeys.dwFlags)<>0) then Include(Result,mkfAvailable);
+  if ((MKF_CONFIRMHOTKEY   and fMouseKeys.dwFlags)<>0) then Include(Result,mkfConfirmHotKey);
+  if ((MKF_HOTKEYACTIVE    and fMouseKeys.dwFlags)<>0) then Include(Result,mkfHotKeyActive);
+  if ((MKF_HOTKEYSOUND     and fMouseKeys.dwFlags)<>0) then Include(Result,mkfHotKeySound);
+  if ((MKF_INDICATOR       and fMouseKeys.dwFlags)<>0) then Include(Result,mkfIndicator);
+  if ((MKF_MOUSEKEYSON     and fMouseKeys.dwFlags)<>0) then Include(Result,mkfMouseKeysOn);
+  if ((MKF_MODIFIERS       and fMouseKeys.dwFlags)<>0) then Include(Result,mkfModifiers);
+  if ((MKF_MOUSEMODE       and fMouseKeys.dwFlags)<>0) then Include(Result,mkfMouseMode);
+  if ((MKF_REPLACENUMBERS  and fMouseKeys.dwFlags)<>0) then Include(Result,mkfReplaceNumbers);
+  if ((MKF_LEFTBUTTONSEL   and fMouseKeys.dwFlags)<>0) then Include(Result,mkfLeftButtonSel);
+  if ((MKF_RIGHTBUTTONSEL  and fMouseKeys.dwFlags)<>0) then Include(Result,mkfRightButtonSel);
+  if ((MKF_LEFTBUTTONDOWN  and fMouseKeys.dwFlags)<>0) then Include(Result,mkfLeftButtonDown);
+  if ((MKF_RIGHTBUTTONDOWN and fMouseKeys.dwFlags)<>0) then Include(Result,mkfRightButtonDown);
+end;
+
+function spiMouseKeys.GetMaxSpeed: Dword;
+begin
+  Update;
+  Result:=fMouseKeys.iMaxSpeed;
+end;
+
+function spiMouseKeys.GetTimeToMaxSpeed: Dword;
+begin
+  Update;
+  Result:=fMouseKeys.iTimeToMaxSpeed;
+end;
+
+procedure spiMouseKeys.Update;
+begin
+  ZeroMemory(@fMouseKeys,Sizeof(fMouseKeys));
+  fMouseKeys.cbSize:=Sizeof(fMouseKeys);
+  SystemParametersInfo(SPI_GETMOUSEKEYS,Sizeof(fMouseKeys),@fMouseKeys,Ord(False));
+end;
+
+{ spiSerialsKey }
+
+function spiSerialKeys.GetActivePort: String;
+begin
+  Update;
+  Result:=fSerialKeys.lpszActivePort;
+end;
+
+function spiSerialKeys.GetActive: Dword;
+begin
+  Update;
+  Result:=fSerialKeys.iActive;
+end;
+
+function spiSerialKeys.GetBaudRate: Dword;
+begin
+  Update;
+  Result:=fSerialKeys.iBaudRate;
+end;
+
+function spiSerialKeys.GetFlags: spiSerialKeysFlags;
+begin
+  Update;
+  Result:=[];
+  if ((SERKF_AVAILABLE      and fSerialKeys.dwFlags)<>0) then Include(Result,serkfAvailable);
+  if ((SERKF_INDICATOR      and fSerialKeys.dwFlags)<>0) then Include(Result,serkfIndicator);
+  if ((SERKF_SERIALKEYSON   and fSerialKeys.dwFlags)<>0) then Include(Result,serkfSerialKeysOn);
+end;
+
+function spiSerialKeys.GetPort: String;
+begin
+  Update;
+  Result:=fSerialKeys.lpszPort;
+end;
+
+function spiSerialKeys.GetPortState: Dword;
+begin
+  Update;
+  Result:=fSerialKeys.iPortState;
+end;
+
+procedure spiSerialKeys.Update;
+begin
+  ZeroMemory(@fSerialKeys,Sizeof(fSerialKeys));
+  fSerialKeys.cbSize:=Sizeof(fSerialKeys);
+  SystemParametersInfo(SPI_GETSERIALKEYS,Sizeof(fSerialKeys),@fSerialKeys,Ord(False));
+end;
+
+{ spiSoundSentry }
+
+function spiSoundSentry.GetFlags: spiSoundSentryFlags;
+begin
+  Update;
+  Result:=[];
+  if ((SSF_AVAILABLE      and fSoundSentry.dwFlags)<>0) then Include(Result,ssfAvailable);
+  if ((SSF_INDICATOR      and fSoundSentry.dwFlags)<>0) then Include(Result,ssfIndicator);
+  if ((SSF_SOUNDSENTRYON  and fSoundSentry.dwFlags)<>0) then Include(Result,ssfSoundSentryOn);
+end;
+
+function spiSoundSentry.GetGrafEffect: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iFSGrafEffect;
+end;
+
+function spiSoundSentry.GetGrafEffectColor: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iFSGrafEffectColor;
+end;
+
+function spiSoundSentry.GetGrafEffectMSec: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iFSGrafEffectMSec;
+end;
+
+function spiSoundSentry.GetTextEffect: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iFSTextEffect;
+end;
+
+function spiSoundSentry.GetTextEffectColorBits: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iFSTextEffectColorBits;
+end;
+
+function spiSoundSentry.GetTextEffectMSec: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iFSTextEffectMSec;
+end;
+
+function spiSoundSentry.GetWindowsEffect: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iWindowsEffect;
+end;
+
+function spiSoundSentry.GetWindowsEffectDLL: String;
+begin
+  Update;
+  Result:=fSoundSentry.lpszWindowsEffectDLL;
+end;
+
+function spiSoundSentry.GetWindowsEffectMSec: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iWindowsEffectMSec;
+end;
+
+function spiSoundSentry.GetWindowsEffectOrdinal: Dword;
+begin
+  Update;
+  Result:=fSoundSentry.iWindowsEffectOrdinal;
+end;
+
+procedure spiSoundSentry.Update;
+begin
+  ZeroMemory(@fSoundSentry,Sizeof(fSoundSentry));
+  fSoundSentry.cbSize:=Sizeof(fSoundSentry);
+  SystemParametersInfo(SPI_GETSOUNDSENTRY,Sizeof(fSoundSentry),@fSoundSentry,Ord(False));
+end;
+
+{ spiStickyKeys }
+
+function spiStickyKeys.GetFlags: spiStickyKeysFlags;
+begin
+  Update;
+  Result:=[];
+  if ((SKF_AUDIBLEFEEDBACK and fStickyKeys.dwFlags)<>0) then Include(Result,skfAudibleFeedback);
+  if ((SKF_AVAILABLE       and fStickyKeys.dwFlags)<>0) then Include(Result,skfAvailable);
+  if ((SKF_CONFIRMHOTKEY   and fStickyKeys.dwFlags)<>0) then Include(Result,skfConfirmHotkey);
+  if ((SKF_HOTKEYACTIVE    and fStickyKeys.dwFlags)<>0) then Include(Result,skfHotkeyActive);
+  if ((SKF_HOTKEYSOUND     and fStickyKeys.dwFlags)<>0) then Include(Result,skfHotkeySound);
+  if ((SKF_INDICATOR       and fStickyKeys.dwFlags)<>0) then Include(Result,skfIndicator);
+  if ((SKF_STICKYKEYSON    and fStickyKeys.dwFlags)<>0) then Include(Result,skfStickyKeysOn);
+  if ((SKF_TRISTATE        and fStickyKeys.dwFlags)<>0) then Include(Result,skfTriState);
+  if ((SKF_TWOKEYSOFF      and fStickyKeys.dwFlags)<>0) then Include(Result,skfTwoKeysOff);
+  if ((SKF_LALTLATCHED     and fStickyKeys.dwFlags)<>0) then Include(Result,skfLAltLatched);
+  if ((SKF_LCTLLATCHED     and fStickyKeys.dwFlags)<>0) then Include(Result,skfLCtlLatched);
+  if ((SKF_LSHIFTLATCHED   and fStickyKeys.dwFlags)<>0) then Include(Result,skfLShiftLatched);
+  if ((SKF_RALTLATCHED     and fStickyKeys.dwFlags)<>0) then Include(Result,skfRAltLatched);
+  if ((SKF_RCTLLATCHED     and fStickyKeys.dwFlags)<>0) then Include(Result,skfRCtlLatched);
+  if ((SKF_RSHIFTLATCHED   and fStickyKeys.dwFlags)<>0) then Include(Result,skfRShiftLatched);
+  if ((SKF_LALTLOCKED      and fStickyKeys.dwFlags)<>0) then Include(Result,skfLAltLocked);
+  if ((SKF_LCTLLOCKED      and fStickyKeys.dwFlags)<>0) then Include(Result,skfLCtlLocked);
+  if ((SKF_LSHIFTLOCKED    and fStickyKeys.dwFlags)<>0) then Include(Result,skfLShiftLocked);
+  if ((SKF_RALTLOCKED      and fStickyKeys.dwFlags)<>0) then Include(Result,skfRAltLocked);
+  if ((SKF_RCTLLOCKED      and fStickyKeys.dwFlags)<>0) then Include(Result,skfRCtlLocked);
+  if ((SKF_RSHIFTLOCKED    and fStickyKeys.dwFlags)<>0) then Include(Result,skfRShiftLocked);
+  if ((SKF_LWINLATCHED     and fStickyKeys.dwFlags)<>0) then Include(Result,skfLWinLatched);
+  if ((SKF_RWINLATCHED     and fStickyKeys.dwFlags)<>0) then Include(Result,sfRWinLatched);
+  if ((SKF_LWINLOCKED      and fStickyKeys.dwFlags)<>0) then Include(Result,skfLWinLocked);
+  if ((SKF_RWINLOCKED      and fStickyKeys.dwFlags)<>0) then Include(Result,skfRWinLocked);
+end;
+
+procedure spiStickyKeys.Update;
+begin
+  ZeroMemory(@fStickyKeys,Sizeof(fStickyKeys));
+  fStickyKeys.cbSize:=Sizeof(fStickyKeys);
+  SystemParametersInfo(SPI_GETSTICKYKEYS,Sizeof(fStickyKeys),@fStickyKeys,Ord(False));
+end;
+
+{ spiToggleKeys }
+
+function spiToggleKeys.GetFlags: spiToggleKeysFlags;
+begin
+  Update;
+  Result:=[];
+  if ((TKF_AVAILABLE       and fToggleKeys.dwFlags)<>0) then Include(Result,tkfAvailable);
+  if ((TKF_CONFIRMHOTKEY   and fToggleKeys.dwFlags)<>0) then Include(Result,tkfConfirmHotkey);
+  if ((TKF_HOTKEYACTIVE    and fToggleKeys.dwFlags)<>0) then Include(Result,tkfHotkeyActive);
+  if ((TKF_HOTKEYSOUND     and fToggleKeys.dwFlags)<>0) then Include(Result,tkfHotkeySound);
+  if ((TKF_INDICATOR       and fToggleKeys.dwFlags)<>0) then Include(Result,tkfIndicator);
+  if ((TKF_TOGGLEKEYSON    and fToggleKeys.dwFlags)<>0) then Include(Result,tkfToggleKeysOn);
+end;
+
+procedure spiToggleKeys.Update;
+begin
+  ZeroMemory(@fToggleKeys,Sizeof(fToggleKeys));
+  fToggleKeys.cbSize:=Sizeof(fToggleKeys);
+  SystemParametersInfo(SPI_GETTOGGLEKEYS,Sizeof(fToggleKeys),@fToggleKeys,Ord(False));
+end;
+
+{ spiRect }
+
+function spiRect.GetBottom: Integer;
+begin
+  Result:=fRect.Bottom;
+end;
+
+function spiRect.GetBottomRight: TPoint;
+begin
+  Result:=fRect.BottomRight;
+end;
+
+function spiRect.GetLeft: Integer;
+begin
+  Result:=fRect.Left;
+end;
+
+function spiRect.GetRight: Integer;
+begin
+  Result:=fRect.Right;
+end;
+
+function spiRect.GetTop: Integer;
+begin
+  Result:=fRect.Top;
+end;
+
+function spiRect.GetTopLeft: TPoint;
+begin
+  Result:=fRect.TopLeft;
+end;
+
+procedure spiRect.SetRect(const Value: TRect);
+begin
+  fRect:=Value;
+end;
+
+{ spiIconMetrics }
+
+constructor spiIconMetrics.Create();
+begin
+  inherited Create();
+
+  fLogFont:=spiLogFont.Create();
+end;
+
+function spiIconMetrics.GetHorzSpacing: Integer;
+begin
+  Update;
+  Result:=fIconMetrics.iHorzSpacing;
+end;
+
+function spiIconMetrics.GetLogFont: spiLogFont;
+begin
+  Update;
+  Result:=fLogFont;
+end;
+
+function spiIconMetrics.GetTitleWrap: Boolean;
+begin
+  Update;
+  Result:=Boolean(fIconMetrics.iTitleWrap);
+end;
+
+function spiIconMetrics.GetVertSpacing: Integer;
+begin
+  Update;
+  Result:=fIconMetrics.iVertSpacing;
+end;
+
+procedure spiIconMetrics.Update;
+begin
+  ZeroMemory(@fIconMetrics,Sizeof(fIconMetrics));
+  fIconMetrics.cbSize:=Sizeof(fIconMetrics);
+  SystemParametersInfo(SPI_GETICONMETRICS,Sizeof(fIconMetrics),@fIconMetrics,Ord(False));
+  fLogFont._LogFont:=fIconMetrics.lfFont;
+end;
+
+{ spiLogFont }
+
+function spiLogFont.GetCharset: Byte;
+begin
+  Result:=fLogFont.lfCharSet;
+end;
+
+function spiLogFont.GetClipPrecision: Byte;
+begin
+  Result:=fLogFont.lfClipPrecision;
+end;
+
+function spiLogFont.GetEscapement: Longint;
+begin
+  Result:=fLogFont.lfEscapement;
+end;
+
+function spiLogFont.GetFaceName: String;
+begin
+  Result:=fLogFont.lfFaceName;
+end;
+
+function spiLogFont.GetHeight: Longint;
+begin
+  Result:=fLogFont.lfHeight;
+end;
+
+function spiLogFont.GetItalics: Boolean;
+begin
+  Result:=Boolean(fLogFont.lfItalic);
+end;
+
+function spiLogFont.GetOrientation: Longint;
+begin
+  Result:=fLogFont.lfOrientation;
+end;
+
+function spiLogFont.GetOutPrecision: Byte;
+begin
+  Result:=fLogFont.lfOutPrecision;
+end;
+
+function spiLogFont.GetPitchAndFamily: Byte;
+begin
+  Result:=fLogFont.lfPitchAndFamily;
+end;
+
+function spiLogFont.GetQuality: Byte;
+begin
+  Result:=fLogFont.lfQuality;
+end;
+
+function spiLogFont.GetStrikeout: Boolean;
+begin
+  Result:=Boolean(fLogFont.lfStrikeOut);
+end;
+
+function spiLogFont.GetWeight: Longint;
+begin
+  Result:=fLogFont.lfWeight;
+end;
+
+function spiLogFont.GetWidth: Longint;
+begin
+  Result:=fLogFont.lfWidth;
+end;
+
+procedure spiLogFont.SetLogFont(const Value: LogFont);
+begin
+  fLogFont:=Value;
+end;
+
+{ spiWorkArea }
+
+constructor spiWorkArea.Create();
+begin
+  inherited Create();
+
+  fRect:=spiRect.Create();
+end;
+
+function spiWorkArea.GetRect: spiRect;
+begin
+  Update;
+  Result:=fRect;
+end;
+
+procedure spiWorkArea.Update;
+var
+  r : TRect;
+begin
+  ZeroMemory(@r,Sizeof(r));
+  SystemParametersInfo(SPI_GETWORKAREA,0,@r,Ord(False));
+  fRect.fRect:=r;
+end;
+
+{ spiIconTitleLogFont }
+
+constructor spiIconTitleLogFont.Create();
+begin
+  inherited Create();
+
+  fLogFont:=spiLogFont.Create();
+end;
+
+function spiIconTitleLogFont.GetLogFont: spiLogFont;
+begin
+  Update;
+  Result:=fLogFont;
+end;
+
+procedure spiIconTitleLogFont.Update;
+var
+  f: TLogFont;
+begin
+  ZeroMemory(@f,Sizeof(TLogFont));
+  SystemParametersInfo(SPI_GETICONTITLELOGFONT,Sizeof(TLogFont),@f,Ord(False));
+  fLogFont._LogFont:=f;
+end;
+
+{ SpiAccessibilityInfo }
+
+constructor SpiAccessibilityInfo.Create();
+begin
+  inherited Create();
+
+  fAccessTimeout    :=spiAccessTimeout.Create();
+  fFilterKeys       :=spiFilterKeys.Create();
+  fHighContrast     :=spiHighContrast.Create();
+  fMouseKeys        :=spiMouseKeys.Create();
+  fSerialKeys       :=spiSerialKeys.Create();
+  fSoundSentry      :=spiSoundSentry.Create();
+  fStickyKeys       :=spiStickyKeys.Create();
+  fToggleKeys       :=spiToggleKeys.Create();
+end;
+{
+function SpiAccessibilityInfo.GetMouseClickLock: Boolean;
+begin
+  Result:=spiBool(SPI_GETSCREENREADER);
+end;
+
+function SpiAccessibilityInfo.GetMouseClickLockTime: Dword;
+begin
+  Result:=spiDword(SPI_GETMOUSECLICKLOCKTIME);
+end;
+
+function SpiAccessibilityInfo.GetMouseSonar: Boolean;
+begin
+  Result:=spiBool(SPI_GETMOUSESONAR);
+end;
+
+function SpiAccessibilityInfo.GetMouseVanish: Boolean;
+begin
+  Result:=spiBool(SPI_GETMOUSEVANISH);
+end;
+}
+function SpiAccessibilityInfo.GetScreenReader: Boolean;
+begin
+  Result:=spiBool(SPI_GETSCREENREADER);
+end;
+
+function SpiAccessibilityInfo.GetShowSounds: Boolean;
+begin
+  Result:=spiBool(SPI_GETSCREENREADER);
+end;
+
+{ SpiDesktopInfo }
+
+constructor SpiDesktopInfo.Create;
+begin
+  inherited Create();
+
+  fWorkArea         :=spiWorkArea.Create();
+end;
+
+function SpiDesktopInfo.GetDesktopWallPaper: String;
+var
+  ModName: array[0..MAX_PATH] of Char;
+begin
+  ZeroMemory(@ModName,Sizeof(ModName));
+  if not(SystemParametersInfo(SPI_GETDESKWALLPAPER,MAX_PATH,@ModName,Ord(False)))
+    then Result:=''
+    else SetString(Result,ModName,StrLen(ModName));
+end;
+
+function SpiDesktopInfo.GetFontSmoothing: Boolean;
+begin
+  Result:=spiBool(SPI_GETFONTSMOOTHING);
+end;
+
+{ SPiIconInfo }
+
+constructor SPiIconInfo.Create();
+begin
+  inherited Create();
+
+  fIconMetrics      :=spiIconMetrics.Create();
+  fIconTitleLogFont :=spiIconTitleLogFont.Create();
+end;
+
+function SPiIconInfo.GetIconHorizontalSpacing: Integer;
+begin
+  Result:=spiInteger(SPI_ICONHORIZONTALSPACING);
+end;
+
+function SPiIconInfo.GetIconTitleWrap: Boolean;
+begin
+  Result:=spiBool(SPI_GETICONTITLEWRAP);
+end;
+
+function SPiIconInfo.GetIconVerticalSpacing: Integer;
+begin
+  Result:=spiInteger(SPI_ICONVERTICALSPACING);
+end;
+
+{ SpiInputInfo }
+
+constructor SpiInputInfo.Create;
+begin
+  inherited Create();
+
+  fMouse:=spiMouse.Create();
+end;
+
+function SpiInputInfo.GetBeep: Boolean;
+begin
+  Result:=spiBool(SPI_GETBEEP);
+end;
+
+function SpiInputInfo.GetKeyboardCues: Boolean;
+begin
+  Result:=spiBool(SPI_GETKEYBOARDCUES);
+end;
+
+function SpiInputInfo.GetKeyboardDelay: Integer;
+begin
+  Result:=SpiInteger(SPI_GETKEYBOARDDELAY);
+end;
+
+function SpiInputInfo.GetKeyboardPref: Boolean;
+begin
+  Result:=spiBool(SPI_GETKEYBOARDPREF);
+end;
+
+function SpiInputInfo.GetKeyboardSpeed: Dword;
+begin
+  Result:=SpiInteger(SPI_GETKEYBOARDSPEED);
+end;
+
+function SpiInputInfo.GetMouseHoverHeight: UINT;
+begin
+  Result:=SpiInteger(SPI_GETMOUSEHOVERHEIGHT);
+end;
+
+function SpiInputInfo.GetMouseSpeed: Integer;
+begin
+  Result:=spiInteger(SPI_GETMOUSESPEED);
+end;
+
+function SpiInputInfo.GetMouseHoverTime: UINT;
+begin
+  Result:=SpiInteger(SPI_GETMOUSEHOVERTIME);
+end;
+
+function SpiInputInfo.GetMouseHoverWidth: UINT;
+begin
+  Result:=SpiUINT(SPI_GETMOUSEHOVERWIDTH);
+end;
+
+function SpiInputInfo.GetMouseTrails: Integer;
+begin
+  Result:=SpiInteger(SPI_GETMOUSETRAILS);
+end;
+
+function SpiInputInfo.GetSnapToDefButton: Boolean;
+begin
+  Result:=SpiBool(SPI_GETSNAPTODEFBUTTON);
+end;
+
+function SpiInputInfo.GetWheelScrollLines: UINT;
+begin
+  Result:=SpiUINT(SPI_GETWHEELSCROLLLINES);
+end;
+
+function SpiInputInfo.GetDefaultInputLang: Word;
+begin
+  Result:=SpiWord(SPI_GETDEFAULTINPUTLANG);
+end;
+
+function SpiInputInfo.GetMouse: spiMouse;
+begin
+  Result:=fMouse;
+end;
+
+{ SpiMenuInfo }
+
+constructor SpiMenuInfo.Create;
+begin
+  inherited Create()
+end;
+
+function SpiMenuInfo.GetMenuDropAlignment: SpiDropAlignment;
+begin
+  if not(spiBool(SPI_GETMENUDROPALIGNMENT))
+    then Result:=Right
+    else Result:=Left;
+end;
+
+function SpiMenuInfo.GetMenuFade: Boolean;
+begin
+  Result:=SpiBool(SPI_GETMENUFADE);
+end;
+
+function SpiMenuInfo.GetMenuShowDelay: Dword;
+begin
+  Result:=SpiDword(SPI_GETMENUSHOWDELAY);
+end;
+
+{ SpiPowerInfo }
+
+constructor SpiPowerInfo.Create;
+begin
+  inherited Create();
+end;
+
+function SpiPowerInfo.GetLowPowerActive: Boolean;
+begin
+  Result:=SpiBool(SPI_GETLOWPOWERACTIVE);
+end;
+
+function SpiPowerInfo.GetLowPowerTimeout: Integer;
+begin
+  Result:=SpiInteger(SPI_GETLOWPOWERTIMEOUT);
+end;
+
+function SpiPowerInfo.GetPowerOffActive: Boolean;
+begin
+  Result:=SpiBool(SPI_GETPOWEROFFACTIVE);
+end;
+
+function SpiPowerInfo.GetPowerOffTimeout: Integer;
+begin
+  Result:=SpiInteger(SPI_GETPOWEROFFTIMEOUT);
+end;
+
+{ SpiScreenSaverInfo }
+
+constructor SpiScreenSaverInfo.Create;
+begin
+  inherited Create();
+end;
+
+function SpiScreenSaverInfo.GetScreenSaveActive: Boolean;
+begin
+  Result:=SpiBool(SPI_GETSCREENSAVEACTIVE);
+end;
+
+function SpiScreenSaverInfo.GetScreenSaverRunning: Boolean;
+begin
+  Result:=SpiBool(SPI_GETSCREENSAVERRUNNING);
+end;
+
+function SpiScreenSaverInfo.GetScreenSaveTimeout: Integer;
+begin
+  Result:=SpiInteger(SPI_GETSCREENSAVETIMEOUT);
+end;
+
+{ SpiUIEffectsInfo }
+
+constructor SpiUIEffectsInfo.Create;
+begin
+  inherited Create();
+end;
+
+function SpiUIEffectsInfo.GetComboBoxAnimation: Boolean;
+begin
+  Result:=SpiBool(SPI_GETCOMBOBOXANIMATION);
+end;
+
+function SpiUIEffectsInfo.GetCursorShadow: Boolean;
+begin
+  Result:=SpiBool(SPI_GETCURSORSHADOW);
+end;
+
+function SpiUIEffectsInfo.GetGradientCaptions: Boolean;
+begin
+  Result:=SpiBool(SPI_GETGRADIENTCAPTIONS);
+end;
+
+function SpiUIEffectsInfo.GetGuiEffects: Boolean;
+begin
+  Result:=SpiBool(SPI_GETUIEFFECTS);
+end;
+
+function SpiUIEffectsInfo.GetHotTracking: Boolean;
+begin
+  Result:=SpiBool(SPI_GETHOTTRACKING);
+end;
+
+function SpiUIEffectsInfo.GetListBoxSmoothScrolling: Boolean;
+begin
+  Result:=SpiBool(SPI_GETLISTBOXSMOOTHSCROLLING);
+end;
+
+function SpiUIEffectsInfo.GetMenuAnimation: Boolean;
+begin
+  Result:=SpiBool(SPI_GETMENUANIMATION);
+end;
+
+function SpiUIEffectsInfo.GetMenuUnderlines: Boolean;
+begin
+  Result:=SpiBool(SPI_GETMENUUNDERLINES);
+end;
+
+function SpiUIEffectsInfo.GetSelectionFade: Boolean;
+begin
+  Result:=SpiBool(SPI_GETSELECTIONFADE);
+end;
+
+function SpiUIEffectsInfo.GetTooltipAnimation: Boolean;
+begin
+  Result:=SpiBool(SPI_GETTOOLTIPANIMATION);
+end;
+
+function SpiUIEffectsInfo.GetTooltipFade: Boolean;
+begin
+  Result:=SpiBool(SPI_GETTOOLTIPFADE);
+end;
+
+{ SpiWindowsInfo }
+
+constructor SpiWindowsInfo.Create;
+begin
+  inherited Create();
+
+  fAnimation:=spiAnimation.Create();
+end;
+
+function SpiWindowsInfo.GetActiveWindowTracking: Boolean;
+begin
+  Result:=SpiBool(SPI_GETACTIVEWINDOWTRACKING);
+end;
+
+function SpiWindowsInfo.GetActiveWndTrkTimeout: Dword;
+begin
+  Result:=SpiDWord(SPI_GETACTIVEWNDTRKTIMEOUT);
+end;
+
+function SpiWindowsInfo.GetActiveWndTrkZOrder: Boolean;
+begin
+  Result:=SpiBool(SPI_GETACTIVEWNDTRKZORDER);
+end;
+
+function SpiWindowsInfo.GetAnimation: spiAnimation;
+begin
+  Result:=fAnimation;
+end;
+
+function SpiWindowsInfo.GetBorder: Integer;
+begin
+  Result:=SpiInteger(SPI_GETBORDER);
+end;
+
+function SpiWindowsInfo.GetCaretWidth: Dword;
+begin
+  Result:=SpiDword(SPI_GETCARETWIDTH);
+end;
+
+function SpiWindowsInfo.GetDragFullWindows: Boolean;
+begin
+  Result:=SpiBool(SPI_GETDRAGFULLWINDOWS);
+end;
+
+function SpiWindowsInfo.GetForegroundFlashCount: Dword;
+begin
+  Result:=SpiDWord(SPI_GETFOREGROUNDFLASHCOUNT);
+end;
+
+function SpiWindowsInfo.GetForeGroundLockTimeout: Dword;
+begin
+  Result:=SpiDWord(SPI_GETFOREGROUNDLOCKTIMEOUT);
+end;
+
+function SpiWindowsInfo.GetShowImeUi: Boolean;
+begin
+  Result:=SpiBool(SPI_GETSHOWIMEUI);
+end;
+
+{ SpiWindows9xInfo }
+
+constructor SpiWindows9xInfo.Create;
+begin
+  inherited Create();
+end;
+
+function SpiWindows9xInfo.GetWindowsExtension: Boolean;
+begin
+  Result:=SpiBool(SPI_GETWINDOWSEXTENSION);
+end;
+
+{ spiMouse }
+
+constructor spiMouse.Create;
+begin
+  inherited Create();
+end;
+
+function spiMouse.GetAcceleration: Integer;
+begin
+  Update;
+  Result:=fMouse[3];
+end;
+
+function spiMouse.GetThresholdX: Integer;
+begin
+  Update;
+  Result:=fMouse[1];
+end;
+
+function spiMouse.GetThresholdY: Integer;
+begin
+  Update;
+  Result:=fMouse[2];
+end;
+
+procedure spiMouse.Update;
+begin
+  ZeroMemory(@fMouse,Sizeof(fMouse));
+  SystemParametersInfo(SPI_GETMOUSE,0,@fMouse,Ord(False));
+end;
+
+{ spiAnimation }
+
+constructor spiAnimation.Create;
+begin
+  inherited Create();
+
+  Update;
+end;
+
+function spiAnimation.GetMinAnimation: Boolean;
+begin
+  Update;
+  Result:=fAnimation.iMinAnimate<>0;
+end;
+
+procedure spiAnimation.Update;
+begin
+  ZeroMemory(@fAnimation,Sizeof(fAnimation));
+  fAnimation.cbSize:=Sizeof(tagANIMATIONINFO);
+  if not(SystemParametersInfo(SPI_GETANIMATION,Sizeof(tagANIMATIONINFO),@fAnimation,Ord(False)))
+    then fAnimation.iMinAnimate:=0;
+end;
+
+function GetSystemSettingsInfo : string;
+var spi : TSystemParametersInfo;
+begin
+  spi := TSystemParametersInfo.Create;
+  result := DumpObj(spi);
+  spi.Free;
+end;
+
+initialization
+  RegisterBugReportPlugin('system settings', 'extended system settings report', GetSystemSettingsInfo);
+finalization
+  UnregisterBugReportPlugin('system settings');
+end.

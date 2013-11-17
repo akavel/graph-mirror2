@@ -1,0 +1,145 @@
+unit DisplayInfo;
+
+interface
+
+implementation
+
+uses madExcept, madDumpObj, SysUtils, Classes, Windows;
+
+procedure AddDeviceCaps(var Str : string; Name : string; Index : Integer);
+var
+  RefDC : HDC;
+  Value : Integer;
+begin
+  RefDC := GetDC(0);
+  Value := GetDeviceCaps(RefDC, Index);
+  Str := Str + Name + ': ' + IntToStr(Value) + ' (0x' + IntToHex(Value, 8) + ')' + #13;
+  ReleaseDC(0, RefDC);
+end;
+
+procedure AddGetSystemMetrics(var Str : string; Name : string; Index : Integer);
+var
+  Value : Integer;
+begin
+  Value := GetSystemMetrics(Index);
+  Str := Str + Name + ': ' + IntToStr(Value) + ' (0x' + IntToHex(Value, 8) + ')' + #13;
+end;
+
+function GetDeviceCapsInfo : string;
+begin
+  Result := '';
+  AddDeviceCaps(Result, 'TECHNOLOGY', TECHNOLOGY);
+  AddDeviceCaps(Result, 'HORZSIZE', HORZSIZE);
+  AddDeviceCaps(Result, 'VERTSIZE', VERTSIZE);
+  AddDeviceCaps(Result, 'HORZRES', HORZRES);
+  AddDeviceCaps(Result, 'VERTRES', VERTRES);
+  AddDeviceCaps(Result, 'LOGPIXELSX', LOGPIXELSX);
+  AddDeviceCaps(Result, 'LOGPIXELSY', LOGPIXELSY);
+  AddDeviceCaps(Result, 'BITSPIXEL', BITSPIXEL);
+  AddDeviceCaps(Result, 'PLANES', PLANES);
+  AddDeviceCaps(Result, 'NUMBRUSHES', NUMBRUSHES);
+  AddDeviceCaps(Result, 'NUMPENS', NUMPENS);
+  AddDeviceCaps(Result, 'NUMFONTS', NUMFONTS);
+  AddDeviceCaps(Result, 'NUMCOLORS', NUMCOLORS);
+  AddDeviceCaps(Result, 'ASPECTX', ASPECTX);
+  AddDeviceCaps(Result, 'ASPECTY', ASPECTY);
+  AddDeviceCaps(Result, 'ASPECTXY', ASPECTXY);
+  AddDeviceCaps(Result, 'CLIPCAPS', CLIPCAPS);
+  AddDeviceCaps(Result, 'SIZEPALETTE', SIZEPALETTE);
+  AddDeviceCaps(Result, 'NUMRESERVED', NUMRESERVED);
+  AddDeviceCaps(Result, 'COLORRES', COLORRES);
+  AddDeviceCaps(Result, 'PHYSICALWIDTH', PHYSICALWIDTH);
+  AddDeviceCaps(Result, 'PHYSICALHEIGHT', PHYSICALHEIGHT);
+  AddDeviceCaps(Result, 'PHYSICALOFFSETX', PHYSICALOFFSETX);
+  AddDeviceCaps(Result, 'PHYSICALOFFSETY', PHYSICALOFFSETY);
+  AddDeviceCaps(Result, 'VREFRESH', VREFRESH);
+  AddDeviceCaps(Result, 'SCALINGFACTORX', SCALINGFACTORX);
+  AddDeviceCaps(Result, 'BLTALIGNMENT', BLTALIGNMENT);
+  AddDeviceCaps(Result, 'SHADEBLENDCAPS', SHADEBLENDCAPS);
+  AddDeviceCaps(Result, 'RASTERCAPS', RASTERCAPS);
+  AddDeviceCaps(Result, 'CURVECAPS', CURVECAPS);
+  AddDeviceCaps(Result, 'LINECAPS', LINECAPS);
+  AddDeviceCaps(Result, 'POLYGONALCAPS', POLYGONALCAPS);
+  AddDeviceCaps(Result, 'TEXTCAPS', TEXTCAPS);
+//  AddDeviceCaps(Result, 'COLORMGMTCAPS', COLORMGMTCAPS);
+end;
+
+function GetSystemMetricsInfo : string;
+begin
+  Result := '';
+  AddGetSystemMetrics(Result, 'SM_CMONITORS', SM_CMONITORS);
+  AddGetSystemMetrics(Result, 'SM_CMOUSEBUTTONS', SM_CMOUSEBUTTONS);
+  AddGetSystemMetrics(Result, 'SM_CXBORDER', SM_CXBORDER);
+  AddGetSystemMetrics(Result, 'SM_CYBORDER', SM_CYBORDER);
+  AddGetSystemMetrics(Result, 'SM_CXCURSOR', SM_CXCURSOR);
+  AddGetSystemMetrics(Result, 'SM_CYCURSOR', SM_CYCURSOR);
+  AddGetSystemMetrics(Result, 'SM_CXDOUBLECLK', SM_CXDOUBLECLK);
+  AddGetSystemMetrics(Result, 'SM_CYDOUBLECLK', SM_CYDOUBLECLK);
+  AddGetSystemMetrics(Result, 'SM_CXDRAG', SM_CXDRAG);
+  AddGetSystemMetrics(Result, 'SM_CYDRAG', SM_CYDRAG);
+  AddGetSystemMetrics(Result, 'SM_CXEDGE', SM_CXEDGE);
+  AddGetSystemMetrics(Result, 'SM_CYEDGE', SM_CYEDGE);
+  AddGetSystemMetrics(Result, 'SM_CXFIXEDFRAME', SM_CXFIXEDFRAME);
+  AddGetSystemMetrics(Result, 'SM_CYFIXEDFRAME', SM_CYFIXEDFRAME);
+  AddGetSystemMetrics(Result, 'SM_CXFOCUSBORDER', SM_CXFOCUSBORDER);
+  AddGetSystemMetrics(Result, 'SM_CYFOCUSBORDER', SM_CYFOCUSBORDER);
+  AddGetSystemMetrics(Result, 'SM_CXFULLSCREEN', SM_CXFULLSCREEN);
+  AddGetSystemMetrics(Result, 'SM_CYFULLSCREEN', SM_CYFULLSCREEN);
+  AddGetSystemMetrics(Result, 'SM_CXHSCROLL', SM_CXHSCROLL);
+  AddGetSystemMetrics(Result, 'SM_CYHSCROLL', SM_CYHSCROLL);
+  AddGetSystemMetrics(Result, 'SM_CXHTHUMB', SM_CXHTHUMB);
+  AddGetSystemMetrics(Result, 'SM_CYVTHUMB', SM_CYVTHUMB);
+  AddGetSystemMetrics(Result, 'SM_CXICON', SM_CXICON);
+  AddGetSystemMetrics(Result, 'SM_CYICON', SM_CYICON);
+  AddGetSystemMetrics(Result, 'SM_CXICONSPACING', SM_CXICONSPACING);
+  AddGetSystemMetrics(Result, 'SM_CYICONSPACING', SM_CYICONSPACING);
+  AddGetSystemMetrics(Result, 'SM_CXMENUCHECK', SM_CXMENUCHECK);
+  AddGetSystemMetrics(Result, 'SM_CYMENUCHECK', SM_CYMENUCHECK);
+  AddGetSystemMetrics(Result, 'SM_CXMAXTRACK', SM_CXMAXTRACK);
+  AddGetSystemMetrics(Result, 'SM_CYMAXTRACK', SM_CYMAXTRACK);
+  AddGetSystemMetrics(Result, 'SM_CXMENUSIZE', SM_CXMENUSIZE);
+  AddGetSystemMetrics(Result, 'SM_CYMENUSIZE', SM_CYMENUSIZE);
+  AddGetSystemMetrics(Result, 'SM_CXMIN', SM_CXMIN);
+  AddGetSystemMetrics(Result, 'SM_CYMIN', SM_CYMIN);
+  AddGetSystemMetrics(Result, 'SM_CXMINTRACK', SM_CXMINTRACK);
+  AddGetSystemMetrics(Result, 'SM_CYMINTRACK', SM_CYMINTRACK);
+  AddGetSystemMetrics(Result, 'SM_CXPADDEDBORDER', SM_CXPADDEDBORDER);
+  AddGetSystemMetrics(Result, 'SM_CXSIZE', SM_CXSIZE);
+  AddGetSystemMetrics(Result, 'SM_CYSIZE', SM_CYSIZE);
+  AddGetSystemMetrics(Result, 'SM_CXSMICON', SM_CXSMICON);
+  AddGetSystemMetrics(Result, 'SM_CYSMICON', SM_CYSMICON);
+  AddGetSystemMetrics(Result, 'SM_CXSMSIZE', SM_CXSMSIZE);
+  AddGetSystemMetrics(Result, 'SM_CYSMSIZE', SM_CYSMSIZE);
+  AddGetSystemMetrics(Result, 'SM_CXVIRTUALSCREEN', SM_CXVIRTUALSCREEN);
+  AddGetSystemMetrics(Result, 'SM_CYVIRTUALSCREEN', SM_CYVIRTUALSCREEN);
+  AddGetSystemMetrics(Result, 'SM_CXVSCROLL', SM_CXVSCROLL);
+  AddGetSystemMetrics(Result, 'SM_CYVSCROLL', SM_CYVSCROLL);
+  AddGetSystemMetrics(Result, 'SM_DIGITIZER', SM_DIGITIZER);
+  AddGetSystemMetrics(Result, 'SM_IMMENABLED', SM_IMMENABLED);
+  AddGetSystemMetrics(Result, 'SM_MAXIMUMTOUCHES', SM_MAXIMUMTOUCHES);
+  AddGetSystemMetrics(Result, 'SM_MEDIACENTER', SM_MEDIACENTER);
+  AddGetSystemMetrics(Result, 'SM_MENUDROPALIGNMENT', SM_MENUDROPALIGNMENT);
+  AddGetSystemMetrics(Result, 'SM_MIDEASTENABLED', SM_MIDEASTENABLED);
+  AddGetSystemMetrics(Result, 'SM_MOUSEPRESENT', SM_MOUSEPRESENT);
+  AddGetSystemMetrics(Result, 'SM_MOUSEHORIZONTALWHEELPRESENT', SM_MOUSEHORIZONTALWHEELPRESENT);
+  AddGetSystemMetrics(Result, 'SM_MOUSEWHEELPRESENT', SM_MOUSEWHEELPRESENT);
+  AddGetSystemMetrics(Result, 'SM_NETWORK', SM_NETWORK);
+  AddGetSystemMetrics(Result, 'SM_PENWINDOWS', SM_PENWINDOWS);
+  AddGetSystemMetrics(Result, 'SM_SAMEDISPLAYFORMAT', SM_SAMEDISPLAYFORMAT);
+  AddGetSystemMetrics(Result, 'SM_SHUTTINGDOWN', SM_SHUTTINGDOWN);
+  AddGetSystemMetrics(Result, 'SM_SLOWMACHINE', SM_SLOWMACHINE);
+  AddGetSystemMetrics(Result, 'SM_STARTER', SM_STARTER);
+  AddGetSystemMetrics(Result, 'SM_SWAPBUTTON', SM_SWAPBUTTON);
+//  AddGetSystemMetrics(Result, 'SM_SYSTEMDOCKED', SM_SYSTEMDOCKED);
+  AddGetSystemMetrics(Result, 'SM_TABLETPC', SM_TABLETPC);
+  AddGetSystemMetrics(Result, 'SM_XVIRTUALSCREEN', SM_XVIRTUALSCREEN);
+  AddGetSystemMetrics(Result, 'SM_YVIRTUALSCREEN', SM_YVIRTUALSCREEN);
+end;
+
+initialization
+  RegisterBugReportPlugin('DeviceCaps', 'DeviceCaps', GetDeviceCapsInfo);
+  RegisterBugReportPlugin('SystemMetrics', 'SystemMetrics', GetSystemMetricsInfo);
+finalization
+  UnregisterBugReportPlugin('DeviceCaps');  
+  UnregisterBugReportPlugin('SystemMetrics');  
+end.
