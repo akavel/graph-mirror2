@@ -47,12 +47,13 @@
 			<qandaentry>
 				<question>
 					<para>
-						Will Graph run on a Macintosh?
+						Will Graph run on a Mac?
 					</para>
 				</question>
 				<answer>
 					<para>
-						As with the above, you cannot run Graph directly on a Mac. But it should be possible with some kind of Windows emulator.
+						As with the above, you cannot run Graph directly on a Mac. 
+            However a bundle of Graph with Wine is available from the <ulink url="http://www.padowan.dk/graph-on-mac/">website</ulink>.
 					</para>
 				</answer>
 			</qandaentry>
