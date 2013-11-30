@@ -13,6 +13,9 @@
 #include <delayimp.h>
 #ifdef MADEXCEPT
 #include <madexcept.hpp>
+#include "ConfigRegistry.h"
+#include "Common.h"
+#include <Registry.hpp>
 #endif
 //---------------------------------------------------------------------------
 class EDllLoadError : public Exception
@@ -77,7 +80,13 @@ TMadExceptHandler::~TMadExceptHandler()
 void __fastcall TMadExceptHandler::ExceptHandler(_di_IMEException exceptIntf, bool &handled)
 {
   if(!Form1->Data.GetFileName().empty())
-    exceptIntf->AdditionalAttachments->Add(Form1->Data.GetFileName().c_str());
+    exceptIntf->AdditionalAttachments->Add(ToUString(Form1->Data.GetFileName()));
+
+  String ExportFileName = GetTempFileName("Graph", "reg");
+  ExportRegistryKey(REGISTRY_KEY, HKEY_CURRENT_USER, ToWString(ExportFileName));
+//  TRegistry *Registry=new TRegistry;
+//  Registry->SaveKey(REGISTRY_KEY, ExportFileName);
+  exceptIntf->AdditionalAttachments->Add(ExportFileName, "Graph.reg");
 }
 #endif //MADEXCEPT
 //---------------------------------------------------------------------------

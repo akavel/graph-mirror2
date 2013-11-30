@@ -11,14 +11,26 @@
 #define ConfigRegistryH
 //---------------------------------------------------------------------------
 #include <string>
+enum TRegistryValueType
+{
+  regBinary = REG_BINARY,
+  regDWord = REG_DWORD,
+  regDWordLittleEndian = REG_DWORD_LITTLE_ENDIAN,
+  regDWordBigEndian = REG_DWORD_BIG_ENDIAN,
+  regExpandSZ = REG_EXPAND_SZ,
+  regLink = REG_LINK,
+  regMultiSZ = REG_MULTI_SZ,
+  regNone = REG_NONE,
+  regQWord = REG_QWORD,
+  regRegQWordLittleEndian = REG_QWORD_LITTLE_ENDIAN,
+  regSZ = REG_SZ
+};
 
-struct ERegistryError : std::exception
+struct ERegistryError : std::runtime_error
 {
   unsigned ErrorCode;
-  std::string ErrorStr;
-  const char* what() const throw() {return ErrorStr.c_str();}
   ERegistryError(unsigned AErrorCode, const std::string &AErrorStr)
-    : ErrorCode(AErrorCode), ErrorStr(AErrorStr) {}
+    : std::runtime_error(AErrorStr), ErrorCode(AErrorCode) {}
 };
 
 class TConfigRegistry
@@ -52,11 +64,15 @@ public:
   int Read(const std::wstring &Name, int Default) const;
   bool Read(const std::wstring &Name, bool Default) const;
   unsigned Read(const std::wstring &Name, unsigned Default) const;
+  long long Read(const std::wstring &Name, long long Default) const;
+  unsigned long long Read(const std::wstring &Name, unsigned long long Default) const;
 
   int Read(const std::string &Name) const;
   int Read(const std::string &Name, int Default) const;
   bool Read(const std::string &Name, bool Default) const {return Read(Name, static_cast<int>(Default));}
   unsigned Read(const std::string &Name, unsigned Default) const {return Read(Name, static_cast<int>(Default));}
+  void Read(const std::string &Name, std::vector<BYTE> &Data) const;
+  void Read(const std::wstring &Name, std::vector<BYTE> &Data) const;
 
   template<typename T> //T must be an enum
   T Read(const std::string &Name, const T &Default) const {return static_cast<T>(Read(Name, static_cast<int>(Default)));}
@@ -66,6 +82,11 @@ public:
   void DeleteKey(const std::wstring &Key);
   unsigned NumSubKeys() const;
   std::wstring SubKey(unsigned Index);
+
+  unsigned NumValues() const;
+  std::wstring ValueName(unsigned Index, TRegistryValueType &ValueType);
+
+  std::wstring GetKeyPath() const;
 };
 
 void RemoveRegistryKey(const std::wstring &Key, HKEY RootKey);
@@ -74,4 +95,7 @@ unsigned GetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKE
 bool RegKeyExists(const std::wstring &Key, HKEY RootKey);
 void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, const std::wstring &Value);
 void SetRegValue(const std::wstring &Key, const std::wstring &ValueName, HKEY RootKey, unsigned Value);
+
+void ExportRegistryKey(const std::wstring &Key, HKEY RootKey, const std::wstring &FileName);
+void ExportRegistryKey(const std::wstring &Key, HKEY RootKey, std::ostream &Stream);
 #endif

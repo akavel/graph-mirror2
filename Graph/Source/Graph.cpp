@@ -22,6 +22,7 @@
 #pragma package(smart_init) // madExcept
 #pragma link "madExcept"
 #pragma link "madLinkDisAsm"
+#pragma link "SystemInfo"
 #pragma link "madListHardware"
 #pragma link "madListProcesses"
 #pragma link "madListModules"
@@ -34,34 +35,34 @@
 #include "OleServerImpl.h"
 #include "ConfigRegistry.h"
 //---------------------------------------------------------------------------
+USEFORM("Frames\TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
 USEFORM("Frames\TTanFrame.cpp", TanFrame); /* TFrame: File Type */
 USEFORM("Frames\TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
-USEFORM("Frames\TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
 USEFORM("Forms\Unit6.cpp", Form6);
 USEFORM("Forms\Unit7.cpp", Form7);
-USEFORM("Forms\Unit5.cpp", Form5);
-USEFORM("Forms\Unit3.cpp", Form3);
 USEFORM("Forms\Unit4.cpp", Form4);
+USEFORM("Forms\Unit5.cpp", Form5);
+USEFORM("Forms\Unit8.cpp", Form8);
 USEFORM("Frames\TEvalFrame.cpp", EvalFrame);
 USEFORM("Frames\TParFuncFrame.cpp", ParFuncFrame); /* TFrame: File Type */
-USEFORM("Frames\TAreaFrame.cpp", AreaFrame); /* TFrame: File Type */
-USEFORM("Forms\Unit8.cpp", Form8);
 USEFORM("Forms\Unit9.cpp", Form9);
+USEFORM("Frames\TAreaFrame.cpp", AreaFrame); /* TFrame: File Type */
+USEFORM("Forms\Unit3.cpp", Form3);
 USEFORM("Forms\Unit17.cpp", Form17);
 USEFORM("Forms\Unit18.cpp", Form18);
-USEFORM("Forms\Unit16.cpp", Form16);
-USEFORM("Forms\Unit14.cpp", Form14);
 USEFORM("Forms\Unit15.cpp", Form15);
+USEFORM("Forms\Unit16.cpp", Form16);
+USEFORM("Forms\Unit19.cpp", Form19);
 USEFORM("Forms\Unit21.cpp", Form21);
 USEFORM("Forms\Unit22.cpp", Form22);
-USEFORM("Forms\Unit20.cpp", Form20);
-USEFORM("Forms\Unit19.cpp", Form19);
 USEFORM("Forms\Unit2.cpp", Form2);
+USEFORM("Forms\Unit20.cpp", Form20);
+USEFORM("Forms\Unit14.cpp", Form14);
+USEFORM("Forms\Unit1.cpp", Form1);
 USEFORM("Forms\Unit12.cpp", Form12);
 USEFORM("Forms\Unit13.cpp", Form13);
-USEFORM("Forms\Unit11.cpp", Form11);
-USEFORM("Forms\Unit1.cpp", Form1);
 USEFORM("Forms\Unit10.cpp", Form10);
+USEFORM("Forms\Unit11.cpp", Form11);
 //---------------------------------------------------------------------------
 TComModule _ProjectModule(0 /*InitATLServer*/);
 TComModule &_Module = _ProjectModule;
