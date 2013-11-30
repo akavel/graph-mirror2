@@ -222,21 +222,35 @@ String GetTempPath()
   unsigned Length = GetTempPathW(0, NULL);
   std::vector<wchar_t> Result(Length);
   Win32Check(GetTempPathW(Length, &Result[0]));
-  return &Result[0];
+  Length = GetLongPathName(&Result[0], NULL, 0);
+  Result.resize(Length);
+  GetLongPathName(&Result[0], &Result[0], Length);
+  return String(&Result[0], Length - 1);
 }
 //---------------------------------------------------------------------------
 String GetTempFileName(const String &Prefix, const String &Ext)
 {
+  String Base = GetTempPath() + Prefix;
   String FileName;
   int Count = 0;
   do
   {
-    FileName = GetTempPath() + Prefix + Count + "." + Ext;
+    FileName = Base + Count + "." + Ext;
     Count++;
   }
   while(FileExists(FileName));
 
   return FileName;
+}
+//---------------------------------------------------------------------------
+String GetTempFileName()
+{
+  String TempPath = GetTempPath();
+  std::vector<wchar_t> Result(MAX_PATH);
+  ::SetLastError(ERROR_SUCCESS);
+  if(GetTempFileName(TempPath.c_str(), L"tmp", 0, &Result[0]) == 0)
+    RaiseLastOSError();
+  return &Result[0];
 }
 //---------------------------------------------------------------------------
 void LoadLanguage(const String &Lang)

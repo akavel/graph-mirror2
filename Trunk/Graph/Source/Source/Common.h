@@ -30,6 +30,7 @@ std::string DecodeEscapeSequence(const std::string &Str);
 void GetLanguageList(TStrings *List);
 
 String GetTempFileName(const String &Prefix, const String &Ext);
+String GetTempFileName();
 String GetTempPath();
 
 inline bool InsideRect(const TRect &Rect, const TPoint &P) {return P.x >= Rect.Left && P.x <= Rect.Right && P.y >= Rect.Top && P.y <= Rect.Bottom;}

@@ -13,6 +13,8 @@
 #include <algorithm>
 #include <vector>
 #include "ConfigRegistry.h"
+#include <fstream>
+#include <iomanip>
 //---------------------------------------------------------------------------
 /** Check the result of a registry operation.
  *  \param ErrorCode: The result to check.
@@ -211,6 +213,37 @@ unsigned TConfigRegistry::Read(const std::wstring &Name, unsigned Default) const
   return Read(Name, static_cast<int>(Default));
 }
 //---------------------------------------------------------------------------
+long long TConfigRegistry::Read(const std::wstring &Name, long long Default) const
+{
+  return Read(Name, static_cast<unsigned long long>(Default));
+}
+//---------------------------------------------------------------------------
+unsigned long long TConfigRegistry::Read(const std::wstring &Name, unsigned long long Default) const
+{
+  if(GetValueSize(Name, REG_QWORD) == 0)
+    return Default;
+  unsigned long long Result;
+  DWORD Size = sizeof(Result);
+  CheckRegistryResult(RegQueryValueEx(Handle, Name.c_str(), 0, NULL, reinterpret_cast<BYTE*>(&Result), &Size));
+  return Result;
+}
+//---------------------------------------------------------------------------
+void TConfigRegistry::Read(const std::string &Name, std::vector<BYTE> &Data) const
+{
+  DWORD Size;
+  CheckRegistryResult(RegQueryValueExA(Handle, Name.c_str(), 0, NULL, NULL, &Size));
+  Data.resize(Size);
+  CheckRegistryResult(RegQueryValueExA(Handle, Name.c_str(), 0, NULL, &Data[0], &Size));
+}
+//---------------------------------------------------------------------------
+void TConfigRegistry::Read(const std::wstring &Name, std::vector<BYTE> &Data) const
+{
+  DWORD Size;
+  CheckRegistryResult(RegQueryValueEx(Handle, Name.c_str(), 0, NULL, NULL, &Size));
+  Data.resize(Size);
+  CheckRegistryResult(RegQueryValueEx(Handle, Name.c_str(), 0, NULL, &Data[0], &Size));
+}
+//---------------------------------------------------------------------------
 bool TConfigRegistry::KeyExists(const std::wstring &Key, HKEY RootKey)
 {
   HKEY TempHandle;
@@ -244,18 +277,178 @@ unsigned TConfigRegistry::NumSubKeys() const
   return SubKeys;
 }
 //---------------------------------------------------------------------------
+unsigned TConfigRegistry::NumValues() const
+{
+  DWORD Values;
+  CheckRegistryResult(RegQueryInfoKey(Handle, NULL, NULL, NULL, NULL, NULL, NULL, &Values, NULL, NULL, NULL, NULL));
+  return Values;
+}
+//---------------------------------------------------------------------------
 std::wstring TConfigRegistry::SubKey(unsigned Index)
 {
   wchar_t Str[100];
   DWORD Size = sizeof(Str)/sizeof(Str[0]);
   CheckRegistryResult(RegEnumKeyEx(Handle, Index, Str, &Size, NULL, NULL, NULL, NULL));
-  return std::wstring(Str);
+  return std::wstring(Str, Size);
+}
+//---------------------------------------------------------------------------
+std::wstring TConfigRegistry::ValueName(unsigned Index, TRegistryValueType &ValueType)
+{
+  wchar_t Str[100];
+  DWORD Size = sizeof(Str)/sizeof(Str[0]);
+  DWORD Type;
+  CheckRegistryResult(RegEnumValue(Handle, Index, Str, &Size, NULL, &Type, NULL, NULL));
+  ValueType = static_cast<TRegistryValueType>(Type);
+  return std::wstring(Str, Size);
+}
+//---------------------------------------------------------------------------
+//Copyed from http://stackoverflow.com/questions/937044/determine-path-to-registry-key-from-hkey-handle-in-c
+std::wstring TConfigRegistry::GetKeyPath() const
+{
+  std::wstring keyPath;
+  HKEY Key = Handle;
+  if(Key != NULL)
+  {
+    HMODULE dll = LoadLibrary(L"ntdll.dll");
+    if(dll != NULL)
+    {
+      typedef DWORD (__stdcall *NtQueryKeyType)(
+          HANDLE  KeyHandle,
+          int KeyInformationClass,
+          PVOID  KeyInformation,
+          ULONG  Length,
+          PULONG  ResultLength);
+
+      NtQueryKeyType func = reinterpret_cast<NtQueryKeyType>(::GetProcAddress(dll, "NtQueryKey"));
+      if(func != NULL)
+      {
+        DWORD size = 0;
+        DWORD result = 0;
+        result = func(Key, 3, 0, 0, &size);
+        if(result == 0xC0000023 /* STATUS_BUFFER_TOO_SMALL */)
+        {
+          size = size + 2;
+          wchar_t* buffer = new wchar_t[size/sizeof(wchar_t)]; // size is in bytes
+          result = func(Key, 3, buffer, size, &size);
+          if (result == 0 /* STATUS_SUCCESS */)
+          {
+            buffer[size / sizeof(wchar_t)] = L'\0';
+            keyPath = std::wstring(buffer + 2);
+          }
+          delete[] buffer;
+        }
+      }
+      FreeLibrary(dll);
+    }
+  }
+  return keyPath;
+}
+//---------------------------------------------------------------------------
+const char* KeyToName(HKEY Key)
+{
+  if(Key == NULL) return "NULL";
+  else if(Key == HKEY_CLASSES_ROOT) return "HKEY_CLASSES_ROOT";
+  else if(Key == HKEY_CURRENT_USER) return "HKEY_CURRENT_USER";
+  else if(Key == HKEY_LOCAL_MACHINE) return "HKEY_LOCAL_MACHINE";
+  else if(Key == HKEY_USERS) return "HKEY_USERS";
+  else if(Key == HKEY_PERFORMANCE_DATA) return "HKEY_PERFORMANCE_DATA";
+  else if(Key == HKEY_PERFORMANCE_TEXT) return "HKEY_PERFORMANCE_TEXT";
+  else if(Key == HKEY_PERFORMANCE_NLSTEXT) return "HKEY_PERFORMANCE_NLSTEXT";
+  else if(Key == HKEY_CURRENT_CONFIG) return "HKEY_CURRENT_CONFIG";
+  else if(Key == HKEY_DYN_DATA) return "HKEY_DYN_DATA";
+  else if(Key == HKEY_CURRENT_USER_LOCAL_SETTINGS) return "HKEY_CURRENT_USER_LOCAL_SETTINGS";
+  return "Unknown";
+}
+//---------------------------------------------------------------------------
+void ExportRegistryKey(const std::wstring &Key, HKEY RootKey, const std::wstring &FileName)
+{
+  std::ofstream File(FileName.c_str());
+  if(!File)
+    throw ERegistryError(-1, "Failed to create file \"" + std::string(FileName.begin(), FileName.end()) + "\"");
+  File << "REGEDIT4" << std::endl << std::endl;
+  ExportRegistryKey(Key, RootKey, File);
+}
+//---------------------------------------------------------------------------
+std::string Encode(const std::wstring &Str)
+{
+  std::string Result;
+  for(unsigned I = 0; I < Str.size(); I++)
+    switch(Str[I])
+    {
+      case '\"':
+        Result += "\\\"";
+        break;
+      case '\\':
+        Result += "\\\\";
+        break;
+      default:
+        Result += Str[I];
+        break;
+    }
+  return Result;
+}
+//---------------------------------------------------------------------------
+void StreamBinary(std::ostream &Stream, const std::vector<BYTE> &Data)
+{
+  Stream << std::hex << std::setfill('0');
+  for(unsigned I = 0; I < Data.size() - 1; I++)
+    Stream << std::setw(2) << static_cast<unsigned>(Data[I]) << ',';
+  Stream << std::setw(2) << static_cast<unsigned>(Data.back());
+}
+//---------------------------------------------------------------------------
+void ExportRegistryKey(const std::wstring &Key, HKEY RootKey, std::ostream &Stream)
+{
+  Stream << "[" << KeyToName(RootKey) << '\\' << std::string(Key.begin(), Key.end()) << "]" << std::endl;
+
+  TConfigRegistry Registry(Key, RootKey);
+  unsigned Count = Registry.NumValues();
+  for(unsigned I = 0; I < Count; I++)
+  {
+    TRegistryValueType ValueType;
+    std::wstring Name = Registry.ValueName(I, ValueType);
+    if(Name.empty())
+      Stream << "@=";
+    else
+      Stream << "\"" << std::string(Name.begin(), Name.end()) << "\"=";
+    switch(ValueType)
+    {
+      case regDWord:
+        Stream << "dword:" << std::hex << std::setfill('0') << std::setw(8) << Registry.Read(Name, 0);
+        break;
+      case regSZ:
+        Stream << "\"" << Encode(Registry.Read(Name, L"")) << "\"";
+        break;
+      case regQWord:
+      case regBinary:
+      case regExpandSZ:
+      case regMultiSZ:
+      {
+        std::vector<BYTE> Data;
+        Registry.Read(std::string(Name.begin(), Name.end()), Data); //REGEDIT4 format uses ANSI
+        if(ValueType == regBinary)
+          Stream << "hex:";
+        else
+          Stream << "hex(" << std::hex << ValueType << "):";
+        StreamBinary(Stream, Data);
+        break;
+      }
+      case regLink:
+      case regDWordBigEndian:
+      case regNone:
+      default:
+        throw ERegistryError(ValueType, "ExportRegistryKey does not support the given value type.");
+    }
+    Stream << std::endl;
+  }
+  Stream << std::endl;
+  unsigned SubKeys = Registry.NumSubKeys();
+  for(unsigned I = 0; I < SubKeys; I++)
+    ExportRegistryKey(Key + L'\\' + Registry.SubKey(I), RootKey, Stream);
 }
 //---------------------------------------------------------------------------
 //Remove Key and all subkeys from the registry
 void RemoveRegistryKey(const std::wstring &Key, HKEY RootKey)
 {
-  //To be implemented
   size_t Pos = Key.find(L'\\');
   std::wstring ParentKey = Key.substr(0, Pos == std::wstring::npos ? 0 : Pos);
   std::wstring KeyToDelete = Key.substr(Pos + 1, std::wstring::npos);
