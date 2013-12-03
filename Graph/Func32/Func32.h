@@ -167,7 +167,7 @@ struct EParseError : public EFuncError
     : EFuncError(AErrorCode, AStr), ErrorPos(AErrorPos), ErrorFunc(efFunc) {}
   EParseError(TErrorCode AErrorCode=ecNoError, int AErrorPos=-1)
     : EFuncError(AErrorCode), ErrorPos(AErrorPos), ErrorFunc(efFunc) {}
-  const char* what() const throw() {return "Func32::EParseError";}
+  const char* what() const throw();
 };
 
 //!Thrown when an error occured while calculating.
@@ -175,7 +175,7 @@ struct ECalcError : public EFuncError
 {
   ECalcError(TErrorCode AErrorCode = ecNoError) : EFuncError(AErrorCode) {}
   ECalcError(TErrorCode AErrorCode, const std::wstring &Str) : EFuncError(AErrorCode, Str) {}
-  const char* what() const throw() {return "Func32::ECalcError";}
+  const char* what() const throw();
 };
 
 template<typename T> class TCoordSet;
