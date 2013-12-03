@@ -357,6 +357,28 @@ const char* EFuncError::what() const throw()
   return ErrorStr.c_str();
 }
 //---------------------------------------------------------------------------
+/** Function returning a description of the error.
+ */
+const char* EParseError::what() const throw()
+{
+  ErrorStr = "Func32::EParseError(" + ToString(ErrorCode) + ", " + ToString(ErrorPos);
+  if(!Str.empty())
+    ErrorStr += std::string(", ") + std::string(Str.begin(), Str.end());
+  ErrorStr += ")";
+  return ErrorStr.c_str();
+}
+//---------------------------------------------------------------------------
+/** Function returning a description of the error.
+ */
+const char* ECalcError::what() const throw()
+{
+  ErrorStr = "Func32::ECalcError(" + ToString(ErrorCode);
+  if(!Str.empty())
+    ErrorStr += std::string(", ") + std::string(Str.begin(), Str.end());
+  ErrorStr += ")";
+  return ErrorStr.c_str();
+}
+//---------------------------------------------------------------------------
 } //namespace Func32
 
 
