@@ -53,8 +53,15 @@ __fastcall TForm19::TForm19(TComponent* Owner, TData &AData, int AWidth, int AHe
       TAnimationConstant &AnimationConstant = AnimationInfo.ConstantList[Iter->Name];
       if(AnimationConstant.Step.empty())
       {
-        double Value = Func32::Eval(Iter->Name, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
-        double Min = (Value == 0) ? 10 : Value / 10;
+        double Value = 0;
+        try
+        {
+          Value = Func32::Eval(Iter->Name, Data.CustomFunctions.SymbolList, Data.Axes.Trigonometry);
+        }
+        catch(Func32::EFuncError &E)
+        {
+        }
+        double Min = (Value == 0) ? -10 : Value / 10;
         double Max = (Value == 0) ? 10 : Value * 10;
         AnimationConstant.Min = ToWString(Min);
         AnimationConstant.Max = ToWString(Max);
