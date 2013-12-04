@@ -126,6 +126,7 @@ struct TGuiSettings
   double MinorStepSize;
   double MouseZoomIn;
   double MouseZoomOut;
+  TFont*const Font;
 };
 
 const TProperty Property;
@@ -140,5 +141,6 @@ const TGuiSettings GuiSettings;
   TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
   TAxes.LegendFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LegenFont_get(self), owned=False))
   TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_TitleFont_get(self), owned=False))
+  TGuiSettings.Font = property(lambda self: vcl.TObject(handle=_Settings.TGuiSettinga_Font_get(self), owned=False))
   TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(self, count)
 }

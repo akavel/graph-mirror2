@@ -227,6 +227,7 @@ struct TGuiSettings
   double MinorStepSize;
   double MouseZoomIn;
   double MouseZoomOut;
+  TVclObject<TFont> Font;
   TGuiSettings();
 };
 

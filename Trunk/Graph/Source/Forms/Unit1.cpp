@@ -77,28 +77,6 @@ const TCursor crMoveHand1 = 1;
 const TCursor crMoveHand2 = 2;
 Thread::TMutex GlobalMutex(L"Graph running"); //Global Mutex object indicating Graph is running (Checked by installation program)
 //---------------------------------------------------------------------------
-//Scale all images in List so the images become IconWidth width and heigh
-void ScaleImageList(TImageList *List, int IconWidth)
-{
-  std::auto_ptr<TImageList> TempList(new TImageList(NULL));
-  TempList->SetSize(IconWidth, IconWidth);
-  std::auto_ptr<Graphics::TBitmap> Bitmap2(new Graphics::TBitmap);
-  Bitmap2->Width = IconWidth;
-  Bitmap2->Height = IconWidth;
-  TColor OldBkColor = List->BkColor;
-  List->BkColor = clPurple;
-
-  for(int I = 0; I < List->Count; I++)
-  {
-    std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-    List->GetBitmap(I, Bitmap.get());
-    Bitmap2->Canvas->StretchDraw(TRect(0, 0, IconWidth, IconWidth), Bitmap.get());
-    TempList->AddMasked(Bitmap2.get(), clPurple);
-  }
-  List->BkColor = OldBkColor;
-  List->Assign(TempList.get());
-}
-//---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: IsResizing(0), TForm(Owner), Updating(0), StatusIcon(-1), CursorState(csIdle),
     FixedImages(ImageList1->Count), Draw(Image1->Canvas, &Data, false, "DrawThread"), AbortPrinting(false)

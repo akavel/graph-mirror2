@@ -124,7 +124,7 @@ void FlipMargins(TControl *Control)
 void ScaleForm(TForm *Form)
 {
   //Change font for form. All components should have ParentFont=true
-  Form->Font->Name = "MS Shell Dlg";
+  Form->Font->Assign(GuiSettings.Font);
 
   //Set FontScale to 100 to disable scaling
   int FontScale = Property.FontScale;
@@ -234,11 +234,14 @@ void SetAccelerators(TWinControl *WinControl, std::set<wchar_t> &Accelerators)
       }
 }
 //---------------------------------------------------------------------------
-void SetAccelerators(TWinControl *Control)
+void SetAccelerators(TCustomForm *Form)
 {
+  //Change font for form. All components should have ParentFont=true
+  Form->Font->Assign(GuiSettings.Font);
+
   const wchar_t Accelerators[] = L"abcdefghijklmnopqrstuvwxyz0123456789";
   std::set<wchar_t> Temp(Accelerators, Accelerators + sizeof(Accelerators) - 1);
-  SetAccelerators(Control, Temp);
+  SetAccelerators(Form, Temp);
 }
 //---------------------------------------------------------------------------
 String GetControlText(TControl *Control)
@@ -529,6 +532,28 @@ void ShowHelp(const String &File, const String &HelpFile)
   //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
   String Str = (HelpFile.IsEmpty() ? Application->HelpFile : HelpFile) + "::/" + File;
   Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
+}
+//---------------------------------------------------------------------------
+//Scale all images in List so the images become IconWidth width and heigh
+void ScaleImageList(TImageList *List, int IconWidth)
+{
+  std::auto_ptr<TImageList> TempList(new TImageList(NULL));
+  TempList->SetSize(IconWidth, IconWidth);
+  std::auto_ptr<Graphics::TBitmap> Bitmap2(new Graphics::TBitmap);
+  Bitmap2->Width = IconWidth;
+  Bitmap2->Height = IconWidth;
+  TColor OldBkColor = List->BkColor;
+  List->BkColor = clPurple;
+
+  for(int I = 0; I < List->Count; I++)
+  {
+    std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
+    List->GetBitmap(I, Bitmap.get());
+    Bitmap2->Canvas->StretchDraw(TRect(0, 0, IconWidth, IconWidth), Bitmap.get());
+    TempList->AddMasked(Bitmap2.get(), clPurple);
+  }
+  List->BkColor = OldBkColor;
+  List->Assign(TempList.get());
 }
 //---------------------------------------------------------------------------
 
