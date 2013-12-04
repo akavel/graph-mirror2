@@ -206,7 +206,17 @@
 						</para>
 					</listitem>
 				</varlistentry>
-			</variablelist>
+
+				<varlistentry>
+					<term><classname>TGuiSettings</classname>.<property>Font</property></term>
+					<listitem>
+						<indexterm><primary>Font (Graph.TGuiSettings attribute)</primary></indexterm>
+						<para>
+							VCL object of type <classname>TFont</classname> with the font used in the GUI dialogs.
+						</para>
+					</listitem>
+				</varlistentry>
+      </variablelist>
 		</para>
 	</section>
 </section>

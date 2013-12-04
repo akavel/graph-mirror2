@@ -7341,6 +7341,30 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TGuiSettings_Font_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TGuiSettings *arg1 = (TGuiSettings *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TFont *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TGuiSettings_Font_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TGuiSettings, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TGuiSettings_Font_get" "', argument " "1"" of type '" "TGuiSettings *""'"); 
+  }
+  arg1 = reinterpret_cast< TGuiSettings * >(argp1);
+  result = (TFont *)(TFont *) ((arg1)->Font);
+  {
+    resultobj = Python::VclObject_Create(result, false);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *TGuiSettings_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -7555,6 +7579,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TGuiSettings_MouseZoomIn_get", _wrap_TGuiSettings_MouseZoomIn_get, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MouseZoomOut_set", _wrap_TGuiSettings_MouseZoomOut_set, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_MouseZoomOut_get", _wrap_TGuiSettings_MouseZoomOut_get, METH_VARARGS, NULL},
+	 { (char *)"TGuiSettings_Font_get", _wrap_TGuiSettings_Font_get, METH_VARARGS, NULL},
 	 { (char *)"TGuiSettings_swigregister", TGuiSettings_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };

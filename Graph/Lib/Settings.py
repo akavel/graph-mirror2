@@ -364,6 +364,8 @@ class TGuiSettings(_object):
     __swig_setmethods__["MouseZoomOut"] = _Settings.TGuiSettings_MouseZoomOut_set
     __swig_getmethods__["MouseZoomOut"] = _Settings.TGuiSettings_MouseZoomOut_get
     if _newclass:MouseZoomOut = _swig_property(_Settings.TGuiSettings_MouseZoomOut_get, _Settings.TGuiSettings_MouseZoomOut_set)
+    __swig_getmethods__["Font"] = _Settings.TGuiSettings_Font_get
+    if _newclass:Font = _swig_property(_Settings.TGuiSettings_Font_get)
 TGuiSettings_swigregister = _Settings.TGuiSettings_swigregister
 TGuiSettings_swigregister(TGuiSettings)
 
@@ -372,6 +374,7 @@ TAxes.NumberFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_Numb
 TAxes.LabelFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LabelFont_get(self), owned=False))
 TAxes.LegendFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_LegenFont_get(self), owned=False))
 TAxes.TitleFont = property(lambda self: vcl.TObject(handle=_Settings.TAxes_TitleFont_get(self), owned=False))
+TGuiSettings.Font = property(lambda self: vcl.TObject(handle=_Settings.TGuiSettinga_Font_get(self), owned=False))
 TPlotSettings.__swig_setmethods__["ThreadCount"] = lambda self, count: SetThreadCount(self, count)
 
 # This file is compatible with both classic and new-style classes.
