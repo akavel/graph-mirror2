@@ -1742,8 +1742,8 @@ int TForm1::AddImage(int Index, TColor Color)
 int TForm1::AddImage(TColor Color, TBrushStyle Style)
 {
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-  Bitmap->Width = 16;
-  Bitmap->Height = 16;
+  Bitmap->Width = ImageList1->Width;
+  Bitmap->Height = ImageList1->Height;
   Bitmap->Canvas->Brush->Color = Color;
   Bitmap->Canvas->Brush->Style = Style;
   SetBkColor(Bitmap->Canvas->Handle, clWhite);
