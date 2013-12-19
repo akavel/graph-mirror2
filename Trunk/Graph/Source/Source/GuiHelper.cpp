@@ -125,10 +125,12 @@ void TZoomFit::Visit(TBaseFuncType &Func)
     Func32::ECalcError E;
     if(std::_finite(StdFunc->From.Value))
       if(Func.GetFunc().Calc(StdFunc->From.Value, E), E.ErrorCode == Func32::ecNoError) //Note comma operator
-        xMin = StdFunc->From.Value;
+        if(StdFunc->From.Value < xMin)
+          xMin = StdFunc->From.Value;
     if(std::_finite(StdFunc->To.Value))
       if(Func.GetFunc().Calc(StdFunc->To.Value, E), E.ErrorCode == Func32::ecNoError) //Note comma operator
-        xMax = StdFunc->To.Value;
+        if(StdFunc->To.Value)
+          xMax = StdFunc->To.Value;
   }
 
   for(std::vector<Func32::TCoordSet<> >::const_iterator Iter = Func.sList.begin(); Iter != Func.sList.end(); ++Iter)
