@@ -1095,7 +1095,7 @@ void TTextLabel::ReadFromIni(const TConfigFileSection &Section)
   BackgroundColor = Section.Read(L"BackgroundColor", clNone);
   ContainsOleLink = Section.Read(L"OleLink", false);
   if(ContainsOleLink)
-    Text = ToString(UpdateRichText(ToUString(Text)));
+    Text = ToString(UpdateRichTextOleObjects(ToUString(Text)));
 
   StatusText = RtfToPlainText(Text);
 
@@ -1118,12 +1118,13 @@ void TTextLabel::Scale(double xSizeMul, double ySizeMul)
 //---------------------------------------------------------------------------
 void TTextLabel::Update()
 {
-  TPoint Size = RichTextSize(Text, &GetData());
+  String Str = ReplaceExpression(ToUString(Text), GetData());
+  TPoint Size = RichTextSize(Str);
   Metafile->Width = Size.x;
   Metafile->Height = Size.y;
   std::auto_ptr<TMetafileCanvas> Canvas(new TMetafileCanvas(Metafile, 0));
 
-  RenderRichText(Text.c_str(), Canvas.get(), TPoint(0, 0), Size.x, BackgroundColor, &GetData());
+  RenderRichText(Str, Canvas.get(), TPoint(0, 0), Size.x, BackgroundColor);
   Canvas.reset();
   Rect = Rotate(Metafile, Rotation);
 
