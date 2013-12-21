@@ -689,7 +689,6 @@ void __fastcall TForm1::Image1MouseUp(TObject *Sender, TMouseButton Button,
             ));
             UndoList.Push(TUndoChange(MovingLabel, NewLabel));
             Data.Replace(MovingLabel, NewLabel);
-            NewLabel->Update();
             NewLabel->UpdateRect(Image2->Left, Image2->Top); //Needed so we don't have to wait for label to be redrawn
             MovingLabel.reset();
             Data.SetModified();
@@ -2818,7 +2817,6 @@ void TForm1::EditLabel(const boost::shared_ptr<TTextLabel> &Label)
         ));
         UndoList.Push(TUndoChange(Label, NewLabel));
         Data.Replace(Label, NewLabel);
-        NewLabel->Update();
       }
       UpdateTreeView();
       Data.SetModified();
