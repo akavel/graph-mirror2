@@ -20,6 +20,7 @@
 #include "ExtColorBox.h"
 #include <ExtCtrls.hpp>
 #include "LineSelect.h"
+#include "GridPanelEx.h"
 //---------------------------------------------------------------------------
 class TForm11 : public TForm
 {
@@ -44,6 +45,8 @@ __published:	// IDE-managed Components
   TLabel *Label4;
   TEdit *Edit4;
   TUpDown *UpDown1;
+  TGridPanelEx *GridPanelEx1;
+  TPanel *Panel1;
   void __fastcall Button3Click(TObject *Sender);
   void __fastcall Button1Click(TObject *Sender);
   void __fastcall Edit4KeyPress(TObject *Sender, char &Key);
