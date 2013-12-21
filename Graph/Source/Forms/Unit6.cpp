@@ -27,6 +27,14 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
   SetAccelerators(this);
   TranslateStrings(ColorBox1->Items);
   FlipForm(this);
+  if(PixelsPerInch != 96)
+  {
+    ScaleImageList(ImageList1, MulDiv(16, PixelsPerInch, 96));
+    ToolBar1->Indent = MulDiv(ToolBar1->Indent, PixelsPerInch, 96);
+    ToolBar1->Height = MulDiv(25, PixelsPerInch, 96);
+    ToolBar1->ButtonWidth = MulDiv(23, PixelsPerInch, 96);
+    ToolBar1->ButtonHeight = MulDiv(22, PixelsPerInch, 96);
+  }
 
   OrgComboBox1WindowProc = ComboBox1->WindowProc;
   ComboBox1->WindowProc = ComboBox1Proc;
