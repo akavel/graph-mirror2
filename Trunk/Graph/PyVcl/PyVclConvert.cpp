@@ -309,40 +309,63 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 //---------------------------------------------------------------------------
 template<> double FromPyObject<double>(PyObject *O)
 {
+  double Result;
 	if(PyComplex_Check(O))
   {
     if(PyComplex_ImagAsDouble(O) != 0)
-      PyErr_SetString(PyExc_TypeError, "complex number has an imaginary part");
-		else
-      return PyComplex_RealAsDouble(O);
+      throw EPyVclError("Complex number has an imaginary part");
+		Result = PyComplex_RealAsDouble(O);
   }
-  return PyFloat_AsDouble(O);
+  else
+    Result = PyFloat_AsDouble(O);
+	if(PyErr_Occurred())
+  {
+    PyErr_Clear();
+		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'double'");
+  }
+  return Result;
 }
 //---------------------------------------------------------------------------
 template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 {
-  std::wstring Str(PyUnicode_GetSize(O), ' ');
+  Py_ssize_t Size = PyUnicode_GetSize(O);
+  if(Size == -1)
+  {
+    PyErr_Clear();
+		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'wstring'");
+  }
+  std::wstring Str(Size, ' ');
   if(Str.size() == 0)
     return Str;
-  if(PyUnicode_AsWideChar(O, &Str[0], Str.size()) == -1)
-    return std::wstring();
+  PyUnicode_AsWideChar(O, &Str[0], Str.size());
 	return Str;
 }
 //---------------------------------------------------------------------------
 template<> String FromPyObject<String>(PyObject *O)
 {
+  Py_ssize_t Size = PyUnicode_GetSize(O);
+  if(Size == -1)
+  {
+    PyErr_Clear();
+		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'String'");
+  }
   String Str;
-  Str.SetLength(PyUnicode_GetSize(O));
+  Str.SetLength(Size);
   if(Str.Length() == 0)
     return Str;
-  if(PyUnicode_AsWideChar(O, &Str[1], Str.Length()) == -1)
-    return "";
+  PyUnicode_AsWideChar(O, &Str[1], Str.Length());
 	return Str;
 }
 //---------------------------------------------------------------------------
 template<> int FromPyObject<int>(PyObject *O)
 {
-	return PyLong_AsLong(O);
+	int Result = PyLong_AsLong(O);
+	if(PyErr_Occurred())
+  {
+    PyErr_Clear();
+		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'double'");
+  }
+  return Result;
 }
 //---------------------------------------------------------------------------
 /** Exception handling helper function. Called from a catch(...) section and converts an active

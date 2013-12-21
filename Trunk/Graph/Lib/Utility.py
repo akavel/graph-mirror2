@@ -91,6 +91,10 @@ GetText = _Utility.GetText
 def ChangeLanguage(*args) -> "void" :
   return _Utility.ChangeLanguage(*args)
 ChangeLanguage = _Utility.ChangeLanguage
+
+def ComplexToString(*args) -> "String" :
+  return _Utility.ComplexToString(*args)
+ComplexToString = _Utility.ComplexToString
 # This file is compatible with both classic and new-style classes.
 
 

@@ -14,6 +14,7 @@ import getopt
 import collections
 import importlib
 import winreg
+import ast
 
 # enum values
 Radian = Settings.Radian
@@ -353,3 +354,17 @@ def CreateTranslations(Texts):
 def GetLanguageList():
   L = GraphImpl.GetLanguageList()
   return list(L.Strings)  
+  
+TextFormatFunc = {}
+
+def AddTextFormatFunc(Name, Func):
+  TextFormatFunc[Name.lower()] = Func
+  
+def CallTextFormatFunc(Name, S):
+  Name = Name.lower()
+  if Name in TextFormatFunc:
+    return str(TextFormatFunc[Name](*ast.literal_eval(S + ",")))
+  raise Exception('Text format function "' + Name + '" not registered.')
+  
+def FormatNumber(Number, Decimals=None, ComplexFormat=None):
+  return Utility.ComplexToString(Number, Property.RoundTo if Decimals is None else Decimals, Property.ComplexFormat if ComplexFormat is None else ComplexFormat)  

@@ -1,6 +1,7 @@
 %module Utility
 
 %include "std_wstring.i"
+%include "std_complex.i"
 %include "Types.i"
 
 %begin %{
@@ -29,4 +30,7 @@
   std::wstring GetText(const wchar_t *Str) {return gettext(Str).c_str();}
   void ChangeLanguage(const std::wstring &Language) {Form1->ChangeLanguage(ToUString(Language));}
 %}
+
+enum TComplexFormat;
+String ComplexToString(const std::complex<double> &C, unsigned Decimals, TComplexFormat ComplexFormat);
 

@@ -600,6 +600,39 @@ Button = vcl.TButton(None, Caption=_("Cancel")) # Use the translations from Grap
 					</para>
 				</listitem>
 			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>AddTextFormatFunc (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>AddTextFormatFunc</property>(<parameter>Name, Func</parameter>)
+				</term>
+				<listitem>
+					<para>
+            Used to register a function to format text in a text label. 
+            <parameter>Name</parameter> is an identifier used in text labels to call the function.
+            <parameter>Func</parameter> is a function taking a number of arguments and returning a string.
+             For example <literal>%test("Hello world", 2)</literal> will call the function registered for <parameter>Name</parameter>="test" 
+             with the parameters <literal>"Hello world"</literal> and <literal>2</literal>, and replace the text with the string returned by the function.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
+					<indexterm><primary>FormatNumber (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>FormatNumber</property>(<parameter>Number, Decimals=None, ComplexFormat=None</parameter>)
+				</term>
+				<listitem>
+					<para>
+            Converts a number to a text string.
+            <parameter>Number</parameter> must be a float or complex or something that can be converted to a complex.
+            <parameter>Decimals</parameter> specifies the number of decimals. 
+            If not given, the value from<classname>TProperty</classname>.<property>RoundTo</property> will be used.
+            <parameter>ComplexFormat</parameter> can be <classname>Graph.cfReal</classname>, <classname>Graph.cfRectangular</classname> or <classname>Graph.cfPolar</classname>.
+            If not given, the value from <classname>TProperty</classname>.<property>ComplexFormat</property> will be used.
+					</para>
+				</listitem>
+			</varlistentry>
     </variablelist>
 	</para>
 	<xi:include href="Settings.xml" xpointer="Graph.TProperty" />

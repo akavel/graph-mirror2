@@ -11,9 +11,10 @@
 #define IGraphicH
 #include <vector>
 //---------------------------------------------------------------------------
-void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int width = MAXSHORT, TColor BackgroundColor = Graphics::clNone, const TData *Data = NULL);
-TPoint RichTextSize(const std::string &Str, const TData *Data = NULL);
-String UpdateRichText(const String &Str);
+void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int width = MAXSHORT, TColor BackgroundColor = Graphics::clNone);
+TPoint RichTextSize(const String &Str);
+String UpdateRichTextOleObjects(const String &Str);
+String ReplaceExpression(const String &Str, const TData &Data);
 
 void Interpolate(std::vector<TPoint> &Points, const std::vector<TPoint> &P, TInterpolationAlgorithm Algorithm);
 double InterpolationAngle(Func32::TDblPoint p1, Func32::TDblPoint p2, Func32::TDblPoint p3, Func32::TDblPoint p4, TInterpolationAlgorithm Algorithm);

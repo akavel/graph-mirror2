@@ -1,3 +1,7 @@
+%typemap(out) String {
+  $result = PyUnicode_FromUnicode($1.c_str(), $1.Length());
+}
+
 %typemap(in) TPoint  {
   if(!PyArg_ParseTuple($input, "ii", &($1.x), &($1.y)))
     SWIG_fail;
@@ -47,6 +51,7 @@
 {
   $result = DownCastSharedPtr(*$1);
 }
+
 //%typemap(out) boost::shared_ptr<TBaseFuncType> = boost::shared_ptr<TGraphElem>;
 %typemap(out) const boost::shared_ptr<TBaseFuncType>& = const boost::shared_ptr<TGraphElem>&;
 

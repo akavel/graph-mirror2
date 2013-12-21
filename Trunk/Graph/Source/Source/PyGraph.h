@@ -14,6 +14,8 @@
 //---------------------------------------------------------------------------
 struct _object;
 typedef _object PyObject;
+extern "C" PyObject * Py_BuildValue(const char *, ...); //Declared in Python.h
+
 namespace Python
 {
   enum TPluginEvent
@@ -47,6 +49,17 @@ namespace Python
 	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1);
 	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2);
 	bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, TPyVariant V3);
+
+  TPyObjectPtr ExecutePluginFunc(const char *MethodName, PyObject *Param);
+
+  template<typename T1,typename T2, typename T3>
+  T1 ExecutePluginFunc(const char *MethodName, const T2 &V1, const T3 &V2)
+  {
+		TLockGIL Dummy;
+    TPyObjectPtr O = ExecutePluginFunc(MethodName, CreateTuple(V1, V2));
+    return FromPyObjectPtr<T1>(O);
+  }
+
 	PyObject* ToPyObject(const Func32::TComplex &Value);
 	template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O);
 

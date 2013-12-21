@@ -97,6 +97,7 @@ public:
 };
 
   //Using TPyObjectPtr requires that you have the GIL
+  //TPyObjectPtr(ptr) will increment the reference unless called as TPyObjectPtr(ptr, false)
 	typedef boost::intrusive_ptr<PyObject> TPyObjectPtr;
 
 	PyObject* SetErrorString(PyObject *Type, const String &Str);

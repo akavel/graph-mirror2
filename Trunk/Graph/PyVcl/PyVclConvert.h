@@ -32,6 +32,7 @@ namespace Python
 	PyObject* ToPyObject(TObject *Object);
 	PyObject* ToPyObject(const char *Str);
 	PyObject* ToPyObject(const wchar_t *Str);
+  PyObject* ToPyObject(const Variant &V) {return ToPyObject(Rtti::TValue::FromVariant(V));}
   template<typename T>
   TPyObjectPtr ToPyObjectPtr(const T &Value) {return TPyObjectPtr(ToPyObject(Value), false);}
 
@@ -43,7 +44,19 @@ namespace Python
 	template<> inline long double FromPyObject<long double>(PyObject *O) {return FromPyObject<double>(O);}
 	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
 	template<> String FromPyObject<String>(PyObject *O);
-	template<typename T> inline bool FromPyObject(PyObject *O, T &Value) {Value = FromPyObject<T>(O); return !PyErr_Occurred();}
+	template<typename T> inline bool FromPyObject(PyObject *O, T &Value)
+  {
+    try
+    {
+      Value = FromPyObject<T>(O);
+      return true;
+    }
+    catch(EPyVclError &E)
+    {
+      return false;
+    }
+  }
+  template<typename T> T FromPyObjectPtr(const TPyObjectPtr &Ptr) {return FromPyObject<T>(Ptr.get());}
 
 	PyObject* PyVclHandleException();
 }

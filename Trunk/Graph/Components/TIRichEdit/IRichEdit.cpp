@@ -131,6 +131,18 @@ AnsiString TIRichEdit::GetRichText()
   return Str;
 }
 //---------------------------------------------------------------------------
+String TIRichEdit::GetPlainText(bool UseCrLf)
+{
+  GETTEXTLENGTHEX TextLengthEx = {GTL_NUMCHARS | (UseCrLf ? GTL_USECRLF : GTL_DEFAULT), 1200};
+  int Length = SendMessage(Handle, EM_GETTEXTLENGTHEX, reinterpret_cast<WPARAM>(&TextLengthEx), NULL);
+  GETTEXTEX TextEx = {2*(Length+1), UseCrLf ? GT_USECRLF : GT_DEFAULT, 1200, NULL, NULL};
+  String Str;
+  Str.SetLength(Length + 1);
+  SendMessage(Handle, EM_GETTEXTEX, reinterpret_cast<WPARAM>(&TextEx), reinterpret_cast<LPARAM>(&Str[1]));
+  Str.SetLength(Length);
+  return Str;
+}
+//---------------------------------------------------------------------------
 void TIRichEdit::Render(TCanvas *Canvas, const TPoint &Pos, int Width)
 {
   FORMATRANGE Format;
@@ -183,6 +195,35 @@ TPoint TIRichEdit::GetTextSize()
 bool TIRichEdit::IsEmpty() const
 {
   return !Lines->Count;
+}
+//---------------------------------------------------------------------------
+void TIRichEdit::ReplaceText(unsigned Pos, unsigned Length, const String &Str)
+{
+  int OldSelStart = SelStart;
+  int OldSelLength = SelLength;
+  SelStart = Pos;
+  SelLength = Length;
+  SelText = Str;
+  SelStart = OldSelStart;
+  SelLength = OldSelLength;
+}
+//---------------------------------------------------------------------------
+void TIRichEdit::ReplaceText(unsigned Pos, unsigned Length, const String &Str, TColor Color)
+{
+  int OldSelStart = SelStart;
+  int OldSelLength = SelLength;
+
+  SelStart = Pos;
+  SelLength = Length;
+  SelText = Str;
+
+  SelStart = Pos;
+  SelLength = Str.Length();
+//  TextFormat.SetBold(true);
+  TextFormat.SetColor(Color);
+
+  SelStart = OldSelStart;
+  SelLength = OldSelLength;
 }
 //---------------------------------------------------------------------------
 TTextFormat::TTextFormat(TIRichEdit *ARichEdit, bool AGlobal) : RichEdit(ARichEdit), Global(AGlobal)
