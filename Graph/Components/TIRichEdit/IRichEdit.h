@@ -135,6 +135,7 @@ public:
 
   void SetRichText(const AnsiString &Str);
   AnsiString GetRichText();
+  String GetPlainText(bool UseCrLf=true);
   void Render(TCanvas *Canvas, const TPoint &Pos, int Width = MAXSHORT);
   TPoint GetTextSize();
   bool IsEmpty() const;
@@ -142,7 +143,6 @@ public:
   bool CanRedo();
   bool CanPaste();
   void SetUndoLimit(unsigned Limit);
-  String GetPlainText() {return Lines->Text;}
   int LineIndex(int Line);
   int LineCount();
   int LineLength(int Index);
@@ -152,6 +152,8 @@ public:
   void SetEventMask(DWORD Mask, DWORD Value);
   int TextSize();
   unsigned FindWordBreak(TWordBreak WordBreak, unsigned Pos);
+  void ReplaceText(unsigned Pos, unsigned Length, const String &Str);
+  void ReplaceText(unsigned Pos, unsigned Length, const String &Str, TColor Color);
 
   __property ::TParaFormat *Paragraph = {read=FParagraph};
 //  __property Lines; //Don't use this

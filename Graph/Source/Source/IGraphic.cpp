@@ -15,8 +15,10 @@
 #include "RichEditOle.h"
 #include <fstream>
 #include <algorithm>
+#include <RegularExpressions.hpp>
+#include "PyGraph.h"
 //---------------------------------------------------------------------------
-void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
+/*void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 {
   std::wstring Str = ToWString(RichEdit->Text);
   for(int I = Str.size()-1; I >=0; I--)
@@ -24,7 +26,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
       Str.erase(I, 1);
 
   size_t Pos = std::wstring::npos;
-  while((Pos = Str.rfind(L"%(", Pos-1)) != std::wstring::npos)
+  while((Pos = Str.rfind(L"%", Pos-1)) != std::wstring::npos)
   {
     size_t Pos2 = FindEndPar(Str, Pos);
     if(Pos2 == std::string::npos)
@@ -46,7 +48,7 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 
       RichEdit->SelStart = Pos;
       RichEdit->SelLength = Length;
-      RichEdit->SelText = Value;                 
+      RichEdit->SelText = Value;
     }
     catch(Func32::EFuncError &Error)
     {
@@ -64,9 +66,78 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
 		if(Pos == 0)
       break; //Special case
   }
+}*/
+//---------------------------------------------------------------------------
+void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
+{
+  static TRegEx RegEx(
+    "%"                   // Match %
+    "(\\d*\\w*)?"         // ?1 Match an optional name
+    "("                   // ?2
+      "\\("               // Match start bracket
+      "(?>"
+        "[^()'\"]"        //Match anything that is not a bracket or quote
+        "|(?>'[^']*')"    // Or match a single quoted string
+        "|(?>\"[^\"]*\")" // Or match a double quoted string
+        "|(?2)"           // Or recursive match ?2
+      ")*"                // Match zero or more times
+      "\\)"               // Match end bracket
+    ")", TRegExOptions() << roCompiled);
+  String Str = RichEdit->GetPlainText(false);
+  TMatchCollection Collection = RegEx.Matches(Str);
+  for(int I = Collection.Count - 1; I >= 0; I--)
+  {
+    TGroupCollection  SubMatch = Collection[I].Groups;
+    int Pos = SubMatch[0].Index;
+    int Length = SubMatch[0].Length;
+    String FormatFunc = SubMatch[1].Value;
+    String Expression = SubMatch[2].Value.SubString(2, SubMatch[2].Value.Length() - 2);
+    try
+    {
+      String Value;
+      if(!FormatFunc.IsEmpty())
+      {
+        if(Python::IsPythonInstalled())
+          Value = Python::ExecutePluginFunc<String>("CallTextFormatFunc", FormatFunc, Expression);
+      }
+      else
+      {
+        std::wstring Expression2 = ToWString(Expression);
+        bool UseReal = Property.ComplexFormat == cfReal;
+        Value = ComplexToString(UseReal ? Func32::TComplex(Data.Calc(Expression2)) : Data.CalcComplex(Expression2));
+      }
+
+      //If %() is preceded by a '+' and the value is negative, the '+' will be removed to avoid such as "2x+-3"
+      if(!Value.IsEmpty() && Value[1] == '-' && Pos > 1 && Str[Pos - 1] == '+')
+      {
+        Pos--;
+        Length++;
+      }
+
+      RichEdit->ReplaceText(Pos - 1, Length, Value);
+    }
+    catch(Func32::EFuncError &Error)
+    {
+      RichEdit->ReplaceText(Pos - 1, Length, GetErrorMsg(Error), clRed);
+    }
+    catch(Python::EPyVclError &E)
+    {
+      RichEdit->ReplaceText(Pos - 1, Length, E.Message, clRed);
+    }
+  }
 }
 //---------------------------------------------------------------------------
-void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int Width, TColor BackgroundColor, const TData *Data)
+String ReplaceExpression(const String &Str, const TData &Data)
+{
+  std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
+  RichEdit->Visible = false;
+  RichEdit->Parent = Application->MainForm;
+  RichEdit->SetRichText(Str);
+  ReplaceExpression(RichEdit.get(), Data);
+  return RichEdit->GetRichText();
+}
+//---------------------------------------------------------------------------
+void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int Width, TColor BackgroundColor)
 {
   //We need a parent window; just use main form
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
@@ -78,12 +149,10 @@ void RenderRichText(const String &Str, TCanvas *Canvas, const TPoint &Pos, int W
   TRichEditOle RichEditOle(RichEdit.get());
 
   RichEdit->SetRichText(Str);
-  if(Data)
-    ReplaceExpression(RichEdit.get(), *Data);
   RichEdit->Render(Canvas, Pos, Width);
 }
 //---------------------------------------------------------------------------
-String UpdateRichText(const String &Str)
+String UpdateRichTextOleObjects(const String &Str)
 {
   //We need a parent window; just use main form
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
@@ -95,7 +164,7 @@ String UpdateRichText(const String &Str)
   return RichEdit->GetRichText();
 }
 //---------------------------------------------------------------------------
-TPoint RichTextSize(const std::string &Str, const TData *Data)
+TPoint RichTextSize(const String &Str)
 {
   //We need a parent window; just use main form
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
@@ -106,9 +175,7 @@ TPoint RichTextSize(const std::string &Str, const TData *Data)
 
   RichEdit->Parent = Application->MainForm;
   TRichEditOle RichEditOle(RichEdit.get());
-  RichEdit->SetRichText(Str.c_str());
-  if(Data)
-		ReplaceExpression(RichEdit.get(), *Data);
+  RichEdit->SetRichText(Str);
 
 	//We have to disable Beep while setting SelText below;
 	//Else the system beeps if the Rich Edit cannot be changed , for example because

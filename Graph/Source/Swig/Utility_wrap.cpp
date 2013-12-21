@@ -3061,6 +3061,9 @@ namespace swig {
 #include <string>
 
 
+#include <complex> 
+
+
   void BeginMultiUndo() {UndoList.BeginMultiUndo();}
   void EndMultiUndo() {UndoList.EndMultiUndo();}
   void LoadDefault() { Form1->LoadDefault();}
@@ -3472,6 +3475,100 @@ SWIGINTERNINLINE PyObject *
 SWIG_From_std_wstring  (const std::wstring& s)
 {
   return SWIG_FromWCharPtrAndSize(s.data(), s.size());
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_std_complex_Sl_double_Sg_  (PyObject *o, std::complex<double>* val)
+{
+  if (PyComplex_Check(o)) {
+    if (val) *val = std::complex<double>(PyComplex_RealAsDouble(o), PyComplex_ImagAsDouble(o));
+    return SWIG_OK;
+  } else {
+    double d;    
+    int res = SWIG_AddCast(SWIG_AsVal_double (o, &d));
+    if (SWIG_IsOK(res)) {
+      if (val) *val = std::complex<double>(d, 0.0);
+      return res;
+    }
+  }
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
+{
+  if (PyInt_Check(obj)) {
+    long v = PyInt_AsLong(obj);
+    if (v >= 0) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      return SWIG_OverflowError;
+    }
+  } else if (PyLong_Check(obj)) {
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      PyErr_Clear();
+    }
+  }
+#ifdef SWIG_PYTHON_CAST_MODE
+  {
+    int dispatch = 0;
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_AddCast(SWIG_OK);
+    } else {
+      PyErr_Clear();
+    }
+    if (!dispatch) {
+      double d;
+      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
+      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
+	if (val) *val = (unsigned long)(d);
+	return res;
+      }
+    }
+  }
+#endif
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v > UINT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< unsigned int >(v);
+    }
+  }  
+  return res;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_int (PyObject * obj, int *val)
+{
+  long v;
+  int res = SWIG_AsVal_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v < INT_MIN || v > INT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< int >(v);
+    }
+  }  
+  return res;
 }
 
 #ifdef __cplusplus
@@ -3987,6 +4084,50 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ComplexToString(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::complex< double > *arg1 = 0 ;
+  unsigned int arg2 ;
+  TComplexFormat arg3 ;
+  std::complex< double > temp1 ;
+  std::complex< double > val1 ;
+  int ecode1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  String result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:ComplexToString",&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_std_complex_Sl_double_Sg_(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "ComplexToString" "', argument " "1"" of type '" "std::complex< double >""'");
+  } 
+  temp1 = static_cast< std::complex< double > >(val1);
+  arg1 = &temp1;
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ComplexToString" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "ComplexToString" "', argument " "3"" of type '" "TComplexFormat""'");
+  } 
+  arg3 = static_cast< TComplexFormat >(val3);
+  result = ComplexToString((std::complex< double > const &)*arg1,arg2,arg3);
+  {
+    resultobj = PyUnicode_FromUnicode((&result)->c_str(), (&result)->Length());
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"BeginMultiUndo", _wrap_BeginMultiUndo, METH_VARARGS, NULL},
@@ -3998,6 +4139,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Import", _wrap_Import, METH_VARARGS, NULL},
 	 { (char *)"GetText", _wrap_GetText, METH_VARARGS, NULL},
 	 { (char *)"ChangeLanguage", _wrap_ChangeLanguage, METH_VARARGS, NULL},
+	 { (char *)"ComplexToString", _wrap_ComplexToString, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

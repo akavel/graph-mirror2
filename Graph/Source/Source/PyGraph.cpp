@@ -33,7 +33,7 @@ namespace Python
 PyObject *PyEFuncError = NULL;
 PyObject *PyEGraphError = NULL;
 //---------------------------------------------------------------------------
-void PrintException(bool ShowTraceback=true)
+void PrintException(bool ShowTraceback=true, bool ThrowException=false)
 {
 	if(PyErr_ExceptionMatches(PyExc_SystemExit))
   {
@@ -42,14 +42,26 @@ void PrintException(bool ShowTraceback=true)
     return;
   }
 
-  if(!ShowTraceback)
+  String Str;
+  if(!ShowTraceback || ThrowException)
   {
     PyObject *Type, *Value, *Traceback;
     PyErr_Fetch(&Type, &Value, &Traceback);
-    PyErr_Restore(Type, Value, NULL);
-    Py_XDECREF(Traceback);
+    if(!ShowTraceback)
+    {
+      Py_XDECREF(Traceback);
+      Traceback = NULL;
+    }
+    if(ThrowException)
+    {
+      TPyObjectPtr StrObject(PyObject_Str(Value), false);
+      Str = FromPyObject<String>(StrObject.get());
+    }
+    PyErr_Restore(Type, Value, Traceback);
   }
   PyErr_Print();
+  if(ThrowException)
+    throw Python::EPyVclError(Str);
 }
 //---------------------------------------------------------------------------
 bool ExecutePythonCommand(const String &Command)
@@ -787,6 +799,19 @@ bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, 
     return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V3)));
   }
   return false;
+}
+//---------------------------------------------------------------------------
+TPyObjectPtr ExecutePluginFunc(const char *MethodName, PyObject *Param)
+{
+  //Python must be installed and the we must have the GIL
+  PyObject *Module = PyImport_AddModule("Graph");
+  TPyObjectPtr Function(PyObject_GetAttrString(Module, MethodName), false);
+  if(!Function)
+    PrintException(true, true);
+  TPyObjectPtr ResultObj(PyObject_CallObject(Function.get(), Param), false);
+  if(!ResultObj)
+    PrintException(true, true);
+  return ResultObj;
 }
 //---------------------------------------------------------------------------
 PyObject* ConvertException()
