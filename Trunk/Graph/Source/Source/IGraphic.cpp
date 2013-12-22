@@ -103,6 +103,11 @@ void ReplaceExpression(TIRichEdit *RichEdit, const TData &Data)
       else
       {
         std::wstring Expression2 = ToWString(Expression);
+        //Remove optional quotes
+        if(!Expression2.empty() && (Expression2[0] == '"' || Expression2[0] == '\''))
+          Expression2.erase(0, 1);
+        if(!Expression2.empty() && (Expression2[Expression2.size()-1] == '"' || Expression2[Expression2.size()-1] == '\''))
+          Expression2.erase(Expression2.end()-1);
         bool UseReal = Property.ComplexFormat == cfReal;
         Value = ComplexToString(UseReal ? Func32::TComplex(Data.Calc(Expression2)) : Data.CalcComplex(Expression2));
       }
