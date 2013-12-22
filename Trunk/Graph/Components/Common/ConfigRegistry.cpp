@@ -323,8 +323,7 @@ std::wstring TConfigRegistry::GetKeyPath() const
       if(func != NULL)
       {
         DWORD size = 0;
-        DWORD result = 0;
-        result = func(Key, 3, 0, 0, &size);
+        DWORD result = func(Key, 3, 0, 0, &size);
         if(result == 0xC0000023 /* STATUS_BUFFER_TOO_SMALL */)
         {
           size = size + 2;
