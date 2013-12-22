@@ -66,17 +66,17 @@ void TAddView::Visit(TShading &Shade)
 void TAddView::Visit(TPointSeries &Series)
 {
   std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-  Bitmap->Width = 16;
-  Bitmap->Height = 16;
+  Bitmap->Width = Form1->ImageList1->Width;
+  Bitmap->Height = Form1->ImageList1->Height;
   Bitmap->Canvas->Brush->Color = clWhite;
   Bitmap->Canvas->FillRect(TRect(0, 0, Bitmap->Width, Bitmap->Height));
   TPointSelect::DrawPoint(
     Bitmap->Canvas,
-    TPoint(8,8),
+    TPoint(Bitmap->Width / 2, Bitmap->Height /2),
     Series.GetStyle(),
     Series.GetFrameColor(),
     Series.GetFillColor(),
-    5);
+    (5 * Bitmap->Width) / 16);
   AddNode(Series, Form1->ImageList1->AddMasked(Bitmap.get(), clWhite));
 }
 //---------------------------------------------------------------------------
