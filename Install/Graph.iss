@@ -79,6 +79,7 @@ Source: "..\Plugins\ShowConsole.py"; DestDir: "{app}\Plugins"; Flags: ignorevers
 Source: "..\Plugins\SortPointSeries.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\Statistics.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\Transform.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\TextFormating.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
 
@@ -92,7 +93,7 @@ Name: "{userdesktop}\Graph"; Filename: "{app}\Graph.exe"; Tasks: DesktopIcon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Graph"; Filename: "{app}\Graph.exe"; Tasks: QuickLaunchIcon
 
 [Run]
-Filename: "{app}\Graph.exe"; Parameters: "/regserver"
+Filename: "{app}\Graph.exe"; Parameters: "/regserver"; Flags: runascurrentuser
 Filename: "{app}\Graph.exe"; Description: "{cm:LaunchProgram,Graph}"; Flags: nowait postinstall skipifsilent unchecked
 
 [Registry]
