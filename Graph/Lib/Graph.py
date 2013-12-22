@@ -97,17 +97,20 @@ VersionInfo = VersionInfoType._make(GraphImpl.version_info)
 Debug = GraphImpl.Debug
 
 def LoadPlugins(Path):
-    sys.path.append(Path)
+#    sys.path.append(Path)
     ModuleNames = []
     Modules = []
     AllowedExt = [ i[0] for i in imp.get_suffixes() ]
     for ModuleName, Ext in [ os.path.splitext(f) for f in os.listdir(Path) ]:
         if Ext in AllowedExt and not ModuleName in ModuleNames:
+            fp, pathname, description = imp.find_module(ModuleName, [Path])
             try:
-                ModuleNames.append(ModuleName)
-                Modules.append(importlib.import_module(ModuleName))
+              ModuleNames.append(ModuleName)
+              Modules.append(imp.load_module(ModuleName, fp, pathname, description))
             except Exception:
-                traceback.print_exc()
+              traceback.print_exc()
+            if fp:
+              fp.close()
     return Modules
 
 # Function called when Graph is started. It will load the plugins in the Plugins directory. BaseDir is the directory where Graph is installed.
