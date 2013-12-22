@@ -79,7 +79,7 @@ Source: "..\Plugins\ShowConsole.py"; DestDir: "{app}\Plugins"; Flags: ignorevers
 Source: "..\Plugins\SortPointSeries.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\Statistics.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\Transform.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
-Source: "..\Plugins\TextFormating.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\TextFormatting.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
 
