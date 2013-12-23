@@ -1345,62 +1345,65 @@ void TForm1::ChangeLanguage(const String &Lang, bool Force)
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
-  switch(Key)
-  {
-    case VK_F5:
-      Draw.AbortUpdate();
-      Data.ClearCache();
-      Data.Update();
-      UpdateTreeView();
-      SendOleAdvise(acDataChanged);
-      Redraw(); //Activates thread; must be done after OLE update
-      break;
+  if(Shift == TShiftState())
+    switch(Key)
+    {
+      case VK_F5:
+        Draw.AbortUpdate();
+        Data.ClearCache();
+        Data.Update();
+        UpdateTreeView();
+        SendOleAdvise(acDataChanged);
+        Redraw(); //Activates thread; must be done after OLE update
+        break;
 
-    case VK_F9:
-      Draw.AbortUpdate();
-      Data.Axes.xAxis.ShowNegativeArrow = !Data.Axes.xAxis.ShowNegativeArrow;
-      Data.Axes.yAxis.ShowNegativeArrow = !Data.Axes.yAxis.ShowNegativeArrow;
-      Data.Axes.xAxis.NumberPlacement = Data.Axes.xAxis.NumberPlacement == npCenter ? npBefore : npCenter;
-      Data.Axes.yAxis.NumberPlacement = Data.Axes.yAxis.NumberPlacement == npCenter ? npBefore : npCenter;
-      Redraw(); //Activates thread; must be done after OLE update
-      break;
+      case VK_F9:
+        Draw.AbortUpdate();
+        Data.Axes.xAxis.ShowNegativeArrow = !Data.Axes.xAxis.ShowNegativeArrow;
+        Data.Axes.yAxis.ShowNegativeArrow = !Data.Axes.yAxis.ShowNegativeArrow;
+        Data.Axes.xAxis.NumberPlacement = Data.Axes.xAxis.NumberPlacement == npCenter ? npBefore : npCenter;
+        Data.Axes.yAxis.NumberPlacement = Data.Axes.yAxis.NumberPlacement == npCenter ? npBefore : npCenter;
+        Redraw(); //Activates thread; must be done after OLE update
+        break;
 
-    case VK_F11:
-      Python::ShowPythonConsole(true);
-      break;
+      case VK_F11:
+        Python::ShowPythonConsole(true);
+        break;
 
-    case VK_F12:
+      case VK_SHIFT:
+        if(CursorState == csIdle)
+          SetCursorState(csMove);
+        break;
+
+      case VK_OEM_MINUS: //Handle Ctrl+Shift+-  (Normal shortcut handling doesn't seem to work)
+  //      if(Shift == TShiftState() << ssCtrl << ssShift)
+  //        ZoomOutAction->Execute();
+        break;
+    }
+
+  else if(Shift == TShiftState() << ssCtrl << ssAlt)
+    switch(Key)
+    {
+      case VK_F12:
       if(Shift.Contains(ssCtrl) && Shift.Contains(ssAlt))
       {
         double x=0;
         double y=5/x;
       }
       break;
+    }
 
-    case VK_SHIFT:
-      if(CursorState == csIdle)
-        SetCursorState(csMove);
-      break;
-
-    case VK_OEM_MINUS: //Handle Ctrl+Shift+-  (Normal shortcut handling doesn't seem to work)
-//      if(Shift == TShiftState() << ssCtrl << ssShift)
-//        ZoomOutAction->Execute();
-      break;
-  }
-
-  if(Shift.Contains(ssCtrl) && !Shift.Contains(ssAlt))
+  else if(Shift == TShiftState() << ssCtrl << ssShift)
   {
-    if(Shift.Contains(ssShift))
-    {
-      const char* Languages[] = {"Czech", "Dutch", "Greek", "Finnish", "Chinese (Traditional)", "Chinese (Simplified)", "Mongolian", "Swedish", "Arabic", "Hebrew"};
-      if(Key >= '0' && Key <='9')
-        ChangeLanguage(Languages[Key - '1']);
-    }
-    else if(Key >= '0' && Key <='9')
-    {
-      const char* Languages[] = {"Russian", "English", "Danish", "German", "Spanish", "Portuguese", "Italian", "Slovenian", "French", "Hungarian"};
+    const char* Languages[] = {"Czech", "Dutch", "Greek", "Finnish", "Chinese (Traditional)", "Chinese (Simplified)", "Mongolian", "Swedish", "Arabic", "Hebrew"};
+    if(Key >= '0' && Key <='9')
+      ChangeLanguage(Languages[Key - '1']);
+  }
+  else if(Shift == TShiftState() << ssCtrl)
+  {
+    const char* Languages[] = {"Russian", "English", "Danish", "German", "Spanish", "Portuguese", "Italian", "Slovenian", "French", "Hungarian"};
+    if(Key >= '0' && Key <='9')
       ChangeLanguage(Languages[Key - '0']);
-    }
   }
 }
 //---------------------------------------------------------------------------
