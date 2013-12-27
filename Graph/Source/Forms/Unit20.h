@@ -76,6 +76,7 @@ __published:	// IDE-managed Components
   void __fastcall Saveimageas1Click(TObject *Sender);
   void __fastcall Saveimagesequence1Click(TObject *Sender);
   void __fastcall FormShow(TObject *Sender);
+  void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 private:	// User declarations
   bool BackwardDirection;
   double Min;

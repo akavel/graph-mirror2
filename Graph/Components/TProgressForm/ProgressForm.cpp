@@ -33,14 +33,15 @@ __fastcall TProgressForm::TProgressForm(TComponent* Owner)
    FAbortProgress(false), FCursor(crAppStart), FColor(clBlue), FButtonCaption("Cancel"),
    Form(NULL), Progress(NULL), Timer(NULL), Button(NULL)
 {
+  unsigned PixelsPerInch = Screen->PixelsPerInch;
   Timer = new TTimer(this);
   Timer->Enabled = false;
   Timer->OnTimer = ShowForm;
 
   Form = new TForm(this);
   Form->Caption = FCaption;
-  Form->Width = 263;
-  Form->Height = 152;
+  Form->Width = MulDiv(263, PixelsPerInch, 96);
+  Form->Height = MulDiv(152, PixelsPerInch, 96);
   Form->BorderStyle = bsDialog;
   Form->BorderIcons = TBorderIcons();
   Form->Position = poOwnerFormCenter;
@@ -51,17 +52,23 @@ __fastcall TProgressForm::TProgressForm(TComponent* Owner)
   Progress->Max = FMax;
   Progress->Step = FStep;
   Progress->Position = FPosition;
-  Progress->Top = 32;
-  Progress->Left = 24;
-  Progress->Width = 209;
+  Progress->Top = MulDiv(32, PixelsPerInch, 96);
+  Progress->Width = MulDiv(209, PixelsPerInch, 96);
+  Progress->Height = MulDiv(25, PixelsPerInch, 96);
+  Progress->Left = (Form->ClientWidth - Progress->Width) / 2;
 
   Button = new TButton(this);
   Button->Parent = Form;
-  Button->Top = 80;
-  Button->Left = 88;
+  Button->Top = MulDiv(80, PixelsPerInch, 96);
+  Button->Width = MulDiv(75, PixelsPerInch, 96);
+  Button->Height = MulDiv(25, PixelsPerInch, 96);
+  Button->Left = (Form->ClientWidth - Button->Width) / 2;
   Button->Caption = FButtonCaption;
   Button->Cancel = true;
   Button->OnClick = ButtonCancel;
+
+//  Form->PixelsPerInch = 96;
+//  Form->ScaleBy(Screen->PixelsPerInch, 96);
 }
 //---------------------------------------------------------------------------
 __fastcall TProgressForm::~TProgressForm()

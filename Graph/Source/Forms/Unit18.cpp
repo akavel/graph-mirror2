@@ -27,6 +27,7 @@ __fastcall TForm18::TForm18(TComponent* Owner)
   ComboBox1->Left = Label3->Left + Label3->Width + 5;
   PageControl1->ActivePage = TabSheet1;
   FlipForm(this);
+  TrackBar1->ThumbLength = MulDiv(20, PixelsPerInch, 96);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm18::EditKeyPress(TObject *Sender, char &Key)

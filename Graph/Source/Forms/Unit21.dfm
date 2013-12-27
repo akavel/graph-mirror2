@@ -62,7 +62,7 @@ object Form21: TForm21
   end
   object ComboBox1: TComboBox
     Left = 64
-    Top = 16
+    Top = 18
     Width = 121
     Height = 21
     Hint = 'Choose which corner of the label should be locked.'
@@ -77,7 +77,7 @@ object Form21: TForm21
   end
   object Edit1: TMyEdit
     Left = 64
-    Top = 48
+    Top = 46
     Width = 121
     Height = 21
     Hint = 'Enter a coordinate to lock label at.'
@@ -85,7 +85,7 @@ object Form21: TForm21
   end
   object Edit2: TMyEdit
     Left = 64
-    Top = 76
+    Top = 74
     Width = 121
     Height = 21
     Hint = 'Enter a coordinate to lock label at.'

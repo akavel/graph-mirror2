@@ -90,7 +90,7 @@ object Form13: TForm13
     end
     object Edit2: TEdit
       Left = 48
-      Top = 86
+      Top = 88
       Width = 41
       Height = 21
       Hint = 'Width of graph in pixels.'
@@ -101,7 +101,7 @@ object Form13: TForm13
     end
     object LineSelect1: TLineSelect
       Left = 48
-      Top = 19
+      Top = 22
       Width = 81
       Height = 22
       Hint = 'Choose which line style to use for drawing the graph.'
@@ -110,7 +110,7 @@ object Form13: TForm13
     end
     object UpDown1: TUpDown
       Left = 89
-      Top = 86
+      Top = 88
       Width = 15
       Height = 21
       Anchors = [akTop, akRight]
@@ -542,7 +542,7 @@ object Form13: TForm13
       end
       object Edit3: TMyEdit
         Left = 48
-        Top = 8
+        Top = 10
         Width = 281
         Height = 21
         Hint = 'Enter a function model to base the trendline on.'

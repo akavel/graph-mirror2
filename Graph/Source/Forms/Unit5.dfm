@@ -75,13 +75,13 @@ object Form5: TForm5
     Left = 16
     Top = 48
     Width = 322
-    Height = 73
+    Height = 75
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Function equation'
     TabOrder = 1
     DesignSize = (
       322
-      73)
+      75)
     object Label2: TLabel
       Left = 8
       Top = 20
@@ -102,7 +102,7 @@ object Form5: TForm5
     end
     object Edit1: TMyEdit
       Left = 32
-      Top = 16
+      Top = 18
       Width = 282
       Height = 21
       Anchors = [akLeft, akTop, akRight]
@@ -112,7 +112,7 @@ object Form5: TForm5
     end
     object Edit2: TMyEdit
       Left = 32
-      Top = 44
+      Top = 46
       Width = 282
       Height = 21
       Anchors = [akLeft, akTop, akRight]
@@ -123,7 +123,7 @@ object Form5: TForm5
   end
   object GroupBox2: TGroupBox
     Left = 16
-    Top = 128
+    Top = 130
     Width = 322
     Height = 49
     Anchors = [akLeft, akTop, akRight]
@@ -184,7 +184,7 @@ object Form5: TForm5
   end
   object GroupBox4: TGroupBox
     Left = 16
-    Top = 296
+    Top = 298
     Width = 322
     Height = 84
     Anchors = [akLeft, akTop, akRight]
@@ -290,6 +290,7 @@ object Form5: TForm5
         TabOrder = 0
         Anchors = [akLeft]
         ItemHeight = 15
+        ExplicitTop = 5
       end
       object Label13: TLabel
         Left = 167
@@ -404,7 +405,7 @@ object Form5: TForm5
   end
   object GroupBox3: TGroupBox
     Left = 16
-    Top = 240
+    Top = 242
     Width = 321
     Height = 49
     Anchors = [akLeft, akTop, akRight]
@@ -435,7 +436,7 @@ object Form5: TForm5
   end
   object GroupBox5: TGroupBox
     Left = 16
-    Top = 184
+    Top = 186
     Width = 321
     Height = 49
     Anchors = [akLeft, akTop, akRight]

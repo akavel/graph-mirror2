@@ -25,6 +25,7 @@ const double MaxHeight = Screen->Height - 180;
 __fastcall TForm20::TForm20(TComponent* Owner, const std::wstring &Constant, double AMin, double AStep)
   : TForm(Owner), BackwardDirection(false), Min(AMin), Step(AStep)
 {
+  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
 
@@ -38,6 +39,11 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::wstring &Constant, dou
   {
     Repeat1->Checked = Registry.Read("Repeat", false);
     Reverse1->Checked = Registry.Read("AutoReverse", false);
+  }
+  if(PixelsPerInch != 96)
+  {
+    TrackBar1->ThumbLength = MulDiv(20, PixelsPerInch, 96);
+    ScaleImageList(ImageList1, MulDiv(18, PixelsPerInch, 96));
   }
 }
 //---------------------------------------------------------------------------
@@ -264,6 +270,12 @@ void TForm20::SaveFrame(const String &FileName, int FilterIndex)
 void __fastcall TForm20::FormShow(TObject *Sender)
 {
   ExecutePluginEvent(Python::peShowForm, this);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm20::FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+{
+  if(Key == VK_ESCAPE)
+    Close();
 }
 //---------------------------------------------------------------------------
 

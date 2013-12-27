@@ -25,6 +25,9 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   Translate();
   ScaleForm(this);
 
+  Button7->Height = Edit13->Height;
+  Button7->Width = Edit13->Height;
+
   const TAxes &Axes = Data.Axes;
   Edit1->Text = RoundToStr(Axes.xAxis.Min, 8);
   Edit2->Text = RoundToStr(Axes.xAxis.Max, 8);

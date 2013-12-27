@@ -31,7 +31,7 @@ object Form19: TForm19
   end
   object ComboBox1: TComboBox
     Left = 56
-    Top = 16
+    Top = 18
     Width = 137
     Height = 21
     Hint = 'Choose a constant to change between each frame.'
@@ -110,7 +110,7 @@ object Form19: TForm19
     end
     object Edit1: TMyEdit
       Left = 96
-      Top = 16
+      Top = 18
       Width = 89
       Height = 21
       Hint = 'The first value of the constant.'
@@ -119,7 +119,7 @@ object Form19: TForm19
     end
     object Edit2: TMyEdit
       Left = 96
-      Top = 44
+      Top = 46
       Width = 89
       Height = 21
       Hint = 'The last value of the constant.'
@@ -128,7 +128,7 @@ object Form19: TForm19
     end
     object Edit3: TMyEdit
       Left = 96
-      Top = 72
+      Top = 74
       Width = 89
       Height = 21
       Hint = 'The chosen constant is changed by this value between each frame.'
@@ -169,7 +169,7 @@ object Form19: TForm19
     end
     object Edit4: TMyEdit
       Left = 96
-      Top = 16
+      Top = 18
       Width = 89
       Height = 21
       Hint = 'Width of each frame, in pixels.'
@@ -179,7 +179,7 @@ object Form19: TForm19
     end
     object Edit5: TMyEdit
       Left = 96
-      Top = 44
+      Top = 46
       Width = 89
       Height = 21
       Hint = 'Height of each frame, in pixels.'
@@ -189,7 +189,7 @@ object Form19: TForm19
     end
     object Edit6: TMyEdit
       Left = 96
-      Top = 72
+      Top = 74
       Width = 89
       Height = 21
       Hint = 'Number of frames per second used when the animation is played.'

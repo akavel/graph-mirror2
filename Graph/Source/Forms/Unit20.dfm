@@ -16,9 +16,9 @@ object Form20: TForm20
   KeyPreview = True
   OldCreateOrder = False
   Position = poMainFormCenter
-  Scaled = False
   ShowHint = True
   OnClose = TntFormClose
+  OnKeyDown = FormKeyDown
   OnShow = FormShow
   DesignSize = (
     384
@@ -48,7 +48,7 @@ object Form20: TForm20
   object Panel2: TPanel
     Left = 8
     Top = 360
-    Width = 185
+    Width = 217
     Height = 41
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
@@ -56,9 +56,9 @@ object Form20: TForm20
     object ToolBar1: TToolBar
       Left = 0
       Top = 0
-      Width = 177
-      Height = 33
-      Align = alNone
+      Width = 217
+      Height = 41
+      Align = alClient
       ButtonHeight = 28
       ButtonWidth = 28
       EdgeInner = esNone
@@ -231,7 +231,7 @@ object Form20: TForm20
     Left = 112
     Top = 16
     Bitmap = {
-      494C010108000A00080012001200FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010108000A001C0012001200FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000048000000360000000100200000000000C03C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

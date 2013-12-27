@@ -118,6 +118,7 @@ object Form11: TForm11
       Width = 375
       Height = 67
       Align = alClient
+      BevelOuter = bvNone
       ColumnCollection = <
         item
           SizeStyle = ssAuto
@@ -189,29 +190,23 @@ object Form11: TForm11
           Value = 50.000000000000000000
         end>
       TabOrder = 0
-      ExplicitLeft = 19
-      ExplicitTop = 24
-      ExplicitWidth = 336
-      ExplicitHeight = 41
       DesignSize = (
         375
         67)
       object Label7: TLabel
-        Left = 7
-        Top = 1
+        Left = 6
+        Top = 0
         Width = 26
-        Height = 32
+        Height = 33
         Align = alLeft
         Caption = 'Style:'
         FocusControl = ShadeSelect1
         Layout = tlCenter
-        ExplicitLeft = 6
-        ExplicitTop = 22
         ExplicitHeight = 13
       end
       object ShadeSelect1: TShadeSelect
-        Left = 57
-        Top = 6
+        Left = 59
+        Top = 5
         Width = 81
         Height = 22
         Hint = 
@@ -221,8 +216,8 @@ object Form11: TForm11
         Anchors = [akLeft]
       end
       object ExtColorBox1: TExtColorBox
-        Left = 287
-        Top = 6
+        Left = 288
+        Top = 5
         Width = 81
         Height = 22
         Hint = 'Select the color for drawing the relation.'
@@ -236,37 +231,31 @@ object Form11: TForm11
       end
       object Label3: TLabel
         AlignWithMargins = True
-        Left = 250
+        Left = 248
         Top = 36
-        Width = 28
-        Height = 27
+        Width = 31
+        Height = 28
         Align = alLeft
         Alignment = taRightJustify
         Caption = 'Width:'
         FocusControl = Edit4
         Layout = tlCenter
-        ExplicitLeft = 293
-        ExplicitTop = 9
-        ExplicitWidth = 31
         ExplicitHeight = 13
       end
       object Label4: TLabel
-        Left = 7
+        Left = 6
         Top = 33
-        Width = 44
-        Height = 33
+        Width = 47
+        Height = 34
         Align = alLeft
         Caption = 'Line style:'
         FocusControl = LineSelect1
         Layout = tlCenter
-        ExplicitLeft = 8
-        ExplicitTop = 50
-        ExplicitWidth = 47
         ExplicitHeight = 13
       end
       object LineSelect1: TLineSelect
-        Left = 57
-        Top = 38
+        Left = 59
+        Top = 39
         Width = 81
         Height = 22
         Hint = 
@@ -274,32 +263,28 @@ object Form11: TForm11
           'alities.'
         TabOrder = 2
         Anchors = [akLeft]
-        ExplicitTop = 19
       end
       object Label9: TLabel
         AlignWithMargins = True
-        Left = 250
-        Top = 4
+        Left = 248
+        Top = 3
         Width = 27
-        Height = 26
+        Height = 27
         Align = alLeft
         Alignment = taRightJustify
         Caption = 'Color:'
         FocusControl = ExtColorBox1
         Layout = tlCenter
-        ExplicitLeft = 297
-        ExplicitTop = 9
         ExplicitHeight = 13
       end
       object Panel1: TPanel
-        Left = 287
+        Left = 288
         Top = 33
         Width = 81
-        Height = 33
+        Height = 34
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 3
-        ExplicitLeft = 268
         object Edit4: TEdit
           Left = 0
           Top = 8
@@ -327,7 +312,7 @@ object Form11: TForm11
   end
   object Edit1: TMyEdit
     Left = 66
-    Top = 8
+    Top = 10
     Width = 320
     Height = 21
     Hint = 'Enter the relation, for example "x^2+y^2 = 25" or "y < sin(x)"'
@@ -338,7 +323,7 @@ object Form11: TForm11
   end
   object Edit2: TMyEdit
     Left = 66
-    Top = 40
+    Top = 42
     Width = 320
     Height = 21
     Hint = 
