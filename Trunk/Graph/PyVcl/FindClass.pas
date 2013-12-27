@@ -1258,6 +1258,7 @@ begin
   TypeList.AddObject('TTopBottom', TypeInfo(TTopBottom));
   TypeList.AddObject('TTouchManager', TypeInfo(TTouchManager));
   TypeList.AddObject('TTouchProperty', TypeInfo(TTouchProperty));
+  TypeList.AddObject('TTrackBar', TypeInfo(TTrackBar));
   TypeList.AddObject('TTrackButton', TypeInfo(TTrackButton));
   TypeList.AddObject('TTransparentMode', TypeInfo(TTransparentMode));
   TypeList.AddObject('TTrayIcon', TypeInfo(TTrayIcon));

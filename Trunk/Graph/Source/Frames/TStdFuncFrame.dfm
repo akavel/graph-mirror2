@@ -36,7 +36,7 @@ inherited StdFuncFrame: TStdFuncFrame
   end
   object Label1: TLabel
     Left = 8
-    Top = 10
+    Top = 9
     Width = 25
     Height = 13
     Alignment = taRightJustify
@@ -45,7 +45,7 @@ inherited StdFuncFrame: TStdFuncFrame
   end
   object Label5: TLabel
     Left = 8
-    Top = 140
+    Top = 138
     Width = 41
     Height = 13
     Caption = 'Snap to:'

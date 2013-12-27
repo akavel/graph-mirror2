@@ -631,7 +631,7 @@ object Form16: TForm16
       ImageIndex = 1
       object Label12: TLabel
         Left = 8
-        Top = 12
+        Top = 10
         Width = 56
         Height = 13
         Caption = 'Description:'
@@ -713,7 +713,7 @@ object Form16: TForm16
         end
         object Label4: TLabel
           Left = 8
-          Top = 24
+          Top = 22
           Width = 26
           Height = 13
           Caption = 'Style:'

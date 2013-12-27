@@ -28,7 +28,7 @@ object Form8: TForm8
   end
   object Edit1: TEdit
     Left = 48
-    Top = 8
+    Top = 10
     Width = 265
     Height = 21
     TabOrder = 0

@@ -143,7 +143,7 @@ object Form7: TForm7
     end
     object ExtColorBox1: TExtColorBox
       Left = 64
-      Top = 48
+      Top = 50
       Width = 81
       Height = 22
       Hint = 'Select the color of the graph.'

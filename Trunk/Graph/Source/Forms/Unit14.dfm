@@ -193,7 +193,7 @@ object Form14: TForm14
         end
         object PointSelect1: TPointSelect
           Left = 76
-          Top = 16
+          Top = 18
           Width = 49
           Height = 22
           Hint = 'Choose the type of markers to be shown at each point.'
@@ -203,7 +203,7 @@ object Form14: TForm14
         end
         object ExtColorBox1: TExtColorBox
           Left = 76
-          Top = 43
+          Top = 44
           Width = 86
           Height = 22
           Hint = 'Choose the color of the markers.'
@@ -261,7 +261,7 @@ object Form14: TForm14
         end
         object LineSelect1: TLineSelect
           Left = 76
-          Top = 16
+          Top = 18
           Width = 86
           Height = 22
           Hint = 
@@ -298,7 +298,7 @@ object Form14: TForm14
         end
         object ComboBox2: TExtComboBox
           Left = 76
-          Top = 96
+          Top = 98
           Width = 86
           Height = 21
           Hint = 'Select which kind of line to draw between the markers.'
@@ -314,7 +314,7 @@ object Form14: TForm14
         end
         object ExtColorBox2: TExtColorBox
           Left = 76
-          Top = 43
+          Top = 44
           Width = 86
           Height = 22
           Hint = 'Choose the color of the lines.'
@@ -379,7 +379,7 @@ object Form14: TForm14
         end
         object ComboBox1: TComboBox
           Left = 76
-          Top = 40
+          Top = 42
           Width = 86
           Height = 21
           Hint = 'Select where the coordinates should be shown.'

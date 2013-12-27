@@ -41,7 +41,7 @@ object PrintFrm: TPrintFrm
   end
   object Label6: TLabel
     Left = 304
-    Top = 304
+    Top = 302
     Width = 62
     Height = 13
     Alignment = taRightJustify
@@ -84,7 +84,7 @@ object PrintFrm: TPrintFrm
     TabOrder = 0
     object Label1: TLabel
       Left = 16
-      Top = 24
+      Top = 22
       Width = 31
       Height = 13
       Caption = 'Name:'
@@ -141,7 +141,6 @@ object PrintFrm: TPrintFrm
         'Select the printer to use. The Properties button may be used to ' +
         'change more advanced settings for the printer.'
       Style = csDropDownList
-      ItemHeight = 13
       TabOrder = 0
       OnChange = ComboBox1Change
     end
@@ -193,7 +192,7 @@ object PrintFrm: TPrintFrm
     TabOrder = 2
     object Label3: TLabel
       Left = 12
-      Top = 52
+      Top = 50
       Width = 55
       Height = 13
       Caption = 'Left margin:'
@@ -201,7 +200,7 @@ object PrintFrm: TPrintFrm
     end
     object Label4: TLabel
       Left = 12
-      Top = 80
+      Top = 78
       Width = 56
       Height = 13
       Caption = 'Top margin:'
@@ -270,7 +269,7 @@ object PrintFrm: TPrintFrm
     TabOrder = 4
     object Label5: TLabel
       Left = 12
-      Top = 24
+      Top = 22
       Width = 86
       Height = 13
       Caption = 'Number of copies:'

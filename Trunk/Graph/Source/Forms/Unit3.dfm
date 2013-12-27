@@ -30,7 +30,7 @@ object Form3: TForm3
     Top = 8
     Width = 404
     Height = 213
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -882,7 +882,7 @@ object Form3: TForm3
       end
       object Edit13: TMyEdit
         Left = 40
-        Top = 9
+        Top = 10
         Width = 332
         Height = 21
         Hint = 'Enter a title to show above the coordinate system.'
@@ -917,7 +917,7 @@ object Form3: TForm3
       end
       object Button7: TButton
         Left = 371
-        Top = 8
+        Top = 9
         Width = 21
         Height = 21
         ImageAlignment = iaCenter
