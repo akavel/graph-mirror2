@@ -18,6 +18,7 @@ msgstr ""
 "X-Poedit-Bookmarks: 153,425,630,724,783,834,-1,-1,-1,-1\n"
 "X-Generator: Poedit 1.5.7\n"
 "Language: pt_BR\n"
+"Help-file: Graph-Portuguese.chm\n"
 
 #. Form1..Recent1..Hint
 msgid "Open file: %s"
