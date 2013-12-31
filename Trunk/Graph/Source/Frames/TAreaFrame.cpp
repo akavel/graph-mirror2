@@ -46,7 +46,8 @@ void TAreaFrame::EvalArea(const TBaseFuncType *Func, long double From, long doub
 {
   Edit3->Text = RoundToStr(Func->CalcArea(From, To));
 
-  if(!Func->GetVisible() || Func->sList.empty())
+  //Don't try to acces sList when function may be updated.
+  if(!Func->GetVisible() || Func->sList.empty() || Form1->Draw.Updating())
     return;
 
   if(From > To)
@@ -157,7 +158,8 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
   {
 		Edit3->Text = RoundToStr(Func->GetFunc().CalcArc(Min, Max, 1E-3));
 
-    if(!GraphElem->GetVisible())
+    //Don't try to acces sList when function may be updated.
+    if(!GraphElem->GetVisible() || Form1->Draw.Updating())
       return;
 
     unsigned N1 = std::lower_bound(Func->sList.begin(), Func->sList.end(), Min, TCompCoordSet()) - Func->sList.begin();
@@ -165,28 +167,6 @@ void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
     if(N1 != N2)
       Form1->IPolygon1->AddPoints(&Func->Points[N1], N2 - N1);
     Form1->IPolygon1->Pen->Width = Func->Size;
-  }
-  else if(const TTan *Tan = dynamic_cast<const TTan*>(GraphElem))
-  {
-    try
-    {
-      double dx = Max - Min;
-      double yMin = Tan->GetFunc().CalcY(Min);
-      double yMax = Tan->GetFunc().CalcY(Max);
-      double dy = yMax - yMin;
-
-      //Length = sqrt(dx^2+dy^2) = sqrt(dx^2+^(a*dx)^2)
-      Edit3->Text = RoundToStr(std::sqrt(dx*dx + dy*dy));
-
-      if(!GraphElem->GetVisible())
-        return
-      Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xPoint(Min), Form1->Draw.yPoint(yMin)));
-      Form1->IPolygon1->AddPoint(TPoint(Form1->Draw.xPoint(Max), Form1->Draw.yPoint(yMax)));
-      Form1->IPolygon1->Pen->Width = Tan->Size;
-    }
-		catch(...)
-    {
-    }
   }
 
   Form1->IPolygon1->PolygonType = ptPolyline;
