@@ -490,7 +490,7 @@ double TParamFunc::CalcArea(double tMin, double tMax, double RelError) const
  */
 double TParamFunc::CalcArc(double tMin, double tMax, double RelError) const
 {
-  return sqrt(pow(ConvXToFunc().MakeDif(), 2) + pow(ConvYToFunc().MakeDif(), 2)).CalcArea(tMin, tMax, RelError);
+  return sqrt(sqr(ConvXToFunc().MakeDif()) + sqr(ConvYToFunc().MakeDif())).CalcArea(tMin, tMax, RelError);
 }
 //---------------------------------------------------------------------------
 /** Calculate the slope at the given t-parameter.

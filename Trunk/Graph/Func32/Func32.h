@@ -341,6 +341,7 @@ class TFunc : public TBaseFunc
   friend TFunc pow(const TFunc&, const TFunc&);
   friend TFunc log(const TFunc&);
   friend TFunc sqrt(const TFunc&);
+  friend TFunc sqr(const TFunc&);
   friend class TBaseFunc;
   friend class TParamFunc;
   friend class TPolarFunc;

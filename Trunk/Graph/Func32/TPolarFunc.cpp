@@ -312,7 +312,10 @@ long double TPolarFunc::CalcAngleSlope(long double t) const
 double TPolarFunc::CalcArc(double tMin, double tMax, double RelError) const
 {
   TFunc r(ConvToFunc());
-  return sqrt(pow(r, 2) + pow(r.MakeDif(), 2)).CalcArea(tMin, tMax, RelError);
+  TFunc dr = r.MakeDif();
+  if(Trigonometry == Degree)
+    r *= PI/180;
+  return sqrt(sqr(r) + sqr(dr)).CalcArea(tMin, tMax, RelError);
 }
 //---------------------------------------------------------------------------
 /** Calculate the area between origo and the function from tMin to tMax
@@ -324,7 +327,10 @@ double TPolarFunc::CalcArc(double tMin, double tMax, double RelError) const
  */
 double TPolarFunc::CalcArea(double tMin, double tMax, double RelError) const
 {
-  return pow(ConvToFunc(), 2).CalcArea(tMin, tMax, RelError) / 2;
+  long double Result = sqr(ConvToFunc()).CalcArea(tMin, tMax, RelError) / 2;
+  if(Trigonometry == Degree)
+    Result *= PI/180;
+  return Result;
 }
 //---------------------------------------------------------------------------
 /** Calculate the slope at the given angle.
