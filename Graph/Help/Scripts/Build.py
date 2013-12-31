@@ -11,6 +11,7 @@ Languages = [
     ("English",     "en",   {"$LabelWidth": "2em"}),
     ("French",      "fr",   {"$LabelWidth": "2em"}),
     ("German",      "de",   {"$LabelWidth": "2em"}),
+    ("Greek",       "el",   {"$LabelWidth": "2em"}),
     ("Italian",     "it",   {"$LabelWidth": "5em"}),
     ("Portuguese",  "pt",   {"$LabelWidth": "2em"}),
     ("Slovenian",   "sl",   {"$LabelWidth": "2em"}),
