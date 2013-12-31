@@ -331,7 +331,8 @@ void TDraw::PreCalcXAxis()
 
   if(Axes.xAxis.AutoTick)
   {
-    int TextDist = SizeScale(40);
+		Context.SetFont(Axes.NumberFont);
+    int TextDist = Context.GetTextWidth("1234567");
     int Ticks = AxesRect.Width() / TextDist;
     if(Ticks == 0)
       Ticks = 1;
@@ -368,7 +369,9 @@ void TDraw::PreCalcYAxis()
 
   if(Axes.yAxis.AutoTick)
   {
-    int TextDist = SizeScale(40);
+    //The distance depends on the font and resolution
+		Context.SetFont(Axes.NumberFont);
+    int TextDist = Context.GetTextWidth("1234567");
     int Ticks = AxesRect.Height() / TextDist;
     if(Ticks == 0)
       Ticks = 1; //Avoid division by zero, just in case.
