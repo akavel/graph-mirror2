@@ -369,6 +369,17 @@ TFunc sqrt(const TFunc &Func1)
   return Func;
 }
 //---------------------------------------------------------------------------
+/** Returns the square of the function
+ */
+TFunc sqr(const TFunc &Func1)
+{
+  TFunc Func;
+  Func.FuncData->Add(CodeSqr);
+  Func.FuncData->Add(*Func1.FuncData);
+  Func.Trigonometry = Func1.Trigonometry;
+  return Func;
+}
+//---------------------------------------------------------------------------
 /** Convert the objects to text and add it to the stream
  */
 std::wostream& operator<<(std::wostream &os, const TFunc &Func)
@@ -420,7 +431,9 @@ double TFunc::CalcArea(double xMin, double xMax, double RelError) const
  */
 double TFunc::CalcArc(double xMin, double xMax, double RelError) const
 {
-  return sqrt(1 + pow(MakeDif(), 2)).CalcArea(xMin, xMax, RelError);
+  TFunc Temp = sqrt(1 + sqr(MakeDif()));
+  Temp.SetTrigonometry(Trigonometry);
+  return Temp.CalcArea(xMin, xMax, RelError);
 }
 //---------------------------------------------------------------------------
 /** Calculate slope at given x-ccordinate.
