@@ -47,7 +47,7 @@
 			<listitem>
 				<para>
 					Which version are you using?
-					This is shown in the <menuchoice><guimenu>Help</guimenu><guimenuitem>About Graph...</guimenuitem></menuchoice> dialog box.
+					This is shown in the <menuchoice><guimenu>Help</guimenu><guimenuitem>About Graph</guimenuitem></menuchoice> dialog box.
 					You should check that you are using the newest version as the bug may have been fixed already.
 				</para>
 			</listitem>
