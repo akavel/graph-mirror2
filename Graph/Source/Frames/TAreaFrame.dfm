@@ -56,20 +56,20 @@ inherited AreaFrame: TAreaFrame
     Padding.Bottom = 5
     RowCollection = <
       item
-        Value = 33.333333333333330000
+        Value = 33.333333333333340000
       end
       item
-        Value = 33.333333333333330000
+        Value = 33.333333333333340000
       end
       item
-        Value = 33.333333333333330000
+        Value = 33.333333333333340000
       end>
     TabOrder = 0
     object Label1: TLabel
       Left = 4
       Top = 8
       Width = 28
-      Height = 17
+      Height = 18
       Align = alLeft
       Caption = 'From:'
       Layout = tlCenter
@@ -77,50 +77,48 @@ inherited AreaFrame: TAreaFrame
     end
     object Label2: TLabel
       Left = 4
-      Top = 34
+      Top = 35
       Width = 16
-      Height = 17
+      Height = 18
       Align = alLeft
       Caption = 'To:'
       Layout = tlCenter
+      ExplicitTop = 34
       ExplicitHeight = 13
     end
     object Label3: TLabel
       Left = 4
-      Top = 60
+      Top = 62
       Width = 23
-      Height = 20
+      Height = 18
       Align = alLeft
       Caption = 'Area'
       Layout = tlCenter
+      ExplicitTop = 60
       ExplicitHeight = 13
     end
     object Edit3: TEdit
       Left = 36
-      Top = 60
+      Top = 62
       Width = 138
-      Height = 20
+      Height = 18
       Align = alClient
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 2
-      ExplicitLeft = 46
-      ExplicitWidth = 128
       ExplicitHeight = 21
     end
     object Panel1: TPanel
       Left = 36
       Top = 8
       Width = 138
-      Height = 17
+      Height = 18
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 46
-      ExplicitWidth = 128
       DesignSize = (
         138
-        17)
+        18)
       object Edit1: TMyEdit
         Left = 0
         Top = 0
@@ -131,7 +129,6 @@ inherited AreaFrame: TAreaFrame
           ' with the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
-        ExplicitWidth = 114
       end
       object UpDown1: TUpDownEx
         Left = 124
@@ -140,22 +137,19 @@ inherited AreaFrame: TAreaFrame
         Height = 21
         Associate = Edit1
         Anchors = [akRight]
-        ExplicitLeft = 114
       end
     end
     object Panel2: TPanel
       Left = 36
-      Top = 34
+      Top = 35
       Width = 138
-      Height = 17
+      Height = 18
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 46
-      ExplicitWidth = 128
       DesignSize = (
         138
-        17)
+        18)
       object Edit2: TMyEdit
         Left = 0
         Top = 0
@@ -166,7 +160,6 @@ inherited AreaFrame: TAreaFrame
           'ith the mouse.'
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
-        ExplicitWidth = 114
       end
       object UpDown2: TUpDownEx
         Left = 124
@@ -175,7 +168,6 @@ inherited AreaFrame: TAreaFrame
         Height = 21
         Associate = Edit2
         Anchors = [akTop, akRight]
-        ExplicitLeft = 114
       end
     end
   end
