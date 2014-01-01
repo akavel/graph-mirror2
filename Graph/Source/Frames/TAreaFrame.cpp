@@ -140,7 +140,7 @@ void TAreaFrame::EvalArea(const TPointSeries *PointSeries, long double From, lon
     }
     Area += (ToCoord.x - ToIter->x) * (ToCoord.y + ToIter->y) / 2;
   }
-  Edit3->Text = ToUString(Area);
+  Edit3->Text = RoundToStr(Area);
 }
 //---------------------------------------------------------------------------
 void TAreaFrame::EvalArc(const TGraphElem *GraphElem)
