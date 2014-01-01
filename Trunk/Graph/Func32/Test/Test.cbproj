@@ -2,7 +2,7 @@
 		<PropertyGroup>
 			<ProjectGuid>{9DFDD0A7-0D84-450E-9A6D-1077D3B0B894}</ProjectGuid>
 			<ProjectVersion>12.3</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Base>True</Base>
 			<Platform>Win32</Platform>
 			<AppType>Console</AppType>
@@ -33,13 +33,13 @@
 			<ProjectType>CppConsoleApplication</ProjectType>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>NO_STRICT</Defines>
-			<IncludePath>D:\Projects\Graph\Func32\Test;$(BDS)\include;$(BDS)\include\dinkumware;$(IncludePath)</IncludePath>
+			<IncludePath>$(BDS)\include;$(BDS)\include\dinkumware;$(IncludePath)</IncludePath>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
 			<ILINK_StackReserveSize>0x00400000</ILINK_StackReserveSize>
-			<ILINK_LibraryPath>..\Debug;..\..\Libraries\gsl\Debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>..\Debug;..\..\Libraries\gsl\Debug\Win32;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
 			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
 			<DCC_Optimize>false</DCC_Optimize>
@@ -59,7 +59,7 @@
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<ILINK_StackReserveSize>0x00800000</ILINK_StackReserveSize>
-			<ILINK_LibraryPath>..\..\Libraries\gsl\Release;..\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>..\..\Libraries\gsl\Release\Win32;..\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<Defines>NDEBUG;_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
 			<TASM_Debugging>None</TASM_Debugging>
