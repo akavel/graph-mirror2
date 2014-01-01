@@ -72,6 +72,10 @@ TDraw::~TDraw()
   if(!AbortUpdate())
     return; //Return if thread is stuck
   SetThreadCount(0);
+
+  //Ensure that all queued function calls are executed before the object is destroyed.
+  if(GetCurrentThreadId() == MainThreadID)
+    CheckSynchronize();
 }
 //---------------------------------------------------------------------------
 //Converts an x-coordinate to a pixel value
