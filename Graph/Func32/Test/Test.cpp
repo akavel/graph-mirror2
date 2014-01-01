@@ -22,6 +22,7 @@ using namespace std;
 #define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC
 
 #define ASSERT(x) (x) ? (void)0 : AssertFailed(#x, __LINE__)
+#define ASSERT_EQUAL(x, y) ::IsEqual((x), (y)) ? (void)0 : AssertCompFailed(#x, __LINE__, (x), (y))
 
 const long double NaN = numeric_limits<long double>::quiet_NaN(); //0.0/0.0;
 const long double INF = numeric_limits<long double>::infinity();
@@ -44,7 +45,13 @@ int _RTLENTRY _EXPFUNC std::iswdigit(wint_t c)
 //---------------------------------------------------------------------------
 void AssertFailed(const char *Str, int Line)
 {
-  std::cerr << "Evaluation check failed at line " << Line << ": " << Str << std::endl;
+  std::cerr << "Evaluation failed at line " << Line << ": " << Str << std::endl;
+}
+//---------------------------------------------------------------------------
+void AssertCompFailed(const char *Str, int Line, long double a, long double b)
+{
+  std::cerr << "Evaluation compare failed at line " << Line << ": " << Str << std::endl;
+  std::cerr << "Expected: " << a << "    Got: " << b << std::endl;
 }
 //---------------------------------------------------------------------------
 long double StrToDouble(const char *Str)
@@ -1090,7 +1097,29 @@ void Test()
 	TestParamFunc(L"t", L"dsafd");
 	TestParamFunc(L"dsafd", L"t");
 
-  ASSERT(::IsEqual(TFunc(L"abs(2/(10.352+1)/(1 - (1-2/(10.352+1))*e^(i*pi*x)))^3").CalcArea(0.02,0.06), 0.02403087587));
+  //Test calculation of area and path length with radian and degrees
+  ASSERT_EQUAL(TFunc(L"abs(2/(10.352+1)/(1 - (1-2/(10.352+1))*e^(i*pi*x)))^3").CalcArea(0.02,0.06), 0.02403087587);
+
+  ASSERT_EQUAL(TFunc(L"x*tan(36.86989765*pi/180)+1", L"x", Radian).CalcArc(0, 1), 1.25);
+  ASSERT_EQUAL(TFunc(L"x*tan(36.86989765)+1", L"x", Degree).CalcArc(0, 1), 1.25);
+
+  ASSERT_EQUAL(TPolarFunc(L"t", L"t", Radian).CalcArc(0, PI), 6.109919334);
+  ASSERT_EQUAL(TPolarFunc(L"t", L"t", Degree).CalcArc(0, 180), 350.0725910013);
+
+  ASSERT_EQUAL(TPolarFunc(L"t", L"t", Radian).CalcArea(0, PI), 5.16771278);
+  ASSERT_EQUAL(TPolarFunc(L"t", L"t", Degree).CalcArea(0, 180), 16964.600329);
+
+  ASSERT_EQUAL(TParamFunc(L"t*cos(t)", L"t*sin(t)", L"t", Radian).CalcArc(0, PI), 6.109919334);
+  ASSERT_EQUAL(TParamFunc(L"t*cos(t)", L"t*sin(t)", L"t", Degree).CalcArc(0, 180), 350.0725910013);
+
+  ASSERT_EQUAL(TParamFunc(L"t*cos(t)", L"t*sin(t)", L"t", Radian).CalcArea(0, PI), -5.16771278);
+  ASSERT_EQUAL(TParamFunc(L"t*cos(t)", L"t*sin(t)", L"t", Degree).CalcArea(0, 180), -16964.600329);
+
+  ASSERT_EQUAL(TFunc(L"sin(x)", L"x", Radian).CalcArea(0, PI), 2);
+  ASSERT_EQUAL(TFunc(L"sin(x)", L"x", Degree).CalcArea(0, 180), 114.5915590262);
+
+  ASSERT_EQUAL(TFunc(L"sin(x)", L"x", Radian).CalcArc(0, PI), 3.820197789);
+  ASSERT_EQUAL(TFunc(L"sin(x)", L"x", Degree).CalcArc(0, 180), 180.0137070011);
 }
 //---------------------------------------------------------------------------
 std::wstringstream DebugStreamBuf;
