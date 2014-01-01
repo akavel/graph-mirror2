@@ -1961,6 +1961,7 @@ void __fastcall TForm1::PrintActionExecute(TObject *Sender)
       }
     }
 
+    PrintDraw.Wait();
     if(AbortPrinting)
       Printer()->Abort();
     else

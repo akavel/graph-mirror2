@@ -104,14 +104,13 @@ void SaveAsImage(const String &FileName, int ImageFileType, const TImageOptions 
       FileDraw.SetArea(TRect(0, 0, Width, Height));  //Set drawing area
 
       FileDraw.DrawAll();
-      if(SameSize)
-        FileDraw.Wait(); //Wait if using Data object
-      else
+      if(!SameSize)
         while(FileDraw.Updating())
         { //Process messages while waiting for draw thread to finish
           Sleep(100);
           Application->ProcessMessages();
         }
+      FileDraw.Wait(); //Ensure that everything is finished
       Meta.reset();
       if(ImageFileType == ifSvg)
       {
