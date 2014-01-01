@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Help of Graph 4.4.2\n"
 "POT-Creation-Date: 2012-11-07 21:10+0100\n"
-"PO-Revision-Date: 2013-12-16 21:56-0300\n"
+"PO-Revision-Date: 2014-01-01 00:14-0300\n"
 "Last-Translator: Aldemar Calazans Filho <aldemarcalazans@gmail.com>\n"
 "Language-Team: Jorge Costa (& team), Wladimir Albuquerque Silva & Aldemar "
 "Calazans Filho <jorge@jlcosta.pro.br;wladyjr@gmail.com;aldemarcalazans@gmail."
@@ -7327,13 +7327,10 @@ msgstr ""
 
 # Jorge Costa <jorge@jlcosta.pro.br> 2004, 2007
 # Aldemar Calazans Filho <aldemarcalazans@gmail.com> 2011, 2013
-# Wladimir Albuquerque Silva <wladyjr@gmail.com> 2012, 2012 
+# Wladimir Albuquerque Silva <wladyjr@gmail.com> 2012, 2012
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 msgid "translator-credits"
-msgstr ""
-"Jorge Costa <jorge@jlcosta.pro.br> 2004, 2007Aldemar Calazans Filho "
-"<aldemarcalazans@gmail.com> 2011, 2013Wladimir Albuquerque Silva "
-"<wladyjr@gmail.com> 2012, 2012 "
+msgstr "Wladimir Albuquerque Silva <wladyjr@gmail.com> 2012, 2012"
 
 msgid "Translator:"
 msgstr "Tradutor:"
