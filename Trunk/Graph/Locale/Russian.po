@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2012-11-12 22:11\n"
+"POT-Creation-Date: 2014-02-01 14:36\n"
 "PO-Revision-Date: 2012-11-12 17:41+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
@@ -11,173 +11,179 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
+#. Form1..ActionMainMenuBar1..Font.Name
+msgid "Segoe UI"
+msgstr ""
+
 #. Form1..Recent1..Hint
+#. Hint for recent file menu items
 msgid "Open file: %s"
 msgstr "Открыть файл %s."
 
-#. Form1..PopupMenu1..Tree_ShowInLegend..Caption
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Caption
 msgid "Show in legend"
 msgstr "Показывать в подписи к графику"
 
-#. Form1..PopupMenu1..Tree_ShowInLegend..Hint
+#. Form1..PopupMenu1..Tree_ShowInLegend("Show in legend")..Hint
 msgid "Check to show the selected item in the legend."
 msgstr "Отметьте, чтобы выбранный объект был включён в подпись к графику."
 
-#. Form1..PopupMenu1..Tree_Placement..Caption
-#. Form1..PopupMenu3..Label_Placement..Caption
-#. Form1..PopupMenu4..Legend_Placement..Caption
-#. Form21..Caption
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Caption
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Caption
+#. Form21("Placement")..Caption
 msgid "Placement"
 msgstr "Расположение"
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Above..Caption
-#. Form1..PopupMenu3..Label_Placement..Label_Above..Caption
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")..Caption
 msgid "Above x-axis"
 msgstr "Над осью x"
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Above....Hint
-#. Form1..PopupMenu3..Label_Placement..Label_Above....Hint
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")....Hint
 msgid "Place the label directly above the x-axis on the right side of the image."
 msgstr "Помещать подпись над осью х на правой стороне графика."
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Below..Caption
-#. Form1..PopupMenu3..Label_Placement..Label_Below..Caption
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")..Caption
 msgid "Below x-axis"
 msgstr "Под осью x"
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Below....Hint
-#. Form1..PopupMenu3..Label_Placement..Label_Below....Hint
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")....Hint
 msgid "Place the label directly below the x-axis on the right side of the image."
 msgstr "Помещать подпись под осью х на правой стороне графика."
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Left..Caption
-#. Form1..PopupMenu3..Label_Placement..Label_Left..Caption
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")..Caption
 msgid "Left of y-axis"
 msgstr "Слева от оси у"
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Left....Hint
-#. Form1..PopupMenu3..Label_Placement..Label_Left....Hint
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")....Hint
 msgid "Place the label to the left of the y-axis at the top of the image."
 msgstr "Помещать подпись слева от оси у вверху графика."
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Right..Caption
-#. Form1..PopupMenu3..Label_Placement..Label_Right..Caption
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")..Caption
 msgid "Right of y-axis"
 msgstr "Справа от оси у"
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Right....Hint
-#. Form1..PopupMenu3..Label_Placement..Label_Right....Hint
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")....Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")....Hint
 msgid "Place the label to the right of the y-axis at the top of the image."
 msgstr "Помещать подпись справа от оси у вверху графика."
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Placement_Custom..Caption
-#. Form1..PopupMenu1..Tree_Rotation..Tree_Rotation_Custom..Caption
-#. Form1..PopupMenu3..Label_Placement..Label_Placement_Custom..Caption
-#. Form1..PopupMenu3..Label_Rotation..Label_Rotation_Custom..Caption
-#. Form11..GroupBox2..ExtColorBox1..CustomName
-#. Form12..GroupBox2..ExtColorBox1..CustomName
-#. Form13..GroupBox1..ExtColorBox1..CustomName
-#. Form14..PageControl1..TabSheet1..GroupBox1..ExtColorBox1..CustomName
-#. Form14..PageControl1..TabSheet1..GroupBox2..ExtColorBox2..CustomName
-#. Form16..PageControl1..TabSheet2..GroupBox3..ExtColorBox1..CustomName
-#. Form3..PageControl1..TabSheet4..GroupBox3..ExtColorBox1..CustomName
-#. Form3..PageControl1..TabSheet4..GroupBox3..ExtColorBox2..CustomName
-#. Form3..PageControl1..TabSheet4..GroupBox3..ExtColorBox3..CustomName
-#. Form5..GroupBox4..GridPanelEx1..ExtColorBox1..CustomName
-#. Form6..ColorBox1..CustomName
-#. Form6..ColorBox2..CustomName
-#. Form7..GroupBox4..ExtColorBox1..CustomName
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..ExtColorBox1..CustomName
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..CustomName
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..CustomName
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..CustomName
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..CustomName
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..CustomName
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ExtColorBox1..CustomName
+#. Form6("Insert text label")..ColorBox1..CustomName
+#. Form6("Insert text label")..ColorBox2..CustomName
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..CustomName
 msgid "Custom..."
 msgstr "Произвольное"
 
-#. Form1..PopupMenu1..Tree_Placement..Tree_Placement_Custom..Hint
-#. Form1..PopupMenu3..Label_Placement..Label_Placement_Custom..Hint
+#. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Placement("Placement")..Label_Placement_Custom("Custom...")..Hint
 msgid "Place the label at a custom position."
 msgstr "Поместить метку в произвольные координаты."
 
-#. Form1..PopupMenu1..Tree_Rotation..Caption
-#. Form1..PopupMenu3..Label_Rotation..Caption
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Caption
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Caption
+#. Shown in rotation dialog
 msgid "Rotation"
 msgstr "Угол поворота"
 
-#. Form1..PopupMenu1..Tree_Rotation..Tree_Rotation_0..Hint
-#. Form1..PopupMenu3..Label_Rotation..Rotation_0..Hint
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_0..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_0..Hint
 msgid "Show the label with no rotation."
 msgstr "Не поворачивать метку."
 
-#. Form1..PopupMenu1..Tree_Rotation..Tree_Rotation_90..Hint
-#. Form1..PopupMenu3..Label_Rotation..Rotation_90..Hint
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_90..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_90..Hint
 msgid "Show the label rotated 90° counter clockwise."
 msgstr "Отобразить метку повернутой на 90 градусов против часовой стрелки"
 
-#. Form1..PopupMenu1..Tree_Rotation..Tree_Rotation_180..Hint
-#. Form1..PopupMenu3..Label_Rotation..Rotation_180..Hint
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_180..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_180..Hint
 msgid "Show the label rotated 180°."
 msgstr "Отобразить метку повернутой на 180 градусов"
 
-#. Form1..PopupMenu1..Tree_Rotation..Tree_Rotation_270..Hint
-#. Form1..PopupMenu3..Label_Rotation..Rotation_270..Hint
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_270..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Rotation_270..Hint
 msgid "Show the label rotated 270° counter clockwise."
 msgstr "Отобразить метку повернутой на 270 градусов против часовой стрелки"
 
-#. Form1..PopupMenu1..Tree_Rotation..Tree_Rotation_Custom..Hint
-#. Form1..PopupMenu3..Label_Rotation..Label_Rotation_Custom..Hint
+#. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Hint
+#. Form1..PopupMenu3..Label_Rotation("Rotation")..Label_Rotation_Custom("Custom...")..Hint
 msgid "Specify the angle of rotation for the label."
 msgstr "Указать угол поворота метки."
 
-#. Form1..PopupMenu1..Tree_Export..Caption
-#. Form14..PopupMenu1..Popup_Export..Caption
-#. Form15..PopupMenu1..Popup1_Export..Caption
-#. Form17..PopupMenu1..Popup_Export..Caption
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Caption
 msgid "Export to file..."
 msgstr "Экспортировать в файл..."
 
-#. Form1..PopupMenu1..Tree_Export..Hint
+#. Form1..PopupMenu1..Tree_Export("Export to file...")..Hint
 msgid "Export the selected point series to a file."
 msgstr "Экспортировать выбранный ряд точек в файл."
 
-#. Form1..ActionManager..............Caption
+#. Form1..ActionManager........("File")....("Import")..Caption
 msgid "Import"
 msgstr "Загрузить (импортировать)"
 
-#. Form1..ActionManager..........Caption
-#. Form1..ActionManager..NewAction..Category
-#. Form1..ActionManager..OpenAction..Category
-#. Form1..ActionManager..SaveAction..Category
-#. Form1..ActionManager..SaveAsAction..Category
-#. Form1..ActionManager..SaveCopyAsAction..Category
-#. Form1..ActionManager..SaveAsImageAction..Category
-#. Form1..ActionManager..PrintAction..Category
-#. Form1..ActionManager..ExitAction..Category
-#. Form1..ActionManager..ImportGraphFileAction..Category
-#. Form1..ActionManager..ImportPointSeriesAction..Category
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..NewAction("New")..Category
+#. Form1..ActionManager..OpenAction("Open...")..Category
+#. Form1..ActionManager..SaveAction("Save")..Category
+#. Form1..ActionManager..SaveAsAction("Save as...")..Category
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Category
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Category
+#. Form1..ActionManager..PrintAction("Print...")..Category
+#. Form1..ActionManager..ExitAction("Exit")..Category
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Category
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Category
 msgid "File"
 msgstr "Файл"
 
-#. Form1..ActionManager..........Caption
-#. Form1..ActionManager..UndoAction..Category
-#. Form1..ActionManager..RedoAction..Category
-#. Form1..ActionManager..CutAction..Category
-#. Form1..ActionManager..CopyAction..Category
-#. Form1..ActionManager..PasteAction..Category
-#. Form1..ActionManager..CopyImageAction..Category
-#. Form1..ActionManager..AxesAction..Category
-#. Form1..ActionManager..OptionsAction..Category
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..UndoAction("Undo")..Category
+#. Form1..ActionManager..RedoAction("Redo")..Category
+#. Form1..ActionManager..CutAction("Cut")..Category
+#. Form1..ActionManager..CopyAction("Copy")..Category
+#. Form1..ActionManager..PasteAction("Paste")..Category
+#. Form1..ActionManager..CopyImageAction("Copy image")..Category
+#. Form1..ActionManager..AxesAction("Axes...")..Category
+#. Form1..ActionManager..OptionsAction("Options...")..Category
 msgid "Edit"
 msgstr "Редактирование"
 
-#. Form1..ActionManager..........Caption
-#. Form1..ActionManager..InsertFunctionAction..Category
-#. Form1..ActionManager..InsertTangentAction..Category
-#. Form1..ActionManager..InsertShadeAction..Category
-#. Form1..ActionManager..InsertPointsAction..Category
-#. Form1..ActionManager..InsertTrendlineAction..Category
-#. Form1..ActionManager..EditAction..Category
-#. Form1..ActionManager..DeleteAction..Category
-#. Form1..ActionManager..InsertDifAction..Category
-#. Form1..ActionManager..InsertLabelAction..Category
-#. Form1..ActionManager..InsertRelationAction..Category
-#. Form1..ActionManager..CustomFunctionsAction..Category
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Category
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Category
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Category
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Category
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Category
+#. Form1..ActionManager..EditAction("Edit...")..Category
+#. Form1..ActionManager..DeleteAction("Delete")..Category
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Category
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Category
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Category
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Category
 #. ParFuncFrame..ComboBox1..Text
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1..Text
@@ -187,2487 +193,2492 @@ msgstr "Редактирование"
 msgid "Function"
 msgstr "Функции"
 
-#. Form1..ActionManager..........Caption
-#. Form1..ActionManager..ZoomInAction..Category
-#. Form1..ActionManager..ZoomOutAction..Category
-#. Form1..ActionManager..ZoomWindowAction..Category
-#. Form1..ActionManager..ZoomSquareAction..Category
-#. Form1..ActionManager..ZoomStandardAction..Category
-#. Form1..ActionManager..ZoomFitAction..Category
-#. Form1..ActionManager..ZoomFitAllAction..Category
-#. Form1..ActionManager..ZoomXInAction..Category
-#. Form1..ActionManager..ZoomXOutAction..Category
-#. Form1..ActionManager..ZoomYInAction..Category
-#. Form1..ActionManager..ZoomYOutAction..Category
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..ZoomInAction("In")..Category
+#. Form1..ActionManager..ZoomOutAction("Out")..Category
+#. Form1..ActionManager..ZoomWindowAction("Window")..Category
+#. Form1..ActionManager..ZoomSquareAction("Square")..Category
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Category
+#. Form1..ActionManager..ZoomFitAction("Fit")..Category
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Category
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Category
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Category
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Category
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Category
 msgid "Zoom"
 msgstr "Масштаб"
 
-#. Form1..ActionManager..........Caption
-#. Form1..ActionManager..PathAction..Category
-#. Form1..ActionManager..AreaAction..Category
-#. Form1..ActionManager..EvalAction..Category
-#. Form1..ActionManager..TableAction..Category
-#. Form1..ActionManager..AnimateAction..Category
-#. Form15..Button2..Caption
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..PathAction("Length of path")..Category
+#. Form1..ActionManager..AreaAction("Area")..Category
+#. Form1..ActionManager..EvalAction("Evaluate")..Category
+#. Form1..ActionManager..TableAction("Table")..Category
+#. Form1..ActionManager..AnimateAction("Animate...")..Category
+#. Form15("Calculate table")..Button2("Calc")..Caption
 msgid "Calc"
 msgstr "Вычисления"
 
-#. Form1..ActionManager..........Caption
+#. Form1..ActionManager........("File")..Caption
 msgid "Plugins"
 msgstr "Плагины"
 
-#. Form1..ActionManager..............Caption
+#. Form1..ActionManager........("File")....("Import")..Caption
 msgid "Internet"
 msgstr "Интернет"
 
-#. Form1..ActionManager..........Caption
-#. Form1..ActionManager..ContentsAction..Category
-#. Form1..ActionManager..ListAction..Category
-#. Form1..ActionManager..HomePageAction..Category
-#. Form1..ActionManager..UpdateAction..Category
-#. Form1..ActionManager..AboutAction..Category
-#. Form1..ActionManager..FaqAction..Category
-#. Form1..ActionManager..DonateAction..Category
-#. Form1..ActionManager..TipAction..Category
-#. Form1..ActionManager..SupportAction..Category
-#. Form1..ActionManager..ScriptDocAction..Category
-#. Form11..Button3..Caption
-#. Form12..Button3..Caption
-#. Form13..Button3..Caption
-#. Form14..Button3..Caption
-#. Form15..Button3..Caption
-#. Form16..Button3..Caption
-#. Form17..Button4..Caption
-#. Form19..Button3..Caption
-#. Form3..Button3..Caption
-#. Form4..Button3..Caption
-#. Form5..Button3..Caption
-#. Form6..Button3..Caption
-#. Form7..Button3..Caption
+#. Form1..ActionManager........("File")..Caption
+#. Form1..ActionManager..ContentsAction("Contents and index")..Category
+#. Form1..ActionManager..ListAction("List of functions")..Category
+#. Form1..ActionManager..HomePageAction("Graph web site")..Category
+#. Form1..ActionManager..UpdateAction("Check for update")..Category
+#. Form1..ActionManager..AboutAction("About Graph")..Category
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Category
+#. Form1..ActionManager..DonateAction("Donate")..Category
+#. Form1..ActionManager..TipAction("Tip of the day")..Category
+#. Form1..ActionManager..SupportAction("Support")..Category
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Category
+#. Form11("Insert relation")..Button3("Help")..Caption
+#. Form12("Insert tangent/normal")..Button3("Help")..Caption
+#. Form13("Insert trendline")..Button3("Help")..Caption
+#. Form14("Insert point series")..Button3("Help")..Caption
+#. Form15("Calculate table")..Button3("Help")..Caption
+#. Form16("Insert shading")..Button3("Help")..Caption
+#. Form17("Custom functions/constants")..Button4("Help")..Caption
+#. Form19("Animate")..Button3("Help")..Caption
+#. Form3("Edit axes")..Button3("Help")..Caption
+#. Form4("Options")..Button3("Help")..Caption
+#. Form5("Insert function")..Button3("Help")..Caption
+#. Form6("Insert text label")..Button3("Help")..Caption
+#. Form7("Insert f'(x)")..Button3("Help")..Caption
 msgid "Help"
 msgstr "Помощь"
 
-#. Form1..ActionManager..NewAction..Caption
+#. Form1..ActionManager..NewAction("New")..Caption
 msgid "New"
 msgstr "Новый"
 
-#. Form1..ActionManager..NewAction..Hint
+#. Form1..ActionManager..NewAction("New")..Hint
 msgid "Create a new coordinate system."
 msgstr "Создать новую систему координат."
 
-#. Form1..ActionManager..OpenAction..Caption
+#. Form1..ActionManager..OpenAction("Open...")..Caption
 msgid "Open..."
 msgstr "Открыть..."
 
-#. Form1..ActionManager..OpenAction..Hint
+#. Form1..ActionManager..OpenAction("Open...")..Hint
 msgid "Read a coordinate system from a file."
 msgstr "Загрузить систему координат и функции из файла."
 
-#. Form1..ActionManager..SaveAction..Caption
+#. Form1..ActionManager..SaveAction("Save")..Caption
 msgid "Save"
 msgstr "Сохранить"
 
-#. Form1..ActionManager..SaveAction..Hint
+#. Form1..ActionManager..SaveAction("Save")..Hint
 msgid "Write the current coordinate system to a file."
 msgstr "Записать систему координат и функции в файл."
 
-#. Form1..ActionManager..SaveAsAction..Caption
-#. Form20..PopupMenu1..Save1..Caption
+#. Form1..ActionManager..SaveAsAction("Save as...")..Caption
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Caption
 msgid "Save as..."
 msgstr "Сохранить как..."
 
-#. Form1..ActionManager..SaveAsAction..Hint
+#. Form1..ActionManager..SaveAsAction("Save as...")..Hint
 msgid "Write the current coordinate system to a file with a new name."
 msgstr "Сохранить систему координат под новым названием."
 
-#. Form1..ActionManager..SaveCopyAsAction..Caption
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Caption
 msgid "Save copy as..."
 msgstr "Сохранить копию как..."
 
-#. Form1..ActionManager..SaveCopyAsAction..Hint
+#. Form1..ActionManager..SaveCopyAsAction("Save copy as...")..Hint
 msgid "Save a copy of the current coordinate system to a file."
 msgstr "Сохранить копию текущей системы координат."
 
-#. Form1..ActionManager..SaveAsImageAction..Caption
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Caption
 msgid "Save as image..."
 msgstr "Сохранить как изображение..."
 
-#. Form1..ActionManager..SaveAsImageAction..Hint
+#. Form1..ActionManager..SaveAsImageAction("Save as image...")..Hint
 msgid "Save the shown coordinate system as an image."
 msgstr "Сохранить изображение графика."
 
-#. Form1..ActionManager..PrintAction..Caption
+#. Form1..ActionManager..PrintAction("Print...")..Caption
 msgid "Print..."
 msgstr "Печать..."
 
-#. Form1..ActionManager..PrintAction..Hint
+#. Form1..ActionManager..PrintAction("Print...")..Hint
 msgid "Print shown coordinate system."
 msgstr "Печать текущего графика."
 
-#. Form1..ActionManager..ExitAction..Caption
+#. Form1..ActionManager..ExitAction("Exit")..Caption
 msgid "Exit"
 msgstr "Выход"
 
-#. Form1..ActionManager..ExitAction..Hint
+#. Form1..ActionManager..ExitAction("Exit")..Hint
 msgid "Quit the program."
 msgstr "Выйти из программы"
 
-#. Form1..ActionManager..UndoAction..Caption
-#. Form6..PopupMenu1..Popup_Undo..Caption
+#. Form1..ActionManager..UndoAction("Undo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Caption
 msgid "Undo"
 msgstr "Отменить"
 
-#. Form1..ActionManager..UndoAction..Hint
+#. Form1..ActionManager..UndoAction("Undo")..Hint
 msgid "Undo the last action."
 msgstr "Отменить последнее действие."
 
-#. Form1..ActionManager..RedoAction..Caption
-#. Form6..PopupMenu1..Popup_Redo..Caption
+#. Form1..ActionManager..RedoAction("Redo")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Caption
 msgid "Redo"
 msgstr "Повторить"
 
-#. Form1..ActionManager..RedoAction..Hint
+#. Form1..ActionManager..RedoAction("Redo")..Hint
 msgid "Redo the last action undone."
 msgstr "Повторить последнее отменённое действие."
 
-#. Form1..ActionManager..CutAction..Caption
-#. Form14..PopupMenu1..Popup_Cut..Caption
-#. Form17..PopupMenu1..Popup_Cut..Caption
-#. Form6..PopupMenu1..Popup_Cut..Caption
+#. Form1..ActionManager..CutAction("Cut")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Caption
 msgid "Cut"
 msgstr "Вырезать"
 
-#. Form1..ActionManager..CutAction..Hint
+#. Form1..ActionManager..CutAction("Cut")..Hint
 msgid "Cut the selected function or point series to the clipboard."
 msgstr "Вырезать выбранную функцию или ряд точек и поместить в буфер обмена."
 
-#. Form1..ActionManager..CopyAction..Caption
-#. Form14..PopupMenu1..Popup_Copy..Caption
-#. Form15..PopupMenu1..Popup1_Copy..Caption
-#. Form17..PopupMenu1..Popup_Copy..Caption
-#. Form6..PopupMenu1..Popup_Copy..Caption
+#. Form1..ActionManager..CopyAction("Copy")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Caption
 msgid "Copy"
 msgstr "Копировать"
 
-#. Form1..ActionManager..CopyAction..Hint
+#. Form1..ActionManager..CopyAction("Copy")..Hint
 msgid "Copy the selected function or point series to the clipboard."
 msgstr "Копировать выбранную функцию или ряд точек в буфер обмена."
 
-#. Form1..ActionManager..PasteAction..Caption
-#. Form14..PopupMenu1..Popup_Paste..Caption
-#. Form17..PopupMenu1..Popup_Paste..Caption
-#. Form6..PopupMenu1..Popup_Paste..Caption
+#. Form1..ActionManager..PasteAction("Paste")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Caption
 msgid "Paste"
 msgstr "Вставить"
 
-#. Form1..ActionManager..PasteAction....Hint
+#. Form1..ActionManager..PasteAction("Paste")....Hint
 msgid "Paste a function or point series from the clipboard into the coordinate system."
 msgstr "Поместить функцию или ряд точек из буфера обмена в систему координат."
 
-#. Form1..ActionManager..CopyImageAction..Caption
+#. Form1..ActionManager..CopyImageAction("Copy image")..Caption
 msgid "Copy image"
 msgstr "Копировать изображение"
 
-#. Form1..ActionManager..CopyImageAction..Hint
+#. Form1..ActionManager..CopyImageAction("Copy image")..Hint
 msgid "Copy the shown coordinate system to the clipboard."
 msgstr "Копировать изображение системы координат в буфер обмена."
 
-#. Form1..ActionManager..AxesAction..Caption
+#. Form1..ActionManager..AxesAction("Axes...")..Caption
 msgid "Axes..."
 msgstr "Оси..."
 
-#. Form1..ActionManager..AxesAction..Hint
+#. Form1..ActionManager..AxesAction("Axes...")..Hint
 msgid "Edit axes settings."
 msgstr "Редактировать параметры осей."
 
-#. Form1..ActionManager..OptionsAction..Caption
+#. Form1..ActionManager..OptionsAction("Options...")..Caption
 #. Form1..SaveDialogEx1..HelpCaption
-#. Form19..Button4..Caption
+#. Form19("Animate")..Button4("Options...")..Caption
+#. Button in Save as image dialog
 msgid "Options..."
 msgstr "Настройки..."
 
-#. Form1..ActionManager..OptionsAction..Hint
+#. Form1..ActionManager..OptionsAction("Options...")..Hint
 msgid "Edit various options for the interface and program features."
 msgstr "Изменить различные опции интерфейса и возможности программы."
 
-#. Form1..ActionManager..InsertFunctionAction..Caption
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Caption
 msgid "Insert function..."
 msgstr "Добавить функцию..."
 
-#. Form1..ActionManager..InsertFunctionAction..Hint
+#. Form1..ActionManager..InsertFunctionAction("Insert function...")..Hint
 msgid "Insert a new function."
 msgstr "Добавить новую функцию."
 
-#. Form1..ActionManager..InsertTangentAction..Caption
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Caption
 msgid "Insert tangent/normal..."
 msgstr "Добавить касательную или перпендикуляр..."
 
-#. Form1..ActionManager..InsertTangentAction..Hint
+#. Form1..ActionManager..InsertTangentAction("Insert tangent/normal...")..Hint
 msgid "Insert a tangent or normal for the selected function."
 msgstr "Добавить новую касательную или перпендикуляр (нормаль) к выбранной функции."
 
-#. Form1..ActionManager..InsertShadeAction..Caption
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Caption
 msgid "Insert shading..."
 msgstr "Заштриховать участок..."
 
-#. Form1..ActionManager..InsertShadeAction..Hint
+#. Form1..ActionManager..InsertShadeAction("Insert shading...")..Hint
 msgid "Add shading to the selected function."
 msgstr "Заштриховать участок графика."
 
-#. Form1..ActionManager..InsertPointsAction..Caption
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Caption
 msgid "Insert point series..."
 msgstr "Добавить ряд точек..."
 
-#. Form1..ActionManager..InsertPointsAction..Hint
+#. Form1..ActionManager..InsertPointsAction("Insert point series...")..Hint
 msgid "Insert a point series."
 msgstr "Добавить ряд точек"
 
-#. Form1..ActionManager..InsertTrendlineAction..Caption
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Caption
 msgid "Insert trendline..."
 msgstr "Добавить трендлинию..."
 
-#. Form1..ActionManager..InsertTrendlineAction..Hint
+#. Form1..ActionManager..InsertTrendlineAction("Insert trendline...")..Hint
 msgid "Insert a curve of best fit for the selected point series."
 msgstr "Добавить кривую приближения для выбранного ряда точек."
 
-#. Form1..ActionManager..EditAction..Caption
+#. Form1..ActionManager..EditAction("Edit...")..Caption
 msgid "Edit..."
 msgstr "Изменить..."
 
-#. Form1..ActionManager..EditAction..Hint
+#. Form1..ActionManager..EditAction("Edit...")..Hint
 msgid "Edit the selected element: Function, tangent, point series, etc."
 msgstr "Редактировать выбранную функцию, касательную, ряд точек и пр."
 
-#. Form1..ActionManager..DeleteAction..Caption
-#. Form14..PopupMenu1..Popup_Delete..Caption
-#. Form17..PopupMenu1..Popup_Delete..Caption
+#. Form1..ActionManager..DeleteAction("Delete")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Caption
 msgid "Delete"
 msgstr "Удалить"
 
-#. Form1..ActionManager..DeleteAction..Hint
+#. Form1..ActionManager..DeleteAction("Delete")..Hint
 msgid "Delete the selected function, tangent or point series."
 msgstr "Удалить выбранную функцию, касательную, или ряд точек."
 
-#. Form1..ActionManager..InsertDifAction..Caption
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Caption
 msgid "Insert f'(x)..."
 msgstr "Добавить производную f'(x)..."
 
-#. Form1..ActionManager..InsertDifAction..Hint
+#. Form1..ActionManager..InsertDifAction("Insert f'(x)...")..Hint
 msgid "Insert the first derivative of the selected function."
 msgstr "Добавить первую производную выбранной функции."
 
-#. Form1..ActionManager..ZoomInAction..Caption
+#. Form1..ActionManager..ZoomInAction("In")..Caption
 msgid "In"
 msgstr "Увеличить"
 
-#. Form1..ActionManager..ZoomInAction..Hint
+#. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in. Hold down Shift to zoom with larger steps."
 msgstr "Приблизить. Зажмите Shift для увеличенного шага."
 
-#. Form1..ActionManager..ZoomOutAction..Caption
+#. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
 msgstr "Уменьшить"
 
-#. Form1..ActionManager..ZoomOutAction..Hint
+#. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out. Hold down Shift to zoom with larger steps."
 msgstr "Отдалить. Зажмите Shift для увеличенного шага."
 
-#. Form1..ActionManager..ZoomWindowAction..Caption
+#. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
 msgstr "Участок"
 
-#. Form1..ActionManager..ZoomWindowAction..Hint
+#. Form1..ActionManager..ZoomWindowAction("Window")..Hint
 msgid "Zoom to user selected window."
 msgstr "Выбрать участок графика и увеличить его."
 
-#. Form1..ActionManager..ZoomSquareAction..Caption
+#. Form1..ActionManager..ZoomSquareAction("Square")..Caption
 msgid "Square"
 msgstr "Равный"
 
-#. Form1..ActionManager..ZoomSquareAction....Hint
+#. Form1..ActionManager..ZoomSquareAction("Square")....Hint
 msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
 msgstr "Сделать равный масштаб обеих осей. Например, чтобы окружность не выглядела эллипсом."
 
-#. Form1..ActionManager..ZoomStandardAction..Caption
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
 msgid "Standard"
 msgstr "Стандартный"
 
-#. Form1..ActionManager..ZoomStandardAction..Hint
+#. Form1..ActionManager..ZoomStandardAction("Standard")..Hint
 msgid "Reset the axes to their default settings."
 msgstr "Восстановить исходную настройку осей."
 
-#. Form1..ActionManager..MoveUpAction..Category
-#. Form1..ActionManager..MoveDownAction..Category
-#. Form1..ActionManager..MoveLeftAction..Category
-#. Form1..ActionManager..MoveRightAction..Category
-#. Form1..ActionManager..MoveAction..Category
+#. Form1..ActionManager..MoveUpAction("Move up")..Category
+#. Form1..ActionManager..MoveDownAction("Move down")..Category
+#. Form1..ActionManager..MoveLeftAction("Move left")..Category
+#. Form1..ActionManager..MoveRightAction("Move right")..Category
+#. Form1..ActionManager..MoveAction("Move system")..Category
 msgid "Move"
 msgstr "Перемещение"
 
-#. Form1..ActionManager..MoveUpAction..Caption
+#. Form1..ActionManager..MoveUpAction("Move up")..Caption
 msgid "Move up"
 msgstr "Переместить вверх"
 
-#. Form1..ActionManager..MoveUpAction....Hint
+#. Form1..ActionManager..MoveUpAction("Move up")....Hint
 msgid "Move the graphing area up along the coordinate system. Hold down Shift to move in larger steps."
 msgstr "Переместить окно вверх по системе координат. Зажмите Shift для более быстрого перемещения."
 
-#. Form1..ActionManager..MoveDownAction..Caption
+#. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "Переместить вниз"
 
-#. Form1..ActionManager..MoveDownAction....Hint
+#. Form1..ActionManager..MoveDownAction("Move down")....Hint
 msgid "Move the graphing area down along the coordinate system. Hold down Shift to move in larger steps."
 msgstr "Переместить окно вниз по системе координат. Зажмите Shift для более быстрого перемещения."
 
-#. Form1..ActionManager..MoveLeftAction..Caption
+#. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
 msgstr "Переместить влево"
 
-#. Form1..ActionManager..MoveLeftAction....Hint
+#. Form1..ActionManager..MoveLeftAction("Move left")....Hint
 msgid "Move the graphing area to the left along the coordinate system. Hold down Shift to move in larger steps."
 msgstr "Переместить окно влево по системе координат. Зажмите Shift для более быстрого перемещения."
 
-#. Form1..ActionManager..MoveRightAction..Caption
+#. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr "Переместить вправо"
 
-#. Form1..ActionManager..MoveRightAction....Hint
+#. Form1..ActionManager..MoveRightAction("Move right")....Hint
 msgid "Move the graphing area to the right along the coordinate system. Hold down Shift to move in larger steps."
 msgstr "Переместить окно вправо по системе координат. Зажмите Shift для более быстрого перемещения."
 
-#. Form1..ActionManager..MoveAction..Caption
+#. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
 msgstr "Перемещение системы"
 
 # With this selected, if you click right mouse button anywhere on the coordinate plane, the hand disappears (as well as ability to move the graph). Dunno if that's a bug, but there was one time when a strange black bar (definitely looked like a bug) would appear right after I clicked.
-#. Form1..ActionManager..MoveAction..Hint
+#. Form1..ActionManager..MoveAction("Move system")..Hint
 msgid "Move the coordinate system with the mouse."
 msgstr "Переместить систему координат при помощи мыши."
 
-#. Form1..ActionManager..PathAction..Caption
+#. Form1..ActionManager..PathAction("Length of path")..Caption
 msgid "Length of path"
 msgstr "Длина пути"
 
-#. Form1..ActionManager..PathAction....Hint
+#. Form1..ActionManager..PathAction("Length of path")....Hint
 msgid "Calculate the length of path between two given points on the curve."
 msgstr "Рассчитать длину пути по функции между двумя точками."
 
-#. Form1..ActionManager..AreaAction..Caption
-#. AreaFrame..GridPanel1..Label3..Caption
+#. Form1..ActionManager..AreaAction("Area")..Caption
+#. AreaFrame..GridPanel1..Label3("Area")..Caption
+#. Shown as title in the Calc|Area dialog when it is undocked
 msgid "Area"
 msgstr "Площадь..."
 
-#. Form1..ActionManager..AreaAction..Hint
+#. Form1..ActionManager..AreaAction("Area")..Hint
 msgid "Calculate the definite integral over a given interval."
 msgstr "Вычислить определенный интеграл на данном промежутке."
 
-#. Form1..ActionManager..EvalAction..Caption
-#. Form9..Caption
+#. Form1..ActionManager..EvalAction("Evaluate")..Caption
+#. Form9("Evaluate")..Caption
 msgid "Evaluate"
 msgstr "Вычислить"
 
-#. Form1..ActionManager..EvalAction..Hint
+#. Form1..ActionManager..EvalAction("Evaluate")..Hint
 msgid "Evaluate or trace the selected function."
 msgstr "Значения функции."
 
-#. Form1..ActionManager..TableAction..Caption
+#. Form1..ActionManager..TableAction("Table")..Caption
 msgid "Table"
 msgstr "Таблица"
 
-#. Form1..ActionManager..TableAction..Hint
+#. Form1..ActionManager..TableAction("Table")..Hint
 msgid "Show an evaluation table."
 msgstr "Показать таблицу значений"
 
-#. Form1..ActionManager..ContentsAction..Caption
+#. Form1..ActionManager..ContentsAction("Contents and index")..Caption
 msgid "Contents and index"
 msgstr "Contents and index"
 
-#. Form1..ActionManager..ContentsAction..Hint
+#. Form1..ActionManager..ContentsAction("Contents and index")..Hint
 msgid "Open help file."
 msgstr "Open help file."
 
-#. Form1..ActionManager..ListAction..Caption
+#. Form1..ActionManager..ListAction("List of functions")..Caption
 msgid "List of functions"
 msgstr "Список функций"
 
-#. Form1..ActionManager..ListAction..Hint
+#. Form1..ActionManager..ListAction("List of functions")..Hint
 msgid "Show a list of built-in functions that can be used for graphing."
 msgstr "Показать список встроенных функций, используемых для построения графиков."
 
-#. Form1..ActionManager..HomePageAction..Caption
+#. Form1..ActionManager..HomePageAction("Graph web site")..Caption
 msgid "Graph web site"
 msgstr "Сайт Graph"
 
-#. Form1..ActionManager..HomePageAction..Hint
+#. Form1..ActionManager..HomePageAction("Graph web site")..Hint
 msgid "Open the default browser and show the Graph web site."
 msgstr "Открыть домашнюю страницу программы в вашем браузере."
 
-#. Form1..ActionManager..UpdateAction..Caption
+#. Form1..ActionManager..UpdateAction("Check for update")..Caption
 msgid "Check for update"
 msgstr "Проверить обновления"
 
-#. Form1..ActionManager..UpdateAction..Hint
+#. Form1..ActionManager..UpdateAction("Check for update")..Hint
 msgid "Contact the home page to see if a newer version is available."
 msgstr "Подключиться к домашней странице программы и проверить, есть ли новая версия."
 
-#. Form1..ActionManager..AboutAction..Caption
-#. Form2..Caption
+#. Form1..ActionManager..AboutAction("About Graph")..Caption
+#. Form2("About Graph")..Caption
 msgid "About Graph"
 msgstr "О программе"
 
-#. Form1..ActionManager..AboutAction..Hint
+#. Form1..ActionManager..AboutAction("About Graph")..Hint
 msgid "Show copyright information."
 msgstr "Информация о программе."
 
-#. Form1..ActionManager..SeparatorAction..Category
-#. Form1..ActionManager..SeparatorAction..Caption
+#. Form1..ActionManager..SeparatorAction("Separator")..Category
+#. Form1..ActionManager..SeparatorAction("Separator")..Caption
 msgid "Separator"
 msgstr "Разделитель"
 
-#. Form1..ActionManager..ZoomFitAction..Caption
+#. Form1..ActionManager..ZoomFitAction("Fit")..Caption
 msgid "Fit"
 msgstr "Показать функцию"
 
-#. Form1..ActionManager..ZoomFitAction..Hint
+#. Form1..ActionManager..ZoomFitAction("Fit")..Hint
 msgid "Zoom to show the selected element."
 msgstr "Показать выбранную функцию на всё графическое поле."
 
-#. Form1..ActionManager..ZoomFitAllAction..Caption
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Caption
 msgid "Fit all"
 msgstr "По величине (все)"
 
-#. Form1..ActionManager..ZoomFitAllAction..Hint
+#. Form1..ActionManager..ZoomFitAllAction("Fit all")..Hint
 msgid "Zoom to show all elements."
 msgstr "Показать выбранную функцию на всё графическое поле."
 
-#. Form1..ActionManager..FaqAction..Caption
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Caption
 msgid "Frequently Asked Questions"
 msgstr "Часто задаваемые вопросы"
 
-#. Form1..ActionManager..FaqAction..Hint
+#. Form1..ActionManager..FaqAction("Frequently Asked Questions")..Hint
 msgid "Show a list of frequently asked questions and their answers."
 msgstr "Показать ответы на часто задаваемые вопросы."
 
-#. Form1..ActionManager..InsertLabelAction..Caption
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Caption
 msgid "Insert label..."
 msgstr "Добавить метку..."
 
-#. Form1..ActionManager..InsertLabelAction..Hint
+#. Form1..ActionManager..InsertLabelAction("Insert label...")..Hint
 msgid "Insert a text label."
 msgstr "Добавить метку на графике."
 
-#. Form1..ActionManager..DonateAction..Caption
+#. Form1..ActionManager..DonateAction("Donate")..Caption
 msgid "Donate"
 msgstr "Поддержать разработчика"
 
-#. Form1..ActionManager..DonateAction..Hint
+#. Form1..ActionManager..DonateAction("Donate")..Hint
 msgid "Donate money to the project."
 msgstr "Поддержать проект суммой"
 
-#. Form1..ActionManager..TipAction..Caption
-#. Form10..Caption
-#. Form10..Panel1..LinkLabel1..Caption
+#. Form1..ActionManager..TipAction("Tip of the day")..Caption
+#. Form10("Tip of the day")..Caption
+#. Form10("Tip of the day")..Panel1..LinkLabel1("Tip of the day")..Caption
 msgid "Tip of the day"
 msgstr "Совет дня"
 
-#. Form1..ActionManager..TipAction..Hint
+#. Form1..ActionManager..TipAction("Tip of the day")..Hint
 msgid "Show tip of the day"
 msgstr "Показать совет дня"
 
-#. Form1..ActionManager..SupportAction..Caption
+#. Form1..ActionManager..SupportAction("Support")..Caption
 msgid "Support"
 msgstr "Страница поддержки"
 
-#. Form1..ActionManager..SupportAction..Hint
+#. Form1..ActionManager..SupportAction("Support")..Hint
 msgid "Open browser with the support page for the program."
 msgstr "Открыть страницу поддержки программы."
 
-#. Form1..ActionManager..ZoomXInAction..Caption
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Caption
 msgid "Zoom x-axis in"
 msgstr "Увеличить по оси х"
 
-#. Form1..ActionManager..ZoomXInAction....Hint
+#. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")....Hint
 msgid "Zoom in on the x-axis only. Hold down Shift to zoom with larger steps."
 msgstr "Приблизить по оси х.  Зажмите Shift для более быстрого приближения."
 
-#. Form1..ActionManager..ZoomXOutAction..Caption
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
 msgid "Zoom x-axis out"
 msgstr "Уменьшить по оси х"
 
-#. Form1..ActionManager..ZoomXOutAction....Hint
+#. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")....Hint
 msgid "Zoom out on the x-axis only. Hold down Shift to zoom with larger steps."
 msgstr "Отдалить по оси х. Зажмите Shift для более быстрого отдаления."
 
-#. Form1..ActionManager..ZoomYInAction..Caption
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
 msgid "Zoom y-axis in"
 msgstr "Увеличить по оси у"
 
-#. Form1..ActionManager..ZoomYInAction....Hint
+#. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")....Hint
 msgid "Zoom in on the y-axis only. Hold down Shift to zoom with larger steps."
 msgstr "Приблизить по оси y.  Зажмите Shift для более быстрого приближения."
 
-#. Form1..ActionManager..ZoomYOutAction..Caption
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
 msgid "Zoom y-axis out"
 msgstr "Уменьшить по оси у"
 
-#. Form1..ActionManager..ZoomYOutAction....Hint
+#. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")....Hint
 msgid "Zoom out on the y-axis only. Hold down Shift to zoom with larger steps."
 msgstr "Отдалить по оси y. Зажмите Shift для более быстрого отдаления."
 
-#. Form1..ActionManager..InsertRelationAction..Caption
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
 msgstr "Добавить соотношение..."
 
-#. Form1..ActionManager..InsertRelationAction..Hint
+#. Form1..ActionManager..InsertRelationAction("Insert relation...")..Hint
 msgid "Insert a new equation or inequality."
 msgstr "Добавить новое уравнение или неравенство."
 
-#. Form1..ActionManager..CustomFunctionsAction..Caption
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Caption
 msgid "Custom functions/constants..."
 msgstr "Произвольные функции и константы"
 
-#. Form1..ActionManager..CustomFunctionsAction..Hint
+#. Form1..ActionManager..CustomFunctionsAction("Custom functions/constants...")..Hint
 msgid "Create custom functions and constants for use in graphs."
 msgstr "Создать дополнительные функции и константы."
 
-#. Form1..ActionManager..AnimateAction..Caption
+#. Form1..ActionManager..AnimateAction("Animate...")..Caption
 msgid "Animate..."
 msgstr "Анимировать"
 
-#. Form1..ActionManager..AnimateAction..Hint
+#. Form1..ActionManager..AnimateAction("Animate...")..Hint
 msgid "Create an animation by variating a constant."
 msgstr "Создать анимацию, изменяя константу."
 
-#. Form1..ActionManager..ImportGraphFileAction..Caption
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Caption
 msgid "Graph file..."
 msgstr "Graph файл..."
 
-#. Form1..ActionManager..ImportGraphFileAction..Hint
+#. Form1..ActionManager..ImportGraphFileAction("Graph file...")..Hint
 msgid "Import a Graph file into the current coordinate system."
 msgstr "Загрузить файл Graph в текущую систему координат."
 
-#. Form1..ActionManager..ImportPointSeriesAction..Caption
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Caption
 msgid "Point series..."
 msgstr "Ряд точек..."
 
-#. Form1..ActionManager..ImportPointSeriesAction..Hint
+#. Form1..ActionManager..ImportPointSeriesAction("Point series...")..Hint
 msgid "Import point series from a data file."
 msgstr "Загрузить ряд точек из файла с данными."
 
-#. Form1..ActionManager..ScriptDocAction..Caption
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Caption
 msgid "Scripting engine documentation"
 msgstr "Документация интерпретатора."
 
-#. Form1..ActionManager..ScriptDocAction..Hint
+#. Form1..ActionManager..ScriptDocAction("Scripting engine documentation")..Hint
 msgid "Show documentation for scripting engine and plugin system."
 msgstr "Показать документацию для интерпретатора и системы плагинов."
 
-#. Form1..PopupMenu2..ToolBar_Reset..Caption
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Caption
 msgid "Reset to default"
 msgstr "Восстановить исходную панель"
 
-#. Form1..PopupMenu2..ToolBar_Reset..Hint
+#. Form1..PopupMenu2..ToolBar_Reset("Reset to default")..Hint
 msgid "Reset the toolbar icons to the installation default."
 msgstr "Восстановить исходную конфигурацию панели инструментов."
 
-#. Form1..PopupMenu2..ToolBar_Customize..Caption
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Caption
 msgid "Customize toolbar..."
 msgstr "Изменить панель инструментов..."
 
-#. Form1..PopupMenu2..ToolBar_Customize..Hint
+#. Form1..PopupMenu2..ToolBar_Customize("Customize toolbar...")..Hint
 msgid "Customize the icons shown on the toolbar."
 msgstr "Выбрать кнопки, отображаемые на панели инструментов."
 
-#. Form1..PopupMenu3..Label_Edit..Caption
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Caption
 msgid "Edit label..."
 msgstr "Редактировать метку..."
 
-#. Form1..PopupMenu3..Label_Edit..Hint
+#. Form1..PopupMenu3..Label_Edit("Edit label...")..Hint
 msgid "Edit the label under the cursor."
 msgstr "Редактировать метку, над которой находится курсор."
 
-#. Form1..PopupMenu3..Label_Delete..Caption
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Caption
 msgid "Delete label"
 msgstr "Удалить метку"
 
-#. Form1..PopupMenu3..Label_Delete..Hint
+#. Form1..PopupMenu3..Label_Delete("Delete label")..Hint
 msgid "Delete the label under the cursor."
 msgstr "Удалить метку, над которой находится курсор."
 
-#. Form1..PopupMenu4..Legend_Show..Caption
-#. Form3..PageControl1..TabSheet3..CheckBox15..Caption
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Caption
 msgid "Show legend"
 msgstr "Подпись к графику"
 
-#. Form1..PopupMenu4..Legend_Show..Hint
-#. Form3..PageControl1..TabSheet3..CheckBox15..Hint
+#. Form1..PopupMenu4..Legend_Show("Show legend")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox15("Show legend")..Hint
 msgid "Select to show a legend in the coordinate system."
 msgstr "Показывать подпись к графику на системе координат."
 
-#. Form1..PopupMenu4..Legend_Font..Caption
+#. Form1..PopupMenu4..Legend_Font("Font...")..Caption
 msgid "Font..."
 msgstr "Шрифт"
 
-#. Form1..PopupMenu4..Legend_Font..Hint
+#. Form1..PopupMenu4..Legend_Font("Font...")..Hint
 msgid "Change the font of the legend."
 msgstr "Выбрать шрифт легенды."
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_TopRight..Caption
-#. Form3..PageControl1..TabSheet3..RadioGroup3....Items.Strings
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Right"
 msgstr "Вверху справа"
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_TopRight..Hint
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopRight("Top Right")..Hint
 msgid "Show the legend in the upper right corner."
 msgstr "Показывать подпись к графику в верхнем правом углу."
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_BottomRight..Caption
-#. Form3..PageControl1..TabSheet3..RadioGroup3....Items.Strings
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Right"
 msgstr "Внизу справа"
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_BottomRight..Hint
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomRight("Bottom Right")..Hint
 msgid "Show the legend in the bottom right corner."
 msgstr "Показывать подпись к графику в нижнем правом углу."
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_TopLeft..Caption
-#. Form3..PageControl1..TabSheet3..RadioGroup3....Items.Strings
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Top Left"
 msgstr "Вверху слева"
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_TopLeft..Hint
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_TopLeft("Top Left")..Hint
 msgid "Show the legend in the upper left corner."
 msgstr "Показывать подпись к графику в верхнем левом углу."
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_BottomLeft..Caption
-#. Form3..PageControl1..TabSheet3..RadioGroup3....Items.Strings
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")....Items.Strings
 msgid "Bottom Left"
 msgstr "Внизу слева"
 
-#. Form1..PopupMenu4..Legend_Placement..Legend_BottomLeft..Hint
+#. Form1..PopupMenu4..Legend_Placement("Placement")..Legend_BottomLeft("Bottom Left")..Hint
 msgid "Show the legend in the bottom left corner."
 msgstr "Показывать подпись к графику в нижнем левом углу."
 
-#. Form10..Button1..Caption
-#. Form15..Button1..Caption
-#. Form19..Button2..Caption
+#. Form10("Tip of the day")..Button1("Close")..Caption
+#. Form15("Calculate table")..Button1("Close")..Caption
+#. Form19("Animate")..Button2("Close")..Caption
 msgid "Close"
 msgstr "Закрыть"
 
-#. Form10..Button2..Caption
+#. Form10("Tip of the day")..Button2("Next tip")..Caption
 msgid "Next tip"
 msgstr "Следующий"
 
-#. Form10..Button3..Caption
+#. Form10("Tip of the day")..Button3("Previous tip")..Caption
 msgid "Previous tip"
 msgstr "Предыдущий"
 
-#. Form10..CheckBox1..Caption
+#. Form10("Tip of the day")..CheckBox1("Show tips at startup")..Caption
 msgid "Show tips at startup"
 msgstr "Показывать советы при запуске"
 
-#. Form10..Panel1..Label1..Caption
+#. Form10("Tip of the day")..Panel1..Label1("Did you know...")..Caption
 msgid "Did you know..."
 msgstr "Знаете ли вы..."
 
-#. Form11..Caption
+#. Form11("Insert relation")..Caption
 msgid "Insert relation"
 msgstr "Добавить соотношение"
 
-#. Form11..Label1..Caption
+#. Form11("Insert relation")..Label1("Relation:")..Caption
 msgid "Relation:"
 msgstr "Соотношение:"
 
-#. Form11..Label2..Caption
+#. Form11("Insert relation")..Label2("Constraints:")..Caption
 msgid "Constraints:"
 msgstr "Ограничения:"
 
-#. Form11..Button1..Caption
-#. Form12..Button1..Caption
-#. Form13..Button1..Caption
-#. Form14..Button1..Caption
-#. Form16..Button1..Caption
-#. Form17..Button1..Caption
-#. Form18..Button1..Caption
-#. Form2..Button1..Caption
-#. Form21..TntButton1..Caption
-#. Form3..Button1..Caption
-#. Form4..Button1..Caption
-#. Form5..Button1..Caption
-#. Form6..Button1..Caption
-#. Form7..Button1..Caption
-#. Form8..Button1..Caption
-#. PrintFrm..Button1..Caption
+#. Form11("Insert relation")..Button1("OK")..Caption
+#. Form12("Insert tangent/normal")..Button1("OK")..Caption
+#. Form13("Insert trendline")..Button1("OK")..Caption
+#. Form14("Insert point series")..Button1("OK")..Caption
+#. Form16("Insert shading")..Button1("OK")..Caption
+#. Form17("Custom functions/constants")..Button1("OK")..Caption
+#. Form18("Image options")..Button1("OK")..Caption
+#. Form2("About Graph")..Button1("OK")..Caption
+#. Form21("Placement")..TntButton1("OK")..Caption
+#. Form3("Edit axes")..Button1("OK")..Caption
+#. Form4("Options")..Button1("OK")..Caption
+#. Form5("Insert function")..Button1("OK")..Caption
+#. Form6("Insert text label")..Button1("OK")..Caption
+#. Form7("Insert f'(x)")..Button1("OK")..Caption
+#. Form8("Add model")..Button1("OK")..Caption
+#. PrintFrm("Print")..Button1("OK")..Caption
 msgid "OK"
 msgstr "ОК"
 
-#. Form11..Button2..Caption
-#. Form12..Button2..Caption
-#. Form13..Button2..Caption
-#. Form14..Button2..Caption
-#. Form15..ProgressForm1..ButtonCaption
-#. Form16..Button2..Caption
-#. Form17..Button2..Caption
-#. Form18..Button2..Caption
-#. Form19..ProgressForm1..ButtonCaption
-#. Form21..TntButton2..Caption
-#. Form3..Button2..Caption
-#. Form4..Button2..Caption
-#. Form5..Button2..Caption
-#. Form6..Button2..Caption
-#. Form7..Button2..Caption
-#. Form8..Button2..Caption
-#. PrintFrm..Button2..Caption
+#. Form11("Insert relation")..Button2("Cancel")..Caption
+#. Form12("Insert tangent/normal")..Button2("Cancel")..Caption
+#. Form13("Insert trendline")..Button2("Cancel")..Caption
+#. Form14("Insert point series")..Button2("Cancel")..Caption
+#. Form15("Calculate table")..ProgressForm1("Calculating")..ButtonCaption
+#. Form16("Insert shading")..Button2("Cancel")..Caption
+#. Form17("Custom functions/constants")..Button2("Cancel")..Caption
+#. Form18("Image options")..Button2("Cancel")..Caption
+#. Form19("Animate")..ProgressForm1("Working")..ButtonCaption
+#. Form21("Placement")..TntButton2("Cancel")..Caption
+#. Form3("Edit axes")..Button2("Cancel")..Caption
+#. Form4("Options")..Button2("Cancel")..Caption
+#. Form5("Insert function")..Button2("Cancel")..Caption
+#. Form6("Insert text label")..Button2("Cancel")..Caption
+#. Form7("Insert f'(x)")..Button2("Cancel")..Caption
+#. Form8("Add model")..Button2("Cancel")..Caption
+#. PrintFrm("Print")..Button2("Cancel")..Caption
 msgid "Cancel"
 msgstr "Отменить"
 
-#. Form11..GroupBox1..Caption
-#. Form12..GroupBox1..Caption
-#. Form5..GroupBox3..Caption
-#. Form7..GroupBox3..Caption
+#. Form11("Insert relation")..GroupBox1("Legend text")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Caption
 msgid "Legend text"
 msgstr "Текст подписи"
 
-#. Form11..GroupBox1..Label10..Caption
-#. Form12..GroupBox1..Label10..Caption
-#. Form14..Label3..Caption
-#. Form16..PageControl1..TabSheet2..Label12..Caption
-#. Form5..GroupBox3..Label10..Caption
-#. Form7..GroupBox3..Label10..Caption
+#. Form11("Insert relation")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Label10("Description:")..Caption
+#. Form14("Insert point series")..Label3("Description:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Label12("Description:")..Caption
+#. Form5("Insert function")..GroupBox3("Legend text")..Label10("Description:")..Caption
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Label10("Description:")..Caption
 msgid "Description:"
 msgstr "Описание:"
 
-#. Form11..GroupBox1..Edit3....Hint
-#. Form5..GroupBox3..Edit7....Hint
+#. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
+#. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
 msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
 msgstr "Введите описание, используемое в подписи к графику. Если оставлено пустым, будет использована формула функции."
 
-#. Form11..GroupBox2..Caption
-#. Form16..PageControl1..TabSheet2..GroupBox3..Caption
-#. PrintFrm..GroupBox1..Button3..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Button3("Properties")..Caption
 msgid "Properties"
 msgstr "Свойства"
 
-#. Form11..GroupBox2..Label7..Caption
-#. Form13..GroupBox1..Label7..Caption
-#. Form14..PageControl1..TabSheet1..GroupBox1..Label1..Caption
-#. Form14..PageControl1..TabSheet1..GroupBox2..Label5..Caption
-#. Form16..PageControl1..TabSheet2..GroupBox3..Label4..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Label7("Style:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label7("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label1("Style:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label5("Style:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label4("Style:")..Caption
 msgid "Style:"
 msgstr "Тип:"
 
-#. Form11..GroupBox2..Label9..Caption
-#. Form12..GroupBox2..Label9..Caption
-#. Form13..GroupBox1..Label6..Caption
-#. Form14..PageControl1..TabSheet1..GroupBox1..Label2..Caption
-#. Form14..PageControl1..TabSheet1..GroupBox2..Label6..Caption
-#. Form16..PageControl1..TabSheet2..GroupBox3..Label5..Caption
-#. Form5..GroupBox4..GridPanelEx1..Label9..Caption
-#. Form7..GroupBox4..Label9..Caption
-msgid "Color:"
-msgstr "Цвет:"
-
-#. Form11..GroupBox2..Label3..Caption
-#. Form12..GroupBox2..Label8..Caption
-#. Form13..GroupBox1..Label5..Caption
-#. Form14..PageControl1..TabSheet1..GroupBox2..Label7..Caption
-#. Form5..GroupBox4..GridPanelEx1..Label8..Caption
-#. Form7..GroupBox4..Label8..Caption
-msgid "Width:"
-msgstr "Толщина:"
-
-#. Form11..GroupBox2..ShadeSelect1....Hint
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..ShadeSelect1....Hint
 msgid "Select the style used for drawing the inequality. Not used for equations."
 msgstr "Выберите тип заштриховки для отображения неравенства. Не используется для уравнений."
 
-#. Form11..GroupBox2..ExtColorBox1..Hint
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
 msgstr "Выберите цвет линии."
 
-#. Form11..GroupBox2..Panel1..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Толщина линии графика уравнения (в пикселях) или краевой линии неравенства."
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Label3("Width:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label8("Width:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label5("Width:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label7("Width:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label8("Width:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label8("Width:")..Caption
+msgid "Width:"
+msgstr "Толщина:"
 
-#. Form11..Edit1..Hint
-msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
-msgstr "Введите соотношение, например \"x^2+y^2 = 25\" или \"y < sin(x)\""
-
-#. Form11..Edit2....Hint
-msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
-msgstr "Введите ограничения для соотношения, например \"x > 0 and y < 5\""
-
-#. Form12..Caption
-msgid "Insert tangent/normal"
-msgstr "Добавить касательную или перпендикуляр"
-
-#. Form12..Edit1..Hint
-msgid "Value where the tangent/normal will interact with the function."
-msgstr "Координата, при которой касательная или перпендикуляр должны касаться или пересекать функцию."
-
-#. Form12..RadioGroup1..Hint
-msgid "Choose if you want a tangent or a normal."
-msgstr "Выберите, добавить касательную или перпендикуляр."
-
-#. Form12..RadioGroup1..Caption
-msgid "Type"
-msgstr "Тип"
-
-#. Form12..RadioGroup1....Items.Strings
-msgid "Tangent"
-msgstr "Касательная"
-
-#. Form12..RadioGroup1....Items.Strings
-msgid "Normal"
-msgstr "Перпендикуляр"
-
-#. Form12..GroupBox1..Edit2....Hint
-#. Form7..GroupBox3..Edit3....Hint
-msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
-msgstr "Описание функции, используемое в подписи к графику. Если оставлено пустым, будет использована формула функции."
-
-#. Form12..GroupBox2..Caption
-#. Form5..GroupBox4..Caption
-#. Form7..GroupBox4..Caption
-msgid "Graph properties"
-msgstr "Свойства графика"
-
-#. Form12..GroupBox2..Label7..Caption
-#. Form5..GroupBox4..GridPanelEx1..Label7..Caption
-#. Form7..GroupBox4..Label7..Caption
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Label4("Line style:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label7("Line style:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label7("Line style:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label7("Line style:")..Caption
 msgid "Line style:"
 msgstr "Тип линии:"
 
-#. Form12..GroupBox2..Edit3..Hint
-#. Form13..GroupBox1..Edit2..Hint
-#. Form5..GroupBox4..GridPanelEx1..Panel1..Edit6..Hint
-#. Form7..GroupBox4..Edit4..Hint
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..LineSelect1....Hint
+#, fuzzy
+msgid "Select line style used to draw equations and the border of inequalities."
+msgstr "Выберите тип заштриховки для отображения неравенства. Не используется для уравнений."
+
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Label9("Color:")..Caption
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label9("Color:")..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Label6("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label2("Color:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label6("Color:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Label5("Color:")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label9("Color:")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Label9("Color:")..Caption
+msgid "Color:"
+msgstr "Цвет:"
+
+#. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Panel1..Edit4....Hint
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Толщина линии графика уравнения (в пикселях) или краевой линии неравенства."
+
+#. Form11("Insert relation")..Edit1..Hint
+msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
+msgstr "Введите соотношение, например \"x^2+y^2 = 25\" или \"y < sin(x)\""
+
+#. Form11("Insert relation")..Edit2....Hint
+msgid "Enter constraints for the relation, for example \"x > 0 and y < 5\""
+msgstr "Введите ограничения для соотношения, например \"x > 0 and y < 5\""
+
+#. Form12("Insert tangent/normal")..Caption
+msgid "Insert tangent/normal"
+msgstr "Добавить касательную или перпендикуляр"
+
+#. Form12("Insert tangent/normal")..Edit1..Hint
+msgid "Value where the tangent/normal will interact with the function."
+msgstr "Координата, при которой касательная или перпендикуляр должны касаться или пересекать функцию."
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
+msgid "Choose if you want a tangent or a normal."
+msgstr "Выберите, добавить касательную или перпендикуляр."
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")..Caption
+msgid "Type"
+msgstr "Тип"
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
+msgid "Tangent"
+msgstr "Касательная"
+
+#. Form12("Insert tangent/normal")..RadioGroup1("Type")....Items.Strings
+msgid "Normal"
+msgstr "Перпендикуляр"
+
+#. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
+#. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "Описание функции, используемое в подписи к графику. Если оставлено пустым, будет использована формула функции."
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..Caption
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Caption
+msgid "Graph properties"
+msgstr "Свойства графика"
+
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Edit3..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..Edit2..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Panel1..Edit6..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..Edit4..Hint
 msgid "Width of graph in pixels."
 msgstr "Толщина линии в пикселях."
 
-#. Form12..GroupBox2..LineSelect1..Hint
-#. Form13..GroupBox1..LineSelect1..Hint
-#. Form5..GroupBox4..GridPanelEx1..LineSelect1..Hint
-#. Form7..GroupBox4..LineSelect1..Hint
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..LineSelect1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..LineSelect1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..LineSelect1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..LineSelect1..Hint
 msgid "Choose which line style to use for drawing the graph."
 msgstr "Выберите, какой тип линии использовать для отображения графика."
 
-#. Form12..GroupBox2..ExtColorBox1..Hint
-#. Form13..GroupBox1..ExtColorBox1..Hint
-#. Form5..GroupBox4..GridPanelEx1..ExtColorBox1..Hint
-#. Form7..GroupBox4..ExtColorBox1..Hint
+#. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..ExtColorBox1..Hint
+#. Form13("Insert trendline")..GroupBox1("Line")..ExtColorBox1..Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ExtColorBox1..Hint
+#. Form7("Insert f'(x)")..GroupBox4("Graph properties")..ExtColorBox1..Hint
 msgid "Select the color of the graph."
 msgstr "Выберите цвет графика."
 
-#. Form12..GroupBox3..Caption
-#. Form5..GroupBox2..Caption
-#. Form7..GroupBox2..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Caption
 msgid "Argument range"
 msgstr "Диапазон аргумента"
 
-#. Form12..GroupBox3..Label4..Caption
-#. Form15..Label1..Caption
-#. Form16..PageControl1..TabSheet2..GroupBox1..Label6..Caption
-#. Form16..PageControl1..TabSheet3..GroupBox2..Label8..Caption
-#. Form19..TntGroupBox1..Label2..Caption
-#. Form5..GroupBox2..Label4..Caption
-#. Form7..GroupBox2..Label4..Caption
-#. AreaFrame..GridPanel1..Label1..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label4("From:")..Caption
+#. Form15("Calculate table")..Label1("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label6("From:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label8("From:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label2("From:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label4("From:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label4("From:")..Caption
+#. AreaFrame..GridPanel1..Label1("From:")..Caption
 msgid "From:"
 msgstr "От:"
 
-#. Form12..GroupBox3..Label5..Caption
-#. Form15..Label2..Caption
-#. Form16..PageControl1..TabSheet2..GroupBox1..Label7..Caption
-#. Form16..PageControl1..TabSheet3..GroupBox2..Label9..Caption
-#. Form19..TntGroupBox1..Label3..Caption
-#. Form5..GroupBox2..Label5..Caption
-#. Form7..GroupBox2..Label5..Caption
-#. AreaFrame..GridPanel1..Label2..Caption
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Label5("To:")..Caption
+#. Form15("Calculate table")..Label2("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Label7("To:")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Label9("To:")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label3("To:")..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label5("To:")..Caption
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Label5("To:")..Caption
+#. AreaFrame..GridPanel1..Label2("To:")..Caption
 msgid "To:"
 msgstr "До:"
 
-#. Form12..GroupBox3..Edit4..Hint
-#. Form5..GroupBox2..Edit3..Hint
-#. Form7..GroupBox2..Edit1..Hint
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit4..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit3..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit1..Hint
 msgid "Start of range interval for the used variable."
 msgstr "Начало диапазона."
 
-#. Form12..GroupBox3..Edit5..Hint
-#. Form5..GroupBox2..Edit4..Hint
-#. Form7..GroupBox2..Edit2..Hint
+#. Form12("Insert tangent/normal")..GroupBox3("Argument range")..Edit5..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit4..Hint
+#. Form7("Insert f'(x)")..GroupBox2("Argument range")..Edit2..Hint
 msgid "End of range interval for the used variable."
 msgstr "Конец диапазона."
 
-#. Form12..GroupBox5..Caption
-#. Form5..GroupBox5..Caption
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Caption
 msgid "Endpoints"
 msgstr "Маркеры начала и конца"
 
-#. Form12..GroupBox5..Label11..Caption
-#. Form5..GroupBox5..Label11..Caption
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label11("Start:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label11("Start:")..Caption
 msgid "Start:"
 msgstr "Начало:"
 
-#. Form12..GroupBox5..Label12..Caption
-#. Form5..GroupBox5..Label12..Caption
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..Label12("End:")..Caption
+#. Form5("Insert function")..GroupBox5("Endpoints")..Label12("End:")..Caption
 msgid "End:"
 msgstr "Конец:"
 
-#. Form12..GroupBox5..ComboBox1....Hint
-#. Form5..GroupBox5..ComboBox2....Hint
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox1....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox2....Hint
 msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
 msgstr "Выберите маркер начала линии. Используется только если указан интервал."
 
-#. Form12..GroupBox5..ComboBox2....Hint
-#. Form5..GroupBox5..ComboBox3....Hint
+#. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox2....Hint
+#. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox3....Hint
 msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
 msgstr "Выберите маркер конца линии. Используется только если указан интервал."
 
-#. Form13..Caption
+#. Form13("Insert trendline")..Caption
 msgid "Insert trendline"
 msgstr "Добавить трендлинию"
 
-#. Form13..GroupBox1..Caption
-#. Form14..PageControl1..TabSheet1..GroupBox2..Caption
+#. Form13("Insert trendline")..GroupBox1("Line")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Caption
 msgid "Line"
 msgstr "Линия"
 
-#. Form13..PageControl1..TabSheet1..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Caption
 msgid "Built-in"
 msgstr "Встроенные"
 
-#. Form13..PageControl1..TabSheet1..Panel1..Image1..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel1..Image1..Hint
 msgid "Create a linear function: f(x)=ax+b"
 msgstr "Создать линейную функцию: f(x)=ax+b"
 
-#. Form13..PageControl1..TabSheet1..Panel2..Image2..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel2..Image2..Hint
 msgid "Create a logarithmic function: f(x)=a*ln(x)+b"
 msgstr "Создать логарифмическую функцию: f(x)=a*ln(x)+b"
 
-#. Form13..PageControl1..TabSheet1..Panel3..Image3..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel3..Image3..Hint
 msgid "Create a polynomial function: f(x)=ax^3+bx^2+cx+d"
 msgstr "Создать многочлен: f(x)=ax^3+bx^2+cx+d"
 
-#. Form13..PageControl1..TabSheet1..Panel4..Image4..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel4..Image4..Hint
 msgid "Create a power function: f(x)=ax^b"
 msgstr "Создать степенную функцию: f(x)=ax^b"
 
-#. Form13..PageControl1..TabSheet1..Panel5..Image5..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel5..Image5..Hint
 msgid "Create a exponential function: f(x)=a*b^x"
 msgstr "Создать экспоненциальную функцию: f(x)=a*b^x"
 
-#. Form13..PageControl1..TabSheet1..StaticText1..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText1("Order:")..Caption
 msgid "Order:"
 msgstr "Степень:"
 
-#. Form13..PageControl1..TabSheet1..RadioButton3..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton3("Polynomial")..Caption
 msgid "Polynomial"
 msgstr "Полином"
 
-#. Form13..PageControl1..TabSheet1..RadioButton2..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton2("Logarithmic")..Caption
 msgid "Logarithmic"
 msgstr "Логарифмическая шкала"
 
-#. Form13..PageControl1..TabSheet1..RadioButton1..Caption
-#. Form14..PageControl1..TabSheet1..GroupBox2..ComboBox2....Items.Strings
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton1("Linear")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Linear"
 msgstr "Линейная"
 
-#. Form13..PageControl1..TabSheet1..RadioButton4..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton4("Power")..Caption
 msgid "Power"
 msgstr "Степенная"
 
-#. Form13..PageControl1..TabSheet1..RadioButton5..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton5("Exponential")..Caption
 msgid "Exponential"
 msgstr "Экспонента"
 
-#. Form13..PageControl1..TabSheet1..Panel6..Image6..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Panel6..Image6..Hint
 msgid "Create a moving average as a series of straight lines."
 msgstr "Создать график скользящего среднего как последовательность отрезков."
 
-#. Form13..PageControl1..TabSheet1..RadioButton6..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..RadioButton6("Moving average")..Caption
 msgid "Moving average"
 msgstr "Скользящее среднее"
 
-#. Form13..PageControl1..TabSheet1..StaticText2..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..StaticText2("Period:")..Caption
 msgid "Period:"
 msgstr "Период:"
 
-#. Form13..PageControl1..TabSheet1..Edit4..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit4..Hint
 msgid "Determines how many points are used for the average."
 msgstr "Задаёт количество точек, используемых для нахождения среднего."
 
-#. Form13..PageControl1..TabSheet1..Edit1..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet1("Built-in")..Edit1..Hint
 msgid "The order of the polynomium. For example 2 means a parable."
 msgstr "Степень полинома. Например, 2 обозначает параболу."
 
-#. Form13..PageControl1..TabSheet2..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Caption
 msgid "User defined"
 msgstr "Пользовательские"
 
-#. Form13..PageControl1..TabSheet2..Label1..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Label1("Model:")..Caption
 msgid "Model:"
 msgstr "Модель:"
 
-#. Form13..PageControl1..TabSheet2..Button4..Caption
-#. Form8..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button4("Add model")..Caption
+#. Form8("Add model")..Caption
 msgid "Add model"
 msgstr "Новая модель"
 
-#. Form13..PageControl1..TabSheet2..Button5..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button5("Remove model")..Caption
 msgid "Remove model"
 msgstr "Удал. модель"
 
-#. Form13..PageControl1..TabSheet2..Button6..Caption
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Button6("Edit model")..Caption
+#. Insert trendline dialog
 msgid "Edit model"
 msgstr "Параметры"
 
-#. Form13..PageControl1..TabSheet2..Edit3..Hint
+#. Form13("Insert trendline")..PageControl1..TabSheet2("User defined")..Edit3..Hint
 msgid "Enter a function model to base the trendline on."
 msgstr "Введите модель функции для отображения трендлинии графику."
 
-#. Form13..CheckBox1....Hint
-#. Form13..Edit5....Hint
+#. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
+#. Form13("Insert trendline")..Edit5....Hint
 msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
 msgstr "Укажите значение, в котором трендлиния будет пересекать ось у. Доступно только для линейной, многочленной и показательной функции."
 
-#. Form13..CheckBox1..Caption
+#. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
 msgstr "Пересечение ="
 
-#. Form13..TntPopupMenu1..Popup_Import..Caption
-#. Form14..PopupMenu1..Popup_Import..Caption
-#. Form17..PopupMenu1..Popup_Import..Caption
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Caption
 msgid "Import from file..."
 msgstr "Загрузить из файла..."
 
-#. Form13..TntPopupMenu1..Popup_Import..Hint
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Import("Import from file...")..Hint
 msgid "Import user models from a file."
 msgstr "Загрузить пользовательский ряд точек из файла с данными."
 
-#. Form13..TntPopupMenu1..Popup_Export..Caption
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Caption
 msgid "Export all to file..."
 msgstr "Экспортировать в файл..."
 
-#. Form13..TntPopupMenu1..Popup_Export..Hint
+#. Form13("Insert trendline")..TntPopupMenu1..Popup_Export("Export all to file...")..Hint
 msgid "Export user models to a file."
 msgstr "Экспортировать пользовательские модели в файл."
 
-#. Form13..SaveDialog1..Filter
-#. Form13..OpenDialog1..Filter
+#. Form13("Insert trendline")..SaveDialog1..Filter
+#. Form13("Insert trendline")..OpenDialog1..Filter
 msgid "User models [*.ini]|*.ini"
 msgstr "Пользовательские модели [*.ini]|*.ini"
 
-#. Form14..Caption
+#. Form14("Insert point series")..Caption
 msgid "Insert point series"
 msgstr "Добавить ряд точек"
 
-#. Form14..Edit1....Hint
+#. Form14("Insert point series")..Edit1....Hint
 msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
 msgstr "Название ряда точек, используемое в списке слева от системы координат."
 
-#. Form14..Edit1..Text
+#. Form14("Insert point series")..Edit1..Text
+#. Default description in the Insert point series dialog
 msgid "Series"
 msgstr "Ряд"
 
-#. Form14..GroupBox4....Hint
+#. Form14("Insert point series")..GroupBox4("Sample")....Hint
 msgid "This shows a sample of the markers and the lines between the markers."
 msgstr "Образцы маркеров и соединительных линий."
 
-#. Form14..GroupBox4..Caption
+#. Form14("Insert point series")..GroupBox4("Sample")..Caption
 msgid "Sample"
 msgstr "Образец"
 
-#. Form14..PageControl1..TabSheet1..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..Caption
 msgid "Markers"
 msgstr "Точки"
 
-#. Form14..PageControl1..TabSheet1..GroupBox1..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Caption
 msgid "Marker"
 msgstr "Маркеры"
 
-#. Form14..PageControl1..TabSheet1..GroupBox1..Label4..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Label4("Size:")..Caption
 msgid "Size:"
 msgstr "Размер:"
 
-#. Form14..PageControl1..TabSheet1..GroupBox1..Edit2..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..Edit2..Hint
 msgid "Choose the size of the markers."
 msgstr "Выберите размер маркеров."
 
-#. Form14..PageControl1..TabSheet1..GroupBox1..PointSelect1..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..PointSelect1..Hint
 msgid "Choose the type of markers to be shown at each point."
 msgstr "Выберите тип маркера, обозначающего точку."
 
-#. Form14..PageControl1..TabSheet1..GroupBox1..ExtColorBox1..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox1("Marker")..ExtColorBox1..Hint
 msgid "Choose the color of the markers."
 msgstr "Выберите цвет точек"
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..Label11..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Label11("Interpolation:")..Caption
 msgid "Interpolation:"
 msgstr "Интерполяция:"
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..LineSelect1....Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..LineSelect1....Hint
 msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
 msgstr "Выберите тип линии, соединяющей точки. Линии могут также отсутствовать."
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..Edit3..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Edit3..Hint
 msgid "Choose the width of the lines in pixels."
 msgstr "Выберите ширину линий (в пикселях)"
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..ComboBox2..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2..Hint
 msgid "Select which kind of line to draw between the markers."
 msgstr "Выберите тип линии, соединяющей маркеры."
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..ComboBox2....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "1D cubic spline"
 msgstr "Одномерный кубический сплайн"
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..ComboBox2....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "2D cubic spline"
 msgstr "Двумерный кубический сплайн"
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..ComboBox2....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ComboBox2....Items.Strings
 msgid "Half cosine"
 msgstr "Полукосинус"
 
-#. Form14..PageControl1..TabSheet1..GroupBox2..ExtColorBox2..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..ExtColorBox2..Hint
 msgid "Choose the color of the lines."
 msgstr "Выберите цвет линии."
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Caption
 msgid "Labels"
 msgstr "Надписи"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..Label8..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..Label8("Position:")..Caption
 msgid "Position:"
 msgstr "Расположение:"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..CheckBox2..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Hint
 msgid "Check to show the coordinate at each point."
 msgstr "Выберите, показывать ли координаты каждой точки."
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..CheckBox2..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..CheckBox2("Show coordinates")..Caption
 msgid "Show coordinates"
 msgstr "Координаты"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..BitBtn1..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..BitBtn1..Hint
 msgid "Select the font for the coordinates."
 msgstr "Выберите шрифт, которым будут выводиться координаты."
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1..Hint
 msgid "Select where the coordinates should be shown."
 msgstr "Выберите, где будут выводиться координаты."
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Above"
 msgstr "Над"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Below"
 msgstr "Под"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
 msgid "Left"
 msgstr "Слева"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
+#. Shortcut key
 msgid "Right"
 msgstr "Справа"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Above Left"
 msgstr "Вверху Слева"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Above Right"
 msgstr "Переместить справа"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Below Left"
 msgstr "Вниз влево"
 
-#. Form14..PageControl1..TabSheet1..GroupBox3..ComboBox1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox3("Labels")..ComboBox1....Items.Strings
 msgid "Below Right"
 msgstr "Вниз вправо"
 
-#. Form14..PageControl1..TabSheet1..RadioGroup1....Hint
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
 msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
 msgstr "Выберите прямоугольные (x,y) координаты или полярные (θ,r) координаты."
 
-#. Form14..PageControl1..TabSheet1..RadioGroup1..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
 msgid "Coordinate type"
 msgstr "Тип координат"
 
-#. Form14..PageControl1..TabSheet1..RadioGroup1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
 msgid "Cartesian"
 msgstr "Прямоугольные"
 
-#. Form14..PageControl1..TabSheet1..RadioGroup1....Items.Strings
-#. Form4..GridPanelEx1..RadioGroup1....Items.Strings
+#. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
 msgid "Polar"
 msgstr "Полярный"
 
 # Error bars are invisible when background of the plane is black (which is a cool one to use, in fact). Suggest adding a feature to change the color of the bars... unless I'm so blind and it already exists :P
-#. Form14..PageControl1..TabSheet2..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..Caption
 msgid "Error bars"
 msgstr "Погрешность"
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Caption
 msgid "X error amount"
 msgstr "Погрешность по X"
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..CheckBox3..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Hint
 msgid "Show horizontal error bars."
 msgstr "Показывать диапазон ошибки по горизонтали"
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..CheckBox3..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..CheckBox3("Show x-bars")..Caption
 msgid "Show x-bars"
 msgstr "Указать"
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..RadioButton1..Hint
-#. Form14..PageControl1..TabSheet2..GroupBox6..RadioButton4..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton1("Fixed:")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton4("Fixed:")..Hint
 msgid "All error bars are the same size."
 msgstr "Фиксированная величина ошибки."
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..RadioButton1..Caption
-#. Form14..PageControl1..TabSheet2..GroupBox6..RadioButton4..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton1("Fixed:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton4("Fixed:")..Caption
 msgid "Fixed:"
 msgstr "Фикс."
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..Edit4..Hint
-#. Form14..PageControl1..TabSheet2..GroupBox6..Edit6..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Edit4..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Edit6..Hint
 msgid "Enter fixed value."
 msgstr "Введите величину ошибки."
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..RadioButton2..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton2("Relative:")..Hint
 msgid "All error bars are the same percentage of the x-coordinate."
 msgstr "Диапазон ошибок в процентах от значения Х"
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..RadioButton2..Caption
-#. Form14..PageControl1..TabSheet2..GroupBox6..RadioButton5..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton2("Relative:")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton5("Relative:")..Caption
 msgid "Relative:"
 msgstr "Проценты"
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..RadioButton3..Hint
-#. Form14..PageControl1..TabSheet2..GroupBox6..RadioButton6..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton3("Custom")..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton6("Custom")..Hint
 msgid "Each error bar is given a custom value."
 msgstr "Произвольные значения ошибок."
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..RadioButton3..Caption
-#. Form14..PageControl1..TabSheet2..GroupBox6..RadioButton6..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..RadioButton3("Custom")..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton6("Custom")..Caption
 msgid "Custom"
 msgstr "Особые"
 
-#. Form14..PageControl1..TabSheet2..GroupBox5..Edit5..Hint
-#. Form14..PageControl1..TabSheet2..GroupBox6..Edit7..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox5("X error amount")..Edit5..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Edit7..Hint
 msgid "Enter relative value in percent."
 msgstr "Введите величину ошибки в процентах."
 
-#. Form14..PageControl1..TabSheet2..GroupBox6..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..Caption
 msgid "Y error amount"
 msgstr "Погрешность по оси Y"
 
-#. Form14..PageControl1..TabSheet2..GroupBox6..CheckBox4..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Hint
 msgid "Show vertical error bars."
 msgstr "Показывать диапазон ошибки по вертикали"
 
-#. Form14..PageControl1..TabSheet2..GroupBox6..CheckBox4..Caption
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..CheckBox4("Show y-bars")..Caption
 msgid "Show y-bars"
 msgstr "Указать"
 
-#. Form14..PageControl1..TabSheet2..GroupBox6..RadioButton5..Hint
+#. Form14("Insert point series")..PageControl1..TabSheet2("Error bars")..GroupBox6("Y error amount")..RadioButton5("Relative:")..Hint
 msgid "All error bars are the same percentage of the y-coordinate."
 msgstr "Диапазон ошибок в процентах от значения У"
 
-#. Form14..PopupMenu1..Popup_Cut..Hint
-#. Form17..PopupMenu1..Popup_Cut..Hint
-#. Form6..PopupMenu1..Popup_Cut..Hint
-msgid "Cut the selected text to the clipboard."
-msgstr "Вырезать выбранный текст и поместить в буфер обмена."
-
-#. Form14..PopupMenu1..Popup_Copy..Hint
-#. Form17..PopupMenu1..Popup_Copy..Hint
-#. Form6..PopupMenu1..Popup_Copy..Hint
-msgid "Copy the selected text to the clipboard."
-msgstr "Скопировать выбранный текст в буфер обмена."
-
-#. Form14..PopupMenu1..Popup_Paste....Hint
-#. Form17..PopupMenu1..Popup_Paste....Hint
-msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
-msgstr "Вставить текст из буфера обмена в таблицу. Значения остальных ячеек могут быть заменены значениями из буфера обмена."
-
-#. Form14..PopupMenu1..Popup_Delete..Hint
-#. Form17..PopupMenu1..Popup_Delete..Hint
-msgid "Erase selected cells."
-msgstr "Удалить выбранные ячейки."
-
-#. Form14..PopupMenu1..Popup_Insert..Caption
-#. Form17..PopupMenu1..Popup_Insert..Caption
-msgid "Insert row"
-msgstr "Вставить строку"
-
-#. Form14..PopupMenu1..Popup_Insert..Hint
-#. Form17..PopupMenu1..Popup_Insert..Hint
-msgid "Inserts a row in the grid moving rows below one down."
-msgstr "Вставить строку, опустив ячейки, находящиеся ниже."
-
-#. Form14..PopupMenu1..Popup_Remove..Caption
-#. Form17..PopupMenu1..Popup_Remove..Caption
-msgid "Remove row"
-msgstr "Удалить строку"
-
-#. Form14..PopupMenu1..Popup_Remove..Hint
-#. Form17..PopupMenu1..Popup_Remove..Hint
-msgid "Removes the selected rows."
-msgstr "Удаляет выбранную строку."
-
-#. Form14..PopupMenu1..Popup_Select..Caption
-#. Form15..PopupMenu1..Popup1_Select..Caption
-#. Form17..PopupMenu1..Popup_Select..Caption
-msgid "Select all"
-msgstr "Выделить всё"
-
-#. Form14..PopupMenu1..Popup_Select..Hint
-#. Form15..PopupMenu1..Popup1_Select..Hint
-#. Form17..PopupMenu1..Popup_Select..Hint
-msgid "Select all cells."
-msgstr "Выделить все ячейки."
-
-#. Form14..PopupMenu1..Popup_Import..Hint
-#. Form17..PopupMenu1..Popup_Import..Hint
-msgid "Import data from a file and place it at the selected cell."
-msgstr "Импортировать данные из файла и поместить начиная с выбранной ячейки."
-
-#. Form14..PopupMenu1..Popup_Export..Hint
-#. Form17..PopupMenu1..Popup_Export..Hint
-msgid "Export selected data to a file."
-msgstr "Экспортировать выделенные данные в файл."
-
-#. Form15..Caption
-msgid "Calculate table"
-msgstr "Вычислить таблицу"
-
-#. Form15..Edit3....Hint
-msgid "The step value. This is the difference between two adjoining values in the defined interval."
-msgstr "Величина шага (разность между двумя ближайшими значениями на заданном интервале)."
-
-#. Form15..Edit1..Hint
-msgid "The first x-value in the interval."
-msgstr "Наименьшее значение х в интервале."
-
-#. Form15..Edit2..Hint
-msgid "The last x-value in the interval."
-msgstr "Наибольшее значение х в интервале."
-
-#. Form15..PopupMenu1..Popup1_Show1..Caption
-#. Form15..PopupMenu1..Popup1_Show2..Caption
-#. Form15..PopupMenu1..Popup1_Show3..Caption
-#. Form15..PopupMenu1..Popup1_Show4..Caption
-#. Form15..PopupMenu1..Popup1_Show5..Caption
-msgid "Show %s"
-msgstr "Отобразить %s"
-
-#. Form15..PopupMenu1..Popup1_Show1..Hint
-#. Form15..PopupMenu1..Popup1_Show2..Hint
-#. Form15..PopupMenu1..Popup1_Show3..Hint
-#. Form15..PopupMenu1..Popup1_Show4..Hint
-#. Form15..PopupMenu1..Popup1_Show5..Hint
-msgid "Show the %s column in the table."
-msgstr "Отобразить колонку с %s "
-
-#. Form15..PopupMenu1..Popup1_Copy..Hint
-msgid "Copy selected cells to the clipboard."
-msgstr "Скопировать выделенные ячейки в буфер обмена."
-
-#. Form15..PopupMenu1..Popup1_Export..Hint
-msgid "Saves the selected data to a file."
-msgstr "Сохранить выделенные данные в файл."
-
-#. Form15..ProgressForm1..Caption
-msgid "Calculating"
-msgstr "Происходит вычисление"
-
-#. Form15..SaveDialog1..Filter
-msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-msgstr "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-
-#. Form16..Caption
-msgid "Insert shading"
-msgstr "Заштриховать участок"
-
-#. Form16..PageControl1..TabSheet1..Caption
-msgid "Shading"
-msgstr "Участок"
-
-#. Form16..PageControl1..TabSheet1..Panel1..Image1..Hint
-#. Form16..PageControl1..TabSheet1..RadioButton1..Hint
-msgid "Shades the area between the function and the x-axis."
-msgstr "Заштриховывает часть плоскости между функцией и осью х."
-
-#. Form16..PageControl1..TabSheet1..Panel2..Image2..Hint
-#. Form16..PageControl1..TabSheet1..RadioButton2..Hint
-msgid "Shades the area below the function."
-msgstr "Заштриховывает часть плоскости под функцией."
-
-#. Form16..PageControl1..TabSheet1..Panel3..Image3..Hint
-#. Form16..PageControl1..TabSheet1..RadioButton3..Hint
-msgid "Shades the area above the function."
-msgstr "Заштриховывает часть плоскости над функцией."
-
-#. Form16..PageControl1..TabSheet1..Panel4..Image4..Hint
-#. Form16..PageControl1..TabSheet1..RadioButton4..Hint
-msgid "Shades the area between the function and the y-axis."
-msgstr "Заштриховывает часть плоскости между функцией и осью у."
-
-#. Form16..PageControl1..TabSheet1..Panel5..Image5..Hint
-#. Form16..PageControl1..TabSheet1..RadioButton5..Hint
-msgid "Shades the area inside the function."
-msgstr "Заштриховывает часть плоскости внутри функции."
-
-#. Form16..PageControl1..TabSheet1..Panel6..Image6....Hint
-#. Form16..PageControl1..TabSheet1..RadioButton6....Hint
-msgid "Shades the area between the main function and the function selected in the list to the right."
-msgstr "Заштриховывает часть плоскости между двумя функциями."
-
-#. Form16..PageControl1..TabSheet1..RadioButton3..Caption
-msgid "Above function"
-msgstr "Над функцией"
-
-#. Form16..PageControl1..TabSheet1..RadioButton1..Caption
-msgid "Between function and x-axis"
-msgstr "Между функцией и осью х"
-
-#. Form16..PageControl1..TabSheet1..RadioButton6..Caption
-msgid "Between functions"
-msgstr "Между функциями"
-
-#. Form16..PageControl1..TabSheet1..RadioButton4..Caption
-msgid "Between function and y-axis"
-msgstr "Между функцией и осью у"
-
-#. Form16..PageControl1..TabSheet1..RadioButton5..Caption
-msgid "Inside function"
-msgstr "Внутри функции"
-
-#. Form16..PageControl1..TabSheet1..RadioButton2..Caption
-msgid "Below function"
-msgstr "Под функцией"
-
-#. Form16..PageControl1..TabSheet2..Caption
-#. Form20..Panel2..ToolBar1..ToolButton6..Hint
-#. Form4..Caption
-msgid "Options"
-msgstr "Настройки"
-
-#. Form16..PageControl1..TabSheet2..GroupBox1..Caption
-#. Form19..TntGroupBox1..Caption
-msgid "Range"
-msgstr "Диапазон"
-
-#. Form16..PageControl1..TabSheet2..GroupBox1..Edit1..Hint
-#. Form16..PageControl1..TabSheet3..GroupBox2..Edit3..Hint
-msgid "Coordinate where the shading starts."
-msgstr "Координата начала штрихования."
-
-#. Form16..PageControl1..TabSheet2..GroupBox1..Edit2..Hint
-#. Form16..PageControl1..TabSheet3..GroupBox2..Edit4..Hint
-msgid "Coordinate where the shading ends."
-msgstr "Координата окончания штрихования."
-
-#. Form16..PageControl1..TabSheet2..GroupBox1..CheckBox2..Hint
-#. Form16..PageControl1..TabSheet3..GroupBox2..CheckBox4..Hint
-msgid "Check to increase the end coordinate until intersection."
-msgstr "Отметьте, чтобы расширить участок штрихования вправо до пересечения."
-
-#. Form16..PageControl1..TabSheet2..GroupBox1..CheckBox2..Caption
-#. Form16..PageControl1..TabSheet3..GroupBox2..CheckBox4..Caption
-msgid "Increase to intersection"
-msgstr "Вправо до пересечения"
-
-#. Form16..PageControl1..TabSheet2..GroupBox1..CheckBox1..Hint
-#. Form16..PageControl1..TabSheet3..GroupBox2..CheckBox3..Hint
-msgid "Check to decrease the start coordinate until intersection."
-msgstr "Отметьте, чтобы расширить участок штрихования влево до пересечения."
-
-#. Form16..PageControl1..TabSheet2..GroupBox1..CheckBox1..Caption
-#. Form16..PageControl1..TabSheet3..GroupBox2..CheckBox3..Caption
-msgid "Decrease to intersection"
-msgstr "Влево до пересечения"
-
-#. Form16..PageControl1..TabSheet2..GroupBox3..ShadeSelect1..Hint
-msgid "Select the style used for the shading."
-msgstr "Выберите тип заштриховки."
-
-#. Form16..PageControl1..TabSheet2..GroupBox3..ExtColorBox1..Hint
-msgid "Select color used for shading."
-msgstr "Выберите цвет заштриховки."
-
-#. Form16..PageControl1..TabSheet2..GroupBox3..CheckBox5..Hint
-msgid "Mark the border around the shading."
-msgstr "Обозначить конец заштрихованного участка линией."
-
-#. Form16..PageControl1..TabSheet2..GroupBox3..CheckBox5..Caption
-msgid "Mark border"
-msgstr "Граница"
-
-#. Form16..PageControl1..TabSheet2..Edit5..Hint
-msgid "Enter a description to show in the legend."
-msgstr "Введите описание для отображения в подписи к графику."
-
-#. Form16..PageControl1..TabSheet3..Caption
-msgid "2nd function"
-msgstr "Вторая функция"
-
-#. Form16..PageControl1..TabSheet3..Label11..Caption
-msgid "2nd function:"
-msgstr "Вторая функция:"
-
-#. Form16..PageControl1..TabSheet3..ListBox1....Hint
-msgid "Select the second function when you want a shading between two functions."
-msgstr "Выберите вторую функцию, если вы хотите заштриховать участок между двумя функциями."
-
-#. Form16..PageControl1..TabSheet3..GroupBox2..Caption
-msgid "Shading range for 2nd function"
-msgstr "Диапазон заштриховки для второй функции"
-
-#. Form17..Caption
-msgid "Custom functions/constants"
-msgstr "Пользовательские функции и константы"
-
-#. Form17..Button3..Caption
+#. Form14("Insert point series")..Button4("Apply")..Caption
+#. Form17("Custom functions/constants")..Button3("Apply")..Caption
 msgid "Apply"
 msgstr "Применить"
 
-#. Form17..Grid1....TitleCaptions.Strings
+#. Form14("Insert point series")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Cut("Cut")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Cut("Cut")..Hint
+msgid "Cut the selected text to the clipboard."
+msgstr "Вырезать выбранный текст и поместить в буфер обмена."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Copy("Copy")..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Copy("Copy")..Hint
+msgid "Copy the selected text to the clipboard."
+msgstr "Скопировать выбранный текст в буфер обмена."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")....Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")....Hint
+msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
+msgstr "Вставить текст из буфера обмена в таблицу. Значения остальных ячеек могут быть заменены значениями из буфера обмена."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Hint
+msgid "Erase selected cells."
+msgstr "Удалить выбранные ячейки."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Caption
+msgid "Insert row"
+msgstr "Вставить строку"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Insert("Insert row")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Insert("Insert row")..Hint
+msgid "Inserts a row in the grid moving rows below one down."
+msgstr "Вставить строку, опустив ячейки, находящиеся ниже."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Caption
+msgid "Remove row"
+msgstr "Удалить строку"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Remove("Remove row")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Remove("Remove row")..Hint
+msgid "Removes the selected rows."
+msgstr "Удаляет выбранную строку."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Caption
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Caption
+msgid "Select all"
+msgstr "Выделить всё"
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Select("Select all")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Select("Select all")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Select("Select all")..Hint
+msgid "Select all cells."
+msgstr "Выделить все ячейки."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Import("Import from file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Import("Import from file...")..Hint
+msgid "Import data from a file and place it at the selected cell."
+msgstr "Импортировать данные из файла и поместить начиная с выбранной ячейки."
+
+#. Form14("Insert point series")..PopupMenu1..Popup_Export("Export to file...")..Hint
+#. Form17("Custom functions/constants")..PopupMenu1..Popup_Export("Export to file...")..Hint
+msgid "Export selected data to a file."
+msgstr "Экспортировать выделенные данные в файл."
+
+#. Form15("Calculate table")..Caption
+msgid "Calculate table"
+msgstr "Вычислить таблицу"
+
+#. Form15("Calculate table")..Edit3....Hint
+msgid "The step value. This is the difference between two adjoining values in the defined interval."
+msgstr "Величина шага (разность между двумя ближайшими значениями на заданном интервале)."
+
+#. Form15("Calculate table")..Edit1..Hint
+msgid "The first x-value in the interval."
+msgstr "Наименьшее значение х в интервале."
+
+#. Form15("Calculate table")..Edit2..Hint
+msgid "The last x-value in the interval."
+msgstr "Наибольшее значение х в интервале."
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show1("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show2("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show3("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show4("Show %s")..Caption
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show5("Show %s")..Caption
+#. Context menu in Calc|Table dialog
+msgid "Show %s"
+msgstr "Отобразить %s"
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show1("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show2("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show3("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show4("Show %s")..Hint
+#. Form15("Calculate table")..PopupMenu1..Popup1_Show5("Show %s")..Hint
+msgid "Show the %s column in the table."
+msgstr "Отобразить колонку с %s "
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Copy("Copy")..Hint
+msgid "Copy selected cells to the clipboard."
+msgstr "Скопировать выделенные ячейки в буфер обмена."
+
+#. Form15("Calculate table")..PopupMenu1..Popup1_Export("Export to file...")..Hint
+msgid "Saves the selected data to a file."
+msgstr "Сохранить выделенные данные в файл."
+
+#. Form15("Calculate table")..ProgressForm1("Calculating")..Caption
+msgid "Calculating"
+msgstr "Происходит вычисление"
+
+#. Form15("Calculate table")..SaveDialog1..Filter
+#. Export to file dialog
+msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+msgstr "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
+
+#. Form16("Insert shading")..Caption
+msgid "Insert shading"
+msgstr "Заштриховать участок"
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Caption
+#. Default name in Insert shading dialog
+msgid "Shading"
+msgstr "Участок"
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel1..Image1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Hint
+msgid "Shades the area between the function and the x-axis."
+msgstr "Заштриховывает часть плоскости между функцией и осью х."
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel2..Image2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Hint
+msgid "Shades the area below the function."
+msgstr "Заштриховывает часть плоскости под функцией."
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel3..Image3..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Hint
+msgid "Shades the area above the function."
+msgstr "Заштриховывает часть плоскости над функцией."
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel4..Image4..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Hint
+msgid "Shades the area between the function and the y-axis."
+msgstr "Заштриховывает часть плоскости между функцией и осью у."
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel5..Image5..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Hint
+msgid "Shades the area inside the function."
+msgstr "Заштриховывает часть плоскости внутри функции."
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
+msgid "Shades the area between the main function and the function selected in the list to the right."
+msgstr "Заштриховывает часть плоскости между двумя функциями."
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
+msgid "Above function"
+msgstr "Над функцией"
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton1("Between function and x-axis")..Caption
+msgid "Between function and x-axis"
+msgstr "Между функцией и осью х"
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")..Caption
+msgid "Between functions"
+msgstr "Между функциями"
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton4("Between function and y-axis")..Caption
+msgid "Between function and y-axis"
+msgstr "Между функцией и осью у"
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton5("Inside function")..Caption
+msgid "Inside function"
+msgstr "Внутри функции"
+
+#. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton2("Below function")..Caption
+msgid "Below function"
+msgstr "Под функцией"
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Caption
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton6..Hint
+#. Form4("Options")..Caption
+msgid "Options"
+msgstr "Настройки"
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Caption
+msgid "Range"
+msgstr "Диапазон"
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit1..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit3..Hint
+msgid "Coordinate where the shading starts."
+msgstr "Координата начала штрихования."
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..Edit2..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Edit4..Hint
+msgid "Coordinate where the shading ends."
+msgstr "Координата окончания штрихования."
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
+msgid "Check to increase the end coordinate until intersection."
+msgstr "Отметьте, чтобы расширить участок штрихования вправо до пересечения."
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
+msgid "Increase to intersection"
+msgstr "Вправо до пересечения"
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
+msgid "Check to decrease the start coordinate until intersection."
+msgstr "Отметьте, чтобы расширить участок штрихования влево до пересечения."
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
+msgid "Decrease to intersection"
+msgstr "Влево до пересечения"
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ShadeSelect1..Hint
+msgid "Select the style used for the shading."
+msgstr "Выберите тип заштриховки."
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..ExtColorBox1..Hint
+msgid "Select color used for shading."
+msgstr "Выберите цвет заштриховки."
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Hint
+msgid "Mark the border around the shading."
+msgstr "Обозначить конец заштрихованного участка линией."
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..CheckBox5("Mark border")..Caption
+msgid "Mark border"
+msgstr "Граница"
+
+#. Form16("Insert shading")..PageControl1..TabSheet2("Options")..Edit5..Hint
+msgid "Enter a description to show in the legend."
+msgstr "Введите описание для отображения в подписи к графику."
+
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Caption
+msgid "2nd function"
+msgstr "Вторая функция"
+
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..Label11("2nd function:")..Caption
+msgid "2nd function:"
+msgstr "Вторая функция:"
+
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
+msgid "Select the second function when you want a shading between two functions."
+msgstr "Выберите вторую функцию, если вы хотите заштриховать участок между двумя функциями."
+
+#. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
+msgid "Shading range for 2nd function"
+msgstr "Диапазон заштриховки для второй функции"
+
+#. Form17("Custom functions/constants")..Caption
+msgid "Custom functions/constants"
+msgstr "Пользовательские функции и константы"
+
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Names"
 msgstr "Название:"
 
-#. Form17..Grid1....TitleCaptions.Strings
+#. Form17("Custom functions/constants")..Grid1....TitleCaptions.Strings
 msgid "Definition"
 msgstr "Определение"
 
-#. Form18..Caption
+#. Form18("Image options")..Caption
 msgid "Image options"
 msgstr "Параметры изображения"
 
-#. Form18..PageControl1..TabSheet1..Caption
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Caption
 msgid "Size"
 msgstr "Размер:"
 
-#. Form18..PageControl1..TabSheet1..Label1..Caption
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label1("Image width:")..Caption
 msgid "Image width:"
 msgstr "Ширина:"
 
-#. Form18..PageControl1..TabSheet1..Label2..Caption
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Label2("Image height:")..Caption
 msgid "Image height:"
 msgstr "Высота:"
 
-#. Form18..PageControl1..TabSheet1..Edit1..Hint
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit1..Hint
 msgid "Set a custom image width in pixels."
 msgstr "Задать ширину (в пикселях)"
 
-#. Form18..PageControl1..TabSheet1..Edit2..Hint
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..Edit2..Hint
 msgid "Set a custom image height in pixels."
 msgstr "Задать высоту (в пикселях)"
 
-#. Form18..PageControl1..TabSheet1..RadioGroup3....Hint
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
 msgid "Choose to use the same size as shown on the screen or a custom image size."
 msgstr "Выберите, оставить размер изображения без изменений или задать произвольный."
 
-#. Form18..PageControl1..TabSheet1..RadioGroup3..Caption
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")..Caption
 msgid "Image size"
 msgstr "Размер изображения"
 
-#. Form18..PageControl1..TabSheet1..RadioGroup3....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
 msgid "Screen size"
 msgstr "Размер экрана"
 
-#. Form18..PageControl1..TabSheet1..RadioGroup3....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Items.Strings
 msgid "Custom size"
 msgstr "Произвольный размер"
 
-#. Form18..PageControl1..TabSheet2..RadioGroup1....Hint
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Hint
 msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
 msgstr "Метод 'прогрессивного кодирования' позволяет видеть эскиз изображения в течение загрузки."
 
-#. Form18..PageControl1..TabSheet2..RadioGroup1..Caption
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")..Caption
 msgid "Encoding"
 msgstr "Формат"
 
-#. Form18..PageControl1..TabSheet2..RadioGroup1....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Sequential"
 msgstr "Последовательно"
 
-#. Form18..PageControl1..TabSheet2..RadioGroup1....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Items.Strings
 msgid "Progressive"
 msgstr "Прогрессивный"
 
-#. Form18..PageControl1..TabSheet2..GroupBox1..Hint
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Hint
 msgid "Select a compression quality."
 msgstr "Выберите степень сжатия."
 
-#. Form18..PageControl1..TabSheet2..GroupBox1..Caption
+#. Form18("Image options")..PageControl1..TabSheet2..GroupBox1("Quality")..Caption
 msgid "Quality"
 msgstr "Качество"
 
-#. Form18..PageControl1..TabSheet3..Label3..Caption
+#. Form18("Image options")..PageControl1..TabSheet3..Label3("Paper size:")..Caption
 msgid "Paper size:"
 msgstr "Размер бумаги"
 
-#. Form18..PageControl1..TabSheet3..RadioGroup2..Hint
-#. PrintFrm..RadioGroup1..Hint
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Hint
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Hint
 msgid "Choose paper orientation."
 msgstr "Выберите ориентацию страницы"
 
-#. Form18..PageControl1..TabSheet3..RadioGroup2..Caption
-#. PrintFrm..RadioGroup1..Caption
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")..Caption
+#. PrintFrm("Print")..RadioGroup1("Orientation")..Caption
 msgid "Orientation"
 msgstr "Ориентация"
 
-#. Form18..PageControl1..TabSheet3..RadioGroup2....Items.Strings
-#. PrintFrm..RadioGroup1....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
 msgid "Portrait"
 msgstr "Вертикальная"
 
-#. Form18..PageControl1..TabSheet3..RadioGroup2....Items.Strings
-#. PrintFrm..RadioGroup1....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet3..RadioGroup2("Orientation")....Items.Strings
+#. PrintFrm("Print")..RadioGroup1("Orientation")....Items.Strings
 msgid "Landscape"
 msgstr "Горизонтальная"
 
-#. Form18..PageControl1..TabSheet3..ComboBox1..Hint
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1..Hint
 msgid "Choose paper size to use."
 msgstr "Выберите размер бумаги."
 
-#. Form18..PageControl1..TabSheet3..ComboBox1....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Letter"
 msgstr "Letter"
 
-#. Form18..PageControl1..TabSheet3..ComboBox1....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Ledger"
 msgstr "Ledger"
 
-#. Form18..PageControl1..TabSheet3..ComboBox1....Items.Strings
+#. Form18("Image options")..PageControl1..TabSheet3..ComboBox1....Items.Strings
 msgid "Legal"
 msgstr "Legal"
 
-#. Form18..CheckBox1..Hint
-#. Form3..CheckBox16..Hint
+#. Form18("Image options")..CheckBox1("Save as default")..Hint
+#. Form3("Edit axes")..CheckBox16("Save as default")..Hint
 msgid "Select this to use these settings as defaults in the future."
 msgstr "Ометьте, чтобы использовать данные параметры осей по умолчанию в будущем."
 
-#. Form18..CheckBox1..Caption
-#. Form3..CheckBox16..Caption
+#. Form18("Image options")..CheckBox1("Save as default")..Caption
+#. Form3("Edit axes")..CheckBox16("Save as default")..Caption
 msgid "Save as default"
 msgstr "По умолчанию"
 
-#. Form19..Caption
-#. Form19..Button1..Caption
+#. Form19("Animate")..Caption
+#. Form19("Animate")..Button1("Animate")..Caption
 msgid "Animate"
 msgstr "Анимация"
 
-#. Form19..Label1..Caption
+#. Form19("Animate")..Label1("Constant:")..Caption
 msgid "Constant:"
 msgstr "Константа:"
 
 # I'm not sure, but I think that the name for 'a constant that changes' is parameter. Constant that changes sounds a bit odd.
 # If confirmed, I'll correct all the cases where -constant- was used instead of -parameter-.
-#. Form19..ComboBox1..Hint
+#. Form19("Animate")..ComboBox1..Hint
 msgid "Choose a constant to change between each frame."
 msgstr "Выберите изменяемую константу"
 
-#. Form19..TntGroupBox1..Label4..Caption
+#. Form19("Animate")..TntGroupBox1("Range")..Label4("Step:")..Caption
 msgid "Step:"
 msgstr "Шаги:"
 
-#. Form19..TntGroupBox1..Edit1..Hint
+#. Form19("Animate")..TntGroupBox1("Range")..Edit1..Hint
 msgid "The first value of the constant."
 msgstr "Начало интервала изменения константы"
 
-#. Form19..TntGroupBox1..Edit2..Hint
+#. Form19("Animate")..TntGroupBox1("Range")..Edit2..Hint
 msgid "The last value of the constant."
 msgstr "Конец интервала изменения константы"
 
-#. Form19..TntGroupBox1..Edit3..Hint
+#. Form19("Animate")..TntGroupBox1("Range")..Edit3..Hint
 msgid "The chosen constant is changed by this value between each frame."
 msgstr "Выбранная константа изменяется"
 
-#. Form19..TntGroupBox2..Caption
+#. Form19("Animate")..TntGroupBox2("Frame options")..Caption
 msgid "Frame options"
 msgstr "Параметры кадра"
 
-#. Form19..TntGroupBox2..Label5..Caption
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label5("Frame width:")..Caption
 msgid "Frame width:"
 msgstr "Ширина:"
 
-#. Form19..TntGroupBox2..Label6..Caption
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label6("Frame height:")..Caption
 msgid "Frame height:"
 msgstr "Высота:"
 
-#. Form19..TntGroupBox2..Label7..Caption
+#. Form19("Animate")..TntGroupBox2("Frame options")..Label7("Frames/second:")..Caption
 msgid "Frames/second:"
 msgstr "Кадров в секунду:"
 
-#. Form19..TntGroupBox2..Edit4..Hint
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit4..Hint
 msgid "Width of each frame, in pixels."
 msgstr "Толщина кадра (в пикселях)"
 
-#. Form19..TntGroupBox2..Edit5..Hint
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit5..Hint
 msgid "Height of each frame, in pixels."
 msgstr "Высота кадра (в пикселях)"
 
-#. Form19..TntGroupBox2..Edit6..Hint
+#. Form19("Animate")..TntGroupBox2("Frame options")..Edit6..Hint
 msgid "Number of frames per second used when the animation is played."
 msgstr "Число кадров в секунду при просмотре анимации."
 
-#. Form19..ProgressForm1..Caption
+#. Form19("Animate")..ProgressForm1("Working")..Caption
 msgid "Working"
 msgstr "В процессе..."
 
-#. Form2..Panel1..Version..Caption
+#. Form2("About Graph")..Panel1..Version("Version %s")..Caption
+#. %s is replaced with version number
 msgid "Version %s"
 msgstr "Версия %s"
 
-#. Form2..Panel1..Label3..Caption
+#. Form2("About Graph")..Panel1..Label3("Build %s")..Caption
+#. %s is replaced with build number
 msgid "Build %s"
 msgstr "Build %s"
 
-#. Form2..Panel1..Comments....Caption
+#. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
 msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
 msgstr "Это бесплатная программа и вы можете её распространять в соответствии с условиями <a href=\"%s\">GNU General Public License</a> Пожалуйста сообщайте об ошибках и своих предложениях разработчику."
 
-#. Form2..Panel1..LinkLabel1....Caption
+#. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
 msgid "The newest version as well as the source code are available at: %s"
 msgstr "Последнюю версию и исходный код программы можно найти здесь: %s"
 
-#. Form2..Panel1..LinkLabel2..Caption
-msgid "Email: %s"
-msgstr "Email: %s"
+#. Form2("About Graph")..Panel1..LinkLabel2("Support: %s")..Caption
+#, fuzzy
+msgid "Support: %s"
+msgstr "Страница поддержки"
 
-#. Form2..Panel1..LinkLabel3..Caption
+#. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
+#. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
 msgid "<Language> translation by <Translator>"
 msgstr "Перевод на русский: avenir; sly.beetle"
 
-#. Form20..Caption
+#. Form20("Animation")..Caption
 msgid "Animation"
 msgstr "Анимация"
 
-#. Form20..Panel2..ToolBar1..ToolButton1..Hint
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton1..Hint
 msgid "Play"
 msgstr "Пуск"
 
-#. Form20..Panel2..ToolBar1..ToolButton2..Hint
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton2..Hint
 msgid "Pause"
 msgstr "Приостановить"
 
-#. Form20..Panel2..ToolBar1..ToolButton3..Hint
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton3..Hint
 msgid "Stop"
 msgstr "Остановить"
 
-#. Form20..Panel2..ToolBar1..ToolButton4..Hint
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton4..Hint
 msgid "Back"
 msgstr "Назад"
 
-#. Form20..Panel2..ToolBar1..ToolButton5..Hint
+#. Form20("Animation")..Panel2..ToolBar1..ToolButton5..Hint
 msgid "Step"
 msgstr "Шаг"
 
-#. Form20..SaveDialog1..Filter
+#. Form20("Animation")..SaveDialog1..Filter
 msgid "Audio Video Interleave [*.avi]|*.avi"
 msgstr "Audio Video Interleave [*.avi]|*.avi"
 
-#. Form20..PopupMenu1..Speed1..Caption
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..Caption
 msgid "Speed"
 msgstr "Скорость"
 
-#. Form20..PopupMenu1..Speed1..N101..Hint
-#. Form20..PopupMenu1..Speed1..N501..Hint
-#. Form20..PopupMenu1..Speed1..N1001..Hint
-#. Form20..PopupMenu1..Speed1..N1501..Hint
-#. Form20..PopupMenu1..Speed1..N2001..Hint
-#. Form20..PopupMenu1..Speed1..N10001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N101..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N1501..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N2001..Hint
+#. Form20("Animation")..PopupMenu1..Speed1("Speed")..N10001..Hint
 msgid "Change the speed used to play the animation."
 msgstr "Изменить скорость проигрывания анимации"
 
-#. Form20..PopupMenu1..Repeat1..Caption
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Caption
 msgid "Repeat"
 msgstr "Повтор"
 
-#. Form20..PopupMenu1..Repeat1..Hint
+#. Form20("Animation")..PopupMenu1..Repeat1("Repeat")..Hint
 msgid "Repeat playing the animation until manually stopped."
 msgstr "Повторять анимацию до ручной остановки"
 
-#. Form20..PopupMenu1..Reverse1..Caption
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")..Caption
 msgid "Auto reverse"
 msgstr "Автоматическое воспроизведение назад"
 
-#. Form20..PopupMenu1..Reverse1....Hint
+#. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
 msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
 msgstr "Проиграть в перемотке после достижения конца. Хорошо используется в комбинации с командой \"Repeat\" . "
 
-#. Form20..PopupMenu1..Save1..Hint
+#. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
 msgstr "Сохранить выделенные данные в файл."
 
-#. Form20..PopupMenu1..Saveimageas1..Caption
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Caption
 msgid "Save frame..."
 msgstr "Сохранить кадр..."
 
-#. Form20..PopupMenu1..Saveimageas1..Hint
+#. Form20("Animation")..PopupMenu1..Saveimageas1("Save frame...")..Hint
 msgid "Save the shown frame to an image file."
 msgstr "Сохранить текущий кадр в файл."
 
-#. Form20..PopupMenu1..Saveimagesequence1..Caption
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")..Caption
 msgid "Save all frames..."
 msgstr "Сохранить все кадры..."
 
-#. Form20..PopupMenu1..Saveimagesequence1....Hint
+#. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
 msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
 msgstr "Сохранить все кадры из анимации в виде рисунка. Кол-во файлов зависит от числа кадров в анимации."
 
-#. Form21..Label1..Caption
+#. Form21("Placement")..Label1("Corner:")..Caption
 msgid "Corner:"
 msgstr "Угол:"
 
-#. Form21..ComboBox1..Hint
+#. Form21("Placement")..ComboBox1..Hint
 msgid "Choose which corner of the label should be locked."
 msgstr "Выберите угол прикрепления метки."
 
-#. Form21..ComboBox1....Items.Strings
+#. Form21("Placement")..ComboBox1....Items.Strings
 msgid "Upper Left"
 msgstr "Верхний Левый"
 
-#. Form21..ComboBox1....Items.Strings
+#. Form21("Placement")..ComboBox1....Items.Strings
 msgid "Upper Right"
 msgstr "Верхний Правый"
 
-#. Form21..ComboBox1....Items.Strings
+#. Form21("Placement")..ComboBox1....Items.Strings
 msgid "Lower Left"
 msgstr "Нижний Левый"
 
-#. Form21..ComboBox1....Items.Strings
+#. Form21("Placement")..ComboBox1....Items.Strings
 msgid "Lower Right"
 msgstr "Нижний Правый"
 
-#. Form21..Edit1..Hint
-#. Form21..Edit2..Hint
+#. Form21("Placement")..Edit1..Hint
+#. Form21("Placement")..Edit2..Hint
 msgid "Enter a coordinate to lock label at."
 msgstr "Введите точку, к которой прикрепить метку."
 
-#. Form22..Caption
+#. Form22("Python interpreter")..Caption
 msgid "Python interpreter"
 msgstr "Python-переводчик"
 
-#. Form22..PopupMenu1..Clear1..Caption
+#. Form22("Python interpreter")..PopupMenu1..Clear1("Clear")..Caption
 msgid "Clear"
 msgstr "Очистить"
 
-#. Form3..Caption
+#. Form3("Edit axes")..Caption
 msgid "Edit axes"
 msgstr "Редактирование осей:"
 
-#. Form3..PageControl1..TabSheet1..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
 #. StdFuncFrame..ComboBox1....Items.Strings
 msgid "x-axis"
 msgstr "ось x"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Label1..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..Label5..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label1("Minimum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label5("Minimum:")..Caption
 msgid "Minimum:"
 msgstr "Минимум:"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Edit1..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit1..Hint
 msgid "Minimum x-value."
 msgstr "Минимальное значение х"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Label2..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..Label6..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label2("Maximum:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label6("Maximum:")..Caption
 msgid "Maximum:"
 msgstr "Максимум:"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Edit2..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit2..Hint
 msgid "Maximum x-value."
 msgstr "Максимальное значение х"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Label3..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..Label7..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label3("Tick unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label7("Tick unit:")..Caption
 msgid "Tick unit:"
 msgstr "Интервал засечек:"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Edit3..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit3..Hint
 msgid "Units between ticks on the x-axis."
 msgstr "Интервал между засечками на оси х."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Label14..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..Label9..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Label14("Grid unit:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Label9("Grid unit:")..Caption
 msgid "Grid unit:"
 msgstr "Интервал для сетки:"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Edit4..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..Edit4..Hint
 msgid "Units between the grid lines perpendicular to the x-axis."
 msgstr "Интервал между линиями сетки, перпендикулярной оси х."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox4..Hint
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox11..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox4("Auto tick")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox11("Auto tick")..Hint
 msgid "Determine the tick unit automatically."
 msgstr "Автоматическое определение интервала между засечками"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox4..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox11..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox4("Auto tick")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox11("Auto tick")..Caption
 msgid "Auto tick"
 msgstr "автом."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox6..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Hint
 msgid "Show tick marks on the x-axis."
 msgstr "Показывать засечки на оси х"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox6..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox13..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox6("Show ticks")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Caption
 msgid "Show ticks"
 msgstr "Показ. засечки"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox5..Hint
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox12..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Hint
 msgid "Set the grid unit to the same as the tick unit."
 msgstr "Сделать интервал сетки равным интервалу засечек"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox5..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox12..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox5("Auto grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox12("Auto grid")..Caption
 msgid "Auto grid"
 msgstr "автом."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox7..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Hint
 msgid "Show vertical grid lines."
 msgstr "Показывать вертикальную сетку."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox7..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox14..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox7("Show grid")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Caption
 msgid "Show grid"
 msgstr "Показывать сетку"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..Panel1..CheckBox3....Hint
-msgid "Show the label at the right side of the graphing area, above the x-axis."
-msgstr "Показывать метку справа от графика и над осью х."
-
-#. Form3..PageControl1..TabSheet1..GridPanel1..Panel1..CheckBox3..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..Panel3..CheckBox10..Caption
-msgid "Label:"
-msgstr "Обозн.:"
-
-#. Form3..PageControl1..TabSheet1..GridPanel1..Panel1..Edit5..Hint
-#. Form3..PageControl1..TabSheet2..GridPanel2..Panel3..Edit11..Hint
-msgid "Edit the label for the axis here."
-msgstr "Введите обозначение оси."
-
-#. Form3..PageControl1..TabSheet1..GridPanel1..Panel2..Label4..Caption
-msgid "The x-axis cross at y="
-msgstr "Ось х пересекает ось у при у="
-
-#. Form3..PageControl1..TabSheet1..GridPanel1..Panel2..Edit6..Hint
-msgid "The x-axis will intersect with the y-axis at this value."
-msgstr "Значение у, при котором оси будут пересекаться."
-
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox1..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Hint
 msgid "Use logarithmic scale on the x-axis."
 msgstr "Использовать логарифмическую шкалу по оси х."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox1..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox8..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox1("Logarithmic scale")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Caption
 msgid "Logarithmic scale"
 msgstr "Логарифмическая шкала"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox2..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox2("Show numbers")..Hint
 msgid "Show units on the x-axis."
 msgstr "Показывать значения по оси х."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox2..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox9..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox2("Show numbers")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox9("Show numbers")..Caption
 msgid "Show numbers"
 msgstr "Показ. значения"
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox17..Hint
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox18..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
 msgstr "Показывать значения по оси в единицах, кратных π."
 
-#. Form3..PageControl1..TabSheet1..GridPanel1..CheckBox17..Caption
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox18..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
 msgid "Show as a multiple of π"
 msgstr "Показывать как множитель π"
 
-#. Form3..PageControl1..TabSheet2..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx3..Edit5..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..GridPanelEx2..Edit11..Hint
+msgid "Edit the label for the axis here."
+msgstr "Введите обозначение оси."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx3..CheckBox3("Label:")....Hint
+msgid "Show the label at the right side of the graphing area, above the x-axis."
+msgstr "Показывать метку справа от графика и над осью х."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx3..CheckBox3("Label:")..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..GridPanelEx2..CheckBox10("Label:")..Caption
+msgid "Label:"
+msgstr "Обозн.:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx4..Edit6..Hint
+msgid "The x-axis will intersect with the y-axis at this value."
+msgstr "Значение у, при котором оси будут пересекаться."
+
+#. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx4..Label4("The x-axis cross at y=")..Caption
+msgid "The x-axis cross at y="
+msgstr "Ось х пересекает ось у при у="
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..Caption
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
 msgid "y-axis"
 msgstr "Ось y"
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..Edit7..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit7..Hint
 msgid "Minimum y-value."
 msgstr "Минимальное значение у."
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..Edit8..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit8..Hint
 msgid "Maximum y-value."
 msgstr "Максимальное значение у."
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..Edit9..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit9..Hint
 msgid "Units between ticks on the y-axis."
 msgstr "Интервал между засечками на оси у."
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..Edit10..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..Edit10..Hint
 msgid "Units between the grid lines perpendicular to the y-axis."
 msgstr "Интервал между линиями сетки, перпендикулярной оси у."
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox13..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox13("Show ticks")..Hint
 msgid "Show tick marks on the y-axis."
 msgstr "Показывать засечки на оси у."
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox14..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox14("Show grid")..Hint
 msgid "Show horizontal grid lines."
 msgstr "Показывать горизонтальную сетку."
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..Panel3..CheckBox10....Hint
-msgid "Show the label at the top of the graphing area, to the right of the y-axis."
-msgstr "Показывать метку поверх графика и справа от оси х."
-
-#. Form3..PageControl1..TabSheet2..GridPanel2..Panel4..Label8..Caption
-msgid "The y-axis cross at x="
-msgstr "Ось у пересекает ось х при х="
-
-#. Form3..PageControl1..TabSheet2..GridPanel2..Panel4..Edit12..Hint
-msgid "The y-axis will intersect with the x-axis at this value."
-msgstr "Значение х, при котором оси будут пересекаться."
-
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox8..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox8("Logarithmic scale")..Hint
 msgid "Use logarithmic scale for the y-axis."
 msgstr "Использовать логарифмическую шкалу по оси у."
 
-#. Form3..PageControl1..TabSheet2..GridPanel2..CheckBox9..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox9("Show numbers")..Hint
 msgid "Show units on the y-axis."
 msgstr "Показывать значения по оси у."
 
-#. Form3..PageControl1..TabSheet3..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..GridPanelEx1..Label8("The y-axis cross at x=")..Caption
+msgid "The y-axis cross at x="
+msgstr "Ось у пересекает ось х при х="
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..GridPanelEx1..Edit12..Hint
+msgid "The y-axis will intersect with the x-axis at this value."
+msgstr "Значение х, при котором оси будут пересекаться."
+
+#. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..GridPanelEx2..CheckBox10("Label:")....Hint
+msgid "Show the label at the top of the graphing area, to the right of the y-axis."
+msgstr "Показывать метку поверх графика и справа от оси х."
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
 msgid "Settings"
 msgstr "Параметры"
 
-#. Form3..PageControl1..TabSheet3..Label16..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Label16("Title:")..Caption
 msgid "Title:"
 msgstr "Заголовок:"
 
-#. Form3..PageControl1..TabSheet3..RadioGroup1....Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
 msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
 msgstr "Выберите вариант отображения осей: не отображать, отображать пересечение осей, или отображать оси по краям системы координат (углом)."
 
-#. Form3..PageControl1..TabSheet3..RadioGroup1..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")..Caption
 msgid "Axes style"
 msgstr "Отображение осей"
 
-#. Form3..PageControl1..TabSheet3..RadioGroup1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
 msgid "None"
 msgstr "Отсутствуют"
 
-#. Form3..PageControl1..TabSheet3..RadioGroup1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
 msgid "Crossed"
 msgstr "Пересекающ."
 
-#. Form3..PageControl1..TabSheet3..RadioGroup1....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Items.Strings
 msgid "Boxed"
 msgstr "Углом"
 
-#. Form3..PageControl1..TabSheet3..RadioGroup2....Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
 msgid "Choose if trigonometric functions should calculate in radians or degrees."
 msgstr "Выберите, в градусах или радианах вычислять тригонометрические функции"
 
-#. Form3..PageControl1..TabSheet3..RadioGroup2..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
 msgid "Trigonometry"
 msgstr "Тригонометрия"
 
-#. Form3..PageControl1..TabSheet3..RadioGroup2....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
 msgid "Radian"
 msgstr "Радианы"
 
-#. Form3..PageControl1..TabSheet3..RadioGroup2....Items.Strings
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Items.Strings
 msgid "Degree"
 msgstr "Градусы"
 
-#. Form3..PageControl1..TabSheet3..Edit13..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Edit13..Hint
 msgid "Enter a title to show above the coordinate system."
 msgstr "Введите заголовок для отображения над графиком."
 
-#. Form3..PageControl1..TabSheet3..BitBtn1..Hint
-msgid "Select the font for the title."
-msgstr "Выбрать шрифт заголовка."
-
-#. Form3..PageControl1..TabSheet3..RadioGroup3..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Hint
 msgid "Choose where the legend should be placed."
 msgstr "Выберите место расположения подписи к графику."
 
-#. Form3..PageControl1..TabSheet3..RadioGroup3..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup3("Legend placement")..Caption
 msgid "Legend placement"
 msgstr "Расположение подписи к графику"
 
-#. Form3..PageControl1..TabSheet3..CheckBox19....Hint
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")....Hint
 msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
 msgstr "Использовать для вычислений комплексные числа (замедляет построение графика)."
 
-#. Form3..PageControl1..TabSheet3..CheckBox19..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")..Caption
 msgid "Calculate with complex numbers"
 msgstr "Комплексные вычисления"
 
-#. Form3..PageControl1..TabSheet4..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Шрифт и цвет"
 
-#. Form3..PageControl1..TabSheet4..GroupBox3..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Caption
 msgid "Colors"
 msgstr "Цвета"
 
-#. Form3..PageControl1..TabSheet4..GroupBox3..Label17..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label17("Grid color:")..Caption
 msgid "Grid color:"
 msgstr "Цвет сетки:"
 
-#. Form3..PageControl1..TabSheet4..GroupBox3..Label18..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label18("Axes color:")..Caption
 msgid "Axes color:"
 msgstr "Цвет осей:"
 
-#. Form3..PageControl1..TabSheet4..GroupBox3..Label19..Caption
-#. Form6..Label4..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..Label19("Background color:")..Caption
+#. Form6("Insert text label")..Label4("Background color:")..Caption
 msgid "Background color:"
 msgstr "Цвет фона:"
 
-#. Form3..PageControl1..TabSheet4..GroupBox3..ExtColorBox1..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox1..Hint
 msgid "Select the color of the image background."
 msgstr "Выберите цвет фона."
 
-#. Form3..PageControl1..TabSheet4..GroupBox3..ExtColorBox2..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox2..Hint
 msgid "Select the color of the axes."
 msgstr "Выберите цвет осей."
 
-#. Form3..PageControl1..TabSheet4..GroupBox3..ExtColorBox3..Hint
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox3("Colors")..ExtColorBox3..Hint
 msgid "Select the color of the grid lines."
 msgstr "Выберите цвет сетки."
 
-#. Form3..PageControl1..TabSheet4..GroupBox4..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Caption
 msgid "Fonts"
 msgstr "Шрифты"
 
-#. Form3..PageControl1..TabSheet4..GroupBox4..Label20..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label20("Number font:")..Caption
 msgid "Number font:"
 msgstr "Шрифт для чисел:"
 
-#. Form3..PageControl1..TabSheet4..GroupBox4..Label21..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label21("Label font:")..Caption
 msgid "Label font:"
 msgstr "Шрифт обозн. осей:"
 
-#. Form3..PageControl1..TabSheet4..GroupBox4..Label10..Caption
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Шрифт подписи:"
 
-#. Form3..PageControl1..TabSheet4..GroupBox4..BitBtn2..Hint
-msgid "Select the font used to show the labels on the axes."
-msgstr "Выберите шрифт для обозначения осей."
-
-#. Form3..PageControl1..TabSheet4..GroupBox4..BitBtn3..Hint
-msgid "Select the font used to show the numbers on the axes."
-msgstr "Выберите шрифт для значений на осях."
-
-#. Form3..PageControl1..TabSheet4..GroupBox4..BitBtn4..Hint
-msgid "Select the font used to show the legend text."
-msgstr "Выберите шрифт для подписи к графику."
-
-#. Form4..GridPanelEx1..Label1..Caption
+#. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
 msgstr "Цифр после запятой:"
 
-#. Form4..GridPanelEx1..Panel1..Edit1..Hint
+#. Form4("Options")..GridPanelEx1..Panel1..Edit1..Hint
 msgid "Number of decimals used when results are shown."
 msgstr "Количество отображаемых знаков после запятой."
 
-#. Form4..GridPanelEx1..RadioGroup1..Hint
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")..Hint
 msgid "Format used when complex numbers are shown."
 msgstr "Формат отображения комплексных чисел"
 
-#. Form4..GridPanelEx1..RadioGroup1..Caption
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")..Caption
 msgid "Complex form"
 msgstr "Комплексная форма числа"
 
-#. Form4..GridPanelEx1..RadioGroup1....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
 msgid "Real"
 msgstr "Действительн."
 
-#. Form4..GridPanelEx1..RadioGroup1....Items.Strings
+#. Form4("Options")..GridPanelEx1..RadioGroup1("Complex form")....Items.Strings
 msgid "Rectangular"
 msgstr "Полный"
 
-#. Form4..GridPanelEx1..Label2..Caption
+#. Form4("Options")..GridPanelEx1..Label2("Recent files:")..Caption
 msgid "Recent files:"
 msgstr "Последних файлов:"
 
-#. Form4..GridPanelEx1..Panel2..Edit2..Hint
+#. Form4("Options")..GridPanelEx1..Panel2..Edit2..Hint
 msgid "The number of most recent used files shown in the File menu."
 msgstr "Количество последних использованных файлов для показа в меню Файл."
 
-#. Form4..GridPanelEx1..Label3..Caption
+#. Form4("Options")..GridPanelEx1..Label3("Max undo steps:")..Caption
 msgid "Max undo steps:"
 msgstr "Шагов отмены:"
 
-#. Form4..GridPanelEx1..Panel3..Edit3....Hint
+#. Form4("Options")..GridPanelEx1..Panel3..Edit3....Hint
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
 msgstr "Количество запоминаемых последних действий."
 
 # Might be too long and hover over the percent input field. Not sure though
-#. Form4..GridPanelEx1..Label5..Caption
+#. Form4("Options")..GridPanelEx1..Label5("Font scale:")..Caption
 msgid "Font scale:"
 msgstr "Размер надписей интерфейса:"
 
-#. Form4..GridPanelEx1..ComboBox1....Hint
+#. Form4("Options")..GridPanelEx1..ComboBox1....Hint
 msgid "This is used to scale the user interface if you are having problems reading the text."
 msgstr "Изменяет размер текста (при проблемах с чтением)."
 
-#. Form4..GridPanelEx1..Label4..Caption
+#. Form4("Options")..GridPanelEx1..Label4("Language:")..Caption
 msgid "Language:"
 msgstr "Язык:"
 
-#. Form4..GridPanelEx1..ComboBox2..Hint
+#. Form4("Options")..GridPanelEx1..ComboBox2..Hint
 msgid "Select the language to use for the user interface."
 msgstr "Выберите язык интерфейса."
 
-#. Form4..GridPanelEx1..CheckBox2..Hint
+#. Form4("Options")..GridPanelEx1..CheckBox2("Show tooltip")..Hint
 msgid "Show the tooltip when the cursor is over an item."
 msgstr "Показывать подсказку для объекта, над которым находиться курсор."
 
-#. Form4..GridPanelEx1..CheckBox2..Caption
+#. Form4("Options")..GridPanelEx1..CheckBox2("Show tooltip")..Caption
 msgid "Show tooltip"
 msgstr "Подсказки"
 
-#. Form4..GridPanelEx1..CheckBox3....Hint
+#. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")....Hint
 msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
 msgstr "Сохранять положение окна программы при выходе. Это положение будет использовано при следующем запуске.|Сохранять положение окна при выходе."
 
-#. Form4..GridPanelEx1..CheckBox3..Caption
+#. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
 msgstr "Сохранять расположение окна при выходе"
 
-#. Form4..GridPanelEx1..CheckBox4....Hint
+#. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")....Hint
 msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
 msgstr "Если отмечено, программа будет проверять наличие новой версии на сервере каждый раз при старте."
 
-#. Form4..GridPanelEx1..CheckBox4..Caption
+#. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
 msgstr "Проверять наличие новой версии при запуске"
 
-#. Form4..GridPanelEx1..CheckBox5....Hint
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
 msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
 msgstr "Использовать произвольный десятичный разделитель вместо стандартного, используемого в Windows."
 
-#. Form4..GridPanelEx1..CheckBox5..Caption
+#. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
 msgid "Custom decimal separator:"
 msgstr "Произвольный десятичный разделитель:"
 
-#. Form4..GridPanelEx1..Edit4..Hint
+#. Form4("Options")..GridPanelEx1..Edit4..Hint
 msgid "Decimal separator used when exporting to other programs."
 msgstr "Используемый десятичный разделитель при экспорте в другие программы."
 
-#. Form5..Caption
+#. Form5("Insert function")..Caption
 msgid "Insert function"
 msgstr "Добавить функцию"
 
-#. Form5..Label1..Caption
+#. Form5("Insert function")..Label1("Function type:")..Caption
 msgid "Function type:"
 msgstr "Тип функции:"
 
-#. Form5..ComboBox1..Hint
+#. Form5("Insert function")..ComboBox1..Hint
 msgid "Select the function type to graph."
 msgstr "Выберите тип функции."
 
-#. Form5..ComboBox1....Items.Strings
+#. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Standard function   y=f(x)"
 msgstr "Стандартная функция           y=f(x)"
 
-#. Form5..ComboBox1....Items.Strings
+#. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Parametric function x(t), y(t)"
 msgstr "Параметрическая функция  x(t), y(t)"
 
-#. Form5..ComboBox1....Items.Strings
+#. Form5("Insert function")..ComboBox1....Items.Strings
 msgid "Polar function         r=f(t)"
 msgstr "Полярная функция                r=f(t)"
 
-#. Form5..GroupBox1..Caption
+#. Form5("Insert function")..GroupBox1("Function equation")..Caption
 msgid "Function equation"
 msgstr "Уравнение функции"
 
-#. Form5..GroupBox2..Label6..Caption
+#. Form5("Insert function")..GroupBox2("Argument range")..Label6("Steps:")..Caption
 msgid "Steps:"
 msgstr "Шаги:"
 
-#. Form5..GroupBox2..Edit5..Hint
+#. Form5("Insert function")..GroupBox2("Argument range")..Edit5..Hint
 msgid "Number of calculation steps used to draw the graph."
 msgstr "Количество шагов для построения графика (один шаг соединяет две точки)."
 
-#. Form5..GroupBox4..GridPanelEx1..Label13..Caption
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..Label13("Draw type:")..Caption
 msgid "Draw type:"
 msgstr "Рисовать:"
 
-#. Form5..GroupBox4..GridPanelEx1..ComboBox4....Hint
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Hint
 msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
 msgstr "Выберите \"Линии\", если вы хотите, чтобы точки графика были соединены. Выберите \"Точки\", чтобы показывались только точки."
 
-#. Form5..GroupBox4..GridPanelEx1..ComboBox4..Text
-#. Form5..GroupBox4..GridPanelEx1..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4..Text
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Automatic"
 msgstr "Автом."
 
-#. Form5..GroupBox4..GridPanelEx1..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Dots"
 msgstr "Точки"
 
-#. Form5..GroupBox4..GridPanelEx1..ComboBox4....Items.Strings
+#. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
 msgid "Lines"
 msgstr "Линии"
 
-#. Form6..Caption
+#. Form6("Insert text label")..Caption
 msgid "Insert text label"
 msgstr "Добавить метку"
 
-#. Form6..Label1..Caption
+#. Form6("Insert text label")..Label1("Font name:")..Caption
 msgid "Font name:"
 msgstr "Название шрифта:"
 
-#. Form6..Label2..Caption
+#. Form6("Insert text label")..Label2("Font size:")..Caption
 msgid "Font size:"
 msgstr "Размер:"
 
-#. Form6..Label3..Caption
+#. Form6("Insert text label")..Label3("Font color:")..Caption
 msgid "Font color:"
 msgstr "Цвет шрифта:"
 
-#. Form6..ComboBox1..Hint
+#. Form6("Insert text label")..ComboBox1..Hint
 msgid "Text size."
 msgstr "Размер текста."
 
-#. Form6..GroupBox1..Caption
+#. Form6("Insert text label")..GroupBox1("Text string")..Caption
 msgid "Text string"
 msgstr "Текст"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton11..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton11..Hint
 msgid "Insert symbol (Ctrl+G)"
 msgstr "Вставить символ (Ctrl+G)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton13..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton13..Hint
 msgid "Insert object."
 msgstr "Вставить объект..."
 
-#. Form6..GroupBox1..ToolBar1..ToolButton1..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton1..Hint
 msgid "Bold (Ctrl+B)"
 msgstr "Жирный шрифт (Ctrl-B)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton2..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton2..Hint
 msgid "Italic (Ctrl+I)"
 msgstr "Курсив (Ctrl-I)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton3..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton3..Hint
 msgid "Underline (Ctrl+U)"
 msgstr "Подчёркнутый (Ctrl-U)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton4..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton4..Hint
 msgid "Strikethrough (Ctrl+S)"
 msgstr "Перечёркнутый (Ctrl-S)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton9..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton9..Hint
 msgid "Superscript (Ctrl++)"
 msgstr "Подпись вверху (Ctrl++)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton10..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton10..Hint
 msgid "Subscript (Ctrl+=)"
 msgstr "Подпись внизу (Ctrl+=)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton5..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton5..Hint
 msgid "Align left (Ctrl+L)"
 msgstr "Выравнивать по левому краю (Ctrl-L)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton6..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton6..Hint
 msgid "Center (Ctrl+E)"
 msgstr "Центровать (Ctrl-E)"
 
-#. Form6..GroupBox1..ToolBar1..ToolButton7..Hint
+#. Form6("Insert text label")..GroupBox1("Text string")..Panel1..ToolBar1..ToolButton7..Hint
 msgid "Align right (Ctrl+R)"
 msgstr "Выравнивать по правому краю (Ctrl-R)"
 
-#. Form6..IFontBox1..Hint
+#. Form6("Insert text label")..IFontBox1..Hint
 msgid "Text font."
 msgstr "Шрифт."
 
-#. Form6..ColorBox1..Hint
+#. Form6("Insert text label")..ColorBox1..Hint
 msgid "Text color."
 msgstr "Цвет текста."
 
-#. Form6..ColorBox2..Hint
+#. Form6("Insert text label")..ColorBox2..Hint
 msgid "Select background color of the text label."
 msgstr "Выбрать цвет фона для текста метки."
 
-#. Form6..ColorBox2..DefaultName
+#. Form6("Insert text label")..ColorBox2..DefaultName
+#. May be selected as background color in Insert label dialog
 msgid "Transparent"
 msgstr "Прозрачный"
 
-#. Form6..PopupMenu1..Popup_Undo..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Undo("Undo")..Hint
 msgid "Undo last action."
 msgstr "Отменить последнее действие."
 
-#. Form6..PopupMenu1..Popup_Redo..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Redo("Redo")..Hint
 msgid "Redo last undone action."
 msgstr "Повторить последнее отменённое действие."
 
-#. Form6..PopupMenu1..Popup_Paste..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_Paste("Paste")..Hint
 msgid "Paste the contents of the clipboard."
 msgstr "Вставить содержимое буфера обмена."
 
-#. Form6..PopupMenu1..Popup_PasteSpecial..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Caption
 msgid "Paste special..."
 msgstr "Специальная вставка..."
 
-#. Form6..PopupMenu1..Popup_PasteSpecial..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_PasteSpecial("Paste special...")..Hint
 msgid "Select which clipboard representation you want to paste."
 msgstr "Выберите, какую часть буфера обмена вы хотите вставить."
 
-#. Form6..PopupMenu1..Popup_InsertObject..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Caption
 msgid "Insert object..."
 msgstr "Вставить объект..."
 
-#. Form6..PopupMenu1..Popup_InsertObject..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_InsertObject("Insert object...")..Hint
 msgid "Create a new OLE object."
 msgstr "Создать новый объект OLE."
 
-#. Form6..PopupMenu1..Popup_EditObject..Caption
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Caption
 msgid "Edit object"
 msgstr "Редактировать объект"
 
-#. Form6..PopupMenu1..Popup_EditObject..Hint
+#. Form6("Insert text label")..PopupMenu1..Popup_EditObject("Edit object")..Hint
 msgid "Edit selected OLE object."
 msgstr "Редактировать выбранный объёкт OLE."
 
-#. Form7..Caption
+#. Form7("Insert f'(x)")..Caption
 msgid "Insert f'(x)"
 msgstr "Добавить f'(x)"
 
-#. Form8..Label1..Caption
-#. PrintFrm..GroupBox1..Label1..Caption
+#. Form8("Add model")..Label1("Name:")..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Label1("Name:")..Caption
 msgid "Name:"
 msgstr "Название:"
 
-#. Form8..ValueListEditor1....TitleCaptions.Strings
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Constant"
 msgstr "Константа"
 
-#. Form8..ValueListEditor1....TitleCaptions.Strings
+#. Form8("Add model")..ValueListEditor1....TitleCaptions.Strings
 msgid "Value"
 msgstr "Значение"
 
-#. Form9..Label1..Caption
+#. Form9("Evaluate")..Label1("Select a function or tangent to evaluate.")..Caption
 msgid "Select a function or tangent to evaluate."
 msgstr "Выберите функцию или касательную."
 
-#. Form9..PolFuncFrame1....Hint
+#. Form9("Evaluate")..PolFuncFrame1....Hint
 #. ParFuncFrame..ComboBox1....Hint
 #. StdFuncFrame..ComboBox1....Hint
 msgid "Select where the cursor will be placed when you click on the image."
@@ -2681,9 +2692,9 @@ msgstr "Введите начальную координату или отмет
 msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
 msgstr "Введите конечную координату или отметьте диапазон на графике мышью."
 
-#. ParFuncFrame..Label7..Caption
-#. PolFuncFrame..Label7..Caption
-#. StdFuncFrame..Label5..Caption
+#. ParFuncFrame..Label7("Snap to:")..Caption
+#. PolFuncFrame..Label7("Snap to:")..Caption
+#. StdFuncFrame..Label5("Snap to:")..Caption
 msgid "Snap to:"
 msgstr "Искать:"
 
@@ -2776,72 +2787,101 @@ msgstr "Координата у точки на касательной для д
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Введите координату х или мышью выберите точку на графике."
 
+msgid "SourceGraph.manifest"
+msgstr ""
+
+#. Used in titles of error message boxes
+#. Indicates an error code, e.g. "Error 5"
+#. Error message when an invalid value is entered.
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Error"
 msgstr "Ошибка"
 
+#. Indicates an error code, e.g. "Error 5"
 msgid "Error %s"
 msgstr "Ошибка"
 
+#. Shown as title in the Calc|Length of path dialog when it is undocked
 msgid "Length"
 msgstr "Длина"
 
+#. Shown in rotation dialog
 msgid "Degrees"
 msgstr "Градусы"
 
+#. Name for labels shown in the function list if there is no text in the label.
 msgid "Label"
 msgstr "Метка"
 
+#. Used for error bars in point series dialog as "x-error" or "y-error"
 msgid "%s-error"
 msgstr "%s-error"
 
+#. Shown in the function list
 msgid "Axes"
 msgstr "Оси..."
 
+#. Shortcut key
 msgid "Ctrl"
 msgstr "Ctrl"
 
+#. Shortcut key
 msgid "Alt"
 msgstr "Alt"
 
+#. Shortcut key
 msgid "Shift"
 msgstr "Shift"
 
+#. Shortcut key
 msgid "Del"
 msgstr "Del"
 
+#. Shortcut key
 msgid "Ins"
 msgstr "Ins"
 
+#. Shortcut key
 msgid "Home"
 msgstr "Home"
 
+#. Shortcut key
 msgid "End"
 msgstr "End"
 
+#. Shortcut key
 msgid "PgUp"
 msgstr "PgUp"
 
+#. Shortcut key
 msgid "PgDn"
 msgstr "PgDn"
 
+#. Shortcut key
 msgid "Up"
 msgstr "Up"
 
+#. Shortcut key
 msgid "Down"
 msgstr "Down"
 
+#. Shortcut key
 msgid "Esc"
 msgstr "Esc"
 
+#. Shortcut key
 msgid "Enter"
 msgstr "Enter"
 
+#. Shortcut key
 msgid "Tab"
 msgstr "Tab"
 
+#. Shortcut key
 msgid "BkSp"
 msgstr "BkSp"
 
+#. Shortcut key
 msgid "Space"
 msgstr "Пробел"
 
@@ -3013,24 +3053,31 @@ msgstr "Символ \"%s\" определён в нескольких мест�
 msgid "Invalid equation or inequality."
 msgstr "Неверное уравнение или неравенство."
 
+#. Shown in status bar
 msgid "Updating..."
 msgstr "Обновление..."
 
+#. Asked when trying to exit
+#. Asked when trying to exit
 msgid "Save changes?"
 msgstr "Сохранить изменения?"
 
+#. Asked when trying to exit
 msgid "Save changes in %s?"
 msgstr "Сохранить изменения в %s"
 
+#. Written in status bar when trying to zoom in too much
 msgid "You have reached the maximum range of zoom."
 msgstr "Достигнут максимум увеличения."
 
+#. Written in status bar when trying to zoom out too much
 msgid "You have reached the minimum range of zoom."
 msgstr "Достигнут минимум увеличения."
 
 msgid "'%s' must not be zero."
 msgstr "'%s' не должно равняться нулю"
 
+#. Error message when an invalid value is entered.
 msgid "Error in value"
 msgstr "Ошибка значения"
 
@@ -3043,6 +3090,7 @@ msgstr "'%s' должно быть больше нуля."
 msgid "'%s' must be an integer greater than zero."
 msgstr "'%s' должно быть натуральным числом."
 
+#. Error message in Axes dialog when zoom in/out too much
 msgid "Trying to break zoom limit."
 msgstr "Предел увеличения."
 
@@ -3081,6 +3129,7 @@ msgstr ""
 msgid "Unknown error while reading file: %s"
 msgstr "Некая ошибка при чтении файла: %s"
 
+#. Used in Save as dialog
 msgid "Graph files [*.grf]|*.grf"
 msgstr "Graph files [*.grf]|*.grf"
 
@@ -3094,15 +3143,19 @@ msgstr ""
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Шрифт \"%s\" не найден. Вместо него использован стандартный шрифт."
 
+#. Description of grf file
 msgid "Graph system"
 msgstr "Система графиков"
 
+#. Menu item shown in OLE client to open a Graph system object in Graph
 msgid "Open"
 msgstr "Открыть"
 
+#. Error in Insert shading dialog when you need to select a function
 msgid "Selection error"
 msgstr "Ошибка выделения"
 
+#. Title in error message when reading a grf-file failed
 msgid "File error"
 msgstr "Ошибка при работе с файлом"
 
@@ -3115,9 +3168,11 @@ msgstr "Ошибка OLE"
 msgid "Error reading object"
 msgstr "Ошибка чтения объекта"
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Not a valid Graph object."
 msgstr "Недействительный объект Graph."
 
+#. Error message when a Graph OLE object is invalid.
 msgid "Object error"
 msgstr "Ошибка в объекте"
 
@@ -3142,15 +3197,21 @@ msgstr "Ошибка бесконечности. Бесконечность не
 msgid "Not enough memory to complete the operation."
 msgstr ""
 
+#, fuzzy
+msgid "Printing aborted!"
+msgstr "Ошибка печати"
+
 msgid "Confirm delete"
 msgstr "Подтвердите удаление"
 
 msgid "Are you sure you want to delete %s?"
 msgstr "Вы уверены, что хотите удалить %s?"
 
+#. Save as dialog
 msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 
+#. Import from file dialog
 msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 msgstr "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
 
@@ -3163,6 +3224,7 @@ msgstr "Максимальное значение по оси х должно б
 msgid "Maximum number on y-axis must be greater than the minimum value."
 msgstr "Максимальное значение по оси у должно быть больше минимального значения."
 
+#. Error message when trying to activate an OLE object
 msgid "Server application not found."
 msgstr "Серверное приложение не найдено."
 
@@ -3211,6 +3273,7 @@ msgstr "Модель с таким именем уже существует."
 msgid "The derivative of the function is not defined at %s=%s"
 msgstr "Производная функции не определена при %s=%s"
 
+#. Caption of message box when trying to insert tangent at undefined coordinate
 msgid "Coordinate not defined"
 msgstr "Координата не определена."
 
@@ -3250,6 +3313,7 @@ msgstr "Ошибка печати"
 msgid "An unknown error occurred while printing."
 msgstr "Неизвестная ошибка при печати."
 
+#. Error message title in Point series dialog
 msgid "Error while adding points"
 msgstr "Ошибка при добавлении точек"
 
@@ -3299,6 +3363,7 @@ msgstr ""
 "Сервер www.padowan.dk недоступен.\n"
 "Сервер выключен, или нет возможности подключения к Интернет."
 
+#. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "Socket error %s"
 
@@ -3334,9 +3399,11 @@ msgstr ""
 msgid "Edit relation"
 msgstr "Редактировать соотношение"
 
+#. Customize toolbar dialog
 msgid "Commands"
 msgstr "Команды"
 
+#. Customize toolbar dialog
 msgid "(All Commands)"
 msgstr "(Все)"
 
@@ -3349,9 +3416,11 @@ msgstr "Изменить f'(x)"
 msgid "Edit trendline"
 msgstr "Изменить линию тренда"
 
+#. Customize toolbar dialog
 msgid "Categories:"
 msgstr "Категории:"
 
+#. An error message that hopefully is never seen by the user
 msgid ""
 "The program seems to be stuck in an infinite loop.\n"
 "If you cancel the operation the program will become unstable.\n"
@@ -3364,157 +3433,208 @@ msgstr ""
 msgid "Thread is not responding"
 msgstr "Процедура не отвечает"
 
+#. Tip of the Day
 msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
 msgstr "Совет дня может дать вам полезную информацию о программе."
 
+#. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
 #, fuzzy
 msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 msgstr "Вы можете обратиться за помощью по использованию Graph, сообщать об ошибках и предлагать идеи по улучшению программы на форуме: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a>"
 
+#. Tip of the Day
 msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
 msgstr "Вы можете изменить набор кнопок на панели инструментов через контекстное меню 'Изменить панель инструментов'."
 
+#. Tip of the Day
 msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
 msgstr "Вместо удаления функции вы можете сделать её невидимой, убрав 'галочку' с этой функции в списке функций."
 
+#. Tip of the Day
 msgid "You can paste images into a text label."
 msgstr "Вы можете вставлять изображения в надписи на графике."
 
+#. Tip of the Day
 msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
 msgstr "Надписи (метки) на графике могут содержать любые объекты OLE, например, Microsoft Equation. Редактируя надпись, вызовите контекстное меню и выберите 'Вставить объект'."
 
+#. Tip of the Day
 msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
 msgstr "Вы можете сохранить точки ряда в файл, который затем можно будет открыть другой программой, например, Microsoft Excel. Редактируя ряд точек, выделите нужные точки, вызовите контекстное меню и выберите пункт 'Экспортировать в файл'."
 
+#. Tip of the Day
 msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
 msgstr "Вертикальная прямая при х=5 может быть получена как параметрическая функция x(t)=5, y(t)=t или как соотношение х=5."
 
+#. Tip of the Day
 msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
 msgstr "Используйте меню 'Масштаб|Равный', чтобы получить равный масштаб по обеим осям. Это особенно полезно для изображений окружностей и подобных графиков."
 
+#. Tip of the Day
 msgid "You can find a list of all available functions in the help."
 msgstr "Список всех доступных функций вы найдёте в меню Помощь."
 
+#. Tip of the Day
 msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
 msgstr "Вы можете объединить две функции в одну, используя оператор 'if'. Например, функция f(x)=x при x<1 и f(x)=x^2 при x>=1 может быть записана как f(x)=if(x<1, x, x^2)."
 
+#. Tip of the Day
 msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
 msgstr "Вы можете добавить содержимое другого файла Graph в текущую систему координат, используя меню 'Файл|Загрузить(import)|Graph файл...'."
 
+#. Tip of the Day
 msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."
 msgstr "Вы можете отметить пункт 'Стандарт' в диалоге 'Оси', чтобы сохранить текущие установки для использования при создании новой системы координат."
 
+#. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
 msgstr "Удерживая клавишу Ctrl, вы можете использовать клавиши-стрелки для перемещения системы координат."
 
+#. Tip of the Day
 msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
 msgstr "Удерживая клавишу Ctrl, вы можете использовать клавиши + и - для увеличения и уменьшения масштаба."
 
+#. Tip of the Day
 msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
 msgstr "Вы можете использовать колесо мыши для увеличения или уменьшения масштаба с центром в точке, на которую указывает курсор."
 
+#. Tip of the Day
 msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
 msgstr "Если вы не хотите отображать элемент в подписи к графику, вы можете вызвать контекстное меню для этого элемента и изменить пункт 'Показывать в подписи к графику'."
 
+#. Tip of the Day
 msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
 msgstr "Если вы хотите, чтобы оси отображались слева и внизу графика, вы можете выбрать тип отображения осей 'углом' на закладке 'Параметры' в диалоге 'Оси'."
 
+#. Tip of the Day
 msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
 msgstr "Graph может сохранить график в пяти форматах изображения: bmp, emf, png, jpg и pdf."
 
+#. Tip of the Day
 msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."
 msgstr "Используйте меню 'Редактирование|Копировать изображение' для того, чтобы скопировать график в буфер обмена и поместить в другую программу."
 
+#. Tip of the Day
 msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
 msgstr "Вы можете открыть сохранённый grf-файл в новом окне Graph, используя двойной щелчёк в Explorer."
 
+#. Tip of the Day
 msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
 msgstr "Вы можете открыть grf-файл, перетащив его из Explorer в окно Graph."
 
+#. Tip of the Day
 msgid "Graph will remember the size of the main window between executions. This can be disabled from the Options dialog."
 msgstr "Graph запоминает положение и размер окна программы для последующего запуска. Это может быть отменено в диалоге настроек."
 
+#. Tip of the Day
 msgid "Calc|Table can be used to create a table with evaluation values for a function."
 msgstr "Меню 'Вычисления|Таблица' может быть использовано для создания таблицы значений функции."
 
+#. Tip of the Day
 msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
 msgstr "Часть или вся таблица оценки может быть сохранена в файл через пункт контекстного меню 'Экспортировать в файл...'. Файл затем может быть открыт другой программой, например, Microsoft Excel."
 
+#. Tip of the Day
 msgid "Data from the evaluation table can be copied to another program like Microsoft Excel."
 msgstr "Данные из таблицы оценки могут быть скопированы в другую программу (например, Microsoft Excel) через буфер обмена."
 
+#. Tip of the Day
 msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
 msgstr "Значения из ряда точек могут быть скопированы в и из других программ (например, Microsoft Excel) через буфер обмена."
 
+#. Tip of the Day
 msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
 msgstr "Функции могут быть скопированы из одного окна Graph в другое через буфер обмена, используя меню Редактирование|Копировать."
 
+#. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
 msgstr "Вы всегда можете отменить последние изменения через пункт меню Редактирование|Отменить."
 
+#. Tip of the Day
 msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
 msgstr "Если вы использовали меню Редактирование|Отменить по ошибке, вы можете использовать меню Редактирование|Повторить."
 
+#. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "В диалоге Оси (Редактирование|Оси) вы можете ввести заголовок графика."
 
+#. Tip of the Day
 msgid "You can import point series from files saved by other programs, like Microsoft Excel."
 msgstr "Вы можете импортировать ряд точек из файлов, сохранённых другими программами, например, Microsoft Excel."
 
+#. Tip of the Day
 msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
 msgstr "Добавляя ряд точек, вы можете скопировать данные из программ, например, Microsoft Excel, и поместить в ячейки данных Graph."
 
+#. Tip of the Day
 msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
 msgstr "Используйте меню 'Масштаб|По величине (все)', чтобы все точки были показаны на графическом поле."
 
+#. Tip of the Day
 msgid "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."
 msgstr "Используйте меню 'Масштаб|Показать функцию', чтобы показать выбранную функцию или ряд точек на всё графическое поле."
 
+#. Tip of the Day
 msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
 msgstr "Удерживая клавишу Shift, вы можете перемещать систему координат мышью."
 
+#. Tip of the Day
 msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
 msgstr "Вы можете использовать меню 'Вычисления|Значения' для нахождения пересечений между функциями, пересечений функций с осями, и экстремумов."
 
+#. Tip of the Day
 msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
 msgstr "Когда выбран ряд точек, вы можете добавлять новые точки, щёлкая на графике левой кнопкой мыши при нажатой клавише Ctrl."
 
+#. Tip of the Day
 msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
 msgstr "Вы можете использовать соотношение для построения неравенства, например, sin(x^2) < cos(y^2)"
 
+#. Tip of the Day
 msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
 msgstr "Вы можете использовать соотношение для построения любого уравнения, например, x*sin x = y*cos y"
 
+#. Tip of the Day
 msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
 msgstr "Элементы (функции, участки, надписи, уравнения...) выводятся в том порядке, в котором они находятся в списке функций слева."
 
+#. Tip of the Day
 msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
 msgstr "Вы можете перемещать выбранный элемент в списке функций, перетаскивая его мышью, или клавишами-стрелками, удерживая нажатой клавишу Alt."
 
+#. Tip of the Day
 msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
 msgstr "Вы можете поместить штриховку и другие элементы за оси, поместив его выше осей в списке функций слева. Штриховка и касательные перемещаются в месте с графиком функции и зависят от его положения."
 
+#. Tip of the Day
 msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
 msgstr "Произвольные подписи могут быть помещены у осей через контекстное меню надписи \"Расположение\""
 
+#. Tip of the Day
 msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
 msgstr "Подпись к графику можно перемещать с помощью мыши, или поместить в один из углов изображения через контекстное меню."
 
+#. Tip of the Day
 msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
 msgstr "Вы можете выбрать не только прозрачный, но и цветной фон для надписей на графике. Это особенно полезно для надписей, помещаемых на штрихованных участках."
 
+#. Tip of the Day
 msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
 msgstr "В большинстве случаев (ряд точек, параметры осей, диапазон функций, и т.д.) вы можете использовать выражения, такие как pi/4, вместо цифр."
 
+#. Tip of the Day
 msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
 msgstr "Вы можете создать свои собственные константы через меню \"Функции|Пользовательские функции...\" для использования в функциях, рядах точек, и т.д. Например, g=9.80665, R=8.31"
 
+#. Tip of the Day
 msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
 msgstr "Вы можете создать свои собственные функции через меню \"Функции|Пользовательские функции...\" для использования при построении графиков, в соотношениях, и т.д. Например, sinc(x)=if(x=0, 0, sin(x)/x)"
 
+#. Tip of the Day
 msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
 msgstr "В диалоге \"Сохранить как изображение...\" есть кнопка Options, которая позволяет указать разрешение изображения. Это особенно полезно, если вы хотите получить высокое разрешение."
 
+#. Tip of the Day
 msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
 msgstr "Ряд точек может быть изображён маркерами-стрелками. Если при этом точки соединены линиями, можно получить изображение векторов."
 
@@ -3555,86 +3675,101 @@ msgstr "Локальный"
 msgid "Global"
 msgstr "Глобальный"
 
-#. PrintFrm..Caption
+#. PrintFrm("Print")..Caption
 msgid "Print"
 msgstr "Печать"
 
-#. PrintFrm..Label6..Caption
+#. PrintFrm("Print")..Label6("Scale:")..Caption
 msgid "Scale:"
 msgstr "Масштаб:"
 
-#. PrintFrm..GroupBox1..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Caption
 msgid "Printer"
 msgstr "Принтер"
 
-#. PrintFrm..GroupBox1..Label7..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Label7("Type:")..Caption
 msgid "Type:"
 msgstr "Тип:"
 
-#. PrintFrm..GroupBox1..Label8..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Label8("Where:")..Caption
 msgid "Where:"
 msgstr "Где:"
 
-#. PrintFrm..GroupBox1..Label9..Caption
+#. PrintFrm("Print")..GroupBox1("Printer")..Label9("Comment:")..Caption
 msgid "Comment:"
 msgstr "Комментарий:"
 
-#. PrintFrm..GroupBox1..ComboBox1....Hint
+#. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
 msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
 msgstr "Выберите принтер. Используйте кнопку Свойства для продвинутых настроек принтера."
 
-#. PrintFrm..RadioGroup2....Hint
+#. PrintFrm("Print")..RadioGroup2("Print output")....Hint
 msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
 msgstr "Печать в цвете (либо оттенках серого, если принтер не поддерживает печать) или конвертация всего в черный."
 
-#. PrintFrm..RadioGroup2..Caption
+#. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
 msgstr "Печать"
 
-#. PrintFrm..RadioGroup2....Items.Strings
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Color"
 msgstr "Цветная"
 
-#. PrintFrm..RadioGroup2....Items.Strings
+#. PrintFrm("Print")..RadioGroup2("Print output")....Items.Strings
 msgid "Black && white"
 msgstr "Чёрно-белая"
 
-#. PrintFrm..GroupBox2..Caption
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Caption
 msgid "Position (millimeters)"
 msgstr "Расположение (в миллиметрах)"
 
-#. PrintFrm..GroupBox2..Label3..Caption
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label3("Left margin:")..Caption
 msgid "Left margin:"
 msgstr "Отступ слева:"
 
-#. PrintFrm..GroupBox2..Label4..Caption
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Label4("Top margin:")..Caption
 msgid "Top margin:"
 msgstr "Отступ сверху:"
 
-#. PrintFrm..GroupBox2..CheckBox1..Hint
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Hint
 msgid "Center the printing area on the page."
 msgstr "Центрировать область печати на странице."
 
-#. PrintFrm..GroupBox2..CheckBox1..Caption
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..CheckBox1("Center on page")..Caption
 msgid "Center on page"
 msgstr "Центровать на листе"
 
-#. PrintFrm..GroupBox2..Edit1....Hint
-#. PrintFrm..GroupBox2..Edit2....Hint
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
+#. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
 msgid "Specify the printing area of the page. The printer will print only within these margins."
 msgstr "Указать область печати страницы. Принтер напечатает только внутри этой области."
 
-#. PrintFrm..GroupBox3..Label5..Caption
+#. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
 msgstr "Количество копий:"
 
-#. PrintFrm..GroupBox3..Edit3..Hint
+#. PrintFrm("Print")..GroupBox3..Edit3..Hint
 msgid "Choose number of copies to print."
 msgstr "Количество копий:"
 
-#. PrintFrm..Edit4..Hint
+#. PrintFrm("Print")..Edit4..Hint
 msgid "Enter percent of original size."
 msgstr "Введите процент от начального размера"
+
+#~ msgid "Email: %s"
+#~ msgstr "Email: %s"
+
+#~ msgid "Select the font for the title."
+#~ msgstr "Выбрать шрифт заголовка."
+
+#~ msgid "Select the font used to show the labels on the axes."
+#~ msgstr "Выберите шрифт для обозначения осей."
+
+#~ msgid "Select the font used to show the numbers on the axes."
+#~ msgstr "Выберите шрифт для значений на осях."
+
+#~ msgid "Select the font used to show the legend text."
+#~ msgstr "Выберите шрифт для подписи к графику."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Ассоциировать *.grf файлы с Graph"
