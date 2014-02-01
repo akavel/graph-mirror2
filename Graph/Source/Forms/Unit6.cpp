@@ -22,18 +22,18 @@
 __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const String &HostApp, const String &HostDoc)
   : TForm(Owner)
 {
-  ScaleForm(this);
   TranslateProperties(this);
   SetAccelerators(this);
+  ScaleForm(this);
   TranslateStrings(ColorBox1->Items);
   FlipForm(this);
-  if(PixelsPerInch != 96)
+  if(NeedScaling())
   {
-    ScaleImageList(ImageList1, MulDiv(16, PixelsPerInch, 96));
-    ToolBar1->Indent = MulDiv(ToolBar1->Indent, PixelsPerInch, 96);
-    ToolBar1->Height = MulDiv(25, PixelsPerInch, 96);
-    ToolBar1->ButtonWidth = MulDiv(23, PixelsPerInch, 96);
-    ToolBar1->ButtonHeight = MulDiv(22, PixelsPerInch, 96);
+    ScaleImageList(ImageList1, ImageList1);
+//    ToolBar1->Indent = GuiScale(ToolBar1->Indent);
+    ToolBar1->Height = GuiScale(25);
+    ToolBar1->ButtonWidth = GuiScale(23);
+    ToolBar1->ButtonHeight = GuiScale(22);
   }
 
   OrgComboBox1WindowProc = ComboBox1->WindowProc;

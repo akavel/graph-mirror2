@@ -43,8 +43,8 @@
 			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib;IComp.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</AllPackageLibs>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT;MADEXCEPT;$(Defines)</Defines>
-			<IncludePath>..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;..\PyVcl;$(IncludePath)</IncludePath>
-			<ILINK_LibraryPath>..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;..\PyVcl;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		</PropertyGroup>
@@ -65,7 +65,7 @@
 			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
 			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
 			<BCC_StackFrames>true</BCC_StackFrames>
-			<ILINK_LibraryPath>..\Libraries\gsl\Debug;..\Func32\Debug;$(BDSLIB)\$(PLATFORM)\debug;$(BDSCOMMONDIR)\DCP\Debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>..\Libraries\gsl\Debug\Win32;..\Func32\Debug;$(BDSLIB)\$(PLATFORM)\debug;$(BDSCOMMONDIR)\DCP\Debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
 			<TASM_Debugging>Full</TASM_Debugging>
 			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
@@ -85,7 +85,7 @@
 			<BCC_PentiumInstructionScheduling>true</BCC_PentiumInstructionScheduling>
 			<Defines>NDEBUG;_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
 			<IntermediateOutputDir>Release</IntermediateOutputDir>
-			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;..\Func32\Release;..\Libraries\gsl\Release;$(BDSCOMMONDIR)\DCP\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;..\Func32\Release;..\Libraries\gsl\Release\Win32;$(BDSCOMMONDIR)\DCP\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
@@ -417,6 +417,9 @@
 				<DependentOn>Source\Settings.h</DependentOn>
 				<BuildOrder>51</BuildOrder>
 			</CppCompile>
+			<DelphiCompile Include="Source\SystemCppException.pas">
+				<BuildOrder>79</BuildOrder>
+			</DelphiCompile>
 			<CppCompile Include="Swig\Data_wrap.cpp">
 				<BuildOrder>65</BuildOrder>
 			</CppCompile>
@@ -428,30 +431,30 @@
 			</CppCompile>
 			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
 			<FormResources Include="Frames\TTanFrame.dfm"/>
-			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
-			<FormResources Include="Forms\Unit6.dfm"/>
 			<FormResources Include="Forms\Unit7.dfm"/>
+			<FormResources Include="Forms\Unit8.dfm"/>
+			<FormResources Include="Forms\Unit6.dfm"/>
 			<FormResources Include="Forms\Unit4.dfm"/>
 			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
-			<FormResources Include="Frames\TEvalFrame.dfm"/>
 			<FormResources Include="Frames\TParFuncFrame.dfm"/>
+			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
+			<FormResources Include="Frames\TEvalFrame.dfm"/>
 			<FormResources Include="Forms\Unit9.dfm"/>
 			<FormResources Include="Frames\TAreaFrame.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit18.dfm"/>
+			<FormResources Include="Forms\Unit19.dfm"/>
+			<FormResources Include="Forms\Unit17.dfm"/>
 			<FormResources Include="Forms\Unit15.dfm"/>
 			<FormResources Include="Forms\Unit16.dfm"/>
-			<FormResources Include="Forms\Unit19.dfm"/>
-			<FormResources Include="Forms\Unit21.dfm"/>
 			<FormResources Include="Forms\Unit22.dfm"/>
+			<FormResources Include="Forms\Unit3.dfm"/>
+			<FormResources Include="Forms\Unit21.dfm"/>
 			<FormResources Include="Forms\Unit2.dfm"/>
 			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Forms\Unit14.dfm"/>
 			<FormResources Include="Forms\Unit1.dfm"/>
-			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit13.dfm"/>
+			<FormResources Include="Forms\Unit14.dfm"/>
+			<FormResources Include="Forms\Unit12.dfm"/>
 			<FormResources Include="Forms\Unit10.dfm"/>
 			<FormResources Include="Forms\Unit11.dfm"/>
 			<BuildConfiguration Include="Release">
@@ -482,7 +485,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">5</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">558</VersionInfo>
+						<VersionInfo Name="Build">561</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -494,7 +497,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.5.0.558</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.5.0.561</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>

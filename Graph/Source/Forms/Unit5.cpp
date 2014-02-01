@@ -19,12 +19,12 @@
 #pragma link "ExtColorBox"
 #pragma link "GridPanelEx"
 #pragma link "ExtComboBox"
+#pragma link "FocusPanel"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm5::TForm5(TComponent* Owner, TData &AData)
 	: TForm(Owner), OldItemIndex(0), Data(AData)
 {
-  LineSelect1->Height = (LineSelect1->Height * Property.FontScale) / 100;
   Translate();
   ScaleForm(this);
 

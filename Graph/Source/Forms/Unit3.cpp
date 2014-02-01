@@ -17,6 +17,7 @@
 #pragma link "MyEdit"
 #pragma link "CheckBoxEx"
 #pragma link "GridPanelEx"
+#pragma link "FocusPanel"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
@@ -75,8 +76,6 @@ __fastcall TForm3::TForm3(TComponent* Owner, TData &AData)
   NumberFont = Axes.NumberFont;
   LegendFont = Axes.LegendFont;
 
-  Panel1->Align = alClient;
-  Panel2->Align = alClient;
   FlipForm(this);
   UpdateEnabledControls();
 }

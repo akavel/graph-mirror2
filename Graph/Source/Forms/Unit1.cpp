@@ -132,19 +132,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	Application->HintHidePause = 10000;
 
 	BOOST_ASSERT(TreeView->Items->Count == 0);
-	LoadSettings();
-	ActionToolBar1->ActionClient->Items->SmallIcons = Property.FontScale < 150;
 
-  if(PixelsPerInch != 96)
-  {
-    int IconWidth = MulDiv(16, PixelsPerInch, 96);
-    ScaleImageList(ImageList2, IconWidth);
-    ScaleImageList(ImageList1, IconWidth);
-    TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
-    ActionToolBar1->VertMargin = IconWidth / 8;
-    ActionMainMenuBar1->Spacing = IconWidth / 2;
-    ActionToolBar1->Spacing = MulDiv(5, PixelsPerInch, 96);
-  }
+	LoadSettings();
 
 	//Don't create Form9 before settings are loaded. Scaling and other settings are needed in the constructor.
 	Form9.reset(new TForm9(this));
@@ -772,6 +761,27 @@ void __fastcall TForm1::FormCloseQuery(TObject *Sender, bool &CanClose)
   }
 }
 //---------------------------------------------------------------------------
+void TForm1::ScaleImages()
+{
+  if(PixelsPerInch != 96 || Property.FontScale != 100)
+  {
+    int FontScale = PixelsPerInch * Property.FontScale;
+    if(!ScaledImages.get())
+      ScaledImages.reset(new TImageList(NULL));
+    ScaleImageList(ImageList2, ScaledImages.get());
+    ActionManager->Images = ScaledImages.get();
+
+    int IconWidth = MulDiv(16, FontScale, 96 * 100);
+    ScaleImageList(ImageList1, ImageList1, IconWidth);
+    TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
+    ActionToolBar1->VertMargin = IconWidth / 8;
+    ActionMainMenuBar1->Spacing = IconWidth / 2;
+    ActionToolBar1->Spacing = MulDiv(5, FontScale, 96 * 100);
+    Screen->MenuFont->Height = MulDiv(-12, FontScale, 96 * 100);
+    ActionMainMenuBar1->Height = 1000; //Just change it; It will selfadjust
+  }
+}
+//---------------------------------------------------------------------------
 void TForm1::LoadSettings(void)
 {
   TConfigRegistry Registry;
@@ -810,6 +820,7 @@ void TForm1::LoadSettings(void)
   else
     Property.Language = GetRegValue(REGISTRY_KEY, L"Language", HKEY_LOCAL_MACHINE, L"English");
 
+  ScaleImages();
   Python::InitPlugins();
 
   if(Registry.ValueExists(L"ToolBar"))
@@ -2573,6 +2584,8 @@ void __fastcall TForm1::ToolBar_CustomizeClick(TObject *Sender)
   Form->CatList->ItemIndex = Form->CatList->Items->Count - 1;
   Form->CatList->OnClick(Form->CatList);
   SetAccelerators(Form);
+  ScaleForm(Form);
+  ExecutePluginEvent(Python::peShowForm, Form);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ToolBar_ResetClick(TObject *Sender)
@@ -3254,7 +3267,7 @@ void __fastcall TForm1::PopupMenu4Popup(TObject *Sender)
   int Index = Data.Axes.LegendPlacement > lpCustom &&
     Data.Axes.LegendPlacement <= Legend_Placement->Count ? Data.Axes.LegendPlacement - 1 : -1;
   for(int I = 0; I < Legend_Placement->Count; I++)
-    Legend_Placement->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
+    Legend_Placement->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::SupportActionExecute(TObject *Sender)
@@ -3360,11 +3373,11 @@ void __fastcall TForm1::PopupMenu3Popup(TObject *Sender)
   {
     int Index = (TextLabel->GetPlacement() == lpUserTopLeft || TextLabel->GetPlacement() >= lpUserTopRight) ? 4 : TextLabel->GetPlacement() - 1;
     for(int I = 0; I < Label_Placement->Count; I++)
-      Label_Placement->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
+      Label_Placement->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
 
     Index = TextLabel->GetRotation() % 90 == 0 ? TextLabel->GetRotation() / 90 : 4;
     for(int I = 0; I < Label_Rotation->Count; I++)
-      Label_Rotation->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
+      Label_Rotation->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
   }
 }
 //---------------------------------------------------------------------------
@@ -3375,11 +3388,11 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
   {
     int Index = (TextLabel->GetPlacement() == lpUserTopLeft || TextLabel->GetPlacement() >= lpUserTopRight) ? 4 : TextLabel->GetPlacement() - 1;
     for(int I = 0; I < Tree_Placement->Count; I++)
-      Tree_Placement->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
+      Tree_Placement->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
 
     Index = TextLabel->GetRotation() % 90 == 0 ? TextLabel->GetRotation() / 90 : 4;
     for(int I = 0; I < Tree_Rotation->Count; I++)
-      Tree_Rotation->Items[I]->ImageIndex = (I == Index) ? 60/*iiBullet*/ : -1;
+      Tree_Rotation->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
   }
 }
 //---------------------------------------------------------------------------
@@ -3806,5 +3819,6 @@ void __fastcall TForm1::ApplicationEventsModalBegin(TObject *Sender)
   SET_DEFAULT_FPU_MASK();
 }
 //---------------------------------------------------------------------------
+
 
 

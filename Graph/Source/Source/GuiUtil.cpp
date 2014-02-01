@@ -18,6 +18,9 @@
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include <boost/format.hpp>
 #include <MultiMon.hpp>
+#pragma warn -8022 //Remove warning in gdiplus.h
+#include "gdiplus.h"
+#pragma warn .8022 //Set warning back to default
 //---------------------------------------------------------------------------
 void DrawLine(TCanvas *Canvas, int X1, int Y1, int X2, int Y2)
 {
@@ -78,14 +81,16 @@ void DrawComboBoxEndPoint(TCanvas *Canvas, int Index, const TRect &Rect)
 //---------------------------------------------------------------------------
 void ScaleComponent(TComponent *Component, unsigned Scale)
 {
-  if(TComboBox *ComboBox = dynamic_cast<TComboBox*>(Component))
-    ComboBox->ItemHeight = (ComboBox->ItemHeight * Scale) / 100;
-  else if(TColorBox *ColorBox = dynamic_cast<TColorBox*>(Component))
+//  if(TComboBox *ComboBox = dynamic_cast<TComboBox*>(Component))
+//    ComboBox->ItemHeight = (ComboBox->ItemHeight * Scale) / 100;
+  if(TColorBox *ColorBox = dynamic_cast<TColorBox*>(Component))
     ColorBox->ItemHeight = (ColorBox->ItemHeight * Scale) / 100;
   else if(TValueListEditor *Editor = dynamic_cast<TValueListEditor*>(Component))
     Editor->DefaultRowHeight = (Editor->DefaultRowHeight * Scale) / 100;
   for(int I = 0; I < Component->ComponentCount; I++)
     ScaleComponent(Component->Components[I], Scale);
+  if(TWinControl *Control = dynamic_cast<TWinControl*>(Component))
+    Control->Realign();
 }
 //---------------------------------------------------------------------------
 void FlipAnchors(TControl *Control)
@@ -534,26 +539,107 @@ void ShowHelp(const String &File, const String &HelpFile)
   Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
 }
 //---------------------------------------------------------------------------
-//Scale all images in List so the images become IconWidth width and heigh
-void ScaleImageList(TImageList *List, int IconWidth)
+int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
 {
-  std::auto_ptr<TImageList> TempList(new TImageList(NULL));
-  TempList->SetSize(IconWidth, IconWidth);
-  std::auto_ptr<Graphics::TBitmap> Bitmap2(new Graphics::TBitmap);
-  Bitmap2->Width = IconWidth;
-  Bitmap2->Height = IconWidth;
-  TColor OldBkColor = List->BkColor;
-  List->BkColor = clPurple;
+   UINT  num = 0;          // number of image encoders
+   UINT  size = 0;         // size of the image encoder array in bytes
 
-  for(int I = 0; I < List->Count; I++)
+   Gdiplus::ImageCodecInfo* pImageCodecInfo = NULL;
+
+   Gdiplus::GetImageEncodersSize(&num, &size);
+   if(size == 0)
+      return -1;  // Failure
+
+   pImageCodecInfo = (Gdiplus::ImageCodecInfo*)(malloc(size));
+   if(pImageCodecInfo == NULL)
+      return -1;  // Failure
+
+   Gdiplus::GetImageEncoders(num, size, pImageCodecInfo);
+
+   for(UINT j = 0; j < num; ++j)
+   {
+      if( wcscmp(pImageCodecInfo[j].MimeType, format) == 0 )
+      {
+         *pClsid = pImageCodecInfo[j].Clsid;
+         free(pImageCodecInfo);
+         return j;  // Success
+      }
+   }
+
+   free(pImageCodecInfo);
+   return -1;  // Failure
+}
+
+void ScaleImageList(TImageList *List, TImageList *DestList, int IconWidth)
+{
+  if(List->ColorDepth != cd32Bit)
+    return;
+  BITMAP bm;
+  Win32Check(GetObject(List->GetImageBitmap(), sizeof(BITMAP), &bm));
+  BYTE* sourceBytes = static_cast<BYTE*>(bm.bmBits);
+  if(sourceBytes == NULL)
+    return;
+
+  Gdiplus::Bitmap B(bm.bmWidth, bm.bmHeight, PixelFormat32bppARGB);
+
+  // Get access to the Gdiplus::Bitmap's pixel data
+  Gdiplus::BitmapData bmd;
+  Gdiplus::Rect R2(0, 0, bm.bmWidth, bm.bmHeight);
+  B.LockBits(&R2, Gdiplus::ImageLockMode::ImageLockModeWrite, PixelFormat32bppARGB, &bmd);
+
+  // Copy source pixel data to destination Bitmap (one is 'upside down' relative to the other)
+  int lineSize = bm.bmWidth * sizeof(DWORD);
+  byte* destBytes = static_cast<BYTE*>(bmd.Scan0);
+  for(int y = 0; y < bm.bmHeight; y++)
+    memcpy(destBytes + (y * lineSize), sourceBytes + ((bm.bmHeight - y - 1) * lineSize), lineSize);
+  B.UnlockBits(&bmd);
+
+//  CLSID pngClsid;
+//  GetEncoderClsid(L"image/png", &pngClsid);
+//  B.Save(L"C:\\Users\\Ivan Johansen\\Documents\\test.png", &pngClsid, NULL);
+
+  int Count = List->Count;
+  int OldWidth = List->Width;
+  int OldHeight = List->Height;
+  DestList->Width = IconWidth;
+  DestList->Height = IconWidth;
+  DestList->ColorDepth = cd32Bit;
+
+  Gdiplus::Bitmap B2(IconWidth, IconWidth, PixelFormat32bppARGB);
+  Gdiplus::Graphics G(&B2);
+//  G.SetInterpolationMode(Gdiplus::InterpolationModeHighQuality);
+  Gdiplus::RectF R(0, 0, IconWidth, IconWidth);
+  Gdiplus::Color ClearColor(0, 0, 0, 0);
+  for(int I = 0; I < Count; I++)
   {
-    std::auto_ptr<Graphics::TBitmap> Bitmap(new Graphics::TBitmap);
-    List->GetBitmap(I, Bitmap.get());
-    Bitmap2->Canvas->StretchDraw(TRect(0, 0, IconWidth, IconWidth), Bitmap.get());
-    TempList->AddMasked(Bitmap2.get(), clPurple);
+    G.Clear(ClearColor);
+    //Subtract 0.5 to prevent some the top of the next icon to blend into this
+    G.DrawImage(&B, R, 0, OldHeight * I, OldWidth, OldHeight - 0.5, Gdiplus::UnitPixel);
+//    B2.Save((L"C:\\Users\\Ivan Johansen\\Documents\\test" + IntToStr(I) + ".png").c_str(), &pngClsid, NULL);
+    HBITMAP H;
+    B2.GetHBITMAP(ClearColor, &H);
+    ImageList_Add(reinterpret_cast<HIMAGELIST>(DestList->Handle), H, NULL);
   }
-  List->BkColor = OldBkColor;
-  List->Assign(TempList.get());
+}
+//---------------------------------------------------------------------------
+void ScaleImageList(TImageList *List, TImageList *DestList)
+{
+  if(Property.FontScale != 100 || Screen->PixelsPerInch != 96)
+    ScaleImageList(List, DestList, List->Width * Screen->PixelsPerInch * Property.FontScale / (96 * 100));
+  else if(List != DestList)
+    DestList->Assign(List);
+}
+//---------------------------------------------------------------------------
+bool NeedScaling()
+{
+  return Property.FontScale != 100 || Screen->PixelsPerInch != 96;
+}
+//---------------------------------------------------------------------------
+unsigned GuiScale(unsigned Value)
+{
+  if(Property.FontScale != 100 || Screen->PixelsPerInch != 96)
+    return MulDiv(Value, Property.FontScale * Screen->PixelsPerInch, 9600);
+  return Value;
 }
 //---------------------------------------------------------------------------
 

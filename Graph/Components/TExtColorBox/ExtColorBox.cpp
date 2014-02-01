@@ -139,6 +139,8 @@ void __fastcall TExtColorBox::SetSelected(TColor Value)
   }
   else
     ItemIndex = Index;
+  if(Parent)
+    Parent->Realign();
 }
 //---------------------------------------------------------------------------
 TColor __fastcall TExtColorBox::GetSelected()

@@ -56,6 +56,10 @@ void ShowStatusError(const String &Str);
 bool InputQuery(const String &Caption, const String &Prompt, int &Value);
 bool GetKeyState(Classes__1 Key);
 void ShowHelp(const String &File, const String &HelpFile=String());
-void ScaleImageList(TImageList *List, int IconWidth);
+
+void ScaleImageList(TImageList *List, TImageList *DestList, int IconWidth);
+void ScaleImageList(TImageList *List, TImageList *DestList);
+bool NeedScaling();
+unsigned GuiScale(unsigned Value);
 
 #endif

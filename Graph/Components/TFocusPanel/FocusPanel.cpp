@@ -27,7 +27,7 @@ namespace Focuspanel
 }
 //---------------------------------------------------------------------------
 __fastcall TFocusPanel::TFocusPanel(TComponent* Owner)
-        : TPanel(Owner), FOnMouseEnter(NULL), FOnMouseLeave(NULL)
+        : TPanel(Owner), FOnMouseEnter(NULL), FOnMouseLeave(NULL), FCenterChildren(false)
 {
 }
 //---------------------------------------------------------------------------
@@ -41,6 +41,17 @@ void __fastcall TFocusPanel::WndProc(TMessage &Message)
   TPanel::WndProc(Message);
   if(TabStop && Message.Msg == WM_LBUTTONDOWN && !ComponentState.Contains(csDesigning))
     SetFocus();
+}
+//---------------------------------------------------------------------------
+void __fastcall TFocusPanel::ControlsAligned()
+{
+  TPanel::ControlsAligned();
+  if(FCenterChildren)
+    for(int I = 0; I < ControlCount; I++)
+    {
+      TControl *AControl = Controls[I];
+      AControl->Top = (ClientHeight - AControl->Height) / 2;
+    }
 }
 //---------------------------------------------------------------------------
 

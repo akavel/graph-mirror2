@@ -40,10 +40,10 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::wstring &Constant, dou
     Repeat1->Checked = Registry.Read("Repeat", false);
     Reverse1->Checked = Registry.Read("AutoReverse", false);
   }
-  if(PixelsPerInch != 96)
+  if(NeedScaling())
   {
-    TrackBar1->ThumbLength = MulDiv(20, PixelsPerInch, 96);
-    ScaleImageList(ImageList1, MulDiv(18, PixelsPerInch, 96));
+    TrackBar1->ThumbLength = GuiScale(20);
+    ScaleImageList(ImageList1, ImageList1, GuiScale(18));
   }
 }
 //---------------------------------------------------------------------------

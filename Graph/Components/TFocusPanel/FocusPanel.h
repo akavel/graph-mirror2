@@ -16,6 +16,8 @@ class TFocusPanel : public TPanel
 private:
   TNotifyEvent FOnMouseEnter;
   TNotifyEvent FOnMouseLeave;
+  bool FCenterChildren;
+
   void __fastcall WndProc(TMessage &Message);
   void __fastcall WMGetDlgCode(TMessage &Message);
   void __fastcall MouseEnter(TMessage &Message)
@@ -34,6 +36,7 @@ private:
     VCL_MESSAGE_HANDLER(CM_MOUSELEAVE, TMessage, MouseLeave)
   END_MESSAGE_MAP(TPanel)
 protected:
+  DYNAMIC void __fastcall ControlsAligned(void);
 public:
   __fastcall TFocusPanel(TComponent* Owner);
 __published:
@@ -45,6 +48,7 @@ __published:
   __property OnMouseWheelUp;
   __property TNotifyEvent OnMouseEnter = {read=FOnMouseEnter, write=FOnMouseEnter, default=NULL};
   __property TNotifyEvent OnMouseLeave = {read=FOnMouseLeave, write=FOnMouseLeave, default=NULL};
+  __property bool CenterChildren = {read=FCenterChildren, write=FCenterChildren, default=false};
 };
 //---------------------------------------------------------------------------
 #endif

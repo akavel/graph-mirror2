@@ -288,9 +288,8 @@ object Form5: TForm5
         Height = 21
         Hint = 'Choose which line style to use for drawing the graph.'
         TabOrder = 0
-        Anchors = [akLeft]
+        Anchors = [akLeft, akTop, akBottom]
         ItemHeight = 15
-        ExplicitTop = 5
       end
       object Label13: TLabel
         Left = 167
@@ -340,7 +339,7 @@ object Form5: TForm5
         Width = 81
         Height = 22
         Hint = 'Select the color of the graph.'
-        Anchors = [akLeft]
+        Anchors = [akLeft, akTop, akBottom]
         TabOrder = 2
         AutoDroppedWidth = True
         Selected = clScrollBar
@@ -358,7 +357,7 @@ object Form5: TForm5
         Layout = tlCenter
         ExplicitHeight = 13
       end
-      object Panel1: TPanel
+      object Panel1: TFocusPanel
         Left = 224
         Top = 33
         Width = 88
@@ -366,6 +365,7 @@ object Form5: TForm5
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 3
+        CenterChildren = True
         DesignSize = (
           88
           34)

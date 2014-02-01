@@ -22,6 +22,7 @@
 #include "ExtColorBox.h"
 #include "GridPanelEx.h"
 #include "ExtComboBox.h"
+#include "FocusPanel.h"
 //---------------------------------------------------------------------------
 class TForm5 : public TForm
 {
@@ -60,7 +61,7 @@ __published:	// IDE-managed Components
 	TLabel *Label9;
 	TExtColorBox *ExtColorBox1;
 	TLabel *Label8;
-	TPanel *Panel1;
+	TFocusPanel *Panel1;
 	TEdit *Edit6;
 	TUpDown *UpDown1;
 	void __fastcall Button1Click(TObject *Sender);
