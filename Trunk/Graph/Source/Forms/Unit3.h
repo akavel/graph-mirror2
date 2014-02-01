@@ -24,6 +24,7 @@
 #include "MyEdit.h"
 #include "CheckBoxEx.h"
 #include "GridPanelEx.h"
+#include "FocusPanel.h"
 //---------------------------------------------------------------------------
 class TForm3 : public TForm
 {
@@ -78,21 +79,9 @@ __published:	// IDE-managed Components
   TCheckBoxEx *CheckBox6;
   TCheckBoxEx *CheckBox5;
   TCheckBoxEx *CheckBox7;
-  TPanel *Panel2;
-  TPanel *Panel1;
-  TCheckBoxEx *CheckBox3;
-  TMyEdit *Edit5;
   TCheckBoxEx *CheckBox1;
   TCheckBoxEx *CheckBox2;
   TCheckBoxEx *CheckBox17;
-  TLabel *Label4;
-  TMyEdit *Edit6;
-  TPanel *Panel3;
-  TPanel *Panel4;
-  TCheckBoxEx *CheckBox10;
-  TMyEdit *Edit11;
-  TLabel *Label8;
-  TMyEdit *Edit12;
   TCheckBoxEx *CheckBox11;
   TCheckBoxEx *CheckBox13;
   TCheckBoxEx *CheckBox12;
@@ -104,6 +93,18 @@ __published:	// IDE-managed Components
   TButton *Button5;
   TButton *Button6;
   TButton *Button7;
+  TGridPanelEx *GridPanelEx1;
+  TLabel *Label8;
+  TMyEdit *Edit12;
+  TGridPanelEx *GridPanelEx2;
+  TMyEdit *Edit11;
+  TCheckBoxEx *CheckBox10;
+  TGridPanelEx *GridPanelEx3;
+  TMyEdit *Edit5;
+  TCheckBoxEx *CheckBox3;
+  TGridPanelEx *GridPanelEx4;
+  TMyEdit *Edit6;
+  TLabel *Label4;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
   void __fastcall Button7Click(TObject *Sender);

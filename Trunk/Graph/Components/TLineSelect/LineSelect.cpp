@@ -89,7 +89,8 @@ void __fastcall TLineSelect::SetEnableClear(bool Value)
 void __fastcall TLineSelect::ChangeScale(int M, int D)
 {
   TCustomComboBox::ChangeScale(M, D); // Call inherited
-  ItemHeight = (ItemHeight * M) / D; 
+  ItemHeight = (ItemHeight * M) / D;
+  Height = (Height *M) / D;
 }
 //---------------------------------------------------------------------------
 

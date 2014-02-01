@@ -54,6 +54,7 @@
 #include <ActnMenus.hpp>
 #include <ActnPopup.hpp>
 #include <XPMan.hpp>
+#include <pngimage.hpp>
 #include <stack>
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
@@ -85,7 +86,6 @@ __published:	// IDE-managed Components
   TMenuItem *Tree_Properties;
   TApplicationEvents *ApplicationEvents;
   TTimer *Timer1;
-  TImageList *ImageList1;
   TMenuItem *Tree_Copy;
   TMenuItem *Tree_Cut;
   TMenuItem *Tree_Paste;
@@ -95,7 +95,6 @@ __published:	// IDE-managed Components
   TMenuItem *Tree_InsDiff;
   TMenuItem *Tree_InsTrend;
   TMenuItem *Tree_InsShade;
-  TImageList *ImageList2;
   TCustomizeDlg *CustomizeDlg;
   TActionManager *ActionManager;
   TAction *NewAction;
@@ -223,6 +222,8 @@ __published:	// IDE-managed Components
   TSplitter *Splitter2;
   TMenuItem *N1;
   TAction *ScriptDocAction;
+  TImageList *ImageList2;
+  TImageList *ImageList1;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);
@@ -413,6 +414,7 @@ private:	// User declarations
   const int FixedImages; //Number of fixed images in ImageList1 (The rest are dynamically added and deleted)
   boost::scoped_ptr<struct TImageOptions> ActionImageOptions; //Used when saving as image from menu
   TGraphElemPtr Selected;
+  std::auto_ptr<TImageList> ScaledImages;
 
   int StatusIcon;
   int xZoom, yZoom;
@@ -442,6 +444,7 @@ private:	// User declarations
   void ChangeVisible(boost::shared_ptr<TGraphElem> GraphElem);
   void HandleCommandLine();
   void SetPanelCoordText();
+  void ScaleImages();
 
   int AddImage(int Index, TColor Color);
   int AddImage(TColor Color, TBrushStyle Style);
