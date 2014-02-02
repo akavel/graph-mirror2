@@ -64,15 +64,14 @@ void __fastcall TDrawThread::Execute()
     TMessage Message;
     GetMessage(Message);
 
-    //No need to prepare drawings if we are just terminating
-    if(Message.Msg == dmTerminate)
-      return;
-
     switch(Message.Msg)
     {
       case dmDrawAll:
         DrawAll();
         break;
+
+      case dmTerminate:
+        return;
     }
   }
 }
