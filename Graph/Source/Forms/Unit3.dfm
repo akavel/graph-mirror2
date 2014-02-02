@@ -30,7 +30,7 @@ object Form3: TForm3
     Top = 8
     Width = 404
     Height = 213
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -272,7 +272,7 @@ object Form3: TForm3
           Hint = 'Determine the tick unit automatically.'
           Align = alLeft
           Caption = 'Auto tick'
-          TabOrder = 6
+          TabOrder = 8
           OnClick = CheckBoxClick
         end
         object CheckBox6: TCheckBoxEx
@@ -283,7 +283,7 @@ object Form3: TForm3
           Hint = 'Show tick marks on the x-axis.'
           Align = alLeft
           Caption = 'Show ticks'
-          TabOrder = 8
+          TabOrder = 10
         end
         object CheckBox5: TCheckBoxEx
           Left = 173
@@ -293,7 +293,7 @@ object Form3: TForm3
           Hint = 'Set the grid unit to the same as the tick unit.'
           Align = alLeft
           Caption = 'Auto grid'
-          TabOrder = 7
+          TabOrder = 9
           OnClick = CheckBoxClick
         end
         object CheckBox7: TCheckBoxEx
@@ -304,7 +304,7 @@ object Form3: TForm3
           Hint = 'Show vertical grid lines.'
           Align = alLeft
           Caption = 'Show grid'
-          TabOrder = 9
+          TabOrder = 11
         end
         object CheckBox1: TCheckBoxEx
           Left = 6
@@ -346,7 +346,7 @@ object Form3: TForm3
           Font.Name = 'Arial'
           Font.Style = []
           ParentFont = False
-          TabOrder = 10
+          TabOrder = 12
         end
         object GridPanelEx3: TGridPanelEx
           Left = 173
@@ -382,7 +382,7 @@ object Form3: TForm3
             item
               SizeStyle = ssAuto
             end>
-          TabOrder = 11
+          TabOrder = 6
           DesignSize = (
             219
             32)
@@ -399,7 +399,7 @@ object Form3: TForm3
             Anchors = [akTop, akBottom]
             ParentShowHint = False
             ShowHint = True
-            TabOrder = 0
+            TabOrder = 1
           end
           object CheckBox3: TCheckBoxEx
             Left = 0
@@ -413,7 +413,7 @@ object Form3: TForm3
             Caption = 'Label:'
             ParentShowHint = False
             ShowHint = True
-            TabOrder = 1
+            TabOrder = 0
             OnClick = CheckBoxClick
           end
         end
@@ -448,7 +448,7 @@ object Form3: TForm3
             item
               Value = 100.000000000000000000
             end>
-          TabOrder = 12
+          TabOrder = 7
           DesignSize = (
             219
             32)
@@ -462,7 +462,6 @@ object Form3: TForm3
             Margins.Bottom = 6
             Anchors = [akTop, akBottom]
             TabOrder = 0
-            ExplicitLeft = 105
           end
           object Label4: TLabel
             Left = 0
@@ -718,7 +717,7 @@ object Form3: TForm3
           Hint = 'Determine the tick unit automatically.'
           Align = alLeft
           Caption = 'Auto tick'
-          TabOrder = 6
+          TabOrder = 8
           OnClick = CheckBoxClick
         end
         object CheckBox13: TCheckBoxEx
@@ -729,7 +728,7 @@ object Form3: TForm3
           Hint = 'Show tick marks on the y-axis.'
           Align = alLeft
           Caption = 'Show ticks'
-          TabOrder = 8
+          TabOrder = 10
         end
         object CheckBox12: TCheckBoxEx
           Left = 173
@@ -739,7 +738,7 @@ object Form3: TForm3
           Hint = 'Set the grid unit to the same as the tick unit.'
           Align = alLeft
           Caption = 'Auto grid'
-          TabOrder = 7
+          TabOrder = 9
           OnClick = CheckBoxClick
         end
         object CheckBox14: TCheckBoxEx
@@ -752,7 +751,7 @@ object Form3: TForm3
           Caption = 'Show grid'
           ParentShowHint = False
           ShowHint = True
-          TabOrder = 9
+          TabOrder = 11
         end
         object CheckBox8: TCheckBoxEx
           Left = 6
@@ -794,7 +793,7 @@ object Form3: TForm3
           Font.Name = 'Arial'
           Font.Style = []
           ParentFont = False
-          TabOrder = 10
+          TabOrder = 12
         end
         object GridPanelEx1: TGridPanelEx
           Left = 173
@@ -827,7 +826,7 @@ object Form3: TForm3
               Value = 100.000000000000000000
             end>
           ShowCaption = False
-          TabOrder = 11
+          TabOrder = 7
           DesignSize = (
             219
             32)
@@ -888,7 +887,7 @@ object Form3: TForm3
               Value = 100.000000000000000000
             end>
           ShowCaption = False
-          TabOrder = 12
+          TabOrder = 6
           DesignSize = (
             219
             32)
@@ -903,7 +902,7 @@ object Form3: TForm3
             Anchors = [akTop, akBottom]
             ParentShowHint = False
             ShowHint = True
-            TabOrder = 0
+            TabOrder = 1
           end
           object CheckBox10: TCheckBoxEx
             Left = 0
@@ -915,7 +914,7 @@ object Form3: TForm3
               'the y-axis.'
             Align = alClient
             Caption = 'Label:'
-            TabOrder = 1
+            TabOrder = 0
             OnClick = CheckBoxClick
           end
         end
