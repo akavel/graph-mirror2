@@ -2199,6 +2199,7 @@ void __fastcall TForm1::EditActionExecute(TObject *Sender)
 //---------------------------------------------------------------------------
 void TForm1::DeleteGraphElem(const boost::shared_ptr<TGraphElem> &GraphElem)
 {
+  Draw.AbortUpdate();
   Python::ExecutePluginEvent(Python::peDelete, GraphElem);
 
   UndoList.BeginMultiUndo();
