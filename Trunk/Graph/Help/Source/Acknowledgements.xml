@@ -179,8 +179,13 @@
 						<row>
 							<entry>Greek</entry>
 							<entry>Yes</entry>
-							<entry>No</entry>
-							<entry><personname>Theodoros Kannas</personname></entry>
+							<entry>Yes</entry>
+              <entry>
+                <simplelist>
+                  <member><personname>Dimitris Spingos (Δημήτρης Σπίγγος)</personname></member>
+                  <member><personname>Theodoros Kannas</personname></member>
+                </simplelist>
+              </entry>
 						</row>
 
 						<row>
