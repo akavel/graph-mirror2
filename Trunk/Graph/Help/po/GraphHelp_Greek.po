@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-02-01 14:09+0100\n"
-"PO-Revision-Date: 2014-02-01 14:29+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2014-02-02 15:00+0300\n"
+"Last-Translator: dimitris spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -591,9 +591,12 @@ msgid "Point series..."
 msgstr "Σημειοσειρά..."
 
 #. ImportPointSeries.xml:12(para)
-#, fuzzy
 msgid "Graph can import point series from text files where the values are delimited by comma, semicolon, space or tabulator. You use <placeholder-1/> and select the file to import. If you do not specify the type of file, Graph will try to guess the delimitor."
-msgstr "Το Graph μπορεί να εισάγει σημειοσειρά από αρχεία κειμένου όπου οι τιμές διαχωρίζονται με κόμμα, ;, διάστημα ή στηλοθέτη. Χρησιμοποιήστε το <placeholder-1/> και επιλέξτε το αρχείο για εισαγωγή. Αν δεν ορίσετε τον τύπο του αρχείου, το Graph θα προσπαθήσει να υποθέσει τον οριοθέτη."
+msgstr ""
+"Το Graph μπορεί να εισάγει σημειοσειρά από αρχεία κειμένου όπου οι τιμές "
+"διαχωρίζονται με κόμμα, ;, διάστημα ή στηλοθέτη. Χρησιμοποιήστε το "
+"<placeholder-1/> και επιλέξτε το αρχείο για εισαγωγή. Αν δεν ορίσετε τον "
+"τύπο του αρχείου, το Graph θα προσπαθήσει να υποθέσει τον οριοθέτη."
 
 #. ImportPointSeries.xml:18(para)
 msgid "The simplest file looks like this, which uses comma as delimitor: <placeholder-1/> When imported you get a point series with the coordinates: <placeholder-2/>"
@@ -1449,11 +1452,15 @@ msgstr "Χρειάζεται να χρησιμοποιήσετε μια παρα
 
 #. FAQ.xml:211(para)
 msgid "Why do circles look like ellipses?"
-msgstr ""
+msgstr "Γιατί οι κύκλοι μοιάζουν με ελλείψεις;"
 
 #. FAQ.xml:216(para)
 msgid "That is probably because the axes are not equally scaled. You can either change the size of the window until the axes scales equally or select <placeholder-1/> in the menu to change the y-axis to scale equal to the x-axis."
 msgstr ""
+"Αυτό συμβαίνει προφανώς επειδή οι άξονες δεν είναι εξίσου κλιμακωμένοι. "
+"Μπορείτε να αλλάξετε είτε το μέγεθος του παραθύρου μέχρι οι άξονες να "
+"κλιμακωθούν εξίσου ή να επιλέξετε το <placeholder-1/> στο μενού για να "
+"αλλάξετε τον άξονα y για ίση κλιμάκωση με τον άξονα x."
 
 #. FAQ.xml:230(para)
 msgid "How do I calculate the area between two functions?"
@@ -2732,9 +2739,8 @@ msgid "Vietnamese"
 msgstr "Βιετναμέζικα"
 
 #. Acknowledgements.xml:349(title)
-#, fuzzy
 msgid "Donators"
-msgstr "Δωρεές"
+msgstr "Δωρητές"
 
 #. Acknowledgements.xml:361(title)
 msgid "Miscellaneous"
@@ -3933,9 +3939,12 @@ msgid "In"
 msgstr "Μεγέθυνση"
 
 #. MenuItems.xml:451(para)
-#, fuzzy
 msgid "This will zoom in at the center of the graphing area, so you will see 81% of the previous graphing area. If you hold down <keycap>Shift</keycap> it will zoom in more, so you see 25% of the previous graphing area."
-msgstr "Αυτό θα μεγεθύνει στο κέντρο της περιοχής γραφήματος, έτσι θα δείτε ένα &frac14; της προηγούμενης περιοχής γραφήματος."
+msgstr ""
+"Αυτό θα μεγεθύνει στο κέντρο της περιοχής γραφήματος, έτσι θα δείτε το 81% "
+"της προηγούμενης περιοχής γραφήματος. Αν κρατήσετε πατημένο το "
+"<keycap>Shift</keycap> θα μεγεθύνει περισσότερο, έτσι θα δείτε το 25% της "
+"προηγούμενης περιοχής γραφήματος."
 
 #. MenuItems.xml:461(guimenuitem)
 msgid "Out"
@@ -3944,6 +3953,9 @@ msgstr "Σμίκρυνση"
 #. MenuItems.xml:466(para)
 msgid "This will zoom out so you see 1.23 times as much as on the previous graphing area. If you hold down <keycap>Shift</keycap> it will zoom out more, so you see 4 times the previous graphing area."
 msgstr ""
+"Αυτό θα σμικρύνει έτσι ώστε να βλέπετε 1.23 φορές της προηγούμενης περιοχής "
+"γραφήματος. Αν κρατήσετε πατημένο το <keycap>Shift</keycap> θα σμικρύνει "
+"περισσότερο, έτσι θα δείτε 4 φορές την προηγούμενη περιοχή γραφήματος."
 
 #. MenuItems.xml:476(guimenuitem)
 msgid "Window"
@@ -4090,71 +4102,84 @@ msgid "The following is a list of all the menu items in the program: <placeholde
 msgstr "Τα παρακάτω είναι ένας κατάλογος όλων των στοιχείων μενού στο πρόγραμμα: <placeholder-1/>"
 
 #. MenuItems.xml:782(title)
-#, fuzzy
 msgid "Shortcuts"
-msgstr "συντομεύσεις"
+msgstr "Συντομεύσεις"
 
 #. MenuItems.xml:786(keycap)
 msgid "Shift"
-msgstr ""
+msgstr "Shift (μετατόπιση)"
 
 #. MenuItems.xml:786(mousebutton)
 msgid "Drag"
-msgstr ""
+msgstr "Μεταφορά"
 
 #. MenuItems.xml:788(para)
 msgid "This allows you to move the coordinate system around. It is basically the same as selecting <placeholder-1/> in the menu."
 msgstr ""
+"Αυτό σας επιτρέπει να μετακινήσετε το σύστημα συντεταγμένων ολόγυρα. Είναι "
+"βασικά το ίδιο με την επιλογή του <placeholder-1/> στο μενού."
 
 #. MenuItems.xml:796(action)
 msgid "Scroll wheel"
-msgstr ""
+msgstr "Ροδέλα κύλισης"
 
 #. MenuItems.xml:798(para)
 msgid "You can use the scroll wheel on the mouse to zoom in and out at the position of the cursor in the graphing area."
 msgstr ""
+"Μπορείτε να χρησιμοποιήσετε τον τροχό κύλισης του ποντικιού για μεγέθυνση ή "
+"σμίκρυνση στης στη θέση του δρομέα στην περιοχή γραφήματος."
 
 #. MenuItems.xml:805(keycap)
-#, fuzzy
 msgid "Arrow"
-msgstr "βέλος"
+msgstr "Βέλος"
 
 #. MenuItems.xml:807(para)
-#, fuzzy
 msgid "Hold down <keycap>Ctrl</keycap> while you use the arrow keys to move the view around in small step. If you also hold down <keycap>Shift</keycap> you can move in larger steps."
-msgstr "Όταν κρατάτε πατημένο το πλήκτρο <keycap>Ctrl</keycap> μπορείτε να χρησιμοποιήσετε τα πλήκτρα βελών για να μετακινήσετε το σύστημα συντεταγμένων. Μπορείτε επίσης να χρησιμοποιήσετε το <placeholder-1/> και να μεταφέρετε το σύστημα συντεταγμένων ολόγυρα με το ποντίκι."
+msgstr ""
+"Κρατήστε πατημένο το πλήκτρο <keycap>Ctrl</keycap> ενώ χρησιμοποιείτε τα "
+"πλήκτρα βελών για να προβάλετε ολόγυρα σε μικρά βήματα. Αν κρατάτε πατημένο "
+"επίσης το <keycap>Shift</keycap> μπορείτε να μετακινηθείτε σε μεγαλύτερα "
+"βήματα."
 
 #. MenuItems.xml:815(keycap)
 msgid "Home"
-msgstr ""
+msgstr "Πλήκτρο Home"
 
 #. MenuItems.xml:817(para)
 msgid "This zooms in on the x-axis in small steps. If you also hold down <keycap>Shift</keycap> you can zoom in larger steps."
 msgstr ""
+"Αυτό μεγεθύνει τον άξονα x σε μικρά βήματα. Αν κρατάτε πατημένο επίσης το "
+"<keycap>Shift</keycap> μπορείτε να μεγεθύνετε σε μεγαλύτερα βήματα."
 
 #. MenuItems.xml:825(keycap)
 msgid "End"
-msgstr ""
+msgstr "Πλήκτρο End"
 
 #. MenuItems.xml:827(para)
 msgid "This zooms out on the x-axis in small steps. If you also hold down <keycap>Shift</keycap> you can zoom in larger steps."
 msgstr ""
+"Αυτό σμικραίνει τον άξονα x σε μικρά βήματα. Αν κρατάτε πατημένο επίσης το "
+"<keycap>Shift</keycap> μπορείτε να μεγεθύνετε σε μεγαλύτερα βήματα."
 
 #. MenuItems.xml:835(keycap)
 msgid "PgUp"
-msgstr ""
+msgstr "Πλήκτρο PgUp"
 
 #. MenuItems.xml:837(para)
 msgid "This zooms in on the y-axis in small steps. If you also hold down <keycap>Shift</keycap> you can zoom in larger steps."
 msgstr ""
+"Αυτό μεγεθύνει τον άξονα y σε μικρά βήματα. Αν κρατάτε πατημένο επίσης το "
+"<keycap>Shift</keycap> μπορείτε να μεγεθύνετε σε μεγαλύτερα βήματα."
 
 #. MenuItems.xml:845(keycap)
 msgid "PgDn"
-msgstr ""
+msgstr "Πλήκτρο PgDn"
 
 #. MenuItems.xml:847(para)
 msgid "This zooms out on the y-axis in small steps. If you also hold down <keycap>Shift</keycap> you can zoom in larger steps."
 msgstr ""
+"Αυτό σμικραίνει τον άξονα y σε μικρά βήματα. Αν κρατάτε πατημένο επίσης το "
+"<keycap>Shift</keycap> μπορείτε να μεγεθύνετε σε μεγαλύτερα βήματα."
 
 #. CustomFunctionsDialog.xml:8(title)
 msgid "Custom functions/constants"
