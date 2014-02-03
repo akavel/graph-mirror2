@@ -155,6 +155,7 @@ private:	// User declarations
   void UpdateErrorBars();
   std::wstring& GetText(int ACol, int ARow);
   void Translate();
+  void Apply();
 
 public:		// User declarations
   __fastcall TForm14(TComponent* Owner, TData &AData);
