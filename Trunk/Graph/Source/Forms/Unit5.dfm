@@ -371,7 +371,7 @@ object Form5: TForm5
           34)
         object Edit6: TEdit
           Left = 0
-          Top = 8
+          Top = 6
           Width = 49
           Height = 21
           Hint = 'Width of graph in pixels.'
@@ -380,7 +380,7 @@ object Form5: TForm5
         end
         object UpDown1: TUpDown
           Left = 49
-          Top = 8
+          Top = 6
           Width = 15
           Height = 21
           Anchors = [akTop, akRight]

@@ -15,6 +15,7 @@
 #include "ICompCommon.h"
 #include "PyGraph.h"
 #include "PyVclObject.h"
+#include "Unit1.h"
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
 #include <boost/format.hpp>
 //---------------------------------------------------------------------------
@@ -125,7 +126,7 @@ void __fastcall TForm14::GridEditorKeyPress(TInplaceEdit *InplaceEdit,
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Button1Click(TObject *Sender)
 {
-  Button4Click(Sender);
+  Apply();
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
@@ -405,6 +406,15 @@ void __fastcall TForm14::RadioGroup1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm14::Button4Click(TObject *Sender)
 {
+  Apply();
+  Data.SetModified();
+  Python::ExecutePluginEvent(Python::peChanged, boost::shared_ptr<TGraphElem>(Series));
+  Form1->UpdateTreeView();
+  Form1->Redraw();
+}
+//---------------------------------------------------------------------------
+void TForm14::Apply()
+{
   TErrorBarType xErrorBarType, yErrorBarType;
   double xErrorValue = 0, yErrorValue = 0;
   if(!CheckBox3->Checked)
@@ -507,6 +517,7 @@ void __fastcall TForm14::Button4Click(TObject *Sender)
   if(FontChanged)
     Property.DefaultPointLabelFont->Assign(FontDialog1->Font);
   SetRegValue(REGISTRY_KEY "\\Property", L"Interpolation", HKEY_CURRENT_USER, FromGuiAlgorithm[ComboBox2->ItemIndex]);
+  Series = PointSeries;
 }
 //---------------------------------------------------------------------------
 
