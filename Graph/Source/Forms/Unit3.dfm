@@ -1020,6 +1020,7 @@ object Form3: TForm3
         Top = 9
         Width = 21
         Height = 21
+        Hint = 'Select the font for the title.'
         ImageAlignment = iaCenter
         ImageIndex = 4
         Images = Form1.ImageList1
@@ -1141,6 +1142,7 @@ object Form3: TForm3
           Top = 14
           Width = 21
           Height = 21
+          Hint = 'Select the font used to show the labels on the axes.'
           ImageAlignment = iaCenter
           ImageIndex = 4
           Images = Form1.ImageList1
@@ -1152,6 +1154,7 @@ object Form3: TForm3
           Top = 46
           Width = 21
           Height = 21
+          Hint = 'Select the font used to show the numbers on the axes.'
           ImageAlignment = iaCenter
           ImageIndex = 4
           Images = Form1.ImageList1
@@ -1163,6 +1166,7 @@ object Form3: TForm3
           Top = 78
           Width = 21
           Height = 21
+          Hint = 'Select the font used to show the legend text.'
           ImageAlignment = iaCenter
           ImageIndex = 4
           Images = Form1.ImageList1
