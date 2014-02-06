@@ -103,6 +103,9 @@ msgstr ""
 msgid "hand2.cur"
 msgstr ""
 
+msgid "SourceGraph.manifest"
+msgstr ""
+
 msgid "Graph"
 msgstr ""
 
