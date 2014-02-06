@@ -359,6 +359,7 @@ object Form1: TForm1
         ReadOnly = True
         ShowButtons = False
         ShowLines = False
+        StateImages = ImageList1
         TabOrder = 0
         OnChange = TreeViewChange
         OnCollapsing = TreeViewCollapsing
