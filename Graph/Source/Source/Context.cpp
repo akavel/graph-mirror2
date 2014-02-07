@@ -291,6 +291,10 @@ void TContext::SetBrush(TBrushStyle Style, TColor Color, unsigned Alpha)
     case bsDiagCross:
       Brush.reset(new Gdiplus::HatchBrush(Gdiplus::HatchStyleDiagonalCross, Color2, Color3));
       break;
+
+    case bsClear:
+      Brush.reset(new Gdiplus::SolidBrush(Color3));
+      break;
   }
 }
 //---------------------------------------------------------------------------
@@ -435,8 +439,15 @@ void TContext::DrawPolygon(const std::vector<TPoint> &Points)
 //---------------------------------------------------------------------------
 void TContext::DrawPolygon(const TPoint *Points, unsigned Size)
 {
-  SetPolyFillMode(Canvas->Handle, WINDING);
-  Canvas->Polygon(Points, Size-1);
+  if(Size == 0)
+    return;
+  CheckHandle();
+  Gdiplus::GraphicsPath Path(Gdiplus::FillModeWinding);
+  const Gdiplus::Point *P = reinterpret_cast<const Gdiplus::Point*>(Points);
+  Path.AddPolygon(P, Size);
+  Gr->FillPath(Brush.get(), &Path);
+  Gr->DrawPath(Pen.get(), &Path);
+  Changed();
 }
 //---------------------------------------------------------------------------
 void TContext::DrawPolygon(const TPoint *Points, unsigned Size, const TRect &Rect)
@@ -545,7 +556,9 @@ void TContext::Changed()
 //---------------------------------------------------------------------------
 void TContext::DrawRegion(const TRegion &Region)
 {
-  PaintRgn(Canvas->Handle, Region.Handle);
+  CheckHandle();
+  Gdiplus::Region R(Region.Handle);
+  Gr->FillRegion(Brush.get(), &R);
   Changed();
 }
 //---------------------------------------------------------------------------
