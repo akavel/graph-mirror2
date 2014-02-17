@@ -2,18 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
 "POT-Creation-Date: 2014-02-01 14:36\n"
-"PO-Revision-Date: 2012-11-07 21:21+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"PO-Revision-Date: 2014-02-17 00:28+0100\n"
+"Last-Translator: Pavel Simerka <pavel.simerka@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: dxgettext 1.2.1\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. Form1..ActionMainMenuBar1..Font.Name
 msgid "Segoe UI"
-msgstr ""
+msgstr "Typ písma Segoe UI"
 
 #. Form1..Recent1..Hint
 #. Hint for recent file menu items
@@ -42,7 +42,8 @@ msgstr "Nad osou x"
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")....Hint
-msgid "Place the label directly above the x-axis on the right side of the image."
+msgid ""
+"Place the label directly above the x-axis on the right side of the image."
 msgstr "Umístit popis přímo nad osu x do pravé části hlavního okna."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")..Caption
@@ -52,7 +53,8 @@ msgstr "Pod osou x"
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")....Hint
-msgid "Place the label directly below the x-axis on the right side of the image."
+msgid ""
+"Place the label directly below the x-axis on the right side of the image."
 msgstr "Umístit popis přímo pod osu x do pravé části hlavního okna."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")..Caption
@@ -367,7 +369,9 @@ msgid "Paste"
 msgstr "Vložit"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
-msgid "Paste a function or point series from the clipboard into the coordinate system."
+msgid ""
+"Paste a function or point series from the clipboard into the coordinate "
+"system."
 msgstr "Vložit do soustavy souřadnic funkci nebo posloupnost bodů ze schránky."
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Caption
@@ -492,8 +496,12 @@ msgid "Square"
 msgstr "Čtvercové"
 
 #. Form1..ActionManager..ZoomSquareAction("Square")....Hint
-msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
-msgstr "Zobrazit osy ve stejném měřítku. Kružnice budou zobrazeny ve správném tvaru, ne jako elipsy."
+msgid ""
+"Zoom to scale the axes equally. This will show a plotted circle in its "
+"correct relation instead of an ellipse."
+msgstr ""
+"Zobrazit osy ve stejném měřítku. Kružnice budou zobrazeny ve správném tvaru, "
+"ne jako elipsy."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
 msgid "Standard"
@@ -516,32 +524,48 @@ msgid "Move up"
 msgstr "Posunout nahoru"
 
 #. Form1..ActionManager..MoveUpAction("Move up")....Hint
-msgid "Move the graphing area up along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Posunout okno nahoru podle soustavy souřadnic. Přidržet Shift pro posunutí skokem."
+msgid ""
+"Move the graphing area up along the coordinate system. Hold down Shift to "
+"move in larger steps."
+msgstr ""
+"Posunout okno nahoru podle soustavy souřadnic. Přidržet Shift pro posunutí "
+"skokem."
 
 #. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "Posunout dolů"
 
 #. Form1..ActionManager..MoveDownAction("Move down")....Hint
-msgid "Move the graphing area down along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Posunout okno dolů podle soustavy souřadnic. Přidržet Shift pro posunutí skokem."
+msgid ""
+"Move the graphing area down along the coordinate system. Hold down Shift to "
+"move in larger steps."
+msgstr ""
+"Posunout okno dolů podle soustavy souřadnic. Přidržet Shift pro posunutí "
+"skokem."
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
 msgstr "Posunout doleva"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")....Hint
-msgid "Move the graphing area to the left along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Posunout okno doleva podle soustavy souřadnic. Přidržet Shift pro posunutí skokem."
+msgid ""
+"Move the graphing area to the left along the coordinate system. Hold down "
+"Shift to move in larger steps."
+msgstr ""
+"Posunout okno doleva podle soustavy souřadnic. Přidržet Shift pro posunutí "
+"skokem."
 
 #. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr "Posunout doprava"
 
 #. Form1..ActionManager..MoveRightAction("Move right")....Hint
-msgid "Move the graphing area to the right along the coordinate system. Hold down Shift to move in larger steps."
-msgstr "Posunout okno doprava podle soustavy souřadnic. Přidržet Shift pro posunutí skokem."
+msgid ""
+"Move the graphing area to the right along the coordinate system. Hold down "
+"Shift to move in larger steps."
+msgstr ""
+"Posunout okno doprava podle soustavy souřadnic. Přidržet Shift pro posunutí "
+"skokem."
 
 #. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
@@ -947,8 +971,12 @@ msgstr "Popis:"
 
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
-msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
-msgstr "Zadejte popis, který bude zobrazený v legendě a v seznamu funkcí. Nezadáte-li nic, bude použita rovnice."
+msgid ""
+"Write a descriptive text to show in the legend and function list. If empty "
+"the formula will be used."
+msgstr ""
+"Zadejte popis, který bude zobrazený v legendě a v seznamu funkcí. Nezadáte-"
+"li nic, bude použita rovnice."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
@@ -965,8 +993,10 @@ msgid "Style:"
 msgstr "Styl:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..ShadeSelect1....Hint
-msgid "Select the style used for drawing the inequality. Not used for equations."
-msgstr "Vyberte, jakým stylem budou zobrazovány nerovnosti. Nevztahuje se na rovnice."
+msgid ""
+"Select the style used for drawing the inequality. Not used for equations."
+msgstr ""
+"Vyberte, jakým stylem budou zobrazovány nerovnosti. Nevztahuje se na rovnice."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
@@ -989,9 +1019,9 @@ msgid "Line style:"
 msgstr "Styl čáry:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..LineSelect1....Hint
-#, fuzzy
-msgid "Select line style used to draw equations and the border of inequalities."
-msgstr "Vyberte, jakým stylem budou zobrazovány nerovnosti. Nevztahuje se na rovnice."
+msgid ""
+"Select line style used to draw equations and the border of inequalities."
+msgstr "Vyberte styl čáry pro kreslení rovnic a hranice nerovností."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Label9("Color:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label9("Color:")..Caption
@@ -1005,8 +1035,9 @@ msgid "Color:"
 msgstr "Barva:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Panel1..Edit4....Hint
-msgid "Width in pixels of the equation line or the borderline of the inequality."
-msgstr "Šířka křivky rovnice nebo hranice nerovnice v pixelech."
+msgid ""
+"Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Tlouštka čáry rovnice nebo hranice nerovnosti v pixelech."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -1022,7 +1053,8 @@ msgstr "Vložit tečnu/kolmici"
 
 #. Form12("Insert tangent/normal")..Edit1..Hint
 msgid "Value where the tangent/normal will interact with the function."
-msgstr "Souřadnice, ve které se tečna nebo kolmice dotýká funkce nebo ji protíná."
+msgstr ""
+"Souřadnice, ve které se tečna nebo kolmice dotýká funkce nebo ji protíná."
 
 #. Form12("Insert tangent/normal")..RadioGroup1("Type")..Hint
 msgid "Choose if you want a tangent or a normal."
@@ -1042,8 +1074,12 @@ msgstr "Kolmice"
 
 #. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
 #. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
-msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
-msgstr "Zadejte popis, který bude zobrazený v ledendě. Nezadáte-li nic, bude použita rovnice."
+msgid ""
+"Write a descriptive text to show in the legend. If empty the equation will "
+"be used."
+msgstr ""
+"Zadejte popis, který bude zobrazený v ledendě. Nezadáte-li nic, bude použita "
+"rovnice."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
 #. Form5("Insert function")..GroupBox4("Graph properties")..Caption
@@ -1129,13 +1165,21 @@ msgstr "Konec:"
 
 #. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox1....Hint
 #. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox2....Hint
-msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
-msgstr "Vyberte symbol zobrazený na počátku intervalu. Bude zobrazen pouze, pokud byl určen rozsah argumentu."
+msgid ""
+"Select marker to show at the start of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Vyberte symbol zobrazený na počátku intervalu. Bude zobrazen pouze, pokud "
+"byl určen rozsah argumentu."
 
 #. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox2....Hint
 #. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox3....Hint
-msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
-msgstr "Vyberte symbol zobrazený na konci intervalu. Bude zobrazen pouze, pokud byl určen rozsah argumentu."
+msgid ""
+"Select marker to show at the end of the interval. Only used if an argument "
+"range is specified."
+msgstr ""
+"Vyberte symbol zobrazený na konci intervalu. Bude zobrazen pouze, pokud byl "
+"určen rozsah argumentu."
 
 #. Form13("Insert trendline")..Caption
 msgid "Insert trendline"
@@ -1243,8 +1287,14 @@ msgstr "Zadejte šablonu funkce, na které bude založena regresní křivka."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
 #. Form13("Insert trendline")..Edit5....Hint
-msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
-msgstr "Do pole Průsečík zadejte hodnotu,ve které bude regresní křivka protínat osu y. Toto pole je k dispozici pouze pro lineární, polynomickou a exponenciální regresní křivku."
+msgid ""
+"Type a value in the Intercept box to specify the point where you want the "
+"trendline to meet the y-axis. This is only available for linear, polynomial "
+"and exponential trendlines."
+msgstr ""
+"Do pole Průsečík zadejte hodnotu,ve které bude regresní křivka protínat osu "
+"y. Toto pole je k dispozici pouze pro lineární, polynomickou a exponenciální "
+"regresní křivku."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
@@ -1278,8 +1328,11 @@ msgid "Insert point series"
 msgstr "Vložit posloupnost bodů"
 
 #. Form14("Insert point series")..Edit1....Hint
-msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
-msgstr "Název posloupnosti bodů zobrazený v seznamu vlevo od soustavy souřadnic."
+msgid ""
+"The name of the point series, which is shown in the list to the left of the "
+"coordinate system."
+msgstr ""
+"Název posloupnosti bodů zobrazený v seznamu vlevo od soustavy souřadnic."
 
 #. Form14("Insert point series")..Edit1..Text
 #. Default description in the Insert point series dialog
@@ -1323,7 +1376,9 @@ msgid "Interpolation:"
 msgstr "Interpolace:"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..LineSelect1....Hint
-msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
+msgid ""
+"Choose the style of lines to be drawn between the points. You may also "
+"choose not to draw any lines."
 msgstr "Zvolte styl čáry zobrazené mezi body. Čára nemusí být zobrazena."
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Edit3..Hint
@@ -1515,8 +1570,12 @@ msgstr "Zkopírovat vybraný text do schránky."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")....Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")....Hint
-msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
-msgstr "Vložit do tabulky text ze schránky. Ostatní buňky mohou být textem ze schránky přepsány."
+msgid ""
+"Paste text from the clipboard into the grid. Other cells may be overwritten "
+"by the text from the clipboard."
+msgstr ""
+"Vložit do tabulky text ze schránky. Ostatní buňky mohou být textem ze "
+"schránky přepsány."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Hint
@@ -1570,8 +1629,12 @@ msgid "Calculate table"
 msgstr "Vytvořit tabulku"
 
 #. Form15("Calculate table")..Edit3....Hint
-msgid "The step value. This is the difference between two adjoining values in the defined interval."
-msgstr "Hodnota kroku. Je to rozdíl mezi dvěma sousedními hodnotami v definovaném intervalu."
+msgid ""
+"The step value. This is the difference between two adjoining values in the "
+"defined interval."
+msgstr ""
+"Hodnota kroku. Je to rozdíl mezi dvěma sousedními hodnotami v definovaném "
+"intervalu."
 
 #. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
@@ -1613,7 +1676,8 @@ msgstr "Probíhá výpočet"
 #. Form15("Calculate table")..SaveDialog1..Filter
 #. Export to file dialog
 msgid "CSV (Comma delimited) [*.csv]|*.csv|Text [*.txt]|*.txt"
-msgstr "CSV (hodnoty oddělené čárkou) [*.csv]|*.csv|Textové soubory [*.txt]|*.txt"
+msgstr ""
+"CSV (hodnoty oddělené čárkou) [*.csv]|*.csv|Textové soubory [*.txt]|*.txt"
 
 #. Form16("Insert shading")..Caption
 msgid "Insert shading"
@@ -1651,8 +1715,11 @@ msgstr "Vyšrafovat oblast uvnitř funkce."
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
-msgid "Shades the area between the main function and the function selected in the list to the right."
-msgstr "Vyšrafovat oblast mezi hlavní funkcí a funkcí vybranou ze seznamu vpravo."
+msgid ""
+"Shades the area between the main function and the function selected in the "
+"list to the right."
+msgstr ""
+"Vyšrafovat oblast mezi hlavní funkcí a funkcí vybranou ze seznamu vpravo."
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
 msgid "Above function"
@@ -1702,7 +1769,8 @@ msgstr "Souřadnice, u které končí šrafování."
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Hint
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Hint
 msgid "Check to increase the end coordinate until intersection."
-msgstr "Zaškrtnutím posunete koncovou souřadnici doprava k nejbližšímu průsečíku."
+msgstr ""
+"Zaškrtnutím posunete koncovou souřadnici doprava k nejbližšímu průsečíku."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox2("Increase to intersection")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox4("Increase to intersection")..Caption
@@ -1712,7 +1780,8 @@ msgstr "Pokračovat k průsečíku"
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Hint
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Hint
 msgid "Check to decrease the start coordinate until intersection."
-msgstr "Zaškrtnutím posunete počáteční souřadnici doleva k nejbližšímu průsečíku."
+msgstr ""
+"Zaškrtnutím posunete počáteční souřadnici doleva k nejbližšímu průsečíku."
 
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox1("Range")..CheckBox1("Decrease to intersection")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..CheckBox3("Decrease to intersection")..Caption
@@ -1748,7 +1817,8 @@ msgid "2nd function:"
 msgstr "Druhá funkce:"
 
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
-msgid "Select the second function when you want a shading between two functions."
+msgid ""
+"Select the second function when you want a shading between two functions."
 msgstr "Vyberte druhou funkci, chcete-li šrafovat oblast mezi dvěma funkcemi."
 
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
@@ -1792,8 +1862,11 @@ msgid "Set a custom image height in pixels."
 msgstr "Nastavit vlastní výšku (pixely) obrázku."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
-msgid "Choose to use the same size as shown on the screen or a custom image size."
-msgstr "Zvolte, chcete-li použít stejnou velikost jako na obrazovce nebo vlastní velikost obrázku."
+msgid ""
+"Choose to use the same size as shown on the screen or a custom image size."
+msgstr ""
+"Zvolte, chcete-li použít stejnou velikost jako na obrazovce nebo vlastní "
+"velikost obrázku."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")..Caption
 msgid "Image size"
@@ -1808,8 +1881,12 @@ msgid "Custom size"
 msgstr "Vlastní velikost"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Hint
-msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
-msgstr "Progresivní kódování umožňuje zobrazení hrubého náhledu obrázku při jeho načítání."
+msgid ""
+"Progressive encoding allows viewers to see a rough copy of the image while "
+"it is downloaded."
+msgstr ""
+"Progresivní kódování umožňuje zobrazení hrubého náhledu obrázku při jeho "
+"načítání."
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")..Caption
 msgid "Encoding"
@@ -1953,24 +2030,29 @@ msgid "Build %s"
 msgstr "Sestavení %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
-msgstr "Tento program je freeware a lze jej šířit podle podmínek licence GNU General Public License verze 2. Informace o chybách a návrhy zasílejte autorovi programu."
+msgid ""
+"This is free software, and you are welcome to redistribute it under the "
+"terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please "
+"send bug reports and suggestions to the programmer."
+msgstr ""
+"Tento program je freeware a lze jej šířit podle podmínek licence GNU General "
+"Public License verze 2. Informace o chybách a návrhy zasílejte autorovi "
+"programu."
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
 msgid "The newest version as well as the source code are available at: %s"
-msgstr "Nejnovější verze a zdrojový kód programu jsou k dispozici na adrese: %s"
+msgstr ""
+"Nejnovější verze a zdrojový kód programu jsou k dispozici na adrese: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Support: %s")..Caption
-#, fuzzy
 msgid "Support: %s"
-msgstr "Podpora"
+msgstr "Podpora: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
 msgid "<Language> translation by <Translator>"
 msgstr ""
-"Český překlad: Martin Stružský, Pavlína Krausová\n"
-"Web: <a href=\"http://soustruh.atlasweb.cz\">http://soustruh.atlasweb.cz</a>\n"
+"Český překlad: Martin Stružský, Pavlína Krausová, Pavel Šimerka\n"
 "E-mail: <a href=\"mailto:struzsky.m@gmail.com\">struzsky.m@gmail.com</a>"
 
 #. Form20("Animation")..Caption
@@ -2027,8 +2109,12 @@ msgid "Auto reverse"
 msgstr "Automatické přehrání zpět"
 
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
-msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
-msgstr "Přehrát pozpátku po dosažení konce animace. Je to nejužitečnější v kombinaci s příkazem \"Opakovat\"."
+msgid ""
+"Play backwards when the end of the animation is reached. This is most useful "
+"in combination with the \"Repeat\" command."
+msgstr ""
+"Přehrát pozpátku po dosažení konce animace. Je to nejužitečnější v kombinaci "
+"s příkazem \"Opakovat\"."
 
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
@@ -2047,8 +2133,12 @@ msgid "Save all frames..."
 msgstr "Uložit všechny snímky..."
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
-msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
-msgstr "Uložit všechny snímky animace do obrazových souborů. Tím se vytvoří tolik souborů, kolik je snímků v animaci."
+msgid ""
+"Save all frames in the animation to image files. This will create as many "
+"files as there are frames in the animation."
+msgstr ""
+"Uložit všechny snímky animace do obrazových souborů. Tím se vytvoří tolik "
+"souborů, kolik je snímků v animaci."
 
 #. Form21("Placement")..Label1("Corner:")..Caption
 msgid "Corner:"
@@ -2206,7 +2296,8 @@ msgid "Edit the label for the axis here."
 msgstr "Zadejte popis osy."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx3..CheckBox3("Label:")....Hint
-msgid "Show the label at the right side of the graphing area, above the x-axis."
+msgid ""
+"Show the label at the right side of the graphing area, above the x-axis."
 msgstr "Zobrazit popis na pravé straně hlavního okna nad osou x."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx3..CheckBox3("Label:")..Caption
@@ -2269,7 +2360,8 @@ msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "V tomto bodě bude osa y protínat osu x."
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..GridPanelEx2..CheckBox10("Label:")....Hint
-msgid "Show the label at the top of the graphing area, to the right of the y-axis."
+msgid ""
+"Show the label at the top of the graphing area, to the right of the y-axis."
 msgstr "Zobrazit popis v horní části hlavního okna napravo od osy y."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
@@ -2281,8 +2373,12 @@ msgid "Title:"
 msgstr "Název:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
-msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
-msgstr "Zvolte, chcete-li zobrazit osy protnuté uprostřed nebo vlevo dole nebo je nechcete zobrazit vůbec."
+msgid ""
+"Choose if you want to show the axes, and if you want to show them crossed or "
+"at the left and bottom of the image."
+msgstr ""
+"Zvolte, chcete-li zobrazit osy protnuté uprostřed nebo vlevo dole nebo je "
+"nechcete zobrazit vůbec."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")..Caption
 msgid "Axes style"
@@ -2301,8 +2397,10 @@ msgid "Boxed"
 msgstr "Vlevo dole"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
-msgid "Choose if trigonometric functions should calculate in radians or degrees."
-msgstr "Zvolte, zda mají trigonometrické funkce počítat v radiánech nebo ve stupních."
+msgid ""
+"Choose if trigonometric functions should calculate in radians or degrees."
+msgstr ""
+"Zvolte, zda mají trigonometrické funkce počítat v radiánech nebo ve stupních."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
 msgid "Trigonometry"
@@ -2329,8 +2427,12 @@ msgid "Legend placement"
 msgstr "Umístění legendy"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")....Hint
-msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
-msgstr "Toto políčko zaškrtněte, chcete-li pro výpočty použít komplexní čísla. Pamatujte, že tato funkce zpomalí práci s grafy."
+msgid ""
+"Check this to use complex numbers for calculations. Notice that this will "
+"slow graphing down."
+msgstr ""
+"Toto políčko zaškrtněte, chcete-li pro výpočty použít komplexní čísla. "
+"Pamatujte, že tato funkce zpomalí práci s grafy."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")..Caption
 msgid "Calculate with complex numbers"
@@ -2423,15 +2525,21 @@ msgstr "Max. kroků zpět:"
 
 #. Form4("Options")..GridPanelEx1..Panel3..Edit3....Hint
 msgid "Maximum number of undo steps saved. Set this to 0 to prevent undo."
-msgstr "Maximální počet uložených kroků, které lze vrátit zpět. Chcete-li vypnout funkci Zpět, nastavte tuto hodnotu na 0."
+msgstr ""
+"Maximální počet uložených kroků, které lze vrátit zpět. Chcete-li vypnout "
+"funkci Zpět, nastavte tuto hodnotu na 0."
 
 #. Form4("Options")..GridPanelEx1..Label5("Font scale:")..Caption
 msgid "Font scale:"
 msgstr "Velikost písma:"
 
 #. Form4("Options")..GridPanelEx1..ComboBox1....Hint
-msgid "This is used to scale the user interface if you are having problems reading the text."
-msgstr "Tato hodnota je použita pro nastavení velikosti písma uživatelského rozhraní, máte-li potíže s čtením textu."
+msgid ""
+"This is used to scale the user interface if you are having problems reading "
+"the text."
+msgstr ""
+"Tato hodnota je použita pro nastavení velikosti písma uživatelského "
+"rozhraní, máte-li potíže s čtením textu."
 
 #. Form4("Options")..GridPanelEx1..Label4("Language:")..Caption
 msgid "Language:"
@@ -2450,24 +2558,36 @@ msgid "Show tooltip"
 msgstr "Zobrazit vysvětlivky"
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")....Hint
-msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
-msgstr "Uložit pozici okna při ukončení programu. Toto nastavení bude použito při příštím spuštění programu."
+msgid ""
+"Save the size of the main window when the program exits. This is used the "
+"next time Graph is run."
+msgstr ""
+"Uložit pozici okna při ukončení programu. Toto nastavení bude použito při "
+"příštím spuštění programu."
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
 msgstr "Při ukočení uložit pracovní plochu"
 
 #. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")....Hint
-msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
-msgstr "Je-li toto políčko zaškrtnuto, program program bude při spuštění kontaktovat webový server, aby zjistil, zda je k dispozici novější verze."
+msgid ""
+"If checked the program will contact a web server when the program is started "
+"to see if a newer version is available."
+msgstr ""
+"Je-li toto políčko zaškrtnuto, program program bude při spuštění kontaktovat "
+"webový server, aby zjistil, zda je k dispozici novější verze."
 
 #. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
 msgstr "Při spuštění zjišťovat novou verzi programu Graph"
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
-msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
-msgstr "Použít vlastní desetinný oddělovač místo výchozího z místních nastavení Windows."
+msgid ""
+"Use a custom decimal separator instead of the default from the Windows "
+"Regional settings."
+msgstr ""
+"Použít vlastní desetinný oddělovač místo výchozího z místních nastavení "
+"Windows."
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
 msgid "Custom decimal separator:"
@@ -2518,8 +2638,12 @@ msgid "Draw type:"
 msgstr "Zobrazit:"
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Hint
-msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
-msgstr "Zvolte možnost Čáry, chcete-li body vypočítané pro graf spojit. Zvolte možnost Tečky, chcete-li pro každý vypočítaný bod zobrazit pouze tečku."
+msgid ""
+"Choose Lines if you want the calculated points for the graph to be "
+"connected. Choose Dots if you only want to show a dot at each point."
+msgstr ""
+"Zvolte možnost Čáry, chcete-li body vypočítané pro graf spojit. Zvolte "
+"možnost Tečky, chcete-li pro každý vypočítaný bod zobrazit pouze tečku."
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4..Text
 #. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
@@ -2683,11 +2807,16 @@ msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Vyberte, kam bude umístěn kurzor po klepnutí na obrázek."
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
-msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
-msgstr "Zadejte počáteční souřadnici nebo ji označte přímo v grafu pomocí myši."
+msgid ""
+"Enter the start coordinate or mark the range on the graph itself with the "
+"mouse."
+msgstr ""
+"Zadejte počáteční souřadnici nebo ji označte přímo v grafu pomocí myši."
 
 #. AreaFrame..GridPanel1..Panel2..Edit2....Hint
-msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
+msgid ""
+"Enter the end coordinate or mark the range on the graph itself with the "
+"mouse."
 msgstr "Zadejte koncovou souřadnici nebo ji označte přímo v grafu pomocí myši."
 
 #. ParFuncFrame..Label7("Snap to:")..Caption
@@ -2717,8 +2846,12 @@ msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "Hodnota odchylky funkce pro zadaný parametr t."
 
 #. ParFuncFrame..Edit1....Hint
-msgid "Enter the value for the parameter t for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Zadejte hodnotu parametru t, pro kterou chcete ohodnotit funkci, nebo klepněte na funkci v hlavním okně."
+msgid ""
+"Enter the value for the parameter t for which you want to evaluate the "
+"function, or click on the graph in the graphing area."
+msgstr ""
+"Zadejte hodnotu parametru t, pro kterou chcete ohodnotit funkci, nebo "
+"klepněte na funkci v hlavním okně."
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
@@ -2758,23 +2891,34 @@ msgid "The slope of the function evaluated for the given angle."
 msgstr "Hodnota odchylky funkce pro zadaný úhel."
 
 #. PolFuncFrame..Edit1....Hint
-msgid "Enter the value of the polar angle for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Zadejte hodnotu polárního úhlu, pro kterou chcete ohodnotit funkci, nebo klepněte na funkci v hlavním okně."
+msgid ""
+"Enter the value of the polar angle for which you want to evaluate the "
+"function, or click on the graph in the graphing area."
+msgstr ""
+"Zadejte hodnotu polárního úhlu, pro kterou chcete ohodnotit funkci, nebo "
+"klepněte na funkci v hlavním okně."
 
 #. StdFuncFrame..Edit1....Hint
-msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
-msgstr "Zadejte hodnotu, pro kterou chcete ohodnotit funkci, nebo klepněte na funkci v hlavním okně."
+msgid ""
+"Enter a value for which you want to evaluate the function, or click on the "
+"graph in the graphing area."
+msgstr ""
+"Zadejte hodnotu, pro kterou chcete ohodnotit funkci, nebo klepněte na funkci "
+"v hlavním okně."
 
 #. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
 msgstr "Toto je hodnota funkce pro zadanou hodnotu x."
 
 #. StdFuncFrame..Edit3....Hint
-msgid "This is the first derivative of the function evaluated for the entered value."
+msgid ""
+"This is the first derivative of the function evaluated for the entered value."
 msgstr "Toto je hodnota první derivace funkce pro zadanou hodnotu."
 
 #. StdFuncFrame..Edit4....Hint
-msgid "This is the second derivative of the function evaluated for the entered value."
+msgid ""
+"This is the second derivative of the function evaluated for the entered "
+"value."
 msgstr "Toto je velikost druhé derivace funkce pro zadanou hodnotu."
 
 #. TanFrame..Edit2....Hint
@@ -2786,7 +2930,7 @@ msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Zadejte souřadnici x nebo klepněte do hlavního okna."
 
 msgid "SourceGraph.manifest"
-msgstr ""
+msgstr "SourceGraph.manifest"
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -2925,8 +3069,12 @@ msgstr "Výpočet se nepodařil."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Argument způsobil úplnou ztrátou přesnosti výpočtu."
 
-msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
-msgstr "Vlastní funkce/konstanta '%s' nebyla nalezena, nebo má nesprávný počet argumentů."
+msgid ""
+"The custom function/constant '%s' was not found or has the wrong number of "
+"arguments."
+msgstr ""
+"Vlastní funkce/konstanta '%s' nebyla nalezena, nebo má nesprávný počet "
+"argumentů."
 
 msgid "Too many recursive calls."
 msgstr "Příliš mnoho rekurzivních volání."
@@ -2956,7 +3104,9 @@ msgid "String is empty. You need to enter a formula."
 msgstr "Řetězec je prázdný. Je třeba zadat funkci."
 
 msgid "Comma is not allowed here. Use dot as decimal separator."
-msgstr "Na tomto místě nelze použít čárku. K oddělení desetinných míst použijte tečku."
+msgstr ""
+"Na tomto místě nelze použít čárku. K oddělení desetinných míst použijte "
+"tečku."
 
 msgid "Unexpected end of brackets."
 msgstr "Neočekávané ukončení závorky."
@@ -3015,15 +3165,19 @@ msgstr "Výsledek nenalezen."
 msgid "An accurate result cannot be found."
 msgstr "Přesný výsledek se nedá určit."
 
-msgid "Internal error. Please notify the programmer with as much information as possible."
-msgstr "Interní chyba. Zašlete prosím autorovi programu co nejpodrobnější informace."
+msgid ""
+"Internal error. Please notify the programmer with as much information as "
+"possible."
+msgstr ""
+"Interní chyba. Zašlete prosím autorovi programu co nejpodrobnější informace."
 
 msgid "You need to enter a name for the function/constant."
 msgstr "Je třeba zadat název funkce nebo konstanty."
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
 "Neplatný název funkce nebo konstanty '%s'.\n"
@@ -3035,7 +3189,8 @@ msgstr "Je třeba zadat název argumentu."
 
 msgid ""
 "Invalid argument name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always "
+"start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
 "Neplatný název argumentu '%s'.\n"
@@ -3136,7 +3291,8 @@ msgid ""
 "Access denied. Check that the file is not in use or write protected."
 msgstr ""
 "Do souboru nelze zapisovat: %s\n"
-"Přístup odmítnut. Zkontrolujte, zda soubor není používán nebo chráněn proti zápisu."
+"Přístup odmítnut. Zkontrolujte, zda soubor není používán nebo chráněn proti "
+"zápisu."
 
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
 msgstr "Písmo \"%s\" neexistuje. Bude použito standardní písmo."
@@ -3175,7 +3331,8 @@ msgid "Object error"
 msgstr "Chyba objektu"
 
 msgid "Windows does not have enough resources to save an image that large."
-msgstr "Systém Windows nemá dostatek prostředků pro uložení tak velkého obrázku."
+msgstr ""
+"Systém Windows nemá dostatek prostředků pro uložení tak velkého obrázku."
 
 msgid "'%1%' must be between %2% and %3%."
 msgstr "'%1%' musí být v intevalu od %2% do %3%."
@@ -3193,11 +3350,10 @@ msgid "Invalid use of infinity. Infinity cannot be used here."
 msgstr "Neplatné použití nekonečné hodnoty. Nekonečno se zde nedá použít."
 
 msgid "Not enough memory to complete the operation."
-msgstr ""
+msgstr "Nedostatek paměti pro dokončení operace."
 
-#, fuzzy
 msgid "Printing aborted!"
-msgstr "Chyba tisku"
+msgstr "Tisk přerušen!"
 
 msgid "Confirm delete"
 msgstr "Potvrzení odstranění"
@@ -3210,8 +3366,14 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Soubory programu Graph [*.grf]|*.grf|Všechny soubory [*.*]|*.*"
 
 #. Import from file dialog
-msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
-msgstr "CSV (oddělevač středník) [*.csv]|*.csv|CSV (oddělovač čárka) [*.csv]|*.csv|Text (oddělovač tabulátor) [*.txt]|*.txt|Text (oddělovač mezera) [*.txt]|*.txt|Všechny soubory [*.*]|*.*"
+msgid ""
+"CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|"
+"Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All "
+"files [*.*]|*.*"
+msgstr ""
+"CSV (oddělevač středník) [*.csv]|*.csv|CSV (oddělovač čárka) [*.csv]|*.csv|"
+"Text (oddělovač tabulátor) [*.txt]|*.txt|Text (oddělovač mezera) [*.txt]|*."
+"txt|Všechny soubory [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Opravdu chcete odstranit model: %s?"
@@ -3232,17 +3394,33 @@ msgstr "Největší hodnota t musí být větší než nejmenší hodnota."
 msgid "The step value for t must be a number greater than 0."
 msgstr "Počet výpočtů pro t musí být větší než nula."
 
-msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr "Nejmenší hodnota na ose x musí být větší než nula, pokud je osa x v logaritmickém měřítku."
+msgid ""
+"The minimum value for the x-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Nejmenší hodnota na ose x musí být větší než nula, pokud je osa x v "
+"logaritmickém měřítku."
 
-msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
-msgstr "Je-li osa x v  logaritmickém měřítku, bod, ve kterém ji protíná osa y, musí být větší než nula."
+msgid ""
+"The cross point of the y-axis must be greater than 0, when the x-axis is "
+"logarithmic scaled."
+msgstr ""
+"Je-li osa x v  logaritmickém měřítku, bod, ve kterém ji protíná osa y, musí "
+"být větší než nula."
 
-msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr "Nejmenší hodnota na ose y musí být větší než nula, pokud je osa y v logaritmickém měřítku."
+msgid ""
+"The minimum value for the y-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Nejmenší hodnota na ose y musí být větší než nula, pokud je osa y v "
+"logaritmickém měřítku."
 
-msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
-msgstr "Je-li osa y v  logaritmickém měřítku, bod, ve kterém ji protíná osa x, musí být větší než nula."
+msgid ""
+"The cross point of the x-axis must be greater than 0, when the y-axis is "
+"logarithmic scaled."
+msgstr ""
+"Je-li osa y v  logaritmickém měřítku, bod, ve kterém ji protíná osa x, musí "
+"být větší než nula."
 
 msgid "'Recent files' must be between 0 and 9."
 msgstr "Počet naposledy otevřených souborů musí být v intervalu od 0 do 9."
@@ -3259,8 +3437,11 @@ msgstr "Šířka musí být celé číslo větší než nula."
 msgid "Error in width"
 msgstr "Chybně zadaná šířka"
 
-msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
-msgstr "Konec intervalu musí být větší než jeho počátek a %s musí být větší než nula."
+msgid ""
+"The end of interval must be greater than the start of interval and %s must "
+"be greater than 0."
+msgstr ""
+"Konec intervalu musí být větší než jeho počátek a %s musí být větší než nula."
 
 msgid "Invalid model name."
 msgstr "Neplatný název šablony."
@@ -3300,7 +3481,8 @@ msgid "Edit text label"
 msgstr "Upravit textový popis"
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
-msgstr "V šabloně chybí konstanty (začínající znakem $), které by měl Graph najít."
+msgstr ""
+"V šabloně chybí konstanty (začínající znakem $), které by měl Graph najít."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' musí být celé číslo v intervalu od 0 do 1000."
@@ -3321,7 +3503,9 @@ msgstr "Pro každý bod je třeba zadat souřadnice x a y."
 msgid "\"%s\" is not a valid number."
 msgstr "\"%s\" není platné číslo."
 
-msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
+msgid ""
+"You didn't add any points. You need to specify some x- and y-coordinates in "
+"the grid."
 msgstr "Nebyly přidány žádné body. Do tabulky je třeba zadat souřadnice x a y."
 
 msgid "Edit point series"
@@ -3362,8 +3546,12 @@ msgstr ""
 msgid "Socket error %s"
 msgstr "Chyba připojení %s"
 
-msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
-msgstr "Určitý integrál nebo vyznačená oblast mezi funkcí a osou x pro zadaný rozsah argumentu."
+msgid ""
+"Definite integral, or signed area between function and x-axis, for the given "
+"domain range."
+msgstr ""
+"Určitý integrál nebo vyznačená oblast mezi funkcí a osou x pro zadaný rozsah "
+"argumentu."
 
 msgid "Length of path along the curve calculated for the given range."
 msgstr "Délka křivky vypočítaná pro určený rozsah."
@@ -3385,11 +3573,13 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
+"If you don't want to be asked again, this feature may be disabled from the "
+"Edit|Options dialog."
 msgstr ""
 "\n"
 "\n"
-"Nechcete-li tento dotaz znovu zobrazovat, můžete tuto funkci vypnout v dialogovém okně Úpravy|Možnosti."
+"Nechcete-li tento dotaz znovu zobrazovat, můžete tuto funkci vypnout v "
+"dialogovém okně Úpravy|Možnosti."
 
 msgid "Edit relation"
 msgstr "Upravit vztah"
@@ -3402,8 +3592,12 @@ msgstr "Příkazy"
 msgid "(All Commands)"
 msgstr "(Všechny příkazy)"
 
-msgid "To add a command to the toolbar simply select a category and drag the command out of this dialog box to the toolbar."
-msgstr "Chcete-li na panel nástrojů přidat příkaz, vyberte kategorii a přetáhněte příkaz z tohoto dialogového okna na panel nástrojů."
+msgid ""
+"To add a command to the toolbar simply select a category and drag the "
+"command out of this dialog box to the toolbar."
+msgstr ""
+"Chcete-li na panel nástrojů přidat příkaz, vyberte kategorii a přetáhněte "
+"příkaz z tohoto dialogového okna na panel nástrojů."
 
 msgid "Edit f'(x)"
 msgstr "Upravit f'(x)"
@@ -3419,7 +3613,8 @@ msgstr "Kategorie:"
 msgid ""
 "The program seems to be stuck in an infinite loop.\n"
 "If you cancel the operation the program will become unstable.\n"
-"You should therefore save your data under a new name and restart the application."
+"You should therefore save your data under a new name and restart the "
+"application."
 msgstr ""
 "Program se jeví zacyklen v nekonečné smyčce.\n"
 "Pokud operaci zrušíte, program se stane nestabilním.\n"
@@ -3429,209 +3624,407 @@ msgid "Thread is not responding"
 msgstr "Vlákno bez odzvy"
 
 #. Tip of the Day
-msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
-msgstr "Mezi tipy dne naleznete mnoho informací o programu, které většina uživatelů nezná."
+msgid ""
+"This Tip of the day can give you a lot of information about the program that "
+"most users don't know."
+msgstr ""
+"Mezi tipy dne naleznete mnoho informací o programu, které většina uživatelů "
+"nezná."
 
 #. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
-#, fuzzy
-msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
-msgstr "Na webovském fóru: <a href=\"http://www.padowan.dk/forum\">http://www.padowan.dk/forum</a> můžete získat rady pro používání programu Graph, nahlásit chyby a navrhovat budoucí zdokonalení."
+msgid ""
+"You can get help using Graph, report bugs and suggest future improvements at "
+"the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</"
+"a>"
+msgstr ""
+"S otázkami na používání programu Grapf, oznámením zjištěných chyb a s návrhy "
+"na další zlepšení se obraťte na webové fórum: <a href=\"http://www.padowan."
+"dk/forum\">http://www.padowan.dk/forum</a>"
 
 #. Tip of the Day
-msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
-msgstr "Panel nástrojů si můžete přizpůsobit. Klepněte na něj pravým tlačítkem a vyberte příkaz 'Přizpůsobit panel nástrojů'."
+msgid ""
+"You can customize the toolbar by right clicking on it and select 'Customize "
+"toolbar'."
+msgstr ""
+"Panel nástrojů si můžete přizpůsobit. Klepněte na něj pravým tlačítkem a "
+"vyberte příkaz 'Přizpůsobit panel nástrojů'."
 
 #. Tip of the Day
-msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
-msgstr "Funkci lze místo odstranění zneviditelnit tím, že klepnutím na příslušné políčko odstraníte zaškrtnutí v seznamu funkcí."
+msgid ""
+"Instead of deleting a function, you can make it invisible by removing the "
+"check mark for the item in the function list."
+msgstr ""
+"Funkci lze místo odstranění zneviditelnit tím, že klepnutím na příslušné "
+"políčko odstraníte zaškrtnutí v seznamu funkcí."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
 msgstr "Do textového popisu lze vložit obrázky."
 
 #. Tip of the Day
-msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
-msgstr "Textové popisy mohou obsahovat libovolné objekty OLE, například objekty aplikace Microsoft Equation. Během úpravy popisu klepněte do oblasti pro úpravy a vyberte příkaz 'Vložit objekt'."
+msgid ""
+"Text labels can contain any kind of OLE objects, for example Microsoft "
+"Equation. When editing a label right click in the editing area and select "
+"'Insert object'."
+msgstr ""
+"Textové popisy mohou obsahovat libovolné objekty OLE, například objekty "
+"aplikace Microsoft Equation. Během úpravy popisu klepněte do oblasti pro "
+"úpravy a vyberte příkaz 'Vložit objekt'."
 
 #. Tip of the Day
-msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
-msgstr "Body z posloupnosti bodů lze exportovat do souboru, který potom můžete otevřít v jiných programech, např. Microsoft Excel..."
+msgid ""
+"You can export points from a point series to a file that can be read by "
+"other programs, for example Microsoft Excel. When editing the point series "
+"select the points, right click and choose 'Export to file'."
+msgstr ""
+"Body z posloupnosti bodů lze exportovat do souboru, který potom můžete "
+"otevřít v jiných programech, např. Microsoft Excel..."
 
 #. Tip of the Day
-msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
-msgstr "Svislou čáru v bodě x=5 lze zobrazit jako parametrickou funkci x(t)=5, y(t)=t nebo jako vztah x=5."
+msgid ""
+"A vertical line at x=5 can be drawn as the parametric function x(t)=5, "
+"y(t)=t or as the relation x=5."
+msgstr ""
+"Svislou čáru v bodě x=5 lze zobrazit jako parametrickou funkci x(t)=5, "
+"y(t)=t nebo jako vztah x=5."
 
 #. Tip of the Day
-msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
-msgstr "Obě osy lze zobrazit ve stejném měřítku pomocí funkce Zobrazení|Čtvercové. Tato funkce je vhodná zejména pro zobrazení kružnic a podobných funkcí."
+msgid ""
+"You can use Zoom|Square to make the axes look equally scaled. This is "
+"especially useful when drawing circles and similar functions."
+msgstr ""
+"Obě osy lze zobrazit ve stejném měřítku pomocí funkce Zobrazení|Čtvercové. "
+"Tato funkce je vhodná zejména pro zobrazení kružnic a podobných funkcí."
 
 #. Tip of the Day
 msgid "You can find a list of all available functions in the help."
 msgstr "Seznam dostupných funkcí naleznete v nápovědě."
 
 #. Tip of the Day
-msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr "Pomocí příkazu 'if' lze spojit dvě funkce do jedné. Např. funkci f(x)=x pro x<1 a f(x)=x^2 pro x>=1 lze zadat jako f(x)=if(x<1, x, x^2)."
+msgid ""
+"You can combine two functions to one using 'if'. For example the function "
+"f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr ""
+"Pomocí příkazu 'if' lze spojit dvě funkce do jedné. Např. funkci f(x)=x pro "
+"x<1 a f(x)=x^2 pro x>=1 lze zadat jako f(x)=if(x<1, x, x^2)."
 
 #. Tip of the Day
-msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
-msgstr "Obsah jiného souboru programu Graph lze importovat do aktuální soustavy souřadnic pomocí příkazu 'Soubor|Importovat|Soubor programu Graph'."
+msgid ""
+"You can import the contents of another Graph file into the current "
+"coordinate system using 'File|Import|Graph file'."
+msgstr ""
+"Obsah jiného souboru programu Graph lze importovat do aktuální soustavy "
+"souřadnic pomocí příkazu 'Soubor|Importovat|Soubor programu Graph'."
 
 #. Tip of the Day
-msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."
-msgstr "Zaškrnete-li políčko 'Uložit jako výchozí' v dialogovém okně Osy, aktuální nastavení bude použito jako výchozí při vytváření nového souboru."
+msgid ""
+"If you check 'Save as default' in the Axes dialog the current settings will "
+"be used as default when creating new coordinate systems."
+msgstr ""
+"Zaškrnete-li políčko 'Uložit jako výchozí' v dialogovém okně Osy, aktuální "
+"nastavení bude použito jako výchozí při vytváření nového souboru."
 
 #. Tip of the Day
-msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
-msgstr "Držíte-li stisknutou klávesu Ctrl, lze pomocí šipek pohybovat soustavou souřadnic."
+msgid ""
+"While you hold down the Ctrl key, you can use the arrow keys to move the "
+"system."
+msgstr ""
+"Držíte-li stisknutou klávesu Ctrl, lze pomocí šipek pohybovat soustavou "
+"souřadnic."
 
 #. Tip of the Day
-msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
-msgstr "Držíte-li stisknutou klávesu Ctrl, lze pomocí kláves + a - přibližovat a oddalovat zobrazení."
+msgid ""
+"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
+"and out."
+msgstr ""
+"Držíte-li stisknutou klávesu Ctrl, lze pomocí kláves + a - přibližovat a "
+"oddalovat zobrazení."
 
 #. Tip of the Day
-msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
+msgid ""
+"You can use the scroll button on your mouse to zoom in and out at the "
+"position of the mouse cursor."
 msgstr "Pomocí kolečka myši lze přibližovat a oddalovat oblast pod kurzorem."
 
 #. Tip of the Day
-msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
-msgstr "Nechcete-li, aby byla položka zobrazena v legendě, klepněte na ni pravým tlačítkem a zrušte zaškrtnutí u možnosti 'Zobrazit v legendě'."
+msgid ""
+"If you don't want an item shown in the legend, you can right click on the "
+"item in the function list and deselect 'Show in legend'."
+msgstr ""
+"Nechcete-li, aby byla položka zobrazena v legendě, klepněte na ni pravým "
+"tlačítkem a zrušte zaškrtnutí u možnosti 'Zobrazit v legendě'."
 
 #. Tip of the Day
-msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr "Chcete-li zobrazit osy v levé a dolní části soustavy souřadnic, v dialogovém okně Osy na kartě Nastavení vyberte v poli Zobrazení os možnost Vlevo dole."
+msgid ""
+"If you want the axes shown to the left and bottom of the image, you can "
+"choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr ""
+"Chcete-li zobrazit osy v levé a dolní části soustavy souřadnic, v dialogovém "
+"okně Osy na kartě Nastavení vyberte v poli Zobrazení os možnost Vlevo dole."
 
 #. Tip of the Day
-msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
-msgstr "V programu Graph lze zobrazenou soustavu souřadnic uložit v pěti různých formátech: BMP, EMF, PNG, JPG a PDF."
+msgid ""
+"Graph can save the shown coordinate system in five different image formats: "
+"bmp, emf, png, jpg and pdf."
+msgstr ""
+"V programu Graph lze zobrazenou soustavu souřadnic uložit v pěti různých "
+"formátech: BMP, EMF, PNG, JPG a PDF."
 
 #. Tip of the Day
-msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."
-msgstr "Pomocí příkazu 'Úpravy|Kopírovat obrázek' lze kopírovat soustavu souřadnic do schránky a vložit ji do jiného programu, například Microsoft Word. Později je zpravidla možné editovat ten obrázek programem Graph i když je otevřen v jiném programu tím, že naň dvakrát klepnete."
+msgid ""
+"You can use 'Edit|Copy image' to copy the coordinate system and paste it "
+"into another program, for example, Microsoft Word. Later you can usually "
+"edit the image in Graph by double clicking on it in the other program."
+msgstr ""
+"Pomocí příkazu 'Úpravy|Kopírovat obrázek' lze kopírovat soustavu souřadnic "
+"do schránky a vložit ji do jiného programu, například Microsoft Word. "
+"Později je zpravidla možné editovat ten obrázek programem Graph i když je "
+"otevřen v jiném programu tím, že naň dvakrát klepnete."
 
 #. Tip of the Day
-msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
-msgstr "Chcete-li otevřít uložený soubor GRF v nové instanci programu, poklepejte na něj."
+msgid ""
+"You can open a saved grf-file in a new instance of the program by double "
+"clicking on it in Explorer."
+msgstr ""
+"Chcete-li otevřít uložený soubor GRF v nové instanci programu, poklepejte na "
+"něj."
 
 #. Tip of the Day
-msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
-msgstr "Je-li program Graph spuštěn, otevřete soubor GRF přetažením do jeho okna."
+msgid ""
+"You can drag a grf-file from explorer into an open instance of Graph to open "
+"the file."
+msgstr ""
+"Je-li program Graph spuštěn, otevřete soubor GRF přetažením do jeho okna."
 
 #. Tip of the Day
-msgid "Graph will remember the size of the main window between executions. This can be disabled from the Options dialog."
-msgstr "Program Graph si pamatuje velikost hlavního okna pro další spuštění. Tuto funkci lze zakázat v dialogovém okně Možnosti."
+msgid ""
+"Graph will remember the size of the main window between executions. This can "
+"be disabled from the Options dialog."
+msgstr ""
+"Program Graph si pamatuje velikost hlavního okna pro další spuštění. Tuto "
+"funkci lze zakázat v dialogovém okně Možnosti."
 
 #. Tip of the Day
-msgid "Calc|Table can be used to create a table with evaluation values for a function."
-msgstr "Pomocí příkazu Výpočty|Tabulka lze vytvořit tabulku s odhady hodnot funkce."
+msgid ""
+"Calc|Table can be used to create a table with evaluation values for a "
+"function."
+msgstr ""
+"Pomocí příkazu Výpočty|Tabulka lze vytvořit tabulku s odhady hodnot funkce."
 
 #. Tip of the Day
-msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
-msgstr "Chcete-li exportovat část tabulky do souboru, klepněte na ni pravým tlačítkem a vyberte příkaz 'Export do souboru'. Tento soubor potom lze otevřít v ostatních aplikacích (např. Microsoft Excel)."
+msgid ""
+"A part or the whole evaluation table can be exported to a file by right "
+"clicking and selecting 'Export to file'. It can afterwards be opened in "
+"other programs like Microsoft Excel."
+msgstr ""
+"Chcete-li exportovat část tabulky do souboru, klepněte na ni pravým "
+"tlačítkem a vyberte příkaz 'Export do souboru'. Tento soubor potom lze "
+"otevřít v ostatních aplikacích (např. Microsoft Excel)."
 
 #. Tip of the Day
-msgid "Data from the evaluation table can be copied to another program like Microsoft Excel."
-msgstr "Data z tabulky lze kopírovat do jiných aplikací (např. Microsoft Excel) pomocí schránky."
+msgid ""
+"Data from the evaluation table can be copied to another program like "
+"Microsoft Excel."
+msgstr ""
+"Data z tabulky lze kopírovat do jiných aplikací (např. Microsoft Excel) "
+"pomocí schránky."
 
 #. Tip of the Day
-msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
-msgstr "Datové body v posloupnosti bodů lze kopírovat z a vkládat do jiných aplikací (např. Microsoft Excel) prostřednictvím schránky."
+msgid ""
+"The data points in a point series can be copied to and from other programs "
+"like Microsoft Excel."
+msgstr ""
+"Datové body v posloupnosti bodů lze kopírovat z a vkládat do jiných aplikací "
+"(např. Microsoft Excel) prostřednictvím schránky."
 
 #. Tip of the Day
-msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
-msgstr "Funkce, posloupnosti bodů a pod. lze kopírovat z jedné instance programu do jiné prostřednictvím schránky pomocí příkazu Úpravy|Kopírovat."
+msgid ""
+"Elements as functions, point series, etc. can be copied from one instance of "
+"the program to another using Edit|Copy."
+msgstr ""
+"Funkce, posloupnosti bodů a pod. lze kopírovat z jedné instance programu do "
+"jiné prostřednictvím schránky pomocí příkazu Úpravy|Kopírovat."
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
 msgstr "Poslední provedenou akci lze vždy vrátit zpět příkazem Úpravy|Zpět."
 
 #. Tip of the Day
-msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
-msgstr "Pokud jste omylem použili příkaz Úpravy|Zpět, lze opakovat zrušenou akci pomocí příkazu Úpravy|Znovu."
+msgid ""
+"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
+"have undone."
+msgstr ""
+"Pokud jste omylem použili příkaz Úpravy|Zpět, lze opakovat zrušenou akci "
+"pomocí příkazu Úpravy|Znovu."
 
 #. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
 msgstr "V dialogovém okně Osy lze soustavě souřadnic přiřadit název."
 
 #. Tip of the Day
-msgid "You can import point series from files saved by other programs, like Microsoft Excel."
-msgstr "Posloupnost bodů lze importovat ze souborů uložených ostaními aplikacemi (např. Microsoft Excel)."
+msgid ""
+"You can import point series from files saved by other programs, like "
+"Microsoft Excel."
+msgstr ""
+"Posloupnost bodů lze importovat ze souborů uložených ostaními aplikacemi "
+"(např. Microsoft Excel)."
 
 #. Tip of the Day
-msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
-msgstr "Při vkládání posloupnosti bodů do tabulky lze kopírovat data z jiných aplikací (např. Microsoft Excel) a vložit je do tabulky programu Graph prostřednictvým schránky."
+msgid ""
+"When inserting a point series, you can copy data from programs like "
+"Microsoft Excel, and paste the data into the grid in Graph."
+msgstr ""
+"Při vkládání posloupnosti bodů do tabulky lze kopírovat data z jiných "
+"aplikací (např. Microsoft Excel) a vložit je do tabulky programu Graph "
+"prostřednictvým schránky."
 
 #. Tip of the Day
-msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
-msgstr "Pomocí příkazu 'Zobrazení|Zobrazit vše' lze změnit soustavu souřadnic tak, aby byly viditelné všechny funkce a posloupnosti bodů."
+msgid ""
+"You can use 'Zoom|Fit all' to change the coordinate system so all functions "
+"and point series are visible."
+msgstr ""
+"Pomocí příkazu 'Zobrazení|Zobrazit vše' lze změnit soustavu souřadnic tak, "
+"aby byly viditelné všechny funkce a posloupnosti bodů."
 
 #. Tip of the Day
-msgid "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."
-msgstr "Pomocí příkazu 'Zobrazení|Přizpůsobit' lze změnit soustavu souřadnic tak, aby byly vybrané funkce nebo posloupnosti bodů zobrazeny celé."
+msgid ""
+"You can use Zoom|Fit to change the coordinate system to show all parts of "
+"the selected function or point series."
+msgstr ""
+"Pomocí příkazu 'Zobrazení|Přizpůsobit' lze změnit soustavu souřadnic tak, "
+"aby byly vybrané funkce nebo posloupnosti bodů zobrazeny celé."
 
 #. Tip of the Day
-msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
-msgstr "Držíte-li stisknutou klávesu Shift, můžete pomocí myši posunovat soustavu souřadnic."
+msgid ""
+"When you hold down the Shift key you can drag the coordinate system around "
+"with the mouse."
+msgstr ""
+"Držíte-li stisknutou klávesu Shift, můžete pomocí myši posunovat soustavu "
+"souřadnic."
 
 #. Tip of the Day
-msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
-msgstr "Pomocí příkazu Výpočty|Hodnota lze nalézt průsečíky funkcí, body, kde funkce protíná osy, a extrémy."
+msgid ""
+"You can use Calc|Evaluate to find intersections between functions, crossings "
+"with the axes and extremum points."
+msgstr ""
+"Pomocí příkazu Výpočty|Hodnota lze nalézt průsečíky funkcí, body, kde funkce "
+"protíná osy, a extrémy."
 
 #. Tip of the Day
-msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
-msgstr "Je-li vybrána posloupnost bodů, můžete do ní přidávat body tak, že stisknete klávesu Ctrl a klepnete do soustavy souřadnic."
+msgid ""
+"When a point series is selected you can add points to it by clicking on the "
+"image while you hold down the Ctrl key."
+msgstr ""
+"Je-li vybrána posloupnost bodů, můžete do ní přidávat body tak, že stisknete "
+"klávesu Ctrl a klepnete do soustavy souřadnic."
 
 #. Tip of the Day
-msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
+msgid ""
+"You can use a relation to plot any inequality, for example sin(x^2) < "
+"cos(y^2)"
 msgstr "Pomocí vztahu, jako např. sin(x^2) < cos(y^2), lze zobrazit nerovnost."
 
 #. Tip of the Day
-msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgid ""
+"You can use a relation to plot any equation, for example x*sin x = y*cos y"
 msgstr "Pomocí vztahu, jako např. x*sin x = y*cos y, lze zobrazit rovnost."
 
 #. Tip of the Day
-msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
-msgstr "Jednotlivé položky (funkce, šrafování, popisy, vztahy apod.) jsou zobrazovány ve stejném pořadí, v jakém se nacházejí v seznamu vlevo."
+msgid ""
+"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
+"same order they appear in the function list to the left."
+msgstr ""
+"Jednotlivé položky (funkce, šrafování, popisy, vztahy apod.) jsou "
+"zobrazovány ve stejném pořadí, v jakém se nacházejí v seznamu vlevo."
 
 #. Tip of the Day
-msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
-msgstr "Vybranou položku v seznamu funkcí lze přesunout přetažením pomocí myši nebo pomocí šipek, držíte-li stisknutou klávesu ALT."
+msgid ""
+"You can move the selected element in the function list either by dragging it "
+"with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr ""
+"Vybranou položku v seznamu funkcí lze přesunout přetažením pomocí myši nebo "
+"pomocí šipek, držíte-li stisknutou klávesu ALT."
 
 #. Tip of the Day
-msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
-msgstr "Funkce a další položky lze zobrazit za osami, přesunete-li je nad osy v seznamu funkcí vlevo. Chcete-li přesunout šrafování a tečny, je třeba přesunout také příslušné funkce."
+msgid ""
+"You can show functions and other elements behind the axes by moving the "
+"element above the axes in the function list to the left. To move shadings "
+"and tangents you will have to move the functions they are attached to."
+msgstr ""
+"Funkce a další položky lze zobrazit za osami, přesunete-li je nad osy v "
+"seznamu funkcí vlevo. Chcete-li přesunout šrafování a tečny, je třeba "
+"přesunout také příslušné funkce."
 
 #. Tip of the Day
-msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
-msgstr "Osám lze přiřadit vlastní textové popisy. Klepněte pravým tlačítkem na popis a v místní nabídce vyberte umístění."
+msgid ""
+"Custom text labels may be attached to the axes by right clicking on the "
+"label and selecting a placement from the context menu."
+msgstr ""
+"Osám lze přiřadit vlastní textové popisy. Klepněte pravým tlačítkem na popis "
+"a v místní nabídce vyberte umístění."
 
 #. Tip of the Day
-msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
-msgstr "Legendu lze volně přesunovat pomocí myši nebo ji umístit do některého rohu. Klepněte na ni pravým tlačítkem a v místní nabídce vyberte umístění."
+msgid ""
+"The legend may be moved freely with the mouse or attached to one of the "
+"corners by right clicking on the legend and choose a placement from the "
+"context menu."
+msgstr ""
+"Legendu lze volně přesunovat pomocí myši nebo ji umístit do některého rohu. "
+"Klepněte na ni pravým tlačítkem a v místní nabídce vyberte umístění."
 
 #. Tip of the Day
-msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
-msgstr "Pro pozadí popisu můžete kromě průhledného zvolit také vlastní barvu. To je vhodné zejména pro popisy nad šrafováním."
+msgid ""
+"As an alternative to Transparent, you can choose a custom background color "
+"for labels. This is especially useful for labels drawn over shadings."
+msgstr ""
+"Pro pozadí popisu můžete kromě průhledného zvolit také vlastní barvu. To je "
+"vhodné zejména pro popisy nad šrafováním."
 
 #. Tip of the Day
-msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
-msgstr "Ve většině případů (např. posloupnosti bodů, nastavení os, rozsahy funkcí apod.) lze namísto čísel použít výrazy jako pi/4."
+msgid ""
+"In most places like point series, axes settings, function ranges, etc., you "
+"can use expressions like pi/4 instead of numbers."
+msgstr ""
+"Ve většině případů (např. posloupnosti bodů, nastavení os, rozsahy funkcí "
+"apod.) lze namísto čísel použít výrazy jako pi/4."
 
 #. Tip of the Day
-msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr "Pomocí příkazu Funkce|Vlastní funkce můžete vytvořit vlastní konstanty, např. g=9.80665, R=8.31, které lze potom použít ve funkcích, posloupnostech bodů apod. "
+msgid ""
+"You can create your own custom constants under Function|Custom functions for "
+"use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr ""
+"Pomocí příkazu Funkce|Vlastní funkce můžete vytvořit vlastní konstanty, "
+"např. g=9.80665, R=8.31, které lze potom použít ve funkcích, posloupnostech "
+"bodů apod. "
 
 #. Tip of the Day
-msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
-msgstr "Pomocí příkazu Funkce|Vlastní funkce můžete vytvořit vlastní funkce, např. sinc(x)=if(x=0, 0, sin(x)/x), které lze potom použít ve funkcích, vztazích apod. "
+msgid ""
+"You can create your own custom functions under Function|Custom functions for "
+"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, "
+"sin(x)/x)"
+msgstr ""
+"Pomocí příkazu Funkce|Vlastní funkce můžete vytvořit vlastní funkce, např. "
+"sinc(x)=if(x=0, 0, sin(x)/x), které lze potom použít ve funkcích, vztazích "
+"apod. "
 
 #. Tip of the Day
-msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
-msgstr "V dialogovém okně Uložit jako obrázek lze pomocí tlačítka Možnosti určit rozlišení obrázku. Tato funkce je vhodná zejména, chcete-li vytvořit obrázek ve vysokém rozlišení."
+msgid ""
+"In the Save as image dialog there is an Option button you can use to specify "
+"the image resolution. This is especially useful if you want a high "
+"resolution image."
+msgstr ""
+"V dialogovém okně Uložit jako obrázek lze pomocí tlačítka Možnosti určit "
+"rozlišení obrázku. Tato funkce je vhodná zejména, chcete-li vytvořit obrázek "
+"ve vysokém rozlišení."
 
 #. Tip of the Day
-msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
-msgstr "Posloupnosti bodů mohou mít symbol zobrazený jako šipku. Posloupnost bodů se šipkami jako symboly a čárami mezi jednotlivými body lze použít k zobrazení vektorů."
+msgid ""
+"Point series can have arrows as markers. A point series with arrows as "
+"markers and lines between the points can be used to show vectors."
+msgstr ""
+"Posloupnosti bodů mohou mít symbol zobrazený jako šipku. Posloupnost bodů se "
+"šipkami jako symboly a čárami mezi jednotlivými body lze použít k zobrazení "
+"vektorů."
 
 msgid "Insert symbol"
 msgstr "Vložit symbol"
@@ -3694,12 +4087,20 @@ msgid "Comment:"
 msgstr "Komentář:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
-msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
-msgstr "Vyberte, kterou tiskárnu chcete použít. Pomocí tlačítka Vlastnosti lze změnit pokročilá nastavení tiskárny."
+msgid ""
+"Select the printer to use. The Properties button may be used to change more "
+"advanced settings for the printer."
+msgstr ""
+"Vyberte, kterou tiskárnu chcete použít. Pomocí tlačítka Vlastnosti lze "
+"změnit pokročilá nastavení tiskárny."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")....Hint
-msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
-msgstr "Vyberte chcete-li tisknout barevně (nebo ve stupních šedi, pokud nemáte barevnou tiskárnu) nebo převést všechny barvy na černou."
+msgid ""
+"Select to print in color (or grayscale if your printer is not a color "
+"printer) or convert all colors to black."
+msgstr ""
+"Vyberte chcete-li tisknout barevně (nebo ve stupních šedi, pokud nemáte "
+"barevnou tiskárnu) nebo převést všechny barvy na černou."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
@@ -3735,8 +4136,12 @@ msgstr "Vystředit na stránce"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
-msgid "Specify the printing area of the page. The printer will print only within these margins."
-msgstr "Určit tiskovou oblast stránky. Tiskárna bude tisknout jen v rámci této oblasti."
+msgid ""
+"Specify the printing area of the page. The printer will print only within "
+"these margins."
+msgstr ""
+"Určit tiskovou oblast stránky. Tiskárna bude tisknout jen v rámci této "
+"oblasti."
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
@@ -3781,13 +4186,18 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgid "Integrate"
 #~ msgstr "Internet"
 
-#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
-#~ msgstr "Obsah oblasti nebo délka křivky vypočítaná pro daný rozsah pomocí Simpsonova pravidla."
+#~ msgid ""
+#~ "Area or length of path calculated for the given range using Simpson's "
+#~ "formula."
+#~ msgstr ""
+#~ "Obsah oblasti nebo délka křivky vypočítaná pro daný rozsah pomocí "
+#~ "Simpsonova pravidla."
 
 #~ msgid "Extremum"
 #~ msgstr "Extrém"
 
-#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgid ""
+#~ "This is the functions second derivative evaluated for the entered value."
 #~ msgstr "Toto je hodnota druhé derivace funkce pro zadanou hodnotu."
 
 #~ msgid "Zoom in."
@@ -3846,7 +4256,8 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgstr "Otevřete soubor %s."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
-#~ msgstr "Textové soubory [*.txt; *.csv]|*.txt;*.csv|Všechny soubory [*.*]|*.*"
+#~ msgstr ""
+#~ "Textové soubory [*.txt; *.csv]|*.txt;*.csv|Všechny soubory [*.*]|*.*"
 
 #~ msgid "The server responded with the message '%s'"
 #~ msgstr "Server vrátil následující zprávu: '%s'"
@@ -3854,8 +4265,12 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Chyba odpovědi protokolu %s"
 
-#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
-#~ msgstr "Návrhy pro další verze, hlášení o chybách a komentáře můžete posílat na adresu graph@padowan.dk"
+#~ msgid ""
+#~ "You can send suggestions for future versions, bug reports and comments to "
+#~ "graph@padowan.dk"
+#~ msgstr ""
+#~ "Návrhy pro další verze, hlášení o chybách a komentáře můžete posílat na "
+#~ "adresu graph@padowan.dk"
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Umístění obrázku do středu stránky."
@@ -3917,8 +4332,12 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ msgid "Med Gray"
 #~ msgstr "Šedá"
 
-#~ msgid "Insert a text label (select and click in the main window where you want the label)."
-#~ msgstr "Vložit textový popis (vyberte a v hlavním okně klepněte na umístění, kam chcete popis vložit)."
+#~ msgid ""
+#~ "Insert a text label (select and click in the main window where you want "
+#~ "the label)."
+#~ msgstr ""
+#~ "Vložit textový popis (vyberte a v hlavním okně klepněte na umístění, kam "
+#~ "chcete popis vložit)."
 
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Vyjmout vybraný text a vložit ho do schránky."
@@ -3968,7 +4387,8 @@ msgstr "Zadejte velikost v procentech původní velikosti."
 #~ "Pro tuto chybu nelze nelézt chybovou zprávu."
 
 #~ msgid "This error should not occur. Please report this to the programmer."
-#~ msgstr "Tato chyba by se neměla vyskytovat. Ohlašte ji prosím autorovi programu."
+#~ msgstr ""
+#~ "Tato chyba by se neměla vyskytovat. Ohlašte ji prosím autorovi programu."
 
 #~ msgid "The maximum length of text has been reached."
 #~ msgstr "Byla dosažena největší délka textu."
