@@ -1381,17 +1381,20 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
         Python::ShowPythonConsole(true);
         break;
 
-      case VK_SHIFT:
-        if(CursorState == csIdle)
-          SetCursorState(csMove);
-        break;
-
       case VK_OEM_MINUS: //Handle Ctrl+Shift+-  (Normal shortcut handling doesn't seem to work)
   //      if(Shift == TShiftState() << ssCtrl << ssShift)
   //        ZoomOutAction->Execute();
         break;
     }
 
+  else if(Shift == TShiftState() << ssShift)
+    switch(Key)
+    {
+      case VK_SHIFT:
+        if(CursorState == csIdle)
+          SetCursorState(csMove);
+        break;
+    }
   else if(Shift == TShiftState() << ssCtrl << ssAlt)
     switch(Key)
     {
