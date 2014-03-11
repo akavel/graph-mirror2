@@ -417,7 +417,7 @@ void TDrawThread::CreateShade(TShading &Shade)
         if(Aborted)
           return;
         else
-          Sleep(10)
+          Sleep(10);
       }
 
 	if(F->sList.empty() || (Shade.Func2.get() && Shade.Func2->sList.empty()))
