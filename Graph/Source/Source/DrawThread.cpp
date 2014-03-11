@@ -412,7 +412,13 @@ void TDrawThread::CreateShade(TShading &Shade)
   if(Shade.Func2)
     while(!Shade.Func2->IsUpdateFinished())
       if(!EvalNext())
-        return;
+      {
+        //If there are no more to do, wait for Func2 to finish
+        if(Aborted)
+          return;
+        else
+          Sleep(10)
+      }
 
 	if(F->sList.empty() || (Shade.Func2.get() && Shade.Func2->sList.empty()))
     return;
