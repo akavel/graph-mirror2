@@ -35,16 +35,21 @@ TData::TData() : TopElem(new TTopGraphElem)
  TData::TData(const TData &OldData) : Axes(OldData.Axes), CustomFunctions(OldData.CustomFunctions),
   Modified(false), OnAbortUpdate(NULL), TopElem(boost::dynamic_pointer_cast<TTopGraphElem>(OldData.TopElem->Clone()))
 {
+  const TTopGraphElemPtr &OldTopElem = OldData.TopElem;
   TopElem->SetData(this);
-  for(unsigned int I = 0; I < TopElem->ChildCount(); I++)
-    for(unsigned J = 0; J < TopElem->GetChild(I)->ChildCount(); J++)
-      if(TShading *Shade = dynamic_cast<TShading*>(TopElem->GetChild(I)->GetChild(J).get()))
-        if(Shade->Func2)
+  for(unsigned int I = 0; I < OldTopElem->ChildCount(); I++)
+  {
+    const TGraphElemPtr &Elem = OldTopElem->GetChild(I);
+    for(unsigned J = 0; J < Elem->ChildCount(); J++)
+      if(const TShading *OldShade = dynamic_cast<TShading*>(Elem->GetChild(J).get()))
+        if(OldShade->Func2)
         {
           //Update pointer cross references
-          int Index = OldData.TopElem->GetChildIndex(Shade->Func2);
-          Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(TopElem->GetChild(Index));
+          int Index = OldData.TopElem->GetChildIndex(OldShade->Func2);
+          if(TShading *Shade = dynamic_cast<TShading*>(TopElem->GetChild(I)->GetChild(J).get()))
+            Shade->Func2 = boost::dynamic_pointer_cast<TBaseFuncType>(TopElem->GetChild(Index));
         }
+  }
   Update();
 }
 //---------------------------------------------------------------------------
