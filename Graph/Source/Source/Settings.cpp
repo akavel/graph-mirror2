@@ -155,7 +155,7 @@ void TAxes::HandleZoomSquare(double xyScale)
 ///////////////
 // TProperty //
 ///////////////
-TProperty::TProperty() : RoundTo(4), SavePos(true), ComplexFormat(cfRectangular),
+TProperty::TProperty() : RoundTo(4), SavePos(true), ComplexFormat(cfReal),
   CheckForUpdate(true), ShowTipsAtStartup(true), NextTip(RES_FIRST_TIP), Language(L"English"),
   FontScale(100)
 {
