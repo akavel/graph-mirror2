@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Help of Graph 4.4.2\n"
 "POT-Creation-Date: 2014-02-01 14:09+0100\n"
-"PO-Revision-Date: 2014-03-15 10:35+0100\n"
+"PO-Revision-Date: 2014-03-16 09:47+0100\n"
 "Last-Translator: Aldemar Calazans Filho <aldemarcalazans@gmail.com>\n"
 "Language-Team: Jorge Costa (& team), Wladimir Albuquerque Silva & Aldemar "
 "Calazans Filho <jorge@jlcosta.pro.br;wladyjr@gmail.com;aldemarcalazans@gmail."
@@ -690,11 +690,11 @@ msgstr "O seno hiperbólico é definido como: <placeholder-1/>"
 
 #. Hyperbolic.xml:44(primary) Hyperbolic.xml:142(primary)
 msgid "hyperbolic cosine"
-msgstr "coseno hiperbólico"
+msgstr "cosseno hiperbólico"
 
 #. Hyperbolic.xml:45(para) FunctionList.xml:254(entry)
 msgid "Returns the hyperbolic cosine of the argument."
-msgstr "Retorna o coseno hiperbólico do argumento."
+msgstr "Retorna o cosseno hiperbólico do argumento."
 
 #. Hyperbolic.xml:54(para)
 msgid ""
@@ -702,13 +702,13 @@ msgid ""
 "<placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that "
 "evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
-"A função <placeholder-1/> calcula o coseno hiperbólico de <placeholder-2/>. "
+"A função <placeholder-1/> calcula o cosseno hiperbólico de <placeholder-2/>. "
 "<placeholder-3/> pode ser qualquer <placeholder-4/> que resulte em um "
 "<placeholder-5/> ou um <placeholder-6/>."
 
 #. Hyperbolic.xml:58(para)
 msgid "Hyperbolic cosine is defined as: <placeholder-1/>"
-msgstr "O coseno hiperbólico é definido como: <placeholder-1/>"
+msgstr "O cosseno hiperbólico é definido como: <placeholder-1/>"
 
 #. Hyperbolic.xml:77(primary) Hyperbolic.xml:174(primary)
 msgid "hyperbolic tangent"
@@ -754,11 +754,11 @@ msgstr ""
 
 #. Hyperbolic.xml:143(primary)
 msgid "inverse hyperbolic cosine"
-msgstr "arco coseno hiperbólico"
+msgstr "arco cosseno hiperbólico"
 
 #. Hyperbolic.xml:144(para) FunctionList.xml:266(entry)
 msgid "Returns the inverse hyperbolic cosine of the argument."
-msgstr "Retorna o arco coseno hiperbólico do argumento."
+msgstr "Retorna o arco cosseno hiperbólico do argumento."
 
 #. Hyperbolic.xml:153(para)
 msgid ""
@@ -767,7 +767,7 @@ msgid ""
 "evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is "
 "the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr ""
-"A função <placeholder-1/> calcula o arco coseno hiperbólico de "
+"A função <placeholder-1/> calcula o arco cosseno hiperbólico de "
 "<placeholder-2/>. <placeholder-3/> pode ser qualquer <placeholder-4/> que "
 "resulte em um <placeholder-5/> ou um <placeholder-6/>. <placeholder-7/> é a "
 "função inversa de <placeholder-8/>, isto é, <placeholder-9/>."
@@ -794,11 +794,11 @@ msgstr ""
 
 #. Hyperbolic.xml:208(primary) Hyperbolic.xml:308(primary)
 msgid "hyperbolic cosecant"
-msgstr "cosecante hiperbólica"
+msgstr "cossecante hiperbólica"
 
 #. Hyperbolic.xml:209(para) FunctionList.xml:274(entry)
 msgid "Returns the hyperbolic cosecant of the argument."
-msgstr "Retorna a cosecante hiperbólica do argumento."
+msgstr "Retorna a cossecante hiperbólica do argumento."
 
 #. Hyperbolic.xml:218(para)
 msgid ""
@@ -806,13 +806,13 @@ msgid ""
 "<placeholder-2/>. <placeholder-3/> may be any <placeholder-4/> that "
 "evaluates to a <placeholder-5/> or a <placeholder-6/>."
 msgstr ""
-"A função <placeholder-1/> calcula a cosecante hiperbólica de <placeholder-2/"
+"A função <placeholder-1/> calcula a cossecante hiperbólica de <placeholder-2/"
 ">. <placeholder-3/> pode ser qualquer <placeholder-4/> que resulte em um "
 "<placeholder-5/> ou um <placeholder-6/>."
 
 #. Hyperbolic.xml:222(para)
 msgid "Hyperbolic cosecant is defined as: <placeholder-1/>"
-msgstr "A cosecante hiperbólica é definida como: <placeholder-1/>"
+msgstr "A cossecante hiperbólica é definida como: <placeholder-1/>"
 
 #. Hyperbolic.xml:241(primary) Hyperbolic.xml:340(primary)
 msgid "hyperbolic secant"
@@ -860,11 +860,11 @@ msgstr "A cotangente hiperbólica é definida como: <placeholder-1/>"
 
 #. Hyperbolic.xml:309(primary)
 msgid "inverse hyperbolic cosecant"
-msgstr "arco cosecante hiperbólica"
+msgstr "arco cossecante hiperbólica"
 
 #. Hyperbolic.xml:310(para) FunctionList.xml:286(entry)
 msgid "Returns the inverse hyperbolic cosecant of the argument."
-msgstr "Retorna o arco cosecante hiperbólica do argumento."
+msgstr "Retorna o arco cossecante hiperbólica do argumento."
 
 #. Hyperbolic.xml:319(para)
 msgid ""
@@ -873,7 +873,7 @@ msgid ""
 "evaluates to a <placeholder-5/> or a <placeholder-6/>. <placeholder-7/> is "
 "the reverse of <placeholder-8/>, i.e. <placeholder-9/>."
 msgstr ""
-"A função <placeholder-1/> calcula o arco cosecante hiperbólica de "
+"A função <placeholder-1/> calcula o arco cossecante hiperbólica de "
 "<placeholder-2/>. <placeholder-3/> pode ser qualquer <placeholder-4/> que "
 "resulte em um <placeholder-5/> ou um <placeholder-6/>. <placeholder-7/> é a "
 "função inversa de <placeholder-8/>, isto é, <placeholder-9/>."
@@ -2902,11 +2902,11 @@ msgstr ""
 
 #. Trigonometric.xml:52(primary) Trigonometric.xml:168(primary)
 msgid "cosine"
-msgstr "coseno"
+msgstr "cosseno"
 
 #. Trigonometric.xml:53(para)
 msgid "Returns the cosine of the argument."
-msgstr "Retorna o coseno do argumento."
+msgstr "Retorna o cosseno do argumento."
 
 #. Trigonometric.xml:62(para)
 msgid ""
@@ -2916,7 +2916,7 @@ msgid ""
 "evaluates to a <placeholder-6/> or a <placeholder-7/>. If <placeholder-8/> "
 "is a real number, the result will be in the range -1 to 1."
 msgstr ""
-"A função <placeholder-1/> calcula o coseno de um ângulo <placeholder-2/>, o "
+"A função <placeholder-1/> calcula o cosseno de um ângulo <placeholder-2/>, o "
 "qual pode estar em <placeholder-3/> ou em graus, dependendo das "
 "configurações em vigor. <placeholder-4/> pode ser qualquer <placeholder-5/> "
 "que resulte em um <placeholder-6/> ou um <placeholder-7/>. Se <placeholder-8/"
@@ -2978,11 +2978,11 @@ msgstr ""
 
 #. Trigonometric.xml:169(primary)
 msgid "inverse cosine"
-msgstr "arco coseno"
+msgstr "arco cosseno"
 
 #. Trigonometric.xml:170(para)
 msgid "Returns the inverse cosine of the argument."
-msgstr "Retorna o arco coseno do argumento."
+msgstr "Retorna o arco cosseno do argumento."
 
 #. Trigonometric.xml:179(para)
 msgid ""
@@ -2992,7 +2992,7 @@ msgid ""
 "evaluates to a <placeholder-6/>. This is the reverse of the <placeholder-7/> "
 "function."
 msgstr ""
-"A função <placeholder-1/> calcula o arco coseno de <placeholder-2/>. O "
+"A função <placeholder-1/> calcula o arco cosseno de <placeholder-2/>. O "
 "resultado pode ser em <placeholder-3/> ou em graus, dependendo das "
 "configurações em vigor. <placeholder-4/> pode ser qualquer <placeholder-5/> "
 "que resulte em um <placeholder-6/>. Esta função é a função inversa de "
@@ -3044,11 +3044,11 @@ msgstr ""
 
 #. Trigonometric.xml:275(primary) Trigonometric.xml:388(primary)
 msgid "cosecant"
-msgstr "cosecante"
+msgstr "cossecante"
 
 #. Trigonometric.xml:276(para)
 msgid "Returns the cosecant of the argument."
-msgstr "Retorna a cosecante do argumento."
+msgstr "Retorna a cossecante do argumento."
 
 #. Trigonometric.xml:285(para)
 msgid ""
@@ -3058,8 +3058,8 @@ msgid ""
 "<placeholder-6/> may be any <placeholder-7/> that evaluates to a "
 "<placeholder-8/> or a <placeholder-9/>."
 msgstr ""
-"A função <placeholder-1/> calcula a cosecante de um ângulo <placeholder-2/>, "
-"o qual pode estar em <placeholder-3/> ou em graus, dependendo das "
+"A função <placeholder-1/> calcula a cossecante de um ângulo <placeholder-2/"
+">, o qual pode estar em <placeholder-3/> ou em graus, dependendo das "
 "configurações em vigor. <placeholder-4/> é o mesmo que <placeholder-5/>. "
 "<placeholder-6/> pode ser qualquer <placeholder-7/> que resulte em um "
 "<placeholder-8/> ou um <placeholder-9/>."
@@ -3110,11 +3110,11 @@ msgstr ""
 
 #. Trigonometric.xml:389(primary)
 msgid "inverse cosecant"
-msgstr "arco cosecante"
+msgstr "arco cossecante"
 
 #. Trigonometric.xml:390(para)
 msgid "Returns the inverse cosecant of the argument."
-msgstr "Retorna o arco cosecante do argumento."
+msgstr "Retorna o arco cossecante do argumento."
 
 #. Trigonometric.xml:399(para)
 msgid ""
@@ -3124,7 +3124,7 @@ msgid ""
 "<placeholder-6/> may be any <placeholder-7/> that evaluates to a "
 "<placeholder-8/>. This is the reverse of the <placeholder-9/> function."
 msgstr ""
-"A função <placeholder-1/> calcula o arco cosecante de <placeholder-2/>. O "
+"A função <placeholder-1/> calcula o arco cossecante de <placeholder-2/>. O "
 "resultado pode ser em <placeholder-3/> ou em graus, dependendo das "
 "configurações em vigor. <placeholder-4/> é o mesmo que <placeholder-5/>. "
 "<placeholder-6/> pode ser qualquer <placeholder-7/> que resulte em um "
@@ -6205,7 +6205,7 @@ msgstr ""
 #. FunctionList.xml:203(entry)
 msgid "Returns the cosine of the argument, which may be in radians or degrees."
 msgstr ""
-"Retorna o coseno do argumento, o qual pode estar em radianos ou em graus. "
+"Retorna o cosseno do argumento, o qual pode estar em radianos ou em graus. "
 
 #. FunctionList.xml:207(entry)
 msgid ""
@@ -6226,7 +6226,7 @@ msgid ""
 "Returns the inverse cosine of the argument. The returned value may be in "
 "radians or degrees."
 msgstr ""
-"Retorna o arco coseno do argumento. O valor resultante pode ser em radianos "
+"Retorna o arco cosseno do argumento. O valor resultante pode ser em radianos "
 "ou graus. "
 
 #. FunctionList.xml:219(entry)
@@ -6246,7 +6246,8 @@ msgstr ""
 msgid ""
 "Returns the cosecant of the argument, which may be in radians or degrees."
 msgstr ""
-"Retorna a cosecante do argumento, o qual pode estar em radianos ou em graus. "
+"Retorna a cossecante do argumento, o qual pode estar em radianos ou em "
+"graus. "
 
 #. FunctionList.xml:231(entry)
 msgid ""
@@ -6268,7 +6269,7 @@ msgid ""
 "Returns the inverse cosecant of the argument. The returned value may be in "
 "radians or degrees."
 msgstr ""
-"Retorna o arco cosecante do argumento. O valor resultante pode ser em "
+"Retorna o arco cossecante do argumento. O valor resultante pode ser em "
 "radianos ou graus. "
 
 #. FunctionList.xml:243(entry)
@@ -8012,9 +8013,9 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 msgid "translator-credits"
 msgstr ""
-"Wladimir Albuquerque Silva [arquivo da ajuda] - 2012, 2012 \n"
-"Jorge Costa [interface gráfica] - 2004, 2007 \n"
-"Aldemar Calazans Filho [revisão] - 2011, 2013"
+"Wladimir Albuquerque Silva (arquivo da ajuda) - 2012, 2012 \n"
+"Jorge Costa (interface gráfica) - 2004, 2007 \n"
+"Aldemar Calazans Filho (revisão) - 2011, 2013"
 
 msgid "Translator:"
 msgstr "Tradutores:"
