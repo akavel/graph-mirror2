@@ -35,7 +35,7 @@ $password = 'FuefTC4KnpwXLmnSAuLT';
 $subject    = 'bug report';
 $body       = 'please find the bug report attached';
 $from_email = 'sender@email.com';
-$from_name  = 'sender name';
+$from_name  = 'MadExcept';
 
 // ***************************************************************
 
