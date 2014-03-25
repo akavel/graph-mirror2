@@ -7,6 +7,7 @@ Redirect 301 /graph/support.html http://forum.padowan.dk
 Redirect 301 /graph/Download.php http://www.padowan.dk/download
 Redirect 301 /graph/download.php http://www.padowan.dk/bin/SetupGraph-4.4.exe
 Redirect 301 /forum http://forum.padowan.dk
+Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb74/Graph_pad.xml
 
 
 # BEGIN W3TC Browser Cache
