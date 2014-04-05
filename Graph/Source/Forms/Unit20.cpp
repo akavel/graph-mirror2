@@ -18,6 +18,7 @@
 #include "PyGraph.h"
 //---------------------------------------------------------------------------
 #pragma link "MediaPlayerEx"
+#pragma link "ScaledImageList"
 #pragma resource "*.dfm"
 const double MaxWidth = Screen->Width - 50;
 const double MaxHeight = Screen->Height - 180;
@@ -43,8 +44,8 @@ __fastcall TForm20::TForm20(TComponent* Owner, const std::wstring &Constant, dou
   if(NeedScaling())
   {
     TrackBar1->ThumbLength = GuiScale(20);
-    ScaleImageList(ImageList1, ImageList1, GuiScale(18));
-  }
+    ScaledImageList1->SetSize(GuiScale(24), GuiScale(24));
+ }
 }
 //---------------------------------------------------------------------------
 void TForm20::ShowAnimation(const String &FileName)

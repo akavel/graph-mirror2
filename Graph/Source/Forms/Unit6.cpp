@@ -17,6 +17,7 @@
 #pragma link "IRichEdit"
 #pragma link "ExtColorBox"
 #pragma link "SymbolDialog"
+#pragma link "ScaledImageList"
 #pragma resource "*.dfm"
 //---------------------------------------------------------------------------
 __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, const String &HostApp, const String &HostDoc)
@@ -27,10 +28,11 @@ __fastcall TForm6::TForm6(TComponent* Owner, TVclObject<TFont> DefaultFont, cons
   ScaleForm(this);
   TranslateStrings(ColorBox1->Items);
   FlipForm(this);
+
+  ScaledImageList1->SetSize(GuiScale(16), GuiScale(16));
   if(NeedScaling())
   {
-    ScaleImageList(ImageList1, ImageList1);
-//    ToolBar1->Indent = GuiScale(ToolBar1->Indent);
+    ToolBar1->Indent = GuiScale(ToolBar1->Indent);
     ToolBar1->Height = GuiScale(25);
     ToolBar1->ButtonWidth = GuiScale(23);
     ToolBar1->ButtonHeight = GuiScale(22);
