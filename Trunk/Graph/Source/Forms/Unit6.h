@@ -26,6 +26,7 @@
 #include "SymbolDialog.h"
 #include <ActnPopup.hpp>
 #include <PlatformDefaultStyleActnCtrls.hpp>
+#include "ScaledImageList.h"
 //---------------------------------------------------------------------------
 class TForm6 : public TForm
 {
@@ -37,7 +38,6 @@ __published:	// IDE-managed Components
   TLabel *Label3;
   TComboBox *ComboBox1;
   TGroupBox *GroupBox1;
-  TImageList *ImageList1;
   TIFontBox *IFontBox1;
   TButton *Button3;
   TIRichEdit *IRichEdit1;
@@ -71,6 +71,8 @@ __published:	// IDE-managed Components
   TToolButton *ToolButton5;
   TToolButton *ToolButton6;
   TToolButton *ToolButton7;
+  TImageList *ImageList1;
+  TScaledImageList *ScaledImageList1;
   void __fastcall ParagraphChange(TObject *Sender);
   void __fastcall IRichEdit1SelectionChange(TObject *Sender);
   void __fastcall IRichEdit1KeyDown(TObject *Sender, WORD &Key,
