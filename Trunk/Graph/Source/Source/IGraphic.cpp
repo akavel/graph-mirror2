@@ -137,6 +137,7 @@ String ReplaceExpression(const String &Str, const TData &Data)
   std::auto_ptr<TIRichEdit> RichEdit(new TIRichEdit(Application->MainForm));
   RichEdit->Visible = false;
   RichEdit->Parent = Application->MainForm;
+  TRichEditOle RichEditOle(RichEdit.get());
   RichEdit->SetRichText(Str);
   ReplaceExpression(RichEdit.get(), Data);
   return RichEdit->GetRichText();
