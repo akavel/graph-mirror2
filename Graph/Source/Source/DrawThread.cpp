@@ -634,6 +634,9 @@ void TDrawThread::CreateShade(TShading &Shade)
 
     case ssBetween:
     {
+      //Func2 may be NULL after a copy-paste of the function
+      if(!Shade.Func2)
+        return;
       std::vector<TPoint> Points;
       Points.push_back(TPoint(x1, y1));
       Points.insert(Points.end(), F->Points.begin()+N1, F->Points.begin()+N2+1);
