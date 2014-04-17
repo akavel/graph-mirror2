@@ -674,6 +674,7 @@ void TShading::WriteToIni(TConfigFileSection &Section) const
       Func2No = FuncCount;
   }
 
+  //Warning: After copy-paste we may not have a Func2
   BOOST_ASSERT(!Func2 || Func2No); //If Func2 is defined we must have a number for it
 
   Section.Write(L"FuncNo", FuncNo);
@@ -721,7 +722,6 @@ void TShading::ReadFromIni(const TConfigFileSection &Section)
   if(_isnan(sMax.Value)) sMax.Set(L"+INF", GetData());
   if(_isnan(sMin2.Value)) sMin2.Set(L"-INF", GetData());
   if(_isnan(sMax2.Value)) sMax2.Set(L"+INF", GetData());
-
 }
 //---------------------------------------------------------------------------
 std::wstring TShading::MakeText() const
