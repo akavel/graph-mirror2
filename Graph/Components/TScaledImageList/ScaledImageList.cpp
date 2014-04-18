@@ -30,11 +30,14 @@ __fastcall TScaledImageList::TScaledImageList(TComponent* Owner)
 {
   Gdiplus::GdiplusStartupInput StartupInput;
   Gdiplus::GdiplusStartup(&Token, &StartupInput, NULL);
+  ChangeLink = new TChangeLink;
+  ChangeLink->OnChange = ImageListChange;
 }
 //---------------------------------------------------------------------------
 __fastcall TScaledImageList::~TScaledImageList()
 {
   Gdiplus::GdiplusShutdown(Token);
+  delete ChangeLink;
 }
 //---------------------------------------------------------------------------
 void TScaledImageList::RecreateImageList()
@@ -44,6 +47,10 @@ void TScaledImageList::RecreateImageList()
 
   if(Images->Width == Width && Images->Height == Height)
     Assign(Images);
+
+  Clear();
+  if(Images->Count == 0)
+    return;
 
   BITMAP bm;
   Win32Check(GetObject(Images->GetImageBitmap(), sizeof(BITMAP), &bm));
@@ -115,7 +122,23 @@ void TScaledImageList::SetSize(int W, int H)
 //---------------------------------------------------------------------------
 void __fastcall TScaledImageList::SetImages(TCustomImageList *Value)
 {
+  if(FImages)
+    FImages->UnRegisterChanges(ChangeLink);
   FImages = Value;
+  if(FImages)
+    FImages->RegisterChanges(ChangeLink);
   RecreateImageList();
 }
 //---------------------------------------------------------------------------
+void __fastcall TScaledImageList::DefineProperties(TFiler *Filer)
+{
+  //Prevent save of images in dfm file by not calling TCustomImageList::DefineProperties()
+  TComponent::DefineProperties(Filer);
+}
+//---------------------------------------------------------------------------
+void __fastcall TScaledImageList::ImageListChange(TObject *Sender)
+{
+  RecreateImageList();
+}
+//---------------------------------------------------------------------------
+
