@@ -13,6 +13,7 @@ private:
   TCustomImageList *FImages;
   int FWidth;
   int FHeight;
+  TChangeLink *ChangeLink;
 
   void RecreateImageList();
   void __fastcall SetWidth(int Value);
@@ -20,6 +21,8 @@ private:
   void __fastcall SetImages(TCustomImageList *Value);
 
 protected:
+  void __fastcall DefineProperties(TFiler *Filer);
+  void __fastcall ImageListChange(TObject *Sender);
 
 public:
   __fastcall TScaledImageList(TComponent* Owner);
