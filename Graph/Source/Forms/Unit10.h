@@ -17,6 +17,7 @@
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
 #include "LinkLabelEx.h"
+#include <pngimage.hpp>
 //---------------------------------------------------------------------------
 class TForm10 : public TForm
 {
