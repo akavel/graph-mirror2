@@ -55,6 +55,7 @@
 #include <ActnPopup.hpp>
 #include <XPMan.hpp>
 #include <pngimage.hpp>
+#include "ScaledImageList.h"
 #include <stack>
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
@@ -68,7 +69,7 @@ enum TIconIndex
   iiTanNode,
   iiLabelNode,
   iiAxesNode,
-  iiBullet,
+//  iiBullet,
   iiNormalNode,
   iiUnChecked,
   iiChecked,
@@ -224,6 +225,9 @@ __published:	// IDE-managed Components
   TAction *ScriptDocAction;
   TImageList *ImageList2;
   TImageList *ImageList1;
+  TImageList *ImageList3;
+  TScaledImageList *ScaledImageList1;
+  TImageList *ImageList4;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
   void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button,	TShiftState Shift, int X, int Y);

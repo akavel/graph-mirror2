@@ -43,8 +43,8 @@
 			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib;IComp.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</AllPackageLibs>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 			<Defines>STRICT;MADEXCEPT;$(Defines)</Defines>
-			<IncludePath>..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;..\PyVcl;$(IncludePath)</IncludePath>
-			<ILINK_LibraryPath>..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IncludePath>..\Components\TScaledImageList\;..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;..\PyVcl;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>..\Components\TScaledImageList\;..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		</PropertyGroup>
@@ -485,7 +485,7 @@
 						<VersionInfo Name="MajorVer">4</VersionInfo>
 						<VersionInfo Name="MinorVer">5</VersionInfo>
 						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">561</VersionInfo>
+						<VersionInfo Name="Build">565</VersionInfo>
 						<VersionInfo Name="Debug">True</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -497,7 +497,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.5.0.561</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">4.5.0.565</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>

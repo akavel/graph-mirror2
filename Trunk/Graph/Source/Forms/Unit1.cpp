@@ -14,7 +14,7 @@
 #include "Unit3.h"
 #include "Unit4.h"
 #include "Unit5.h"
-#include "Unit6.h"                 
+#include "Unit6.h"
 #include "Unit7.h"
 #include "Unit9.h"
 #include "Unit10.h"
@@ -71,6 +71,7 @@
 
 #pragma link "Wininet.lib" //Used for InternetGetConnectedState()
 #pragma link "PDFlib.lib"
+#pragma link "ScaledImageList"
 #pragma resource "*.dfm"
 TForm1 *Form1;
 const TCursor crMoveHand1 = 1;
@@ -773,7 +774,7 @@ void TForm1::ScaleImages()
 
     int IconWidth = MulDiv(16, FontScale, 96 * 100);
     ScaleImageList(ImageList1, ImageList1, IconWidth);
-    TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
+//    TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
     ActionToolBar1->VertMargin = IconWidth / 8;
     ActionMainMenuBar1->Spacing = IconWidth / 2;
     ActionToolBar1->Spacing = MulDiv(5, FontScale, 96 * 100);
