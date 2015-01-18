@@ -261,9 +261,9 @@ object Form4: TForm4
     end
     object RadioGroup1: TRadioGroupEx
       AlignWithMargins = True
-      Left = 177
+      Left = 161
       Top = 12
-      Width = 110
+      Width = 94
       Height = 76
       Hint = 'Format used when complex numbers are shown.'
       Anchors = [akTop, akRight, akBottom]
@@ -276,6 +276,7 @@ object Form4: TForm4
       ParentShowHint = False
       ShowHint = True
       TabOrder = 10
+      ExplicitLeft = 177
     end
     object Label2: TLabel
       Left = 8
@@ -422,7 +423,7 @@ object Form4: TForm4
     object CheckBox2: TCheckBoxEx
       Left = 8
       Top = 199
-      Width = 95
+      Width = 79
       Height = 17
       Hint = 'Show the tooltip when the cursor is over an item.'
       Anchors = [akLeft]
@@ -434,7 +435,7 @@ object Form4: TForm4
     object CheckBox3: TCheckBoxEx
       Left = 8
       Top = 227
-      Width = 151
+      Width = 135
       Height = 17
       Hint = 
         'Save the size of the main window when the program exits. This is' +
@@ -448,7 +449,7 @@ object Form4: TForm4
     object CheckBox4: TCheckBoxEx
       Left = 8
       Top = 255
-      Width = 234
+      Width = 218
       Height = 17
       Hint = 
         'If checked the program will contact a web server when the progra' +
@@ -460,7 +461,7 @@ object Form4: TForm4
     object CheckBox5: TCheckBoxEx
       Left = 8
       Top = 169
-      Width = 161
+      Width = 145
       Height = 17
       Hint = 
         'Use a custom decimal separator instead of the default from the W' +
@@ -473,7 +474,7 @@ object Form4: TForm4
       OnClick = CheckBox5Click
     end
     object Edit4: TEdit
-      Left = 174
+      Left = 158
       Top = 167
       Width = 20
       Height = 21

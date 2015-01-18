@@ -12,7 +12,7 @@
 #include "Unit1.h"
 #include "GuiUtil.h"
 #include "PointSelect.h"
-#include <ValueEdit.hpp>
+#include <Vcl.ValEdit.hpp>
 #include <set>
 #include <algorithm>
 #pragma warn -8072 //Disable warning: Suspicous pointer arithmetic
@@ -463,7 +463,7 @@ bool InputQuery(const String &Caption, const String &Prompt, int &Value)
   return Form->ShowModal() == mrOk;
 }
 //---------------------------------------------------------------------------
-bool GetKeyState(Classes__1 Key)
+bool GetKeyState(System_Classes__1 Key)
 {
   switch(Key)
   {
@@ -526,17 +526,17 @@ namespace Menus
   }
 }
 //---------------------------------------------------------------------------
-namespace Windows
+namespace Winapi { namespace Windows
 {
   //Missing declaration in Windows.hpp
   const unsigned HH_DISPLAY_TOPIC      = 0;
   extern PACKAGE HWND __fastcall HtmlHelp(HWND hWndCaller, System::WideChar * pszFile, unsigned uCommand, unsigned dwData);
-}
+}}
 void ShowHelp(const String &File, const String &HelpFile)
 {
   //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
   String Str = (HelpFile.IsEmpty() ? Application->HelpFile : HelpFile) + "::/" + File;
-  Windows::HtmlHelp(NULL, Str.c_str(), Windows::HH_DISPLAY_TOPIC, 0);
+  Winapi::Windows::HtmlHelp(NULL, Str.c_str(), Winapi::Windows::HH_DISPLAY_TOPIC, 0);
 }
 //---------------------------------------------------------------------------
 int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)

@@ -9,7 +9,6 @@
 #include "Func32.h"
 #include "Func32Impl.h"
 #pragma hdrstop
-#pragma warn -8072
 #include <cmath>
 #include <limits>
 #include <boost/math/special_functions/fpclassify.hpp>
@@ -1228,7 +1227,7 @@ public:
 //Math error handler
 //Called on any math errors; Do not set errno. It is very slow
 #ifdef __BORLANDC__
-int _RTLENTRY _matherrl(_exceptionl *a)
+int _RTLENTRY matherrl(_exceptionl *a)
 {
 	using namespace std;
 //  DEBUG_LOG(std::wclog << "Math error: " << a->name << "(" << a->arg1 << ", " << a->arg2 << ")" << std::endl);
@@ -1241,20 +1240,34 @@ int _RTLENTRY _matherrl(_exceptionl *a)
 //---------------------------------------------------------------------------
 //Math error handler
 //Called on any math errors;
-int _matherr(_exception *a)
+int matherr(_exception *a)
 {
 	//Bug in RTL (cosl.asm) cosl() will call _matherr() instead of _matherrl() on error
 	//Because of this a->arg1 is also wrong
 	a->retval = std::numeric_limits<double>::quiet_NaN();
 	return 1;
 }
+
+typedef int  (*matherrptr)  (struct _exception  *);
+typedef int  (*matherrptrl) (struct _exceptionl *);
+extern matherrptr  _pmatherr;
+extern matherrptrl _pmatherrl;
+struct TInitMathErr
+{
+  TInitMathErr()
+  {
+    _pmatherr = &matherr;
+    _pmatherrl = &matherrl;
+  }
+} InitMathErr;
 #endif
+
 //---------------------------------------------------------------------------
 //Instantiate versions of the template calculation functions for
 //long double and std::complex<long double>
 //Ignore by Doxygen
 #ifndef DOXYGEN
 template long double Func32::TFuncData::CalcF<long double>(TDynData<long double>&) const;
-template Func32::TComplex Func32::TFuncData::CalcF<Func32::TComplex>(TDynData<Func32::TComplex>&) const;
+//template Func32::TComplex Func32::TFuncData::CalcF<Func32::TComplex>(TDynData<Func32::TComplex>&) const;
 #endif
 

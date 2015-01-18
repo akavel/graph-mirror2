@@ -12,6 +12,7 @@
 #include <float.h>
 #include "Unit1.h"
 #include "TParFuncFrame.h"
+#include <cmath>
 //---------------------------------------------------------------------------
 #pragma link "MyEdit"
 #pragma link "UpDownEx"
@@ -54,7 +55,7 @@ void TParFuncFrame::Eval(const TGraphElem *Elem)
     }
 
     if(!Edit2->Text.IsEmpty() && !Edit3->Text.IsEmpty() &&
-      std::abs(x.imag()) < MIN_ZERO && std::abs(y.imag()) < MIN_ZERO)
+	  std::abs(x.imag()) < MIN_ZERO && std::abs(y.imag()) < MIN_ZERO)
       Form1->SetCrossPos(real(x), real(y));
 
     Func32::TParamFunc Dif = Func->GetFunc().MakeDif();

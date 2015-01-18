@@ -22,16 +22,10 @@
 #include <TRecent.h>
 #include <ImgList.hpp>
 #include <AppEvnts.hpp>
-#include "IPageSetup.h"
 #include "IColorSelect.h"
 #include "Cross.h"
 #include "FocusPanel.h"
 #include "MySplitter.h"
-#include <IdBaseComponent.hpp>
-#include <IdComponent.hpp>
-#include <IdHTTP.hpp>
-#include <IdTCPClient.hpp>
-#include <IdTCPConnection.hpp>
 #include <ActnCtrls.hpp>
 #include <ActnList.hpp>
 #include <ActnMan.hpp>
@@ -39,11 +33,8 @@
 #include <ToolWin.hpp>
 #include <StdActns.hpp>
 #include "IColorSelect.h"
-#include "IPageSetup.h"
 #include "IPolygon.h"
 #include "IRichEdit.h"
-#include <IdAntiFreeze.hpp>
-#include <IdAntiFreezeBase.hpp>
 #include <OleCtnrs.hpp>
 #include <ExtDlgs.hpp>
 #include "OpenPreviewDialog.h"
@@ -56,6 +47,7 @@
 #include <XPMan.hpp>
 #include <pngimage.hpp>
 #include "ScaledImageList.h"
+#include <System.Actions.hpp>
 #include <stack>
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
@@ -266,9 +258,6 @@ __published:	// IDE-managed Components
   void __fastcall Panel2MouseLeave(TObject *Sender);
   bool __fastcall Recent1LoadFile(TRecent *Sender,
     String FileName);
-  void __fastcall xPageSetupDialogPaintText(TIPageSetupDialog *Sender,
-    TCanvas *PageCanvas, const TRect &UpdateRect,
-    const TRect &PaperSize);
   void __fastcall NewActionExecute(TObject *Sender);
   void __fastcall OpenActionExecute(TObject *Sender);
   void __fastcall SaveActionExecute(TObject *Sender);

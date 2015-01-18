@@ -32,9 +32,9 @@ namespace Python
 	PyObject* ToPyObject(TObject *Object);
 	PyObject* ToPyObject(const char *Str);
 	PyObject* ToPyObject(const wchar_t *Str);
-  PyObject* ToPyObject(const Variant &V) {return ToPyObject(Rtti::TValue::FromVariant(V));}
-  template<typename T>
-  TPyObjectPtr ToPyObjectPtr(const T &Value) {return TPyObjectPtr(ToPyObject(Value), false);}
+	PyObject* ToPyObject(const Variant &V);
+	template<typename T>
+	TPyObjectPtr ToPyObjectPtr(const T &Value) {return TPyObjectPtr(ToPyObject(Value), false);}
 
 	template<typename T> T FromPyObject(PyObject *O);
 	template<> int FromPyObject<int>(PyObject *O);
@@ -45,7 +45,7 @@ namespace Python
 	template<> std::wstring FromPyObject<std::wstring>(PyObject *O);
 	template<> String FromPyObject<String>(PyObject *O);
 	template<typename T> inline bool FromPyObject(PyObject *O, T &Value)
-  {
+  	{
     try
     {
       Value = FromPyObject<T>(O);

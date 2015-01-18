@@ -54,7 +54,7 @@ void ShowErrorMsg(const std::exception &Error, TCustomEdit *Edit=NULL);
 void ShowStatusError(const String &Str);
 
 bool InputQuery(const String &Caption, const String &Prompt, int &Value);
-bool GetKeyState(Classes__1 Key);
+bool GetKeyState(System_Classes__1 Key);
 void ShowHelp(const String &File, const String &HelpFile=String());
 
 void ScaleImageList(TImageList *List, TImageList *DestList, int IconWidth);

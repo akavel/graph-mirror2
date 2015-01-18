@@ -133,7 +133,7 @@ uses
   CWString,
 {$endif}
 {$endif}
-  Classes, StrUtils, SysUtils, TypInfo;
+  AnsiStrings, Classes, StrUtils, SysUtils, TypInfo;
 
 (*****************************************************************************)
 (*                                                                           *)
@@ -586,7 +586,7 @@ begin
   Assert (sLinebreak=ansistring(#13#10));
   i:=1;
   while i<=length(s) do begin
-    if (s[i]=#10) and (MidStr(s,i-1,1)<>#13) then begin
+    if (s[i]=#10) and (AnsiStrings.MidStr(s,i-1,1)<>#13) then begin
       insert (#13,s,i);
       inc (i,2);
     end else
@@ -890,7 +890,7 @@ type
     Str: String;
   end;
   
-function SysUtilsEnumStringModules(Instance: Longint; Data: Pointer): Boolean;
+function SysUtilsEnumStringModules(Instance: NativeInt; Data: Pointer): Boolean;
 {$IFDEF MSWINDOWS}
 var
   Buffer: array [0..1023] of Char; // WideChar in Delphi 2008, AnsiChar before that
@@ -1675,10 +1675,10 @@ begin
             tkString, tkLString :
               old := GetStrProp(AnObject, PropName);
             tkWString :
-              old := GetWideStrProp(AnObject, PropName);
+              old := GetStrProp(AnObject, PropName);
             {$IFDEF UNICODE}
             tkUString :
-              old := GetUnicodeStrProp(AnObject, PropName);
+              old := GetStrProp(AnObject, PropName);
             {$ENDIF}
           else
             raise Exception.Create ('Internal error: Illegal property type. This problem needs to be solved by a programmer, try to find a workaround.');
@@ -2461,7 +2461,7 @@ var
   filename:FilenameString;
 begin
   s:='6637DB2E-62E1-4A60-AC19-C23867046A89'#0#0#0#0#0#0#0#0;
-  s:=MidStr(s,length(s)-7,8);
+  s:=AnsiStrings.MidStr(s,length(s)-7,8);
   offset:=0;
   for i:=8 downto 1 do
     offset:=offset shl 8+ord(s[i]);  
@@ -2472,7 +2472,7 @@ begin
     fs:=TFileStream.Create(ExecutableFilename,fmOpenRead or fmShareDenyNone);
     try
       while true do begin
-        fs.Seek(offset,soFromBeginning);
+        fs.Position := offset;
         offset:=ReadInt64(fs);
         if offset=0 then
           exit;

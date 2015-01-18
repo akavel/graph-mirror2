@@ -15,9 +15,6 @@
 #pragma package(smart_init)
 #pragma link "Shlwapi.lib"
 
-//Header that isn't included correct
-#define SHARD_PATH     0x00000002L
-SHSTDAPI_(void) SHAddToRecentDocs(UINT uFlags, LPCVOID pv);
 static TRegisterClass Dummy(__classid(TRecent));
 
 class TOpenFileAction : public TCustomAction

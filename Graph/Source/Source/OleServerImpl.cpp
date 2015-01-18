@@ -182,7 +182,7 @@ bool TOleServerImpl::Register(bool AllUsers)
     String Clsid = Comobj::GUIDToString(CLSID_OleServer);
     String ClassKey = "Software\\Classes\\CLSID\\" + Comobj::GUIDToString(CLSID_OleServer);
     String ProgID = "Software\\Classes\\" + String(GetProgID());
-    DWORD RootKey = reinterpret_cast<DWORD>(AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER);
+	HKEY RootKey = AllUsers ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER;
 
     CreateRegKey(ClassKey, "", LoadRes(RES_OLE_GRAPH_SYSTEM), RootKey);
     CreateRegKey(ClassKey + "\\InprocHandler32", "", "OLE32.DLL", RootKey);
@@ -248,7 +248,7 @@ HRESULT WINAPI TOleServerImpl::UpdateRegistry(BOOL bRegister)
     {
       UpgradeSettings();
       //Update version info to last registered version for current user
-      CreateRegKey(REGISTRY_KEY, L"Version", TVersionInfo().ProductVersion().Text().c_str(), (unsigned)HKEY_CURRENT_USER);
+      CreateRegKey(REGISTRY_KEY, L"Version", TVersionInfo().ProductVersion().Text().c_str(), HKEY_CURRENT_USER);
 
       //If "Install for all users" was selected under installation,
       //first try to register for all users. If that fails, register for current user only.

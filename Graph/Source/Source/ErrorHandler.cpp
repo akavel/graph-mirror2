@@ -11,6 +11,7 @@
 #pragma hdrstop
 #include "Unit1.h"
 #include <delayimp.h>
+#include <assert.h>
 #ifdef MADEXCEPT
 #include <madexcept.hpp>
 #include "ConfigRegistry.h"
@@ -25,9 +26,9 @@ public:
 };
 //---------------------------------------------------------------------------
 //Called when delay loading a DLL failes
-FARPROC WINAPI DllLoadFailure(dliNotification dliNotify, DelayLoadInfo *pdli)
+FARPROC WINAPI DllLoadFailure(unsigned dliNotify, DelayLoadInfo *pdli)
 {
-  if(dliNotify == dliFailGetProcAddress)
+  if(dliNotify == 4/*dliFailGetProcAddress*/)
     throw EDllLoadError("Failed to get address of: " + pdli->dlp.fImportByName ? String(pdli->dlp.szProcName) : IntToStr((int)pdli->dlp.dwOrdinal));
   throw EDllLoadError("Failed to load " + String(pdli->szDll));
 }
@@ -36,7 +37,7 @@ static struct TInitErrorHandling
 {
   TInitErrorHandling()
   {
-  	__pfnDliFailureHook = DllLoadFailure;
+	__pfnDliFailureHook2 = DllLoadFailure;
   }
 } InitErrorHandling;
 //---------------------------------------------------------------------------
@@ -50,7 +51,7 @@ void boost::assertion_failed(char const * expr, char const * function, char cons
 }
 #endif
 //---------------------------------------------------------------------------
-void _RTLENTRY _EXPFUNC std::_assert(char * cond, char * file, int line)
+void _RTLENTRY _EXPFUNC std::_assert(const char * cond, const char * file, int line)
 {
 #ifdef BOOST_ENABLE_ASSERT_HANDLER
 	boost::assertion_failed(cond, NULL, file, line);

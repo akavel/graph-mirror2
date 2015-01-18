@@ -43,7 +43,7 @@ bool IsLinkLabelSupported()
     ManifestResourcePresent = FindResource(MainInstance, CREATEPROCESS_MANIFEST_RESOURCE_ID, RT_MANIFEST) != 0;
     ManifestResourceTested = True;
   }
-  return ManifestResourcePresent && ThemeServices()->ThemesAvailable;
+  return ManifestResourcePresent && ThemeServices()->ThemesAvailable();
 }
 //---------------------------------------------------------------------------
 void TLinkLabelEx::AdjustBounds()

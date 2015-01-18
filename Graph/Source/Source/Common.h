@@ -9,10 +9,10 @@
 //---------------------------------------------------------------------------
 #ifndef CommonH
 #define CommonH
-#include "Func32.h"
 #include <complex>
 #include <Values.h>
 #include <comctrls.hpp>
+#include "Func32.h"
 //---------------------------------------------------------------------------
 void CenterForm(TForm *Form);
 
@@ -158,7 +158,7 @@ public:
 
 inline unsigned MaxDist(const TPoint &P1, const TPoint &P2)
 {
-  return std::max(abs(P1.x - P2.x), abs(P1.y - P2.y));
+  return std::max(std::abs(P1.x - P2.x), std::abs(P1.y - P2.y));
 }
 
 inline unsigned Sqr(int x)
