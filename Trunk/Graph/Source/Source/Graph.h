@@ -1,7 +1,7 @@
 /* Graph (http://sourceforge.net/projects/graph)
  * Copyright 2007 Ivan Johansen
  *
- * Func32 is free software; you can redistribute it and/or modify
+ * Graph is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or (at
  * your option) any later version.
@@ -12,7 +12,7 @@
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Func32; if not, write to the Free Software
+ * along with Graph; if not, write to the Free Software
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 //---------------------------------------------------------------------------
@@ -28,10 +28,12 @@
 #define USING_ATLVCL //Remove warning
 
 #include "Config.h"
+#include <cmath> //Bug in C++ Builder XE6 requires cmath to be included before vcl.h (See QC #124696)
 #include <vcl.h>
 #undef MAXINT //Avoid double definition
 #undef PACKAGE
 #define PACKAGE //Remove the PACKAGE macro; Only used to add export section to exe file and for packages
+#include "Func32.h"
 #include "GnuGetText.hpp"
 #include "Common.h"
 #include "Draw.h"

@@ -9,6 +9,8 @@
 #include <cmath>
 #include <boost/math/special_functions/fpclassify.hpp>
 #include <cstdio>
+#pragma link "Func32.lib"
+#pragma link "gsl.lib"
 //---------------------------------------------------------------------------
 using namespace Func32;
 using namespace std;
@@ -1123,7 +1125,7 @@ void Test()
 }
 //---------------------------------------------------------------------------
 std::wstringstream DebugStreamBuf;
-int main()
+int main(int argc, _TCHAR* argv[])
 {
 #if defined(__BORLANDC__) && !defined(_WIN64)
 	_control87(DEFAULT_FPU_CONTROL, FPU_MASK);

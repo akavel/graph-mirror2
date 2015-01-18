@@ -233,7 +233,7 @@ bool TData::Save(const std::wstring &FileName, bool Remember) const
     {
       GrfName = FileName;
       Application->MainForm->Caption = String(NAME) + " - " + GrfName.c_str();
-      Application->Title = String(NAME) + " - " + ExtractFileName(GrfName.c_str());
+      Application->Title = String(NAME) + " - " + ExtractFileName(ToUString(GrfName));
       Modified = false;
     }
 

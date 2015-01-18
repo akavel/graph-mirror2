@@ -16,6 +16,13 @@
 #pragma warn .8022 //Set warning back to default
 #pragma link "gdiplus.lib"
 //---------------------------------------------------------------------------
+struct TContext::TContextImpl
+{
+  boost::scoped_ptr<Gdiplus::Graphics> Gr;
+  boost::scoped_ptr<Gdiplus::Brush> Brush;
+  boost::scoped_ptr<Gdiplus::Pen> Pen;
+};
+
 struct TPointHandler
 {
   std::vector<TPoint> PointList;

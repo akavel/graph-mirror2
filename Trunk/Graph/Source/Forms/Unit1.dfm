@@ -154,7 +154,9 @@ object Form1: TForm1
     Height = 58
     ActionManager = ActionManager
     Color = clMenuBar
+    ColorMap.DisabledFontColor = 7171437
     ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedFont = clBlack
     ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebTop, ebBottom]
     EdgeOuter = esLowered
@@ -166,8 +168,6 @@ object Form1: TForm1
     ParentFont = False
     PopupMenu = PopupMenu2
     Spacing = 0
-    ExplicitWidth = 649
-    ExplicitHeight = 30
   end
   object ActionMainMenuBar1: TActionMainMenuBar
     Left = 0
@@ -178,7 +178,9 @@ object Form1: TForm1
     UseSystemFont = False
     ActionManager = ActionManager
     Color = clMenuBar
+    ColorMap.DisabledFontColor = 7171437
     ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedFont = clBlack
     ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
@@ -186,7 +188,6 @@ object Form1: TForm1
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
-    ExplicitWidth = 649
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -215,8 +216,6 @@ object Form1: TForm1
     OnHint = StatusBar1Hint
     OnDrawPanel = StatusBar1DrawPanel
     OnResize = StatusBar1Resize
-    ExplicitTop = 406
-    ExplicitWidth = 649
   end
   object Panel5: TPanel
     Left = 0
@@ -226,9 +225,6 @@ object Form1: TForm1
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitTop = 55
-    ExplicitWidth = 649
-    ExplicitHeight = 351
     object Splitter1: TMySplitter
       Left = 161
       Top = 0
@@ -264,8 +260,6 @@ object Form1: TForm1
       TabOrder = 0
       OnMouseLeave = Panel2MouseLeave
       OnResize = Panel2Resize
-      ExplicitWidth = 485
-      ExplicitHeight = 248
       object Image1: TImage
         Left = 0
         Top = 0
@@ -353,7 +347,6 @@ object Form1: TForm1
       BevelOuter = bvNone
       DragKind = dkDock
       TabOrder = 1
-      ExplicitHeight = 248
       object TreeView: TTreeView
         Left = 0
         Top = 0
@@ -386,7 +379,6 @@ object Form1: TForm1
         OnMouseDown = TreeViewMouseDown
         OnMouseLeave = TreeViewMouseLeave
         OnMouseMove = TreeViewMouseMove
-        ExplicitHeight = 248
       end
       object Panel1: TPanel
         Left = 0
@@ -396,7 +388,6 @@ object Form1: TForm1
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitTop = 248
         object Panel4: TPanel
           Left = 0
           Top = 0
@@ -426,8 +417,6 @@ object Form1: TForm1
       OnDockOver = Panel6DockOver
       OnGetSiteInfo = Panel6GetSiteInfo
       OnUnDock = Panel6UnDock
-      ExplicitTop = 251
-      ExplicitWidth = 649
     end
   end
   object OpenDialog: TOpenDialog
@@ -1293,9 +1282,9 @@ object Form1: TForm1
         'Move the graphing area up along the coordinate system. Hold down' +
         ' Shift to move in larger steps.'
       ImageIndex = 26
-      ShortCut = 16422
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+Up')
+      ShortCut = 16422
       OnExecute = MoveUpActionExecute
     end
     object MoveDownAction: TAction
@@ -1305,9 +1294,9 @@ object Form1: TForm1
         'Move the graphing area down along the coordinate system. Hold do' +
         'wn Shift to move in larger steps.'
       ImageIndex = 27
-      ShortCut = 16424
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+Down')
+      ShortCut = 16424
       OnExecute = MoveDownActionExecute
     end
     object MoveLeftAction: TAction
@@ -1317,9 +1306,9 @@ object Form1: TForm1
         'Move the graphing area to the left along the coordinate system. ' +
         'Hold down Shift to move in larger steps.'
       ImageIndex = 28
-      ShortCut = 16421
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+Left')
+      ShortCut = 16421
       OnExecute = MoveLeftActionExecute
     end
     object MoveRightAction: TAction
@@ -1329,9 +1318,9 @@ object Form1: TForm1
         'Move the graphing area to the right along the coordinate system.' +
         ' Hold down Shift to move in larger steps.'
       ImageIndex = 29
-      ShortCut = 16423
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+Right')
+      ShortCut = 16423
       OnExecute = MoveRightActionExecute
     end
     object MoveAction: TAction
@@ -1475,9 +1464,9 @@ object Form1: TForm1
         'Zoom in on the x-axis only. Hold down Shift to zoom with larger ' +
         'steps.'
       ImageIndex = 53
-      ShortCut = 16420
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+Home')
+      ShortCut = 16420
       OnExecute = ZoomXInActionExecute
     end
     object ZoomXOutAction: TAction
@@ -1487,9 +1476,9 @@ object Form1: TForm1
         'Zoom out on the x-axis only. Hold down Shift to zoom with larger' +
         ' steps.'
       ImageIndex = 51
-      ShortCut = 16419
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+End')
+      ShortCut = 16419
       OnExecute = ZoomXOutActionExecute
     end
     object ZoomYInAction: TAction
@@ -1499,9 +1488,9 @@ object Form1: TForm1
         'Zoom in on the y-axis only. Hold down Shift to zoom with larger ' +
         'steps.'
       ImageIndex = 52
-      ShortCut = 16417
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+PgUp')
+      ShortCut = 16417
       OnExecute = ZoomYInActionExecute
     end
     object ZoomYOutAction: TAction
@@ -1511,9 +1500,9 @@ object Form1: TForm1
         'Zoom out on the y-axis only. Hold down Shift to zoom with larger' +
         ' steps.'
       ImageIndex = 50
-      ShortCut = 16418
       SecondaryShortCuts.Strings = (
         'Ctrl+Shift+PgDn')
+      ShortCut = 16418
       OnExecute = ZoomYOutActionExecute
     end
     object InsertRelationAction: TAction
@@ -1750,7 +1739,7 @@ object Form1: TForm1
     Left = 208
     Top = 256
     Bitmap = {
-      494C01013B004400D40010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01013B004400E40010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000F0000000010020000000000000F0
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3743,7 +3732,7 @@ object Form1: TForm1
     Left = 208
     Top = 216
     Bitmap = {
-      494C01010A000C00A80010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010A000C00B80010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4153,7 +4142,7 @@ object Form1: TForm1
     Left = 368
     Top = 256
     Bitmap = {
-      494C01010A008800C80040004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010A008800D80040004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000000010000C000000001002000000000000000
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -10511,7 +10500,7 @@ object Form1: TForm1
     Left = 448
     Top = 256
     Bitmap = {
-      494C010101000800180040004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010101000800280040004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000000100004000000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

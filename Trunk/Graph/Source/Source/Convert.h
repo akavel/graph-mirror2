@@ -10,9 +10,9 @@
 #ifndef ConvertH
 #define ConvertH
 #include <boost/function.hpp>
-#include <math.hpp>
+#include <System.Math.hpp>
 //---------------------------------------------------------------------------
-double MakeFloat(TCustomEdit *Edit, const String &ErrorStr=String(), double Min=-MaxDouble, double Max=MaxDouble);
+double MakeFloat(TCustomEdit *Edit, const String &ErrorStr=String(), double Min=-MAXDOUBLE, double Max=MAXDOUBLE);
 double MakeFloat(TCustomEdit *Edit, const String &ErrorStr, const boost::function1<bool, double> &Interval);
 int MakeInt(TCustomEdit *Edit, const String &Caption);
 String ComplexToString(const Func32::TComplex &C);

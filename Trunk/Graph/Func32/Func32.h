@@ -359,13 +359,13 @@ public:
   //!Copy constructor creates a TFunc object from another function
   TFunc(const TFunc &Func) : TBaseFunc(Func), FuncData(Func.FuncData) {}
   TFunc(long double Value);
-  TFunc(const std::wstring &Text, const std::wstring &Variable = L"x", TTrigonometry ATrigonometry = Radian);
+  TFunc(const std::wstring &Text, const std::wstring &Variable = std::wstring(1, L'x'), TTrigonometry ATrigonometry = Radian);
   TFunc(const std::wstring &Text, const std::wstring &Variable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry = Radian);
   TFunc(const boost::shared_ptr<TFuncData> &AFuncData, TTrigonometry ATrigonometry) : TBaseFunc(ATrigonometry), FuncData(AFuncData) {}
 
   TFunc* Clone() const {return new TFunc(*this);}
 
-  void SetFunc(const std::wstring &Text, const std::wstring &Variable = L"x");
+  void SetFunc(const std::wstring &Text, const std::wstring &Variable = std::wstring(1, L'x'));
   void SetFunc(const std::wstring &Text, const std::wstring &Variable, const TSymbolList &SymbolList);
 
   long double CalcX(long double x, ECalcError &E) const; //throw()
@@ -389,7 +389,7 @@ public:
 
   void Clear();
   bool IsEmpty() const; //throw()
-  std::wstring MakeText(const std::wstring &Variable = L"x", unsigned Decimals=8) const;
+  std::wstring MakeText(const std::wstring &Variable = std::wstring(1, L'x'), unsigned Decimals=8) const;
 
   void Simplify();
   void Swap(TFunc &Func); //throw()
@@ -436,7 +436,7 @@ public:
   using TBaseFunc::CalcY;
 
   TParamFunc();
-  TParamFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable = L"t", TTrigonometry ATrigonometry = Radian);
+  TParamFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable = std::wstring(1, L't'), TTrigonometry ATrigonometry = Radian);
   TParamFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry = Radian);
   TParamFunc(const TParamFunc &Func) : TBaseFunc(Func), xFuncData(Func.xFuncData), yFuncData(Func.yFuncData) {}
   TParamFunc(long double xValue, long double yValue);
@@ -445,7 +445,7 @@ public:
     : TBaseFunc(ATrigonometry), xFuncData(AxFuncData), yFuncData(AyFuncData) {}
 
 	TParamFunc* Clone() const {return new TParamFunc(*this);}
-	void SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable = L"t");
+	void SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable = std::wstring(1, L't'));
 	void SetFunc(const std::wstring &xText, const std::wstring &yText, const std::wstring &Variable, const TSymbolList &SymbolList);
 
 	long double CalcX(long double t, ECalcError &E) const; //throw()
@@ -469,8 +469,8 @@ public:
 
   void Clear();
   bool IsEmpty() const; //throw()
-  std::wstring MakeXText(const std::wstring &Variable = L"t", unsigned Decimals=8) const;
-  std::wstring MakeYText(const std::wstring &Variable = L"t", unsigned Decimals=8) const;
+  std::wstring MakeXText(const std::wstring &Variable = std::wstring(1, L't'), unsigned Decimals=8) const;
+  std::wstring MakeYText(const std::wstring &Variable = std::wstring(1, L't'), unsigned Decimals=8) const;
 
   TFunc ConvXToFunc() const;
   TFunc ConvYToFunc() const;
@@ -512,13 +512,13 @@ public:
   using TBaseFunc::CalcY;
 
   TPolarFunc();
-  TPolarFunc(const std::wstring &Text, const std::wstring &Variable = L"t", TTrigonometry ATrigonometry = Radian);
+  TPolarFunc(const std::wstring &Text, const std::wstring &Variable = std::wstring(L't', 1), TTrigonometry ATrigonometry = Radian);
   TPolarFunc(const std::wstring &Text, const std::wstring &Variable, const TSymbolList &SymbolList, TTrigonometry ATrigonometry = Radian);
   TPolarFunc(const TPolarFunc &Func) : TBaseFunc(Func), FuncData(Func.FuncData) {}
   TPolarFunc(const boost::shared_ptr<TFuncData> &AFuncData, TTrigonometry ATrigonometry) : TBaseFunc(ATrigonometry), FuncData(AFuncData) {}
 
   TPolarFunc* Clone() const {return new TPolarFunc(*this);}
-  void SetFunc(const std::wstring &Text, const std::wstring &Variable = L"t");
+  void SetFunc(const std::wstring &Text, const std::wstring &Variable = std::wstring(1, L't'));
   void SetFunc(const std::wstring &Text, const std::wstring &Variable, const TSymbolList &SymbolList);
 
   long double CalcX(long double t, ECalcError &E) const; //throw()
@@ -543,7 +543,7 @@ public:
 
   void Clear();
   bool IsEmpty() const; //throw()
-  std::wstring MakeText(const std::wstring &Variable = L"t", unsigned Decimals=8) const;
+  std::wstring MakeText(const std::wstring &Variable = std::wstring(1, L't'), unsigned Decimals=8) const;
 
   TFunc ConvXToFunc() const;
   TFunc ConvYToFunc() const;
@@ -698,10 +698,10 @@ std::wistream& operator>>(std::wistream &is, TFunc &Func);
 
 long double Eval(const std::wstring &Expr, TTrigonometry Trig = Radian);
 long double Eval(const std::wstring &Expr, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
-long double Eval(const std::wstring &Expr, long double x, const std::wstring &Var = L"x", TTrigonometry Trig = Radian);
+long double Eval(const std::wstring &Expr, long double x, const std::wstring &Var = std::wstring(1, L'x'), TTrigonometry Trig = Radian);
 TComplex EvalComplex(const std::wstring &Expr, TTrigonometry Trig = Radian);
 TComplex EvalComplex(const std::wstring &Expr, const TSymbolList &SymbolList, TTrigonometry Trig = Radian);
-TComplex EvalComplex(const std::wstring &Expr, TComplex x, const std::wstring &Var = L"x", TTrigonometry Trig = Radian);
+TComplex EvalComplex(const std::wstring &Expr, TComplex x, const std::wstring &Var = std::wstring(1, L'x'), TTrigonometry Trig = Radian);
 
 long double FindCrossing(const TBaseFunc &Func1, long double Min1, long double Max1, const TBaseFunc &Func2, long double Min2, long double Max2);
 TArgType FindUnknowns(const std::wstring &Str);

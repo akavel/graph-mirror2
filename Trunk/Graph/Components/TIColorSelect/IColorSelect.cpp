@@ -287,7 +287,7 @@ void __fastcall TIColorSelect::CreateColorDialog()
   Button1->Parent = Form;
   Button1->Top = 16;
   Button1->Left = Panel->Left+Panel->Width+20;
-  Button1->Caption = Consts_SOKButton;
+  Button1->Caption = Vcl_Consts_SOKButton;
   Button1->ModalResult = mrOk;
   Button1->Default = true;
 
@@ -295,7 +295,7 @@ void __fastcall TIColorSelect::CreateColorDialog()
   Button2->Parent = Form;
   Button2->Top = 56;
   Button2->Left = Panel->Left+Panel->Width+20;
-  Button2->Caption = Consts_SCancelButton;
+  Button2->Caption = Vcl_Consts_SCancelButton;
   Button2->ModalResult = mrCancel;
   Button2->Cancel = true;
 
@@ -303,7 +303,7 @@ void __fastcall TIColorSelect::CreateColorDialog()
   Button3->Parent = Form;
   Button3->Top = 96;
   Button3->Left = Panel->Left+Panel->Width+20;
-  Button3->Caption = Consts_SHelpButton;
+  Button3->Caption = Vcl_Consts_SHelpButton;
   Button3->OnClick = Button3Click;
   if(!ShowHelp)
     Button3->Visible = false;

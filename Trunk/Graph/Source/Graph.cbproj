@@ -1,539 +1,547 @@
-﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-		<PropertyGroup>
-			<ProjectGuid>{83C28049-A225-408A-83AB-2FB99DF42339}</ProjectGuid>
-			<ProjectVersion>12.3</ProjectVersion>
-			<MainSource>Graph.cpp</MainSource>
-			<Config Condition="'$(Config)'==''">Debug</Config>
-			<Base>True</Base>
-			<Platform>Win32</Platform>
-			<AppType>Application</AppType>
-			<FrameworkType>None</FrameworkType>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
-			<Cfg_1>true</Cfg_1>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
-			<Cfg_2>true</Cfg_2>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Base)'!=''">
-			<ILINK_HeapReserveSize>0x01000000</ILINK_HeapReserveSize>
-			<ILINK_StackReserveSize>0x00400000</ILINK_StackReserveSize>
-			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
-			<BCC_InstructionSet>6</BCC_InstructionSet>
-			<ILINK_MapFileType>None</ILINK_MapFileType>
-			<ILINK_OSVersion>5.0</ILINK_OSVersion>
-			<ILINK_DelayLoadDll>PDFlib.dll;Python32.dll;$(ILINK_DelayLoadDll)</ILINK_DelayLoadDll>
-			<BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
-			<BCC_StopBatchAfterErrors>10</BCC_StopBatchAfterErrors>
-			<PackageImports>vcl.bpi;rtl.bpi;bcbie.bpi;vclx.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;bdertl.bpi;vcldbx.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;Tee.bpi;TeeDB.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inet.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DataSnapServer.bpi;DbxClientDriver.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi</PackageImports>
-			<BCC_Defines>USTRING_CSTR_AS_WCHART;$(BCC_Defines)</BCC_Defines>
-			<LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib;IComp.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</LinkPackageStatics>
-			<_TCHARMapping>wchar_t</_TCHARMapping>
-			<BCC_IncludePath>$(BDS)\include;$(BDS)\include\dinkumware;Source;Forms;Frames;..\Func32;..\Components\Common;..\Components\TRecent;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TIPolygon;..\Components\TIRichEdit;..\Components\TOpenPreviewDialog;..\Components\TIPrintDialog;..\Components\TSaveDialogEx;..\Components\TSymbolDialog;..\Components\TExtColorBox;..\Components\TMyEdit;..\Components\TLineSelect;..\Components\TIFontBox;..\Components\TShadeSelect;..\Components\TMyRadioButton;..\Components\TGrid;..\Components\TPointSelect;..\Components\TGridPanelEx;..\Components\TProgressForm;..\Components\TProgress;..\Components\TMediaPlayerEx;..\Components\TUpDownEx;..\Libraries\pdflib;..\Libraries\dxgettext;..\Libraries\gsl;..\Libraries\Python;..\Components\TCross;..\Components\TLinkLabelEx;..\Components\TCheckBoxEx;..\Components\TRadioGroupEx;$(BCC_IncludePath)</BCC_IncludePath>
-			<ProjectType>CppVCLApplication</ProjectType>
-			<OutputExt>exe</OutputExt>
-			<Multithreaded>true</Multithreaded>
-			<AllPackageLibs>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;IndyCore.lib;IndySystem.lib;xmlrtl.lib;IndyProtocols.lib;dbrtl.lib;vcldb.lib;bdertl.lib;vclimg.lib;DbxCommonDriver.lib;IComp.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</AllPackageLibs>
-			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-			<Defines>STRICT;MADEXCEPT;$(Defines)</Defines>
-			<IncludePath>..\Components\TScaledImageList\;..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;Forms;Swig;..\Libraries\pdflib;Source;Frames;..\Libraries\dxgettext;..\Components\Common;$(BDS)\include\windows;$(BDS)\include\dinkumware;..\Libraries\;..\PyVcl;$(IncludePath)</IncludePath>
-			<ILINK_LibraryPath>..\Components\TScaledImageList\;..\Components\TFocusPanel\;..\Components\TExtComboBox\;Frames\;..\Components\TGrid\;..\Libraries\pdflib;..\Libraries\dxgettext;Swig;..\Components\TUpDownEx;..\Components\TRadioGroupEx;..\Components\TGridPanelEx;..\Components\Common;Source;Frames;Forms;..;..\Components\TGrid;..\Components\TIPrintDialog;..\Components\TSymbolDialog;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<BCC_wpar>false</BCC_wpar>
-			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_1)'!=''">
-			<ILINK_MapFileType>DetailedSegments</ILINK_MapFileType>
-			<ILINK_HeapReserveSize>0x01000000</ILINK_HeapReserveSize>
-			<DCC_RemoteDebug>true</DCC_RemoteDebug>
-			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
-			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
-			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
-			<DCC_Optimize>false</DCC_Optimize>
-			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
-			<Defines>_DEBUG;_HAS_ITERATOR_DEBUGGING=1;$(Defines)</Defines>
-			<IntermediateOutputDir>Debug</IntermediateOutputDir>
-			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
-			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
-			<DCC_Define>DEBUG</DCC_Define>
-			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
-			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
-			<BCC_StackFrames>true</BCC_StackFrames>
-			<ILINK_LibraryPath>..\Libraries\gsl\Debug\Win32;..\Func32\Debug;$(BDSLIB)\$(PLATFORM)\debug;$(BDSCOMMONDIR)\DCP\Debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
-			<TASM_Debugging>Full</TASM_Debugging>
-			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_2)'!=''">
-			<BCC_UserSuppliedOptions>-xf</BCC_UserSuppliedOptions>
-			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
-			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
-			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
-			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
-			<BCC_LoopInductionReduction>true</BCC_LoopInductionReduction>
-			<BCC_EliminateDuplicateExpressions>true</BCC_EliminateDuplicateExpressions>
-			<BCC_OptimizeJumps>true</BCC_OptimizeJumps>
-			<BCC_OptimizeVariables>true</BCC_OptimizeVariables>
-			<BCC_EliminateDeadStore>true</BCC_EliminateDeadStore>
-			<BCC_ExpandIntrinsics>true</BCC_ExpandIntrinsics>
-			<BCC_PentiumInstructionScheduling>true</BCC_PentiumInstructionScheduling>
-			<Defines>NDEBUG;_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
-			<IntermediateOutputDir>Release</IntermediateOutputDir>
-			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;..\Func32\Release;..\Libraries\gsl\Release\Win32;$(BDSCOMMONDIR)\DCP\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-			<TASM_Debugging>None</TASM_Debugging>
-		</PropertyGroup>
-		<ItemGroup>
-			<CppCompile Include="..\Components\Common\CompilerWorkaround.cpp">
-				<DependentOn>..\Components\Common\CompilerWorkaround.h</DependentOn>
-				<BuildOrder>63</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\ConfigFile.cpp">
-				<DependentOn>..\Components\Common\ConfigFile.h</DependentOn>
-				<BuildOrder>58</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\ConfigRegistry.cpp">
-				<DependentOn>..\Components\Common\ConfigRegistry.h</DependentOn>
-				<BuildOrder>59</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Debug.cpp">
-				<DependentOn>..\Components\Common\Debug.h</DependentOn>
-				<BuildOrder>64</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\EmfParser.cpp">
-				<DependentOn>..\Components\Common\EmfParser.h</DependentOn>
-				<BuildOrder>60</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Encode.cpp">
-				<DependentOn>..\Components\Common\Encode.h</DependentOn>
-				<BuildOrder>62</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\SvgWriter.cpp">
-				<DependentOn>..\Components\Common\SvgWriter.h</DependentOn>
-				<BuildOrder>55</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Tokenizer.cpp">
-				<DependentOn>..\Components\Common\Tokenizer.h</DependentOn>
-				<BuildOrder>56</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\Undo.cpp">
-				<DependentOn>..\Components\Common\Undo.h</DependentOn>
-				<BuildOrder>57</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\Components\Common\VersionInfo.cpp">
-				<DependentOn>..\Components\Common\VersionInfo.h</DependentOn>
-				<BuildOrder>61</BuildOrder>
-			</CppCompile>
-			<LibFiles Include="..\Func32\Debug\Func32.lib">
-				<IgnorePath>true</IgnorePath>
-				<BuildOrder>3</BuildOrder>
-			</LibFiles>
-			<DelphiCompile Include="..\Libraries\dxgettext\gnugettext.pas">
-				<BuildOrder>65</BuildOrder>
-			</DelphiCompile>
-			<CppCompile Include="..\Libraries\pdflib\pdflib.cpp">
-				<BuildOrder>66</BuildOrder>
-			</CppCompile>
-			<DelphiCompile Include="..\PyVcl\FindClass.pas">
-				<BuildOrder>67</BuildOrder>
-			</DelphiCompile>
-			<CppCompile Include="..\PyVcl\PythonBind.cpp">
-				<DependentOn>..\PyVcl\PythonBind.h</DependentOn>
-				<BuildOrder>69</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVcl.cpp">
-				<DependentOn>..\PyVcl\PyVcl.h</DependentOn>
-				<BuildOrder>70</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclArrayProperty.cpp">
-				<DependentOn>..\PyVcl\PyVclArrayProperty.h</DependentOn>
-				<BuildOrder>71</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclClosure.cpp">
-				<DependentOn>..\PyVcl\PyVclClosure.h</DependentOn>
-				<BuildOrder>78</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclConvert.cpp">
-				<DependentOn>..\PyVcl\PyVclConvert.h</DependentOn>
-				<BuildOrder>72</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclFunction.cpp">
-				<DependentOn>..\PyVcl\PyVclFunction.h</DependentOn>
-				<BuildOrder>73</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclMethod.cpp">
-				<DependentOn>..\PyVcl\PyVclMethod.h</DependentOn>
-				<BuildOrder>74</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclObject.cpp">
-				<DependentOn>..\PyVcl\PyVclObject.h</DependentOn>
-				<BuildOrder>75</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclRef.cpp">
-				<DependentOn>..\PyVcl\PyVclRef.h</DependentOn>
-				<BuildOrder>76</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="..\PyVcl\PyVclType.cpp">
-				<DependentOn>..\PyVcl\PyVclType.h</DependentOn>
-				<BuildOrder>77</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit1.cpp">
-				<Form>Form1</Form>
-				<DependentOn>Forms\Unit1.h</DependentOn>
-				<BuildOrder>7</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit10.cpp">
-				<Form>Form10</Form>
-				<DependentOn>Forms\Unit10.h</DependentOn>
-				<BuildOrder>16</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit11.cpp">
-				<Form>Form11</Form>
-				<DependentOn>Forms\Unit11.h</DependentOn>
-				<BuildOrder>17</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit12.cpp">
-				<Form>Form12</Form>
-				<DependentOn>Forms\Unit12.h</DependentOn>
-				<BuildOrder>18</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit13.cpp">
-				<Form>Form13</Form>
-				<DependentOn>Forms\Unit13.h</DependentOn>
-				<BuildOrder>19</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit14.cpp">
-				<Form>Form14</Form>
-				<DependentOn>Forms\Unit14.h</DependentOn>
-				<BuildOrder>20</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit15.cpp">
-				<Form>Form15</Form>
-				<DependentOn>Forms\Unit15.h</DependentOn>
-				<BuildOrder>21</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit16.cpp">
-				<Form>Form16</Form>
-				<DependentOn>Forms\Unit16.h</DependentOn>
-				<BuildOrder>22</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit17.cpp">
-				<Form>Form17</Form>
-				<DependentOn>Forms\Unit17.h</DependentOn>
-				<BuildOrder>23</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit18.cpp">
-				<Form>Form18</Form>
-				<DependentOn>Forms\Unit18.h</DependentOn>
-				<BuildOrder>24</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit19.cpp">
-				<Form>Form19</Form>
-				<DependentOn>Forms\Unit19.h</DependentOn>
-				<BuildOrder>25</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit2.cpp">
-				<Form>Form2</Form>
-				<DependentOn>Forms\Unit2.h</DependentOn>
-				<BuildOrder>7</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit20.cpp">
-				<Form>Form20</Form>
-				<DependentOn>Forms\Unit20.h</DependentOn>
-				<BuildOrder>26</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit21.cpp">
-				<Form>Form21</Form>
-				<DependentOn>Forms\Unit21.h</DependentOn>
-				<BuildOrder>27</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit22.cpp">
-				<Form>Form22</Form>
-				<DependentOn>Forms\Unit22.h</DependentOn>
-				<BuildOrder>8</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit3.cpp">
-				<Form>Form3</Form>
-				<DependentOn>Forms\Unit3.h</DependentOn>
-				<BuildOrder>63</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit4.cpp">
-				<Form>Form4</Form>
-				<DependentOn>Forms\Unit4.h</DependentOn>
-				<BuildOrder>10</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit5.cpp">
-				<Form>Form5</Form>
-				<DependentOn>Forms\Unit5.h</DependentOn>
-				<BuildOrder>11</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit6.cpp">
-				<Form>Form6</Form>
-				<DependentOn>Forms\Unit6.h</DependentOn>
-				<BuildOrder>12</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit7.cpp">
-				<Form>Form7</Form>
-				<DependentOn>Forms\Unit7.h</DependentOn>
-				<BuildOrder>13</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit8.cpp">
-				<Form>Form8</Form>
-				<DependentOn>Forms\Unit8.h</DependentOn>
-				<BuildOrder>14</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Forms\Unit9.cpp">
-				<Form>Form9</Form>
-				<DependentOn>Forms\Unit9.h</DependentOn>
-				<BuildOrder>15</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Frames\TAreaFrame.cpp">
-				<Form>AreaFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>Frames\TAreaFrame.h</DependentOn>
-				<BuildOrder>29</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Frames\TEvalFrame.cpp">
-				<Form>EvalFrame</Form>
-				<BuildOrder>75</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Frames\TParFuncFrame.cpp">
-				<Form>ParFuncFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>Frames\TParFuncFrame.h</DependentOn>
-				<BuildOrder>30</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Frames\TPolFuncFrame.cpp">
-				<Form>PolFuncFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>Frames\TPolFuncFrame.h</DependentOn>
-				<BuildOrder>31</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Frames\TStdFuncFrame.cpp">
-				<Form>StdFuncFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>Frames\TStdFuncFrame.h</DependentOn>
-				<BuildOrder>32</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Frames\TTanFrame.cpp">
-				<Form>TanFrame</Form>
-				<DesignClass>TFrame</DesignClass>
-				<DependentOn>Frames\TTanFrame.h</DependentOn>
-				<BuildOrder>75</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Graph.cpp">
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="Graph.res">
-				<BuildOrder>1</BuildOrder>
-			</ResFiles>
-			<LibFiles Include="gsl\Debug\gsl.lib">
-				<IgnorePath>true</IgnorePath>
-				<BuildOrder>66</BuildOrder>
-			</LibFiles>
-			<ResFiles Include="Icons.res">
-				<BuildOrder>63</BuildOrder>
-			</ResFiles>
-			<CppCompile Include="Source\Clipboard.cpp">
-				<BuildOrder>34</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Common.cpp">
-				<DependentOn>Source\Common.h</DependentOn>
-				<BuildOrder>35</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Context.cpp">
-				<DependentOn>Source\Context.h</DependentOn>
-				<BuildOrder>36</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Convert.cpp">
-				<DependentOn>Source\Convert.h</DependentOn>
-				<BuildOrder>37</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Data.cpp">
-				<DependentOn>Source\Data.h</DependentOn>
-				<BuildOrder>38</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Draw.cpp">
-				<DependentOn>Source\Draw.h</DependentOn>
-				<BuildOrder>39</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\DrawElem.cpp">
-				<DependentOn>Source\DrawElem.h</DependentOn>
-				<BuildOrder>77</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\DrawThread.cpp">
-				<DependentOn>Source\DrawThread.h</DependentOn>
-				<BuildOrder>40</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\ErrorHandler.cpp">
-				<BuildOrder>78</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Files.cpp">
-				<BuildOrder>41</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\GraphElem.cpp">
-				<DependentOn>Source\GraphElem.h</DependentOn>
-				<BuildOrder>42</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\GraphUndo.cpp">
-				<DependentOn>Source\GraphUndo.h</DependentOn>
-				<BuildOrder>76</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\GuiHelper.cpp">
-				<DependentOn>Source\GuiHelper.h</DependentOn>
-				<BuildOrder>43</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\GuiUtil.cpp">
-				<HasBuildEvent>true</HasBuildEvent>
-				<DependentOn>Source\GuiUtil.h</DependentOn>
-				<BuildOrder>44</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\IGraphic.cpp">
-				<DependentOn>Source\IGraphic.h</DependentOn>
-				<BuildOrder>45</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\Images.cpp">
-				<DependentOn>Source\Images.h</DependentOn>
-				<BuildOrder>64</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\OleServerImpl.cpp">
-				<DependentOn>Source\OleServerImpl.h</DependentOn>
-				<BuildOrder>47</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Source\PyGraph.cpp">
-				<DependentOn>Source\PyGraph.h</DependentOn>
-				<BuildOrder>77</BuildOrder>
-			</CppCompile>
-			<ResourceCompile Include="Source\Resource.rc">
-				<Form>Resource.res</Form>
-				<BuildOrder>63</BuildOrder>
-			</ResourceCompile>
-			<CppCompile Include="Source\Settings.cpp">
-				<DependentOn>Source\Settings.h</DependentOn>
-				<BuildOrder>51</BuildOrder>
-			</CppCompile>
-			<DelphiCompile Include="Source\SystemCppException.pas">
-				<BuildOrder>79</BuildOrder>
-			</DelphiCompile>
-			<CppCompile Include="Swig\Data_wrap.cpp">
-				<BuildOrder>65</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Swig\Settings_wrap.cpp">
-				<BuildOrder>64</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="Swig\Utility_wrap.cpp">
-				<BuildOrder>67</BuildOrder>
-			</CppCompile>
-			<FormResources Include="Frames\TStdFuncFrame.dfm"/>
-			<FormResources Include="Frames\TTanFrame.dfm"/>
-			<FormResources Include="Forms\Unit7.dfm"/>
-			<FormResources Include="Forms\Unit8.dfm"/>
-			<FormResources Include="Forms\Unit6.dfm"/>
-			<FormResources Include="Forms\Unit4.dfm"/>
-			<FormResources Include="Forms\Unit5.dfm"/>
-			<FormResources Include="Frames\TParFuncFrame.dfm"/>
-			<FormResources Include="Frames\TPolFuncFrame.dfm"/>
-			<FormResources Include="Frames\TEvalFrame.dfm"/>
-			<FormResources Include="Forms\Unit9.dfm"/>
-			<FormResources Include="Frames\TAreaFrame.dfm"/>
-			<FormResources Include="Forms\Unit18.dfm"/>
-			<FormResources Include="Forms\Unit19.dfm"/>
-			<FormResources Include="Forms\Unit17.dfm"/>
-			<FormResources Include="Forms\Unit15.dfm"/>
-			<FormResources Include="Forms\Unit16.dfm"/>
-			<FormResources Include="Forms\Unit22.dfm"/>
-			<FormResources Include="Forms\Unit3.dfm"/>
-			<FormResources Include="Forms\Unit21.dfm"/>
-			<FormResources Include="Forms\Unit2.dfm"/>
-			<FormResources Include="Forms\Unit20.dfm"/>
-			<FormResources Include="Forms\Unit1.dfm"/>
-			<FormResources Include="Forms\Unit13.dfm"/>
-			<FormResources Include="Forms\Unit14.dfm"/>
-			<FormResources Include="Forms\Unit12.dfm"/>
-			<FormResources Include="Forms\Unit10.dfm"/>
-			<FormResources Include="Forms\Unit11.dfm"/>
-			<BuildConfiguration Include="Release">
-				<Key>Cfg_2</Key>
-				<CfgParent>Base</CfgParent>
-			</BuildConfiguration>
-			<BuildConfiguration Include="Base">
-				<Key>Base</Key>
-			</BuildConfiguration>
-			<BuildConfiguration Include="Debug">
-				<Key>Cfg_1</Key>
-				<CfgParent>Base</CfgParent>
-			</BuildConfiguration>
-		</ItemGroup>
-		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
-		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
-		<ProjectExtensions>
-			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
-			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
-			<BorlandProject>
-				<CPlusPlusBuilder.Personality>
-					<Source>
-						<Source Name="MainSource">Graph.cpp</Source>
-					</Source>
-					<VersionInfo>
-						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
-						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
-						<VersionInfo Name="MajorVer">4</VersionInfo>
-						<VersionInfo Name="MinorVer">5</VersionInfo>
-						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">565</VersionInfo>
-						<VersionInfo Name="Debug">True</VersionInfo>
-						<VersionInfo Name="PreRelease">False</VersionInfo>
-						<VersionInfo Name="Special">False</VersionInfo>
-						<VersionInfo Name="Private">False</VersionInfo>
-						<VersionInfo Name="DLL">False</VersionInfo>
-						<VersionInfo Name="Locale">1033</VersionInfo>
-						<VersionInfo Name="CodePage">1252</VersionInfo>
-					</VersionInfo>
-					<VersionInfoKeys>
-						<VersionInfoKeys Name="CompanyName">Ivan Johansen</VersionInfoKeys>
-						<VersionInfoKeys Name="FileDescription"/>
-						<VersionInfoKeys Name="FileVersion">4.5.0.565</VersionInfoKeys>
-						<VersionInfoKeys Name="InternalName">Graph</VersionInfoKeys>
-						<VersionInfoKeys Name="LegalCopyright">Copyright Ivan Johansen</VersionInfoKeys>
-						<VersionInfoKeys Name="LegalTrademarks"/>
-						<VersionInfoKeys Name="OriginalFilename">Graph.exe</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductName">Graph</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductVersion">4.5 beta</VersionInfoKeys>
-						<VersionInfoKeys Name="Comments"/>
-					</VersionInfoKeys>
-					<Debugging>
-						<Debugging Name="DebugSourceDirs">D:\Projects\Graph\Func32\;D:\Projects\Graph\gsl\integration\;D:\Projects\Graph\Source\gsl\integration\;D:\Projects\Graph\Libraries\gsl\integration\;D:\Projects\Graph\Libraries\gsl\err\</Debugging>
-					</Debugging>
-					<Parameters>
-						<Parameters Name="RemoteHost"/>
-						<Parameters Name="RemotePath"/>
-						<Parameters Name="RemoteParams"/>
-						<Parameters Name="RemoteLauncher"/>
-						<Parameters Name="UseRemoteLauncher">False</Parameters>
-						<Parameters Name="RemoteCWD"/>
-						<Parameters Name="RemoteDebug">False</Parameters>
-						<Parameters Name="Debug Symbols Search Path">D:\Projects\Graph</Parameters>
-						<Parameters Name="LoadUnspecifiedSymbols">True</Parameters>
-					</Parameters>
-					<ProjectProperties>
-						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
-						<ProjectProperties Name="ManagePaths">False</ProjectProperties>
-						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
-					</ProjectProperties>
-					<DebugSymbolTables>
-						<DebugSymbolTables Name="Graph">&apos;D:\Projects\Graph&apos;</DebugSymbolTables>
-					</DebugSymbolTables>
-				</CPlusPlusBuilder.Personality>
-				<Platforms>
-					<Platform value="Win32">True</Platform>
-				</Platforms>
-				<ModelSupport>False</ModelSupport>
-			</BorlandProject>
-			<ProjectFileVersion>12</ProjectFileVersion>
-		</ProjectExtensions>
-	</Project>
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{49A9C533-F4A3-4996-8AEE-E950452A3884}</ProjectGuid>
+        <ProjectVersion>15.4</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <AppType>Application</AppType>
+        <MainSource>Graph.cpp</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <IncludePath>..\Libraries\pdflib\;..\Libraries\dxgettext\;..\PyVcl\;..\Components\Common\;Source\;..\Libraries;Frames\;Forms\;Swig\;Source;..\Components\Common;..\Libraries\dxgettext;..\Func32;Forms;..\Components\TRecent;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TIPolygon;..\Components\TIRichEdit;..\Components\TOpenPreviewDialog;..\Components\TIPrintDialog;..\Components\TSaveDialogEx;..\Components\TScaledImageList;..\PyVcl;..\Libraries\Python;..\Components\TMyEdit;..\Components\TUpDownEx;..\Components\TGridPanelEx;..\Components\TSymbolDialog;..\Components\TLinkLabelEx;..\Components\TExtColorBox;..\Components\TCheckBoxEx;..\Components\TRadioGroupEx;..\Components\TLineSelect;..\Components\TExtComboBox;..\Components\TIFontBox;..\Components\TShadeSelect;..\Components\TMyRadioButton;..\Components\TGrid;..\Components\TPointSelect;..\Components\TProgressForm;..\Components\TProgress;..\Components\TMediaPlayerEx;..\Libraries\pdflib;$(IncludePath)</IncludePath>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <SanitizedProjectName>Graph</SanitizedProjectName>
+        <Multithreaded>true</Multithreaded>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
+        <AllPackageLibs>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib</AllPackageLibs>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Locale>1030</VerInfo_Locale>
+        <ILINK_LibraryPath>..\Libraries\pdflib\;..\Libraries\dxgettext\;..\PyVcl\;..\Components\Common\;Source\;Frames\;Forms\;Swig\;..;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+        <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
+        <FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
+        <BCC_wpar>false</BCC_wpar>
+        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+        <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+        <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>Graph.ico</Icon_MainIcon>
+        <VerInfo_MajorVer>4</VerInfo_MajorVer>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
+        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.565;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
+        <VerInfo_Build>565</VerInfo_Build>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <Defines>STRICT;$(Defines)</Defines>
+        <ILINK_LibraryPath>..\Libraries\atl;..\Components\TGrid;..\Components\TSymbolDialog;..\Components\TIPrintDialog;..\Components\Win32\$(Config);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <PackageImports>adortl;bcbie;bcbsmp;bdertl;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CodeSiteExpressPkg;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibxpress;IComp;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbbde;inetdbxpress;Intraweb;MetropolisUILiveTile;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;svn;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldbx;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(BDSINCLUDE)\windows\crtl;$(IncludePath)</IncludePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <PackageImports>adortl;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;Intraweb;MetropolisUILiveTile;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <Defines>_DEBUG;$(Defines)</Defines>
+        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+        <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+        <DCC_Define>DEBUG</DCC_Define>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+        <BCC_StackFrames>true</BCC_StackFrames>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <TASM_Debugging>Full</TASM_Debugging>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <BCC_EnableCPPExceptions>true</BCC_EnableCPPExceptions>
+        <BCC_DisableFramePtrElimOpt>true</BCC_DisableFramePtrElimOpt>
+        <BCC_DisableSpellChecking>true</BCC_DisableSpellChecking>
+        <CLANG_UnwindTables>true</CLANG_UnwindTables>
+        <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <VerInfo_Build>565</VerInfo_Build>
+        <VerInfo_MajorVer>4</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.565;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+        <ILINK_StackReserveSize>0x00400000</ILINK_StackReserveSize>
+        <Defines>_HAS_ITERATOR_DEBUGGING=1;$(Defines)</Defines>
+        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib</LinkPackageStatics>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <ILINK_LibraryPath>C:\Users\Public\Documents\Embarcadero\Studio\14.0\DCP\;$(BDS)\lib\win32\release\;..\Func32\Debug;..\Libraries\gsl\Debug\Win32;..\Components\Win32\Debug\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Defines>NDEBUG;$(Defines)</Defines>
+        <TASM_Debugging>None</TASM_Debugging>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib</LinkPackageStatics>
+        <ILINK_LibraryPath>..\Components\Release\;$(BDS)\lib\win32\release\;..\Func32\Release;..\Libraries\gsl\Release\Win32;..\Components\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <Defines>_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
+        <VerInfo_MajorVer>4</VerInfo_MajorVer>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <VerInfo_Build>565</VerInfo_Build>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
+        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.565;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <ItemGroup>
+        <CppCompile Include="..\Components\Common\ConfigFile.cpp">
+            <DependentOn>..\Components\Common\ConfigFile.h</DependentOn>
+            <BuildOrder>63</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\Components\Common\ConfigRegistry.cpp">
+            <DependentOn>..\Components\Common\ConfigRegistry.h</DependentOn>
+            <BuildOrder>64</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\Components\Common\EmfParser.cpp">
+            <DependentOn>..\Components\Common\EmfParser.h</DependentOn>
+            <BuildOrder>68</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\Components\Common\Encode.cpp">
+            <DependentOn>..\Components\Common\Encode.h</DependentOn>
+            <BuildOrder>67</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\Components\Common\SvgWriter.cpp">
+            <DependentOn>..\Components\Common\SvgWriter.h</DependentOn>
+            <BuildOrder>69</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\Components\Common\Undo.cpp">
+            <DependentOn>..\Components\Common\Undo.h</DependentOn>
+            <BuildOrder>65</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\Components\Common\VersionInfo.cpp">
+            <DependentOn>..\Components\Common\VersionInfo.h</DependentOn>
+            <BuildOrder>52</BuildOrder>
+        </CppCompile>
+        <DelphiCompile Include="..\Libraries\dxgettext\gnugettext.pas">
+            <BuildOrder>66</BuildOrder>
+        </DelphiCompile>
+        <CppCompile Include="..\Libraries\pdflib\pdflib.cpp">
+            <BuildOrder>70</BuildOrder>
+        </CppCompile>
+        <DelphiCompile Include="..\PyVcl\FindClass.pas">
+            <BuildOrder>64</BuildOrder>
+        </DelphiCompile>
+        <CppCompile Include="..\PyVcl\PythonBind.cpp">
+            <DependentOn>..\PyVcl\PythonBind.h</DependentOn>
+            <BuildOrder>53</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVcl.cpp">
+            <DependentOn>..\PyVcl\PyVcl.h</DependentOn>
+            <BuildOrder>54</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclClosure.cpp">
+            <DependentOn>..\PyVcl\PyVclClosure.h</DependentOn>
+            <BuildOrder>55</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclConvert.cpp">
+            <DependentOn>..\PyVcl\PyVclConvert.h</DependentOn>
+            <BuildOrder>56</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclFunction.cpp">
+            <DependentOn>..\PyVcl\PyVclFunction.h</DependentOn>
+            <BuildOrder>57</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclIndexedProperty.cpp">
+            <BuildOrder>58</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclMethod.cpp">
+            <DependentOn>..\PyVcl\PyVclMethod.h</DependentOn>
+            <BuildOrder>59</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclObject.cpp">
+            <DependentOn>..\PyVcl\PyVclObject.h</DependentOn>
+            <BuildOrder>60</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclRef.cpp">
+            <DependentOn>..\PyVcl\PyVclRef.h</DependentOn>
+            <BuildOrder>61</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclType.cpp">
+            <DependentOn>..\PyVcl\PyVclType.h</DependentOn>
+            <BuildOrder>62</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit1.cpp">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit1.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit10.cpp">
+            <Form>Form10</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit10.h</DependentOn>
+            <BuildOrder>19</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit11.cpp">
+            <Form>Form11</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit11.h</DependentOn>
+            <BuildOrder>20</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit12.cpp">
+            <Form>Form12</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit12.h</DependentOn>
+            <BuildOrder>21</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit13.cpp">
+            <Form>Form13</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit13.h</DependentOn>
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit14.cpp">
+            <Form>Form14</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit14.h</DependentOn>
+            <BuildOrder>23</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit15.cpp">
+            <Form>Form15</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit15.h</DependentOn>
+            <BuildOrder>24</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit16.cpp">
+            <Form>Form16</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit16.h</DependentOn>
+            <BuildOrder>25</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit17.cpp">
+            <Form>Form17</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit17.h</DependentOn>
+            <BuildOrder>26</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit18.cpp">
+            <Form>Form18</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit18.h</DependentOn>
+            <BuildOrder>27</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit19.cpp">
+            <Form>Form19</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit19.h</DependentOn>
+            <BuildOrder>28</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit2.cpp">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit2.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit20.cpp">
+            <Form>Form20</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit20.h</DependentOn>
+            <BuildOrder>29</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit21.cpp">
+            <Form>Form21</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit21.h</DependentOn>
+            <BuildOrder>30</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit22.cpp">
+            <Form>Form22</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit22.h</DependentOn>
+            <BuildOrder>31</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit3.cpp">
+            <Form>Form3</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit3.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit4.cpp">
+            <Form>Form4</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit4.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit5.cpp">
+            <Form>Form5</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit5.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit6.cpp">
+            <Form>Form6</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit6.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit7.cpp">
+            <Form>Form7</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit7.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit8.cpp">
+            <Form>Form8</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit8.h</DependentOn>
+            <BuildOrder>17</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Forms\Unit9.cpp">
+            <Form>Form9</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Forms\Unit9.h</DependentOn>
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Frames\TAreaFrame.cpp">
+            <DependentOn>Frames\TAreaFrame.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Frames\TEvalFrame.cpp">
+            <Form>EvalFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>Frames\TEvalFrame.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Frames\TParFuncFrame.cpp">
+            <Form>ParFuncFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>Frames\TParFuncFrame.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Frames\TPolFuncFrame.cpp">
+            <Form>PolFuncFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>Frames\TPolFuncFrame.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Frames\TStdFuncFrame.cpp">
+            <Form>StdFuncFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>Frames\TStdFuncFrame.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Frames\TTanFrame.cpp">
+            <Form>TanFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>Frames\TTanFrame.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Graph.cpp">
+            <BuildOrder>0</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Clipboard.cpp">
+            <BuildOrder>32</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Common.cpp">
+            <DependentOn>Source\Common.h</DependentOn>
+            <BuildOrder>33</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Context.cpp">
+            <DependentOn>Source\Context.h</DependentOn>
+            <BuildOrder>34</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Convert.cpp">
+            <DependentOn>Source\Convert.h</DependentOn>
+            <BuildOrder>35</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Data.cpp">
+            <DependentOn>Source\Data.h</DependentOn>
+            <BuildOrder>36</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Draw.cpp">
+            <DependentOn>Source\Draw.h</DependentOn>
+            <BuildOrder>37</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\DrawElem.cpp">
+            <DependentOn>Source\DrawElem.h</DependentOn>
+            <BuildOrder>38</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\DrawThread.cpp">
+            <DependentOn>Source\DrawThread.h</DependentOn>
+            <BuildOrder>39</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\ErrorHandler.cpp">
+            <BuildOrder>40</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Files.cpp">
+            <BuildOrder>41</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\GraphElem.cpp">
+            <DependentOn>Source\GraphElem.h</DependentOn>
+            <BuildOrder>42</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\GraphUndo.cpp">
+            <DependentOn>Source\GraphUndo.h</DependentOn>
+            <BuildOrder>43</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\GuiHelper.cpp">
+            <DependentOn>Source\GuiHelper.h</DependentOn>
+            <BuildOrder>44</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\GuiUtil.cpp">
+            <DependentOn>Source\GuiUtil.h</DependentOn>
+            <BuildOrder>45</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\IGraphic.cpp">
+            <DependentOn>Source\IGraphic.h</DependentOn>
+            <BuildOrder>46</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\Images.cpp">
+            <DependentOn>Source\Images.h</DependentOn>
+            <BuildOrder>47</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\OleServerImpl.cpp">
+            <DependentOn>Source\OleServerImpl.h</DependentOn>
+            <BuildOrder>48</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Source\PyGraph.cpp">
+            <DependentOn>Source\PyGraph.h</DependentOn>
+            <BuildOrder>49</BuildOrder>
+        </CppCompile>
+        <ResourceCompile Include="Source\Resource.rc">
+            <Form>Resource.res</Form>
+            <BuildOrder>71</BuildOrder>
+        </ResourceCompile>
+        <CppCompile Include="Source\Settings.cpp">
+            <DependentOn>Source\Settings.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Swig\Data_wrap.cpp">
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Swig\Settings_wrap.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Swig\Utility_wrap.cpp">
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <FormResources Include="Frames\TTanFrame.dfm"/>
+        <FormResources Include="Frames\TPolFuncFrame.dfm"/>
+        <FormResources Include="Frames\TStdFuncFrame.dfm"/>
+        <FormResources Include="Forms\Unit6.dfm"/>
+        <FormResources Include="Forms\Unit7.dfm"/>
+        <FormResources Include="Forms\Unit4.dfm"/>
+        <FormResources Include="Forms\Unit5.dfm"/>
+        <FormResources Include="Forms\Unit8.dfm"/>
+        <FormResources Include="Frames\TEvalFrame.dfm"/>
+        <FormResources Include="Frames\TParFuncFrame.dfm"/>
+        <FormResources Include="Forms\Unit9.dfm"/>
+        <FormResources Include="Forms\Unit18.dfm"/>
+        <FormResources Include="Forms\Unit19.dfm"/>
+        <FormResources Include="Forms\Unit16.dfm"/>
+        <FormResources Include="Forms\Unit17.dfm"/>
+        <FormResources Include="Forms\Unit2.dfm"/>
+        <FormResources Include="Forms\Unit22.dfm"/>
+        <FormResources Include="Forms\Unit3.dfm"/>
+        <FormResources Include="Forms\Unit20.dfm"/>
+        <FormResources Include="Forms\Unit21.dfm"/>
+        <FormResources Include="Forms\Unit1.dfm"/>
+        <FormResources Include="Forms\Unit10.dfm"/>
+        <FormResources Include="Forms\Unit11.dfm"/>
+        <FormResources Include="Forms\Unit14.dfm"/>
+        <FormResources Include="Forms\Unit15.dfm"/>
+        <FormResources Include="Forms\Unit12.dfm"/>
+        <FormResources Include="Forms\Unit13.dfm"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <ProjectProperties>
+                    <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+                    <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+                    <ProjectProperties Name="IndexFiles">False</ProjectProperties>
+                </ProjectProperties>
+                <Source>
+                    <Source Name="MainSource">Graph.cpp</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k200.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp200.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                </Excluded_Packages>
+            </CPlusPlusBuilder.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

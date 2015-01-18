@@ -92,7 +92,7 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
   if(OldLanguageIndex != ComboBox2->ItemIndex && ComboBox2->ItemIndex != -1)
   {
     Form1->ChangeLanguage(ComboBox2->Text);
-    CreateRegKey(REGISTRY_KEY, "Language", ComboBox2->Text, reinterpret_cast<unsigned>(HKEY_CURRENT_USER));
+    CreateRegKey(REGISTRY_KEY, "Language", ComboBox2->Text, HKEY_CURRENT_USER);
   }
 
   if(FontScale != Property.FontScale)

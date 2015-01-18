@@ -362,7 +362,7 @@ void Create2DCubicSplines(std::vector<TPoint> &Points, const std::vector<TPoint>
 	std::vector<double> y2 = CalcSecondDerivatives(Py);
 	for(unsigned I = 0; I < n-1; I++)
 	{
-    int ds = std::max(abs(P[I].x-P[I+1].x), abs(P[I].y-P[I+1].y));
+	int ds = std::max(std::abs(P[I].x-P[I+1].x), std::abs(P[I].y-P[I+1].y));
 		double dt = ds == 0 ? 1 : 1.0/ds;
 		for(double t = I; t < I+1; t += dt)
 		{
@@ -426,7 +426,7 @@ TCurveDirection CreateSingleHalfCosine(std::vector<TPoint> &Points, TCurveDirect
   else
   {
     //Draw an quarter ellipsis if we need to change horizontal/vertical direction
-		double dt = M_PI/std::max(abs(p2.x-p3.x), abs(p2.y-p3.y));
+	double dt = M_PI/std::max(std::abs(p2.x-p3.x), std::abs(p2.y-p3.y));
     for(double t = 0; t <= M_PI/2; t += dt)
     {
       TPoint q;
@@ -587,7 +587,7 @@ void InitializeBitmapInfoHeader(HBITMAP Bitmap, BITMAPINFOHEADER &Info, TPixelFo
   }
   Info.biPlanes = 1;
   Info.biCompression = BI_RGB; // Always return data in RGB format
-  Info.biSizeImage = AlignBit(Info.biWidth, Info.biBitCount, 32) * abs(Info.biHeight);
+  Info.biSizeImage = AlignBit(Info.biWidth, Info.biBitCount, 32) * std::abs(Info.biHeight);
 }
 //---------------------------------------------------------------------------
 bool InternalGetDIB(HBITMAP Bitmap, HPALETTE Palette, void *BitmapInfo, void *Bits, TPixelFormat PixelFormat)
@@ -601,7 +601,7 @@ bool InternalGetDIB(HBITMAP Bitmap, HPALETTE Palette, void *BitmapInfo, void *Bi
     OldPal = SelectPalette(DC, Palette, False);
     RealizePalette(DC);
   }
-  bool Result = GetDIBits(DC, Bitmap, 0, abs(Info.biHeight), Bits,
+  bool Result = GetDIBits(DC, Bitmap, 0, std::abs(Info.biHeight), Bits,
     static_cast<BITMAPINFO*>(BitmapInfo), DIB_RGB_COLORS);
   if(OldPal != 0)
     SelectPalette(DC, OldPal, false);

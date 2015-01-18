@@ -202,6 +202,11 @@ PyObject* ToPyObject(const wchar_t *Str)
   return PyUnicode_FromWideChar(Str, -1);
 }
 //---------------------------------------------------------------------------
+PyObject* ToPyObject(const Variant &V)
+{
+  return ToPyObject(Rtti::TValue::FromVariant(V));
+}
+//---------------------------------------------------------------------------
 /** Convert a TValue from the Delphi RTTI system to a PyObject*.
  *  \param V: The value to convert.
  *  \return New reference to a converted object.

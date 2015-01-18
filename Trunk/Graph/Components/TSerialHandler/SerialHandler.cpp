@@ -4,11 +4,9 @@
 #include "Config.h"
 #include "SerialHandler.h"
 #include "SerialThread.h"
-#include "ICompCommon.h"
 #include <Registry.hpp>
 #pragma package(smart_init)
 //---------------------------------------------------------------------------
-static TRegisterClass Dummy(__classid(TSerialHandler));
 // ValidCtrCheck is used to assure that the components created do not have
 // any pure virtual functions.
 //
@@ -28,8 +26,8 @@ namespace Serialhandler
 //---------------------------------------------------------------------------
 __fastcall TSerialHandler::TSerialHandler(TComponent* Owner)
   : TComponent(Owner), FPort("COM1"), FSpeed(19200), FByteSize(8), FParity(pbNoParity), FStopBits(sbOneStopBit),
-    FSynchronized(true), FSerialPorts(new TStringList),
-    FOnBreak(NULL), FOnDataReceived(NULL), FOnTransmissionFinished(NULL)
+    FSynchronized(true),
+    FOnBreak(NULL), FOnDataReceived(NULL), FOnTransmissionFinished(NULL), FOnSerialError(NULL)
 {
 }
 //---------------------------------------------------------------------------
@@ -43,7 +41,7 @@ void TSerialHandler::Connect()
   if(Handle.Get())   //If already open, don't bother
       return;
 
-  THandle TempHandle(CreateFile(Port.c_str(),
+  THandle TempHandle(CreateFileA(("\\\\.\\" + Port).c_str(),
                       GENERIC_READ | GENERIC_WRITE,
                       0,    /* comm devices must be opened w/exclusive-access */
                       NULL, /* no security attrs */
@@ -57,18 +55,7 @@ void TSerialHandler::Connect()
   if(TempHandle.Get() == INVALID_HANDLE_VALUE)
     RaiseLastOSError();
 
-  //Now get the DCB properties of the port we just opened
-  DCB dcb;
-  Win32Check(GetCommState(TempHandle.Get(), &dcb));
-
-  //dcb contains the actual port properties.  Now copy our settings into this dcb
-  dcb.BaudRate  = Speed;
-  dcb.ByteSize  = ByteSize;
-  dcb.Parity    = Parity;
-  dcb.StopBits  = StopBits;
-
-  //Now we can set the properties of the port with our settings.
-  Win32Check(SetCommState(TempHandle.Get(), &dcb));
+  UpdateState(TempHandle);
 
   //Set the intial size of the transmit and receive queues. These are
   //not exposed to outside clients of the class either. Perhaps they should be?
@@ -78,19 +65,18 @@ void TSerialHandler::Connect()
   // These values are just default values that I determined empirically.
   // Adjust as necessary. I don't expose these to the outside because
   // most people aren't sure how they work (uhhh, like me included).
+  //WARNING: It looks like Windows may report that transmission has finished
+  //nearly imediately when a USB dongle is used instead of a real serial port.
   COMMTIMEOUTS TimeOuts;
   TimeOuts.ReadIntervalTimeout         = 15;
   TimeOuts.ReadTotalTimeoutMultiplier  = 1;
   TimeOuts.ReadTotalTimeoutConstant    = 250;
-  TimeOuts.WriteTotalTimeoutMultiplier = 1;
-  TimeOuts.WriteTotalTimeoutConstant   = 250;
+  TimeOuts.WriteTotalTimeoutMultiplier = 0; //Set both write values to 0 to prevent
+  TimeOuts.WriteTotalTimeoutConstant   = 0; //a write timeout
   Win32Check(SetCommTimeouts(TempHandle.Get(), &TimeOuts));
 
   Handle.Swap(TempHandle);
   Thread = new TSerialThread(this);
-
-  //Create event for use when writing. Needed for overlapped I/O
-  Overlapped.hEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
 }
 //---------------------------------------------------------------------------
 void TSerialHandler::Disconnect()
@@ -101,14 +87,32 @@ void TSerialHandler::Disconnect()
     Thread->WaitFor();
     delete Thread;
     Thread = NULL;
-    CloseHandle(Overlapped.hEvent);
   }
   Handle.Close();
 }
 //---------------------------------------------------------------------------
 bool TSerialHandler::GetConnected()
 {
-  return Handle.Get();
+	return Handle.Get();
+}
+//---------------------------------------------------------------------------
+void TSerialHandler::UpdateState(const THandle &TempHandle)
+{
+  if(TempHandle.Get())
+  {
+    //Now get the DCB properties of the port we just opened
+    DCB dcb;
+    Win32Check(GetCommState(TempHandle.Get(), &dcb));
+
+    //dcb contains the actual port properties.  Now copy our settings into this dcb
+    dcb.BaudRate  = FSpeed;
+    dcb.ByteSize  = FByteSize;
+    dcb.Parity    = FParity;
+    dcb.StopBits  = FStopBits;
+
+    //Now we can set the properties of the port with our settings.
+    Win32Check(SetCommState(TempHandle.Get(), &dcb));
+  }
 }
 //---------------------------------------------------------------------------
 void TSerialHandler::SetBreak()
@@ -134,26 +138,45 @@ HANDLE TSerialHandler::GetHandle()
   return Handle.Get();  
 }
 //---------------------------------------------------------------------------
-void TSerialHandler::WriteBuffer(const BYTE *Buffer, unsigned ByteCount, bool Wait)
+//This callback function is called when an asynchronious write has finished
+void CALLBACK WriteFinished(DWORD dwErrorCode, DWORD dwNumberOfBytesTransfered, OVERLAPPED *Overlapped)
 {
-  DWORD Dummy;
-  if(ByteCount == 0 || Buffer == NULL)
-    return;
-
-  WriteFile(GetHandle(), Buffer, ByteCount, &Dummy, &Overlapped);
-  if(Wait)
-    Win32Check(GetOverlappedResult(GetHandle(), &Overlapped, &Dummy, TRUE));
+  delete Overlapped;
 }
 //---------------------------------------------------------------------------
-void TSerialHandler::WriteString(const AnsiString &Str, bool Wait)
+void TSerialHandler::WriteBuffer(const void *Buffer, unsigned ByteCount, bool Wait)
 {
-  WriteBuffer(Str.c_str(), Str.Length(), Wait);
+  if(ByteCount == 0 || Buffer == NULL)
+    return;
+  //Never reuse an OVERLAPPED structure until the previous operation has using the
+  //structure has completed
+  if(Wait)
+  {
+    DWORD Dummy;
+    OVERLAPPED Overlapped = {0};
+    WriteFile(GetHandle(), Buffer, ByteCount, NULL, &Overlapped);
+    Win32Check(GetOverlappedResult(GetHandle(), &Overlapped, &Dummy, TRUE));
+  }
+  else
+  {
+    OVERLAPPED *Overlapped = new OVERLAPPED;
+    memset(Overlapped, 0, sizeof(OVERLAPPED));
+    WriteFileEx(GetHandle(), Buffer, ByteCount, Overlapped, WriteFinished);
+    SleepEx(0, true); //This ensures that WriteFinished will be called
+  }
 }
 //---------------------------------------------------------------------------
 void TSerialHandler::DoDataReceived(const std::vector<BYTE> &Data)
 {
-  if(FOnDataReceived)
-    FOnDataReceived(this, &Data[0], Data.size());
+  try
+  {
+    if(FOnDataReceived)
+      FOnDataReceived(this, &Data[0], Data.size());
+  }
+  catch(Exception &E)
+  {
+    Application->ShowException(&E);
+  }
 }
 //---------------------------------------------------------------------------
 void TSerialHandler::Purge()
@@ -161,10 +184,34 @@ void TSerialHandler::Purge()
   Win32Check(PurgeComm(GetHandle(), PURGE_TXABORT | PURGE_RXABORT | PURGE_TXCLEAR | PURGE_RXCLEAR));
 }
 //---------------------------------------------------------------------------
+//WARNING: Windows may report that transmission has finsihed much too early if
+//a USB dongle is used instead of a real serial port.
 void TSerialHandler::DoTransmissionFinished()
 {
-  if(FOnTransmissionFinished)
-    FOnTransmissionFinished(this);
+  try
+  {
+    if(FOnTransmissionFinished)
+      FOnTransmissionFinished(this);
+  }
+  catch(Exception &E)
+  {
+    Application->ShowException(&E);
+  }
+}
+//---------------------------------------------------------------------------
+void TSerialHandler::DoSerialError(const std::pair<DWORD, String> &Error)
+{
+  try
+  {
+  	if(FOnSerialError)
+	    FOnSerialError(this, Error.first, Error.second);
+	  else
+	    Application->MessageBox(Error.second.c_str(), L"Exception", MB_ICONSTOP);
+  }
+  catch(Exception &E)
+  {
+    Application->ShowException(&E);
+  }
 }
 //---------------------------------------------------------------------------
 void TSerialHandler::ClearDTR()
@@ -187,21 +234,62 @@ void TSerialHandler::SetRTS()
   Win32Check(EscapeCommFunction(GetHandle(), SETRTS));
 }
 //---------------------------------------------------------------------------
-TStrings* TSerialHandler::GetSerialPorts()
+void TSerialHandler::GetSerialPorts(TStrings *SerialPorts)
 {
-  if(FSerialPorts->Count == 0)
+  SerialPorts->Clear();
+  std::auto_ptr<TRegistry> Registry(new TRegistry);
+  Registry->RootKey = HKEY_LOCAL_MACHINE;
+  if(Registry->OpenKeyReadOnly("Hardware\\DeviceMap\\SerialComm"))
   {
-    std::auto_ptr<TRegistry> Registry(new TRegistry);
-    Registry->RootKey = HKEY_LOCAL_MACHINE;
-    if(Registry->OpenKeyReadOnly("Hardware\\DeviceMap\\SerialComm"))
-    {
-      std::auto_ptr<TStrings> Strings(new TStringList);
-      Registry->GetValueNames(Strings.get());
-      for(int I = 0; I < Strings->Count; I++)
-        FSerialPorts->Add(Registry->ReadString(Strings->Strings[I]));
-    }
+    std::auto_ptr<TStrings> Strings(new TStringList);
+    Registry->GetValueNames(Strings.get());
+    for(int I = 0; I < Strings->Count; I++)
+      SerialPorts->Add(Registry->ReadString(Strings->Strings[I]));
   }
-  return FSerialPorts;
+}
+//---------------------------------------------------------------------------
+void __fastcall TSerialHandler::SetSpeed(unsigned Value)
+{
+  FSpeed = Value;
+  UpdateState(Handle);
+}
+//---------------------------------------------------------------------------
+unsigned __fastcall TSerialHandler::GetSpeed()
+{
+  if(Handle.Get())
+  {
+    DCB dcb;
+    Win32Check(GetCommState(Handle.Get(), &dcb));
+    return dcb.BaudRate;
+  }
+  return FSpeed;
+}
+//---------------------------------------------------------------------------
+void __fastcall TSerialHandler::SetByteSize(unsigned Value)
+{
+  if(Value != FByteSize)
+  {
+    FByteSize = Value;
+    UpdateState(Handle);
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TSerialHandler::SetParity(TParityBit Value)
+{
+  if(Value != FParity)
+  {
+    FParity = Value;
+    UpdateState(Handle);
+  }
+}
+//---------------------------------------------------------------------------
+void __fastcall TSerialHandler::SetStopBits(TStopBits Value)
+{
+  if(Value != FStopBits)
+  {
+    FStopBits = Value;
+    UpdateState(Handle);
+  }
 }
 //---------------------------------------------------------------------------
 

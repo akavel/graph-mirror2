@@ -321,8 +321,8 @@ bool __fastcall TATLModule<T>::AutomationTerminateProc()
                         Comconst_SAutomationWarning.c_str(),
                         MB_YESNO|MB_TASKMODAL|MB_ICONWARNING|MB_DEFBUTTON2) == IDYES;
 #else
-    return ::MessageBoxW(0, (Comconst_SNoCloseActiveServer1 + Comconst_SNoCloseActiveServer2).c_str(),
-                        Comconst_SAutomationWarning.c_str(),
+	return ::MessageBoxW(0, (System_Win_Comconst_SNoCloseActiveServer1 + System_Win_Comconst_SNoCloseActiveServer2).c_str(),
+                        System_Win_Comconst_SAutomationWarning.c_str(),
                         MB_YESNO|MB_TASKMODAL|MB_ICONWARNING|MB_DEFBUTTON2) == IDYES;
 #endif
   }

@@ -9,13 +9,14 @@
 TSerialThread::TSerialThread(TSerialHandler *ASerialHandler)
   : Thread::TIThread(false), SerialHandler(ASerialHandler)
 {
+  memset(&Overlapped, 0, sizeof(Overlapped));
 }
 //---------------------------------------------------------------------------
 void __fastcall TSerialThread::Execute()
 {
-  Overlapped.hEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+  Overlapped.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
   SetName("Serial thread");
-  SetCommMask(SerialHandler->Handle.Get(), EV_BREAK | EV_RXCHAR);
+  SetCommMask(SerialHandler->Handle.Get(), EV_BREAK | EV_RXCHAR | EV_TXEMPTY );
   std::vector<BYTE> Data;
 
   while(!Terminated)
@@ -25,12 +26,18 @@ void __fastcall TSerialThread::Execute()
       DWORD EvtMask;
       DWORD Dummy;
       if(!WaitCommEvent(SerialHandler->Handle.Get(), &EvtMask, &Overlapped))
-        Win32Check(GetOverlappedResult(SerialHandler->Handle.Get(), &Overlapped, &Dummy, TRUE));
+        if(GetLastError() == ERROR_IO_PENDING)
+          Win32Check(GetOverlappedResult(SerialHandler->Handle.Get(), &Overlapped, &Dummy, TRUE));
+        else
+          RaiseLastOSError();
+
+      if(Terminated)
+        break;
 
       if(EvtMask & EV_BREAK)
       {
         if(SerialHandler->Synchronized)
-          Synchronize(&SerialHandler->DoBreak);
+          Queue(&SerialHandler->DoBreak);
         else
           SerialHandler->DoBreak();
       }
@@ -45,30 +52,43 @@ void __fastcall TSerialThread::Execute()
         {
           //Resize vector and read data
           Data.resize(ComStat.cbInQue);
-          
+
           DWORD BytesRead;
           if(!ReadFile(SerialHandler->Handle.Get(), &Data[0], Data.size(), &BytesRead, &Overlapped))
             Win32Check(GetOverlappedResult(SerialHandler->Handle.Get(), &Overlapped, &Dummy, TRUE));
 
-          //Send data to main thread
-          if(SerialHandler->Synchronized)
-            Synchronize(&SerialHandler->DoDataReceived, Data);
-          else
-            SerialHandler->DoDataReceived(Data);  
+          //Only send data if we are not breaking
+          if((EvtMask & EV_BREAK) == 0)
+          {
+            //Send data to main thread
+            if(SerialHandler->Synchronized)
+              Synchronize(&SerialHandler->DoDataReceived, Data);
+            else
+              SerialHandler->DoDataReceived(Data);
+          }
         }
       }
 
       if(EvtMask & EV_TXEMPTY)
       {
         if(SerialHandler->Synchronized)
-          Synchronize(&SerialHandler->DoTransmissionFinished);
+          Queue(&SerialHandler->DoTransmissionFinished);
         else
           SerialHandler->DoTransmissionFinished();
       }
     }
+    catch(EOSError &E)
+    {
+      if(SerialHandler->Synchronized)
+        Synchronize(&SerialHandler->DoSerialError, std::make_pair(E.ErrorCode, E.Message));
+      else
+        SerialHandler->DoSerialError(std::make_pair(E.ErrorCode, E.Message));
+      if(E.ErrorCode == ERROR_OPERATION_ABORTED || E.ErrorCode == ERROR_ACCESS_DENIED)
+        break; //Terminate thread. Nothing to do anyway.
+    }
     catch(Exception &E)
     {
-      Application->MessageBox(E.Message.c_str(), L"Exception", MB_ICONSTOP);
+      Application->ShowException(&E);
     }
     catch(...)
     {

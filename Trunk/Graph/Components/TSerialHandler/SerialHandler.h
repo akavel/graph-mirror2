@@ -13,6 +13,7 @@ enum TStopBits   {sbOneStopBit=ONESTOPBIT, sbOne5StopBits=ONE5STOPBITS, sbTwoSto
 class TSerialHandler;
 class TSerialThread;
 typedef void __fastcall (__closure *TDataReceivedEvent)(TSerialHandler *Sender, const BYTE *Data, unsigned Size);
+typedef void __fastcall (__closure *TSerialErrorEvent)(TSerialHandler *Sender, DWORD ErrorCode, const AnsiString &ErrorStr);
 
 class PACKAGE TSerialHandler : public TComponent
 {
@@ -36,28 +37,33 @@ private:
 
   THandle Handle;
   TSerialThread *Thread;
-  OVERLAPPED Overlapped;
 
-  String FPort;
+  AnsiString FPort;
   unsigned FSpeed;
   unsigned FByteSize;
   TParityBit FParity;
   TStopBits FStopBits;
   bool FSynchronized;
-  TStringList *FSerialPorts;
 
   TNotifyEvent FOnBreak;
   TDataReceivedEvent FOnDataReceived;
   TNotifyEvent FOnTransmissionFinished;
+  TSerialErrorEvent FOnSerialError;
 
   bool GetConnected();
-  TStrings* GetSerialPorts();
+  void UpdateState(const THandle &TempHandle);
 
 protected:
   void DoBreak();
   void DoDataReceived(const std::vector<BYTE> &Data);
   void DoTransmissionFinished();
+  void DoSerialError(const std::pair<DWORD, String> &Error);
   HANDLE GetHandle();
+  void __fastcall SetSpeed(unsigned Value);
+  unsigned __fastcall GetSpeed();
+  void __fastcall SetByteSize(unsigned Value);
+  void __fastcall SetParity(TParityBit Value);
+  void __fastcall SetStopBits(TStopBits Value);
 
 public:
   __fastcall TSerialHandler(TComponent* Owner);
@@ -70,16 +76,15 @@ public:
   void ClearRTS(); //Clear Request To Send
   void SetDTR(); //Set Data Terminal Ready
   void SetRTS(); //Set Request To Send
-  void WriteBuffer(const BYTE *Buffer, unsigned ByteCount, bool Wait=false);
-  void WriteString(const AnsiString &Str, bool Wait=false);
+  void WriteBuffer(const void *Buffer, unsigned ByteCount, bool Wait=false);
   void Purge();
 
   __property bool Connected = {read=GetConnected};
-  __property TStrings* SerialPorts = {read=GetSerialPorts};
+  static void GetSerialPorts(TStrings *SerialPorts);
 
 __published:
-  __property String Port = {read=FPort, write=FPort};
-  __property unsigned Speed = {read=FSpeed, write=FSpeed, default=19200};
+  __property AnsiString Port = {read=FPort, write=FPort};
+  __property unsigned Speed = {read=GetSpeed, write=SetSpeed, default=19200};
   __property unsigned ByteSize = {read=FByteSize, write=FByteSize, default=8};
   __property TParityBit Parity = {read=FParity, write=FParity, default=pbNoParity};
   __property TStopBits StopBits = {read=FStopBits, write=FStopBits, default=sbOneStopBit};
@@ -88,6 +93,7 @@ __published:
   __property TNotifyEvent OnBreak = {read=FOnBreak, write=FOnBreak, default=NULL};
   __property TDataReceivedEvent OnDataReceived = {read=FOnDataReceived, write=FOnDataReceived, default=NULL};
   __property TNotifyEvent OnTransmissionFinished = {read=FOnTransmissionFinished, write=FOnTransmissionFinished, default=NULL};
+  __property TSerialErrorEvent OnSerialError = {read=FOnSerialError, write=FOnSerialError, default=NULL};
 };
 //---------------------------------------------------------------------------
 #endif

@@ -6,6 +6,7 @@
 #include <memory>
 #include "ICompCommon.h"
 #pragma package(smart_init)
+#pragma link "RichEditOle"
 //---------------------------------------------------------------------------
 static TRegisterClass Dummy(__classid(TIRichEdit));
 // ValidCtrCheck is used to assure that the components created do not have

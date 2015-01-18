@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------------
 
-#include <basepch.h>
+#include <System.hpp>
 #pragma hdrstop
 USEFORM("TSymbolDialog\SymbolForm.cpp", SymbolFrm);
 USEFORM("TIPrintDialog\PrintForm.cpp", PrintFrm);
@@ -13,7 +13,7 @@ USEFORM("TIPrintDialog\PrintForm.cpp", PrintFrm);
 
 
 #pragma argsused
-int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason, void*)
+extern "C" int _libmain(unsigned long reason)
 {
 	return 1;
 }

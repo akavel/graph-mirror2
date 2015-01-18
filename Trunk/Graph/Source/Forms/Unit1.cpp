@@ -56,6 +56,7 @@
 #include "ICompCommon.h"
 #include "Images.h"
 #include <HtmlHelpViewer.hpp>
+#include <IdHTTP.hpp>
 //---------------------------------------------------------------------------
 #pragma link "TRecent"
 #pragma link "Cross"
@@ -64,7 +65,6 @@
 #pragma link "IRichEdit"
 #pragma link "IPolygon"
 #pragma link "IColorSelect"
-#pragma link "IPageSetup"
 #pragma link "OpenPreviewDialog"
 #pragma link "IPrintDialog"
 #pragma link "SaveDialogEx"
@@ -108,7 +108,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 		//Prevent OLE instantiation if not started for use with OLE
 		_Module.RevokeClassObjects();
 
-	SetThreadName("Main");
+	Thread::SetThreadName("Main");
 	DefaultInstance->OnDebugLine = DebugLine;
 
 	Initialize();
@@ -165,8 +165,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
   StatusBar1->Panels->Items[1]->Width = (StatusBar1->Panels->Items[1]->Width * PixelsPerInch) / 96;
 
-	BOOST_ASSERT(MoveHand1);
-	BOOST_ASSERT(MoveHand2);
+//	BOOST_ASSERT(MoveHand1);
+//	BOOST_ASSERT(MoveHand2);
 }
 //---------------------------------------------------------------------------
 void TForm1::HandleCommandLine()
@@ -722,7 +722,8 @@ bool TForm1::AskSave(void)
   bool Result = true;
   if(Data.IsModified())
   {
-    String Str = Data.GetFileName().empty() ? LoadRes(RES_SAVE_CHANGES) : LoadRes(RES_SAVE_CHANGES_IN, ExtractFileName(Data.GetFileName().c_str()));
+    String Str = Data.GetFileName().empty() ? LoadRes(RES_SAVE_CHANGES) :
+      LoadRes(RES_SAVE_CHANGES_IN, ExtractFileName(ToUString(Data.GetFileName())));
     switch(MessageBox(Str, NAME, MB_YESNOCANCEL | MB_ICONEXCLAMATION))
     {
       case IDYES:
@@ -1790,28 +1791,6 @@ bool __fastcall TForm1::Recent1LoadFile(TRecent *Sender, String FileName)
   return false;
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm1::xPageSetupDialogPaintText(
-      TIPageSetupDialog *Sender, TCanvas *PageCanvas,
-      const TRect &UpdateRect, const TRect &PaperSize)
-{
-  int x=(UpdateRect.Right+UpdateRect.Left)/2;
-  int y=(UpdateRect.Bottom+UpdateRect.Top)/2;
-  PageCanvas->Pen->Width=2;
-  PageCanvas->Pen->Color=clBlue;
-  PageCanvas->MoveTo(x,UpdateRect.Top);
-  PageCanvas->LineTo(x,UpdateRect.Bottom);
-  PageCanvas->MoveTo(UpdateRect.Left,y);
-  PageCanvas->LineTo(UpdateRect.Right,y);
-
-  PageCanvas->Pen->Width=2;
-  PageCanvas->MoveTo(UpdateRect.Right-7,y-7);
-  PageCanvas->LineTo(UpdateRect.Right,y);
-  PageCanvas->LineTo(UpdateRect.Right-7,y+7);
-  PageCanvas->MoveTo(x-7,UpdateRect.Top+7);
-  PageCanvas->LineTo(x,UpdateRect.Top);
-  PageCanvas->LineTo(x+7,UpdateRect.Top+7);
-}
-//---------------------------------------------------------------------------
 void __fastcall TForm1::NewActionExecute(TObject *Sender)
 {
   if(AskSave())
@@ -1881,7 +1860,7 @@ void __fastcall TForm1::SaveAsActionExecute(TObject *Sender)
 void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
 {
   //Remove file extention
-  SaveDialogEx1->FileName = ChangeFileExt(Data.GetFileName().c_str(), "");
+  SaveDialogEx1->FileName = ChangeFileExt(ToUString(Data.GetFileName()), "");
   SaveDialogEx1->DefaultExt = "emf";
   SaveDialogEx1->Filter =
     "Windows Enhanced Metafile [*.emf]|*.emf|"
@@ -2343,7 +2322,7 @@ void __fastcall TForm1::EvalActionExecute(TObject *Sender)
     Form9->Visible = false;
 
   if(MoveAction->Checked)
-    MoveAction->Execute();
+	MoveAction->Execute();
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::TableActionExecute(TObject *Sender)
@@ -2377,7 +2356,7 @@ void TForm1::CheckForUpdate(bool StartupCheck)
   unsigned long Flags;
   InternetGetConnectedState(&Flags, 0);
   if((Flags & INTERNET_CONNECTION_MODEM) && StartupCheck)
-    return; //If user has a modem, he will be asked if he will connect to the Internet if we continue
+	return; //If user has a modem, he will be asked if he will connect to the Internet if we continue
 
   try
   {
