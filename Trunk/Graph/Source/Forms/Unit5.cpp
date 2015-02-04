@@ -131,14 +131,15 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   if(Func->From.Value >= Func->To.Value)
     Form1->ShowStatusError(LoadRes(511));
 
-  if(ToIntDef(Edit6->Text, 1) < 1)
+  int WidthValue = ToIntDef(Edit6->Text, -1);
+  if(WidthValue < 1)
   {
     MessageBox(LoadRes(513), LoadRes(514));
     return;
   }
 
   Func->Color = ExtColorBox1->Selected;
-  Func->Size = ToIntDef(Edit6->Text, 1);
+  Func->Size = WidthValue;
   Func->Style = LineSelect1->LineStyle;
   Func->SetLegendText(ToWString(Edit7->Text));
   Func->StartPointStyle = ComboBox2->ItemIndex;
@@ -160,7 +161,7 @@ void __fastcall TForm5::Button1Click(TObject *Sender)
   }
 
   Func->Update(); //Make sure tangents are updated
-  Property.DefaultFunction.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, Edit6->Text.ToInt());
+  Property.DefaultFunction.Set(LineSelect1->LineStyle, ExtColorBox1->Selected, WidthValue);
   ModalResult = mrOk;
 }
 //---------------------------------------------------------------------------
