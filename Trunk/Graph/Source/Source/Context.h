@@ -12,14 +12,6 @@
 #include <vector>
 #include <string>
 #include <boost/scoped_ptr.hpp>
-#include "gdiplus.h"
-
-namespace Gdiplus
-{
-  class Graphics;
-  class Brush;
-  class Pen;
-}
 
 namespace Graph
 {
@@ -31,7 +23,7 @@ enum TPenStyleJoin {psjBevel=PS_JOIN_BEVEL, psjMiter=PS_JOIN_MITER, psjRound=PS_
 class TContext
 {
   struct TContextImpl;
-  TContextImpl *ContextImpl;
+  TContextImpl *Impl;
   ULONG_PTR Token;
   Graphics::TCanvas *Canvas;
   HDC Handle;
