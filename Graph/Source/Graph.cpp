@@ -18,6 +18,19 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+#pragma link "SystemInfo"
+#pragma package(smart_init) // madExcept
+#ifdef MADEXCEPT
+#pragma link "madExcept"
+#pragma link "madLinkDisAsm"
+#pragma link "madListHardware"
+#pragma link "madListProcesses"
+#pragma link "madListModules"
+#pragma link "FPU"
+#pragma link "DisplayInfo"
+#pragma link "SystemInfo"
+#pragma link "UserLog"
+#endif
 #include <tchar.h>
 #include <atl\atlmod.h>
 #include "OleServerImpl.h"

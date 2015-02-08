@@ -54,7 +54,7 @@
         <SanitizedProjectName>Graph</SanitizedProjectName>
         <Multithreaded>true</Multithreaded>
         <_TCHARMapping>wchar_t</_TCHARMapping>
-        <AllPackageLibs>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</AllPackageLibs>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <VerInfo_Locale>1030</VerInfo_Locale>
         <ILINK_LibraryPath>..\Libraries\pdflib\;..\Libraries\dxgettext\;..\PyVcl\;..\Components\Common\;Source\;Frames\;Forms\;Swig\;..;..\Func32\$(Platform)\$(Config);$(ILINK_LibraryPath)</ILINK_LibraryPath>
@@ -67,13 +67,12 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <Icon_MainIcon>Graph.ico</Icon_MainIcon>
         <VerInfo_MajorVer>4</VerInfo_MajorVer>
         <VerInfo_MinorVer>5</VerInfo_MinorVer>
         <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.565;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
         <VerInfo_Build>565</VerInfo_Build>
         <VerInfo_Debug>true</VerInfo_Debug>
-        <Defines>STRICT;$(Defines)</Defines>
+        <Defines>STRICT;MADEXCEPT;$(Defines)</Defines>
         <ILINK_LibraryPath>..\Libraries\atl;..\Components\TGrid;..\Components\TSymbolDialog;..\Components\TIPrintDialog;..\Components\Win32\$(Config);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <PackageImports>adortl;bcbie;bcbsmp;bdertl;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CodeSiteExpressPkg;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibxpress;IComp;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbbde;inetdbxpress;Intraweb;MetropolisUILiveTile;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;svn;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldbx;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -117,9 +116,9 @@
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <ILINK_StackReserveSize>0x00400000</ILINK_StackReserveSize>
         <Defines>_HAS_ITERATOR_DEBUGGING=1;$(Defines)</Defines>
-        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</LinkPackageStatics>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <ILINK_LibraryPath>C:\Users\Public\Documents\Embarcadero\Studio\14.0\DCP\;$(BDS)\lib\win32\release\;..\Func32\Debug;..\Libraries\gsl\Debug\Win32;..\Components\Win32\Debug\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>C:\Program Files (x86)\madCollection\madExcept\BDS14\win32\;C:\Program Files (x86)\madCollection\madDisAsm\BDS14\win32\;C:\Program Files (x86)\madCollection\madBasic\BDS14\win32\;C:\Users\Public\Documents\Embarcadero\Studio\14.0\DCP\;$(BDS)\lib\win32\release\;..\Func32\Debug;..\Libraries\gsl\Debug\Win32;..\Components\Win32\Debug\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -546,4 +545,5 @@
     </ProjectExtensions>
     <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <ProjectExtensions/>
 </Project>
