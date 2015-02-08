@@ -78,7 +78,9 @@ void __fastcall TSaveDialogEx::DoTypeChange()
   {
     TTokenizer Tokenizer(Filter.c_str(), L'|');
     Tokenizer.Ignore(FilterIndex*2-1);
-    String Extension = Tokenizer.Next().c_str();
+    std::wstring Str = Tokenizer.Next();
+    TTokenizer ExtensionList(Str, L';');
+    String Extension = ExtensionList.Next().c_str();
     Extension = Extension.SubString(Extension.LastDelimiter("."), MaxInt);
     FileName = ChangeFileExt(FileName, Extension);
   }
