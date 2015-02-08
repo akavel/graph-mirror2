@@ -167,6 +167,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 //	BOOST_ASSERT(MoveHand1);
 //	BOOST_ASSERT(MoveHand2);
+  Func32::Init();
 }
 //---------------------------------------------------------------------------
 void TForm1::HandleCommandLine()

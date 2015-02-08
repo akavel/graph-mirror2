@@ -693,6 +693,7 @@ double Regression(const std::vector<TDblPoint> &Points, const TCustomFunc &Func,
 double CalcSSQ(const std::vector<TDblPoint> &Points, const TFunc &Func);
 double LinearCorrelation(const std::vector<TDblPoint> &Points);
 double Correlation(const std::vector<TDblPoint> &Points, const TFunc &Func);
+void Init();
 
 std::wistream& operator>>(std::wistream &is, TFunc &Func);
 
