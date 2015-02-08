@@ -1222,6 +1222,15 @@ public:
 	TInitGSL(){gsl_set_error_handler(GSL_ErrorHandler);}
 } InitGSL;
 //---------------------------------------------------------------------------
+/** Function for initializing all static data.
+ *  It is not required to call this for single threaded applications.
+ *  However multi threaded applications must call this function before any calculations
+ *  are done in threads.
+ */
+void Init()
+{
+  FunctionTable(CodeCsc);
+}
 } //namespace Func32
 
 //Math error handler
