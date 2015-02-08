@@ -636,7 +636,7 @@ TShading::TShading()
 }
 //---------------------------------------------------------------------------
 TShading::TShading(const TShading &O)
-  : ShadeStyle(O.ShadeStyle), BrushStyle(O.BrushStyle), Color(O.Color),
+  : TGraphElem(O), ShadeStyle(O.ShadeStyle), BrushStyle(O.BrushStyle), Color(O.Color),
   ExtendMinToIntercept(O.ExtendMinToIntercept), ExtendMaxToIntercept(O.ExtendMaxToIntercept),
   ExtendMin2ToIntercept(O.ExtendMin2ToIntercept), ExtendMax2ToIntercept(O.ExtendMax2ToIntercept),
   MarkBorder(O.MarkBorder), sMin(O.sMin), sMax(O.sMax), sMin2(O.sMin2), sMax2(O.sMax2)
