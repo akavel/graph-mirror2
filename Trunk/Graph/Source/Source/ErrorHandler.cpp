@@ -65,12 +65,14 @@ public:
   TMadExceptHandler();
   ~TMadExceptHandler();
   void __fastcall ExceptHandler(_di_IMEException exceptIntf, bool &handled);
+  void __fastcall OnException(TObject *Sender, Exception *E);
 };
 TMadExceptHandler MadExceptHandler;
 //---------------------------------------------------------------------------
 TMadExceptHandler::TMadExceptHandler()
 {
   RegisterExceptionHandler(&MadExceptHandler.ExceptHandler, stDontSync);
+  Application->OnException = OnException;
 }
 //---------------------------------------------------------------------------
 TMadExceptHandler::~TMadExceptHandler()
@@ -88,6 +90,12 @@ void __fastcall TMadExceptHandler::ExceptHandler(_di_IMEException exceptIntf, bo
 //  TRegistry *Registry=new TRegistry;
 //  Registry->SaveKey(REGISTRY_KEY, ExportFileName);
   exceptIntf->AdditionalAttachments->Add(ExportFileName, "Graph.reg");
+}
+//---------------------------------------------------------------------------
+void __fastcall TMadExceptHandler::OnException(TObject *Sender, Exception *E)
+{
+  //Workaround for bug in C++ Builder XE6, see http://forum.madshi.net/viewtopic.php?f=4&t=27888
+  HandleException();
 }
 #endif //MADEXCEPT
 //---------------------------------------------------------------------------
