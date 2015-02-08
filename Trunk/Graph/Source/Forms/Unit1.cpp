@@ -1869,7 +1869,7 @@ void __fastcall TForm1::SaveAsImageActionExecute(TObject *Sender)
     "Scalable Vector Graphics [*.svg]|*.svg|"
     "Windows Bitmap [*.bmp]|*.bmp|"
     "Portable Network Graphics [*.png]|*.png|"
-    "Joint Photographic Experts Group [*.jpg,*.jpeg]|*.jpg;*.jpeg|"
+    "Joint Photographic Experts Group [*.jpeg,*.jpg]|*.jpeg;*.jpg|"
     "Portable Document Format [*.pdf]|*.pdf";
   SaveDialogEx1->FilterIndex = GetRegValue(REGISTRY_KEY "\\SaveAsImage", L"FilterIndex", HKEY_CURRENT_USER, 1);
 
