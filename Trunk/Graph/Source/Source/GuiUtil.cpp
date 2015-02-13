@@ -569,7 +569,7 @@ int GetEncoderClsid(const WCHAR* format, CLSID* pClsid)
    free(pImageCodecInfo);
    return -1;  // Failure
 }
-
+//---------------------------------------------------------------------------
 void ScaleImageList(TImageList *List, TImageList *DestList, int IconWidth)
 {
   if(List->ColorDepth != cd32Bit)

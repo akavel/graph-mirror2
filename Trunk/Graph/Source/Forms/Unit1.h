@@ -57,11 +57,9 @@ enum TIconIndex
 {
   iiSave, //Position of save icon used in StatusBar in image list
   iiPrint,
-  iiFuncNode,
   iiTanNode,
   iiLabelNode,
   iiAxesNode,
-//  iiBullet,
   iiNormalNode,
   iiUnChecked,
   iiChecked,
@@ -217,8 +215,6 @@ __published:	// IDE-managed Components
   TAction *ScriptDocAction;
   TImageList *ImageList2;
   TImageList *ImageList1;
-  TImageList *ImageList3;
-  TScaledImageList *ScaledImageList1;
   TImageList *ImageList4;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
@@ -439,7 +435,7 @@ private:	// User declarations
   void SetPanelCoordText();
   void ScaleImages();
 
-  int AddImage(int Index, TColor Color);
+  int AddFuncImage(TColor Color);
   int AddImage(TColor Color, TBrushStyle Style);
 
   //Declare message handlers

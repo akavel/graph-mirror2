@@ -766,17 +766,22 @@ void __fastcall TForm1::FormCloseQuery(TObject *Sender, bool &CanClose)
 //---------------------------------------------------------------------------
 void TForm1::ScaleImages()
 {
+  int FontScale = PixelsPerInch * Property.FontScale;
+  int IconWidth = MulDiv(16, FontScale, 96 * 100);
+
+  if(ImageList1->Width != IconWidth)
+  {
+    ScaleImageList(ImageList1, ImageList1, IconWidth);
+    TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
+  }
+
   if(PixelsPerInch != 96 || Property.FontScale != 100)
   {
-    int FontScale = PixelsPerInch * Property.FontScale;
     if(!ScaledImages.get())
       ScaledImages.reset(new TImageList(NULL));
     ScaleImageList(ImageList2, ScaledImages.get());
     ActionManager->Images = ScaledImages.get();
 
-    int IconWidth = MulDiv(16, FontScale, 96 * 100);
-    ScaleImageList(ImageList1, ImageList1, IconWidth);
-//    TreeView->StateImages = ImageList1; //Reassign to ensure the new images are used
     ActionToolBar1->VertMargin = IconWidth / 8;
     ActionMainMenuBar1->Spacing = IconWidth / 2;
     ActionToolBar1->Spacing = MulDiv(5, FontScale, 96 * 100);
@@ -1742,20 +1747,27 @@ public:
   using TImageList::GetImages;
 };
 
-//Makes a copy of the image with index Index in ImageList1 and replaces clRed with Color
-int TForm1::AddImage(int Index, TColor Color)
+//Create a function icon with the specified color and add it to the image list
+int TForm1::AddFuncImage(TColor Color)
 {
+  //The sine is plottet as 4 bezier curves
+  //See http://stackoverflow.com/questions/13932704/how-to-draw-sine-waves-with-svg-js
+  int Size = ImageList1->Width;
+  TPoint Data[] = {
+    TPoint(0,Size/2),
+    TPoint(Size*0.08153, Size*(0.5-1.5*0.08153)), TPoint(Size*0.15915, Size*(0.5-1.5*0.15915)), TPoint(Size/4, Size*(0.5-1.5*0.15915)),
+    TPoint(Size*(0.25+0.08153), Size*(0.5-1.5*0.15915)), TPoint(Size*(0.25+0.15915), Size*(0.5-1.5*0.08153)), TPoint(Size/2, Size/2),
+    TPoint(Size*(0.5+0.08153), Size*(0.5+1.5*0.08153)), TPoint(Size*(0.5+0.15915), Size*(0.5+1.5*0.15915)), TPoint(Size*0.75, Size*(0.5+1.5*0.15915)),
+    TPoint(Size*(0.75+0.08153), Size*(0.5+1.5*0.15915)), TPoint(Size*(0.75+0.15915), Size*(0.5+1.5*0.08153)), TPoint(Size, Size/2)
+  };
+
   std::auto_ptr<Graphics::TBitmap> Bitmap1(new Graphics::TBitmap);
-  std::auto_ptr<Graphics::TBitmap> Bitmap2(new Graphics::TBitmap);
-  ImageList1->BkColor = clWhite;
-  ImageList1->GetBitmap(Index, Bitmap1.get());
-  ImageList1->BkColor = Graphics::clNone;
-  Bitmap2->Canvas->Brush->Color = Color;
-  Bitmap2->Width = Bitmap1->Width;
-  Bitmap2->Height = Bitmap1->Height;
-  TRect Rect(0, 0, Bitmap1->Width, Bitmap1->Height);
-  Bitmap2->Canvas->BrushCopy(Rect, Bitmap1.get(), Rect, clRed);
-  return ImageList1->AddMasked(Bitmap2.get(), clWhite);
+  Bitmap1->Canvas->Pen->Color = Color;
+  Bitmap1->Canvas->Pen->Width = std::ceil(Size/8.0);
+  Bitmap1->Width = Size;
+  Bitmap1->Height = Size;
+  Bitmap1->Canvas->PolyBezier(Data, 12);
+  return ImageList1->AddMasked(Bitmap1.get(), clWhite);
 }
 //---------------------------------------------------------------------------
 int TForm1::AddImage(TColor Color, TBrushStyle Style)
