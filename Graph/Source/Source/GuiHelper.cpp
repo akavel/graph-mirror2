@@ -42,7 +42,7 @@ int TAddView::AddFuncImage(TColor Color)
 {
   std::map<TColor,int>::iterator Iter = FuncIconMap.find(Color);
   if(Iter == FuncIconMap.end())
-    return FuncIconMap[Color] = Form1->AddImage(iiFuncNode, Color);
+    return FuncIconMap[Color] = Form1->AddFuncImage(Color);
   return Iter->second;
 }
 //---------------------------------------------------------------------------

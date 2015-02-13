@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>Graph.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
@@ -129,8 +129,8 @@
         <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
         <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
-        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib</LinkPackageStatics>
-        <ILINK_LibraryPath>..\Components\Release\;$(BDS)\lib\win32\release\;..\Func32\Release;..\Libraries\gsl\Release\Win32;..\Components\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</LinkPackageStatics>
+        <ILINK_LibraryPath>C:\Program Files (x86)\madCollection\madExcept\BDS14\win32\;C:\Program Files (x86)\madCollection\madDisAsm\BDS14\win32\;C:\Program Files (x86)\madCollection\madBasic\BDS14\win32\;..\Components\Release\;$(BDS)\lib\win32\release\;..\Func32\Release;..\Libraries\gsl\Release\Win32;..\Components\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <Defines>_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
         <VerInfo_MajorVer>4</VerInfo_MajorVer>
         <VerInfo_Debug>true</VerInfo_Debug>
