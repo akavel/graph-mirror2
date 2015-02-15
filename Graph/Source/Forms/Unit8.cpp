@@ -21,6 +21,7 @@ __fastcall TForm8::TForm8(TComponent* Owner, TData &AData)
   TranslateProperties(this);
   SetAccelerators(this);
   FlipForm(this);
+  ValueListEditor1->DefaultRowHeight = GuiScale(ValueListEditor1->DefaultRowHeight);
 }
 //---------------------------------------------------------------------------
 bool TForm8::EditModel(std::wstring &Name)
