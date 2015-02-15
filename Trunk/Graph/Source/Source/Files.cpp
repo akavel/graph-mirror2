@@ -289,7 +289,7 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
   }
   catch(EGraphError &E)
   {
-    MessageBox(E.Message, LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+    MessageBox(ToUString(E.Message), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
     return false;
   }
   return true;
@@ -346,15 +346,15 @@ void TData::ImportPointSeries(std::istream &Stream, char Separator)
 	}
 	catch(Func32::EParseError &E)
 	{
-    throw EGraphError(LoadRes(526, Row+1));
+    throw EGraphError(ToWString(LoadRes(526, Row+1)));
 	}
 	catch(std::out_of_range &E)
 	{
-    throw EGraphError(LoadRes(526, Row+1));
+    throw EGraphError(ToWString(LoadRes(526, Row+1)));
   }
   catch(std::bad_alloc &E)
   {
-    throw EGraphError(LoadRes(RES_OUT_OF_MEMORY));
+    throw EGraphError(LoadString(RES_OUT_OF_MEMORY));
   }
 
 	unsigned ColorIndex = 0;
@@ -395,7 +395,6 @@ void TData::ImportPointSeries(std::istream &Stream, char Separator)
 
   UndoList.EndMultiUndo();
   Modified = true;
-  return true;
 }
 //---------------------------------------------------------------------------
 void TData::LoadDefault()
