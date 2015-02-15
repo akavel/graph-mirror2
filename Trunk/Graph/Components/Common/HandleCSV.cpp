@@ -61,6 +61,8 @@ bool ImportCsv(std::istream &Stream, TCsvGrid &CsvGrid, const std::string &Separ
 
 		//Several separators after each other (eg. spaces) are ignored
 		size_t FirstPos = Line.find_first_not_of(Sep);
+    if(FirstPos == std::string::npos)
+      continue; //A line with nothing but separators will be ignored.
 		size_t Pos = Line.find(Sep, FirstPos);
 		std::string xText = Trim(Line.substr(FirstPos, Pos - FirstPos));
 		TCsvRow CsvRow;
