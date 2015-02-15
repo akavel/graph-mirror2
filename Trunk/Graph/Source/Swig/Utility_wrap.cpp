@@ -3061,6 +3061,9 @@ namespace swig {
 #include <string>
 
 
+#include <string>
+
+
 #include <complex> 
 
 
@@ -3074,6 +3077,7 @@ namespace swig {
 
   bool SaveToFile(const std::wstring &FileName, bool Remember = true) {return Form1->Data.Save(FileName, Remember);}
   void ImportPointSeries(const std::wstring &FileName, char Separator = 0) {Form1->Data.ImportPointSeries(FileName, Separator);}
+  void ImportPointSeriesText(const std::string &Str, char Separator = 0) {std::istringstream Stream(Str); Form1->Data.ImportPointSeries(Stream, Separator);}
   void Import(const std::wstring &FileName) {Form1->Data.Import(FileName);}
   std::wstring GetText(const wchar_t *Str) {return gettext(Str).c_str();}
   void ChangeLanguage(const std::wstring &Language) {Form1->ChangeLanguage(ToUString(Language));}
@@ -3448,6 +3452,37 @@ SWIG_AsVal_char (PyObject * obj, char *val)
     }
   }
   return res;
+}
+
+
+SWIGINTERN int
+SWIG_AsPtr_std_string (PyObject * obj, std::string **val) 
+{
+  char* buf = 0 ; size_t size = 0; int alloc = SWIG_OLDOBJ;
+  if (SWIG_IsOK((SWIG_AsCharPtrAndSize(obj, &buf, &size, &alloc)))) {
+    if (buf) {
+      if (val) *val = new std::string(buf, size - 1);
+      if (alloc == SWIG_NEWOBJ) delete[] buf;
+      return SWIG_NEWOBJ;
+    } else {
+      if (val) *val = 0;
+      return SWIG_OLDOBJ;
+    }
+  } else {
+    static int init = 0;
+    static swig_type_info* descriptor = 0;
+    if (!init) {
+      descriptor = SWIG_TypeQuery("std::string" " *");
+      init = 1;
+    }
+    if (descriptor) {
+      std::string *vptr;
+      int res = SWIG_ConvertPtr(obj, (void**)&vptr, descriptor, 0);
+      if (SWIG_IsOK(res) && val) *val = vptr;
+      return res;
+    }
+  }
+  return SWIG_ERROR;
 }
 
 
@@ -4003,6 +4038,113 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ImportPointSeriesText__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string *arg1 = 0 ;
+  char arg2 ;
+  int res1 = SWIG_OLDOBJ ;
+  char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ImportPointSeriesText",&obj0,&obj1)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    res1 = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ImportPointSeriesText" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ImportPointSeriesText" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  ecode2 = SWIG_AsVal_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ImportPointSeriesText" "', argument " "2"" of type '" "char""'");
+  } 
+  arg2 = static_cast< char >(val2);
+  ImportPointSeriesText((std::string const &)*arg1,arg2);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ImportPointSeriesText__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ImportPointSeriesText",&obj0)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    res1 = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ImportPointSeriesText" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ImportPointSeriesText" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  ImportPointSeriesText((std::string const &)*arg1);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ImportPointSeriesText(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_ImportPointSeriesText__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_char(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_ImportPointSeriesText__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ImportPointSeriesText'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    ImportPointSeriesText(std::string const &,char)\n"
+    "    ImportPointSeriesText(std::string const &)\n");
+  return 0;
+}
+
+
 SWIGINTERN PyObject *_wrap_Import(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   std::wstring *arg1 = 0 ;
@@ -4136,6 +4278,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"LoadFromFile", _wrap_LoadFromFile, METH_VARARGS, NULL},
 	 { (char *)"SaveToFile", _wrap_SaveToFile, METH_VARARGS, NULL},
 	 { (char *)"ImportPointSeries", _wrap_ImportPointSeries, METH_VARARGS, NULL},
+	 { (char *)"ImportPointSeriesText", _wrap_ImportPointSeriesText, METH_VARARGS, NULL},
 	 { (char *)"Import", _wrap_Import, METH_VARARGS, NULL},
 	 { (char *)"GetText", _wrap_GetText, METH_VARARGS, NULL},
 	 { (char *)"ChangeLanguage", _wrap_ChangeLanguage, METH_VARARGS, NULL},

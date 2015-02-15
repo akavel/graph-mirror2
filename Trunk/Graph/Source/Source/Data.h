@@ -66,6 +66,7 @@ public:
   void PreprocessGrfFile(TConfigFile &IniFile);
   void Import(const std::wstring &FileName);
   void Import(TConfigFile &ConfigFile);
+  void ImportPointSeries(std::istream &Stream, char Separator);
   bool ImportPointSeries(const std::wstring &FileName, char Separator);
   std::wstring CreatePointSeriesDescription() const;
   boost::shared_ptr<TTextLabel> FindLabel(int X, int Y) const; //NULL indicates not label found

@@ -276,8 +276,6 @@ void TData::SaveDefault() const
 //---------------------------------------------------------------------------
 bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
 {
-  const TColor Colors[] = {clRed, clGreen, clBlue, clYellow, clPurple, clAqua, clBlack, clGray, clSkyBlue	, clMoneyGreen, clDkGray};
-
   std::ifstream Stream(FileName.c_str());
   if(!Stream)
   {
@@ -285,7 +283,23 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
     return false;
   }
 
-	std::string Line;
+  try
+  {
+    ImportPointSeries(Stream, Separator);
+  }
+  catch(EGraphError &E)
+  {
+    MessageBox(E.Message, LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
+    return false;
+  }
+  return true;
+}
+//---------------------------------------------------------------------------
+void TData::ImportPointSeries(std::istream &Stream, char Separator)
+{
+  const TColor Colors[] = {clRed, clGreen, clBlue, clYellow, clPurple, clAqua, clBlack, clGray, clSkyBlue	, clMoneyGreen, clDkGray};
+
+ 	std::string Line;
 	while(Stream && Line.empty())
     std::getline(Stream, Line);
 	if(Separator == 0)
@@ -332,18 +346,15 @@ bool TData::ImportPointSeries(const std::wstring &FileName, char Separator)
 	}
 	catch(Func32::EParseError &E)
 	{
-		MessageBox(LoadRes(526, FileName.c_str(), Row+1), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
-		return false;
+    throw EGraphError(LoadRes(526, Row+1));
 	}
 	catch(std::out_of_range &E)
 	{
-		MessageBox(LoadRes(526, FileName.c_str(), Row+1), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
-		return false;
+    throw EGraphError(LoadRes(526, Row+1));
   }
   catch(std::bad_alloc &E)
   {
-    MessageBox(LoadRes(RES_OUT_OF_MEMORY), LoadRes(RES_FILE_ERROR), MB_ICONSTOP);
-    return false;
+    throw EGraphError(LoadRes(RES_OUT_OF_MEMORY));
   }
 
 	unsigned ColorIndex = 0;

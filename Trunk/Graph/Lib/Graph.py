@@ -326,6 +326,7 @@ LoadFromFile = Utility.LoadFromFile
 SaveToFile = Utility.SaveToFile
 Import = Utility.Import
 ImportPointSeries = Utility.ImportPointSeries
+ImportPointSeriesText = Utility.ImportPointSeriesText
 GetText = Utility.GetText
 ChangeLanguage = Utility.ChangeLanguage
 

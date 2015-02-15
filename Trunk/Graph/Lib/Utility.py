@@ -110,3 +110,7 @@ def ImportPointSeries(*args) -> "void" :
   return _Utility.ImportPointSeries(*args)
 ImportPointSeries = _Utility.ImportPointSeries
 
+def ImportPointSeriesText(*args) -> "void" :
+  return _Utility.ImportPointSeriesText(*args)
+ImportPointSeriesText = _Utility.ImportPointSeriesText
+

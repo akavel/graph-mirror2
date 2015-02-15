@@ -543,6 +543,18 @@
 
 			<varlistentry>
 				<term>
+					<indexterm><primary>ImportPointSeriesText (in module Graph)</primary></indexterm>
+					<classname>Graph</classname>.<property>ImportPointSeriesText</property>(<parameter>Str, Separator=0</parameter>)
+				</term>
+				<listitem>
+					<para>
+            This does the same as <property>ImportPointSeries</property> but imports directly from a text string instead of from a file.
+					</para>
+				</listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>
 					<indexterm><primary>GetText (in module Graph)</primary></indexterm>
 					<classname>Graph</classname>.<property>GetText</property>(<parameter>Str</parameter>)
 				</term>
