@@ -177,7 +177,7 @@ BEGIN
   523 "Calculate length of path"
   524 "Edit function"
   525 "Edit tangent/normal"
-  526 "Error processing file '%s' at line %s."
+  526 "Error processing file at line %s."
   527 "Evaluate"
   528 "Edit text label"
   529 "The model needs some constants (starting with a $) for Graph to find."
