@@ -586,7 +586,7 @@ TRegion::TRegion(const std::vector<TPoint> &Points, int Mode)
   //Clip to prevent an OS error
   TRect Rect(-MAXSHORT/2, -MAXSHORT/2, MAXSHORT/2, MAXSHORT/2);
   ClipToRect(&PointHandler.Append, &Points.at(0), Points.size(), Rect, true);
-  Handle = CreatePolygonRgn(&PointHandler.PointList[0], PointHandler.PointList.size(), Mode);
+  Handle = CreatePolygonRgn(PointHandler.PointList.empty() ? NULL : &PointHandler.PointList[0], PointHandler.PointList.size(), Mode);
   if(Handle == 0)
     RaiseLastOSError();
 }
