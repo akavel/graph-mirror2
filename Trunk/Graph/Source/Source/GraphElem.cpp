@@ -1050,7 +1050,7 @@ TTextLabel::TTextLabel()
 {
 }
 //---------------------------------------------------------------------------
-TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation, bool OleLink)
+TTextLabel::TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, double ARotation, bool OleLink)
   : Text(Str), LabelPlacement(Placement), xPos(AxPos), yPos(AyPos),
     BackgroundColor(Color), Rotation(ARotation), ContainsOleLink(OleLink)
 {
@@ -1064,7 +1064,7 @@ void TTextLabel::WriteToIni(TConfigFileSection &Section) const
   Section.Write(L"Placement", LabelPlacement);
   if(LabelPlacement == lpUserTopLeft || LabelPlacement >= lpUserTopRight)
     Section.Write(L"Pos", xPos.Text + L";" + yPos.Text);
-  Section.Write(L"Rotation", Rotation, 0U);
+  Section.Write(L"Rotation", Rotation, 0.0);
   Section.Write(L"Text", ToWString(EncodeEscapeSequence(Text)));
   Section.Write(L"BackgroundColor", BackgroundColor);
   Section.Write(L"OleLink", ContainsOleLink, false);
@@ -1090,7 +1090,7 @@ void TTextLabel::ReadFromIni(const TConfigFileSection &Section)
     yPos.Set(Temp.substr(n+1), GetData(), true);
   }
 
-  Rotation = Section.Read(L"Rotation", 0U);
+  Rotation = Section.Read(L"Rotation", 0.0);
   Text = DecodeEscapeSequence(ToString(Section.Read(L"Text", L"ERROR")));
   BackgroundColor = Section.Read(L"BackgroundColor", clNone);
   ContainsOleLink = Section.Read(L"OleLink", false);

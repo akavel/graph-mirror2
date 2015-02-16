@@ -407,57 +407,68 @@ class TInputQueryForm : public TForm
   TLabel *Label;
   TButton *Button1;
   TButton *Button2;
-  int &Value;
+  double &Value;
 
 public:
-  __fastcall TInputQueryForm(const String &ACaption, const String &APrompt, int &AValue)
+  __fastcall TInputQueryForm(const String &ACaption, const String &APrompt, double &AValue)
     : TForm(NULL, 0), Value(AValue)
   {
     Caption = ACaption;
     BorderStyle = bsDialog;
     Position = poMainFormCenter;
-    ClientHeight = 70;
+    ClientHeight = GuiScale(70);
 
     Label = new TLabel(this);
     Label->Caption = APrompt;
     Label->Parent = this;
-    Label->Left = 8;
-    Label->Top = 8;
+    Label->Left = GuiScale(8);
+    Label->Top = GuiScale(8);
 
     Edit = new TEdit(this);
     Edit->Text = Value;
     Edit->Parent = this;
-    Edit->Left = Label->Left + Label->Width + 5;
-    Edit->Top = 8;
-    Edit->Width = std::max(180 - Edit->Left - 10, 50);
-    Width = Edit->Left + Edit->Width + 10;
+    Edit->Left = Label->Left + Label->Width + GuiScale(5);
+    Edit->Top = GuiScale(8);
+    Edit->Width = std::max(GuiScale(180) - Edit->Left - GuiScale(10), GuiScale(50));
+    Width = Edit->Left + Edit->Width + GuiScale(10);
 
     Button1 = new TButton(this);
     Button1->Parent = this;
     Button1->Caption = _("OK");
-    Button1->Left = Width / 2 - Button1->Width - 5;
-    Button1->Top = 38;
+    Button1->Width = GuiScale(75);
+    Button1->Left = Width / 2 - Button1->Width - GuiScale(5);
+    Button1->Top = GuiScale(38);
+    Button1->Height = GuiScale(25);
     Button1->Default = true;
     Button1->OnClick = InputQueryClick;
 
     Button2 = new TButton(this);
     Button2->Parent = this;
     Button2->Caption = _("Cancel");
-    Button2->Left = 50;
-    Button2->Left = Width / 2 + 5;
-    Button2->Top = 38;
+    Button2->Left = GuiScale(50);
+    Button2->Left = Width / 2 + GuiScale(5);
+    Button2->Top = GuiScale(38);
+    Button2->Height = GuiScale(25);
+    Button2->Width = GuiScale(75);
     Button2->Cancel = true;
     Button2->ModalResult = mrCancel;
   }
 
   void __fastcall InputQueryClick(TObject *Sender)
   {
-    Value = Edit->Text.ToInt(); //Verify that a valid integer is entered
-    ModalResult = mrOk;
+    try
+    {
+      Value = Edit->Text.ToDouble();
+      ModalResult = mrOk;
+    }
+    catch(EConvertError &E)
+    {
+      MessageBox(LoadRes(RES_NOT_VALID_NUMBER, Edit->Text), LoadRes(RES_ERROR_IN_VALUE), MB_ICONSTOP);
+    }
   }
 };
 //---------------------------------------------------------------------------
-bool InputQuery(const String &Caption, const String &Prompt, int &Value)
+bool InputQuery(const String &Caption, const String &Prompt, double &Value)
 {
   std::auto_ptr<TForm> Form(new TInputQueryForm(Caption, Prompt, Value));
   return Form->ShowModal() == mrOk;

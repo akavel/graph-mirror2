@@ -3372,7 +3372,11 @@ void __fastcall TForm1::PopupMenu3Popup(TObject *Sender)
     for(int I = 0; I < Label_Placement->Count; I++)
       Label_Placement->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
 
-    Index = TextLabel->GetRotation() % 90 == 0 ? TextLabel->GetRotation() / 90 : 4;
+    double Rotation = TextLabel->GetRotation();
+    if(TextLabel->GetRotation() == static_cast<int>(Rotation))
+      Index = static_cast<int>(Rotation) % 90 == 0 ? static_cast<int>(Rotation) / 90 : 4;
+    else
+      Index = 4;
     for(int I = 0; I < Label_Rotation->Count; I++)
       Label_Rotation->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
   }
@@ -3387,7 +3391,11 @@ void __fastcall TForm1::PopupMenu1Popup(TObject *Sender)
     for(int I = 0; I < Tree_Placement->Count; I++)
       Tree_Placement->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
 
-    Index = TextLabel->GetRotation() % 90 == 0 ? TextLabel->GetRotation() / 90 : 4;
+    double Rotation = TextLabel->GetRotation();
+    if(TextLabel->GetRotation() == static_cast<int>(Rotation))
+      Index = static_cast<int>(Rotation) % 90 == 0 ? static_cast<int>(Rotation) / 90 : 4;
+    else
+      Index = 4;
     for(int I = 0; I < Tree_Rotation->Count; I++)
       Tree_Rotation->Items[I]->ImageIndex = (I == Index) ? 58/*iiBullet*/ : -1;
   }
@@ -3555,11 +3563,14 @@ void __fastcall TForm1::RotationClick(TObject *Sender)
     if(!TextLabel)
       return;
 
-    int Rotation = TextLabel->GetRotation();
+    double Rotation = TextLabel->GetRotation();
     if(MenuItem->MenuIndex == 4)
     {
       if(!InputQuery(LoadStr(RES_ROTATION), LoadStr(RES_DEGREES) + ":", Rotation))
         return;
+      Rotation = fmod(Rotation, 360);
+      if(Rotation < 0)
+        Rotation += 360;
     }
     else
       Rotation = MenuItem->MenuIndex * 90;

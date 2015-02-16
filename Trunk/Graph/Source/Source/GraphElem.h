@@ -154,13 +154,13 @@ class TTextLabel : public TGraphElem
   TRect Rect;
   TColor BackgroundColor;
   TVclObject<TMetafile> Metafile;
-  unsigned Rotation; //Rotation in degrees
+  double Rotation; //Rotation in degrees
   std::wstring StatusText; //The text shown in the TreeView
   bool ContainsOleLink; //The Text contains an OLE object link that must be updated when loaded
 
 public:
   TTextLabel();
-  TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, unsigned ARotation, bool OleLink);
+  TTextLabel(const std::string &Str, TLabelPlacement Placement, const TTextValue &AxPos, const TTextValue &AyPos, TColor Color, double ARotation, bool OleLink);
   void WriteToIni(TConfigFileSection &Section) const;
   void ReadFromIni(const TConfigFileSection &Section);
   std::wstring MakeText() const;
@@ -180,8 +180,8 @@ public:
   void SetBackgroundColor(TColor Color) {BackgroundColor = Color;}
   TLabelPlacement GetPlacement() const {return LabelPlacement;}
   void SetPlacement(TLabelPlacement Value) {LabelPlacement = Value;}
-  unsigned GetRotation() const {return Rotation;}
-  void SetRotation(unsigned Value) {Rotation = Value;}
+  double GetRotation() const {return Rotation;}
+  void SetRotation(double Value) {Rotation = Value;}
   TMetafile* GetImage() const {return Metafile;}
   void Update();
   bool IsDependent(const std::wstring &SymbolName) const;
