@@ -513,7 +513,7 @@ double InterpolationAngle(Func32::TDblPoint p1, Func32::TDblPoint p2, Func32::TD
   }
 }
 //---------------------------------------------------------------------------
-TRect Rotate(TMetafile *Metafile, int Degrees)
+TRect Rotate(TMetafile *Metafile, double Degrees)
 {
   if(Degrees == 0)
     return TRect(0, 0, Metafile->Width, Metafile->Height);

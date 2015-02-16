@@ -53,7 +53,7 @@ void ShowErrorMsg(const class EGraphError &Error, TCustomEdit *Edit=NULL);
 void ShowErrorMsg(const std::exception &Error, TCustomEdit *Edit=NULL);
 void ShowStatusError(const String &Str);
 
-bool InputQuery(const String &Caption, const String &Prompt, int &Value);
+bool InputQuery(const String &Caption, const String &Prompt, double &Value);
 bool GetKeyState(System_Classes__1 Key);
 void ShowHelp(const String &File, const String &HelpFile=String());
 
