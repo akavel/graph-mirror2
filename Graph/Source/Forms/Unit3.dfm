@@ -30,7 +30,7 @@ object Form3: TForm3
     Top = 8
     Width = 404
     Height = 213
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -1022,7 +1022,7 @@ object Form3: TForm3
         Height = 21
         Hint = 'Select the font for the title.'
         ImageAlignment = iaCenter
-        ImageIndex = 4
+        ImageIndex = 9
         Images = Form1.ImageList1
         TabOrder = 1
         OnClick = Button7Click
@@ -1144,7 +1144,7 @@ object Form3: TForm3
           Height = 21
           Hint = 'Select the font used to show the labels on the axes.'
           ImageAlignment = iaCenter
-          ImageIndex = 4
+          ImageIndex = 9
           Images = Form1.ImageList1
           TabOrder = 0
           OnClick = Button4Click
@@ -1156,7 +1156,7 @@ object Form3: TForm3
           Height = 21
           Hint = 'Select the font used to show the numbers on the axes.'
           ImageAlignment = iaCenter
-          ImageIndex = 4
+          ImageIndex = 9
           Images = Form1.ImageList1
           TabOrder = 1
           OnClick = Button5Click
@@ -1168,7 +1168,7 @@ object Form3: TForm3
           Height = 21
           Hint = 'Select the font used to show the legend text.'
           ImageAlignment = iaCenter
-          ImageIndex = 4
+          ImageIndex = 9
           Images = Form1.ImageList1
           TabOrder = 2
           OnClick = Button6Click
