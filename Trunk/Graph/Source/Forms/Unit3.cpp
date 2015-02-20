@@ -99,10 +99,10 @@ void __fastcall TForm3::Button1Click(TObject *Sender)
   xAxis.Max = MakeFloat(Edit2);
   yAxis.Min = MakeFloat(Edit7);
   yAxis.Max = MakeFloat(Edit8);
-  xAxis.TickUnit = MakeFloat(Edit3);
-  yAxis.TickUnit = MakeFloat(Edit9);
-  xAxis.GridUnit = MakeFloat(Edit4);
-  yAxis.GridUnit = MakeFloat(Edit10);
+  xAxis.TickUnit = CheckBox4->Checked ? 1 : MakeFloat(Edit3);
+  yAxis.TickUnit = CheckBox11->Checked ? 1 : MakeFloat(Edit9);
+  xAxis.GridUnit = CheckBox5->Checked ? 1 : MakeFloat(Edit4);
+  yAxis.GridUnit = CheckBox12->Checked ? 1 : MakeFloat(Edit10);
   xAxis.AxisCross = MakeFloat(Edit6);
   yAxis.AxisCross = MakeFloat(Edit12);
   RangeCheck(xAxis.Min < xAxis.Max, Edit2, LoadRes(500));
@@ -222,7 +222,8 @@ void TForm3::RangeCheck(bool Condition, TWinControl *WinControl, const String &S
 			if(TTabSheet *TabSheet = dynamic_cast<TTabSheet*>(Parent))
 			{
 				PageControl1->ActivePage = TabSheet;
-				WinControl->SetFocus();
+        if(WinControl->Enabled)
+  				WinControl->SetFocus();
 			}
 		MessageBox(Str, LoadRes(RES_ERROR_IN_VALUE));
     throw EAbort("");
