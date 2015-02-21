@@ -1019,7 +1019,7 @@ void __fastcall TForm1::FormConstrainedResize(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 //This function sets the min, max and scl values
-bool TForm1::ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool Update, bool SaveUndo)
+bool TForm1::ZoomWindow(long double xMin, long double xMax, long double yMin, long double yMax, bool Update, bool SaveUndo)
 {
   //Check for out of range
   if(xMax-xMin < 1E-10 || yMax-yMin < 1E-10)
@@ -2659,17 +2659,17 @@ void __fastcall TForm1::ZoomFitActionExecute(TObject *Sender)
   TZoomFit ZoomFit(Data, Draw);
   Elem->Accept(ZoomFit);
 
-  double xMin = ZoomFit.xMin;
-  double xMax = ZoomFit.xMax;
-  double yMin = ZoomFit.yMin;
-  double yMax = ZoomFit.yMax;
+  long double xMin = ZoomFit.xMin;
+  long double xMax = ZoomFit.xMax;
+  long double yMin = ZoomFit.yMin;
+  long double yMax = ZoomFit.yMax;
 
-  if(_finite(xMin) && _finite(xMax) && _finite(yMin) && _finite(yMax))
+  if(_finitel(xMin) && _finitel(xMax) && _finitel(yMin) && _finitel(yMax))
   {
-    double xMin2 = Data.Axes.xAxis.LogScl ? xMin * std::pow(xMin / xMax, 0.1) : xMin - (xMax - xMin) / 10;
-    double xMax2 = Data.Axes.xAxis.LogScl ? xMax * std::pow(xMax / xMin, 0.1) : xMax + (xMax - xMin) / 10;
-    double yMin2 = Data.Axes.yAxis.LogScl ? yMin * std::pow(yMin / yMax, 0.1) : yMin - (yMax - yMin) / 10;
-    double yMax2 = Data.Axes.yAxis.LogScl ? yMax * std::pow(yMax / yMin, 0.1) : yMax + (yMax - yMin) / 10;
+    long double xMin2 = Data.Axes.xAxis.LogScl ? xMin * std::pow(xMin / xMax, 0.1L) : xMin - (xMax - xMin) / 10;
+    long double xMax2 = Data.Axes.xAxis.LogScl ? xMax * std::pow(xMax / xMin, 0.1L) : xMax + (xMax - xMin) / 10;
+    long double yMin2 = Data.Axes.yAxis.LogScl ? yMin * std::pow(yMin / yMax, 0.1L) : yMin - (yMax - yMin) / 10;
+    long double yMax2 = Data.Axes.yAxis.LogScl ? yMax * std::pow(yMax / yMin, 0.1L) : yMax + (yMax - yMin) / 10;
 
     ZoomWindow(xMin2, xMax2, yMin2, yMax2);
   }
