@@ -30,7 +30,7 @@ struct TZoomFit : public TGraphElemVisitor
 {
   const TData &Data;
   const TDraw &Draw;
-  double xMin, xMax, yMin, yMax;
+  long double xMin, xMax, yMin, yMax;
   bool IsChanged() const;
 
   TZoomFit(const TData &AData, const TDraw &ADraw);

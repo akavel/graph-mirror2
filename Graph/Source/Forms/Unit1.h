@@ -464,7 +464,7 @@ public:		// User declarations
   __fastcall ~TForm1();
   void Redraw();
   void UpdateMenu();
-  bool ZoomWindow(double xMin, double xMax, double yMin, double yMax, bool Update=true, bool SaveUndo=true);
+  bool ZoomWindow(long double xMin, long double xMax, long double yMin, long double yMax, bool Update=true, bool SaveUndo=true);
   bool Zoom(TPoint Pos, double ZoomRate, bool ChangeUnits=true);
   bool Zoom(double x, double y, double xZoomRate, double yZoomRate, bool ChangeUnits=true);
   bool Zoom(double ZoomRate, bool ChangeUnits=true);
