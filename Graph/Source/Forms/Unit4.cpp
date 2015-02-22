@@ -97,10 +97,13 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 
   if(FontScale != Property.FontScale)
   {
+    int OldWidth = Form1->Width;
+    int OldHeight = Form1->Height;
     Form1->ScaleBy(FontScale, Property.FontScale);
     ScaleComponent(Form1, FontScale / Property.FontScale);
+    Form1->Width = OldWidth;
+    Form1->Height = OldHeight;
     Property.FontScale = FontScale;
-    Form1->ActionToolBar1->ActionClient->Items->SmallIcons = FontScale < 150;
   }
   ModalResult = mrOk;
 }
