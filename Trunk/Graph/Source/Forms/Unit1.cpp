@@ -163,7 +163,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	//We need to use something in HTMLHelpViewer.pas to make sure it is linked in
 	ViewerName = "HTML Help Viewer";
 
-  StatusBar1->Panels->Items[1]->Width = (StatusBar1->Panels->Items[1]->Width * PixelsPerInch) / 96;
+  StatusBar1->Panels->Items[1]->Width = GuiScale(StatusBar1->Panels->Items[1]->Width);
 
 //	BOOST_ASSERT(MoveHand1);
 //	BOOST_ASSERT(MoveHand2);
