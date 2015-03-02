@@ -404,7 +404,6 @@ private:	// User declarations
   const int FixedImages; //Number of fixed images in ImageList1 (The rest are dynamically added and deleted)
   boost::scoped_ptr<struct TImageOptions> ActionImageOptions; //Used when saving as image from menu
   TGraphElemPtr Selected;
-  std::auto_ptr<TImageList> ScaledImages;
 
   int StatusIcon;
   int xZoom, yZoom;

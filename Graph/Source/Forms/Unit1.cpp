@@ -101,7 +101,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 	Font->Name = "MS Shell Dlg";
 	Data.SetAbortUpdateEvent(&Draw.AbortUpdate);
-	Icon->LoadFromResourceName((THandle)MainInstance, L"ICON1");
+// 	Icon->LoadFromResourceName((THandle)MainInstance, L"MAINICON");
 
 	//Set "AllowOLE" to 1 in the Registry to use OLE with instances not started with "-Embedding"
 	if(!FindCmdLineSwitch(L"EMBEDDING") && !GetRegValue(REGISTRY_KEY, L"AllowOLE", HKEY_CURRENT_USER, 0))
@@ -777,11 +777,8 @@ void TForm1::ScaleImages()
 
   if(PixelsPerInch != 96 || Property.FontScale != 100)
   {
-    if(!ScaledImages.get())
-      ScaledImages.reset(new TImageList(NULL));
-    ScaleImageList(ImageList2, ScaledImages.get());
-    ActionManager->Images = ScaledImages.get();
-
+    ScaledImageList1->SetSize(IconWidth, IconWidth);
+    ActionManager->Images = ScaledImageList1;
     ActionToolBar1->VertMargin = IconWidth / 8;
     ActionMainMenuBar1->Spacing = IconWidth / 2;
     ActionToolBar1->Spacing = MulDiv(5, FontScale, 96 * 100);

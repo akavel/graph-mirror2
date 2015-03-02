@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>Graph.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
@@ -46,7 +46,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <Icon_MainIcon>Graph.ico</Icon_MainIcon>
+        <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <IncludePath>..\Libraries\pdflib\;..\Libraries\dxgettext\;..\PyVcl\;..\Components\Common\;Source\;..\Libraries;Frames\;Forms\;Swig\;Source;..\Components\Common;..\Libraries\dxgettext;..\Func32;Forms;..\Components\TRecent;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TIPolygon;..\Components\TIRichEdit;..\Components\TOpenPreviewDialog;..\Components\TIPrintDialog;..\Components\TSaveDialogEx;..\Components\TScaledImageList;..\PyVcl;..\Libraries\Python;..\Components\TMyEdit;..\Components\TUpDownEx;..\Components\TGridPanelEx;..\Components\TSymbolDialog;..\Components\TLinkLabelEx;..\Components\TExtColorBox;..\Components\TCheckBoxEx;..\Components\TRadioGroupEx;..\Components\TLineSelect;..\Components\TExtComboBox;..\Components\TIFontBox;..\Components\TShadeSelect;..\Components\TMyRadioButton;..\Components\TGrid;..\Components\TPointSelect;..\Components\TProgressForm;..\Components\TProgress;..\Components\TMediaPlayerEx;..\Libraries\pdflib;$(IncludePath)</IncludePath>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -67,11 +67,12 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>Graph.ico</Icon_MainIcon>
         <ILINK_DelayLoadDll>pdflib.dll;python32.dll;$(ILINK_DelayLoadDll)</ILINK_DelayLoadDll>
         <VerInfo_MajorVer>4</VerInfo_MajorVer>
         <VerInfo_MinorVer>5</VerInfo_MinorVer>
-        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.565;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
-        <VerInfo_Build>565</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.567;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
+        <VerInfo_Build>567</VerInfo_Build>
         <VerInfo_Debug>true</VerInfo_Debug>
         <Defines>STRICT;MADEXCEPT;$(Defines)</Defines>
         <ILINK_LibraryPath>..\Libraries\atl;..\Components\TGrid;..\Components\TSymbolDialog;..\Components\TIPrintDialog;..\Components\Win32\$(Config);$(ILINK_LibraryPath)</ILINK_LibraryPath>
@@ -111,9 +112,9 @@
         <BCC_wspa>false</BCC_wspa>
         <VerInfo_MinorVer>5</VerInfo_MinorVer>
         <VerInfo_Debug>true</VerInfo_Debug>
-        <VerInfo_Build>566</VerInfo_Build>
+        <VerInfo_Build>567</VerInfo_Build>
         <VerInfo_MajorVer>4</VerInfo_MajorVer>
-        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.566;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.567;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <ILINK_StackReserveSize>0x00400000</ILINK_StackReserveSize>
         <Defines>_HAS_ITERATOR_DEBUGGING=1;$(Defines)</Defines>
@@ -127,6 +128,7 @@
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Icon_MainIcon>Graph.ico</Icon_MainIcon>
         <BCC_wspa>false</BCC_wspa>
         <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
@@ -136,9 +138,9 @@
         <Defines>_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
         <VerInfo_MajorVer>4</VerInfo_MajorVer>
         <VerInfo_Debug>true</VerInfo_Debug>
-        <VerInfo_Build>565</VerInfo_Build>
+        <VerInfo_Build>567</VerInfo_Build>
         <VerInfo_MinorVer>5</VerInfo_MinorVer>
-        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.565;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Padowan Software;FileDescription=;FileVersion=4.5.0.567;InternalName=;LegalCopyright=Copyright Ivan Johansen;LegalTrademarks=;OriginalFilename=Graph.exe;ProductName=Graph;ProductVersion=4.5;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
@@ -393,6 +395,9 @@
         <CppCompile Include="Graph.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
+        <ResFiles Include="Icons.res">
+            <BuildOrder>72</BuildOrder>
+        </ResFiles>
         <CppCompile Include="Source\Clipboard.cpp">
             <BuildOrder>32</BuildOrder>
         </CppCompile>
@@ -479,17 +484,17 @@
         <CppCompile Include="Swig\Utility_wrap.cpp">
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <FormResources Include="Frames\TTanFrame.dfm"/>
-        <FormResources Include="Frames\TPolFuncFrame.dfm"/>
         <FormResources Include="Frames\TStdFuncFrame.dfm"/>
-        <FormResources Include="Forms\Unit6.dfm"/>
+        <FormResources Include="Frames\TTanFrame.dfm"/>
         <FormResources Include="Forms\Unit7.dfm"/>
-        <FormResources Include="Forms\Unit4.dfm"/>
-        <FormResources Include="Forms\Unit5.dfm"/>
         <FormResources Include="Forms\Unit8.dfm"/>
-        <FormResources Include="Frames\TEvalFrame.dfm"/>
-        <FormResources Include="Frames\TParFuncFrame.dfm"/>
+        <FormResources Include="Forms\Unit5.dfm"/>
+        <FormResources Include="Forms\Unit6.dfm"/>
         <FormResources Include="Forms\Unit9.dfm"/>
+        <FormResources Include="Frames\TParFuncFrame.dfm"/>
+        <FormResources Include="Frames\TPolFuncFrame.dfm"/>
+        <FormResources Include="Frames\TEvalFrame.dfm"/>
+        <FormResources Include="Forms\Unit4.dfm"/>
         <FormResources Include="Forms\Unit18.dfm"/>
         <FormResources Include="Forms\Unit19.dfm"/>
         <FormResources Include="Forms\Unit16.dfm"/>
