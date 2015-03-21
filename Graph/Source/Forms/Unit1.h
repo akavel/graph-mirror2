@@ -213,9 +213,8 @@ __published:	// IDE-managed Components
   TSplitter *Splitter2;
   TMenuItem *N1;
   TAction *ScriptDocAction;
-  TImageList *ImageList2;
   TImageList *ImageList1;
-  TImageList *ImageList4;
+  TImageList *ImageList2;
   TScaledImageList *ScaledImageList1;
   void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
   void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X,int Y);
