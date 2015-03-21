@@ -778,6 +778,7 @@ void TForm1::ScaleImages()
   if(PixelsPerInch != 96 || Property.FontScale != 100)
   {
     ScaledImageList1->SetSize(IconWidth, IconWidth);
+    ActionManager->Images = NULL;
     ActionManager->Images = ScaledImageList1;
     ActionToolBar1->VertMargin = IconWidth / 8;
     ActionMainMenuBar1->Spacing = IconWidth / 2;
@@ -1157,7 +1158,7 @@ void __fastcall TForm1::ApplicationEventsShowHint(String &HintStr,
 {
   //Maximum length in pixels of hint text before line wrap
   if(HintInfo.HintControl != TreeView)
-    HintInfo.HintMaxWidth = 300;
+    HintInfo.HintMaxWidth = GuiScale(300);
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::WMEnterSizeMove(TMessage &Message)
