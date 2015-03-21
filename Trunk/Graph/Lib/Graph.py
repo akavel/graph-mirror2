@@ -162,9 +162,14 @@ def AddActionToContextMenu(Action):
     return Item
 
 def LoadImage(FileName, BkColor=0xFFFFFF):
+    Picture = vcl.TPicture()
+    Picture.LoadFromFile(os.path.join(PluginsDir, FileName))
     Bitmap = vcl.TBitmap()
-    Bitmap.LoadFromFile(os.path.join(PluginsDir, FileName))
-    return Form1.ImageList2.AddMasked(Bitmap, BkColor)
+    Bitmap.Assign(Picture.Graphic)
+    Result = Form1.ImageList2.AddMasked(Bitmap, BkColor)
+    Form1.ActionManager.Images = None # Workaround on stupid bug
+    Form1.ActionManager.Images = Form1.ScaledImageList1
+    return Result
 
 import collections
 class ConstantsType(collections.MutableMapping):

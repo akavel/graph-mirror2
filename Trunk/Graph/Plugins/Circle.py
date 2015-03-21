@@ -15,8 +15,8 @@ class CircleDialog(Gui.SimpleDialog):
         Gui.SimpleDialog.__init__(self)
         self.CircleItem = CircleItem
         self.Caption = _("Insert circle")
-        self.Height = 180
-        self.Width = 346
+        self.ClientHeight = 160
+        self.ClientWidth = 340
         CircleData = CircleItem.PluginData["CircleExample"] if CircleItem else ("","","")
 
         self.label1 = vcl.TLabel(None, Parent = self.panel, Caption = _("Radius:"), Top = 12, Left = 8)
@@ -59,6 +59,6 @@ def OnEdit(Item):
         return True
 
 _ = Graph.CreateTranslations(TranslationTexts).gettext        
-Action = Graph.CreateAction(Caption=_("Insert circle..."), OnExecute=execute_action, Hint=_("Create circle from center and radius."), ShortCut="Ctrl+Shift+C", IconFile="Circle.bmp")
+Action = Graph.CreateAction(Caption=_("Insert circle..."), OnExecute=execute_action, Hint=_("Create circle from center and radius."), ShortCut="Ctrl+Shift+C", IconFile="Circle.png")
 Graph.AddActionToMainMenu(Action)
 Graph.OnEdit.append(OnEdit)

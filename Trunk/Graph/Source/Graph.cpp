@@ -39,17 +39,17 @@
 #pragma link "gsl.lib"
 //#pragma link "IComp.lib"
 //---------------------------------------------------------------------------
-USEFORM("Frames\TTanFrame.cpp", TanFrame); /* TFrame: File Type */
-USEFORM("Frames\TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
 USEFORM("Frames\TStdFuncFrame.cpp", StdFuncFrame); /* TFrame: File Type */
-USEFORM("Forms\Unit6.cpp", Form6);
+USEFORM("Frames\TTanFrame.cpp", TanFrame); /* TFrame: File Type */
 USEFORM("Forms\Unit7.cpp", Form7);
-USEFORM("Forms\Unit4.cpp", Form4);
-USEFORM("Forms\Unit5.cpp", Form5);
 USEFORM("Forms\Unit8.cpp", Form8);
-USEFORM("Frames\TEvalFrame.cpp", EvalFrame); /* TFrame: File Type */
-USEFORM("Frames\TParFuncFrame.cpp", ParFuncFrame); /* TFrame: File Type */
+USEFORM("Forms\Unit5.cpp", Form5);
+USEFORM("Forms\Unit6.cpp", Form6);
 USEFORM("Forms\Unit9.cpp", Form9);
+USEFORM("Frames\TParFuncFrame.cpp", ParFuncFrame); /* TFrame: File Type */
+USEFORM("Frames\TPolFuncFrame.cpp", PolFuncFrame); /* TFrame: File Type */
+USEFORM("Frames\TEvalFrame.cpp", EvalFrame); /* TFrame: File Type */
+USEFORM("Forms\Unit4.cpp", Form4);
 USEFORM("Forms\Unit18.cpp", Form18);
 USEFORM("Forms\Unit19.cpp", Form19);
 USEFORM("Forms\Unit16.cpp", Form16);
