@@ -856,6 +856,10 @@ void Test()
 //	TestError("sum(x,x+1,0,10)", 0, ecLiteralExpected);
 //	TestError("sum(x,1,0,10)", 0, ecLiteralExpected);
 
+  //Test double integration
+  Test(L"integrate(b*integrate(x*a, a, 0, 5), b, 7, 10)", 8, 2550);
+  Test(L"integrate(integrate(x*a, a, 0, 5)*b, b, 7, 10)", 8, 2550);
+
   //Test infinity
 	Test(L"inf", 0, INF);
 	Test(L"-inf", 0, -INF);

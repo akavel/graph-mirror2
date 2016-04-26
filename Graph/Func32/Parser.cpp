@@ -441,7 +441,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
 			SpecialFuncSymbols[PushFront(SpecialFunc.List)] >>
 			Bracket[SpecialFunc.EndBracket = arg1] >>
 					(
-							((DummyExpression >> ',' >> Literal[SpecialFunc.Symbols = TempVariables][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
+							((DummyExpression >> ',' >> Literal[SpecialFunc.Symbols = var(TempVariables)][TSpecialAddVar(SpecialFunc.List, TempVariables)]) >> nothing_p)
 					|   AssertExpression_p(Expression)[TPushBack(SpecialFunc.List)][var(TempVariables) = SpecialFunc.Symbols] >>
 							',' >> Literal >> ',' >>
 							AssertExpression_p(Expression[TPushBack(SpecialFunc.List)] >> ',') >>
