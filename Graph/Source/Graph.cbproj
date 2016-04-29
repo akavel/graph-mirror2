@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>Graph.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
@@ -46,6 +46,9 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <BCC_SourceDebuggingOn>True</BCC_SourceDebuggingOn>
+        <ILINK_FullDebugInfo>True</ILINK_FullDebugInfo>
+        <BCC_DebugLineNumbers>True</BCC_DebugLineNumbers>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <IncludePath>$(BDS)\source\vcl\;..\Libraries\pdflib\;..\Libraries\dxgettext\;..\PyVcl\;..\Components\Common\;Source\;..\Libraries;Frames\;Forms\;Swig\;Source;..\Components\Common;..\Libraries\dxgettext;..\Func32;Forms;..\Components\TRecent;..\Components\TIPageSetup;..\Components\TIColorSelect;..\Components\TCross;..\Components\TFocusPanel;..\Components\TMySplitter;..\Components\TIPolygon;..\Components\TIRichEdit;..\Components\TOpenPreviewDialog;..\Components\TIPrintDialog;..\Components\TSaveDialogEx;..\Components\TScaledImageList;..\PyVcl;..\Libraries\Python;..\Components\TMyEdit;..\Components\TUpDownEx;..\Components\TGridPanelEx;..\Components\TSymbolDialog;..\Components\TLinkLabelEx;..\Components\TExtColorBox;..\Components\TCheckBoxEx;..\Components\TRadioGroupEx;..\Components\TLineSelect;..\Components\TExtComboBox;..\Components\TIFontBox;..\Components\TShadeSelect;..\Components\TMyRadioButton;..\Components\TGrid;..\Components\TPointSelect;..\Components\TProgressForm;..\Components\TProgress;..\Components\TMediaPlayerEx;..\Libraries\pdflib;$(IncludePath)</IncludePath>
@@ -109,6 +112,8 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Manifest_File>Source\Graph.manifest</Manifest_File>
+        <Icon_MainIcon>Graph.ico</Icon_MainIcon>
         <BCC_wspa>false</BCC_wspa>
         <VerInfo_MinorVer>5</VerInfo_MinorVer>
         <VerInfo_Debug>true</VerInfo_Debug>
@@ -128,13 +133,12 @@
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Manifest_File>Source\Graph.manifest</Manifest_File>
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <Icon_MainIcon>Graph.ico</Icon_MainIcon>
         <BCC_wspa>false</BCC_wspa>
-        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
-        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
-        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
         <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib</LinkPackageStatics>
-        <ILINK_LibraryPath>C:\Program Files (x86)\madCollection\madExcept\BDS14\win32\;C:\Program Files (x86)\madCollection\madDisAsm\BDS14\win32\;C:\Program Files (x86)\madCollection\madBasic\BDS14\win32\;..\Components\Release\;$(BDS)\lib\win32\release\;..\Func32\Release;..\Libraries\gsl\Release\Win32;..\Components\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>C:\Program Files (x86)\madCollection\madExcept\BDS14\win32\;C:\Program Files (x86)\madCollection\madDisAsm\BDS14\win32\;C:\Program Files (x86)\madCollection\madBasic\BDS14\win32\;..\Components\Release\;$(BDS)\lib\win32\release\;..\Libraries\gsl\Release\Win32;..\Components\Release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <Defines>_HAS_TRADITIONAL_ITERATORS=1;$(Defines)</Defines>
         <VerInfo_MajorVer>4</VerInfo_MajorVer>
         <VerInfo_Debug>true</VerInfo_Debug>
