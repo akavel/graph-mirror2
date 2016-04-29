@@ -18,17 +18,16 @@
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
-#pragma link "SystemInfo"
 #pragma package(smart_init) // madExcept
-#ifdef MADEXCEPT
 #pragma link "madExcept"
 #pragma link "madLinkDisAsm"
+#pragma link "SystemInfo"
 #pragma link "madListHardware"
 #pragma link "madListProcesses"
 #pragma link "madListModules"
+#ifdef MADEXCEPT
 #pragma link "FPU"
 #pragma link "DisplayInfo"
-#pragma link "SystemInfo"
 #pragma link "UserLog"
 #endif
 #include <tchar.h>
@@ -92,11 +91,20 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
       LoadLanguage(Language.c_str());
 
     bool Register = FindCmdLineSwitch(L"REGSERVER") || FindCmdLineSwitch(L"UNREGSERVER");
+    if(FindCmdLineSwitch("refresh"))
+    {
+      //Workaround for problem with missing icon update after installing with Inno Setup
+      //We need to execute this with user priviledges and not as administrator.
+      SHChangeNotify(SHCNE_ASSOCCHANGED, SHCNF_IDLIST, NULL, NULL);
+      Register = true;
+    }
+
     //Only show main form if we are not running as OLE server
     Application->ShowMainForm = !FindCmdLineSwitch(L"EMBEDDING") && !Register;
     //Exit has been disabled in atlmod.h:242 and replaced by this to avoid crash at exit
  	  if(Register)
       Application->Terminate();
+
     Application->Initialize();
 		Application->MainFormOnTaskBar = true;
     Application->Title = "Graph";
