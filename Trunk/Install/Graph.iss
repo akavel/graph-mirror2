@@ -26,6 +26,7 @@ VersionInfoProductTextVersion={#GraphProductVer}
 PrivilegesRequired=None
 ;SignTool=SignTool /d $qGraph$q $f
 SetupIconFile=Graph in a box.ico
+AlwaysShowDirOnReadyPage=yes
 
 [Languages]
 Name: "Arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
@@ -86,7 +87,7 @@ Source: "..\Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereado
 [Icons]
 Name: "{userprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; IconFilename: "{sys}\shell32.dll"; IconIndex: 19; Flags: foldershortcut; Tasks: not InstallAllUsers; Check: not WizardNoIcons
 Name: "{userprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: not InstallAllUsers; Check: not WizardNoIcons
-Name: "{userprograms}\Graph\{cm:Uninstall}"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Check: not WizardNoIcons
+Name: "{userprograms}\Graph\{cm:UninstallProgram,Graph}"; Filename: "{uninstallexe}"; Comment: "Uninstall Graph"; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{userdesktop}\Graph"; Filename: "{app}\Graph.exe"; Tasks: DesktopIcon
@@ -94,6 +95,7 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Graph"; Filename: 
 
 [Run]
 Filename: "{app}\Graph.exe"; Parameters: "/regserver"; Flags: runascurrentuser
+Filename: "{app}\Graph.exe"; Parameters: "/refresh"; Flags: runasoriginaluser
 Filename: "{app}\Graph.exe"; Description: "{cm:LaunchProgram,Graph}"; Flags: nowait postinstall skipifsilent unchecked
 
 [Registry]
@@ -176,36 +178,6 @@ Norwegian.Examples=Eksempler
 Portuguese_Portugal.Examples=Exemplos
 Spanish.Examples=Ejemplos
 Swedish.Examples=Exempel
-
-Uninstall=Uninstall
-Arabic.Uninstall=إلغاء تثبيت
-Basque.Uninstall=Desinstalaketa
-Chinese_Simplified.Uninstall=安装程序
-Chinese_Traditional.Uninstall=安裝程式
-Croatian.Uninstall=Deinstalacija
-Czech.Uninstall=Prùvodce odinstalací
-Danish.Uninstall=Afinstaller
-Dutch.Uninstall=Verwijderen
-Finnish.Uninstall=Asennuksen poisto
-French.Uninstall=Désinstallation
-German.Uninstall=Entfernen
-Greek.Uninstall=Απεγκατάσταση
-Hungarian.Uninstall=Eltávolító
-Italian.Uninstall=Disinstallazione
-Korean.Uninstall=프로그램 제거
-Mongolian.Uninstall=Óñòãàõ
-Norwegian.Uninstall=Avinstaller
-Persian.Uninstall=حذف برنامه
-Polish.Uninstall=Deinstalacja
-Portuguese_Brazil.Uninstall=Desinstalar
-Portuguese_Portugal.Uninstall=Desinstalação
-Russian.Uninstall=Деинсталляция
-Serbian.Uninstall=Deinstalacija
-Slovenian.Uninstall=Odstranitev
-Spanish.Uninstall=Desinstalar
-Swedish.Uninstall=Avinstallation
-Turkish.Uninstall=Kaldýr
-Vietnamese.Uninstall=GõÞ boÒ
 
 [code]
 function FilesEqual(FileName : String): Boolean;
