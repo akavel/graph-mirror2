@@ -499,6 +499,8 @@ String GetKeyName(UINT Key)
   return String();
 }
 //---------------------------------------------------------------------------
+namespace Vcl
+{
 namespace Menus
 {
 //Replaces the function ShortCutToText() in Menus.pas
@@ -535,6 +537,7 @@ namespace Menus
     }
     return Str;
   }
+}
 }
 //---------------------------------------------------------------------------
 namespace Winapi { namespace Windows
