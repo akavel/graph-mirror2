@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph russian interface\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-12 17:41+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2337,6 +2337,10 @@ msgstr "Использовать для вычислений комплексн�
 msgid "Calculate with complex numbers"
 msgstr "Комплексные вычисления"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Выбрать шрифт заголовка."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Шрифт и цвет"
@@ -2385,6 +2389,18 @@ msgstr "Шрифт обозн. осей:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Шрифт подписи:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Выберите шрифт для обозначения осей."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Выберите шрифт для значений на осях."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Выберите шрифт для подписи к графику."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2786,9 +2802,6 @@ msgstr "Координата у точки на касательной для д
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Введите координату х или мышью выберите точку на графике."
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3295,7 +3308,8 @@ msgstr "Редактировать функцию"
 msgid "Edit tangent/normal"
 msgstr "Редактировать касательную/перпендикуляр."
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Ошибка обработки файла '%s' в строке %s."
 
 msgid "Edit text label"
@@ -3758,18 +3772,6 @@ msgstr "Введите процент от начального размера"
 
 #~ msgid "Email: %s"
 #~ msgstr "Email: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Выбрать шрифт заголовка."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Выберите шрифт для обозначения осей."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Выберите шрифт для значений на осях."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Выберите шрифт для подписи к графику."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Ассоциировать *.grf файлы с Graph"

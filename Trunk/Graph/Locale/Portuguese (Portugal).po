@@ -2,15 +2,15 @@
 # Copyright (C) 2004 Ivan Johansen
 # This file is distributed under the same license as the Graph package.
 # Ivan Johansen <graph@padowan.dk>, 2004.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-12 17:41+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2338,6 +2338,10 @@ msgstr "Marque essa opção para usar números complexo para cálculos.Observe q
 msgid "Calculate with complex numbers"
 msgstr "Calcular com número complexo"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Selecione a fonte para o título."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Fonte e cor"
@@ -2386,6 +2390,18 @@ msgstr "Fonte do rótulo:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Fonte da legenda:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Seleccione a fonte a ser usada nos rótulos dos eixos."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Selecione a fonte a ser usada nos números dos eixos."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Selecione a fonte a ser usada no textos da legenda."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2786,9 +2802,6 @@ msgstr "Essa é a coordenada-y correspondente à coordenada-x dada"
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Entre com uma coordenada-x ou clique na janela principal."
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3295,7 +3308,8 @@ msgstr "Alterar a função"
 msgid "Edit tangent/normal"
 msgstr "Alterar a reta tangente/normal"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Erro no processamento do ficheiro '%s' na linha %s."
 
 msgid "Edit text label"
@@ -3757,18 +3771,6 @@ msgstr "Entre o valor em percentagem do tamanho original."
 
 #~ msgid "Email: %s"
 #~ msgstr "Email: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Selecione a fonte para o título."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Seleccione a fonte a ser usada nos rótulos dos eixos."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Selecione a fonte a ser usada nos números dos eixos."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Selecione a fonte a ser usada no textos da legenda."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Associa *.grf ficheiros com o Graph"

@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-07 21:22+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2412,6 +2412,10 @@ msgstr "Chọn để sử dụng chức năng tính toán số phức. Lưu ý: 
 msgid "Calculate with complex numbers"
 msgstr "Tính toán số phức"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Chọn font chữ cho tiêu đề."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Font chữ và màu sắc"
@@ -2460,6 +2464,18 @@ msgstr "Font nhãn:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Font lời chú thích:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Chọn font chữ cho các nhãn trên hệ trục."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Chọn font chữ hiển thị số trên hệ trục."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Chọn font chữ hiển thị chú giải."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2868,9 +2884,6 @@ msgstr "Đây là tọa độ y tương ứng với tọa độ x."
 #, fuzzy
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Nhập vào hệ trục x hoặc nhấp chuột vào cửa sổ chính."
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3397,7 +3410,8 @@ msgstr "Hiệu chỉnh hàm số"
 msgid "Edit tangent/normal"
 msgstr "Chỉnh sửa tiếp tuyến/pháp tuyến"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Lỗi sử lý tập tin %s tại dòng %s."
 
 #, fuzzy
@@ -3872,18 +3886,6 @@ msgstr "Nhập phần trăm so vơi kích cỡ gốc."
 #, fuzzy
 #~ msgid "Email: %s"
 #~ msgstr "Email:"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Chọn font chữ cho tiêu đề."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Chọn font chữ cho các nhãn trên hệ trục."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Chọn font chữ hiển thị số trên hệ trục."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Chọn font chữ hiển thị chú giải."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Tích hợp tập tin *.grf với Graph."

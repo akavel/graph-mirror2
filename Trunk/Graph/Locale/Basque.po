@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2014-02-05 19:01+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
@@ -46,10 +46,8 @@ msgstr "X-ardatzaren gainetik"
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Above("Above x-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Above("Above x-axis")....Hint
-msgid ""
-"Place the label directly above the x-axis on the right side of the image."
-msgstr ""
-"Ipini koadro-testua X-ardatzaren gainetik, leiho-grafikoaren eskuinaldean."
+msgid "Place the label directly above the x-axis on the right side of the image."
+msgstr "Ipini koadro-testua X-ardatzaren gainetik, leiho-grafikoaren eskuinaldean."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")..Caption
@@ -58,10 +56,8 @@ msgstr "X-ardatzaren azpitik"
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Below("Below x-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Below("Below x-axis")....Hint
-msgid ""
-"Place the label directly below the x-axis on the right side of the image."
-msgstr ""
-"Ipini koadro-testua X-ardatzaren azpitik, leiho-grafikoaren eskuinaldean."
+msgid "Place the label directly below the x-axis on the right side of the image."
+msgstr "Ipini koadro-testua X-ardatzaren azpitik, leiho-grafikoaren eskuinaldean."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")..Caption
@@ -71,8 +67,7 @@ msgstr "Y-ardatzaren ezkerrean"
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Left("Left of y-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Left("Left of y-axis")....Hint
 msgid "Place the label to the left of the y-axis at the top of the image."
-msgstr ""
-"Ipini koadro-testua Y-ardatzaren ezkerrean, leiho-grafikoaren goikaldean."
+msgstr "Ipini koadro-testua Y-ardatzaren ezkerrean, leiho-grafikoaren goikaldean."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")..Caption
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")..Caption
@@ -82,8 +77,7 @@ msgstr "Y-ardatzaren eskuinean"
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Right("Right of y-axis")....Hint
 #. Form1..PopupMenu3..Label_Placement("Placement")..Label_Right("Right of y-axis")....Hint
 msgid "Place the label to the right of the y-axis at the top of the image."
-msgstr ""
-"Ipini koadro-testua Y-ardatzaren eskuinean, leiho-grafikoaren goikaldean."
+msgstr "Ipini koadro-testua Y-ardatzaren eskuinean, leiho-grafikoaren goikaldean."
 
 #. Form1..PopupMenu1..Tree_Placement("Placement")..Tree_Placement_Custom("Custom...")..Caption
 #. Form1..PopupMenu1..Tree_Rotation("Rotation")..Tree_Rotation_Custom("Custom...")..Caption
@@ -377,11 +371,8 @@ msgid "Paste"
 msgstr "Itsasi"
 
 #. Form1..ActionManager..PasteAction("Paste")....Hint
-msgid ""
-"Paste a function or point series from the clipboard into the coordinate "
-"system."
-msgstr ""
-"Itsasi arbeletik funtzio edo puntu-serie bat uneko koordenatu-sisteman."
+msgid "Paste a function or point series from the clipboard into the coordinate system."
+msgstr "Itsasi arbeletik funtzio edo puntu-serie bat uneko koordenatu-sisteman."
 
 #. Form1..ActionManager..CopyImageAction("Copy image")..Caption
 msgid "Copy image"
@@ -408,8 +399,7 @@ msgstr "Aukerak..."
 
 #. Form1..ActionManager..OptionsAction("Options...")..Hint
 msgid "Edit various options for the interface and program features."
-msgstr ""
-"Editatu interfazeko zenbait aukera eta programaren ezaugarri orokorrak."
+msgstr "Editatu interfazeko zenbait aukera eta programaren ezaugarri orokorrak."
 
 #. Form1..ActionManager..InsertFunctionAction("Insert function...")..Caption
 msgid "Insert function..."
@@ -483,8 +473,7 @@ msgstr "Hurbildu"
 
 #. Form1..ActionManager..ZoomInAction("In")..Hint
 msgid "Zoom in. Hold down Shift to zoom with larger steps."
-msgstr ""
-"Haundiagotu. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
+msgstr "Haundiagotu. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Caption
 msgid "Out"
@@ -492,8 +481,7 @@ msgstr "Urrundu"
 
 #. Form1..ActionManager..ZoomOutAction("Out")..Hint
 msgid "Zoom out. Hold down Shift to zoom with larger steps."
-msgstr ""
-"Txikiagotu. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
+msgstr "Txikiagotu. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
 
 #. Form1..ActionManager..ZoomWindowAction("Window")..Caption
 msgid "Window"
@@ -508,12 +496,8 @@ msgid "Square"
 msgstr "Koadroa"
 
 #. Form1..ActionManager..ZoomSquareAction("Square")....Hint
-msgid ""
-"Zoom to scale the axes equally. This will show a plotted circle in its "
-"correct relation instead of an ellipse."
-msgstr ""
-"Aplikatu eskala-faktore berea bi ardatzei. Honek zirkulo bat erakutsiko "
-"digu, ez elipse bat."
+msgid "Zoom to scale the axes equally. This will show a plotted circle in its correct relation instead of an ellipse."
+msgstr "Aplikatu eskala-faktore berea bi ardatzei. Honek zirkulo bat erakutsiko digu, ez elipse bat."
 
 #. Form1..ActionManager..ZoomStandardAction("Standard")..Caption
 msgid "Standard"
@@ -536,48 +520,32 @@ msgid "Move up"
 msgstr "Eraman gora"
 
 #. Form1..ActionManager..MoveUpAction("Move up")....Hint
-msgid ""
-"Move the graphing area up along the coordinate system. Hold down Shift to "
-"move in larger steps."
-msgstr ""
-"Mugitu azalera grafikoa gora koordenatu-sistemaren norabidean. Mantendu "
-"klikatua May. tekla urrats haundiagotan mugitzeko."
+msgid "Move the graphing area up along the coordinate system. Hold down Shift to move in larger steps."
+msgstr "Mugitu azalera grafikoa gora koordenatu-sistemaren norabidean. Mantendu klikatua May. tekla urrats haundiagotan mugitzeko."
 
 #. Form1..ActionManager..MoveDownAction("Move down")..Caption
 msgid "Move down"
 msgstr "Eraman behera"
 
 #. Form1..ActionManager..MoveDownAction("Move down")....Hint
-msgid ""
-"Move the graphing area down along the coordinate system. Hold down Shift to "
-"move in larger steps."
-msgstr ""
-"Mugitu azalera grafikoa behera koordenatu-sistemaren norabidean. Mantendu "
-"klikatua May. tekla urrats haundiagotan mugitzeko."
+msgid "Move the graphing area down along the coordinate system. Hold down Shift to move in larger steps."
+msgstr "Mugitu azalera grafikoa behera koordenatu-sistemaren norabidean. Mantendu klikatua May. tekla urrats haundiagotan mugitzeko."
 
 #. Form1..ActionManager..MoveLeftAction("Move left")..Caption
 msgid "Move left"
 msgstr "Eraman ezkerretara"
 
 #. Form1..ActionManager..MoveLeftAction("Move left")....Hint
-msgid ""
-"Move the graphing area to the left along the coordinate system. Hold down "
-"Shift to move in larger steps."
-msgstr ""
-"Mugitu azalera grafikoa ezkerretara koordenatu-sistemaren norabidean. "
-"Mantendu klikatua May. tekla urrats haundiagotan mugitzeko."
+msgid "Move the graphing area to the left along the coordinate system. Hold down Shift to move in larger steps."
+msgstr "Mugitu azalera grafikoa ezkerretara koordenatu-sistemaren norabidean. Mantendu klikatua May. tekla urrats haundiagotan mugitzeko."
 
 #. Form1..ActionManager..MoveRightAction("Move right")..Caption
 msgid "Move right"
 msgstr "Eraman eskuinetara"
 
 #. Form1..ActionManager..MoveRightAction("Move right")....Hint
-msgid ""
-"Move the graphing area to the right along the coordinate system. Hold down "
-"Shift to move in larger steps."
-msgstr ""
-"Mugitu azalera grafikoa eskuinera koordenatu-sistemaren norabidean. Mantendu "
-"klikatua May. tekla urrats haundiagotan mugitzeko."
+msgid "Move the graphing area to the right along the coordinate system. Hold down Shift to move in larger steps."
+msgstr "Mugitu azalera grafikoa eskuinera koordenatu-sistemaren norabidean. Mantendu klikatua May. tekla urrats haundiagotan mugitzeko."
 
 #. Form1..ActionManager..MoveAction("Move system")..Caption
 msgid "Move system"
@@ -724,9 +692,7 @@ msgstr "Laguntza zerbitzua"
 
 #. Form1..ActionManager..SupportAction("Support")..Hint
 msgid "Open browser with the support page for the program."
-msgstr ""
-"Ireki arakatzaile lehenetsia eta erakutsi programaren laguntza-zerbitzuko "
-"orri nagusia."
+msgstr "Ireki arakatzaile lehenetsia eta erakutsi programaren laguntza-zerbitzuko orri nagusia."
 
 #. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")..Caption
 msgid "Zoom x-axis in"
@@ -734,9 +700,7 @@ msgstr "Hurbildu X-ardatza"
 
 #. Form1..ActionManager..ZoomXInAction("Zoom x-axis in")....Hint
 msgid "Zoom in on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
-"Haundiagotu x-ardatza soilik. Mantendu klikatua May. tekla zoom urrats "
-"luzeagotan egiteko."
+msgstr "Haundiagotu x-ardatza soilik. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")..Caption
 msgid "Zoom x-axis out"
@@ -744,9 +708,7 @@ msgstr "Urrundu X-ardatza"
 
 #. Form1..ActionManager..ZoomXOutAction("Zoom x-axis out")....Hint
 msgid "Zoom out on the x-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
-"Txikiagotu x-ardatza soilik. Mantendu klikatua May. tekla zoom urrats "
-"luzeagotan egiteko."
+msgstr "Txikiagotu x-ardatza soilik. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")..Caption
 msgid "Zoom y-axis in"
@@ -754,9 +716,7 @@ msgstr "Hurbildu Y-ardatza"
 
 #. Form1..ActionManager..ZoomYInAction("Zoom y-axis in")....Hint
 msgid "Zoom in on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
-"Haundiagotu y-ardatza soilik. Mantendu klikatua May. tekla zoom urrats "
-"luzeagotan egiteko."
+msgstr "Haundiagotu y-ardatza soilik. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")..Caption
 msgid "Zoom y-axis out"
@@ -764,9 +724,7 @@ msgstr "Urrundu Y-ardatza"
 
 #. Form1..ActionManager..ZoomYOutAction("Zoom y-axis out")....Hint
 msgid "Zoom out on the y-axis only. Hold down Shift to zoom with larger steps."
-msgstr ""
-"Txikiagotu x-ardatza soilik. Mantendu klikatua May. tekla zoom urrats "
-"luzeagotan egiteko."
+msgstr "Txikiagotu x-ardatza soilik. Mantendu klikatua May. tekla zoom urrats luzeagotan egiteko."
 
 #. Form1..ActionManager..InsertRelationAction("Insert relation...")..Caption
 msgid "Insert relation..."
@@ -993,12 +951,8 @@ msgstr "Azalpena:"
 
 #. Form11("Insert relation")..GroupBox1("Legend text")..Edit3....Hint
 #. Form5("Insert function")..GroupBox3("Legend text")..Edit7....Hint
-msgid ""
-"Write a descriptive text to show in the legend and function list. If empty "
-"the formula will be used."
-msgstr ""
-"Idatzi testu deskriptibo bat legendan eta funtzioaren zerrendan sartzeko. "
-"Bestela formula erabiliko da."
+msgid "Write a descriptive text to show in the legend and function list. If empty the formula will be used."
+msgstr "Idatzi testu deskriptibo bat legendan eta funtzioaren zerrendan sartzeko. Bestela formula erabiliko da."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..Caption
 #. Form16("Insert shading")..PageControl1..TabSheet2("Options")..GroupBox3("Properties")..Caption
@@ -1015,10 +969,8 @@ msgid "Style:"
 msgstr "Estiloa:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..ShadeSelect1....Hint
-msgid ""
-"Select the style used for drawing the inequality. Not used for equations."
-msgstr ""
-"Aukeratu estiloa inekuazioak adierazteko. Ekuazioetan ez da erabiltzen."
+msgid "Select the style used for drawing the inequality. Not used for equations."
+msgstr "Aukeratu estiloa inekuazioak adierazteko. Ekuazioetan ez da erabiltzen."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..ExtColorBox1..Hint
 msgid "Select the color for drawing the relation."
@@ -1041,8 +993,7 @@ msgid "Line style:"
 msgstr "Lerro estiloa:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..LineSelect1....Hint
-msgid ""
-"Select line style used to draw equations and the border of inequalities."
+msgid "Select line style used to draw equations and the border of inequalities."
 msgstr "Aukeratu marra-estiloa ekuazioak eta inekuazioen mugak adierazteko."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Label9("Color:")..Caption
@@ -1057,11 +1008,8 @@ msgid "Color:"
 msgstr "Kolorea:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Panel1..Edit4....Hint
-msgid ""
-"Width in pixels of the equation line or the borderline of the inequality."
-msgstr ""
-"Ekuazioaren edo inekuazioaren ertzaren adierazpen grafikoaren lodiera, "
-"pixeletan."
+msgid "Width in pixels of the equation line or the borderline of the inequality."
+msgstr "Ekuazioaren edo inekuazioaren ertzaren adierazpen grafikoaren lodiera, pixeletan."
 
 #. Form11("Insert relation")..Edit1..Hint
 msgid "Enter the relation, for example \"x^2+y^2 = 25\" or \"y < sin(x)\""
@@ -1097,11 +1045,8 @@ msgstr "Normal"
 
 #. Form12("Insert tangent/normal")..GroupBox1("Legend text")..Edit2....Hint
 #. Form7("Insert f'(x)")..GroupBox3("Legend text")..Edit3....Hint
-msgid ""
-"Write a descriptive text to show in the legend. If empty the equation will "
-"be used."
-msgstr ""
-"Idatzi testu bat legendan sartzeko, bestela ekuazio lehenetsia erabiliko da."
+msgid "Write a descriptive text to show in the legend. If empty the equation will be used."
+msgstr "Idatzi testu bat legendan sartzeko, bestela ekuazio lehenetsia erabiliko da."
 
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Caption
 #. Form5("Insert function")..GroupBox4("Graph properties")..Caption
@@ -1187,21 +1132,13 @@ msgstr "Bukaera:"
 
 #. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox1....Hint
 #. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox2....Hint
-msgid ""
-"Select marker to show at the start of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-"Aukeratu markatzailea tartearen hasierako puntua adierazteko (tarte bat "
-"definituta baldin badago soilik)."
+msgid "Select marker to show at the start of the interval. Only used if an argument range is specified."
+msgstr "Aukeratu markatzailea tartearen hasierako puntua adierazteko (tarte bat definituta baldin badago soilik)."
 
 #. Form12("Insert tangent/normal")..GroupBox5("Endpoints")..ComboBox2....Hint
 #. Form5("Insert function")..GroupBox5("Endpoints")..ComboBox3....Hint
-msgid ""
-"Select marker to show at the end of the interval. Only used if an argument "
-"range is specified."
-msgstr ""
-"Aukeratu markatzailea tartearen bukaerako puntua adierazteko (tarte bat "
-"definituta baldin badago soilik)."
+msgid "Select marker to show at the end of the interval. Only used if an argument range is specified."
+msgstr "Aukeratu markatzailea tartearen bukaerako puntua adierazteko (tarte bat definituta baldin badago soilik)."
 
 #. Form13("Insert trendline")..Caption
 msgid "Insert trendline"
@@ -1309,13 +1246,8 @@ msgstr "Sartu funtzio-eredua joera-lerroa definitzeko."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")....Hint
 #. Form13("Insert trendline")..Edit5....Hint
-msgid ""
-"Type a value in the Intercept box to specify the point where you want the "
-"trendline to meet the y-axis. This is only available for linear, polynomial "
-"and exponential trendlines."
-msgstr ""
-"Aktibatu joera-lerroa Y-ardatza moztea nahi baldin baduzu eta ordenatua "
-"adierazi. Funtzio lineal, polinomiko edo exponentzialetan soilik."
+msgid "Type a value in the Intercept box to specify the point where you want the trendline to meet the y-axis. This is only available for linear, polynomial and exponential trendlines."
+msgstr "Aktibatu joera-lerroa Y-ardatza moztea nahi baldin baduzu eta ordenatua adierazi. Funtzio lineal, polinomiko edo exponentzialetan soilik."
 
 #. Form13("Insert trendline")..CheckBox1("Intercept =")..Caption
 msgid "Intercept ="
@@ -1349,9 +1281,7 @@ msgid "Insert point series"
 msgstr "Txertatu puntu-seriea"
 
 #. Form14("Insert point series")..Edit1....Hint
-msgid ""
-"The name of the point series, which is shown in the list to the left of the "
-"coordinate system."
+msgid "The name of the point series, which is shown in the list to the left of the coordinate system."
 msgstr "Puntu-seriearen izena, koordenatu-sistemaren ezkerrean erakusten dena."
 
 #. Form14("Insert point series")..Edit1..Text
@@ -1396,12 +1326,8 @@ msgid "Interpolation:"
 msgstr "Interpolazioa:"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..LineSelect1....Hint
-msgid ""
-"Choose the style of lines to be drawn between the points. You may also "
-"choose not to draw any lines."
-msgstr ""
-"Aukeratu markatzaileak elkartuko dituen marra-mota. Bestela, ez da lerrorik "
-"marraztuko"
+msgid "Choose the style of lines to be drawn between the points. You may also choose not to draw any lines."
+msgstr "Aukeratu markatzaileak elkartuko dituen marra-mota. Bestela, ez da lerrorik marraztuko"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..GroupBox2("Line")..Edit3..Hint
 msgid "Choose the width of the lines in pixels."
@@ -1487,8 +1413,7 @@ msgstr "Azpian eskuinean"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")....Hint
 msgid "Choose between cartesian (x,y) coordinates and polar (θ,r) coordinates."
-msgstr ""
-"Aukeratu kartesiar (x,y) koordenatu eta polar (θ,r) koordenatuen artean"
+msgstr "Aukeratu kartesiar (x,y) koordenatu eta polar (θ,r) koordenatuen artean"
 
 #. Form14("Insert point series")..PageControl1..TabSheet1("Markers")..RadioGroup1("Coordinate type")..Caption
 msgid "Coordinate type"
@@ -1593,11 +1518,8 @@ msgstr "Kopiatu aukeratutako testua eta arbelean ipini."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Paste("Paste")....Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Paste("Paste")....Hint
-msgid ""
-"Paste text from the clipboard into the grid. Other cells may be overwritten "
-"by the text from the clipboard."
-msgstr ""
-"Itsatsi arbeletik testua saretan. Honek zenbait gelaxka gainidatzi al du."
+msgid "Paste text from the clipboard into the grid. Other cells may be overwritten by the text from the clipboard."
+msgstr "Itsatsi arbeletik testua saretan. Honek zenbait gelaxka gainidatzi al du."
 
 #. Form14("Insert point series")..PopupMenu1..Popup_Delete("Delete")..Hint
 #. Form17("Custom functions/constants")..PopupMenu1..Popup_Delete("Delete")..Hint
@@ -1651,11 +1573,8 @@ msgid "Calculate table"
 msgstr "Kalkulatu taula "
 
 #. Form15("Calculate table")..Edit3....Hint
-msgid ""
-"The step value. This is the difference between two adjoining values in the "
-"defined interval."
-msgstr ""
-"Urratsaren balioa. Definitutako tartean ondoz-ondoko balioen arteko aldea da."
+msgid "The step value. This is the difference between two adjoining values in the defined interval."
+msgstr "Urratsaren balioa. Definitutako tartean ondoz-ondoko balioen arteko aldea da."
 
 #. Form15("Calculate table")..Edit1..Hint
 msgid "The first x-value in the interval."
@@ -1735,12 +1654,8 @@ msgstr "Bete funtzioa estaltzen duen azalera."
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..Panel6..Image6....Hint
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton6("Between functions")....Hint
-msgid ""
-"Shades the area between the main function and the function selected in the "
-"list to the right."
-msgstr ""
-"Bete funtzio nagusia eta zerrendatik aukeratutako bigarren funtzioaren "
-"arteko azalera."
+msgid "Shades the area between the main function and the function selected in the list to the right."
+msgstr "Bete funtzio nagusia eta zerrendatik aukeratutako bigarren funtzioaren arteko azalera."
 
 #. Form16("Insert shading")..PageControl1..TabSheet1("Shading")..RadioButton3("Above function")..Caption
 msgid "Above function"
@@ -1836,8 +1751,7 @@ msgid "2nd function:"
 msgstr "2. funtzioa:"
 
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..ListBox1....Hint
-msgid ""
-"Select the second function when you want a shading between two functions."
+msgid "Select the second function when you want a shading between two functions."
 msgstr "Aukeratu bigarren funtzioa bi funtzioen arteko betegarria nahi baduzu."
 
 #. Form16("Insert shading")..PageControl1..TabSheet3("2nd function")..GroupBox2("Shading range for 2nd function")..Caption
@@ -1881,11 +1795,8 @@ msgid "Set a custom image height in pixels."
 msgstr "Ezarri irudi pertsonalizatuaren altuera, pixeletan."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")....Hint
-msgid ""
-"Choose to use the same size as shown on the screen or a custom image size."
-msgstr ""
-"Aukeratu gorde nahi duzun irudiaren tamaina pantailan erakusten duena "
-"bezalakoa edo aukeratu tamaina pertsonalizatua."
+msgid "Choose to use the same size as shown on the screen or a custom image size."
+msgstr "Aukeratu gorde nahi duzun irudiaren tamaina pantailan erakusten duena bezalakoa edo aukeratu tamaina pertsonalizatua."
 
 #. Form18("Image options")..PageControl1..TabSheet1("Size")..RadioGroup3("Image size")..Caption
 msgid "Image size"
@@ -1900,11 +1811,8 @@ msgid "Custom size"
 msgstr "Personalizatu tamaina"
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")....Hint
-msgid ""
-"Progressive encoding allows viewers to see a rough copy of the image while "
-"it is downloaded."
-msgstr ""
-"Kodifikazio progresiboak irudiaren kalitatea gradualki haunditu egiten du."
+msgid "Progressive encoding allows viewers to see a rough copy of the image while it is downloaded."
+msgstr "Kodifikazio progresiboak irudiaren kalitatea gradualki haunditu egiten du."
 
 #. Form18("Image options")..PageControl1..TabSheet2..RadioGroup1("Encoding")..Caption
 msgid "Encoding"
@@ -1969,9 +1877,7 @@ msgstr "Legal"
 #. Form18("Image options")..CheckBox1("Save as default")..Hint
 #. Form3("Edit axes")..CheckBox16("Save as default")..Hint
 msgid "Select this to use these settings as defaults in the future."
-msgstr ""
-"Aukeratu definitutako konfigurazioa lehenetsitako perfil gisa erabili nahi "
-"baduzu."
+msgstr "Aukeratu definitutako konfigurazioa lehenetsitako perfil gisa erabili nahi baduzu."
 
 #. Form18("Image options")..CheckBox1("Save as default")..Caption
 #. Form3("Edit axes")..CheckBox16("Save as default")..Caption
@@ -2050,14 +1956,8 @@ msgid "Build %s"
 msgstr "Eraiki %s"
 
 #. Form2("About Graph")..Panel1..Comments..("This is free software, and you are welcome to redistribute it under ")..Caption
-msgid ""
-"This is free software, and you are welcome to redistribute it under the "
-"terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please "
-"send bug reports and suggestions to the programmer."
-msgstr ""
-"Software hau librea da, eta ongietorria zara hurrengo terminoetan "
-"lizentziapean banatzeko. <a href=\"%s\">GNU General Public License</a> "
-"version 2. Iradokizunak zein erroreak programatzaileari bidali, arren. "
+msgid "This is free software, and you are welcome to redistribute it under the terms in the <a href=\"%s\">GNU General Public License</a> version 2. Please send bug reports and suggestions to the programmer."
+msgstr "Software hau librea da, eta ongietorria zara hurrengo terminoetan lizentziapean banatzeko. <a href=\"%s\">GNU General Public License</a> version 2. Iradokizunak zein erroreak programatzaileari bidali, arren. "
 
 #. Form2("About Graph")..Panel1..LinkLabel1..("The newest version as well as the source code are available at: ")..Caption
 msgid "The newest version as well as the source code are available at: %s"
@@ -2126,12 +2026,8 @@ msgid "Auto reverse"
 msgstr "Auto-rebertsioa"
 
 #. Form20("Animation")..PopupMenu1..Reverse1("Auto reverse")....Hint
-msgid ""
-"Play backwards when the end of the animation is reached. This is most useful "
-"in combination with the \"Repeat\" command."
-msgstr ""
-"Hasi alderantzizko reprodukzioa animazioa amaitzen denean. Erabilgarriagoa "
-"da \"Berregin\" komandoarekin konbinatuta."
+msgid "Play backwards when the end of the animation is reached. This is most useful in combination with the \"Repeat\" command."
+msgstr "Hasi alderantzizko reprodukzioa animazioa amaitzen denean. Erabilgarriagoa da \"Berregin\" komandoarekin konbinatuta."
 
 #. Form20("Animation")..PopupMenu1..Save1("Save as...")..Hint
 msgid "Save the animation to a file."
@@ -2150,12 +2046,8 @@ msgid "Save all frames..."
 msgstr "Gorde koadro guztiak..."
 
 #. Form20("Animation")..PopupMenu1..Saveimagesequence1("Save all frames...")....Hint
-msgid ""
-"Save all frames in the animation to image files. This will create as many "
-"files as there are frames in the animation."
-msgstr ""
-"Gorde animazioaren (irudi-fitxategi) fotograma guztiak. Honek animazioan "
-"dauden fitxategiak sortuko ditu."
+msgid "Save all frames in the animation to image files. This will create as many files as there are frames in the animation."
+msgstr "Gorde animazioaren (irudi-fitxategi) fotograma guztiak. Honek animazioan dauden fitxategiak sortuko ditu."
 
 #. Form21("Placement")..Label1("Corner:")..Caption
 msgid "Corner:"
@@ -2300,8 +2192,7 @@ msgstr "Erakutsi zenbakiak"
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Hint
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Hint
 msgid "Show units on the selected axis as a fraction multiplied by pi."
-msgstr ""
-"Erakutsi aukeratutako ardatzaren unitateak pi-ren multiplo zatiki gisa."
+msgstr "Erakutsi aukeratutako ardatzaren unitateak pi-ren multiplo zatiki gisa."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..CheckBox17("Show as a multiple of π")..Caption
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..CheckBox18("Show as a multiple of π")..Caption
@@ -2314,8 +2205,7 @@ msgid "Edit the label for the axis here."
 msgstr "Editatu ardatzerako etiketa."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx3..CheckBox3("Label:")....Hint
-msgid ""
-"Show the label at the right side of the graphing area, above the x-axis."
+msgid "Show the label at the right side of the graphing area, above the x-axis."
 msgstr "Erakutsi etiketa leiho nagusiaren eskuinaldean, x-ardatzaren gainetik."
 
 #. Form3("Edit axes")..PageControl1..TabSheet1("x-axis")..GridPanel1..GridPanelEx3..CheckBox3("Label:")..Caption
@@ -2378,10 +2268,8 @@ msgid "The y-axis will intersect with the x-axis at this value."
 msgstr "Y-ardatzak X-ardatza puntu honetan mozten du. "
 
 #. Form3("Edit axes")..PageControl1..TabSheet2("y-axis")..GridPanel2..GridPanelEx2..CheckBox10("Label:")....Hint
-msgid ""
-"Show the label at the top of the graphing area, to the right of the y-axis."
-msgstr ""
-"Erakutsi etiketa azalera grafikoaren goikaldean, Y-ardatzaren eskuinean."
+msgid "Show the label at the top of the graphing area, to the right of the y-axis."
+msgstr "Erakutsi etiketa azalera grafikoaren goikaldean, Y-ardatzaren eskuinean."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Caption
 msgid "Settings"
@@ -2392,12 +2280,8 @@ msgid "Title:"
 msgstr "Izenburua:"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")....Hint
-msgid ""
-"Choose if you want to show the axes, and if you want to show them crossed or "
-"at the left and bottom of the image."
-msgstr ""
-"Aukeratu ardatzak erakutsi nahi duzun. Hala bada, aukeratu gurutzean edo "
-"leiho grafikoaren ezkerraldean, azpian erakustea."
+msgid "Choose if you want to show the axes, and if you want to show them crossed or at the left and bottom of the image."
+msgstr "Aukeratu ardatzak erakutsi nahi duzun. Hala bada, aukeratu gurutzean edo leiho grafikoaren ezkerraldean, azpian erakustea."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup1("Axes style")..Caption
 msgid "Axes style"
@@ -2416,10 +2300,8 @@ msgid "Boxed"
 msgstr "Ardatzerdi"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")....Hint
-msgid ""
-"Choose if trigonometric functions should calculate in radians or degrees."
-msgstr ""
-"Aukeratu funtzio trigonometrikoak radian edo gradutan kalkulatu behar diren."
+msgid "Choose if trigonometric functions should calculate in radians or degrees."
+msgstr "Aukeratu funtzio trigonometrikoak radian edo gradutan kalkulatu behar diren."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..RadioGroup2("Trigonometry")..Caption
 msgid "Trigonometry"
@@ -2446,16 +2328,16 @@ msgid "Legend placement"
 msgstr "Legendaren kokapena"
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")....Hint
-msgid ""
-"Check this to use complex numbers for calculations. Notice that this will "
-"slow graphing down."
-msgstr ""
-"Aktibatu zenbaki konplexuak erabili nahi badituzu. Honek adierazpen grafikoa "
-"motelduko du."
+msgid "Check this to use complex numbers for calculations. Notice that this will slow graphing down."
+msgstr "Aktibatu zenbaki konplexuak erabili nahi badituzu. Honek adierazpen grafikoa motelduko du."
 
 #. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..CheckBox19("Calculate with complex numbers")..Caption
 msgid "Calculate with complex numbers"
 msgstr "Kalkulatu zenbaki konplexuez"
+
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Aukeratu izenburuaren letra-mota."
 
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
@@ -2506,6 +2388,18 @@ msgstr "Etiketa:"
 msgid "Legend font:"
 msgstr "Legenda:"
 
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Aukeratu ardatzen izenburuak erakusteko formatua."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Aukeratu formatoa ardatzetako unitateak erakusteko."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Aukeratu letra mota legendaren testua erakusteko."
+
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
 msgstr "Hamartarrak:"
@@ -2551,11 +2445,8 @@ msgid "Font scale:"
 msgstr "Letra motaren eskala:"
 
 #. Form4("Options")..GridPanelEx1..ComboBox1....Hint
-msgid ""
-"This is used to scale the user interface if you are having problems reading "
-"the text."
-msgstr ""
-"Aukeratu interfazaren eskala testuak irakurtzeko arazorik baldin baduzu."
+msgid "This is used to scale the user interface if you are having problems reading the text."
+msgstr "Aukeratu interfazaren eskala testuak irakurtzeko arazorik baldin baduzu."
 
 #. Form4("Options")..GridPanelEx1..Label4("Language:")..Caption
 msgid "Language:"
@@ -2567,44 +2458,31 @@ msgstr "Aukeratu interfaza erabiltzeko hizkuntza."
 
 #. Form4("Options")..GridPanelEx1..CheckBox2("Show tooltip")..Hint
 msgid "Show the tooltip when the cursor is over an item."
-msgstr ""
-"Erakutsi testu-etiketa kustsorea elementu baten gainean kokatzen denean."
+msgstr "Erakutsi testu-etiketa kustsorea elementu baten gainean kokatzen denean."
 
 #. Form4("Options")..GridPanelEx1..CheckBox2("Show tooltip")..Caption
 msgid "Show tooltip"
 msgstr "Ikusi testu-etiketa"
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")....Hint
-msgid ""
-"Save the size of the main window when the program exits. This is used the "
-"next time Graph is run."
-msgstr ""
-"Gorde leihoaren tamaina programa ixterakoan. Profil hau erabiliko da Graph "
-"berriro abiatzerakoan."
+msgid "Save the size of the main window when the program exits. This is used the next time Graph is run."
+msgstr "Gorde leihoaren tamaina programa ixterakoan. Profil hau erabiliko da Graph berriro abiatzerakoan."
 
 #. Form4("Options")..GridPanelEx1..CheckBox3("Save workspace on exit")..Caption
 msgid "Save workspace on exit"
 msgstr "Gorde lan-gunea ateratzerakoan."
 
 #. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")....Hint
-msgid ""
-"If checked the program will contact a web server when the program is started "
-"to see if a newer version is available."
-msgstr ""
-"Aktibatu Graph-ek hasiera bakoitzean  interneten bidez bertsio berririk "
-"dagoen konprobatzea nahi baduzu."
+msgid "If checked the program will contact a web server when the program is started to see if a newer version is available."
+msgstr "Aktibatu Graph-ek hasiera bakoitzean  interneten bidez bertsio berririk dagoen konprobatzea nahi baduzu."
 
 #. Form4("Options")..GridPanelEx1..CheckBox4("Check for new version of Graph at startup")..Caption
 msgid "Check for new version of Graph at startup"
 msgstr "Konprobatu hasieran Graph-en bertsio berririk dagoen."
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")....Hint
-msgid ""
-"Use a custom decimal separator instead of the default from the Windows "
-"Regional settings."
-msgstr ""
-"Erabili hamartarren bereizle pertsonalizatua Windows-en konfigurazioan "
-"lehenetsita dagoenaren ordez."
+msgid "Use a custom decimal separator instead of the default from the Windows Regional settings."
+msgstr "Erabili hamartarren bereizle pertsonalizatua Windows-en konfigurazioan lehenetsita dagoenaren ordez."
 
 #. Form4("Options")..GridPanelEx1..CheckBox5("Custom decimal separator:")..Caption
 msgid "Custom decimal separator:"
@@ -2655,12 +2533,8 @@ msgid "Draw type:"
 msgstr "Marrazki mota:"
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Hint
-msgid ""
-"Choose Lines if you want the calculated points for the graph to be "
-"connected. Choose Dots if you only want to show a dot at each point."
-msgstr ""
-"Aukeratu Lerroak kalkulatutako puntuak marraz lotuta egotea nahi baldin "
-"baduzu. Bestela aukeratu Puntuak."
+msgid "Choose Lines if you want the calculated points for the graph to be connected. Choose Dots if you only want to show a dot at each point."
+msgstr "Aukeratu Lerroak kalkulatutako puntuak marraz lotuta egotea nahi baldin baduzu. Bestela aukeratu Puntuak."
 
 #. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4..Text
 #. Form5("Insert function")..GroupBox4("Graph properties")..GridPanelEx1..ComboBox4....Items.Strings
@@ -2824,20 +2698,12 @@ msgid "Select where the cursor will be placed when you click on the image."
 msgstr "Aukeratu seinalatu nahi duzuna grafikoan klik egiterakoan."
 
 #. AreaFrame..GridPanel1..Panel1..Edit1....Hint
-msgid ""
-"Enter the start coordinate or mark the range on the graph itself with the "
-"mouse."
-msgstr ""
-"Sartu koordenatuen hasierako balioa, edo aukeratu grafikoan saguarekin tarte "
-"bat."
+msgid "Enter the start coordinate or mark the range on the graph itself with the mouse."
+msgstr "Sartu koordenatuen hasierako balioa, edo aukeratu grafikoan saguarekin tarte bat."
 
 #. AreaFrame..GridPanel1..Panel2..Edit2....Hint
-msgid ""
-"Enter the end coordinate or mark the range on the graph itself with the "
-"mouse."
-msgstr ""
-"Sartu koordenatuen amaierako balioa, edo aukeratu grafikoan saguarekin tarte "
-"bat."
+msgid "Enter the end coordinate or mark the range on the graph itself with the mouse."
+msgstr "Sartu koordenatuen amaierako balioa, edo aukeratu grafikoan saguarekin tarte bat."
 
 #. ParFuncFrame..Label7("Snap to:")..Caption
 #. PolFuncFrame..Label7("Snap to:")..Caption
@@ -2866,12 +2732,8 @@ msgid "The slope of the function evaluated for the entered t-parameter."
 msgstr "Funtzioarekiko malda adierazitako t-parametroan."
 
 #. ParFuncFrame..Edit1....Hint
-msgid ""
-"Enter the value for the parameter t for which you want to evaluate the "
-"function, or click on the graph in the graphing area."
-msgstr ""
-"Sartu balio bat t-parametrorako funtzioa ebaluatzeko, edo egin klik "
-"grafikoaren puntu batean."
+msgid "Enter the value for the parameter t for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "Sartu balio bat t-parametrorako funtzioa ebaluatzeko, edo egin klik grafikoaren puntu batean."
 
 #. ParFuncFrame..ComboBox1....Items.Strings
 #. PolFuncFrame..ComboBox1....Items.Strings
@@ -2911,33 +2773,23 @@ msgid "The slope of the function evaluated for the given angle."
 msgstr "Funtzioarekiko malda adierazitako angeluan."
 
 #. PolFuncFrame..Edit1....Hint
-msgid ""
-"Enter the value of the polar angle for which you want to evaluate the "
-"function, or click on the graph in the graphing area."
-msgstr ""
-"Sartu angelu polarrerako balio bat funtzioa ebaluatzeko, edo egin klik "
-"grafikoaren puntu batean."
+msgid "Enter the value of the polar angle for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "Sartu angelu polarrerako balio bat funtzioa ebaluatzeko, edo egin klik grafikoaren puntu batean."
 
 #. StdFuncFrame..Edit1....Hint
-msgid ""
-"Enter a value for which you want to evaluate the function, or click on the "
-"graph in the graphing area."
-msgstr ""
-"Sartu balio bat funtzioa ebaluatzeko, edo egin klik grafikoaren puntu batean."
+msgid "Enter a value for which you want to evaluate the function, or click on the graph in the graphing area."
+msgstr "Sartu balio bat funtzioa ebaluatzeko, edo egin klik grafikoaren puntu batean."
 
 #. StdFuncFrame..Edit2..Hint
 msgid "This is the function evaluated for the entered x-value."
 msgstr "Funtzioaren balioa adierazitako x-koordenatuan."
 
 #. StdFuncFrame..Edit3....Hint
-msgid ""
-"This is the first derivative of the function evaluated for the entered value."
+msgid "This is the first derivative of the function evaluated for the entered value."
 msgstr "Funtzioaren lehenengo deribatua, adierazitako balioan."
 
 #. StdFuncFrame..Edit4....Hint
-msgid ""
-"This is the second derivative of the function evaluated for the entered "
-"value."
+msgid "This is the second derivative of the function evaluated for the entered value."
 msgstr "Funtzioaren bigarren deribatua, adierazitako balioan."
 
 #. TanFrame..Edit2....Hint
@@ -2947,9 +2799,6 @@ msgstr "Y-koordenatuaren balioa, adierazitako x-koordenatuan ebaluatua."
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Sartu x-koordenatu bat, edo egin klik grafikoaren puntu batean."
-
-msgid "SourceGraph.manifest"
-msgstr "SourceGraph.manifest"
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3056,8 +2905,7 @@ msgid "Fact can only be calculated for positive integers."
 msgstr "Faktoriala zenbaki positiboez soilik kalkulatu al da ."
 
 msgid "Cannot take logarithm to number equal or less than zero."
-msgstr ""
-"Ez dago definiturik zero baino txikoagoa edo halako zenbakien logaritmoa."
+msgstr "Ez dago definiturik zero baino txikoagoa edo halako zenbakien logaritmoa."
 
 msgid "sqrt is undefined for negative numbers."
 msgstr "Ez dago definiturik zenbaki negatibo baten erro karratua."
@@ -3089,12 +2937,8 @@ msgstr "Ebaluazio baliogabea."
 msgid "Argument produced a function result with total loss of precision."
 msgstr "Txertatutako gaiak zehaztasun osoa galdutako emaitza eman du."
 
-msgid ""
-"The custom function/constant '%s' was not found or has the wrong number of "
-"arguments."
-msgstr ""
-"Ez da aurkitu  '%s' pertsonalizatutako funtzio konstantea, edo argudio "
-"kopuru baliogabea dauka. "
+msgid "The custom function/constant '%s' was not found or has the wrong number of arguments."
+msgstr "Ez da aurkitu  '%s' pertsonalizatutako funtzio konstantea, edo argudio kopuru baliogabea dauka. "
 
 msgid "Too many recursive calls."
 msgstr "Dei errekursibo gehiegi."
@@ -3160,8 +3004,7 @@ msgid "Not enough points for calculation."
 msgstr "Ez dago kalkulatzeko behar adina puntu."
 
 msgid "Illegal name \"%s\" for user defined function or constant."
-msgstr ""
-"Izen baliogabea \"%s\" erabiltzaileak definitutako funtzio edo konstanterako."
+msgstr "Izen baliogabea \"%s\" erabiltzaileak definitutako funtzio edo konstanterako."
 
 msgid "Cannot differentiate recursive function."
 msgstr "Ezin da diferenziatu funtzio errekursiboa."
@@ -3184,19 +3027,15 @@ msgstr "Ez da emaitzarik aurkitu."
 msgid "An accurate result cannot be found."
 msgstr "Ezin da aurkitu emaitza puntual bat."
 
-msgid ""
-"Internal error. Please notify the programmer with as much information as "
-"possible."
-msgstr ""
-"Barne-errorea. Ahalik eta zehatzen notifikatu ezazu programadoreari, arren."
+msgid "Internal error. Please notify the programmer with as much information as possible."
+msgstr "Barne-errorea. Ahalik eta zehatzen notifikatu ezazu programadoreari, arren."
 
 msgid "You need to enter a name for the function/constant."
 msgstr "Izen bat sartu behar duzu funtzioa edo konstanterako."
 
 msgid ""
 "Invalid function/constant name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 "In addition you are not allowed to redefine built-in names."
 msgstr ""
 "Izen baliogabea '%' funtzio/konstanterako.\n"
@@ -3208,8 +3047,7 @@ msgstr "Argudioarentzat izen bat sartu behar duzu."
 
 msgid ""
 "Invalid argument name '%s'.\n"
-"The name may only contain letters and decimal digits, and it must always "
-"start with a letter.\n"
+"The name may only contain letters and decimal digits, and it must always start with a letter.\n"
 " In addition you are not allowed to use built-in names as argument names."
 msgstr ""
 "Izen baliogabea '%' argudiorako.\n"
@@ -3310,13 +3148,10 @@ msgid ""
 "Access denied. Check that the file is not in use or write protected."
 msgstr ""
 "Ezin da %s\n"
-" fitxategian idatzi. Baimena ukatuta. Konprobatu fitxategia ez dela "
-"erabiltzen ari edo idazkeraren kontra babestuta dagoen."
+" fitxategian idatzi. Baimena ukatuta. Konprobatu fitxategia ez dela erabiltzen ari edo idazkeraren kontra babestuta dagoen."
 
 msgid "The font \"%s\" doesn't exist. Standard font is used instead."
-msgstr ""
-"Letra-mota \"%s\" ez da existitzen. Bere ordez letra-mota estandarra "
-"erabiliko da."
+msgstr "Letra-mota \"%s\" ez da existitzen. Bere ordez letra-mota estandarra erabiliko da."
 
 #. Description of grf file
 msgid "Graph system"
@@ -3386,66 +3221,39 @@ msgid "Graph files [*.grf]|*.grf|All files [*.*]|*.*"
 msgstr "Graph fitxategiak[*.grf]|*.grf|Fitxategi guztiak [*.*]|*.*"
 
 #. Import from file dialog
-msgid ""
-"CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|"
-"Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All "
-"files [*.*]|*.*"
-msgstr ""
-"CSV (puntu eta komak mugatuta) [*.csv]|*.csv|CSV (komak mugatuta) [*.csv]|*."
-"csv|Testua (tab-ek mugatuta) [*.txt]|*.txt|Testua (hutsuneak mugatuta) [*."
-"txt]|*.txt|Fitxategi guztiak [*.*]|*.*"
+msgid "CSV (semicolon delimited) [*.csv]|*.csv|CSV (comma delimited) [*.csv]|*.csv|Text (tab delimited) [*.txt]|*.txt|Text (space delimited) [*.txt]|*.txt|All files [*.*]|*.*"
+msgstr "CSV (puntu eta komak mugatuta) [*.csv]|*.csv|CSV (komak mugatuta) [*.csv]|*.csv|Testua (tab-ek mugatuta) [*.txt]|*.txt|Testua (hutsuneak mugatuta) [*.txt]|*.txt|Fitxategi guztiak [*.*]|*.*"
 
 msgid "Are you sure you want to delete the model: %s?"
 msgstr "Eredua ezabatu nahi duzu: %s?"
 
 msgid "Maximum number on x-axis must be greater than the minimum value."
-msgstr ""
-"X-ardatzaren gehieneko balioa gutxieneko balioa baino haundiagoa izan behar "
-"da."
+msgstr "X-ardatzaren gehieneko balioa gutxieneko balioa baino haundiagoa izan behar da."
 
 msgid "Maximum number on y-axis must be greater than the minimum value."
-msgstr ""
-"Y-ardatzaren gehieneko balioa gutxieneko balioa baino haundiagoa izan behar "
-"da."
+msgstr "Y-ardatzaren gehieneko balioa gutxieneko balioa baino haundiagoa izan behar da."
 
 #. Error message when trying to activate an OLE object
 msgid "Server application not found."
 msgstr "Ez da aurkitu zerbitzariaren aplikazioa."
 
 msgid "Maximum number for t must be greater than the minimum value."
-msgstr ""
-"T-ren gehieneko balioa gutxieneko balioa baino haundiagoa izan behar da."
+msgstr "T-ren gehieneko balioa gutxieneko balioa baino haundiagoa izan behar da."
 
 msgid "The step value for t must be a number greater than 0."
 msgstr "T-ren pausokako balioa 0 baino haundiagoa izan behar da."
 
-msgid ""
-"The minimum value for the x-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
-msgstr ""
-"X-ardatzaren gutxieneko balioa 0 baino haundiagoa izan behar da X-ardatza "
-"eskala logaritmikoan definituta dagoenean."
+msgid "The minimum value for the x-axis must be greater than 0, when the x-axis is logarithmic scaled."
+msgstr "X-ardatzaren gutxieneko balioa 0 baino haundiagoa izan behar da X-ardatza eskala logaritmikoan definituta dagoenean."
 
-msgid ""
-"The cross point of the y-axis must be greater than 0, when the x-axis is "
-"logarithmic scaled."
-msgstr ""
-"Y-ardatzaren ebakitze-puntua 0 baino haundiagoa izan behar da X-ardatza "
-"eskala logaritmikoan definituta dagoenean."
+msgid "The cross point of the y-axis must be greater than 0, when the x-axis is logarithmic scaled."
+msgstr "Y-ardatzaren ebakitze-puntua 0 baino haundiagoa izan behar da X-ardatza eskala logaritmikoan definituta dagoenean."
 
-msgid ""
-"The minimum value for the y-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
-msgstr ""
-"Y-ardatzaren gutxieneko balioa 0 baino haundiagoa izan behar da Y-ardatza "
-"eskala logaritmikoan definituta dagoenean."
+msgid "The minimum value for the y-axis must be greater than 0, when the y-axis is logarithmic scaled."
+msgstr "Y-ardatzaren gutxieneko balioa 0 baino haundiagoa izan behar da Y-ardatza eskala logaritmikoan definituta dagoenean."
 
-msgid ""
-"The cross point of the x-axis must be greater than 0, when the y-axis is "
-"logarithmic scaled."
-msgstr ""
-"X -ardatzaren ebakitze-puntua 0 baino haundiagoa izan behar da Y-ardatza "
-"eskala logaritmikoan definituta dagoenean."
+msgid "The cross point of the x-axis must be greater than 0, when the y-axis is logarithmic scaled."
+msgstr "X -ardatzaren ebakitze-puntua 0 baino haundiagoa izan behar da Y-ardatza eskala logaritmikoan definituta dagoenean."
 
 msgid "'Recent files' must be between 0 and 9."
 msgstr "'Azken fitxategiak'-en kopurua 0 eta 9 bitartean izan behar da."
@@ -3462,12 +3270,8 @@ msgstr "Zabalera 0 baino zenbaki oso haundiago bat  izan behar da."
 msgid "Error in width"
 msgstr "Errorea lodieran"
 
-msgid ""
-"The end of interval must be greater than the start of interval and %s must "
-"be greater than 0."
-msgstr ""
-"Tartearen bukaerako balioa hasierakoa baino haundiagoa izan behar da eta %s "
-"0 baino haundiagoa izan behar da."
+msgid "The end of interval must be greater than the start of interval and %s must be greater than 0."
+msgstr "Tartearen bukaerako balioa hasierakoa baino haundiagoa izan behar da eta %s 0 baino haundiagoa izan behar da."
 
 msgid "Invalid model name."
 msgstr "Eredu-izen baliogabea."
@@ -3500,16 +3304,15 @@ msgstr "Editatu funtzioa"
 msgid "Edit tangent/normal"
 msgstr "Editatu tangente/normal"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Errorea fitxategia przesatzen '%s'  %s lerroan."
 
 msgid "Edit text label"
 msgstr "Editatu Koadro-testua"
 
 msgid "The model needs some constants (starting with a $) for Graph to find."
-msgstr ""
-"Ereduak hainbat konstante behar ditu ($ aurretik dutela) Graph-ek aurkitu "
-"ahal izateko."
+msgstr "Ereduak hainbat konstante behar ditu ($ aurretik dutela) Graph-ek aurkitu ahal izateko."
 
 msgid "'%s' has to be an integer value between 0 and 1000."
 msgstr "'%s' 0 eta 1000-ren arteko zenbaki bat izan behar da."
@@ -3530,11 +3333,8 @@ msgstr "Puntu bakoitzak bi koordenada behar ditu, x eta y."
 msgid "\"%s\" is not a valid number."
 msgstr "\"%s\" zenbakia baliogabea da."
 
-msgid ""
-"You didn't add any points. You need to specify some x- and y-coordinates in "
-"the grid."
-msgstr ""
-"Ez duzu punturik sartu. X eta Y koordenatuak adierazi behar dira saretan."
+msgid "You didn't add any points. You need to specify some x- and y-coordinates in the grid."
+msgstr "Ez duzu punturik sartu. X eta Y koordenatuak adierazi behar dira saretan."
 
 msgid "Edit point series"
 msgstr "Editatu puntu-seriea"
@@ -3568,19 +3368,14 @@ msgid ""
 "Either the server is down or you do not have a connection to the Internet."
 msgstr ""
 "Ezin da www.padowan.dk.\n"
-" zerbitzariarekin konektatu.Zerbitzaria erorita dago edo ez duzu Internet "
-"konexiorik."
+" zerbitzariarekin konektatu.Zerbitzaria erorita dago edo ez duzu Internet konexiorik."
 
 #. Communication error when checking for newer version
 msgid "Socket error %s"
 msgstr "Socket errorea %s"
 
-msgid ""
-"Definite integral, or signed area between function and x-axis, for the given "
-"domain range."
-msgstr ""
-"Integral mugatua, edo x-ardatza eta funtzioak sortutako azalera, emandako "
-"eremuaren heinean."
+msgid "Definite integral, or signed area between function and x-axis, for the given domain range."
+msgstr "Integral mugatua, edo x-ardatza eta funtzioak sortutako azalera, emandako eremuaren heinean."
 
 msgid "Length of path along the curve calculated for the given range."
 msgstr "Emandako tarte baten kurbaren luzeera."
@@ -3602,13 +3397,11 @@ msgstr ""
 msgid ""
 "\n"
 "\n"
-"If you don't want to be asked again, this feature may be disabled from the "
-"Edit|Options dialog."
+"If you don't want to be asked again, this feature may be disabled from the Edit|Options dialog."
 msgstr ""
 "\n"
 "\n"
-"Ez baldin baduzu berriro galdetzea nahi, Editatu/aukerak-en desaktibatu al "
-"duzu."
+"Ez baldin baduzu berriro galdetzea nahi, Editatu/aukerak-en desaktibatu al duzu."
 
 msgid "Edit relation"
 msgstr "Editatu erlazioa"
@@ -3621,12 +3414,8 @@ msgstr "Komandoak"
 msgid "(All Commands)"
 msgstr "(Komando guztiak)"
 
-msgid ""
-"To add a command to the toolbar simply select a category and drag the "
-"command out of this dialog box to the toolbar."
-msgstr ""
-"Tresna-barra batean komando  bat gehitzeko, aukeratu kategoria bat, "
-"saguarekin komandoa arrastatu eta askatu nahi duzun tokian."
+msgid "To add a command to the toolbar simply select a category and drag the command out of this dialog box to the toolbar."
+msgstr "Tresna-barra batean komando  bat gehitzeko, aukeratu kategoria bat, saguarekin komandoa arrastatu eta askatu nahi duzun tokian."
 
 msgid "Edit f'(x)"
 msgstr "Editatu  f'(x) "
@@ -3642,8 +3431,7 @@ msgstr "Mailak:"
 msgid ""
 "The program seems to be stuck in an infinite loop.\n"
 "If you cancel the operation the program will become unstable.\n"
-"You should therefore save your data under a new name and restart the "
-"application."
+"You should therefore save your data under a new name and restart the application."
 msgstr ""
 "Programa begizta infinito batean sartu da. \n"
 "Eragiketa bertan-behera uzten baduzu, programa ezegonkor bihurtuko da. \n"
@@ -3653,421 +3441,208 @@ msgid "Thread is not responding"
 msgstr "Hariak ez du erantzuten"
 
 #. Tip of the Day
-msgid ""
-"This Tip of the day can give you a lot of information about the program that "
-"most users don't know."
-msgstr ""
-"'Eguneko aholkua' aukerak erabiltzaile askok ezagutzen ez duten informazio "
-"oso baliagarria ematen du."
+msgid "This Tip of the day can give you a lot of information about the program that most users don't know."
+msgstr "'Eguneko aholkua' aukerak erabiltzaile askok ezagutzen ez duten informazio oso baliagarria ematen du."
 
 #. forum.padowan.dk\">http://forum.padowan.dk</a>"  //Tip of the Day
-msgid ""
-"You can get help using Graph, report bugs and suggest future improvements at "
-"the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</"
-"a>"
-msgstr ""
-"Graph erabiltzean laguntza eskatu, erroreen berri eman edota ekarpenak egin "
-"ditzakezu hurrengo foroan: <a href=\"http://forum.padowan.dk\">http://forum."
-"padowan.dk</a>"
+msgid "You can get help using Graph, report bugs and suggest future improvements at the web forum: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
+msgstr "Graph erabiltzean laguntza eskatu, erroreen berri eman edota ekarpenak egin ditzakezu hurrengo foroan: <a href=\"http://forum.padowan.dk\">http://forum.padowan.dk</a>"
 
 #. Tip of the Day
-msgid ""
-"You can customize the toolbar by right clicking on it and select 'Customize "
-"toolbar'."
-msgstr ""
-"Tresna barrak pertsonalizatu al dira eskuineko botoian klik eginez eta "
-"'Pertsonalizatu' aukeratuz."
+msgid "You can customize the toolbar by right clicking on it and select 'Customize toolbar'."
+msgstr "Tresna barrak pertsonalizatu al dira eskuineko botoian klik eginez eta 'Pertsonalizatu' aukeratuz."
 
 #. Tip of the Day
-msgid ""
-"Instead of deleting a function, you can make it invisible by removing the "
-"check mark for the item in the function list."
-msgstr ""
-"Funtzio bat ezabatu beharrean, ikustezina egin daiteke  funtzioaren "
-"zerrendan 'ikusgai' aukera kenduz."
+msgid "Instead of deleting a function, you can make it invisible by removing the check mark for the item in the function list."
+msgstr "Funtzio bat ezabatu beharrean, ikustezina egin daiteke  funtzioaren zerrendan 'ikusgai' aukera kenduz."
 
 #. Tip of the Day
 msgid "You can paste images into a text label."
 msgstr "Koadro-testu batean irudiak txertatu al dira."
 
 #. Tip of the Day
-msgid ""
-"Text labels can contain any kind of OLE objects, for example Microsoft "
-"Equation. When editing a label right click in the editing area and select "
-"'Insert object'."
-msgstr ""
-"Koadro-testu batek edozein OLE objektua eduki dezake, adibidez Microsoft-en "
-"ekuazioen editoretik ekarrita. Testu koadroa editatu, egin klik eskuineko "
-"botoian edizio arean eta 'Txertatu objektua' aukeratu."
+msgid "Text labels can contain any kind of OLE objects, for example Microsoft Equation. When editing a label right click in the editing area and select 'Insert object'."
+msgstr "Koadro-testu batek edozein OLE objektua eduki dezake, adibidez Microsoft-en ekuazioen editoretik ekarrita. Testu koadroa editatu, egin klik eskuineko botoian edizio arean eta 'Txertatu objektua' aukeratu."
 
 #. Tip of the Day
-msgid ""
-"You can export points from a point series to a file that can be read by "
-"other programs, for example Microsoft Excel. When editing the point series "
-"select the points, right click and choose 'Export to file'."
-msgstr ""
-"Puntu-serie bat esportatu al da, Microsof Excel bezalako programekin ireki "
-"ahal izateko. Puntu-seriea editatzerakoan, funtzioen zerrendan klik egin "
-"eskuineko botoian eta 'Esportatu fitxategira' aukeratu. "
+msgid "You can export points from a point series to a file that can be read by other programs, for example Microsoft Excel. When editing the point series select the points, right click and choose 'Export to file'."
+msgstr "Puntu-serie bat esportatu al da, Microsof Excel bezalako programekin ireki ahal izateko. Puntu-seriea editatzerakoan, funtzioen zerrendan klik egin eskuineko botoian eta 'Esportatu fitxategira' aukeratu. "
 
 #. Tip of the Day
-msgid ""
-"A vertical line at x=5 can be drawn as the parametric function x(t)=5, "
-"y(t)=t or as the relation x=5."
-msgstr ""
-"X=5-en lerro bertikal batek x(t)=5, y(t)=t funtzio parametrikoa edo x=5 "
-"erlazioa bezala marraztu ahal da.  "
+msgid "A vertical line at x=5 can be drawn as the parametric function x(t)=5, y(t)=t or as the relation x=5."
+msgstr "X=5-en lerro bertikal batek x(t)=5, y(t)=t funtzio parametrikoa edo x=5 erlazioa bezala marraztu ahal da.  "
 
 #. Tip of the Day
-msgid ""
-"You can use Zoom|Square to make the axes look equally scaled. This is "
-"especially useful when drawing circles and similar functions."
-msgstr ""
-"Zoom/eskala faktore uniformea erabili al da, eskala faktore berbera bi "
-"ardatzei aplikatzeko. Batez ere erabilgarria zirkuloak edo halako funtzioak "
-"irudikatzeko."
+msgid "You can use Zoom|Square to make the axes look equally scaled. This is especially useful when drawing circles and similar functions."
+msgstr "Zoom/eskala faktore uniformea erabili al da, eskala faktore berbera bi ardatzei aplikatzeko. Batez ere erabilgarria zirkuloak edo halako funtzioak irudikatzeko."
 
 #. Tip of the Day
 msgid "You can find a list of all available functions in the help."
-msgstr ""
-"Graph-en funtzio erabilgarri guztiak Laguntza fitxategian topa ditzakezu."
+msgstr "Graph-en funtzio erabilgarri guztiak Laguntza fitxategian topa ditzakezu."
 
 #. Tip of the Day
-msgid ""
-"You can combine two functions to one using 'if'. For example the function "
-"f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
-msgstr ""
-"Bi funtzio bakar batean konbinatu daitezke 'if' erabiliz. Adib., f(x)=x x<1 "
-"denean, eta f(x)=x^2  x>=1 denean f(x)=if(x<1, x, x^2) bezala idatz daiteke."
+msgid "You can combine two functions to one using 'if'. For example the function f(x)=x for x<1 and f(x)=x^2 for x>=1 can be written as f(x)=if(x<1, x, x^2)."
+msgstr "Bi funtzio bakar batean konbinatu daitezke 'if' erabiliz. Adib., f(x)=x x<1 denean, eta f(x)=x^2  x>=1 denean f(x)=if(x<1, x, x^2) bezala idatz daiteke."
 
 #. Tip of the Day
-msgid ""
-"You can import the contents of another Graph file into the current "
-"coordinate system using 'File|Import|Graph file'."
-msgstr ""
-"Graph fitxategi baten edukiera inportatu al da 'Fitxategia/Inportatu/Graph "
-"fitxategia' erabiliz."
+msgid "You can import the contents of another Graph file into the current coordinate system using 'File|Import|Graph file'."
+msgstr "Graph fitxategi baten edukiera inportatu al da 'Fitxategia/Inportatu/Graph fitxategia' erabiliz."
 
 #. Tip of the Day
-msgid ""
-"If you check 'Save as default' in the Axes dialog the current settings will "
-"be used as default when creating new coordinate systems."
-msgstr ""
-"'Lehenetsitako profila' aukeratzen bada Ardatzak koadroan, koordenatu "
-"sistema berriak sortzerakoan definitutako konfigurazioa erabiliko da ."
+msgid "If you check 'Save as default' in the Axes dialog the current settings will be used as default when creating new coordinate systems."
+msgstr "'Lehenetsitako profila' aukeratzen bada Ardatzak koadroan, koordenatu sistema berriak sortzerakoan definitutako konfigurazioa erabiliko da ."
 
 #. Tip of the Day
-msgid ""
-"While you hold down the Ctrl key, you can use the arrow keys to move the "
-"system."
-msgstr ""
-"Ctrl tekla sakatuta mantenduz, norabide geziak erabili ditzakezu koordenatu "
-"sistema mugitzeko."
+msgid "While you hold down the Ctrl key, you can use the arrow keys to move the system."
+msgstr "Ctrl tekla sakatuta mantenduz, norabide geziak erabili ditzakezu koordenatu sistema mugitzeko."
 
 #. Tip of the Day
-msgid ""
-"While you hold down the Ctrl key, you can use the + and - keys to zoom in "
-"and out."
-msgstr ""
-"Ctrl tekla sakatuta mantenduz, + eta - botoiak erabili al dira koordenatu "
-"sistema hurbildu eta urruntzeko."
+msgid "While you hold down the Ctrl key, you can use the + and - keys to zoom in and out."
+msgstr "Ctrl tekla sakatuta mantenduz, + eta - botoiak erabili al dira koordenatu sistema hurbildu eta urruntzeko."
 
 #. Tip of the Day
-msgid ""
-"You can use the scroll button on your mouse to zoom in and out at the "
-"position of the mouse cursor."
-msgstr ""
-"Saguaren gurpila erabili al da koordenatu sistema kurtsoreak adierazitako "
-"kokalekuarekiko hurbildu edo urruntzeko."
+msgid "You can use the scroll button on your mouse to zoom in and out at the position of the mouse cursor."
+msgstr "Saguaren gurpila erabili al da koordenatu sistema kurtsoreak adierazitako kokalekuarekiko hurbildu edo urruntzeko."
 
 #. Tip of the Day
-msgid ""
-"If you don't want an item shown in the legend, you can right click on the "
-"item in the function list and deselect 'Show in legend'."
-msgstr ""
-"Ez baldin baduzu nahi legendak formularen bat erakustea, egin klik funtzioen "
-"zerrendan eskuineko botoiarekin eta 'Erakutsi legendan' aukera kendu."
+msgid "If you don't want an item shown in the legend, you can right click on the item in the function list and deselect 'Show in legend'."
+msgstr "Ez baldin baduzu nahi legendak formularen bat erakustea, egin klik funtzioen zerrendan eskuineko botoiarekin eta 'Erakutsi legendan' aukera kendu."
 
 #. Tip of the Day
-msgid ""
-"If you want the axes shown to the left and bottom of the image, you can "
-"choose Axes style as Boxed in the Settings tab of the Axes dialog."
-msgstr ""
-"Ardatzak area grafikoaren ezkerraldean eta azpian erakustea nahi baldin "
-"baduzu, aukeratu 'Editatu ardatzak/Konfigurazioa/Ardatzen estilo' komandoan."
+msgid "If you want the axes shown to the left and bottom of the image, you can choose Axes style as Boxed in the Settings tab of the Axes dialog."
+msgstr "Ardatzak area grafikoaren ezkerraldean eta azpian erakustea nahi baldin baduzu, aukeratu 'Editatu ardatzak/Konfigurazioa/Ardatzen estilo' komandoan."
 
 #. Tip of the Day
-msgid ""
-"Graph can save the shown coordinate system in five different image formats: "
-"bmp, emf, png, jpg and pdf."
-msgstr ""
-"Graph-ek erakutsitako koordenatu sistema bost formato desberdinetan gorde "
-"dezake: bmp, emf, png, jpg eta pdf."
+msgid "Graph can save the shown coordinate system in five different image formats: bmp, emf, png, jpg and pdf."
+msgstr "Graph-ek erakutsitako koordenatu sistema bost formato desberdinetan gorde dezake: bmp, emf, png, jpg eta pdf."
 
 #. Tip of the Day
-msgid ""
-"You can use 'Edit|Copy image' to copy the coordinate system and paste it "
-"into another program, for example, Microsoft Word. Later you can usually "
-"edit the image in Graph by double clicking on it in the other program."
-msgstr ""
-"Editatu/Kopiatu irudia erabili al da koordenatu sistema kopiatzeko eta beste "
-"programa batean itsasteko, Microsoft Word adibidez. Gero irudia editatu "
-"daiteke beste programan klik bikoitza eginez."
+msgid "You can use 'Edit|Copy image' to copy the coordinate system and paste it into another program, for example, Microsoft Word. Later you can usually edit the image in Graph by double clicking on it in the other program."
+msgstr "Editatu/Kopiatu irudia erabili al da koordenatu sistema kopiatzeko eta beste programa batean itsasteko, Microsoft Word adibidez. Gero irudia editatu daiteke beste programan klik bikoitza eginez."
 
 #. Tip of the Day
-msgid ""
-"You can open a saved grf-file in a new instance of the program by double "
-"clicking on it in Explorer."
-msgstr ""
-"Grf fitxategi bat (Graph-en fitxategia) ireki al da klik bikoitza eginez. "
-"Graph irekita balego, programaren bigarren exekuzio bat irekiko litzateke."
+msgid "You can open a saved grf-file in a new instance of the program by double clicking on it in Explorer."
+msgstr "Grf fitxategi bat (Graph-en fitxategia) ireki al da klik bikoitza eginez. Graph irekita balego, programaren bigarren exekuzio bat irekiko litzateke."
 
 #. Tip of the Day
-msgid ""
-"You can drag a grf-file from explorer into an open instance of Graph to open "
-"the file."
-msgstr ""
-"Grf fitxategi bat (graph-en fitxategia) gordetako karpetatik arrastatu eta "
-"Graph-en askatu al da."
+msgid "You can drag a grf-file from explorer into an open instance of Graph to open the file."
+msgstr "Grf fitxategi bat (graph-en fitxategia) gordetako karpetatik arrastatu eta Graph-en askatu al da."
 
 #. Tip of the Day
-msgid ""
-"Graph will remember the size of the main window between executions. This can "
-"be disabled from the Options dialog."
-msgstr ""
-"Graph-ek hasieratan leihoaren tamaina mantenduko du. Hau desgaitu daiteke "
-"Aukerak atalean."
+msgid "Graph will remember the size of the main window between executions. This can be disabled from the Options dialog."
+msgstr "Graph-ek hasieratan leihoaren tamaina mantenduko du. Hau desgaitu daiteke Aukerak atalean."
 
 #. Tip of the Day
-msgid ""
-"Calc|Table can be used to create a table with evaluation values for a "
-"function."
-msgstr ""
-"Kalkulatu/Taula aukeratutako funtzioarekiko ebaluatzeko balio taula bat "
-"sortzeko erabili al da."
+msgid "Calc|Table can be used to create a table with evaluation values for a function."
+msgstr "Kalkulatu/Taula aukeratutako funtzioarekiko ebaluatzeko balio taula bat sortzeko erabili al da."
 
 #. Tip of the Day
-msgid ""
-"A part or the whole evaluation table can be exported to a file by right "
-"clicking and selecting 'Export to file'. It can afterwards be opened in "
-"other programs like Microsoft Excel."
-msgstr ""
-"Ebaluaketa taula bat edo honen zati bat fitxategi batera esportatu al da "
-"eskuineko botoiaz klik eginez eta 'Fitxategira esportatu' aukeratuz. "
-"Fitxategi hori beste programen bidez ireki al da, Microsoft Excelen bidez "
-"besteak-beste."
+msgid "A part or the whole evaluation table can be exported to a file by right clicking and selecting 'Export to file'. It can afterwards be opened in other programs like Microsoft Excel."
+msgstr "Ebaluaketa taula bat edo honen zati bat fitxategi batera esportatu al da eskuineko botoiaz klik eginez eta 'Fitxategira esportatu' aukeratuz. Fitxategi hori beste programen bidez ireki al da, Microsoft Excelen bidez besteak-beste."
 
 #. Tip of the Day
-msgid ""
-"Data from the evaluation table can be copied to another program like "
-"Microsoft Excel."
-msgstr ""
-"Ebaluaketa-taula baten datuak Microsof Excel bezalako programetara kopiatu "
-"al dira."
+msgid "Data from the evaluation table can be copied to another program like Microsoft Excel."
+msgstr "Ebaluaketa-taula baten datuak Microsof Excel bezalako programetara kopiatu al dira."
 
 #. Tip of the Day
-msgid ""
-"The data points in a point series can be copied to and from other programs "
-"like Microsoft Excel."
-msgstr ""
-"Puntu-serie baten datuak Microsof Excel bezalako programetara kopiatu al "
-"dira."
+msgid "The data points in a point series can be copied to and from other programs like Microsoft Excel."
+msgstr "Puntu-serie baten datuak Microsof Excel bezalako programetara kopiatu al dira."
 
 #. Tip of the Day
-msgid ""
-"Elements as functions, point series, etc. can be copied from one instance of "
-"the program to another using Edit|Copy."
-msgstr ""
-"Funtzioak, puntu-serie, etab. bezalako elementuak programa baten instantzia "
-"batetik bestera kopiatu al dira Editatu/Kopiatu erabiliz."
+msgid "Elements as functions, point series, etc. can be copied from one instance of the program to another using Edit|Copy."
+msgstr "Funtzioak, puntu-serie, etab. bezalako elementuak programa baten instantzia batetik bestera kopiatu al dira Editatu/Kopiatu erabiliz."
 
 #. Tip of the Day
 msgid "You can always undo the last thing you did using Edit|Undo."
 msgstr "Beti ezabatu al da azkeneko ekintza 'Editatu/Desegin' erabiliz."
 
 #. Tip of the Day
-msgid ""
-"If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you "
-"have undone."
-msgstr ""
-"Editatu/Desegin nahi gabe erabiliz gero, Editatu/Berregin erabili al da "
-"desegindakoa berreskuratzeko."
+msgid "If you used Edit|Undo by mistake, you can use Edit|Redo to redo what you have undone."
+msgstr "Editatu/Desegin nahi gabe erabiliz gero, Editatu/Berregin erabili al da desegindakoa berreskuratzeko."
 
 #. Tip of the Day
 msgid "In the Axes dialog you can add a title to the coordinate system."
-msgstr ""
-"'Editatu ardatzak/konfigurazioa'-n koordenatu-sistemaren izenburua txertatu "
-"al da."
+msgstr "'Editatu ardatzak/konfigurazioa'-n koordenatu-sistemaren izenburua txertatu al da."
 
 #. Tip of the Day
-msgid ""
-"You can import point series from files saved by other programs, like "
-"Microsoft Excel."
-msgstr ""
-"Inportatu al dituzu beste programetan gordetako  (Microsoft excel adibidez) "
-"puntu-serie fitxategiak."
+msgid "You can import point series from files saved by other programs, like Microsoft Excel."
+msgstr "Inportatu al dituzu beste programetan gordetako  (Microsoft excel adibidez) puntu-serie fitxategiak."
 
 #. Tip of the Day
-msgid ""
-"When inserting a point series, you can copy data from programs like "
-"Microsoft Excel, and paste the data into the grid in Graph."
-msgstr ""
-"Puntu-serie bat sartzerakoann, Microsoft Excel bezalako programetatik datuak "
-"kopiatu eta Graph-en saretan kokatu al dira."
+msgid "When inserting a point series, you can copy data from programs like Microsoft Excel, and paste the data into the grid in Graph."
+msgstr "Puntu-serie bat sartzerakoann, Microsoft Excel bezalako programetatik datuak kopiatu eta Graph-en saretan kokatu al dira."
 
 #. Tip of the Day
-msgid ""
-"You can use 'Zoom|Fit all' to change the coordinate system so all functions "
-"and point series are visible."
-msgstr ""
-"'Zoom/egokitu' erabili al da azalera grafikoan sartutako puntu-serie zein "
-"funtzio guztien koordenatu sistema aldatzeko."
+msgid "You can use 'Zoom|Fit all' to change the coordinate system so all functions and point series are visible."
+msgstr "'Zoom/egokitu' erabili al da azalera grafikoan sartutako puntu-serie zein funtzio guztien koordenatu sistema aldatzeko."
 
 #. Tip of the Day
-msgid ""
-"You can use Zoom|Fit to change the coordinate system to show all parts of "
-"the selected function or point series."
-msgstr ""
-"Zoom/egokitu erabili al da aukeratutako funtzioa edota puntu-seriea guztien "
-"koordenatu sistema erakusteko."
+msgid "You can use Zoom|Fit to change the coordinate system to show all parts of the selected function or point series."
+msgstr "Zoom/egokitu erabili al da aukeratutako funtzioa edota puntu-seriea guztien koordenatu sistema erakusteko."
 
 #. Tip of the Day
-msgid ""
-"When you hold down the Shift key you can drag the coordinate system around "
-"with the mouse."
-msgstr ""
-"Letra larrien botoia sakatuta mantenduz, koordenatu sistema saguarekin "
-"mugitu al da."
+msgid "When you hold down the Shift key you can drag the coordinate system around with the mouse."
+msgstr "Letra larrien botoia sakatuta mantenduz, koordenatu sistema saguarekin mugitu al da."
 
 #. Tip of the Day
-msgid ""
-"You can use Calc|Evaluate to find intersections between functions, crossings "
-"with the axes and extremum points."
-msgstr ""
-"Kalkulatu/ebaluatu erabili al da, funtzioen arteko ebakidurak, ardatzekin "
-"ebakidura puntuak zein muturreko puntuak (minimo eta maximoak) topatzeko."
+msgid "You can use Calc|Evaluate to find intersections between functions, crossings with the axes and extremum points."
+msgstr "Kalkulatu/ebaluatu erabili al da, funtzioen arteko ebakidurak, ardatzekin ebakidura puntuak zein muturreko puntuak (minimo eta maximoak) topatzeko."
 
 #. Tip of the Day
-msgid ""
-"When a point series is selected you can add points to it by clicking on the "
-"image while you hold down the Ctrl key."
-msgstr ""
-"Puntu-serie bat aukeratzen baduzu, puntu gehiago gehitu al da koordenatu "
-"sisteman klik eginez Ctrl. botoia batera sakatuz."
+msgid "When a point series is selected you can add points to it by clicking on the image while you hold down the Ctrl key."
+msgstr "Puntu-serie bat aukeratzen baduzu, puntu gehiago gehitu al da koordenatu sisteman klik eginez Ctrl. botoia batera sakatuz."
 
 #. Tip of the Day
-msgid ""
-"You can use a relation to plot any inequality, for example sin(x^2) < "
-"cos(y^2)"
-msgstr ""
-"Erlazio bat erabili al da nahi duzun inekuazioa grafikoki adierazteko. "
-"Adib.: sin(x^2) < cos(y^2)"
+msgid "You can use a relation to plot any inequality, for example sin(x^2) < cos(y^2)"
+msgstr "Erlazio bat erabili al da nahi duzun inekuazioa grafikoki adierazteko. Adib.: sin(x^2) < cos(y^2)"
 
 #. Tip of the Day
-msgid ""
-"You can use a relation to plot any equation, for example x*sin x = y*cos y"
-msgstr ""
-"Erlazio bat erabili al da nahi duzun ekuazioa grafikoki adierazteko. Adib.: "
-"x*sin x = y*cos y "
+msgid "You can use a relation to plot any equation, for example x*sin x = y*cos y"
+msgstr "Erlazio bat erabili al da nahi duzun ekuazioa grafikoki adierazteko. Adib.: x*sin x = y*cos y "
 
 #. Tip of the Day
-msgid ""
-"Elements (functions, shadings, labels, relations, etc.) are drawn in the "
-"same order they appear in the function list to the left."
-msgstr ""
-"Elementuak (funtzioak, betegarriak, erlazioak...)  lehio-grafikoaren "
-"ezkerraldeko panelean dagoen funtzioen zerrendan agertzen diren ordenean "
-"marrazten dira."
+msgid "Elements (functions, shadings, labels, relations, etc.) are drawn in the same order they appear in the function list to the left."
+msgstr "Elementuak (funtzioak, betegarriak, erlazioak...)  lehio-grafikoaren ezkerraldeko panelean dagoen funtzioen zerrendan agertzen diren ordenean marrazten dira."
 
 #. Tip of the Day
-msgid ""
-"You can move the selected element in the function list either by dragging it "
-"with the mouse or with the arrow up/down keys while ALT is held down."
-msgstr ""
-"Funtzioen zerrendan agertutako elementuak saguarekin mugitu daitezke, edo "
-"aurretik aukeratuz gora/behera botoiak + Alt. sakatuz."
+msgid "You can move the selected element in the function list either by dragging it with the mouse or with the arrow up/down keys while ALT is held down."
+msgstr "Funtzioen zerrendan agertutako elementuak saguarekin mugitu daitezke, edo aurretik aukeratuz gora/behera botoiak + Alt. sakatuz."
 
 #. Tip of the Day
-msgid ""
-"You can show functions and other elements behind the axes by moving the "
-"element above the axes in the function list to the left. To move shadings "
-"and tangents you will have to move the functions they are attached to."
-msgstr ""
-"Funtzioen zerrendan agertutako elementuak saguarekin mugitu daitezke. "
-"Betegarriak eta tangenteak mugitzeko hauekin lotutako funtzioak mugitu "
-"beharko dituzu."
+msgid "You can show functions and other elements behind the axes by moving the element above the axes in the function list to the left. To move shadings and tangents you will have to move the functions they are attached to."
+msgstr "Funtzioen zerrendan agertutako elementuak saguarekin mugitu daitezke. Betegarriak eta tangenteak mugitzeko hauekin lotutako funtzioak mugitu beharko dituzu."
 
 #. Tip of the Day
-msgid ""
-"Custom text labels may be attached to the axes by right clicking on the "
-"label and selecting a placement from the context menu."
-msgstr ""
-"Testu-koadro bat ardatz batekin lotu al da eskuineko botoian klik eginez eta "
-"dagokion egoera aukeratuz."
+msgid "Custom text labels may be attached to the axes by right clicking on the label and selecting a placement from the context menu."
+msgstr "Testu-koadro bat ardatz batekin lotu al da eskuineko botoian klik eginez eta dagokion egoera aukeratuz."
 
 #. Tip of the Day
-msgid ""
-"The legend may be moved freely with the mouse or attached to one of the "
-"corners by right clicking on the legend and choose a placement from the "
-"context menu."
-msgstr ""
-"Legenda saguarekin mugitu daiteke edo leiho grafikoaren ertz batean itsasi "
-"eskuineko botoian klik eginez eta dagokion egoera aukeratuz."
+msgid "The legend may be moved freely with the mouse or attached to one of the corners by right clicking on the legend and choose a placement from the context menu."
+msgstr "Legenda saguarekin mugitu daiteke edo leiho grafikoaren ertz batean itsasi eskuineko botoian klik eginez eta dagokion egoera aukeratuz."
 
 #. Tip of the Day
-msgid ""
-"As an alternative to Transparent, you can choose a custom background color "
-"for labels. This is especially useful for labels drawn over shadings."
-msgstr ""
-"Transparentziaren alternatiba gisa, testu-koadroen barne-kolorea aukeratu al "
-"da. Erabilgarria batez ere testu-koadro bat betegarri baten barruan kokatuta "
-"dagoenean."
+msgid "As an alternative to Transparent, you can choose a custom background color for labels. This is especially useful for labels drawn over shadings."
+msgstr "Transparentziaren alternatiba gisa, testu-koadroen barne-kolorea aukeratu al da. Erabilgarria batez ere testu-koadro bat betegarri baten barruan kokatuta dagoenean."
 
 #. Tip of the Day
-msgid ""
-"In most places like point series, axes settings, function ranges, etc., you "
-"can use expressions like pi/4 instead of numbers."
-msgstr ""
-"Puntu serietan, ardatzen konfigurazioan, funtzio baten tarteetan etabarretan "
-"pi/4 motako adierazpenak erabili al dira zenbakien ordez. "
+msgid "In most places like point series, axes settings, function ranges, etc., you can use expressions like pi/4 instead of numbers."
+msgstr "Puntu serietan, ardatzen konfigurazioan, funtzio baten tarteetan etabarretan pi/4 motako adierazpenak erabili al dira zenbakien ordez. "
 
 #. Tip of the Day
-msgid ""
-"You can create your own custom constants under Function|Custom functions for "
-"use in functions, point series, etc. For example g=9.80665, R=8.31"
-msgstr ""
-"Zure konstante propioak 'Funtzioak/Pertsonalizatu funtzioak'-en sortu "
-"ditzakezu  eta funtzio, puntu-serie etabarretan erabiltzeko. Adibidez:  "
-"g=9.80665, R=8.31 "
+msgid "You can create your own custom constants under Function|Custom functions for use in functions, point series, etc. For example g=9.80665, R=8.31"
+msgstr "Zure konstante propioak 'Funtzioak/Pertsonalizatu funtzioak'-en sortu ditzakezu  eta funtzio, puntu-serie etabarretan erabiltzeko. Adibidez:  g=9.80665, R=8.31 "
 
 #. Tip of the Day
-msgid ""
-"You can create your own custom functions under Function|Custom functions for "
-"use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, "
-"sin(x)/x)"
-msgstr ""
-"Zure funtzio propioak 'Funtzioak/Pertsonalizatu funtzioak'-en sortu "
-"ditzakezu  eta funtzioak, erlazioak etab.adierazteko erabili. Adibidez:  "
-"sinc(x)=if(x=0, 0, sin(x)/x)"
+msgid "You can create your own custom functions under Function|Custom functions for use in plotting functions, relations, etc. For example sinc(x)=if(x=0, 0, sin(x)/x)"
+msgstr "Zure funtzio propioak 'Funtzioak/Pertsonalizatu funtzioak'-en sortu ditzakezu  eta funtzioak, erlazioak etab.adierazteko erabili. Adibidez:  sinc(x)=if(x=0, 0, sin(x)/x)"
 
 #. Tip of the Day
-msgid ""
-"In the Save as image dialog there is an Option button you can use to specify "
-"the image resolution. This is especially useful if you want a high "
-"resolution image."
-msgstr ""
-"'Gorde irudi gisa' koadroan 'Aukerak' botoia dago irudiaren tamaina "
-"adierazteko. Botoi hau bereziki erabilgarria da erresoluzio-handiko irudi "
-"bat nahi baduzu. "
+msgid "In the Save as image dialog there is an Option button you can use to specify the image resolution. This is especially useful if you want a high resolution image."
+msgstr "'Gorde irudi gisa' koadroan 'Aukerak' botoia dago irudiaren tamaina adierazteko. Botoi hau bereziki erabilgarria da erresoluzio-handiko irudi bat nahi baduzu. "
 
 #. Tip of the Day
-msgid ""
-"Point series can have arrows as markers. A point series with arrows as "
-"markers and lines between the points can be used to show vectors."
-msgstr ""
-"Puntu-seriek beraien puntuak adierazteko geziak izan ditzakete. Puntu-serie "
-"bat geziak eta puntuen arteko marrak baldin baditu, bektoreak adierazteko "
-"erabili al da."
+msgid "Point series can have arrows as markers. A point series with arrows as markers and lines between the points can be used to show vectors."
+msgstr "Puntu-seriek beraien puntuak adierazteko geziak izan ditzakete. Puntu-serie bat geziak eta puntuen arteko marrak baldin baditu, bektoreak adierazteko erabili al da."
 
 msgid "Insert symbol"
 msgstr "Txertatu ikurra"
@@ -4130,20 +3705,12 @@ msgid "Comment:"
 msgstr "Iruzkina:"
 
 #. PrintFrm("Print")..GroupBox1("Printer")..ComboBox1....Hint
-msgid ""
-"Select the printer to use. The Properties button may be used to change more "
-"advanced settings for the printer."
-msgstr ""
-"Aukeratu erabili nahi duzun inprimagailua. Propietateen botoiak aukeratutako "
-"inprimagailuaren aukerak aldatzeko erabili al da."
+msgid "Select the printer to use. The Properties button may be used to change more advanced settings for the printer."
+msgstr "Aukeratu erabili nahi duzun inprimagailua. Propietateen botoiak aukeratutako inprimagailuaren aukerak aldatzeko erabili al da."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")....Hint
-msgid ""
-"Select to print in color (or grayscale if your printer is not a color "
-"printer) or convert all colors to black."
-msgstr ""
-"Inprimatu kolorez edo gris-eskalan (inprimagailuak ez badu koloretan "
-"inprimatzen) edo bihurtu kolore guztiak beltzaz."
+msgid "Select to print in color (or grayscale if your printer is not a color printer) or convert all colors to black."
+msgstr "Inprimatu kolorez edo gris-eskalan (inprimagailuak ez badu koloretan inprimatzen) edo bihurtu kolore guztiak beltzaz."
 
 #. PrintFrm("Print")..RadioGroup2("Print output")..Caption
 msgid "Print output"
@@ -4179,12 +3746,8 @@ msgstr "Zentratu orrian"
 
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit1....Hint
 #. PrintFrm("Print")..GroupBox2("Position (millimeters)")..Edit2....Hint
-msgid ""
-"Specify the printing area of the page. The printer will print only within "
-"these margins."
-msgstr ""
-"Adierazi inprimatuko den horriaren azalera. Inprimagailuak soilik tarte "
-"hauek mugatutakoa inprimatuko du."
+msgid "Specify the printing area of the page. The printer will print only within these margins."
+msgstr "Adierazi inprimatuko den horriaren azalera. Inprimagailuak soilik tarte hauek mugatutakoa inprimatuko du."
 
 #. PrintFrm("Print")..GroupBox3..Label5("Number of copies:")..Caption
 msgid "Number of copies:"
@@ -4198,20 +3761,11 @@ msgstr "Aukeratu inprimatu nahi duzun kopia kopurua."
 msgid "Enter percent of original size."
 msgstr "Adierazi jatorrizko neurriaren portzentai bat."
 
+#~ msgid "SourceGraph.manifest"
+#~ msgstr "SourceGraph.manifest"
+
 #~ msgid "Email: %s"
 #~ msgstr "E-mail: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Aukeratu izenburuaren letra-mota."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Aukeratu ardatzen izenburuak erakusteko formatua."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Aukeratu formatoa ardatzetako unitateak erakusteko."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Aukeratu letra mota legendaren testua erakusteko."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Asoziatu Graph-ekin *.grf fitxategiak."
@@ -4228,21 +3782,14 @@ msgstr "Adierazi jatorrizko neurriaren portzentai bat."
 #~ msgid "Integrate"
 #~ msgstr "Integratu"
 
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Kalkulatu emandako tartean azalera edo zuzenkiaren luzeera Simpsonen "
-#~ "formula erabiliz."
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Kalkulatu emandako tartean azalera edo zuzenkiaren luzeera Simpsonen formula erabiliz."
 
 #~ msgid "Extremum"
 #~ msgstr "Muturra"
 
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
-#~ msgstr ""
-#~ "Funtzioaren bigarren deribatuaren balioa, adierazitako x koordenatuan "
-#~ "ebaluatua."
+#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgstr "Funtzioaren bigarren deribatuaren balioa, adierazitako x koordenatuan ebaluatua."
 
 #~ msgid "Zoom in."
 #~ msgstr "Zoom-ez urbildu."
@@ -4254,8 +3801,7 @@ msgstr "Adierazi jatorrizko neurriaren portzentai bat."
 #~ msgstr "Itzuli ardatzei konfigurazio lehenetsia."
 
 #~ msgid "Calculates the area under the path of the selected function."
-#~ msgstr ""
-#~ "Kalkulatu grafiko baten zuzenkiaren eta X ardatzaren arteko azalera."
+#~ msgstr "Kalkulatu grafiko baten zuzenkiaren eta X ardatzaren arteko azalera."
 
 #~ msgid "Go to home page"
 #~ msgstr "Joan orri nagusira"
@@ -4308,12 +3854,8 @@ msgstr "Adierazi jatorrizko neurriaren portzentai bat."
 #~ msgid "Protocol reply error %s"
 #~ msgstr "Protokoloaren erantzun-errorea %s"
 
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "graph@padowan.dk"
-#~ msgstr ""
-#~ "Hurrengo bertsioetarako iradokizunak, erroren informeak edota oharrak "
-#~ "bidali ditzakezu hurrengo helbide elektronikora: graph@padowan.dk"
+#~ msgid "You can send suggestions for future versions, bug reports and comments to graph@padowan.dk"
+#~ msgstr "Hurrengo bertsioetarako iradokizunak, erroren informeak edota oharrak bidali ditzakezu hurrengo helbide elektronikora: graph@padowan.dk"
 
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Zentratu inprimatze-area orrian."

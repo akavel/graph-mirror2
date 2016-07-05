@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-12 17:39+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: IL\n"
@@ -2345,6 +2345,10 @@ msgstr "استخدام الأعداد المركبة للحسابات. قد يؤ
 msgid "Calculate with complex numbers"
 msgstr "حساب باستخدام الأعداد المركبة"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "اختر خط العنوان."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "الخطوط و الألون"
@@ -2393,6 +2397,18 @@ msgstr "خط العناوين:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "خط مفتاح الرسم:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "اختر الخط المستخدم لعرض عناوين المحاور."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "اختر الخط المستخدم لعرض الأعداد على المحاور."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "اختر الخط المستخدم لعرض نص مفتاح الرسم."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2793,9 +2809,6 @@ msgstr "الإحداثية y المقدرة من أجل الإحداثية x ا�
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "أدخل إحداثية x أو أنقر على الرسم مباشرة."
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3302,7 +3315,8 @@ msgstr "تحرير الدالة"
 msgid "Edit tangent/normal"
 msgstr "تحرير المماس/العمود"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "خطأ أثناء معالجة الملف '‪%s‬' في السطر ‪%s‬ ."
 
 msgid "Edit text label"
@@ -3761,18 +3775,6 @@ msgstr "أدخل النسبة مقارنة بالحجم الأصلي."
 
 #~ msgid "Email: %s"
 #~ msgstr "البريد الإلكتروني: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "اختر خط العنوان."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "اختر الخط المستخدم لعرض عناوين المحاور."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "اختر الخط المستخدم لعرض الأعداد على المحاور."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "اختر الخط المستخدم لعرض نص مفتاح الرسم."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "جعل غْراف Graph البرنامج الافتراضي لفتح الملفات  (*.grf)."

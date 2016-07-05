@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-07 21:21+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Pekka Lerssi <pekka.lerssi@tut.fi>\n"
-"Language: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2407,6 +2407,10 @@ msgstr "Valitse laskeaksesi kompleksiluvuilla. Huomaa, että tämä saattaa hida
 msgid "Calculate with complex numbers"
 msgstr "Laske kompleksiluvuilla"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Valitse otsikon fontti."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Fontti ja väri"
@@ -2455,6 +2459,18 @@ msgstr "Otsikoiden fontti:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Selitteen fontti:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Valitse akseleiden otsikoissa käytettävä fontti."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Valitse akseleiden numeroimisessa käytettävä fontti."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Valitse selitteen fontti."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2863,9 +2879,6 @@ msgstr "Y-koordinattia vastaava x-koordinaatti."
 #, fuzzy
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Syötä x-koordinaatti tai valitse piste kuvaajasta hiirellä."
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3394,7 +3407,8 @@ msgstr "Muokkaa funktiota"
 msgid "Edit tangent/normal"
 msgstr "Muokkaa tangenttia/normaalia"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Virhe käsitellessä tiedostoa '%s' rivillä %s."
 
 #, fuzzy
@@ -3871,18 +3885,6 @@ msgstr "Valitse tulosteen skaalaus suhteessa alkuperäiseen kuvaan."
 #, fuzzy
 #~ msgid "Email: %s"
 #~ msgstr "Email:"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Valitse otsikon fontti."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Valitse akseleiden otsikoissa käytettävä fontti."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Valitse akseleiden numeroimisessa käytettävä fontti."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Valitse selitteen fontti."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Määritä *.grf-tiedostot avautumaan Graphissa."

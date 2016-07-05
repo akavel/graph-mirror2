@@ -5,14 +5,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
-"PO-Revision-Date: 2014-02-04 22:25+0100\n"
-"Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
+"PO-Revision-Date: 2016-06-27 15:00+0100\n"
+"Last-Translator: Ivan Johansen <graph@padowan.dk>\n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
 
 #. Form1..ActionMainMenuBar1..Font.Name
 msgid "Segoe UI"
@@ -2347,6 +2348,10 @@ msgstr "Activa esta casilla si empleas números complejos en los cálculos."
 msgid "Calculate with complex numbers"
 msgstr "Calcular con números complejos"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Elige el formato que deseas aplicar al texto del título."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Colores y Fuentes"
@@ -2395,6 +2400,18 @@ msgstr "Títulos:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Leyenda:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Elige el formato que deseas aplicar a los títulos de los ejes."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Elige el formato que deseas aplicar a los números asociados a los ejes."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Elige el formato que deseas aplicar al contenido de la leyenda."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2795,9 +2812,6 @@ msgstr "Valor de la coordenada y, evaluada en la coordenada x indicada."
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Introduce la coordenada x, o haz clic en un punto de la tangente/normal."
-
-msgid "SourceGraph.manifest"
-msgstr "SourceGraph.manifest"
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3304,7 +3318,8 @@ msgstr "Editar función"
 msgid "Edit tangent/normal"
 msgstr "Editar tangente/normal"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Error al procesar el archivo '%s' en la línea %s."
 
 msgid "Edit text label"
@@ -3760,21 +3775,11 @@ msgstr "Indica el número de copias que deseas imprimir."
 msgid "Enter percent of original size."
 msgstr "Indica un porcentaje del tamaño original del área gráfica."
 
+#~ msgid "SourceGraph.manifest"
+#~ msgstr "SourceGraph.manifest"
+
 #~ msgid "Email: %s"
 #~ msgstr "Correo electrónico: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Elige el formato que deseas aplicar al texto del título."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Elige el formato que deseas aplicar a los títulos de los ejes."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr ""
-#~ "Elige el formato que deseas aplicar a los números asociados a los ejes."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Elige el formato que deseas aplicar al contenido de la leyenda."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Asocia al programa los archivos *.grf (archivos de Graph)."
@@ -3795,21 +3800,13 @@ msgstr "Indica un porcentaje del tamaño original del área gráfica."
 #~ msgstr "Mostrar números como múltiplos de pi"
 
 #~ msgid "Calculate the area under the path of the selected function."
-#~ msgstr ""
-#~ "Calcula el área respecto a la función seleccionada en el intervalo "
-#~ "especificado."
+#~ msgstr "Calcula el área respecto a la función seleccionada en el intervalo especificado."
 
 #~ msgid "Insert an OLE object such as a drawing or an equation."
-#~ msgstr ""
-#~ "Inserta un objeto OLE, por ejemplo, una imagen, un gráfico o un elemento "
-#~ "del Editor de Ecuaciones de Microsoft."
+#~ msgstr "Inserta un objeto OLE, por ejemplo, una imagen, un gráfico o un elemento del Editor de Ecuaciones de Microsoft."
 
-#~ msgid ""
-#~ "Area or length of path calculated for the given range using Simpson's "
-#~ "formula."
-#~ msgstr ""
-#~ "Cálculo del área, o longitud de arco en el intervalo dado usando la "
-#~ "fórmula de Simpson."
+#~ msgid "Area or length of path calculated for the given range using Simpson's formula."
+#~ msgstr "Cálculo del área, o longitud de arco en el intervalo dado usando la fórmula de Simpson."
 
 #~ msgid "Text [*.txt; *.csv]|*.txt;*.csv|All files [*.*]|*.*"
 #~ msgstr "Texto [*.txt; *.csv]|*.txt;*.csv|Todos los archivos [*.*]|*.*"
@@ -3829,13 +3826,8 @@ msgstr "Indica un porcentaje del tamaño original del área gráfica."
 #~ msgid "Mark start of range"
 #~ msgstr "Marcar el inicio del relleno"
 
-#~ msgid ""
-#~ "You can send suggestions for future versions, bug reports and comments to "
-#~ "<a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
-#~ msgstr ""
-#~ "Puedes enviar comentarios, sugerencias para futuras versiones e informes "
-#~ "de errores a la siguiente dirección electrónica: <a href=\"mailto:"
-#~ "graph@padowan.dk\">graph@padowan.dk</a>"
+#~ msgid "You can send suggestions for future versions, bug reports and comments to <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
+#~ msgstr "Puedes enviar comentarios, sugerencias para futuras versiones e informes de errores a la siguiente dirección electrónica: <a href=\"mailto:graph@padowan.dk\">graph@padowan.dk</a>"
 
 #~ msgid "Extremum"
 #~ msgstr "Mínimo / Máximo"
@@ -3877,21 +3869,13 @@ msgstr "Indica un porcentaje del tamaño original del área gráfica."
 #~ msgstr "Error de respuesta del protocolo %s"
 
 #~ msgid "Enter the image position on the page."
-#~ msgstr ""
-#~ "Especifica la distancia entre los márgenes de la página y los márgenes "
-#~ "del área de impresión, en milímetros."
+#~ msgstr "Especifica la distancia entre los márgenes de la página y los márgenes del área de impresión, en milímetros."
 
-#~ msgid ""
-#~ "Enter the independent variable for which you want to evaluate the "
-#~ "function, or click on the graph in the graphing area."
-#~ msgstr ""
-#~ "Introduce un valor para la variable independiente, o haz clic sobre un "
-#~ "punto de la gráfica."
+#~ msgid "Enter the independent variable for which you want to evaluate the function, or click on the graph in the graphing area."
+#~ msgstr "Introduce un valor para la variable independiente, o haz clic sobre un punto de la gráfica."
 
 #~ msgid "Saves the coordinate system as a new name."
-#~ msgstr ""
-#~ "Guarda el sistema de coordenadas activo con un nombre nuevo, o una "
-#~ "ubicación diferente."
+#~ msgstr "Guarda el sistema de coordenadas activo con un nombre nuevo, o una ubicación diferente."
 
 #~ msgid "Saves a copy of the current coordinate system."
 #~ msgstr "Guarda una copia del sistema de coordenadas activo."
@@ -3905,11 +3889,8 @@ msgstr "Indica un porcentaje del tamaño original del área gráfica."
 #~ msgid "Select to place the image on the middle of the page."
 #~ msgstr "Centra el área de impresión en la página."
 
-#~ msgid ""
-#~ "This is the functions second derivative evaluated for the entered value."
-#~ msgstr ""
-#~ "Valor de la segunda derivada de la función, evaluada en la coordenada x "
-#~ "indicada."
+#~ msgid "This is the functions second derivative evaluated for the entered value."
+#~ msgstr "Valor de la segunda derivada de la función, evaluada en la coordenada x indicada."
 
 #~ msgid "Write coordinate system and functions to a file."
 #~ msgstr "Guarda el actual sistema de coordenadas en un archivo."
@@ -3924,9 +3905,7 @@ msgstr "Indica un porcentaje del tamaño original del área gráfica."
 #~ msgstr "Ajustar todos los puntos"
 
 #~ msgid "Zoom as much as all points are visible."
-#~ msgstr ""
-#~ "Redimensiona el área gráfica para que todos los puntos introducidos sean "
-#~ "visibles."
+#~ msgstr "Redimensiona el área gráfica para que todos los puntos introducidos sean visibles."
 
 #~ msgid "Image information"
 #~ msgstr "Opciones de imagen"

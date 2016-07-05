@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2014-07-03 17:50+0100\n"
 "Last-Translator: Konrad Kałużyński <kkaluzynski@op.pl>\n"
 "Language-Team: \n"
@@ -2464,6 +2464,11 @@ msgstr ""
 msgid "Calculate with complex numbers"
 msgstr "Przeliczaj używając liczb zespolonych"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+#, fuzzy
+msgid "Select the font for the title."
+msgstr "Wybierz kolor wykresu."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Czcionka i kolor"
@@ -2512,6 +2517,21 @@ msgstr "Czcionka oznaczeń:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Czcionka legendy:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+#, fuzzy
+msgid "Select the font used to show the labels on the axes."
+msgstr "Wybierz język interfejsu."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+#, fuzzy
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Wybierz język interfejsu."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+#, fuzzy
+msgid "Select the font used to show the legend text."
+msgstr "Zmienia czcionkę legendy."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2956,9 +2976,6 @@ msgstr "Wartość y odpowiadająca podanej wartości x."
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Wprowadź współrzędną x lub kliknij na obszarze kreślenia."
-
-msgid "SourceGraph.manifest"
-msgstr "SourceGraph.manifest"
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3516,8 +3533,9 @@ msgstr "Edytuj funkcję"
 msgid "Edit tangent/normal"
 msgstr "Edytuj styczną/normalną"
 
-msgid "Error processing file '%s' at line %s."
-msgstr "Błąd podczas przetwarzania pliku '%s' w wierszu %s."
+#, fuzzy
+msgid "Error processing file at line %s."
+msgstr "Błąd wartości"
 
 msgid "Edit text label"
 msgstr "Edytuj pole tekstowe"
@@ -4216,22 +4234,6 @@ msgstr "Podaj procent oryginalnego rozmiaru."
 #, fuzzy
 #~ msgid "Email: %s"
 #~ msgstr "e-mail"
-
-#, fuzzy
-#~ msgid "Select the font for the title."
-#~ msgstr "Wybierz kolor wykresu."
-
-#, fuzzy
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Wybierz język interfejsu."
-
-#, fuzzy
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Wybierz język interfejsu."
-
-#, fuzzy
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Zmienia czcionkę legendy."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Kojarzy pliki *.grf z Graph."
