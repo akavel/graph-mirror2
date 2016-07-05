@@ -136,8 +136,7 @@
 	<simplesect renderas="sect2">
 		<title>Uninstallation</title>
 		<para>
-			Uninstallation is done from <emphasis>Add/Remove Programs</emphasis> in the <emphasis>Control Panel</emphasis>.
-			Just select Graph and click on the <emphasis>Change/Remove button</emphasis>. This will remove all traces of the program.
+			Uninstallation is done through the uninstaller that is installed with Graph. This will remove all traces of the program.
 			If files were added to the installation directory after the installation, you will be asked if you want to delete them.
 			Make sure Graph is not running while uninstalling.
 		</para>
