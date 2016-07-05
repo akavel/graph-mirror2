@@ -3,7 +3,7 @@ Newest file is available at http://graph.svn.sourceforge.net/viewvc/graph/Trunk/
 
 1. Download and install Java from http://java.com/en/download/ Most will already have Java installed.
 
-2. Download and install Python 2.7 from http://python.org/ftp/python/2.7.2/python-2.7.2.msi
+2. Download and install Python 2.7 from http://python.org/ftp/python/2.7.12/python-2.7.12.msi
 
 3. Download and install libxml2 for Python from http://users.skynet.be/sbi/libxml-python/binaries/libxml2-python-2.7.7.win32-py2.7.exe
 
