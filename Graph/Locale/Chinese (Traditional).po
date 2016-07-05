@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-07 21:20+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2403,6 +2403,10 @@ msgstr "確認使用複數計算，而這會讓繪圖速度變慢。"
 msgid "Calculate with complex numbers"
 msgstr "用複數計算"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "選擇標題的字型"
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "字型和顏色"
@@ -2451,6 +2455,18 @@ msgstr "標籤字型："
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "圖例說明字型"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "選擇軸線上的標籤字型"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "選擇軸線上的數字字型"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "選擇圖例說明文字的字型"
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2859,9 +2875,6 @@ msgstr "這是輸入x座標後相對應 y 座標上的切線"
 #, fuzzy
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "輸入 x 座標或者點主視窗上的 切線"
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3381,7 +3394,8 @@ msgstr "編輯函數"
 msgid "Edit tangent/normal"
 msgstr "編輯 切線/ 法線"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "錯誤執行檔案'%s'在第'%s' 行。"
 
 msgid "Edit text label"
@@ -3857,18 +3871,6 @@ msgstr "輸入原尺寸百分比率"
 #, fuzzy
 #~ msgid "Email: %s"
 #~ msgstr "Email:"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "選擇標題的字型"
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "選擇軸線上的標籤字型"
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "選擇軸線上的數字字型"
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "選擇圖例說明文字的字型"
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "用Graph關聯 *.grf 檔案類型"

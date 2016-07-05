@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr "Project-Id-Version: Graph\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
-"PO-Revision-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
+"PO-Revision-Date: 2016-07-05 21:09\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2449,6 +2449,10 @@ msgstr ""
 msgid "Calculate with complex numbers"
 msgstr ""
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr ""
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr ""
@@ -2496,6 +2500,21 @@ msgstr ""
 
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the "
+"axes."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the "
+"axes."
+msgstr ""
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend "
+"text."
 msgstr ""
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
@@ -2934,9 +2953,6 @@ msgstr ""
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing "
 "area."
-msgstr ""
-
-msgid "SourceGraph.manifest"
 msgstr ""
 
 #. Used in titles of error message boxes
@@ -3478,7 +3494,7 @@ msgstr ""
 msgid "Edit tangent/normal"
 msgstr ""
 
-msgid "Error processing file '%s' at line %s."
+msgid "Error processing file at line %s."
 msgstr ""
 
 msgid "Edit text label"

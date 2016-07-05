@@ -2,15 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph-TR\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2013-10-14 21:31+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Dilek IŞIK <biskuvi@hotmail.com>\n"
-"Language: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2342,6 +2342,10 @@ msgstr ""
 msgid "Calculate with complex numbers"
 msgstr "Kompleks sayılarla hesapla"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Başlık yazı tipini seç."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Yazı tipi ve renk"
@@ -2390,6 +2394,19 @@ msgstr "Etiket yazı tipi:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Eksen yazı tipi:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+#, fuzzy
+msgid "Select the font used to show the labels on the axes."
+msgstr "Eksenlerdeki sayıları göstermek için yazı tipi seçin."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Eksenlerdeki sayıları göstermek için yazı tipi seçin."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Eksen yazısında kullanılmak üzere bir yazı tipi seçin."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2789,9 +2806,6 @@ msgstr ""
 
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
-msgstr ""
-
-msgid "SourceGraph.manifest"
 msgstr ""
 
 #. Used in titles of error message boxes
@@ -3290,7 +3304,8 @@ msgstr "Fonksiyonu düzenle"
 msgid "Edit tangent/normal"
 msgstr "Teğet/dik'i düzenle"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr " '%s' dosyasını işlenmesinde %s dizininde hata."
 
 msgid "Edit text label"
@@ -3736,15 +3751,6 @@ msgstr "Orjinal boyutun yüzdesini girin"
 
 #~ msgid "Email: %s"
 #~ msgstr "Email: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Başlık yazı tipini seç."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Eksenlerdeki sayıları göstermek için yazı tipi seçin."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Eksen yazısında kullanılmak üzere bir yazı tipi seçin."
 
 #~ msgid "Calculate the area under the path of the selected function."
 #~ msgstr "Seçili fonksiyonun altındaki alanı hesapla."

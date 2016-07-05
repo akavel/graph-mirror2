@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 4.3 (384)\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2014-02-01 14:39+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: SWEDISH <par.smars@bredband.net>\n"
-"Language: \n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2333,6 +2333,10 @@ msgstr "Välj för att använda komplexa tal för beräkningar. Notera dock, att
 msgid "Calculate with complex numbers"
 msgstr "Beräkna med komplexa tal"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Välj teckensnitt för rubriken."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Teckensnitt och färg"
@@ -2381,6 +2385,18 @@ msgstr "Etiketter:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Teckenförklaring:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Välj teckensnitt för etiketter som visas på koordinataxlarna."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Välj teckensnitt för att visa siffrorna på koordinataxlarna."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Välj teckensnitt för texten på teckenförklaringen."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2781,9 +2797,6 @@ msgstr "Detta är y-koordinaten för tangenten till den inmatade x-koordinaten."
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Skriv in en x-koordinat, eller klicka i huvudfönstret."
-
-msgid "SourceGraph.manifest"
-msgstr "SourceGraph.manifest"
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3289,7 +3302,8 @@ msgstr "Redigera funktion"
 msgid "Edit tangent/normal"
 msgstr "Redigera tangent/normal"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Fel vid läsning av filen '%s' på rad %s."
 
 msgid "Edit text label"
@@ -3745,20 +3759,11 @@ msgstr "Välj antal kopior att skriva ut."
 msgid "Enter percent of original size."
 msgstr "Välj procent av originalstorlek."
 
+#~ msgid "SourceGraph.manifest"
+#~ msgstr "SourceGraph.manifest"
+
 #~ msgid "Email: %s"
 #~ msgstr "E-post: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Välj teckensnitt för rubriken."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Välj teckensnitt för etiketter som visas på koordinataxlarna."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Välj teckensnitt för att visa siffrorna på koordinataxlarna."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Välj teckensnitt för texten på teckenförklaringen."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Associera *.grf-filer med Graph."
@@ -3856,50 +3861,73 @@ msgstr "Välj procent av originalstorlek."
 # Funktion-menyn
 #~ msgid "Insert shade..."
 #~ msgstr "Skuggning..."
+
 #~ msgid "Shade"
 #~ msgstr "Skuggning"
+
 #~ msgid "Black"
 #~ msgstr "Svart"
+
 #~ msgid "Maroon"
 #~ msgstr "Rödbrun"
+
 #~ msgid "Green"
 #~ msgstr "Grön"
+
 #~ msgid "Olive"
 #~ msgstr "Olivfärgad"
+
 #~ msgid "Navy"
 #~ msgstr "Marinblå"
+
 #~ msgid "Purple"
 #~ msgstr "Mörklila"
+
 #~ msgid "Gray"
 #~ msgstr "Grå"
+
 #~ msgid "Silver"
 #~ msgstr "Silver"
+
 #~ msgid "Red"
 #~ msgstr "Röd"
+
 #~ msgid "Lime"
 #~ msgstr "Limegrön"
+
 #~ msgid "Yellow"
 #~ msgstr "Gul"
+
 #~ msgid "Blue"
 #~ msgstr "Blå"
+
 #~ msgid "Fuchsia"
 #~ msgstr "Cerise"
+
 #~ msgid "Aqua"
 #~ msgstr "Akvamarin"
+
 #~ msgid "White"
 #~ msgstr "Vit"
+
 #~ msgid "Money Green"
 #~ msgstr "Mintgrön"
+
 #~ msgid "Sky Blue"
 #~ msgstr "Himmelsblå"
+
 #~ msgid "Med Gray"
 #~ msgstr "Medelgrå"
+
 #~ msgid "Insert a text label (select and click in the main window where you want the label)."
 #~ msgstr "Lägg till textetikett (välj och klicka i huvudfönstret där du vill placera etiketten)."
+
 #~ msgid "Cut the selected text to the clipboard"
 #~ msgstr "Klipp ur vald text till Windows urklipp."
+
 #~ msgid "Open an animation file."
 #~ msgstr "Öppna en animeringsfil."
+
 #, fuzzy
 #~ msgid "Version -%s"
 #~ msgstr "Version"

@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-07 21:08+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2333,6 +2333,10 @@ msgstr "Spunta per usare i  numeri complessi nei calcoli. Attenzione, ciò compo
 msgid "Calculate with complex numbers"
 msgstr "Calcola usando numeri complessi"
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Seleziona il tipo di carattere per il titolo."
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Font e colore"
@@ -2381,6 +2385,18 @@ msgstr "Etichetta font:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Legenda font:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Seleziona il tipo di carattere per le etichette sugli assi."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Seleziona il tipo di carattere da usare per i numeri sugli assi."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "Seleziona il tipo di carattere da usare per le didascalie."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2781,9 +2797,6 @@ msgstr "Questa è la coordinata-y corrispondente alla coordinata-x immessa."
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Immetti una coordinata-x o clicca nell'area grafica."
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3291,7 +3304,8 @@ msgstr "Modifica funzione"
 msgid "Edit tangent/normal"
 msgstr "Modifica tangente/perpendicolare"
 
-msgid "Error processing file '%s' at line %s."
+#, fuzzy
+msgid "Error processing file at line %s."
 msgstr "Errore nell'elaborazione del file '%s' alla linea %s."
 
 msgid "Edit text label"
@@ -3751,18 +3765,6 @@ msgstr "Specifica la percentuale rispetto alla dimensione originale ."
 
 #~ msgid "Email: %s"
 #~ msgstr "Email: %s"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Seleziona il tipo di carattere per il titolo."
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Seleziona il tipo di carattere per le etichette sugli assi."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Seleziona il tipo di carattere da usare per i numeri sugli assi."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "Seleziona il tipo di carattere da usare per le didascalie."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Associa i file *.grf a Graph."

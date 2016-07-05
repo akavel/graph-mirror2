@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Граф\n"
-"POT-Creation-Date: 2014-02-01 14:36\n"
+"POT-Creation-Date: 2016-07-05 21:09\n"
 "PO-Revision-Date: 2012-11-07 21:21+0100\n"
 "Last-Translator: Michael Bach Ipsen <rosenthall@hotmail.com>\n"
 "Language-Team: Батнасан <baagiibat@yahoo.com>\n"
-"Language: \n"
+"Language: mn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2427,6 +2427,10 @@ msgstr ""
 msgid "Calculate with complex numbers"
 msgstr "Харагдаж байгаа тоонуудыг комплекс тоон хэлбэрт оруулна."
 
+#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
+msgid "Select the font for the title."
+msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
+
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Фонт ба өнгө"
@@ -2476,6 +2480,18 @@ msgstr "Бичлэгийн фонт:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Бичлэгийн фонт:"
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
+msgid "Select the font used to show the labels on the axes."
+msgstr "Тэнхлэг дээр харагдах бичлэгийн фонт сонгоно."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
+msgid "Select the font used to show the numbers on the axes."
+msgstr "Тэнхлэг дээрх тоонуудын фонтыг сонгоно."
+
+#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
+msgid "Select the font used to show the legend text."
+msgstr "График дээрх бичлэгийн фонт сонгоно."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2888,9 +2904,6 @@ msgstr "Энэ бол х -н координатад харгалзах  у- ко
 #, fuzzy
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Х-ккординат оруул эсвэл үндсэн цонхон дээр хулганаараа сонго."
-
-msgid "SourceGraph.manifest"
-msgstr ""
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3414,8 +3427,9 @@ msgstr "Функцыг засварлах"
 msgid "Edit tangent/normal"
 msgstr "Шүргэгч/ нормал оруулах."
 
-msgid "Error processing file '%s' at line %s."
-msgstr ""
+#, fuzzy
+msgid "Error processing file at line %s."
+msgstr "Файл уншихад алдаатай"
 
 #, fuzzy
 msgid "Edit text label"
@@ -3886,18 +3900,6 @@ msgstr "Бодит хэмжээний процент оруул"
 #, fuzzy
 #~ msgid "Email: %s"
 #~ msgstr "Э-хаяг:"
-
-#~ msgid "Select the font for the title."
-#~ msgstr "Функц болон шүргэгчийн тэгшитгэлийг сонго!"
-
-#~ msgid "Select the font used to show the labels on the axes."
-#~ msgstr "Тэнхлэг дээр харагдах бичлэгийн фонт сонгоно."
-
-#~ msgid "Select the font used to show the numbers on the axes."
-#~ msgstr "Тэнхлэг дээрх тоонуудын фонтыг сонгоно."
-
-#~ msgid "Select the font used to show the legend text."
-#~ msgstr "График дээрх бичлэгийн фонт сонгоно."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Graph-тай  *.grf файлуудыг холбох."
