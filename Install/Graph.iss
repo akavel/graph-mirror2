@@ -61,7 +61,6 @@ Name: "Vietnamese"; MessagesFile: "compiler:Languages\Vietnamese.isl"
 
 [Tasks]
 Name: "DesktopIcon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
-Name: "QuickLaunchIcon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 Name: "InstallAllUsers"; Description: "{cm:InstallAllUsers}"; Check: HasAdminRights
 
 [Files]
@@ -91,7 +90,6 @@ Name: "{userprograms}\Graph\{cm:UninstallProgram,Graph}"; Filename: "{uninstalle
 Name: "{commonprograms}\Graph\{cm:Examples}"; Filename: "{app}\Examples"; Flags: foldershortcut; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{commonprograms}\Graph\Graph"; Filename: "{app}\Graph.exe"; Comment: "Graph"; Tasks: InstallAllUsers; Check: not WizardNoIcons
 Name: "{userdesktop}\Graph"; Filename: "{app}\Graph.exe"; Tasks: DesktopIcon
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Graph"; Filename: "{app}\Graph.exe"; Tasks: QuickLaunchIcon
 
 [Run]
 Filename: "{app}\Graph.exe"; Parameters: "/regserver"; Flags: runascurrentuser
