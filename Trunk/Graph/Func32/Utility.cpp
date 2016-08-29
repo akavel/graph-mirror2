@@ -327,6 +327,15 @@ bool IsValidName(const std::wstring &Name)
 //---------------------------------------------------------------------------
 bool IsEqual(long double a, long double b)
 {
+  if(a == b)
+    return true;
+
+  //Speacial handling if one of the numbers are exact zero, we check if the other one is very close to zero
+  if(a == 0)
+    return IsZero(b);
+  if(b == 0)
+    return IsZero(a);
+
 	if(boost::math::isnan(a) && boost::math::isnan(b))
 		return true;
 
@@ -337,7 +346,7 @@ bool IsEqual(long double a, long double b)
 	frexp(a, &a_exp);
 	frexp(b, &b_exp);
 	frexp(a - b, &exp);
-	return IsZero(a-b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
+	return IsZero(a - b) || (a_exp == b_exp && std::abs(exp - a_exp) > 40);
 }
 //---------------------------------------------------------------------------
 void LogDebugString(const char *Str, const char *Str2)
