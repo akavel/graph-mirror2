@@ -261,3 +261,5 @@ msgstr ""
 msgid "Arial"
 msgstr ""
 
+msgid "Segoe UI"
+msgstr ""
