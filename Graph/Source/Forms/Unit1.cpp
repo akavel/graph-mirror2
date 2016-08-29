@@ -2628,7 +2628,8 @@ void __fastcall TForm1::ZoomFitAllActionExecute(TObject *Sender)
 void __fastcall TForm1::Panel4DockDrop(TObject *Sender,
       TDragDockObject *Source, int X, int Y)
 {
-  Panel1->Height = Form9->GetFrameHeight() ? Form9->GetFrameHeight()+10 : 100;
+  Panel1->Height = Form9->GetFrameHeight() ? Form9->GetFrameHeight() + DockCaptionHeight : 100;
+//  Panel1->Height = Form9->Height;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Panel4UnDock(TObject *Sender, TControl *Client,
@@ -2642,7 +2643,7 @@ void __fastcall TForm1::Panel4DockOver(TObject *Sender,
       bool &Accept)
 {
   // Modify the DockRect to preview dock area.
-  int FormHeight = Form9->GetFrameHeight() ? Form9->GetFrameHeight()+10 : 100;
+  int FormHeight = Form9->GetFrameHeight() ? Form9->GetFrameHeight() + DockCaptionHeight : 100;
   TPoint TopLeft = Panel1->ClientToScreen(TPoint(0, -FormHeight));
   TPoint BottomRight = Panel1->ClientToScreen(TPoint(Panel1->Width, Panel1->Height));
   Source->DockRect = TRect(TopLeft, BottomRight);

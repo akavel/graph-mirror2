@@ -51,6 +51,7 @@
 #include <stack>
 #include <boost/scoped_ptr.hpp>
 //---------------------------------------------------------------------------
+const unsigned DockCaptionHeight = 23;
 enum TCursorState {csIdle, csMoveLabel, csMoveLegend, csZoomWindow, csMove, csMoving};
 
 enum TIconIndex

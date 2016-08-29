@@ -247,7 +247,7 @@ void TForm9::ShowFrame(TEvalFrame *Frame)
       ClientHeight = GetFrame()->Height;
     }
     if(Form1->Panel1->Height)
-      Form1->Panel1->Height = VisibleFrame ? GetFrame()->Height+10 : 110;
+      Form1->Panel1->Height = VisibleFrame ? GetFrame()->Height + DockCaptionHeight : 110;
     UndockHeight = ClientHeight + SizeDif;
   }
 
@@ -262,7 +262,7 @@ void TForm9::SetEvalType(TEvalType AEvalType)
   EvalType = AEvalType;
   Visible = true;
   if(Form1->Panel4->VisibleDockClientCount)
-    Form1->Panel1->Height = VisibleFrame ? GetFrame()->Height+10 : 100;
+    Form1->Panel1->Height = VisibleFrame ? GetFrame()->Height + DockCaptionHeight : 100;
   switch(EvalType)
   {
     case etEval:
