@@ -129,7 +129,7 @@ void TestText(const std::wstring &Str, const TSymbolList &SymbolList = TSymbolLi
 	try
 	{
 		TFunc Func(Str, L"x", SymbolList);
-		Str2 = Func.MakeText();
+		Str2 = Func.MakeText(L"x", 12);
 		TFunc Func2(Str2, L"x", SymbolList);
 		if(Func != Func2)
 		{
@@ -269,9 +269,10 @@ void TestTrendLineError(Func32::TTrendType Type, const TDblPoint *Points, unsign
 	try
 	{
     std::vector<double> W;
-    TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), W, N);
+    TFunc Func = TrendLine(Type, std::vector<TDblPoint>(Points, Points + Size), W, N);
 
 		cerr << "-- Trendline --" << endl;
+		wcerr << "Evaluated to:        f(x)=" << Func << endl;
 		cerr << "Expected error code:     " << ErrorCode << endl << endl;
   }
 	catch(EFuncError &E)
@@ -1048,6 +1049,7 @@ void Test()
 
 	//Test difficult function
 	TestDif(L"(cos x)+(cos(x))/sqrt((-sin(x))^2+(cos(x))^2)", L"-sin(x)+(-sin(x)*sqrt((-sin(x))^2+cos(x)^2)-cos(x)*0.5/sqrt((-sin(x))^2+cos(x)^2)*(-(-2*sin(x)*cos(x))-2*cos(x)*sin(x)))/sqrt((-sin(x))^2+cos(x)^2)^2");
+  TestDif(L"1.571895704878E-09*x^6-4.592353958569E-07*x^5+5.360260435777E-05*x^4-0.003250317414*x^3+0.118498298369*x^2-3.424057407737*x+84.46713968647", L"6*1.571895704878E-09*x^5-5*4.592353958569E-07*x^4+4*5.360260435777E-05*x^3-3*0.003250317414*x^2+2*0.118498298369*x-3.424057407737");
 
   //Test differentioation of rounding functions
   TestDif(L"fract(x)", 5, 1);

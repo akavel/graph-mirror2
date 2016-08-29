@@ -332,10 +332,11 @@ inline unsigned FunctionArguments(const TElem &Elem)
 }
 //---------------------------------------------------------------------------
 //Check if a is very close to zero
-//From an article "The G3D Graphics Engine" by Morgan McGuire in CUJ Dec. 2004
 inline bool IsZero(long double a)
 {
-  return a == 0 || std::fabsl(a) <= 0.0000001L * (std::fabsl(a) + 1);
+//From an article "The G3D Graphics Engine" by Morgan McGuire in CUJ Dec. 2004
+//  return a == 0 || std::fabsl(a) <= 0.000001L * (std::fabsl(a) + 1);
+  return std::fabsl(a) < 1E-15; //Just check for very low number
 }
 
 template<typename T> inline T Sqr(T t)
