@@ -4,15 +4,23 @@ Func32\TFuncData.cpp must have Debugging/Expand inline functions disabled.
 Compiler bug:
 When compiling under C++ Builder XE, you will get this error:
 [BCC32 Error] closures.hpp(237): E2299 Cannot generate template specialization from 'impl::closure_frame_holder<FrameT>'
-To fix it, change line 237 in closures.hpp to:
+To fix it, change line 238 in C:\Program Files (x86)\Embarcadero\Studio\14.0\include\boost_1_39\boost\spirit\home\classic\phoenix\closures.hpp from:
+impl::closure_frame_holder<closure_frame>& frame;
+
+to:
 impl::closure_frame_holder<closure_frame<ClosureT> >& frame;
 See also QC report #79813
 
 
+
 Linker problem:
-If you get the following error:
+ If you get the following error:
+
 [ilink32 Warning] Warning: Error detected (LME288)
 [ilink32 Error] Error: Unable to perform link
+
 See: http://stackoverflow.com/questions/28929516/c-builder-xe7-lme288-error
-Try disabling Data Execution Prevention (DEP) for ilink32.exe:
+
+Try disabling Data Execution Prevention (DEP) for ilink32.exe: 
 http://www.thewindowsclub.com/turn-off-data-execution-prevention-dep
+Disabling antivirus and rebooting Windows may also help.
