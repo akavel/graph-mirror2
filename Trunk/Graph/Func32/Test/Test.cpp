@@ -773,6 +773,7 @@ void Test()
   //Test corner cases for compare
   Test(L"x = 0.2", 0.2, 1);
   Test(L"x <> 0.2", 0.2, 0);
+  Test(L"x ≠ 0.2", 0.2, 0);
   Test(L"x < 0.2", 0.2, 0);
   Test(L"x <= 0.2", 0.2, 1);
   Test(L"x > 0.2", 0.2, 0);
@@ -780,6 +781,7 @@ void Test()
 
   Test(L"x = 0.01*20", 0.2, 1);
   Test(L"x <> 0.01*20", 0.2, 0);
+  Test(L"x ≠ 0.01*20", 0.2, 0);
   Test(L"x < 0.01*20", 0.2, 0);
   Test(L"x <= 0.01*20", 0.2, 1);
   Test(L"x > 0.01*20", 0.2, 0);

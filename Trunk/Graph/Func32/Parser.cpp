@@ -1,4 +1,4 @@
-/* Copyright 2007 Ivan Johansen
+﻿/* Copyright 2007 Ivan Johansen
  *
  * Func32 is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -104,6 +104,7 @@ const struct TCompareSymbols : symbols<TElem>
 	TCompareSymbols()
 	{ add("=",  cmEqual)
 			 ("<>", cmNotEqual)
+       (L"≠", cmNotEqual)
 			 ("<",  cmLess)
 			 (">",  cmGreater)
 			 ("<=", cmLessEqual)
@@ -371,7 +372,7 @@ rule<wide_phrase_scanner_t> Literal = FirstSymbolChar >> *SymbolChar;
 rule<wide_phrase_scanner_t> MinusSign = L'-' | ch_p(L'\x2212'); //0x2212 = Unicode symbol Minus
 
 //Valid symbols in addition to 0..9, a..z and A..Z.
-static const std::wstring ValidChars = L"+-*/^=_.,()[]{} \x2212\x03C0";
+static const std::wstring ValidChars = L"+-*/^=≠<>_.,()[]{} \x2212\x03C0";
 //---------------------------------------------------------------------------
 /** Parse the string and store the result. The function is strong exception safe.
  *  \param Str: The string to parse
@@ -555,7 +556,7 @@ void TFuncData::Parse(const std::wstring &Str, const std::vector<std::wstring> &
   //      DEBUG_LOG(std::clog << MakeText(Temp2.begin()) << std::endl);
     Data.swap(Temp2);
   }
-  //Should not be necesarry. Bug in BCB6? Error on "sin �" is not caught without
+  //Should not be necesarry. Bug in BCB6? Error on "sin ¤" is not caught without
 	catch(parser_error<const EParseError, const wchar_t*> &E)
   {
     HandleParseError(E.descriptor, E.where, E.where - Begin);
