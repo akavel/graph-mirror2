@@ -164,7 +164,7 @@ void TFixedDockTree::DrawThemedGrabber(TCanvas *Canvas, TThemedRebar GripperType
 
 void __fastcall TFixedDockTree::PaintDockFrame(TCanvas *Canvas, TControl *Control, const TRect &Rect)
 {
-	if(ThemeServices()->ThemesEnabled)
+	if(ThemeServices()->ThemesEnabled())
   {
     int GrabberSize = (Screen->PixelsPerInch * 12) / 96;
     int GrabberWidth = (Screen->PixelsPerInch * 10) / 96;
@@ -236,5 +236,18 @@ bool __fastcall IsAltGRPressed()
   return false;
 }
 }*/
+//---------------------------------------------------------------------------
+namespace Winapi { namespace Windows
+{
+  //Missing declaration in Windows.hpp
+  const unsigned HH_DISPLAY_TOPIC      = 0;
+  extern PACKAGE HWND __fastcall HtmlHelp(HWND hWndCaller, System::WideChar * pszFile, unsigned uCommand, unsigned dwData);
+}}
+void ShowHelp(const String &File, const String &HelpFile)
+{
+  //Workaround for bug in THtmlHelpViewer, which only support the .htm extension
+  String Str = (HelpFile.IsEmpty() ? Application->HelpFile : HelpFile) + "::/" + File;
+  Winapi::Windows::HtmlHelp(NULL, Str.c_str(), Winapi::Windows::HH_DISPLAY_TOPIC, 0);
+}
 //---------------------------------------------------------------------------
 
