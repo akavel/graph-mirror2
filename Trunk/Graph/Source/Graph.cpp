@@ -19,13 +19,13 @@
 #include "Graph.h"
 #pragma hdrstop
 #pragma package(smart_init) // madExcept
+#ifdef MADEXCEPT
 #pragma link "madExcept"
 #pragma link "madLinkDisAsm"
 #pragma link "SystemInfo"
 #pragma link "madListHardware"
 #pragma link "madListProcesses"
 #pragma link "madListModules"
-#ifdef MADEXCEPT
 #pragma link "FPU"
 #pragma link "DisplayInfo"
 #pragma link "UserLog"
@@ -109,7 +109,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->MainFormOnTaskBar = true;
     Application->Title = "Graph";
 		Application->CreateForm(__classid(TForm1), &Form1);
-     Application->Run();
+		Application->Run();
 	}
 	catch (Exception &exception)
 	{
