@@ -111,6 +111,7 @@ void CreateDeleteHandler(TVclObject *VclObject)
  */
 struct TPythonCallback : public TCppInterfacedObject<TMethodImplementationCallback>
 {
+  TPythonCallback() {AddRef();} //Always keep a global reference; Ref count should never be 0
 	void __fastcall Invoke(void * UserData, System::DynamicArray<TValue> Args, TValue &Result);
 };
 TPythonCallback *PythonCallback = new TPythonCallback;
