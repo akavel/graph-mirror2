@@ -80,7 +80,7 @@ Source: "..\Plugins\SortPointSeries.py"; DestDir: "{app}\Plugins"; Flags: ignore
 Source: "..\Plugins\Statistics.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\Transform.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Plugins\TextFormatting.py"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
-Source: "..\Plugins\*.bmp"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
+Source: "..\Plugins\*.png"; DestDir: "{app}\Plugins"; Flags: ignoreversion overwritereadonly
 Source: "..\Lib\*.py"; DestDir: "{app}\Lib"; Flags: ignoreversion overwritereadonly
 
 [Icons]
