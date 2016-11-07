@@ -24,3 +24,12 @@ See: http://stackoverflow.com/questions/28929516/c-builder-xe7-lme288-error
 Try disabling Data Execution Prevention (DEP) for ilink32.exe: 
 http://www.thewindowsclub.com/turn-off-data-execution-prevention-dep
 Disabling antivirus and rebooting Windows may also help.
+
+Problems stepping into the VCL:
+Locate a line that looks something like this in the debug section of the project file:
+	<ILINK_LibraryPath>$(BDS)\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+Change release to debug so it looks like this:
+	<ILINK_LibraryPath>$(BDS)\lib\win32\debug\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+
+Problem with creating pre-compiled header:	
+	[bcc32 Warning] none.hpp(23): W8058 Cannot create pre-compiled header: initialized data in header
