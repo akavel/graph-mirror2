@@ -953,6 +953,7 @@ HRESULT STDMETHODCALLTYPE TOleServerImpl::Load(
   TConfigFile ConfigFile;
   ConfigFile.LoadFromString(ToWString(UTF8ToString(Str)));
   std::wstring SavedVersion = ConfigFile.Section(L"Graph").Read(L"Version", L"NA");
+  LOG_DATA(L"Version=" + AnsiString(SavedVersion.c_str()));
   if(SavedVersion < TVersion(L"4.4.0.414"))
     ConfigFile.LoadFromString(String(Str.c_str()).c_str());
 
