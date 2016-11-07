@@ -70,7 +70,7 @@ def OnSelect(Item):
     Action.Enabled = isinstance(Item, Graph.TStdFunc)
     ContextMenuItem.Visible = Action.Enabled
 
-Action = Graph.CreateAction(Caption="FFTl", OnExecute=Execute, Hint="Calculate FFT for selected function.")
+Action = Graph.CreateAction(Caption="FFT", OnExecute=Execute, Hint="Calculate FFT for selected function.")
 Graph.AddActionToMainMenu(Action)
 ContextMenuItem = Graph.AddActionToContextMenu(Action)
 Graph.OnSelect.append(OnSelect)
