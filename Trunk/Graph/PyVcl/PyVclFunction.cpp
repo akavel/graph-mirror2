@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
 #include "Python.hpp"
 #include "PyVclConvert.h"
@@ -49,12 +49,14 @@ template <typename T> inline PTypeInfo Rtti()
  */
 static const TFunctionEntry FunctionList[] =
 {
+#ifndef FIREMONKEY
 	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
+  {L"CreateMessageDialog", (TForm* __fastcall (*)(const UnicodeString, TMsgDlgType, TMsgDlgButtons, TMsgDlgBtn))&CreateMessageDialog, Rtti<Forms::TForm>(), __delphirtti(String), Rtti<TMsgDlgType>(), Rtti<TMsgDlgButtons>(), Rtti<TMsgDlgBtn>()},
+#endif
 	{L"ReadComponentResFile", ReadComponentResFile, Rtti<TComponent>(), __delphirtti(String), Rtti<TComponent>()},
 	{L"ObjectTextToBinary", (void __fastcall (*)(TStream*, TStream*))ObjectTextToBinary, NULL, Rtti<TStream>(), Rtti<TStream>()},
   {L"ShowMessage", ShowMessage, NULL, __delphirtti(String)},
-  {L"CreateMessageDialog", (TForm* __fastcall (*)(const UnicodeString, TMsgDlgType, TMsgDlgButtons, TMsgDlgBtn))&CreateMessageDialog, Rtti<Forms::TForm>(), __delphirtti(String), Rtti<TMsgDlgType>(), Rtti<TMsgDlgButtons>(), Rtti<TMsgDlgBtn>()},
   {L"MessageDlg", (int __fastcall (*)(const UnicodeString, TMsgDlgType, TMsgDlgButtons, int, TMsgDlgBtn))&MessageDlg, __delphirtti(int), __delphirtti(String), Rtti<TMsgDlgType>(), Rtti<TMsgDlgButtons>(), __delphirtti(int), Rtti<TMsgDlgBtn>()},
 };
 //---------------------------------------------------------------------------
@@ -75,7 +77,7 @@ static PyObject *VclFunction_Repr(TVclFunction* self)
 	if(self->Function->Result)
 		Str += ":" + AnsiString(self->Function->Result->Name);
 	Str += ">";
-	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+	return ToPyObject(Str);
 }
 //---------------------------------------------------------------------------
 /** Call a global VCL function through the VclFunction object.

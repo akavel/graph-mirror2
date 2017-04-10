@@ -7,15 +7,14 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
-#pragma hdrstop
-#include "Python.hpp"
-#include <structmember.h>
 #define private public   //Because TMethodImplementation::FInvokeInfo is private in XE
 #define protected public //Because TMethodImplementation::FInvokeInfo is protected in XE4
 #include <Rtti.hpp>
 #undef private
 #undef protected
+#include "Platform.h"
+#pragma hdrstop
+#include "Python.hpp"
 #include "PyVclObject.h"
 #include "PyVclMethod.h"
 #include "PyVcl.h"
@@ -247,7 +246,7 @@ static PyObject *VclObject_Repr(TVclObject* self)
 			Str = "<object '" + Component->Name + "' of type '" + Component->ClassName() + "'>";
 		else
 			Str = "<object of type '" + self->Instance->ClassName() + "'>";
-		return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+		return ToPyObject(Str);
 	}
 	catch(...)
 	{
@@ -303,9 +302,11 @@ static void VclObject_Dealloc(TVclObject* self)
 {
 	if(self->Owned)
 	{
+#ifndef FIREMONKEY
 		if(TWinControl *Control = dynamic_cast<TWinControl*>(self->Instance))
 			while(Control->ControlCount)
 				Control->Controls[Control->ControlCount-1]->Parent = NULL;
+#endif
 		delete self->Instance;
 	}
 	else
@@ -553,7 +554,7 @@ static int VclObject_SetSubscript(TVclObject *self, PyObject *key, PyObject *v)
 //---------------------------------------------------------------------------
 static PyMemberDef VclObject_Members[] =
 {
-	{"_owned", T_BOOL, offsetof(TVclObject, Owned), 0, "Indicates if the VCL object is freed when the proxy is destroyed"},
+	{(char*)"_owned", T_BOOL, offsetof(TVclObject, Owned), 0, (char*)"Indicates if the VCL object is freed when the proxy is destroyed"},
 	{NULL, 0, 0, 0, NULL}
 };
 //---------------------------------------------------------------------------

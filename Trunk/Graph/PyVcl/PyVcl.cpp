@@ -7,16 +7,12 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
 #include "PyVcl.h"
-#include <ActnMan.hpp>
 #include "python.hpp"
-#include <structmember.h>
 #include "PyVclConvert.h"
 #include "FindClass.hpp"
-#include <OleCtrls.hpp>
-#include <clipbrd.hpp>
 #include "PyVClMethod.h"
 #include "PyVClClosure.h"
 #include "PyVclObject.h"
@@ -40,8 +36,10 @@ struct TGlobalObjectEntry
 static TGlobalObjectEntry GlobalObjectList[] =
 {
 	"Application", Application,
+#ifndef FIREMONKEY
 	"Mouse", Mouse,
 	"Clipboard", Clipboard(),
+#endif
 	"Screen", Screen,
 };
 //---------------------------------------------------------------------------
@@ -91,14 +89,14 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
 			TClass Class = GetClass(Name);
 			if(Class)
 				Type = Context.GetType(Class);
-    }
+		}
 		if(Type != NULL)
 			Result = VclType_Create(Type);
 		else
 			Result = VclFunction_Create(Name);
 		if(Result == NULL)
-    {
-  		SetErrorString(PyExc_AttributeError, "VCL has no global attribute '" + Name + "'");
+		{
+		  SetErrorString(PyExc_AttributeError, "VCL has no global attribute '" + Name + "'");
       return NULL;
     }
 
@@ -116,8 +114,8 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
  */
 static PyObject* VclModule_CreateForm(PyObject *self, PyObject *arg)
 {
-  TForm *Form;
-  Application->CreateForm(__classid(TForm), &Form);
+  TForm *Form = new TForm(NULL, 0);
+//  Application->CreateForm(__classid(TForm), &Form);
   return VclObject_Create(Form, false);
 }
 //---------------------------------------------------------------------------

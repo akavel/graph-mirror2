@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
 #include "Python.hpp"
 #include "PyVclConvert.h"

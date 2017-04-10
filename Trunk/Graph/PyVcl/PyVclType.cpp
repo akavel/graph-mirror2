@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
 #include "Python.hpp"
 #include "PyVclMethod.h"
@@ -39,10 +39,15 @@ int VclType_Init(TVclObject *self, PyObject *args, PyObject *kwds)
 	try
 	{
 		TVclType *Type = reinterpret_cast<TVclType*>(self->ob_base.ob_type);
-		DynamicArray<TRttiMethod*> Methods = Type->RttiType->GetMethods("Create");
-		if(Methods.Length == 0)
-		  throw EPyVclError("No constructor found");
-		self->Instance = CallMethod(Type->RttiType, NULL, Methods, args).AsObject();
+/*    if(Type->RttiType->Handle == __delphirtti(TForm))
+      self->Instance = new TForm(NULL, 0);
+    else*/
+    {
+		  DynamicArray<TRttiMethod*> Methods = Type->RttiType->GetMethods("Create");
+		  if(Methods.Length == 0)
+		    throw EPyVclError("No constructor found");
+  		self->Instance = CallMethod(Type->RttiType, NULL, Methods, args).AsObject();
+    }
 		self->Owned = true;
 		CreateDeleteHandler(self);
 		if(kwds)
