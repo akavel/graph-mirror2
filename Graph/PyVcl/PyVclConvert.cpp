@@ -7,12 +7,12 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
-#pragma hdrstop
-#include "Python.hpp"
-#define private public
+#define private public  //Nasty hack to get access to TMethodImplementation::FUserData
 #include <Rtti.hpp>
 #undef private
+#include "Platform.h"
+#pragma hdrstop
+#include "Python.hpp"
 #include "PyVclConvert.h"
 #include "PyVclObject.h"
 #include "PyVclMethod.h"
@@ -184,7 +184,11 @@ PyObject* ToPyObject(const std::wstring &Str)
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(const String &Str)
 {
+#ifdef _Windows
 	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+#else
+	return PyUnicode_DecodeUTF16(reinterpret_cast<const char*>(Str.c_str()), Str.Length(), NULL, NULL);
+#endif
 }
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(TObject *Object)
@@ -348,17 +352,32 @@ template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
 //---------------------------------------------------------------------------
 template<> String FromPyObject<String>(PyObject *O)
 {
+  String Str;
+#ifdef _Windows
   Py_ssize_t Size = PyUnicode_GetSize(O);
   if(Size == -1)
   {
     PyErr_Clear();
 		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'String'");
   }
-  String Str;
   Str.SetLength(Size);
   if(Str.Length() == 0)
-    return Str;
+	  return Str;
   PyUnicode_AsWideChar(O, &Str[1], Str.Length());
+#else
+	TPyObjectPtr UTF16(PyUnicode_AsUTF16String(O), false);
+  if(UTF16)
+  {
+    Py_ssize_t Size;
+    char *Data;
+    if(PyBytes_AsStringAndSize(UTF16.get(), &Data, &Size) != -1)
+    {
+      Str.SetLength(Size / 2);
+      memcpy(&Str[1], Data, Size);
+    }
+  }
+//  throw EPyVclError("Not implemented!");
+#endif
 	return Str;
 }
 //---------------------------------------------------------------------------
@@ -402,7 +421,7 @@ PyObject* PyVclHandleException()
   }
 	catch(Exception &E)
 	{
-		SetErrorString(PyVclException, E.Message);
+		SetErrorString(PyVclException, E.ClassName() + ": " + E.Message);
 	}
 	catch(std::exception &E)
 	{

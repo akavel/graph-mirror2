@@ -7,21 +7,26 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
+#ifdef _Windows
 #define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
+#endif
 #include "PythonBind.h"
 #include "python.hpp"
 #include "PyVclObject.h"
 #include <float.h>
 #ifdef _WIN64
 #pragma link "python32.a"
-#else
+#elif defined(__WIN32__)
 #pragma link "python32.lib"
+#else
+#pragma link "python35.dylib"
 #endif
 //---------------------------------------------------------------------------
 namespace Python
 {
+#ifdef _Windows
 HINSTANCE PythonInstance = NULL;
 //---------------------------------------------------------------------------
 template<typename T>
@@ -32,15 +37,18 @@ T& GetPythonAddress(const char *Name)
     return *reinterpret_cast<T*>(GetProcAddress(PythonInstance, Name));
   return Dummy;
 }
+#endif
 //---------------------------------------------------------------------------
 bool IsPythonInstalled()
 {
 	static int Result = -1;
+#ifdef _Windows
   if(Result == -1)
   {
     PythonInstance = LoadLibrary(L"Python32.dll");
     Result = PythonInstance != NULL;
   }
+#endif
   return Result;
 }
 //---------------------------------------------------------------------------
@@ -107,7 +115,6 @@ void boost::intrusive_ptr_release(PyObject *O)
   Py_DECREF(O);
 }
 //---------------------------------------------------------------------------
-
 
 
 

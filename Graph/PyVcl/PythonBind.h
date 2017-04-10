@@ -22,9 +22,12 @@ typedef _object PyObject;
 #ifdef _WIN64
 #define SET_PYTHON_FPU_MASK()
 #define SET_DEFAULT_FPU_MASK()
-#else
+#elif defined(__WIN32__)
 #define SET_PYTHON_FPU_MASK() _control87(PYTHON_FPU_CONTROL, FPU_MASK)
 #define SET_DEFAULT_FPU_MASK() _clear87(), _control87(DEFAULT_FPU_CONTROL, FPU_MASK)
+#else
+#define SET_PYTHON_FPU_MASK()
+#define SET_DEFAULT_FPU_MASK()
 #endif
 
 namespace boost
@@ -39,7 +42,7 @@ namespace Python
 template<typename T> T& GetPythonAddress(const char *Name);
 
 #ifndef PYTHON_WRAP
-#define PYTHON_WRAP(type,name) extern type& name;
+#define PYTHON_WRAP(type,name) //extern type& name;
 #endif
 PYTHON_WRAP(_typeobject, PyBool_Type)
 PYTHON_WRAP(_typeobject, PyTuple_Type)

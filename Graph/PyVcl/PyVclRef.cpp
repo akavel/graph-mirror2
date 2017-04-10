@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
 #include "Python.hpp"
 #include "PythonBind.h"
@@ -68,7 +68,7 @@ static int VclRef_SetValue(TVclRef *self, PyObject *value, void *closure)
 //---------------------------------------------------------------------------
 static PyGetSetDef VclRefr_GetSeters[] =
 {
-	{"Value", (getter)VclRef_GetValue, (setter)VclRef_SetValue, "Referenced value", NULL},
+	{(char*)"Value", (getter)VclRef_GetValue, (setter)VclRef_SetValue, (char*)"Referenced value", NULL},
 	{NULL}  /* Sentinel */
 };
 //---------------------------------------------------------------------------

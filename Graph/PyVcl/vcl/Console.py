@@ -3,7 +3,7 @@ import sys
    
 class ConsoleForm:
   def __init__(self):
-    self.LastIndex = 0
+    self.LastIndex = 0 # Indicates position after prompt, i.e. start of command
     self.Command = ""
     self.TextCache = [""]
     self.CacheIndex = 0

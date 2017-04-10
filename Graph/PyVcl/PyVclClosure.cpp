@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
 #include "Python.hpp"
 #include "PyVclClosure.h"
@@ -86,7 +86,7 @@ static PyObject* VclClosure_GetSelf(TVclClosure *self, void *closure)
 //---------------------------------------------------------------------------
 static PyGetSetDef VclClosure_GetSeters[] =
 {
-	{"__self__", (getter)VclClosure_GetSelf, NULL, "Object part of closure.", NULL},
+	{(char*)"__self__", (getter)VclClosure_GetSelf, NULL, (char*)"Object part of closure.", NULL},
 	{NULL}  /* Sentinel */
 };
 //---------------------------------------------------------------------------

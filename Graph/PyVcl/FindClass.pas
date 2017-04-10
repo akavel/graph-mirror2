@@ -11,18 +11,31 @@ function GetTypeList : TStringList;
 procedure RegisterType(TypeInfo : PTypeInfo);
 
 implementation
-uses Forms, StdCtrls, Types, Graphics, SysUtils, ActnList, ExtCtrls, Math,
+uses
+{$ifdef FIREMONKEY}
+  fmx.Forms, fmx.StdCtrls, fmx.Edit, fmx.Memo;
+{$ifdef tdfht}
+  fmx.Forms, fmx.StdCtrls, Types, fmx.Graphics, SysUtils, fmx.ActnList, fmx.ExtCtrls, Math,
+  WideStrUtils, (*ClipBrd, fmx.Mask,*) fmx.Controls, HelpIntfs, IniFiles, (*Grids,*)
+  DateUtils, SyncObjs,Masks, fmx.Menus, fmx.Dialogs, (*Printers, Registry,*) VarUtils, (*DockTabSet,*)
+  Variants, ZLib, (*AppEvnts, GraphUtil, CategoryButtons, Buttons,*) fmx.StdActns, (*ExtActns,*)
+  Contnrs, (*ButtonGroup, CaptionedDockTree, ImgList,*) Character, StrUtils, ConvUtils,
+  (*ListActns,*) Generics.Defaults, Generics.Collections, IOUtils, (*ValEdit, ToolWin,*)
+  (*Tabs,*) MaskUtils, (*Messages,*) Rtti, (*ExtDlgs, IMouse,*) Diagnostics, (*Themes,*) Timespan, fmx.Edit,
+  WideStrings (*, ComCtrls*)
+ (* , Actions, UITypes*)
+  ;
+{$ifend}
+{$else}
+  Forms, StdCtrls, Types, Graphics, SysUtils, ActnList, ExtCtrls, Math,
   WideStrUtils, ClipBrd, Mask, Controls, HelpIntfs, IniFiles, Grids,
   DateUtils, SyncObjs,Masks, Menus, Dialogs, Printers, Registry, VarUtils, DockTabSet,
   Variants, ZLib, AppEvnts, GraphUtil, CategoryButtons, Buttons, StdActns, ExtActns,
   Contnrs, ButtonGroup, CaptionedDockTree, ImgList, Character, StrUtils, ConvUtils,
   ListActns, Generics.Defaults, Generics.Collections, IOUtils, ValEdit, ToolWin,
   Tabs, MaskUtils, Messages, Rtti, ExtDlgs, IMouse, Diagnostics, Themes, Timespan,
-  WideStrings, ComCtrls
-{$IF CompilerVersion > 23.0}
-  , Actions, UITypes
-{$IFEND}
-  ;
+  WideStrings, ComCtrls, Actions, UITypes;
+{$ifend}
 
 var
   TypeList : TStringList;
@@ -52,6 +65,11 @@ begin
   TypeList := TStringList.Create();
   TypeList.Sorted := True;
 
+  TypeList.AddObject('TForm', TypeInfo(TForm));
+  TypeList.AddObject('TButton', TypeInfo(TButton));
+  TypeList.AddObject('TEdit', TypeInfo(TEdit));
+  TypeList.AddObject('TMemo', TypeInfo(TMemo));
+(*
   TypeList.AddObject('CharSet', TypeInfo(CharSet));
   TypeList.AddObject('Comp', TypeInfo(Comp));
   TypeList.AddObject('Currency', TypeInfo(Currency));
@@ -1335,7 +1353,7 @@ begin
   TypeList.AddObject('UTF8String', TypeInfo(UTF8String));
   TypeList.AddObject('UnitEntryTable', TypeInfo(UnitEntryTable));
   TypeList.AddObject('Variant', TypeInfo(Variant));
-  TypeList.AddObject('WordRec', TypeInfo(WordRec));
+  TypeList.AddObject('WordRec', TypeInfo(WordRec));*)
 end;
 
 begin

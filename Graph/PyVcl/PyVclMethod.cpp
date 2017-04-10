@@ -7,7 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#include <vcl.h>
+#include "Platform.h"
 #pragma hdrstop
 #include "Python.hpp"
 #include "PyVclMethod.h"
@@ -45,7 +45,7 @@ static PyObject *VclMethod_Repr(TVclMethod* self)
 		Str += " of <object '" + Component->Name + "' of type '" + Component->ClassName() + "'>>";
 	else
 		Str += " of <object of type '" + self->Instance->ClassName() + "'>>";
-	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+	return ToPyObject(Str);
 }
 //---------------------------------------------------------------------------
 /** Call a method of a VCL object or a constructor of a VCL type.
@@ -95,7 +95,11 @@ TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*>
 		{
 			if(Type == NULL)
 				throw EPyVclError("Cannot call constructor");
-			return Method->Invoke(Type->AsInstance->MetaclassType, Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
+      TMetaClass *MetaClass = Type->AsInstance->MetaclassType;
+      TValue *P = Parameters.size() == 0 ? NULL : &Parameters[0];
+      int Count = Parameters.size()-1;
+//      return TValue::From<TObject*>(new TEdit(NULL));
+			return Method->Invoke(MetaClass, P, Count);
 		}
 		else if(Method->IsClassMethod || Method->IsStatic)
 			return Method->Invoke(Instance->ClassType(), Parameters.size() == 0 ? NULL : &Parameters[0], Parameters.size()-1);
