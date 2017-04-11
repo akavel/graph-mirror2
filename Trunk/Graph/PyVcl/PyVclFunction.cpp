@@ -49,7 +49,7 @@ template <typename T> inline PTypeInfo Rtti()
  */
 static const TFunctionEntry FunctionList[] =
 {
-#ifndef FIREMONKEY
+#if !FIREMONKEY
 	{L"ShortCutToText", ShortCutToText, __delphirtti(String), __delphirtti(TShortCut)},
 	{L"TextToShortCut", TextToShortCut, __delphirtti(TShortCut), __delphirtti(String)},
   {L"CreateMessageDialog", (TForm* __fastcall (*)(const UnicodeString, TMsgDlgType, TMsgDlgButtons, TMsgDlgBtn))&CreateMessageDialog, Rtti<Forms::TForm>(), __delphirtti(String), Rtti<TMsgDlgType>(), Rtti<TMsgDlgButtons>(), Rtti<TMsgDlgBtn>()},
@@ -114,7 +114,7 @@ static PyObject *VclFunction_Call(TVclFunction* self, PyObject *args, PyObject *
 PyTypeObject VclFunction_Type =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vcl.VclFunction",       	 /* tp_name */
+	GUI_TYPE "Function",     	 /* tp_name */
 	sizeof(TVclFunction),      /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	0, 												 /* tp_dealloc */
@@ -133,7 +133,7 @@ PyTypeObject VclFunction_Type =
 	0,                         /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	"VCL global function object", /* tp_doc */
+	PROJECT_NAME " global function object", /* tp_doc */
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
 	0,		                     /* tp_richcompare */

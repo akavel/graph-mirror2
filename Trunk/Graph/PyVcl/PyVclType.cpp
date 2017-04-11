@@ -81,7 +81,7 @@ PyObject* VclType_Create(TRttiType *Type)
 	char *Name = new char[Type->Name.Length()+1];
 	strcpy(Name, AnsiString(Type->Name).c_str());
 	VclType->Type.tp_name = Name;
-	VclType->Type.tp_doc = "VCL type";
+	VclType->Type.tp_doc = PROJECT_NAME " type";
 	VclType->Type.tp_new = VclType_New;
 	VclType->Type.tp_init = reinterpret_cast<initproc>(VclType_Init);
 	VclType->Type.tp_base = &VclObject_Type;

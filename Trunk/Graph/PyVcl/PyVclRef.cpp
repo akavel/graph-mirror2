@@ -85,7 +85,7 @@ static PyGetSetDef VclRefr_GetSeters[] =
 PyTypeObject VclRef_Type =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vcl.VclRef",        	 		 /* tp_name */
+	GUI_TYPE "Ref",      	 		 /* tp_name */
 	sizeof(TVclRef),        	 /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	0,												 /* tp_dealloc */
@@ -156,7 +156,7 @@ const TValue& VclRef_AsValue(PyObject *O)
       throw EPyVclError("Value referenced by VclRef has been freed.");
     return *reinterpret_cast<TVclRef*>(O)->Value;
   }
-  throw EPyVclError("Object is not a vcl.VclRef object.");
+  throw EPyVclError("Object is not a " GUI_TYPE "Ref object.");
 }
 //---------------------------------------------------------------------------
 /** Invalidate the reference inside the VclRef object.
@@ -166,7 +166,7 @@ const TValue& VclRef_AsValue(PyObject *O)
 void VclRef_Invalidate(PyObject *O)
 {
   if(O->ob_type != &VclRef_Type)
-    throw EPyVclError("Object is not a vcl.VclRef object.");
+    throw EPyVclError("Object is not a " GUI_TYPE "Ref object.");
   reinterpret_cast<TVclRef*>(O)->Value = NULL;
 }
 //---------------------------------------------------------------------------

@@ -35,9 +35,11 @@ static PyObject *VclMethod_Repr(TVclMethod* self)
 	for(int I = 0; I < self->Methods.get_length(); I++)
 	{
 		TRttiMethod *Method = self->Methods[I];
+    //Filter away methods that are the same as the previous in a derived class.
 		if(Method->VirtualIndex != VirtualIndex)
 			Str += Method->ToString() + ", ";
-		VirtualIndex = Method->VirtualIndex;
+    if(Method->DispatchKind == dkVtable)
+  		VirtualIndex = Method->VirtualIndex;
 	}
 	Str.Delete(Str.Length()-1, 2); //Remove last ", "
 	TComponent *Component = dynamic_cast<TComponent*>(self->Instance);
@@ -98,7 +100,6 @@ TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*>
       TMetaClass *MetaClass = Type->AsInstance->MetaclassType;
       TValue *P = Parameters.size() == 0 ? NULL : &Parameters[0];
       int Count = Parameters.size()-1;
-//      return TValue::From<TObject*>(new TEdit(NULL));
 			return Method->Invoke(MetaClass, P, Count);
 		}
 		else if(Method->IsClassMethod || Method->IsStatic)
@@ -142,7 +143,7 @@ static void VclMethod_Dealloc(TVclMethod* self)
 PyTypeObject VclMethod_Type =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vcl.VclMethod",        	 /* tp_name */
+	GUI_TYPE "Method",       	 /* tp_name */
 	sizeof(TVclMethod),        /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	(destructor)VclMethod_Dealloc, /* tp_dealloc */
@@ -161,7 +162,7 @@ PyTypeObject VclMethod_Type =
 	0,                         /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	"VCL method object",       /* tp_doc */
+	PROJECT_NAME " method object",       /* tp_doc */
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
 	0,		                     /* tp_richcompare */

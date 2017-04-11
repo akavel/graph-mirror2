@@ -27,7 +27,7 @@ PyMODINIT_FUNC __stdcall INIT_FUNC(void)
   return Python::InitPyVcl();
 }
 //---------------------------------------------------------------------------
-#ifndef FIREMONKEY
+#if !FIREMONKEY
 /* Replacement for TWinControl::DestroyWindowHandle() in Controls.pas.
  * This does not throw an exception if the window handle cannot be destroyed.
  * This prevents a crash when the console is closed by pressing Ctrl+C or using the
@@ -44,7 +44,7 @@ void __fastcall TWinControl::DestroyWindowHandle()
 }
 #endif
 //---------------------------------------------------------------------------
-#ifdef FIREMONKEY
+#if FIREMONKEY
 /** Replacement for Fmx::Forms::ApplicationState in FMX.Forms.pas.
  *  The cursor is not shown in a TEdit or TMemo before Application.Run() is called.
  *  To show the cursor ApplicationState() must return Running, which it does when Application->FRunning is true.

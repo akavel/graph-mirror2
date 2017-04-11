@@ -56,14 +56,15 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <ILINK_LibraryPath>..;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <OutputExt>pyd</OutputExt>
+        <DCC_Define>FIREMONKEY;$(DCC_Define)</DCC_Define>
+        <ILINK_LibraryPath>..;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <AllPackageLibs>rtl.lib;fmx.lib;vcl.lib</AllPackageLibs>
         <SanitizedProjectName>fmx</SanitizedProjectName>
-        <Manifest_File>None</Manifest_File>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <Defines>FIREMONKEY;$(Defines)</Defines>
+        <Defines>FIREMONKEY=1;$(Defines)</Defines>
         <UsingDelphiRTL>true</UsingDelphiRTL>
         <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -104,6 +105,7 @@
         <PackageImports>adortl;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;DBXSqliteDriver;dsnap;dsnapcon;dsnapxml;fmx;fmxase;fmxdae;fmxobj;FMXTee;FmxTeeUI;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MetropolisUILiveTile;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclx;xmlrtl;$(PackageImports)</PackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <OutputExt>pyd</OutputExt>
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
         <DCC_Optimize>false</DCC_Optimize>
@@ -111,7 +113,7 @@
         <Defines>_DEBUG;$(Defines)</Defines>
         <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
         <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
-        <DCC_Define>DEBUG</DCC_Define>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
         <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
         <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
         <BCC_StackFrames>true</BCC_StackFrames>
@@ -134,7 +136,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <FinalOutputDir>fmx</FinalOutputDir>
-        <Debugger_RunParams>Console.py</Debugger_RunParams>
         <Debugger_HostApplication>C:\Python32\python.exe</Debugger_HostApplication>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <ILINK_LibraryPath>$(BDS)\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>

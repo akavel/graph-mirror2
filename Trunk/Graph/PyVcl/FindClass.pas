@@ -13,7 +13,7 @@ procedure RegisterType(TypeInfo : PTypeInfo);
 implementation
 uses
 {$ifdef FIREMONKEY}
-  fmx.Forms, fmx.StdCtrls, fmx.Edit, fmx.Memo;
+  fmx.Forms, fmx.StdCtrls, fmx.Edit, fmx.Memo, fmx.platform;
 {$ifdef tdfht}
   fmx.Forms, fmx.StdCtrls, Types, fmx.Graphics, SysUtils, fmx.ActnList, fmx.ExtCtrls, Math,
   WideStrUtils, (*ClipBrd, fmx.Mask,*) fmx.Controls, HelpIntfs, IniFiles, (*Grids,*)
@@ -25,7 +25,7 @@ uses
   WideStrings (*, ComCtrls*)
  (* , Actions, UITypes*)
   ;
-{$ifend}
+{$endif}
 {$else}
   Forms, StdCtrls, Types, Graphics, SysUtils, ActnList, ExtCtrls, Math,
   WideStrUtils, ClipBrd, Mask, Controls, HelpIntfs, IniFiles, Grids,
@@ -35,7 +35,7 @@ uses
   ListActns, Generics.Defaults, Generics.Collections, IOUtils, ValEdit, ToolWin,
   Tabs, MaskUtils, Messages, Rtti, ExtDlgs, IMouse, Diagnostics, Themes, Timespan,
   WideStrings, ComCtrls, Actions, UITypes;
-{$ifend}
+{$endif}
 
 var
   TypeList : TStringList;
@@ -69,6 +69,10 @@ begin
   TypeList.AddObject('TButton', TypeInfo(TButton));
   TypeList.AddObject('TEdit', TypeInfo(TEdit));
   TypeList.AddObject('TMemo', TypeInfo(TMemo));
+//  TypeList.AddObject('TRichEdit', TypeInfo(TRichEdit));
+//  TypeList.AddObject('TPopupMenu', TypeInfo(TPopupMenu));
+  TypeList.AddObject('TPlatformServices', TypeInfo(TPlatformServices));
+
 (*
   TypeList.AddObject('CharSet', TypeInfo(CharSet));
   TypeList.AddObject('Comp', TypeInfo(Comp));
