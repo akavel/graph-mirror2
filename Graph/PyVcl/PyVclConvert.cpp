@@ -376,7 +376,6 @@ template<> String FromPyObject<String>(PyObject *O)
       memcpy(&Str[1], Data, Size);
     }
   }
-//  throw EPyVclError("Not implemented!");
 #endif
 	return Str;
 }

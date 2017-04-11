@@ -95,7 +95,7 @@ static PyGetSetDef VclClosure_GetSeters[] =
 PyTypeObject VclClosure_Type =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vcl.VclClosure",        	 /* tp_name */
+	GUI_TYPE "Closure",      	 /* tp_name */
 	sizeof(TVclClosure),       /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	(destructor)VclClosure_Dealloc, /* tp_dealloc */
@@ -114,7 +114,7 @@ PyTypeObject VclClosure_Type =
 	0,                         /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	"VCL closure object",      /* tp_doc */
+	PROJECT_NAME " closure object",      /* tp_doc */
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
 	0,		                     /* tp_richcompare */

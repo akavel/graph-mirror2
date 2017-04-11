@@ -302,7 +302,7 @@ static void VclObject_Dealloc(TVclObject* self)
 {
 	if(self->Owned)
 	{
-#ifndef FIREMONKEY
+#if !FIREMONKEY
 		if(TWinControl *Control = dynamic_cast<TWinControl*>(self->Instance))
 			while(Control->ControlCount)
 				Control->Controls[Control->ControlCount-1]->Parent = NULL;
@@ -554,7 +554,7 @@ static int VclObject_SetSubscript(TVclObject *self, PyObject *key, PyObject *v)
 //---------------------------------------------------------------------------
 static PyMemberDef VclObject_Members[] =
 {
-	{(char*)"_owned", T_BOOL, offsetof(TVclObject, Owned), 0, (char*)"Indicates if the VCL object is freed when the proxy is destroyed"},
+	{(char*)"_owned", T_BOOL, offsetof(TVclObject, Owned), 0, (char*)"Indicates if the " PROJECT_NAME " object is freed when the proxy is destroyed"},
 	{NULL, 0, 0, 0, NULL}
 };
 //---------------------------------------------------------------------------
@@ -620,7 +620,7 @@ PyMappingMethods VclObject_Mapping =
 PyTypeObject VclObject_Type =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vcl.VclObject",        	 /* tp_name */
+	GUI_TYPE "Object",         /* tp_name */
 	sizeof(TVclObject),        /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	(destructor)VclObject_Dealloc, /* tp_dealloc */
@@ -639,7 +639,7 @@ PyTypeObject VclObject_Type =
 	(setattrofunc)VclObject_SetAttro, /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	"VCL object",       			 /* tp_doc */
+	PROJECT_NAME " object",       			 /* tp_doc */
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
 	(richcmpfunc)VclObject_RichCompare, /* tp_richcompare */
@@ -703,7 +703,7 @@ bool VclObject_Check(PyObject *O)
 TObject* VclObject_AsObject(PyObject *O)
 {
 	if(O->ob_type->tp_repr != VclObject_Type.tp_repr)
-		throw EPyVclError("Object is not a VclObject type");
+		throw EPyVclError("Object is not a " GUI_TYPE "Object type");
 	return reinterpret_cast<TVclObject*>(O)->Instance;
 }
 //---------------------------------------------------------------------------

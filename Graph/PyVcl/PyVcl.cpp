@@ -36,11 +36,13 @@ struct TGlobalObjectEntry
 static TGlobalObjectEntry GlobalObjectList[] =
 {
 	"Application", Application,
-#ifndef FIREMONKEY
+	"Screen", Screen,
+#if !FIREMONKEY
 	"Mouse", Mouse,
 	"Clipboard", Clipboard(),
+#else
+  "Platform", TPlatformServices::Current,
 #endif
-	"Screen", Screen,
 };
 //---------------------------------------------------------------------------
 /** Retrieve a list of available variables, types and functions in PyVcl.vcl.
@@ -96,7 +98,7 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
 			Result = VclFunction_Create(Name);
 		if(Result == NULL)
 		{
-		  SetErrorString(PyExc_AttributeError, "VCL has no global attribute '" + Name + "'");
+		  SetErrorString(PyExc_AttributeError, GUI_NAME " has no global attribute '" + Name + "'");
       return NULL;
     }
 
@@ -115,8 +117,7 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
 static PyObject* VclModule_CreateForm(PyObject *self, PyObject *arg)
 {
   TForm *Form = new TForm(NULL, 0);
-//  Application->CreateForm(__classid(TForm), &Form);
-  return VclObject_Create(Form, false);
+  return VclObject_Create(Form, true);
 }
 //---------------------------------------------------------------------------
 static PyMethodDef VclModule_Methods[] =
@@ -132,7 +133,7 @@ static PyMethodDef VclModule_Methods[] =
 static PyTypeObject VclModule_Type =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vclmodule",        	 		 /* tp_name */
+	GUI_NAME "module",         /* tp_name */
 	0, /* Initialized later */ /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	0, 												 /* tp_dealloc */
@@ -151,7 +152,11 @@ static PyTypeObject VclModule_Type =
 	PyObject_GenericSetAttr,	 /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
+#if FIREMONKEY
+	"Module wrapping the FireMonkey (FMX) library", /* tp_doc */
+#else
 	"Module wrapping the Visual Component Library (VCL)", /* tp_doc */
+#endif
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
 	0,		                     /* tp_richcompare */
@@ -174,8 +179,12 @@ static PyTypeObject VclModule_Type =
 static PyModuleDef PyVclModuleDef =
 {
 	PyModuleDef_HEAD_INIT,
-	"vcl",           //m_name
+	GUI_NAME,           //m_name
+#if FIREMONKEY
+  "Module wrapping the FireMonkey (FMX) library", //m_doc
+#else
 	"Module wrapping the Visual Component Library (VCL)", //m_doc
+#endif
 	-1, //m_size
 	NULL, //m_methods
 	NULL, //m_reload
@@ -210,9 +219,9 @@ PyObject* InitPyVcl()
 		Py_DECREF(NewObject);
 	}
 
-	PyVclException = PyErr_NewException("vcl.VclError", NULL, NULL);
+	PyVclException = PyErr_NewException(FIREMONKEY ? "fmx.FmxError" : "vcl.VclError", NULL, NULL);
   Py_INCREF(PyVclException);
-	PyModule_AddObject(PyVclModule, "VclError", PyVclException); //This steals a reference
+	PyModule_AddObject(PyVclModule, FIREMONKEY ? "FmxError" : "VclError", PyVclException); //This steals a reference
 
   //Nasty hack: Change vcl module to be an instance of VclModuleType instead of
   //PyModule_Type (module).

@@ -102,7 +102,7 @@ PyMappingMethods VclIndexedProperty_Mapping =
 PyTypeObject VclIndexedProperty_Type =
 {
 	PyObject_HEAD_INIT(NULL)
-	"vcl.VclIndexedProperty",	 /* tp_name */
+	GUI_TYPE "IndexedProperty",	 /* tp_name */
 	sizeof(TVclIndexedProperty), /* tp_basicsize */
 	0,                         /* tp_itemsize */
 	0, 												 /* tp_dealloc */
@@ -121,7 +121,7 @@ PyTypeObject VclIndexedProperty_Type =
 	0, 												 /* tp_setattro */
 	0,                         /* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	"VCL indexed property",		 /* tp_doc */
+	PROJECT_NAME " indexed property",		 /* tp_doc */
 	0,		                     /* tp_traverse */
 	0,		                     /* tp_clear */
 	0,		                     /* tp_richcompare */
