@@ -11,12 +11,13 @@ class ConsoleForm:
     
     self.Form = fmx.CreateForm()
     self.Form.OnClose = self.Close
-    self.Form.Width = 600 
+    self.Form.Width = fmx.Platform.GetScreenSize()[0][0] // 2
+    self.Form.Height = fmx.Platform.GetScreenSize()[0][1] // 3
     self.Form.Caption = "Python interpreter"
     
     self.Memo = fmx.TMemo(None, Parent=self.Form, Align="alClient", OnKeyDown=self.KeyDown, OnKeyUp=self.KeyUp)      
     self.Memo.Font.Family = "Courier New"
-    self.Memo.Font.Size = 14
+    self.Memo.Font.Size = 28
     self.Memo.StyledSettings = {'FontColor', 'Style'}
     self.Memo.TextSettings.WordWrap = True;
 
@@ -52,11 +53,11 @@ class ConsoleForm:
   
   def HandlePaste(self):
     if self.Memo.SelStart >= self.LastIndex:
-      Lines = fmx.Clipboard.AsText.split("\n")
+      Lines = fmx.Platform.GetClipboard().split("\n")
       for Str in Lines:
         self.SetSelText(Str)
         if len(Lines) > 1:
-          self.HandleNewLine()
+          self.HandleNewLine(False)
     
   def KeyDown(self, Sender, Key, KeyChar, Shift):
     if (Shift == {"ssCtrl"} and Key.Value == ord("V")) or (Shift == {"ssShift"} and Key.Value == 0x2D): #0x2D=VK_INSERT
@@ -128,7 +129,7 @@ class ConsoleForm:
     self.IndentLevel = 0
     self.WritePrompt()
 
-  def HandleNewLine(self):  
+  def HandleNewLine(self, AutoIndent=True):  
     Str = self.GetUserString()
     self.Memo.SelStart = 0x7FFFFFFF
     self.Memo.Lines.Add("")
@@ -152,7 +153,7 @@ class ConsoleForm:
         self.Command += "\n"
         if Str != "" and Str[-1] == ":":
           self.IndentLevel += 1
-        self.WritePrompt("... ")
+        self.WritePrompt("... ", AutoIndent)
     except SystemExit:
       fmx.Application.Terminate()
     except SyntaxError:
@@ -160,14 +161,15 @@ class ConsoleForm:
     except Exception:
       self.ShowException(2)
     
-  def WritePrompt(self, Str=">>> "):
+  def WritePrompt(self, Str=">>> ", AutoIndent=True):
     Lines = self.Memo.Lines
     if Lines.Count == 0 or len(Lines[Lines.Count-1]) > 0:
       Lines.Add("")
     self.PromptIndex = len(Lines.Text) # Indicates position before prompt
     Lines[Lines.Count - 1] = Str 
     self.LastIndex = len(Lines.Text)
-    Lines[Lines.Count - 1] = Str + "\t" * self.IndentLevel  
+    if AutoIndent:
+      Lines[Lines.Count - 1] = Str + "\t" * self.IndentLevel  
     self.Memo.SelStart = 0x7FFFFFFF
   
   def SetUserString(self, Str):

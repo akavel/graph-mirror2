@@ -32,6 +32,13 @@ String GetTypeName(PyObject *O)
   return "";
 }
 //---------------------------------------------------------------------------
+TValue ToValue(PyObject *O)
+{
+  if(PyUnicode_Check(O))
+    return TValue::From(String(PyUnicode_AS_UNICODE(O)));
+	throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'TValue'");
+}
+//---------------------------------------------------------------------------
 /** Convert a PyObject to a TValue as used when calling functions and setting properties in a generic way through Delphi RTTI.
  *  \param O: PyObject to convert
  *  \param TypeInfo: The expected return type
@@ -99,17 +106,23 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			break;
 
 		case tkRecord:
-		{
-			TRttiType *Type = Context.GetType(TypeInfo);
-			std::vector<BYTE> Data(Type->TypeSize);
-			DynamicArray<TRttiField*> Fields = Type->GetFields();
-			if(PyTuple_Size(O) != Fields.Length)
-			  throw EPyVclError("Expected tuple with " + IntToStr(Fields.Length) + " elements");
-			for(int I = 0; I < Fields.Length; I++)
-				Fields[I]->SetValue(&Data[0], ToValue(PyTuple_GetItem(O, I), Fields[I]->FieldType->Handle));
-			TValue::Make(&Data[0], TypeInfo, Result);
+      if(AnsiString(TypeInfo->Name) == "TValue") //Can this be optimized?
+      {
+        TValue V = ToValue(O);
+  			TValue::Make(&V, TypeInfo, Result);
+      }
+      else
+      {
+        TRttiType *Type = Context.GetType(TypeInfo);
+        std::vector<BYTE> Data(Type->TypeSize);
+        DynamicArray<TRttiField*> Fields = Type->GetFields();
+        if(PyTuple_Size(O) != Fields.Length)
+          throw EPyVclError("Expected tuple with " + IntToStr(Fields.Length) + " elements");
+        for(int I = 0; I < Fields.Length; I++)
+          Fields[I]->SetValue(&Data[0], ToValue(PyTuple_GetItem(O, I), Fields[I]->FieldType->Handle));
+        TValue::Make(&Data[0], TypeInfo, Result);
+      }
 			break;
-		}
 
 		case tkInt64:
 			Result = TValue::From(PyLong_AsLongLong(O));
@@ -272,11 +285,12 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		case tkRecord:
 		{
 			void *Data = Value.GetReferenceToRawData();
+      if(AnsiString(Value.TypeInfo->Name) == "TValue") //It should be possible to optimize this!
+        return ToPyObject(*static_cast<TValue*>(Data));
 			TRttiType *Type = Context.GetType(Value.TypeInfo);
 			DynamicArray<TRttiField*> Fields = Type->GetFields();
 			PyObject *Tuple = PyTuple_New(Fields.Length);
 			for(int I = 0; I < Fields.Length; I++)
-        //Some fields (arrays?) do not have RTTI
         if(Fields[I]->FieldType != NULL)
   				PyTuple_SET_ITEM(Tuple, I, ToPyObject(Fields[I]->GetValue(Data)));
         else
@@ -303,12 +317,21 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 		case tkInt64:
 			return PyLong_FromLongLong(Value.AsInt64());
 
-		case tkVariant:
 		case tkArray:
+    {
+      PyObject *O = PyList_New(Value.GetArrayLength());
+      if(O != NULL)
+      {
+        for(int I = 0; I < PyList_GET_SIZE(O); I++)
+          PyList_SetItem(O, I, ToPyObject(Value.GetArrayElement(I)));
+      }
+      return O;
+    }
+		case tkPointer:
+		case tkVariant:
 		case tkInterface:
 		case tkDynArray:
 		case tkClassRef:
-		case tkPointer:
 		case tkProcedure:
 		case tkUnknown:
 		default:
@@ -417,6 +440,10 @@ PyObject* PyVclHandleException()
   catch(DynArrayException &E)
   {
 		PyErr_SetString(PyVclException, "Unknown dynamic array exception");
+  }
+  catch(EPyVclError &E)
+  {
+		SetErrorString(PyVclException, E.Message);
   }
 	catch(Exception &E)
 	{

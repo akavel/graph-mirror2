@@ -9,7 +9,7 @@ class ConsoleForm:
     self.CacheIndex = 0
     self.IndentLevel = 0
     
-    self.Form = vcl.TForm(None, OnClose=self.Close, Width=600) 
+    self.Form = vcl.TForm(None, OnClose=self.Close, Width=vcl.Screen.Width//2, Height=vcl.Screen.Height//3) 
     self.Form.Caption = "Python interpreter"
     self.RichEdit = vcl.TRichEdit(None, Parent=self.Form, Align="alClient", ScrollBars="ssVertical", WantTabs=True,
       OnKeyDown=self.KeyDown, OnKeyPress=self.KeyPress)      

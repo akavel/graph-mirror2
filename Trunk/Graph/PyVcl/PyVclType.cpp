@@ -39,9 +39,6 @@ int VclType_Init(TVclObject *self, PyObject *args, PyObject *kwds)
 	try
 	{
 		TVclType *Type = reinterpret_cast<TVclType*>(self->ob_base.ob_type);
-/*    if(Type->RttiType->Handle == __delphirtti(TForm))
-      self->Instance = new TForm(NULL, 0);
-    else*/
     {
 		  DynamicArray<TRttiMethod*> Methods = Type->RttiType->GetMethods("Create");
 		  if(Methods.Length == 0)
