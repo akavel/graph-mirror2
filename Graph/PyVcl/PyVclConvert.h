@@ -14,10 +14,10 @@ namespace Python
 	};
 
 	extern Rtti::TRttiContext Context;
-	extern _object *PyVclException;
+	extern PyObject *PyVclException;
 
-	Rtti::TValue ToValue(_object *O, TTypeInfo *TypeInfo);
-	void TupleToValues(_object *O, std::vector<Rtti::TValue> &Values, const DynamicArray<Rtti::TRttiParameter*> &Parameters);
+	Rtti::TValue ToValue(PyObject *O, TTypeInfo *TypeInfo);
+	void TupleToValues(PyObject *O, std::vector<Rtti::TValue> &Values, const DynamicArray<Rtti::TRttiParameter*> &Parameters);
 
 	PyObject* ToPyObject(bool Value);
 	PyObject* ToPyObject(int Value);

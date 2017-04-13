@@ -24,6 +24,14 @@
 
 namespace Python
 {
+/** Replacement for Forms::TForm to allow creation using TForm::Create(TComponent*)
+ *  instead of TForm::CreateNew(TComponent*, int).
+ */
+class TForm : public Forms::TForm
+{
+public:
+  __fastcall TForm(TComponent *C) : Forms::TForm(C, 0) {}
+};
 //---------------------------------------------------------------------------
 struct TGlobalObjectEntry
 {
@@ -41,7 +49,10 @@ static TGlobalObjectEntry GlobalObjectList[] =
 	"Mouse", Mouse,
 	"Clipboard", Clipboard(),
 #else
-  "Platform", TPlatformServices::Current,
+  "PlatformServices", TPlatformServices::Current,
+  //Platform is a hack to access the object implementing all the interfaces
+  //normally accessed through TPlatformServices
+  "Platform", interface_cast<TObject>(TPlatformServices::Current->GetPlatformService(__uuidof(IFMXScreenService))),
 #endif
 };
 //---------------------------------------------------------------------------
@@ -116,7 +127,7 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
  */
 static PyObject* VclModule_CreateForm(PyObject *self, PyObject *arg)
 {
-  TForm *Form = new TForm(NULL, 0);
+  TForm *Form = new TForm(NULL);
   return VclObject_Create(Form, true);
 }
 //---------------------------------------------------------------------------
@@ -199,6 +210,9 @@ static PyModuleDef PyVclModuleDef =
  */
 PyObject* InitPyVcl()
 {
+#if FIREMONKEY
+  RegisterType(__delphirtti(Python::TForm)); //Register our replacement TForm
+#endif
   //VclModuleType derives from PyModule_Type and VclModuleType must therefore have
   //the same size.
   VclModule_Type.tp_basicsize = PyModule_Type.tp_basicsize;

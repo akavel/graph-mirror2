@@ -7,12 +7,6 @@
 #include <Math.hpp>
 //---------------------------------------------------------------------------
 #pragma argsused
-/*int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason, void* lpReserved)
-{
-  return 1;
-} */
-//---------------------------------------------------------------------------
-#pragma argsused
 extern "C" int _libmain(unsigned long reason)
 {
 	return 1;
@@ -23,6 +17,7 @@ PyMODINIT_FUNC __stdcall INIT_FUNC(void)
   //We need to mask the InvalidOp SSE exception to prevent math.sqrt(-1) in Python from
   //raising a C++ exception. It only seems to be a problem with 64 bit Python.
   SetExceptionMask(GetExceptionMask() << exInvalidOp);
+  SetProcessDPIAware();
   Application->Initialize();
   return Python::InitPyVcl();
 }
