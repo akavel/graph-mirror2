@@ -86,6 +86,7 @@ TTextLabel = Data.TTextLabel
 TShading = Data.TShading
 TRelation = Data.TRelation
 TPointSeries = Data.TPointSeries
+TAxesView = Data.TAxesView
 Form22 = GraphImpl.Form22
 EFuncError = GraphImpl.EFuncError
 EGraphError = GraphImpl.EGraphError
