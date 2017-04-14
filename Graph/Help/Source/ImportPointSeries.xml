@@ -12,11 +12,11 @@
 	<para>
 		Graph can import point series from text files where the values are delimited by comma, semicolon, space or tabulator.
 		You use <menuchoice><guimenu>File</guimenu><guisubmenu>Import</guisubmenu><guimenuitem>Point series...</guimenuitem></menuchoice> and select the file to import.
-		If you do not specify the type of file, Graph will try to guess the delimitor.
+		If you do not specify the type of file, Graph will try to guess the delimiter.
 	</para>
 
 	<para>
-		The simplest file looks like this, which uses comma as delimitor:
+		The simplest file looks like this, which uses comma as delimiter:
 		<programlisting>1,1.7
 2,4.3
 3,9.5
@@ -26,7 +26,7 @@
 
 	<para>
 		A file with more than two columns will be imported as several point series with the same x-coordinates as specified in the first column.
-		Here is an example with semicolon as delimitor:
+		Here is an example with semicolon as delimiter:
 <programlisting>50;71,8113997;78,23883162;79,17509098;78,58979676;78,62449077;78,2374541;77,7637696
 55;71,81941659;78,17869416;79,2155277;78,48195769;78,6005272;78,22113423;77,7874084
 60;71,82943769;78,12714777;79,24787707;78,55661551;78,51266076;78,2129743;77,8425656
@@ -44,7 +44,7 @@
 1 1.4 -1.7
 2 2.1 -2.6
 3 3.8 -3.3
-#d e
+#c d
 4 4.3 -4.1
 5 5.8 -5.5
 6 6.1 -6.1
