@@ -33,6 +33,15 @@ public:
   __fastcall TForm(TComponent *C) : Forms::TForm(C, 0) {}
 };
 //---------------------------------------------------------------------------
+TObject* GetPlatform()
+{
+  _di_IInterface Interface = TPlatformServices::Current->GetPlatformService(__uuidof(IFMXScreenService));
+  TObject *obj = NULL;
+  //We should use interface_cast<>() but it fails to compile for Win64
+  Interface->QueryInterface(__uuidof(__IObjCastGUIDHolder), reinterpret_cast<void**>(&obj));
+  return obj;
+}
+//---------------------------------------------------------------------------
 struct TGlobalObjectEntry
 {
 	const char *Name;
@@ -52,7 +61,7 @@ static TGlobalObjectEntry GlobalObjectList[] =
   "PlatformServices", TPlatformServices::Current,
   //Platform is a hack to access the object implementing all the interfaces
   //normally accessed through TPlatformServices
-  "Platform", interface_cast<TObject>(TPlatformServices::Current->GetPlatformService(__uuidof(IFMXScreenService))),
+  "Platform", GetPlatform(),
 #endif
 };
 //---------------------------------------------------------------------------
@@ -127,7 +136,7 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
  */
 static PyObject* VclModule_CreateForm(PyObject *self, PyObject *arg)
 {
-  TForm *Form = new TForm(NULL);
+  Forms::TForm *Form = new Forms::TForm(NULL, 0);
   return VclObject_Create(Form, true);
 }
 //---------------------------------------------------------------------------
