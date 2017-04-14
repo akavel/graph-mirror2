@@ -51,6 +51,16 @@ extern DELPHI_PACKAGE TApplicationState __fastcall Fmx::Forms::ApplicationState(
 {
    return TApplicationState::Running;
 }
+//---------------------------------------------------------------------------
+#ifdef _WIN64
+/** Workaround for access violation when Python exits for FireMonkey under Win64.
+  * Now just don't call the finialize code in Forms.
+  */
+namespace Fmx {namespace Forms {
+void __fastcall Finalization()
+{
+}}}
 #endif
 //---------------------------------------------------------------------------
+#endif
 
