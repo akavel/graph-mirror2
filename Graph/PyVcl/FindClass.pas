@@ -75,8 +75,14 @@ begin
 end;
 
 procedure RegisterType(TypeInfo : PTypeInfo);
+  var
+    I : Integer;
 begin
-  TypeList.AddObject(string(TypeInfo.Name), TObject(TypeInfo));
+  I := TypeList.IndexOf(string(TypeInfo.Name));
+  if I = -1 then
+    TypeList.AddObject(string(TypeInfo.Name), TObject(TypeInfo))
+  else
+    TypeList.Objects[I] := TObject(TypeInfo);
 end;
 
 procedure InitClassList;
