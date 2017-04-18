@@ -33,6 +33,7 @@ public:
   __fastcall TForm(TComponent *C) : Forms::TForm(C, 0) {}
 };
 //---------------------------------------------------------------------------
+#if FIREMONKEY
 TObject* GetPlatform()
 {
   _di_IInterface Interface = TPlatformServices::Current->GetPlatformService(__uuidof(IFMXScreenService));
@@ -41,6 +42,7 @@ TObject* GetPlatform()
   Interface->QueryInterface(__uuidof(__IObjCastGUIDHolder), reinterpret_cast<void**>(&obj));
   return obj;
 }
+#endif
 //---------------------------------------------------------------------------
 struct TGlobalObjectEntry
 {
