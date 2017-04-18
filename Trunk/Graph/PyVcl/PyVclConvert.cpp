@@ -7,6 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+#define _XKEYCHECK_H	//Disable check for defining keywords
 #define private public  //Nasty hack to get access to TMethodImplementation::FUserData
 #include <Rtti.hpp>
 #undef private
@@ -56,8 +57,8 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 		case tkClass:
 			if(VclObject_Check(O))
 				Result = TValue::From(VclObject_AsObject(O));
-			else if(O == Py_None || PyLong_Check(O))
-				Result = TValue::From((TObject*)(O == Py_None ? NULL : PyLong_AsLong(O)));
+			else if(O == Py_None)
+				Result = TValue::From((TObject*)NULL);
 			else
 				throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 			break;

@@ -7,6 +7,7 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
+#define _XKEYCHECK_H	//Disable check for defining keywords
 #define private public   //Because TMethodImplementation::FInvokeInfo is private in XE
 #define protected public //Because TMethodImplementation::FInvokeInfo is protected in XE4
 #include <Rtti.hpp>

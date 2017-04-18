@@ -6,13 +6,9 @@
 #include "PythonBind.h"
 #include <Math.hpp>
 #include <FMX.BehaviorManager.hpp>
-//---------------------------------------------------------------------------
-/*class TMyFMXSystemFontService : public TCppInterfacedObject<IFMXSystemFontService>
-{
-public:
-  String __fastcall GetDefaultFontFamilyName() {return "Segoe UI";}
-  float __fastcall GetDefaultFontSize() {return 24;}
-};*/
+#if defined(__WIN32__) && !defined(_Win64)
+#pragma link "urlmon.lib"
+#endif
 //---------------------------------------------------------------------------
 #pragma argsused
 extern "C" int _libmain(unsigned long reason)
@@ -25,12 +21,8 @@ PyMODINIT_FUNC __stdcall INIT_FUNC(void)
   //We need to mask the InvalidOp SSE exception to prevent math.sqrt(-1) in Python from
   //raising a C++ exception. It only seems to be a problem with 64 bit Python.
   SetExceptionMask(GetExceptionMask() << exInvalidOp);
-#if !FIREMONKEY
   SetProcessDPIAware();
-#endif
   Application->Initialize();
-//  TPlatformServices::Current->RemovePlatformService(__uuidof(IFMXSystemFontService));
-//  TPlatformServices::Current->AddPlatformService(__uuidof(IFMXSystemFontService), static_cast<IFMXSystemFontService*>(new TMyFMXSystemFontService));
   return Python::InitPyVcl();
 }
 //---------------------------------------------------------------------------
