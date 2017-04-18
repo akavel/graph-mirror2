@@ -11,8 +11,10 @@ class ConsoleForm:
     
     self.Form = fmx.CreateForm()
     self.Form.OnClose = self.Close
-    self.Form.Width = fmx.Platform.GetScreenSize()[0][0] // 2
-    self.Form.Height = fmx.Platform.GetScreenSize()[0][1] // 3
+    Size = fmx.Platform.GetScreenSize()[0]
+    Scale = fmx.Platform.GetScreenScale()
+    self.Form.Width = Size[0] // (2 * Scale)
+    self.Form.Height = Size[1] // (3 * Scale)
     self.Form.Caption = "Python interpreter"
     
     self.Memo = fmx.TMemo(None, Parent=self.Form, Align="alClient", OnKeyDown=self.KeyDown, OnKeyUp=self.KeyUp)      
@@ -23,8 +25,6 @@ class ConsoleForm:
 
     self.PopupMenu = fmx.TPopupMenu(None)
     self.MenuItem = fmx.TMenuItem(self.PopupMenu, Text="Clear", _owned=False, OnClick=self.Clear)
-#    self.MenuItem.Font.Size = self.MenuItem.Font.Size * 4;
-    self.MenuItem.StyledSettings = {'FontColor', 'Style'}
     self.PopupMenu.AddObject(self.MenuItem)
     self.Memo.PopupMenu = self.PopupMenu
     self.Memo.Lines.LineBreak = "\n"
