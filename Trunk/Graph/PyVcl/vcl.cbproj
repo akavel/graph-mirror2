@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Library</AppType>
     </PropertyGroup>
@@ -57,9 +57,10 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <OutputExt>pyd</OutputExt>
         <VerInfo_Locale>1030</VerInfo_Locale>
         <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
-        <IncludePath>..\Libraries\Python;$(IncludePath)</IncludePath>
+        <IncludePath>..\Libraries\Python36;$(IncludePath)</IncludePath>
         <ProjectType>CppDynamicLibrary</ProjectType>
         <SanitizedProjectName>vcl</SanitizedProjectName>
         <Multithreaded>true</Multithreaded>
@@ -68,7 +69,7 @@
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <AllPackageLibs>rtl.lib;vcl.lib;fmx.lib</AllPackageLibs>
         <ILINK_LibraryPath>..;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Manifest_File>None</Manifest_File>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
         <UsePackages>true</UsePackages>
@@ -94,6 +95,8 @@
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <OutputExt>pyd</OutputExt>
+        <Manifest_File>None</Manifest_File>
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
         <DCC_Optimize>false</DCC_Optimize>

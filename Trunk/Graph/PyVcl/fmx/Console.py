@@ -18,11 +18,14 @@ class ConsoleForm:
     self.Memo = fmx.TMemo(None, Parent=self.Form, Align="alClient", OnKeyDown=self.KeyDown, OnKeyUp=self.KeyUp)      
     self.Memo.Font.Family = "Courier New"
     self.Memo.Font.Size = 28
-    self.Memo.StyledSettings = {'FontColor', 'Style'}
+    self.Memo.StyledSettings = {'FontColor', 'Style', 'Size'}
     self.Memo.TextSettings.WordWrap = True;
 
     self.PopupMenu = fmx.TPopupMenu(None)
-    self.PopupMenu.AddObject(fmx.TMenuItem(self.PopupMenu, Text="Clear", _owned=False, OnClick=self.Clear))
+    self.MenuItem = fmx.TMenuItem(self.PopupMenu, Text="Clear", _owned=False, OnClick=self.Clear)
+#    self.MenuItem.Font.Size = self.MenuItem.Font.Size * 4;
+    self.MenuItem.StyledSettings = {'FontColor', 'Style'}
+    self.PopupMenu.AddObject(self.MenuItem)
     self.Memo.PopupMenu = self.PopupMenu
     self.Memo.Lines.LineBreak = "\n"
     
