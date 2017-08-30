@@ -93,8 +93,9 @@ void TForm3::Translate()
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Button1Click(TObject *Sender)
 {
-  TAxis xAxis;
-  TAxis yAxis;
+  //Make a copy of the original axes in case there are settings we do not overwrite
+  TAxis xAxis = Data.Axes.xAxis;
+  TAxis yAxis = Data.Axes.yAxis;
 
   xAxis.Min = MakeFloat(Edit1);
   xAxis.Max = MakeFloat(Edit2);
