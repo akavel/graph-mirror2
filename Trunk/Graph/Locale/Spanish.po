@@ -5,19 +5,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Graph 3.2\n"
-"POT-Creation-Date: 2016-07-05 21:09\n"
-"PO-Revision-Date: 2016-06-27 15:00+0100\n"
-"Last-Translator: Ivan Johansen <graph@padowan.dk>\n"
+"POT-Creation-Date: 2014-02-01 14:36\n"
+"PO-Revision-Date: 2017-09-20 11:43+0200\n"
+"Last-Translator: \n"
 "Language-Team: Dr. Gustavo Criscuolo\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #. Form1..ActionMainMenuBar1..Font.Name
 msgid "Segoe UI"
-msgstr "Open file: %s"
+msgstr ""
 
 #. Form1..Recent1..Hint
 #. Hint for recent file menu items
@@ -993,9 +993,8 @@ msgid "Line style:"
 msgstr "Estilo de línea:"
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..LineSelect1....Hint
-#, fuzzy
 msgid "Select line style used to draw equations and the border of inequalities."
-msgstr "Elige el estilo (color uniforme o trama) para representar gráficamente las soluciones de las inecuaciones."
+msgstr "Elige el trazo para representar gráficamente las ecuaciones o el límite de las inecuaciones."
 
 #. Form11("Insert relation")..GroupBox2("Properties")..GridPanelEx1..Label9("Color:")..Caption
 #. Form12("Insert tangent/normal")..GroupBox2("Graph properties")..Label9("Color:")..Caption
@@ -1973,9 +1972,8 @@ msgid "The newest version as well as the source code are available at: %s"
 msgstr "La versión más reciente, así como el código fuente, están disponibles en: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel2("Support: %s")..Caption
-#, fuzzy
 msgid "Support: %s"
-msgstr "Soporte técnico"
+msgstr "Soporte: %s"
 
 #. Form2("About Graph")..Panel1..LinkLabel3("<Language> translation by <Translator>")..Caption
 #. Please replace <Language> with the local name of the language and <Translator> with the name of the translator.
@@ -2348,10 +2346,6 @@ msgstr "Activa esta casilla si empleas números complejos en los cálculos."
 msgid "Calculate with complex numbers"
 msgstr "Calcular con números complejos"
 
-#. Form3("Edit axes")..PageControl1..TabSheet3("Settings")..Button7..Hint
-msgid "Select the font for the title."
-msgstr "Elige el formato que deseas aplicar al texto del título."
-
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..Caption
 msgid "Font and color"
 msgstr "Colores y Fuentes"
@@ -2400,18 +2394,6 @@ msgstr "Títulos:"
 #. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Label10("Legend font:")..Caption
 msgid "Legend font:"
 msgstr "Leyenda:"
-
-#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button4..Hint
-msgid "Select the font used to show the labels on the axes."
-msgstr "Elige el formato que deseas aplicar a los títulos de los ejes."
-
-#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button5..Hint
-msgid "Select the font used to show the numbers on the axes."
-msgstr "Elige el formato que deseas aplicar a los números asociados a los ejes."
-
-#. Form3("Edit axes")..PageControl1..TabSheet4("Font and color")..GroupBox4("Fonts")..Button6..Hint
-msgid "Select the font used to show the legend text."
-msgstr "Elige el formato que deseas aplicar al contenido de la leyenda."
 
 #. Form4("Options")..GridPanelEx1..Label1("Decimals:")..Caption
 msgid "Decimals:"
@@ -2812,6 +2794,9 @@ msgstr "Valor de la coordenada y, evaluada en la coordenada x indicada."
 #. TanFrame..Edit1..Hint
 msgid "Enter an x-coordinate or click in the graphing area."
 msgstr "Introduce la coordenada x, o haz clic en un punto de la tangente/normal."
+
+msgid "SourceGraph.manifest"
+msgstr "SourceGraph.manifest"
 
 #. Used in titles of error message boxes
 #. Indicates an error code, e.g. "Error 5"
@@ -3220,9 +3205,8 @@ msgstr "Empleo no válido de infinito. El infinito no puede ser usado aquí. "
 msgid "Not enough memory to complete the operation."
 msgstr "No hay suficiente memoria para completar la operación."
 
-#, fuzzy
 msgid "Printing aborted!"
-msgstr "Error de impresión"
+msgstr "¡Impresión cancelada!"
 
 msgid "Confirm delete"
 msgstr "Confirmar eliminación"
@@ -3318,8 +3302,7 @@ msgstr "Editar función"
 msgid "Edit tangent/normal"
 msgstr "Editar tangente/normal"
 
-#, fuzzy
-msgid "Error processing file at line %s."
+msgid "Error processing file '%s' at line %s."
 msgstr "Error al procesar el archivo '%s' en la línea %s."
 
 msgid "Edit text label"
@@ -3775,11 +3758,20 @@ msgstr "Indica el número de copias que deseas imprimir."
 msgid "Enter percent of original size."
 msgstr "Indica un porcentaje del tamaño original del área gráfica."
 
-#~ msgid "SourceGraph.manifest"
-#~ msgstr "SourceGraph.manifest"
-
 #~ msgid "Email: %s"
 #~ msgstr "Correo electrónico: %s"
+
+#~ msgid "Select the font for the title."
+#~ msgstr "Elige el formato que deseas aplicar al texto del título."
+
+#~ msgid "Select the font used to show the labels on the axes."
+#~ msgstr "Elige el formato que deseas aplicar a los títulos de los ejes."
+
+#~ msgid "Select the font used to show the numbers on the axes."
+#~ msgstr "Elige el formato que deseas aplicar a los números asociados a los ejes."
+
+#~ msgid "Select the font used to show the legend text."
+#~ msgstr "Elige el formato que deseas aplicar al contenido de la leyenda."
 
 #~ msgid "Associate *.grf files with Graph."
 #~ msgstr "Asocia al programa los archivos *.grf (archivos de Graph)."
