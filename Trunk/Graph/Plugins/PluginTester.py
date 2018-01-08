@@ -1,7 +1,8 @@
 import Graph
+import os
 
 ShowEvents = True
-LogFile = "Events.log"
+LogFile = os.path.dirname(__file__) + "\\Events.log"
 
 File = open(LogFile, "w") if LogFile else None
 class EventLogger:
