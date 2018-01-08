@@ -37,13 +37,7 @@ extern double pow(double, double);
 #endif /* __STDC__ */
 #endif /* _MSC_VER */
 
-#ifdef _OSF_SOURCE
-/* OSF1 5.1 doesn't make these available with XOPEN_SOURCE_EXTENDED defined */
-extern int finite(double);
-extern double copysign(double, double);
-#endif
-
-/* High precision defintion of pi and e (Euler)
+/* High precision definition of pi and e (Euler)
  * The values are taken from libc6's math.h.
  */
 #ifndef Py_MATH_PIl
@@ -60,6 +54,12 @@ extern double copysign(double, double);
 #ifndef Py_MATH_E
 #define Py_MATH_E 2.7182818284590452354
 #endif
+
+/* Tau (2pi) to 40 digits, taken from tauday.com/tau-digits. */
+#ifndef Py_MATH_TAU
+#define Py_MATH_TAU 6.2831853071795864769252867665590057683943L
+#endif
+
 
 /* On x86, Py_FORCE_DOUBLE forces a floating-point number out of an x87 FPU
    register and into a 64-bit memory location, rounding from extended
@@ -156,7 +156,29 @@ PyAPI_FUNC(void) _Py_set_387controlword(unsigned short);
  * doesn't support NaNs.
  */
 #if !defined(Py_NAN) && !defined(Py_NO_NAN)
-#define Py_NAN (Py_HUGE_VAL * 0.)
+#if !defined(__INTEL_COMPILER)
+    #define Py_NAN (Py_HUGE_VAL * 0.)
+#else /* __INTEL_COMPILER */
+    #if defined(ICC_NAN_STRICT)
+        #pragma float_control(push)
+        #pragma float_control(precise, on)
+        #pragma float_control(except,  on)
+        #if defined(_MSC_VER)
+            __declspec(noinline)
+        #else /* Linux */
+            __attribute__((noinline))
+        #endif /* _MSC_VER */
+        static double __icc_nan()
+        {
+            return sqrt(-1.0);
+        }
+        #pragma float_control (pop)
+        #define Py_NAN __icc_nan()
+    #else /* ICC_NAN_RELAXED as default for Intel Compiler */
+        static const union { unsigned char buf[8]; double __icc_nan; } __nan_store = {0,0,0,0,0,0,0xf8,0x7f};
+        #define Py_NAN (__nan_store.__icc_nan)
+    #endif /* ICC_NAN_STRICT */
+#endif /* __INTEL_COMPILER */
 #endif
 
 /* Py_OVERFLOWED(X)

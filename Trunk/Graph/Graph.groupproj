@@ -21,6 +21,9 @@
         <Projects Include="PyVcl\vcl.cbproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="PyVcl\fmx.cbproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -83,14 +86,23 @@
     <Target Name="vcl:Make">
         <MSBuild Projects="PyVcl\vcl.cbproj" Targets="Make"/>
     </Target>
+    <Target Name="fmx">
+        <MSBuild Projects="PyVcl\fmx.cbproj"/>
+    </Target>
+    <Target Name="fmx:Clean">
+        <MSBuild Projects="PyVcl\fmx.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fmx:Make">
+        <MSBuild Projects="PyVcl\fmx.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="IComp;Graph;Func32;Test;gsl;vcl"/>
+        <CallTarget Targets="IComp;Graph;Func32;Test;gsl;vcl;fmx"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="IComp:Clean;Graph:Clean;Func32:Clean;Test:Clean;gsl:Clean;vcl:Clean"/>
+        <CallTarget Targets="IComp:Clean;Graph:Clean;Func32:Clean;Test:Clean;gsl:Clean;vcl:Clean;fmx:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="IComp:Make;Graph:Make;Func32:Make;Test:Make;gsl:Make;vcl:Make"/>
+        <CallTarget Targets="IComp:Make;Graph:Make;Func32:Make;Test:Make;gsl:Make;vcl:Make;fmx:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

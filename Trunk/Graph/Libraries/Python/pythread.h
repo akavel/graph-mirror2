@@ -32,24 +32,19 @@ PyAPI_FUNC(int) PyThread_acquire_lock(PyThread_type_lock, int);
    on a lock (see PyThread_acquire_lock_timed() below).
    PY_TIMEOUT_MAX is the highest usable value (in microseconds) of that
    type, and depends on the system threading API.
-   
+
    NOTE: this isn't the same value as `_thread.TIMEOUT_MAX`.  The _thread
    module exposes a higher-level API, with timeouts expressed in seconds
    and floating-point numbers allowed.
 */
-#if defined(HAVE_LONG_LONG)
-#define PY_TIMEOUT_T PY_LONG_LONG
+#define PY_TIMEOUT_T long long
 #define PY_TIMEOUT_MAX PY_LLONG_MAX
-#else
-#define PY_TIMEOUT_T long
-#define PY_TIMEOUT_MAX LONG_MAX
-#endif
 
 /* In the NT API, the timeout is a DWORD and is expressed in milliseconds */
 #if defined (NT_THREADS)
-#if (Py_LL(0xFFFFFFFF) * 1000 < PY_TIMEOUT_MAX)
+#if 0xFFFFFFFFLL * 1000 < PY_TIMEOUT_MAX
 #undef PY_TIMEOUT_MAX
-#define PY_TIMEOUT_MAX (Py_LL(0xFFFFFFFF) * 1000)
+#define PY_TIMEOUT_MAX (0xFFFFFFFFLL * 1000)
 #endif
 #endif
 
@@ -73,6 +68,10 @@ PyAPI_FUNC(void) PyThread_release_lock(PyThread_type_lock);
 
 PyAPI_FUNC(size_t) PyThread_get_stacksize(void);
 PyAPI_FUNC(int) PyThread_set_stacksize(size_t);
+
+#if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 >= 0x03030000
+PyAPI_FUNC(PyObject*) PyThread_GetInfo(void);
+#endif
 
 /* Thread Local Storage (TLS) API */
 PyAPI_FUNC(int) PyThread_create_key(void);

@@ -9,7 +9,8 @@ extern "C" {
 
 #define PyCF_MASK (CO_FUTURE_DIVISION | CO_FUTURE_ABSOLUTE_IMPORT | \
                    CO_FUTURE_WITH_STATEMENT | CO_FUTURE_PRINT_FUNCTION | \
-                   CO_FUTURE_UNICODE_LITERALS | CO_FUTURE_BARRY_AS_BDFL)
+                   CO_FUTURE_UNICODE_LITERALS | CO_FUTURE_BARRY_AS_BDFL | \
+                   CO_FUTURE_GENERATOR_STOP)
 #define PyCF_MASK_OBSOLETE (CO_NESTED)
 #define PyCF_SOURCE_IS_UTF8  0x0100
 #define PyCF_DONT_IMPLY_DEDENT 0x0200
@@ -21,19 +22,6 @@ typedef struct {
     int cf_flags;  /* bitmask of CO_xxx flags relevant to future */
 } PyCompilerFlags;
 #endif
-
-PyAPI_FUNC(void) Py_SetProgramName(wchar_t *);
-PyAPI_FUNC(wchar_t *) Py_GetProgramName(void);
-
-PyAPI_FUNC(void) Py_SetPythonHome(wchar_t *);
-PyAPI_FUNC(wchar_t *) Py_GetPythonHome(void);
-
-PyAPI_FUNC(void) Py_Initialize(void);
-PyAPI_FUNC(void) Py_InitializeEx(int);
-PyAPI_FUNC(void) Py_Finalize(void);
-PyAPI_FUNC(int) Py_IsInitialized(void);
-PyAPI_FUNC(PyThreadState *) Py_NewInterpreter(void);
-PyAPI_FUNC(void) Py_EndInterpreter(PyThreadState *);
 
 #ifndef Py_LIMITED_API
 PyAPI_FUNC(int) PyRun_SimpleStringFlags(const char *, PyCompilerFlags *);
@@ -52,6 +40,10 @@ PyAPI_FUNC(int) PyRun_InteractiveOneFlags(
     FILE *fp,
     const char *filename,       /* decoded from the filesystem encoding */
     PyCompilerFlags *flags);
+PyAPI_FUNC(int) PyRun_InteractiveOneObject(
+    FILE *fp,
+    PyObject *filename,
+    PyCompilerFlags *flags);
 PyAPI_FUNC(int) PyRun_InteractiveLoopFlags(
     FILE *fp,
     const char *filename,       /* decoded from the filesystem encoding */
@@ -63,13 +55,29 @@ PyAPI_FUNC(struct _mod *) PyParser_ASTFromString(
     int start,
     PyCompilerFlags *flags,
     PyArena *arena);
+PyAPI_FUNC(struct _mod *) PyParser_ASTFromStringObject(
+    const char *s,
+    PyObject *filename,
+    int start,
+    PyCompilerFlags *flags,
+    PyArena *arena);
 PyAPI_FUNC(struct _mod *) PyParser_ASTFromFile(
     FILE *fp,
     const char *filename,       /* decoded from the filesystem encoding */
     const char* enc,
     int start,
-    char *ps1,
-    char *ps2,
+    const char *ps1,
+    const char *ps2,
+    PyCompilerFlags *flags,
+    int *errcode,
+    PyArena *arena);
+PyAPI_FUNC(struct _mod *) PyParser_ASTFromFileObject(
+    FILE *fp,
+    PyObject *filename,
+    const char* enc,
+    int start,
+    const char *ps1,
+    const char *ps2,
     PyCompilerFlags *flags,
     int *errcode,
     PyArena *arena);
@@ -82,9 +90,14 @@ PyAPI_FUNC(struct _mod *) PyParser_ASTFromFile(
     PyParser_SimpleParseFileFlags(FP, S, B, 0)
 #endif
 PyAPI_FUNC(struct _node *) PyParser_SimpleParseStringFlags(const char *, int,
-                                                          int);
+                                                           int);
+#if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 >= 0x03030000
+PyAPI_FUNC(struct _node *) PyParser_SimpleParseStringFlagsFilename(const char *,
+                                                                   const char *,
+                                                                   int, int);
+#endif
 PyAPI_FUNC(struct _node *) PyParser_SimpleParseFileFlags(FILE *, const char *,
-                                                        int, int);
+                                                         int, int);
 
 #ifndef Py_LIMITED_API
 PyAPI_FUNC(PyObject *) PyRun_StringFlags(const char *, int, PyObject *,
@@ -111,35 +124,26 @@ PyAPI_FUNC(PyObject *) Py_CompileStringExFlags(
     int start,
     PyCompilerFlags *flags,
     int optimize);
+PyAPI_FUNC(PyObject *) Py_CompileStringObject(
+    const char *str,
+    PyObject *filename, int start,
+    PyCompilerFlags *flags,
+    int optimize);
 #endif
 PyAPI_FUNC(struct symtable *) Py_SymtableString(
     const char *str,
     const char *filename,       /* decoded from the filesystem encoding */
     int start);
+#ifndef Py_LIMITED_API
+PyAPI_FUNC(struct symtable *) Py_SymtableStringObject(
+    const char *str,
+    PyObject *filename,
+    int start);
+#endif
 
 PyAPI_FUNC(void) PyErr_Print(void);
 PyAPI_FUNC(void) PyErr_PrintEx(int);
 PyAPI_FUNC(void) PyErr_Display(PyObject *, PyObject *, PyObject *);
-
-/* Py_PyAtExit is for the atexit module, Py_AtExit is for low-level
- * exit functions.
- */
-#ifndef Py_LIMITED_API
-PyAPI_FUNC(void) _Py_PyAtExit(void (*func)(void));
-#endif
-PyAPI_FUNC(int) Py_AtExit(void (*func)(void));
-
-PyAPI_FUNC(void) Py_Exit(int);
-
-/* Restore signals that the interpreter has called SIG_IGN on to SIG_DFL. */
-#ifndef Py_LIMITED_API
-PyAPI_FUNC(void) _Py_RestoreSignals(void);
-
-PyAPI_FUNC(int) Py_FdIsInteractive(FILE *, const char *);
-#endif
-
-/* Bootstrap */
-PyAPI_FUNC(int) Py_Main(int argc, wchar_t **argv);
 
 #ifndef Py_LIMITED_API
 /* Use macros for a bunch of old variants */
@@ -162,71 +166,19 @@ PyAPI_FUNC(int) Py_Main(int argc, wchar_t **argv);
     PyRun_FileExFlags(fp, p, s, g, l, 0, flags)
 #endif
 
-/* In getpath.c */
-PyAPI_FUNC(wchar_t *) Py_GetProgramFullPath(void);
-PyAPI_FUNC(wchar_t *) Py_GetPrefix(void);
-PyAPI_FUNC(wchar_t *) Py_GetExecPrefix(void);
-PyAPI_FUNC(wchar_t *) Py_GetPath(void);
-PyAPI_FUNC(void)      Py_SetPath(const wchar_t *);
-#ifdef MS_WINDOWS
-int _Py_CheckPython3();
-#endif
-
-/* In their own files */
-PyAPI_FUNC(const char *) Py_GetVersion(void);
-PyAPI_FUNC(const char *) Py_GetPlatform(void);
-PyAPI_FUNC(const char *) Py_GetCopyright(void);
-PyAPI_FUNC(const char *) Py_GetCompiler(void);
-PyAPI_FUNC(const char *) Py_GetBuildInfo(void);
-#ifndef Py_LIMITED_API
-PyAPI_FUNC(const char *) _Py_svnversion(void);
-PyAPI_FUNC(const char *) Py_SubversionRevision(void);
-PyAPI_FUNC(const char *) Py_SubversionShortBranch(void);
-#endif
-
-/* Internal -- various one-time initializations */
-#ifndef Py_LIMITED_API
-PyAPI_FUNC(PyObject *) _PyBuiltin_Init(void);
-PyAPI_FUNC(PyObject *) _PySys_Init(void);
-PyAPI_FUNC(void) _PyImport_Init(void);
-PyAPI_FUNC(void) _PyExc_Init(void);
-PyAPI_FUNC(void) _PyImportHooks_Init(void);
-PyAPI_FUNC(int) _PyFrame_Init(void);
-PyAPI_FUNC(void) _PyFloat_Init(void);
-PyAPI_FUNC(int) PyByteArray_Init(void);
-#endif
-
-/* Various internal finalizers */
-#ifndef Py_LIMITED_API
-PyAPI_FUNC(void) _PyExc_Fini(void);
-PyAPI_FUNC(void) _PyImport_Fini(void);
-PyAPI_FUNC(void) PyMethod_Fini(void);
-PyAPI_FUNC(void) PyFrame_Fini(void);
-PyAPI_FUNC(void) PyCFunction_Fini(void);
-PyAPI_FUNC(void) PyDict_Fini(void);
-PyAPI_FUNC(void) PyTuple_Fini(void);
-PyAPI_FUNC(void) PyList_Fini(void);
-PyAPI_FUNC(void) PySet_Fini(void);
-PyAPI_FUNC(void) PyBytes_Fini(void);
-PyAPI_FUNC(void) PyByteArray_Fini(void);
-PyAPI_FUNC(void) PyFloat_Fini(void);
-PyAPI_FUNC(void) PyOS_FiniInterrupts(void);
-PyAPI_FUNC(void) _PyGC_Fini(void);
-#endif
-
 /* Stuff with no proper home (yet) */
 #ifndef Py_LIMITED_API
-PyAPI_FUNC(char *) PyOS_Readline(FILE *, FILE *, char *);
+PyAPI_FUNC(char *) PyOS_Readline(FILE *, FILE *, const char *);
 #endif
 PyAPI_DATA(int) (*PyOS_InputHook)(void);
-PyAPI_DATA(char) *(*PyOS_ReadlineFunctionPointer)(FILE *, FILE *, char *);
+PyAPI_DATA(char) *(*PyOS_ReadlineFunctionPointer)(FILE *, FILE *, const char *);
 #ifndef Py_LIMITED_API
 PyAPI_DATA(PyThreadState*) _PyOS_ReadlineTState;
 #endif
 
 /* Stack size, in "pointers" (so we get extra safety margins
    on 64-bit platforms).  On a 32-bit platform, this translates
-   to a 8k margin. */
+   to an 8k margin. */
 #define PYOS_STACK_MARGIN 2048
 
 #if defined(WIN32) && !defined(MS_WIN64) && defined(_MSC_VER) && _MSC_VER >= 1300
@@ -238,12 +190,6 @@ PyAPI_DATA(PyThreadState*) _PyOS_ReadlineTState;
 /* Check that we aren't overflowing our stack */
 PyAPI_FUNC(int) PyOS_CheckStack(void);
 #endif
-
-/* Signals */
-typedef void (*PyOS_sighandler_t)(int);
-PyAPI_FUNC(PyOS_sighandler_t) PyOS_getsig(int);
-PyAPI_FUNC(PyOS_sighandler_t) PyOS_setsig(int, PyOS_sighandler_t);
-
 
 #ifdef __cplusplus
 }
