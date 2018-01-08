@@ -42,7 +42,7 @@ namespace Python
 template<typename T> T& GetPythonAddress(const char *Name);
 
 #ifndef PYTHON_WRAP
-#define PYTHON_WRAP(type,name) //extern type& name;
+#define PYTHON_WRAP(type,name) extern type& name;
 #endif
 PYTHON_WRAP(_typeobject, PyBool_Type)
 PYTHON_WRAP(_typeobject, PyTuple_Type)
