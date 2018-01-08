@@ -19,7 +19,7 @@
 #ifdef _WIN64
 #pragma link "python32.a"
 #elif defined(__WIN32__)
-#pragma link "python32.lib"
+#pragma link "python36.lib"
 #else
 #pragma link "python35.dylib"
 #endif
@@ -43,9 +43,13 @@ bool IsPythonInstalled()
 {
 	static int Result = -1;
 #ifdef _Windows
+#define STRING(x) #x
+#define XSTRING(x) STRING(x)
+#define PYTHON_DLL L"c:\\python36_32\\Python" XSTRING(PY_MAJOR_VERSION) XSTRING(PY_MINOR_VERSION) ".dll"
+  static const wchar_t *PythonDll = PYTHON_DLL;
   if(Result == -1)
   {
-    PythonInstance = LoadLibrary(L"Python32.dll");
+    PythonInstance = LoadLibrary(PythonDll);
     Result = PythonInstance != NULL;
   }
 #endif

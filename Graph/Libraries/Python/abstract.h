@@ -7,6 +7,9 @@ extern "C" {
 #ifdef PY_SSIZE_T_CLEAN
 #define PyObject_CallFunction _PyObject_CallFunction_SizeT
 #define PyObject_CallMethod _PyObject_CallMethod_SizeT
+#ifndef Py_LIMITED_API
+#define _PyObject_CallMethodId _PyObject_CallMethodId_SizeT
+#endif /* !Py_LIMITED_API */
 #endif
 
 /* Abstract Object Interface (many thanks to Jim Fulton) */
@@ -94,7 +97,7 @@ Proposal
   numeric, sequence, and mapping.  Each protocol consists of a
   collection of related operations.  If an operation that is not
   provided by a particular type is invoked, then a standard exception,
-  NotImplementedError is raised with a operation name as an argument.
+  NotImplementedError is raised with an operation name as an argument.
   In addition, for convenience this interface defines a set of
   constructors for building objects of built-in types.  This is needed
   so new objects can be returned from C functions that otherwise treat
@@ -143,7 +146,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
      /* Implemented elsewhere:
 
-     int PyObject_HasAttrString(PyObject *o, char *attr_name);
+     int PyObject_HasAttrString(PyObject *o, const char *attr_name);
 
      Returns 1 if o has the attribute attr_name, and 0 otherwise.
      This is equivalent to the Python expression:
@@ -155,7 +158,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
      /* Implemented elsewhere:
 
-     PyObject* PyObject_GetAttrString(PyObject *o, char *attr_name);
+     PyObject* PyObject_GetAttrString(PyObject *o, const char *attr_name);
 
      Retrieve an attributed named attr_name form object o.
      Returns the attribute value on success, or NULL on failure.
@@ -188,11 +191,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
      /* Implemented elsewhere:
 
-     int PyObject_SetAttrString(PyObject *o, char *attr_name, PyObject *v);
+     int PyObject_SetAttrString(PyObject *o, const char *attr_name, PyObject *v);
 
      Set the value of the attribute named attr_name, for object o,
-     to the value, v. Returns -1 on failure.  This is
-     the equivalent of the Python statement: o.attr_name=v.
+     to the value v. Raise an exception and return -1 on failure; return 0 on
+     success.  This is the equivalent of the Python statement o.attr_name=v.
 
        */
 
@@ -201,14 +204,14 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      int PyObject_SetAttr(PyObject *o, PyObject *attr_name, PyObject *v);
 
      Set the value of the attribute named attr_name, for object o,
-     to the value, v. Returns -1 on failure.  This is
-     the equivalent of the Python statement: o.attr_name=v.
+     to the value v. Raise an exception and return -1 on failure; return 0 on
+     success.  This is the equivalent of the Python statement o.attr_name=v.
 
        */
 
      /* implemented as a macro:
 
-     int PyObject_DelAttrString(PyObject *o, char *attr_name);
+     int PyObject_DelAttrString(PyObject *o, const char *attr_name);
 
      Delete attribute named attr_name, for object o. Returns
      -1 on failure.  This is the equivalent of the Python
@@ -263,13 +266,97 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
        */
 
      PyAPI_FUNC(PyObject *) PyObject_Call(PyObject *callable_object,
-                                          PyObject *args, PyObject *kw);
+                                          PyObject *args, PyObject *kwargs);
 
        /*
      Call a callable Python object, callable_object, with
      arguments and keywords arguments.  The 'args' argument can not be
-     NULL, but the 'kw' argument can be NULL.
+     NULL.
        */
+
+#ifndef Py_LIMITED_API
+    PyAPI_FUNC(PyObject*) _PyStack_AsTuple(
+        PyObject **stack,
+        Py_ssize_t nargs);
+
+    /* Convert keyword arguments from the (stack, kwnames) format to a Python
+       dictionary.
+
+       kwnames must only contains str strings, no subclass, and all keys must
+       be unique. kwnames is not checked, usually these checks are done before or later
+       calling _PyStack_AsDict(). For example, _PyArg_ParseStack() raises an
+       error if a key is not a string. */
+    PyAPI_FUNC(PyObject *) _PyStack_AsDict(
+        PyObject **values,
+        PyObject *kwnames);
+
+    /* Convert (args, nargs, kwargs) into a (stack, nargs, kwnames).
+
+       Return a new stack which should be released by PyMem_Free(), or return
+       args unchanged if kwargs is NULL or an empty dictionary.
+
+       The stack uses borrowed references.
+
+       The type of keyword keys is not checked, these checks should be done
+       later (ex: _PyArg_ParseStack). */
+    PyAPI_FUNC(PyObject **) _PyStack_UnpackDict(
+        PyObject **args,
+        Py_ssize_t nargs,
+        PyObject *kwargs,
+        PyObject **kwnames,
+        PyObject *func);
+
+    /* Call the callable object func with the "fast call" calling convention:
+       args is a C array for positional arguments (nargs is the number of
+       positional arguments), kwargs is a dictionary for keyword arguments.
+
+       If nargs is equal to zero, args can be NULL. kwargs can be NULL.
+       nargs must be greater or equal to zero.
+
+       Return the result on success. Raise an exception on return NULL on
+       error. */
+    PyAPI_FUNC(PyObject *) _PyObject_FastCallDict(PyObject *func,
+                                                  PyObject **args, Py_ssize_t nargs,
+                                                  PyObject *kwargs);
+
+    /* Call the callable object func with the "fast call" calling convention:
+       args is a C array for positional arguments followed by values of
+       keyword arguments. Keys of keyword arguments are stored as a tuple
+       of strings in kwnames. nargs is the number of positional parameters at
+       the beginning of stack. The size of kwnames gives the number of keyword
+       values in the stack after positional arguments.
+
+       kwnames must only contains str strings, no subclass, and all keys must
+       be unique.
+
+       If nargs is equal to zero and there is no keyword argument (kwnames is
+       NULL or its size is zero), args can be NULL.
+
+       Return the result on success. Raise an exception and return NULL on
+       error. */
+    PyAPI_FUNC(PyObject *) _PyObject_FastCallKeywords
+       (PyObject *func,
+        PyObject **args,
+        Py_ssize_t nargs,
+        PyObject *kwnames);
+
+#define _PyObject_FastCall(func, args, nargs) \
+    _PyObject_FastCallDict((func), (args), (nargs), NULL)
+
+#define _PyObject_CallNoArg(func) \
+    _PyObject_FastCall((func), NULL, 0)
+
+#define _PyObject_CallArg1(func, arg) \
+    _PyObject_FastCall((func), &(arg), 1)
+
+    PyAPI_FUNC(PyObject *) _PyObject_Call_Prepend(PyObject *func,
+                                                  PyObject *obj, PyObject *args,
+                                                  PyObject *kwargs);
+
+     PyAPI_FUNC(PyObject *) _Py_CheckFunctionResult(PyObject *func,
+                                                    PyObject *result,
+                                                    const char *where);
+#endif   /* Py_LIMITED_API */
 
      PyAPI_FUNC(PyObject *) PyObject_CallObject(PyObject *callable_object,
                                                 PyObject *args);
@@ -283,7 +370,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
        */
 
      PyAPI_FUNC(PyObject *) PyObject_CallFunction(PyObject *callable_object,
-                                                  char *format, ...);
+                                                  const char *format, ...);
 
        /*
      Call a callable Python object, callable_object, with a
@@ -295,8 +382,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
        */
 
 
-     PyAPI_FUNC(PyObject *) PyObject_CallMethod(PyObject *o, char *method,
-                                                char *format, ...);
+     PyAPI_FUNC(PyObject *) PyObject_CallMethod(PyObject *o,
+                                                const char *method,
+                                                const char *format, ...);
 
        /*
      Call the method named m of object o with a variable number of
@@ -307,11 +395,30 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      Python expression: o.method(args).
        */
 
+#ifndef Py_LIMITED_API
+     PyAPI_FUNC(PyObject *) _PyObject_CallMethodId(PyObject *o,
+                                                   _Py_Identifier *method,
+                                                   const char *format, ...);
+
+       /*
+         Like PyObject_CallMethod, but expect a _Py_Identifier* as the
+         method name.
+       */
+#endif /* !Py_LIMITED_API */
+
      PyAPI_FUNC(PyObject *) _PyObject_CallFunction_SizeT(PyObject *callable,
-                                                         char *format, ...);
+                                                         const char *format,
+                                                         ...);
      PyAPI_FUNC(PyObject *) _PyObject_CallMethod_SizeT(PyObject *o,
-                                                       char *name,
-                                                       char *format, ...);
+                                                       const char *name,
+                                                       const char *format,
+                                                       ...);
+#ifndef Py_LIMITED_API
+     PyAPI_FUNC(PyObject *) _PyObject_CallMethodId_SizeT(PyObject *o,
+                                                       _Py_Identifier *name,
+                                                       const char *format,
+                                                       ...);
+#endif /* !Py_LIMITED_API */
 
      PyAPI_FUNC(PyObject *) PyObject_CallFunctionObjArgs(PyObject *callable,
                                                          ...);
@@ -327,6 +434,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
      PyAPI_FUNC(PyObject *) PyObject_CallMethodObjArgs(PyObject *o,
                                                        PyObject *method, ...);
+#ifndef Py_LIMITED_API
+     PyAPI_FUNC(PyObject *) _PyObject_CallMethodIdObjArgs(PyObject *o,
+                                               struct _Py_Identifier *method,
+                                               ...);
+#endif /* !Py_LIMITED_API */
 
        /*
      Call the method named m of object o with a variable number of
@@ -388,7 +500,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 #define PyObject_Length PyObject_Size
 
 #ifndef Py_LIMITED_API
-     PyAPI_FUNC(Py_ssize_t) _PyObject_LengthHint(PyObject *o, Py_ssize_t);
+     PyAPI_FUNC(int) _PyObject_HasLen(PyObject *o);
+     PyAPI_FUNC(Py_ssize_t) PyObject_LengthHint(PyObject *o, Py_ssize_t);
 #endif
 
        /*
@@ -408,12 +521,12 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      PyAPI_FUNC(int) PyObject_SetItem(PyObject *o, PyObject *key, PyObject *v);
 
        /*
-     Map the object, key, to the value, v.  Returns
-     -1 on failure.  This is the equivalent of the Python
-     statement: o[key]=v.
+     Map the object key to the value v.  Raise an exception and return -1
+     on failure; return 0 on success.  This is the equivalent of the Python
+     statement o[key]=v.
        */
 
-     PyAPI_FUNC(int) PyObject_DelItemString(PyObject *o, char *key);
+     PyAPI_FUNC(int) PyObject_DelItemString(PyObject *o, const char *key);
 
        /*
      Remove the mapping for object, key, from the object *o.
@@ -431,7 +544,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
     /* old buffer API
        FIXME:  usage of these should all be replaced in Python itself
        but for backwards compatibility we will implement them.
-       Their usage without a corresponding "unlock" mechansim
+       Their usage without a corresponding "unlock" mechanism
        may create issues (but they would already be there). */
 
      PyAPI_FUNC(int) PyObject_AsCharBuffer(PyObject *obj,
@@ -468,7 +581,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
       arbitrary data.
 
       0 is returned on success.  buffer and buffer_len are only
-      set in case no error occurrs.  Otherwise, -1 is returned and
+      set in case no error occurs.  Otherwise, -1 is returned and
       an exception set.
        */
 
@@ -482,7 +595,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
       writable memory location in buffer of size buffer_len.
 
       0 is returned on success.  buffer and buffer_len are only
-      set in case no error occurrs. Otherwise, -1 is returned and
+      set in case no error occurs. Otherwise, -1 is returned and
       an exception set.
        */
 
@@ -519,11 +632,12 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 
 
+     /* Implementation in memoryobject.c */
      PyAPI_FUNC(int) PyBuffer_ToContiguous(void *buf, Py_buffer *view,
-                                           Py_ssize_t len, char fort);
+                                           Py_ssize_t len, char order);
 
      PyAPI_FUNC(int) PyBuffer_FromContiguous(Py_buffer *view, void *buf,
-                                             Py_ssize_t len, char fort);
+                                             Py_ssize_t len, char order);
 
 
     /* Copy len bytes of data from the contiguous chunk of memory
@@ -547,7 +661,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
     /* Copy the data from the src buffer to the buffer of destination
      */
 
-     PyAPI_FUNC(int) PyBuffer_IsContiguous(Py_buffer *view, char fort);
+     PyAPI_FUNC(int) PyBuffer_IsContiguous(const Py_buffer *view, char fort);
 
 
      PyAPI_FUNC(void) PyBuffer_FillContiguousStrides(int ndims,
@@ -635,6 +749,14 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      failure.  This is the equivalent of the Python expression:
      o1*o2.
        */
+
+#if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 >= 0x03050000
+     PyAPI_FUNC(PyObject *) PyNumber_MatrixMultiply(PyObject *o1, PyObject *o2);
+
+       /*
+     This is the equivalent of the Python expression: o1 @ o2.
+       */
+#endif
 
      PyAPI_FUNC(PyObject *) PyNumber_FloorDivide(PyObject *o1, PyObject *o2);
 
@@ -754,31 +876,16 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      PyAPI_FUNC(PyObject *) PyNumber_Index(PyObject *o);
 
        /*
-     Returns the object converted to a Python long or int
+     Returns the object converted to a Python int
      or NULL with an error raised on failure.
        */
 
      PyAPI_FUNC(Py_ssize_t) PyNumber_AsSsize_t(PyObject *o, PyObject *exc);
 
        /*
-     Returns the Integral instance converted to an int. The
-     instance is expected to be int or long or have an __int__
-     method. Steals integral's reference. error_format will be
-     used to create the TypeError if integral isn't actually an
-     Integral instance. error_format should be a format string
-     that can accept a char* naming integral's type.
-       */
-
-#ifndef Py_LIMITED_API
-     PyAPI_FUNC(PyObject *) _PyNumber_ConvertIntegralToInt(
-         PyObject *integral,
-         const char* error_format);
-#endif
-
-       /*
     Returns the object converted to Py_ssize_t by going through
     PyNumber_Index first.  If an overflow error occurs while
-    converting the int-or-long to Py_ssize_t, then the second argument
+    converting the int to Py_ssize_t, then the second argument
     is the error-type to return.  If it is NULL, then the overflow error
     is cleared and the value is clipped.
        */
@@ -824,6 +931,14 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      null on failure.  This is the equivalent of the Python expression:
      o1 *= o2.
        */
+
+#if !defined(Py_LIMITED_API) || Py_LIMITED_API+0 >= 0x03050000
+     PyAPI_FUNC(PyObject *) PyNumber_InPlaceMatrixMultiply(PyObject *o1, PyObject *o2);
+
+       /*
+     This is the equivalent of the Python expression: o1 @= o2.
+       */
+#endif
 
      PyAPI_FUNC(PyObject *) PyNumber_InPlaceFloorDivide(PyObject *o1,
                                                         PyObject *o2);
@@ -968,9 +1083,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      PyAPI_FUNC(int) PySequence_SetItem(PyObject *o, Py_ssize_t i, PyObject *v);
 
        /*
-     Assign object v to the ith element of o.  Returns
-     -1 on failure.  This is the equivalent of the Python
-     statement: o[i]=v.
+     Assign object v to the ith element of o.  Raise an exception and return
+     -1 on failure; return 0 on success.  This is the equivalent of the
+     Python statement o[i]=v.
        */
 
      PyAPI_FUNC(int) PySequence_DelItem(PyObject *o, Py_ssize_t i);
@@ -1014,7 +1129,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
      PyAPI_FUNC(PyObject *) PySequence_Fast(PyObject *o, const char* m);
        /*
-     Returns the sequence, o, as a tuple, unless it's already a
+     Return the sequence, o, as a list, unless it's already a
      tuple or list.  Use PySequence_Fast_GET_ITEM to access the
      members of this list, and PySequence_Fast_GET_SIZE to get its length.
 
@@ -1149,7 +1264,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
      /* implemented as a macro:
 
-     int PyMapping_DelItemString(PyObject *o, char *key);
+     int PyMapping_DelItemString(PyObject *o, const char *key);
 
      Remove the mapping for object, key, from the object *o.
      Returns -1 on failure.  This is equivalent to
@@ -1167,7 +1282,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
        */
 #define PyMapping_DelItem(O,K) PyObject_DelItem((O),(K))
 
-     PyAPI_FUNC(int) PyMapping_HasKeyString(PyObject *o, char *key);
+     PyAPI_FUNC(int) PyMapping_HasKeyString(PyObject *o, const char *key);
 
        /*
      On success, return 1 if the mapping object has the key, key,
@@ -1211,7 +1326,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
        */
 
-     PyAPI_FUNC(PyObject *) PyMapping_GetItemString(PyObject *o, char *key);
+     PyAPI_FUNC(PyObject *) PyMapping_GetItemString(PyObject *o,
+                                                    const char *key);
 
        /*
      Return element of o corresponding to the object, key, or NULL
@@ -1219,7 +1335,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
      o[key].
        */
 
-     PyAPI_FUNC(int) PyMapping_SetItemString(PyObject *o, char *key,
+     PyAPI_FUNC(int) PyMapping_SetItemString(PyObject *o, const char *key,
                                             PyObject *value);
 
        /*
@@ -1244,13 +1360,13 @@ PyAPI_FUNC(int) _PyObject_RealIsSubclass(PyObject *derived, PyObject *cls);
 PyAPI_FUNC(char *const *) _PySequence_BytesToCharpArray(PyObject* self);
 
 PyAPI_FUNC(void) _Py_FreeCharPArray(char *const array[]);
-#endif
 
 /* For internal use by buffer API functions */
 PyAPI_FUNC(void) _Py_add_one_to_index_F(int nd, Py_ssize_t *index,
                                         const Py_ssize_t *shape);
 PyAPI_FUNC(void) _Py_add_one_to_index_C(int nd, Py_ssize_t *index,
                                         const Py_ssize_t *shape);
+#endif /* !Py_LIMITED_API */
 
 
 #ifdef __cplusplus

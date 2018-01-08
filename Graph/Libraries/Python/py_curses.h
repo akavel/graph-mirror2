@@ -76,6 +76,7 @@ extern "C" {
 typedef struct {
 	PyObject_HEAD
 	WINDOW *win;
+	char *encoding;
 } PyCursesWindowObject;
 
 #define PyCursesWindow_Check(v)	 (Py_TYPE(v) == &PyCursesWindow_Type)
@@ -102,8 +103,8 @@ static void **PyCurses_API;
 #endif
 
 /* general error messages */
-static char *catchall_ERR  = "curses function returned ERR";
-static char *catchall_NULL = "curses function returned NULL";
+static const char catchall_ERR[]  = "curses function returned ERR";
+static const char catchall_NULL[] = "curses function returned NULL";
 
 /* Function Prototype Macros - They are ugly but very, very useful. ;-)
 
