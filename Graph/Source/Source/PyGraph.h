@@ -41,6 +41,7 @@ namespace Python
   extern PyObject *PyEGraphError;
 	typedef boost::variant<int, double, std::wstring, PyObject*, TObject*> TPyVariant;
 
+  bool IsPythonInstalled();
 	void InitPlugins();
 	bool ExecutePythonCommand(const String &Command);
 	void ShowPythonConsole(bool Visible);

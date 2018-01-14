@@ -39,8 +39,8 @@ namespace boost
 
 namespace Python
 {
+#ifdef PYTHON_EMBEDDED
 template<typename T> T& GetPythonAddress(const char *Name);
-
 #ifndef PYTHON_WRAP
 #define PYTHON_WRAP(type,name) extern type& name;
 #endif
@@ -80,8 +80,7 @@ PYTHON_WRAP(PyObject, _Py_NoneStruct)
 PYTHON_WRAP(PyObject, _Py_TrueStruct)
 PYTHON_WRAP(PyObject, _Py_FalseStruct)
 PYTHON_WRAP(PyObject, _Py_NotImplementedStruct)
-
-bool IsPythonInstalled();
+#endif //PYTHON_EMBEDDED
 
 class TLockGIL
 {
