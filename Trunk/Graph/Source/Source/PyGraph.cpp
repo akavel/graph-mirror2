@@ -1,37 +1,54 @@
-/* Graph (http://sourceforge.net/projects/graph)
- * Copyright 2007 Ivan Johansen
- *
- * Graph is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- */
 //---------------------------------------------------------------------------
 #include "Graph.h"
 #pragma hdrstop
+//This creates the definition of Python variables when PythonBind.h is included.
+//Warning: This has been seen to cause access violations. It may help to move the define to another file.
+#define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
+#include "PythonBind.h"
+#include "Python.hpp"
 #include "PyGraph.h"
 #include "Unit1.h"
 #include "Unit22.h"
-#include "PythonBind.h"
 #include "VersionInfo.h"
-#include "Unit18.h"
 #include <fstream>
-#include "IThread.h"
 #include "Images.h"
-#include <cfloat>
 #include <boost/variant/get.hpp>
-#include "python.hpp"
 #include "PyVcl.h"
 #include "ConfigRegistry.h"
-#include "ExtColorBox.h"
 #include "PyVclObject.h"
-#include "FindClass.hpp"
 //---------------------------------------------------------------------------
 PyObject* DownCastSharedPtr(const boost::shared_ptr<TGraphElem> &Elem);
 namespace Python
 {
 PyObject *PyEFuncError = NULL;
 PyObject *PyEGraphError = NULL;
+HINSTANCE PythonInstance = NULL;
+static bool PythonInitialized = false;
+//---------------------------------------------------------------------------
+template<typename T>
+T& GetPythonAddress(const char *Name)
+{
+  static T Dummy;
+  if(IsPythonInstalled())
+    return *reinterpret_cast<T*>(GetProcAddress(PythonInstance, Name));
+  return Dummy;
+}
+//---------------------------------------------------------------------------
+bool IsPythonInstalled()
+{
+	static int Result = -1;
+#define STRING(x) #x
+#define XSTRING(x) STRING(x)
+#define PYTHON_DLL L"y:\\projects\\Graph\\Python\\Python" XSTRING(PY_MAJOR_VERSION) XSTRING(PY_MINOR_VERSION) ".dll"
+//#define PYTHON_DLL L"c:\\python36_32\\Python" XSTRING(PY_MAJOR_VERSION) XSTRING(PY_MINOR_VERSION) ".dll"
+  static const wchar_t *PythonDll = PYTHON_DLL;
+  if(Result == -1)
+  {
+    PythonInstance = LoadLibrary(PythonDll);
+    Result = PythonInstance != NULL;
+  }
+  return Result;
+}
 //---------------------------------------------------------------------------
 void PrintException(bool ShowTraceback=true, bool ThrowException=false)
 {
@@ -100,6 +117,129 @@ bool ExecutePythonCommand(const String &Command)
   else
     PrintException();
   return Result;
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(const TPyVariant &Variant)
+{
+  if(const int *Value = boost::get<int>(&Variant  ))
+    return ToPyObject(*Value);
+  if(const double *Value = boost::get<double>(&Variant))
+    return ToPyObject(*Value);
+  if(const std::wstring *Value = boost::get<std::wstring>(&Variant))
+    return ToPyObject(*Value);
+	if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
+	{
+	  Py_INCREF(*Value);
+		return *Value;
+	}
+  if(TObject *const*Object = boost::get<TObject*>(&Variant))
+  {
+    return VclObject_Create(*Object, false);
+  }
+  return NULL;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
+{
+  if(!PythonInitialized)
+    return false;
+  if(IsPythonInstalled())
+  {
+    TLockGIL Dummy;
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", DownCastSharedPtr(Elem)));
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
+{
+  if(IsPythonInstalled() && PythonInitialized)
+  {
+    TLockGIL Dummy;
+    PyObject *Module = PyImport_AddModule("Graph");
+    char *MethodName = "ExecuteEvent";
+    char *Format = Param ? (char*)"(iN)" : (char*)"(i())";
+    PyObject *ResultObj = PyObject_CallMethod(Module, MethodName, Format, PluginEvent, Param, NULL);
+    bool Result = ResultObj && PyObject_IsTrue(ResultObj);
+		Py_XDECREF(ResultObj);
+    return Result;
+	}
+  return false;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1)
+{
+  if(IsPythonInstalled())
+  {
+    TLockGIL Dummy;
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", ToPyObject(V1)));
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2)
+{
+  if(IsPythonInstalled())
+  {
+    TLockGIL Dummy;
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NN)", ToPyObject(V1), ToPyObject(V2)));
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, TPyVariant V3)
+{
+  if(IsPythonInstalled())
+	{
+		TLockGIL Dummy;
+    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V3)));
+  }
+  return false;
+}
+//---------------------------------------------------------------------------
+TPyObjectPtr ExecutePluginFunc(const char *MethodName, PyObject *Param)
+{
+  //Python must be installed and the we must have the GIL
+  PyObject *Module = PyImport_AddModule("Graph");
+  TPyObjectPtr Function(PyObject_GetAttrString(Module, MethodName), false);
+  if(!Function)
+    PrintException(true, true);
+  TPyObjectPtr ResultObj(PyObject_CallObject(Function.get(), Param), false);
+  if(!ResultObj)
+    PrintException(true, true);
+  return ResultObj;
+}
+//---------------------------------------------------------------------------
+PyObject* ConvertException()
+{
+  try
+  {
+    throw;
+  }
+  catch(Func32::EFuncError &E)
+  {
+    PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
+  }
+  catch(Exception &E)
+  {
+    PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
+  }
+  catch(...)
+  {
+    PyErr_SetString(PyExc_RuntimeError, "Unknown exception");
+	}
+  return NULL;
+}
+//---------------------------------------------------------------------------
+template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
+{
+  Py_complex V = PyComplex_AsCComplex(O);
+	return Func32::TComplex(V.real, V.imag);
+}
+//---------------------------------------------------------------------------
+PyObject* ToPyObject(const Func32::TComplex &Value)
+{
+	return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
 }
 //---------------------------------------------------------------------------
 static int WriteToConsole(int Arg)
@@ -574,7 +714,7 @@ static PyObject* PluginGetLanguageList(PyObject *Self, PyObject *Args)
   }
 }
 //---------------------------------------------------------------------------
-static PyMethodDef GraphMethods[] = {
+PyMethodDef GraphMethods[] = {
 	{"SetCustomFunction",         PluginSetCustomFunction, METH_VARARGS, ""},
 	{"GetCustomFunction",         PluginGetCustomFunction, METH_O, ""},
 	{"DelCustomFunction",         PluginDelCustomFunction, METH_O, ""},
@@ -638,17 +778,17 @@ _inittab Modules[] =
   {NULL, NULL}
 };
 //---------------------------------------------------------------------------
-static bool PythonInitialized = false;
 void InitPlugins()
 {
-  _control87(DEFAULT_FPU_CONTROL, FPU_MASK);
+  using namespace Python;
+  SET_DEFAULT_FPU_MASK();
 	if(IsPythonInstalled())
 	{
 		RegisterClass(__classid(TForm));
 
 		Form22 = new TForm22(Application);
 		Form1->ScriptDocAction->Visible = true;
-		SET_PYTHON_FPU_MASK(); //Set the FPU Control Word to what Python expects
+ 		SET_PYTHON_FPU_MASK(); //Set the FPU Control Word to what Python expects
 		PyImport_ExtendInittab(Modules);
 		static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
 		Py_SetProgramName(ExeName.c_str());
@@ -702,7 +842,7 @@ void InitPlugins()
 
 		int Result = PyRun_SimpleString(PythonCommands.c_str());
 		PyEval_SaveThread();
-    SET_PYTHON_FPU_MASK();
+    SET_DEFAULT_FPU_MASK();
 		PythonInitialized = true;
 	}
 	else
@@ -723,129 +863,6 @@ void UnloadPlugin()
 	}
 }
 //---------------------------------------------------------------------------
-PyObject* ToPyObject(const TPyVariant &Variant)
-{
-  if(const int *Value = boost::get<int>(&Variant))
-    return ToPyObject(*Value);
-  if(const double *Value = boost::get<double>(&Variant))
-    return ToPyObject(*Value);
-  if(const std::wstring *Value = boost::get<std::wstring>(&Variant))
-    return ToPyObject(*Value);
-	if(PyObject *const*Value = boost::get<PyObject*>(&Variant))
-	{
-	  Py_INCREF(*Value);
-		return *Value;
-	}
-  if(TObject *const*Object = boost::get<TObject*>(&Variant))
-  {
-    return VclObject_Create(*Object, false);
-  }
-  return NULL;
-}
-//---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, const TGraphElemPtr &Elem)
-{
-  if(!PythonInitialized)
-    return false;
-  if(IsPythonInstalled())
-  {
-    TLockGIL Dummy;
-    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", DownCastSharedPtr(Elem)));
-  }
-  return false;
-}
-//---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, PyObject *Param)
-{
-  if(IsPythonInstalled() && PythonInitialized)
-  {
-    TLockGIL Dummy;
-    PyObject *Module = PyImport_AddModule("Graph");
-    char *MethodName = "ExecuteEvent";
-    char *Format = Param ? (char*)"(iN)" : (char*)"(i())";
-    PyObject *ResultObj = PyObject_CallMethod(Module, MethodName, Format, PluginEvent, Param, NULL);
-    bool Result = ResultObj && PyObject_IsTrue(ResultObj);
-		Py_XDECREF(ResultObj);
-    return Result;
-	}
-  return false;
-}
-//---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1)
-{
-  if(IsPythonInstalled())
-  {
-    TLockGIL Dummy;
-    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(N)", ToPyObject(V1)));
-  }
-  return false;
-}
-//---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2)
-{
-  if(IsPythonInstalled())
-  {
-    TLockGIL Dummy;
-    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NN)", ToPyObject(V1), ToPyObject(V2)));
-  }
-  return false;
-}
-//---------------------------------------------------------------------------
-bool ExecutePluginEvent(TPluginEvent PluginEvent, TPyVariant V1, TPyVariant V2, TPyVariant V3)
-{
-  if(IsPythonInstalled())
-	{
-		TLockGIL Dummy;
-    return ExecutePluginEvent(PluginEvent, Py_BuildValue("(NNN)", ToPyObject(V1), ToPyObject(V2), ToPyObject(V3)));
-  }
-  return false;
-}
-//---------------------------------------------------------------------------
-TPyObjectPtr ExecutePluginFunc(const char *MethodName, PyObject *Param)
-{
-  //Python must be installed and the we must have the GIL
-  PyObject *Module = PyImport_AddModule("Graph");
-  TPyObjectPtr Function(PyObject_GetAttrString(Module, MethodName), false);
-  if(!Function)
-    PrintException(true, true);
-  TPyObjectPtr ResultObj(PyObject_CallObject(Function.get(), Param), false);
-  if(!ResultObj)
-    PrintException(true, true);
-  return ResultObj;
-}
-//---------------------------------------------------------------------------
-PyObject* ConvertException()
-{
-  try
-  {
-    throw;
-  }
-  catch(Func32::EFuncError &E)
-  {
-    PyErr_SetString(PyEFuncError, AnsiString(GetErrorMsg(E)).c_str());
-  }
-  catch(Exception &E)
-  {
-    PyErr_SetString(PyVclException, AnsiString(E.Message).c_str());
-  }
-  catch(...)
-  {
-    PyErr_SetString(PyExc_RuntimeError, "Unknown exception");
-	}
-  return NULL;
-}
-//---------------------------------------------------------------------------
-template<> Func32::TComplex FromPyObject<Func32::TComplex>(PyObject *O)
-{
-  Py_complex V = PyComplex_AsCComplex(O);
-	return Func32::TComplex(V.real, V.imag);
-}
-//---------------------------------------------------------------------------
-PyObject* ToPyObject(const Func32::TComplex &Value)
-{
-	return Value.imag() ? PyComplex_FromDoubles(Value.real(), Value.imag()) : PyFloat_FromDouble(Value.real());
-}
-//---------------------------------------------------------------------------
-} //namespace Python
 
+}
 

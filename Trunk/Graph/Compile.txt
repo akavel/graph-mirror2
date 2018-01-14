@@ -33,3 +33,8 @@ Change release to debug so it looks like this:
 
 Problem with creating pre-compiled header:	
 	[bcc32 Warning] none.hpp(23): W8058 Cannot create pre-compiled header: initialized data in header
+
+
+Creating import libraries
+For Win64:
+mkexp Python36.a Python\python36.dll

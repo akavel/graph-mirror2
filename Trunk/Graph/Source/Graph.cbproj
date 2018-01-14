@@ -46,6 +46,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <Defines>PYTHON_EMBEDDED;$(Defines)</Defines>
         <BCC_SourceDebuggingOn>True</BCC_SourceDebuggingOn>
         <ILINK_FullDebugInfo>True</ILINK_FullDebugInfo>
         <BCC_DebugLineNumbers>True</BCC_DebugLineNumbers>
@@ -58,7 +59,7 @@
         <Multithreaded>true</Multithreaded>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <AllPackageLibs>rtl.lib;vcl.lib;bindengine.lib;IComp.lib;vclactnband.lib;vclx.lib;vclimg.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;madExcept_.lib;madDisAsm_.lib;madBasic_.lib;fmx.lib</AllPackageLibs>
-        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Manifest_File>Source\Graph.manifest</Manifest_File>
         <VerInfo_Locale>1030</VerInfo_Locale>
         <ILINK_LibraryPath>$(BDS)\source\vcl\;..\Libraries\pdflib\;..\Libraries\dxgettext\;..\PyVcl\;..\Components\Common\;Source\;Frames\;Forms\;Swig\;..;..\Func32\$(Platform)\$(Config);$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>

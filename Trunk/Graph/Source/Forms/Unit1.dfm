@@ -151,7 +151,7 @@ object Form1: TForm1
     Left = 0
     Top = 25
     Width = 510
-    Height = 114
+    Height = 58
     ActionManager = ActionManager
     Color = clMenuBar
     ColorMap.DisabledFontColor = 7171437
@@ -168,7 +168,6 @@ object Form1: TForm1
     ParentFont = False
     PopupMenu = PopupMenu2
     Spacing = 0
-    ExplicitHeight = 58
   end
   object ActionMainMenuBar1: TActionMainMenuBar
     Left = 0
@@ -220,18 +219,16 @@ object Form1: TForm1
   end
   object Panel5: TPanel
     Left = 0
-    Top = 139
+    Top = 83
     Width = 510
-    Height = 201
+    Height = 257
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitTop = 83
-    ExplicitHeight = 257
     object Splitter1: TMySplitter
       Left = 161
       Top = 0
-      Height = 98
+      Height = 154
       AutoSnap = False
       Beveled = True
       MinSize = 120
@@ -241,7 +238,7 @@ object Form1: TForm1
     end
     object Splitter2: TSplitter
       Left = 0
-      Top = 98
+      Top = 154
       Width = 510
       Height = 3
       Cursor = crVSplit
@@ -254,7 +251,7 @@ object Form1: TForm1
       Left = 164
       Top = 0
       Width = 346
-      Height = 98
+      Height = 154
       Align = alClient
       BevelOuter = bvNone
       FullRepaint = False
@@ -263,7 +260,6 @@ object Form1: TForm1
       TabOrder = 0
       OnMouseLeave = Panel2MouseLeave
       OnResize = Panel2Resize
-      ExplicitHeight = 154
       object Image1: TImage
         Left = 0
         Top = 0
@@ -346,17 +342,16 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Width = 161
-      Height = 98
+      Height = 154
       Align = alLeft
       BevelOuter = bvNone
       DragKind = dkDock
       TabOrder = 1
-      ExplicitHeight = 154
       object TreeView: TTreeView
         Left = 0
         Top = 0
         Width = 161
-        Height = 98
+        Height = 154
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -384,17 +379,15 @@ object Form1: TForm1
         OnMouseDown = TreeViewMouseDown
         OnMouseLeave = TreeViewMouseLeave
         OnMouseMove = TreeViewMouseMove
-        ExplicitHeight = 154
       end
       object Panel1: TPanel
         Left = 0
-        Top = 98
+        Top = 154
         Width = 161
         Height = 0
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitTop = 154
         object Panel4: TPanel
           Left = 0
           Top = 0
@@ -413,7 +406,7 @@ object Form1: TForm1
     end
     object Panel6: TPanel
       Left = 0
-      Top = 101
+      Top = 157
       Width = 510
       Height = 100
       Align = alBottom
@@ -424,7 +417,6 @@ object Form1: TForm1
       OnDockOver = Panel6DockOver
       OnGetSiteInfo = Panel6GetSiteInfo
       OnUnDock = Panel6UnDock
-      ExplicitTop = 157
     end
   end
   object OpenDialog: TOpenDialog
@@ -1745,7 +1737,7 @@ object Form1: TForm1
     Left = 208
     Top = 216
     Bitmap = {
-      494C01010A007801400240004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010A007801480240004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000000010000C000000001002000000000000000
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -8096,7 +8088,7 @@ object Form1: TForm1
     Left = 208
     Top = 256
     Bitmap = {
-      494C01013B00F000E00040004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01013B00F000E80040004000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000000010000C003000001002000000000000000
       0F00000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

@@ -9,15 +9,13 @@
 //---------------------------------------------------------------------------
 #include "Platform.h"
 #pragma hdrstop
-#ifdef _Windows
-#define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
-#endif
+//#define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
 #include "PythonBind.h"
 #include "python.hpp"
 #include "PyVclObject.h"
 #include <float.h>
 #ifdef _WIN64
-#pragma link "python32.a"
+#pragma link "python36.a"
 #elif defined(__WIN32__)
 #pragma link "python36.lib"
 #else
@@ -26,9 +24,13 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-#ifdef _Windows
-HINSTANCE PythonInstance = NULL;
+#ifdef PYTHON_EMBEDDED
+bool IsPythonInstalled();
+#else
+#define IsPythonInstalled() true
+#endif
 //---------------------------------------------------------------------------
+extern HINSTANCE PythonInstance;
 template<typename T>
 T& GetPythonAddress(const char *Name)
 {
@@ -37,25 +39,8 @@ T& GetPythonAddress(const char *Name)
     return *reinterpret_cast<T*>(GetProcAddress(PythonInstance, Name));
   return Dummy;
 }
-#endif
 //---------------------------------------------------------------------------
-bool IsPythonInstalled()
-{
-	static int Result = -1;
-#ifdef _Windows
-#define STRING(x) #x
-#define XSTRING(x) STRING(x)
-#define PYTHON_DLL L"c:\\python36_32\\Python" XSTRING(PY_MAJOR_VERSION) XSTRING(PY_MINOR_VERSION) ".dll"
-  static const wchar_t *PythonDll = PYTHON_DLL;
-  if(Result == -1)
-  {
-    PythonInstance = LoadLibrary(PythonDll);
-    Result = PythonInstance != NULL;
-  }
-#endif
-  return Result;
-}
-//---------------------------------------------------------------------------
+
 PyObject* PyReturnNone()
 {
   Py_INCREF(Py_None);
