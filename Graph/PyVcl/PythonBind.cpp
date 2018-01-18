@@ -40,13 +40,6 @@ T& GetPythonAddress(const char *Name)
   return Dummy;
 }
 //---------------------------------------------------------------------------
-
-PyObject* PyReturnNone()
-{
-  Py_INCREF(Py_None);
-	return Py_None;
-}
-//---------------------------------------------------------------------------
 TLockGIL::TLockGIL()
 {
   if(IsPythonInstalled())

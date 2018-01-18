@@ -130,13 +130,13 @@ void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TV
 	int Count = Args.get_length() - 1;
 	PyObject *PyArgs = Count != 0 ? PyTuple_New(Count) : NULL;
 	for(int I = 0; I < Count; I++)
-		PyTuple_SET_ITEM(PyArgs, I, Params[I+1].FByRefParam ? VclRef_Create(&Args[I+1]) : ToPyObject(Args[I+1]));
+		PyTuple_SetItem(PyArgs, I, Params[I+1].FByRefParam ? VclRef_Create(&Args[I+1]) : ToPyObject(Args[I+1]));
 	PyObject *PyResult = PyObject_CallObject(Object, PyArgs);
 
   //Invalidate all VclREf objects used as arguments
 	for(int I = 0; I < Count; I++)
   {
-    PyObject *Arg = PyTuple_GET_ITEM(PyArgs, I);
+    PyObject *Arg = PyTuple_GetItem(PyArgs, I);
     if(VclRef_Check(Arg))
       VclRef_Invalidate(Arg);
   }
@@ -330,7 +330,7 @@ static PyObject* VclObject_GetAttro(TVclObject *self, PyObject *attr_name)
 			throw EPyVclError("Referenced object has been deleted.");
 
 		TObject *Object = self->Instance;
-		String Name = PyUnicode_AsUnicode(attr_name);
+		String Name = FromPyObject<String>(attr_name);
 		TRttiType *Type = Context.GetType(Object->ClassType());
 		if(Type == NULL)
 			throw EPyVclError("Type not found.");
@@ -376,7 +376,7 @@ static int VclObject_SetAttro(TVclObject *self, PyObject *attr_name, PyObject *v
 		if(self->Instance == NULL)
 			throw EPyVclError("Referenced object has been deleted.");
 
-		String Name = PyUnicode_AsUnicode(attr_name);
+		String Name = FromPyObject<String>(attr_name);
 		TRttiType *Type = Context.GetType(self->Instance->ClassType());
 		TRttiProperty *Property = Type->GetProperty(Name);
 		if(Property == NULL)
@@ -455,7 +455,7 @@ static PyObject* VclObject_RichCompare(TVclObject *self, PyObject *other, int op
     Py_RETURN_TRUE;
   }
 
-  return PyErr_Format(PyExc_TypeError, "unorderable types: %s() < %s()", self->ob_base.ob_type->tp_name, other->ob_type->tp_name);
+  return PyErr_Format(PyExc_TypeError, "unorderable types: %s() < %s()", self->ob_base.ob_type->tp_name, GetTypeName(other).c_str());
 }
 //---------------------------------------------------------------------------
 /** Convert the object to True or False.

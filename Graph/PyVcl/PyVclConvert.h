@@ -18,6 +18,7 @@ namespace Python
 
 	Rtti::TValue ToValue(PyObject *O, TTypeInfo *TypeInfo);
 	void TupleToValues(PyObject *O, std::vector<Rtti::TValue> &Values, const DynamicArray<Rtti::TRttiParameter*> &Parameters);
+  String GetTypeName(PyObject *O);
 
 	PyObject* ToPyObject(bool Value);
 	PyObject* ToPyObject(int Value);
