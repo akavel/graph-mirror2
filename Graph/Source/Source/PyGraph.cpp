@@ -36,18 +36,35 @@ T& GetPythonAddress(const char *Name)
 //---------------------------------------------------------------------------
 bool IsPythonInstalled()
 {
-	static int Result = -1;
+static bool PythonInstalledChecked = false; //Warning: There might be an initialization order issue.
+
 #define STRING(x) #x
 #define XSTRING(x) STRING(x)
-#define PYTHON_DLL L"y:\\projects\\Graph\\Python\\Python" XSTRING(PY_MAJOR_VERSION) XSTRING(PY_MINOR_VERSION) ".dll"
-//#define PYTHON_DLL L"c:\\python36_32\\Python" XSTRING(PY_MAJOR_VERSION) XSTRING(PY_MINOR_VERSION) ".dll"
-  static const wchar_t *PythonDll = PYTHON_DLL;
-  if(Result == -1)
+#define PYTHON_DLL_NAME "Python" XSTRING(PY_MAJOR_VERSION) XSTRING(PY_MINOR_VERSION) ".dll";
+#define PYTHON_VERSION_STRING XSTRING(PY_MAJOR_VERSION) "." XSTRING(PY_MINOR_VERSION)
+  if(!PythonInstalledChecked)
   {
-    PythonInstance = LoadLibrary(PythonDll);
-    Result = PythonInstance != NULL;
+		std::wstring BaseDir = GetRegValue(REGISTRY_KEY, L"BaseDir", HKEY_CURRENT_USER, ExtractFileDir(Application->ExeName).c_str());
+    std::wstring PythonDll = BaseDir + L"\\Python\\" PYTHON_DLL_NAME;
+    PythonInstance = LoadLibrary(PythonDll.c_str());
+
+    if(PythonInstance == NULL)
+    {
+      //On 64-bit Windows this will actually access Software\Wow6432Node\Python\PythonCore\3.6-32\InstallPath
+      //under HKCU because of redirection of some registry keys for 32-bit applications.
+      wchar_t *RegKey = L"Software\\Python\\PythonCore\\" PYTHON_VERSION_STRING "-32\\InstallPath";
+		  BaseDir = GetRegValue(RegKey, L"", HKEY_CURRENT_USER, L"").c_str();
+      if(BaseDir.empty())
+  		  BaseDir = GetRegValue(RegKey, L"", HKEY_LOCAL_MACHINE, L"").c_str();
+      if(!BaseDir.empty())
+      {
+        PythonDll = BaseDir + L"\\" PYTHON_DLL_NAME;
+        PythonInstance = LoadLibrary(PythonDll.c_str());
+      }
+    }
+    PythonInstalledChecked = true;
   }
-  return Result;
+  return PythonInstance != NULL;
 }
 //---------------------------------------------------------------------------
 void PrintException(bool ShowTraceback=true, bool ThrowException=false)
