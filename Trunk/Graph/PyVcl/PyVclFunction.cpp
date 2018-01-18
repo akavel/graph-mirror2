@@ -98,7 +98,7 @@ static PyObject *VclFunction_Call(TVclFunction* self, PyObject *args, PyObject *
 			throw EPyVclError("Function argument count mismatch!");
 
 		for(int I = 0; I < Count; I++)
-			 Arguments[I] = ToValue(PyTuple_GET_ITEM(args, I), self->Function->Args[I]);
+			 Arguments[I] = ToValue(PyTuple_GetItem(args, I), self->Function->Args[I]);
 
 		TValue Result = Invoke(self->Function->Address, Arguments, ccReg, self->Function->Result);
 		return ToPyObject(Result);

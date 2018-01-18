@@ -27,17 +27,17 @@ PyObject *PyVclException = NULL;
 //---------------------------------------------------------------------------
 String GetTypeName(PyObject *O)
 {
-  PyObject *Str = PyObject_Str(reinterpret_cast<PyObject*>(O->ob_type));
-  if(Str != NULL)
-    return FromPyObject<String>(Str);
+  TPyObjectPtr Type(PyObject_GetAttrString(reinterpret_cast<PyObject*>(O->ob_type), "__name__"), false);
+  if(Type.get())
+    return FromPyObject<String>(Type.get());
   return "";
 }
 //---------------------------------------------------------------------------
 TValue ToValue(PyObject *O)
 {
   if(PyUnicode_Check(O))
-    return TValue::From(String(PyUnicode_AS_UNICODE(O)));
-	throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'TValue'");
+    return TValue::From(FromPyObject<String>(O));
+	throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to 'TValue'");
 }
 //---------------------------------------------------------------------------
 /** Convert a PyObject to a TValue as used when calling functions and setting properties in a generic way through Delphi RTTI.
@@ -67,7 +67,7 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			if(PyLong_Check(O))
 				TValue::Make(PyLong_AsLong(O), TypeInfo, Result);
       else
-				TValue::Make(GetEnumValue(TypeInfo, PyUnicode_AsUnicode(O)), TypeInfo, Result);
+				TValue::Make(GetEnumValue(TypeInfo, FromPyObject<String>(O)), TypeInfo, Result);
 			break;
 
 		case tkSet:
@@ -77,10 +77,10 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
       {
         TPyObjectPtr Sep = ToPyObjectPtr(",");
         TPyObjectPtr Str(PyUnicode_Join(Sep.get(), O), false);
-        SetStr = PyUnicode_AsUnicode(Str.get());
+        SetStr = FromPyObject<String>(Str.get());
       }
       else
-        SetStr = PyUnicode_AsUnicode(O);
+        SetStr = FromPyObject<String>(O);
 			TValue::Make(StringToSet(TypeInfo, SetStr), TypeInfo, Result);
 			break;
     }
@@ -92,14 +92,14 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 		case tkString:
 		case tkLString:
 		case tkWString:
-			Result = TValue::From(String(PyUnicode_AsUnicode(O)));
+			Result = TValue::From(FromPyObject<String>(O));
 			break;
 
 		case tkChar:
 		case tkWChar:
 			if(PyUnicode_GetSize(O) != 1)
 				throw EPyVclError("Expected string with one character");
-			Result = TValue::From(PyUnicode_AsUnicode(O)[0]);
+			Result = TValue::From(FromPyObject<String>(O)[0]);
 			break;
 
 		case tkFloat:
@@ -130,10 +130,10 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			break;
 
 		case tkPointer:
-      if(AnsiString(TypeInfo->Name) == "PWideChar")
-    		TValue::Make(reinterpret_cast<int>(PyUnicode_AsUnicode(O)), TypeInfo, Result);
-      else
-    		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+//      if(AnsiString(TypeInfo->Name) == "PWideChar")
+//    		TValue::Make(reinterpret_cast<int>(PyUnicode_AsUnicode(O)), TypeInfo, Result);
+//      else
+    		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
       break;
 
 		case tkClassRef:
@@ -145,10 +145,10 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 		case tkUnknown:
 		case tkMethod:
 		default:
-			throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+			throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 	}
 	if(PyErr_Occurred())
-		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 	return Result;
 }
 //---------------------------------------------------------------------------
@@ -183,7 +183,7 @@ PyObject* ToPyObject(long long Value)
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(wchar_t Value)
 {
-  return PyUnicode_FromUnicode(&Value, 1);
+  return PyUnicode_FromWideChar(&Value, 1);
 }
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(double Value)
@@ -193,13 +193,13 @@ PyObject* ToPyObject(double Value)
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(const std::wstring &Str)
 {
-  return PyUnicode_FromUnicode(Str.c_str(), Str.size());
+  return PyUnicode_FromWideChar(Str.c_str(), Str.size());
 }
 //---------------------------------------------------------------------------
 PyObject* ToPyObject(const String &Str)
 {
 #ifdef _Windows
-	return PyUnicode_FromUnicode(Str.c_str(), Str.Length());
+	return PyUnicode_FromWideChar(Str.c_str(), Str.Length());
 #else
 	return PyUnicode_DecodeUTF16(reinterpret_cast<const char*>(Str.c_str()), Str.Length(), NULL, NULL);
 #endif
@@ -293,9 +293,9 @@ PyObject* ToPyObject(const Rtti::TValue &V)
 			PyObject *Tuple = PyTuple_New(Fields.Length);
 			for(int I = 0; I < Fields.Length; I++)
         if(Fields[I]->FieldType != NULL)
-  				PyTuple_SET_ITEM(Tuple, I, ToPyObject(Fields[I]->GetValue(Data)));
+  				PyTuple_SetItem(Tuple, I, ToPyObject(Fields[I]->GetValue(Data)));
         else
-  				PyTuple_SET_ITEM(Tuple, I, (Py_INCREF(Py_None), Py_None));
+  				PyTuple_SetItem(Tuple, I, (Py_INCREF(Py_None), Py_None));
 			return Tuple;
 		}
 
@@ -323,7 +323,8 @@ PyObject* ToPyObject(const Rtti::TValue &V)
       PyObject *O = PyList_New(Value.GetArrayLength());
       if(O != NULL)
       {
-        for(int I = 0; I < PyList_GET_SIZE(O); I++)
+        Py_ssize_t Size = PyTuple_Size(O);
+        for(int I = 0; I < Size; I++)
           PyList_SetItem(O, I, ToPyObject(Value.GetArrayElement(I)));
       }
       return O;
@@ -354,7 +355,7 @@ template<> double FromPyObject<double>(PyObject *O)
 	if(PyErr_Occurred())
   {
     PyErr_Clear();
-		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'double'");
+		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to 'double'");
   }
   return Result;
 }
@@ -365,7 +366,7 @@ template<> std::wstring FromPyObject<std::wstring>(PyObject *O)
   if(Size == -1)
   {
     PyErr_Clear();
-		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'wstring'");
+		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to 'wstring'");
   }
   std::wstring Str(Size, ' ');
   if(Str.size() == 0)
@@ -382,7 +383,7 @@ template<> String FromPyObject<String>(PyObject *O)
   if(Size == -1)
   {
     PyErr_Clear();
-		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'String'");
+		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to 'String'");
   }
   Str.SetLength(Size);
   if(Str.Length() == 0)
@@ -410,7 +411,7 @@ template<> int FromPyObject<int>(PyObject *O)
 	if(PyErr_Occurred())
   {
     PyErr_Clear();
-		throw EPyVclError("Cannot convert Python object of type '" + String(O->ob_type->tp_name) + "' to 'double'");
+		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to 'double'");
   }
   return Result;
 }
