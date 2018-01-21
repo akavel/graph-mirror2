@@ -12,7 +12,7 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-	extern PyTypeObject VclFunction_Type;
+  bool VclFunction_Init();
 	PyObject* VclFunction_Create(const String &Name);
 	unsigned GetVclFunctionCount();
 	const wchar_t* GetVclFunctionName(unsigned Index);

@@ -117,14 +117,13 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
 		if(Type != NULL)
 			Result = VclType_Create(Type);
 		else
+    {
 			Result = VclFunction_Create(Name);
-		if(Result == NULL)
-		{
-		  SetErrorString(PyExc_AttributeError, GUI_NAME " has no global attribute '" + Name + "'");
-      return NULL;
+  		if(Result == NULL)
+		    SetErrorString(PyExc_AttributeError, GUI_NAME " has no global attribute '" + Name + "'");
     }
-
-		PyObject_GenericSetAttr(self, attr_name, Result);
+    if(Result != NULL)
+  		PyObject_GenericSetAttr(self, attr_name, Result);
 		return Result;
 	}
 	catch(...)
@@ -152,50 +151,22 @@ static PyMethodDef VclModule_Methods[] =
 /** This type derives from PyModule_Type (module in Python) and is used as the class
  *  of the vcl module to make it possible to set tp_getattro.
  */
-static PyTypeObject VclModule_Type =
+static PyType_Slot VclModule_Slots[] =
 {
-	PyObject_HEAD_INIT(NULL)
-	GUI_NAME "module",         /* tp_name */
-	0, /* Initialized later */ /* tp_basicsize */
-	0,                         /* tp_itemsize */
-	0, 												 /* tp_dealloc */
-	0,                         /* tp_print */
-	0,                         /* tp_getattr */
-	0,                         /* tp_setattr */
-	0,                         /* tp_compare */
-	0,  											 /* tp_repr */
-	0,                         /* tp_as_number */
-	0,                         /* tp_as_sequence */
-	0,                         /* tp_as_mapping */
-	0,                         /* tp_hash */
-	0, 												 /* tp_call */
-	0,                         /* tp_str */
-	VclModule_GetAttro,   		 /* tp_getattro */
-	PyObject_GenericSetAttr,	 /* tp_setattro */
-	0,                         /* tp_as_buffer */
-	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-#if FIREMONKEY
-	"Module wrapping the FireMonkey (FMX) library", /* tp_doc */
-#else
-	"Module wrapping the Visual Component Library (VCL)", /* tp_doc */
-#endif
-	0,		                     /* tp_traverse */
-	0,		                     /* tp_clear */
-	0,		                     /* tp_richcompare */
-	0,		                     /* tp_weaklistoffset */
-	0,		                     /* tp_iter */
-	0,		                     /* tp_iternext */
-	VclModule_Methods,         /* tp_methods */
-	0,                         /* tp_members */
-	0,       									 /* tp_getset */
-	0,                         /* tp_base */
-	0,                         /* tp_dict */
-	0,                         /* tp_descr_get */
-	0,                         /* tp_descr_set */
-	0,                         /* tp_dictoffset */
-	0,						             /* tp_init */
-	0,                         /* tp_alloc */
-	0,						             /* tp_new */
+  {Py_tp_base, NULL},                  //This is filled in InitPyVcl()
+  {Py_tp_getattro, VclModule_GetAttro},
+  {Py_tp_setattro, PyObject_GenericSetAttr},
+  {Py_tp_methods,	VclModule_Methods},
+  {0, NULL}
+};
+
+static PyType_Spec VclModule_Spec =
+{
+  GUI_NAME "module",    //name
+  0,                    //basicsize
+  0,                    //itemsize
+  Py_TPFLAGS_DEFAULT,   //flags
+  VclModule_Slots,      //slots
 };
 //---------------------------------------------------------------------------
 static PyModuleDef PyVclModuleDef =
@@ -224,14 +195,15 @@ PyObject* InitPyVcl()
 #if FIREMONKEY
   RegisterType(__delphirtti(Python::TForm)); //Register our replacement TForm
 #endif
-  //VclModuleType derives from PyModule_Type and VclModuleType must therefore have
-  //the same size.
-  VclModule_Type.tp_basicsize = PyModule_Type.tp_basicsize;
-  VclModule_Type.tp_base = &PyModule_Type;
-	if(PyType_Ready(&VclModule_Type) < 0 || PyType_Ready(&VclMethod_Type) < 0 ||
-		PyType_Ready(&VclObject_Type) < 0 || PyType_Ready(&VclFunction_Type) < 0 ||
+  //VclModule_Type derives from PyModule_Type, which is the default type of all modules.
+  //VclModule_Type must have the same basicsize as PyModule_Type, but that seems to happen automatically.
+  VclModule_Slots[0].pfunc = &PyModule_Type;
+  PyObject *VclModule_Type = PyType_FromSpec(&VclModule_Spec);
+//  PyObject *VclModule_Type = PyType_FromSpecWithBases(&VclModule_Spec, PyTuple_Pack(1, &PyModule_Type));
+	if(VclModule_Type == NULL || !VclMethod_Init() ||
+		PyType_Ready(&VclObject_Type) < 0 || !VclFunction_Init() ||
 		PyType_Ready(&VclIndexedProperty_Type) < 0 || PyType_Ready(&VclRef_Type) < 0 ||
-    PyType_Ready(&VclClosure_Type) < 0)
+    !VclClosure_Init())
 		return NULL;
 
   //Module must be created by PyModule_Create().
@@ -250,7 +222,7 @@ PyObject* InitPyVcl()
 
   //Nasty hack: Change vcl module to be an instance of VclModuleType instead of
   //PyModule_Type (module).
-  PyVclModule->ob_type = &VclModule_Type;
+  PyVclModule->ob_type = reinterpret_cast<PyTypeObject*>(VclModule_Type);
 	return PyErr_Occurred() ? NULL : PyVclModule;
 }
 //---------------------------------------------------------------------------
