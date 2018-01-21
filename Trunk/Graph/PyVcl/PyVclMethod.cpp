@@ -16,6 +16,7 @@
 #include "PyVclObject.h"
 namespace Python
 {
+PyTypeObject *VclMethod_Type = NULL;
 //---------------------------------------------------------------------------
 struct TVclMethod
 {
@@ -135,52 +136,41 @@ static void VclMethod_Dealloc(TVclMethod* self)
 {
 	self->Methods.~DynamicArray();
   Py_XDECREF(reinterpret_cast<PyObject*>(self->Object));
-	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
+
+  //It is okay to call PyObject_Del() directly when the object was allocated with PyObject_New()
+  //and the type cannot be subclassed. Otherwise we should use this, which does not compile with the limited API:
+  //Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
+  PyObject_Del(reinterpret_cast<PyObject*>(self));
 }
 //---------------------------------------------------------------------------
 /** VclMethod is a proxy for one or more methods of a VCL object.
  */
-PyTypeObject VclMethod_Type =
+static PyType_Slot VclMethod_Slots[] =
 {
-	PyObject_HEAD_INIT(NULL)
-	GUI_TYPE "Method",       	 /* tp_name */
-	sizeof(TVclMethod),        /* tp_basicsize */
-	0,                         /* tp_itemsize */
-	(destructor)VclMethod_Dealloc, /* tp_dealloc */
-	0,                         /* tp_print */
-	0,                         /* tp_getattr */
-	0,                         /* tp_setattr */
-	0,                         /* tp_compare */
-	(reprfunc)VclMethod_Repr,  /* tp_repr */
-	0,                         /* tp_as_number */
-	0,                         /* tp_as_sequence */
-	0,                         /* tp_as_mapping */
-	0,                         /* tp_hash */
-	(ternaryfunc)VclMethod_Call, /* tp_call */
-	0,                         /* tp_str */
-	0,                         /* tp_getattro */
-	0,                         /* tp_setattro */
-	0,                         /* tp_as_buffer */
-	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	PROJECT_NAME " method object",       /* tp_doc */
-	0,		                     /* tp_traverse */
-	0,		                     /* tp_clear */
-	0,		                     /* tp_richcompare */
-	0,		                     /* tp_weaklistoffset */
-	0,		                     /* tp_iter */
-	0,		                     /* tp_iternext */
-	0, 								         /* tp_methods */
-	0,                         /* tp_members */
-	0,       									 /* tp_getset */
-	0,                         /* tp_base */
-	0,                         /* tp_dict */
-	0,                         /* tp_descr_get */
-	0,                         /* tp_descr_set */
-	0,                         /* tp_dictoffset */
-	0,                         /* tp_init */
-	0,                         /* tp_alloc */
-	0,						             /* tp_new */
+  {Py_tp_doc,	(void*) PROJECT_NAME " method object"},
+  {Py_tp_dealloc, VclMethod_Dealloc},
+  {Py_tp_repr, VclMethod_Repr},
+  {Py_tp_call, VclMethod_Call},
+  {0, NULL}
 };
+
+static PyType_Spec VclMethod_Spec =
+{
+  GUI_TYPE "Method",   //name
+  sizeof(TVclMethod),  //basicsize
+  0,                   //itemsize
+  Py_TPFLAGS_DEFAULT,  //flags
+  VclMethod_Slots,     //slots
+};
+//---------------------------------------------------------------------------
+/** Initialize the VclMethod_Type type object.
+ *  \return true on success
+ */
+bool VclMethod_Init()
+{
+  VclMethod_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclMethod_Spec));
+  return VclMethod_Type != NULL;
+}
 //---------------------------------------------------------------------------
 /** Create new VclMethod object, which is a proxy object to one or more methods of
  *  a VCL object.
@@ -190,7 +180,7 @@ PyTypeObject VclMethod_Type =
  */
 PyObject* VclMethod_Create(TVclObject *Object, TObject *Instance, const DynamicArray<TRttiMethod*> &Methods)
 {
-	TVclMethod *VclMethod = PyObject_New(TVclMethod, &VclMethod_Type);
+	TVclMethod *VclMethod = PyObject_New(TVclMethod, VclMethod_Type);
 	new(&VclMethod->Methods) DynamicArray<TRttiMethod*>(Methods);
   Py_XINCREF(reinterpret_cast<PyObject*>(Object));
 	VclMethod->Object = Object;

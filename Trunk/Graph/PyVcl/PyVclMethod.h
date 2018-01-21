@@ -13,7 +13,7 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-	extern PyTypeObject VclMethod_Type;
+  bool VclMethod_Init();
   class TVclObject;
 	PyObject* VclMethod_Create(TVclObject *Object, TObject *Instance, const DynamicArray<TRttiMethod*> &Methods);
 	TValue CallMethod(TRttiType *Type, TObject *Instance, DynamicArray<TRttiMethod*> &Methods, PyObject *Args);

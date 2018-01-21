@@ -16,6 +16,7 @@
 
 namespace Python
 {
+PyTypeObject *VclClosure_Type = NULL;
 //---------------------------------------------------------------------------
 struct TVclClosure
 {
@@ -92,47 +93,33 @@ static PyGetSetDef VclClosure_GetSeters[] =
 //---------------------------------------------------------------------------
 /** VclClosure is a proxy for a Delphi closure, i.e. a method pointer and an instance.
  */
-PyTypeObject VclClosure_Type =
+static PyType_Slot VclClosure_Slots[] =
 {
-	PyObject_HEAD_INIT(NULL)
-	GUI_TYPE "Closure",      	 /* tp_name */
-	sizeof(TVclClosure),       /* tp_basicsize */
-	0,                         /* tp_itemsize */
-	(destructor)VclClosure_Dealloc, /* tp_dealloc */
-	0,                         /* tp_print */
-	0,                         /* tp_getattr */
-	0,                         /* tp_setattr */
-	0,                         /* tp_compare */
-	(reprfunc)VclClosure_Repr,  /* tp_repr */
-	0,                         /* tp_as_number */
-	0,                         /* tp_as_sequence */
-	0,                         /* tp_as_mapping */
-	0,                         /* tp_hash */
-	(ternaryfunc)VclClosure_Call, /* tp_call */
-	0,                         /* tp_str */
-	0,                         /* tp_getattro */
-	0,                         /* tp_setattro */
-	0,                         /* tp_as_buffer */
-	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	PROJECT_NAME " closure object",      /* tp_doc */
-	0,		                     /* tp_traverse */
-	0,		                     /* tp_clear */
-	0,		                     /* tp_richcompare */
-	0,		                     /* tp_weaklistoffset */
-	0,		                     /* tp_iter */
-	0,		                     /* tp_iternext */
-	0, 								         /* tp_methods */
-	0,                         /* tp_members */
-	VclClosure_GetSeters,	  	 /* tp_getset */
-	0,                         /* tp_base */
-	0,                         /* tp_dict */
-	0,                         /* tp_descr_get */
-	0,                         /* tp_descr_set */
-	0,                         /* tp_dictoffset */
-	0,                         /* tp_init */
-	0,                         /* tp_alloc */
-	0,						             /* tp_new */
+  {Py_tp_doc,	(void*) PROJECT_NAME " closure object"},
+  {Py_tp_dealloc, VclClosure_Dealloc},
+  {Py_tp_repr, VclClosure_Repr},
+  {Py_tp_call, VclClosure_Call},
+  {Py_tp_getset, VclClosure_GetSeters},
+  {0, NULL}
 };
+
+static PyType_Spec VclClosure_Spec =
+{
+  GUI_TYPE "Closure",   //name
+  sizeof(TVclClosure),  //basicsize
+  0,                    //itemsize
+  Py_TPFLAGS_DEFAULT,   //flags
+  VclClosure_Slots,     //slots
+};
+//---------------------------------------------------------------------------
+/** Initialize the VclClosure_Type type object.
+ *  \return true on success
+ */
+bool VclClosure_Init()
+{
+  VclClosure_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclClosure_Spec));
+  return VclClosure_Type != NULL;
+}
 //---------------------------------------------------------------------------
 /** Create new VclClosure object, which is a proxy object to an event function.
  *  \param Callable: A TValue containing a TMethod pointing to a closure.
@@ -143,7 +130,7 @@ PyObject* VclClosure_Create(const TValue &Callable)
   //Allocate with new should be valid as VclClosure is not subclassable and
   //cannot be allocated directly from Python
 	TVclClosure *VclClosure = new TVclClosure();
-  PyObject_Init(reinterpret_cast<PyObject*>(VclClosure), &VclClosure_Type);
+  PyObject_Init(reinterpret_cast<PyObject*>(VclClosure), VclClosure_Type);
   VclClosure->Callable = Callable;
 	return reinterpret_cast<PyObject*>(VclClosure);
 }

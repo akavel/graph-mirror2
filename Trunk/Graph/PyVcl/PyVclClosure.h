@@ -13,7 +13,7 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-	extern PyTypeObject VclClosure_Type;
+  bool VclClosure_Init();
   PyObject* VclClosure_Create(const TValue &Callable);
 }
 //---------------------------------------------------------------------------

@@ -806,7 +806,7 @@ void InitPlugins()
 		Form22 = new TForm22(Application);
 		Form1->ScriptDocAction->Visible = true;
  		SET_PYTHON_FPU_MASK(); //Set the FPU Control Word to what Python expects
-		PyImport_ExtendInittab(Modules);
+		PyImport_ExtendInittab(Modules); //Notice the init functions are not called until the module is imported
 		static String ExeName = Application->ExeName; //Py_SetProgramName() requires variable to be static
 		Py_SetProgramName(ExeName.c_str());
 		Py_Initialize();
@@ -823,6 +823,7 @@ void InitPlugins()
     BaseDir = ReplaceStr(BaseDir, '\\', "\\\\");
 		AnsiString PythonCommands = AnsiString().sprintf(
 			"import sys\n"
+			"import vcl\n"    //vcl must be imported before GraphImpl to initialize VCL types used by GraphImpl
 			"import GraphImpl\n"
 			"class ConsoleWriter:\n"
 			"  def __init__(self, color):\n"
@@ -847,7 +848,6 @@ void InitPlugins()
       "GraphImpl.Debug = False\n"
 #endif
 			"sys.path.append('%s\\Lib')\n"
-			"import vcl\n"
 			"import Graph\n"
       "from imp import reload\n"
 			"Graph.InitPlugins('%s')\n"
