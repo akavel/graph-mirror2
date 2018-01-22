@@ -150,6 +150,8 @@ PyObject* VclFunction_Create(const String &Name)
 		{
 			TVclFunction *VclFunction = PyObject_New(TVclFunction, VclFunction_Type);
 			VclFunction->Function = &FunctionList[I];
+      //We need to increment refcnt for the type as it is decremented by the default tp_dealloc when the object is destroyed
+      Py_INCREF(VclFunction_Type);
 			return reinterpret_cast<PyObject*>(VclFunction);
 		}
 

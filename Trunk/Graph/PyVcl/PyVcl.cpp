@@ -202,7 +202,7 @@ PyObject* InitPyVcl()
 //  PyObject *VclModule_Type = PyType_FromSpecWithBases(&VclModule_Spec, PyTuple_Pack(1, &PyModule_Type));
 	if(VclModule_Type == NULL || !VclMethod_Init() ||
 		PyType_Ready(&VclObject_Type) < 0 || !VclFunction_Init() ||
-		PyType_Ready(&VclIndexedProperty_Type) < 0 || PyType_Ready(&VclRef_Type) < 0 ||
+		!VclIndexedProperty_Init() || PyType_Ready(&VclRef_Type) < 0 ||
     !VclClosure_Init())
 		return NULL;
 
