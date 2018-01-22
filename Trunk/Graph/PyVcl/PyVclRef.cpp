@@ -16,6 +16,7 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
+PyTypeObject *VclRef_Type = NULL;
 //---------------------------------------------------------------------------
 struct TVclRef
 {
@@ -66,7 +67,7 @@ static int VclRef_SetValue(TVclRef *self, PyObject *value, void *closure)
 	}
 }
 //---------------------------------------------------------------------------
-static PyGetSetDef VclRefr_GetSeters[] =
+static PyGetSetDef VclRef_GetSeters[] =
 {
 	{(char*)"Value", (getter)VclRef_GetValue, (setter)VclRef_SetValue, (char*)"Referenced value", NULL},
 	{NULL}  /* Sentinel */
@@ -82,47 +83,31 @@ static PyGetSetDef VclRefr_GetSeters[] =
  *  the actual value. This is necessary because it is not possible to change the 
  *  value of a built-in type in Python.
  */
-PyTypeObject VclRef_Type =
+static PyType_Slot VclRef_Slots[] =
 {
-	PyObject_HEAD_INIT(NULL)
-	GUI_TYPE "Ref",      	 		 /* tp_name */
-	sizeof(TVclRef),        	 /* tp_basicsize */
-	0,                         /* tp_itemsize */
-	0,												 /* tp_dealloc */
-	0,                         /* tp_print */
-	0,                         /* tp_getattr */
-	0,                         /* tp_setattr */
-	0,                         /* tp_compare */
-	(reprfunc)VclRef_Repr,  	 /* tp_repr */
-	0,                         /* tp_as_number */
-	0,                         /* tp_as_sequence */
-	0,                         /* tp_as_mapping */
-	0,                         /* tp_hash */
-	0, 												 /* tp_call */
-	0,                         /* tp_str */
-	0, 												 /* tp_getattro */
-	0, 												 /* tp_setattro */
-	0,                         /* tp_as_buffer */
-	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	"Reference object",			 	 /* tp_doc */
-	0,		                     /* tp_traverse */
-	0,		                     /* tp_clear */
-	0,		                     /* tp_richcompare */
-	0,		                     /* tp_weaklistoffset */
-	0,		                     /* tp_iter */
-	0,		                     /* tp_iternext */
-	0,         								 /* tp_methods */
-	0,         								 /* tp_members */
-	VclRefr_GetSeters,				 /* tp_getset */
-	0,                         /* tp_base */
-	0,                         /* tp_dict */
-	0,                         /* tp_descr_get */
-	0,                         /* tp_descr_set */
-	0,                         /* tp_dictoffset */
-	0,                         /* tp_init */
-	0,                         /* tp_alloc */
-	0,						             /* tp_new */
+  {Py_tp_doc,	(void*) PROJECT_NAME " reference object"},
+  {Py_tp_repr, VclRef_Repr},
+  {Py_tp_getset, VclRef_GetSeters},
+  {0, NULL}
 };
+
+static PyType_Spec VclRef_Spec =
+{
+  GUI_TYPE "Ref",   //name
+  sizeof(TVclRef),  //basicsize
+  0,                    //itemsize
+  Py_TPFLAGS_DEFAULT,   //flags
+  VclRef_Slots,     //slots
+};
+//---------------------------------------------------------------------------
+/** Initialize the VclRef_Type type object.
+ *  \return true on success
+ */
+bool VclRef_Init()
+{
+  VclRef_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclRef_Spec));
+  return VclRef_Type != NULL;
+}
 //---------------------------------------------------------------------------
 /** Create a new reference object.
  *  \param Value: Pointer to a value referenced by the reference object. The value
@@ -131,8 +116,10 @@ PyTypeObject VclRef_Type =
  */
 PyObject* VclRef_Create(TValue *Value)
 {
-	TVclRef *VclRef = PyObject_New(TVclRef, &VclRef_Type);
+	TVclRef *VclRef = PyObject_New(TVclRef, VclRef_Type);
 	VclRef->Value = Value;
+  //We need to increment refcnt for the type as it is decremented by the default tp_dealloc when the object is destroyed
+  Py_INCREF(VclRef_Type);
 	return reinterpret_cast<PyObject*>(VclRef);
 }
 //---------------------------------------------------------------------------
@@ -140,7 +127,7 @@ PyObject* VclRef_Create(TValue *Value)
  */
 bool VclRef_Check(PyObject *O)
 {
-  return O->ob_type == &VclRef_Type;
+  return O->ob_type == VclRef_Type;
 }
 //---------------------------------------------------------------------------
 /** Return the value which the given VclRef object is a reference for.
@@ -150,7 +137,7 @@ bool VclRef_Check(PyObject *O)
  */
 const TValue& VclRef_AsValue(PyObject *O)
 {
-  if(O->ob_type == &VclRef_Type)
+  if(O->ob_type == VclRef_Type)
   {
     if(reinterpret_cast<TVclRef*>(O)->Value == NULL)
       throw EPyVclError("Value referenced by VclRef has been freed.");
@@ -165,7 +152,7 @@ const TValue& VclRef_AsValue(PyObject *O)
  */
 void VclRef_Invalidate(PyObject *O)
 {
-  if(O->ob_type != &VclRef_Type)
+  if(O->ob_type != VclRef_Type)
     throw EPyVclError("Object is not a " GUI_TYPE "Ref object.");
   reinterpret_cast<TVclRef*>(O)->Value = NULL;
 }
