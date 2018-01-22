@@ -6,7 +6,7 @@
 //---------------------------------------------------------------------------
 namespace Python
 {
-  bool VclRef_Init();
+  bool VclRef_InitType();
 	PyObject* VclRef_Create(TValue *Value);
   bool VclRef_Check(PyObject *O);
   const TValue& VclRef_AsValue(PyObject *O);

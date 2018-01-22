@@ -200,10 +200,10 @@ PyObject* InitPyVcl()
   VclModule_Slots[0].pfunc = &PyModule_Type;
   PyObject *VclModule_Type = PyType_FromSpec(&VclModule_Spec);
 //  PyObject *VclModule_Type = PyType_FromSpecWithBases(&VclModule_Spec, PyTuple_Pack(1, &PyModule_Type));
-	if(VclModule_Type == NULL || !VclMethod_Init() ||
-		PyType_Ready(&VclObject_Type) < 0 || !VclFunction_Init() ||
-		!VclIndexedProperty_Init() || !VclRef_Init() ||
-    !VclClosure_Init())
+	if(VclModule_Type == NULL || !VclMethod_InitType() ||
+		!VclObject_InitType() || !VclFunction_InitType() ||
+		!VclIndexedProperty_InitType() || !VclRef_InitType() ||
+    !VclClosure_InitType())
 		return NULL;
 
   //Module must be created by PyModule_Create().

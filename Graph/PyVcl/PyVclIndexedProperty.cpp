@@ -114,7 +114,7 @@ static PyType_Spec VclIndexedProperty_Spec =
 /** Initialize the VclIndexedProperty_Type type object.
  *  \return true on success
  */
-bool VclIndexedProperty_Init()
+bool VclIndexedProperty_InitType()
 {
   VclIndexedProperty_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclIndexedProperty_Spec));
   return VclIndexedProperty_Type != NULL;
