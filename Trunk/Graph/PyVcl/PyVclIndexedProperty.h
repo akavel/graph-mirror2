@@ -13,7 +13,7 @@
 #include "Python.hpp"
 namespace Python
 {
-  bool VclIndexedProperty_Init();
+  bool VclIndexedProperty_InitType();
 	PyObject* VclIndexedProperty_Create(TObject *Instance, const String &Name);
 }
 //---------------------------------------------------------------------------

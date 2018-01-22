@@ -103,7 +103,7 @@ static PyType_Spec VclRef_Spec =
 /** Initialize the VclRef_Type type object.
  *  \return true on success
  */
-bool VclRef_Init()
+bool VclRef_InitType()
 {
   VclRef_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclRef_Spec));
   return VclRef_Type != NULL;

@@ -132,7 +132,7 @@ static PyType_Spec VclFunction_Spec =
 /** Initialize the VclClosure_Type type object.
  *  \return true on success
  */
-bool VclFunction_Init()
+bool VclFunction_InitType()
 {
   VclFunction_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclFunction_Spec));
   return VclFunction_Type != NULL;

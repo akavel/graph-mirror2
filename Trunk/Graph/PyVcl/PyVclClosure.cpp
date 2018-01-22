@@ -116,7 +116,7 @@ static PyType_Spec VclClosure_Spec =
 /** Initialize the VclClosure_Type type object.
  *  \return true on success
  */
-bool VclClosure_Init()
+bool VclClosure_InitType()
 {
   VclClosure_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclClosure_Spec));
   return VclClosure_Type != NULL;

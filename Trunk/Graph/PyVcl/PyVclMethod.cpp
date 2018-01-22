@@ -166,7 +166,7 @@ static PyType_Spec VclMethod_Spec =
 /** Initialize the VclMethod_Type type object.
  *  \return true on success
  */
-bool VclMethod_Init()
+bool VclMethod_InitType()
 {
   VclMethod_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclMethod_Spec));
   return VclMethod_Type != NULL;

@@ -27,6 +27,7 @@
 
 namespace Python
 {
+PyTypeObject *VclObject_Type = NULL;
 //---------------------------------------------------------------------------
 /** This object is created when needed and owned by a TComponent object which should
  *  be monitored for destruction. Delphi objects not derived from TComponent cannot
@@ -565,100 +566,44 @@ static PyMethodDef VclObject_Methods[] =
 	{NULL, NULL, 0, NULL}
 };
 //---------------------------------------------------------------------------
-static PyNumberMethods VclObject_NumberMethods =
-{
-  NULL, /* nb_add */
-  NULL, /* nb_subtract */
-  NULL, /* nb_multiply */
-  NULL, /* nb_remainder */
-  NULL, /* nb_divmod */
-  NULL, /* nb_power */
-  NULL, /* nb_negative */
-  NULL, /* nb_positive */
-  NULL, /* nb_absolute */
-  (inquiry)VclObject_Bool, /* nb_bool */
-  NULL, /* nb_invert */
-  NULL, /* nb_lshift */
-  NULL, /* nb_rshift */
-  NULL, /* nb_and */
-  NULL, /* nb_xor */
-  NULL, /* nb_or */
-  NULL, /* nb_int */
-  NULL, /* nb_reserved */
-  NULL, /* nb_float */
-
-  NULL, /* nb_inplace_add */
-  NULL, /* nb_inplace_subtract */
-  NULL, /* nb_inplace_multiply */
-  NULL, /* nb_inplace_remainder */
-  NULL, /* nb_inplace_power */
-  NULL, /* nb_inplace_lshift */
-  NULL, /* nb_inplace_rshift */
-  NULL, /* nb_inplace_and */
-  NULL, /* nb_inplace_xor */
-  NULL, /* nb_inplace_or */
-
-  NULL, /* nb_floor_divide */
-  NULL, /* nb_true_divide */
-  NULL, /* nb_inplace_floor_divide */
-  NULL, /* nb_inplace_true_divide */
-
-  NULL, /* nb_index */
-};
-//---------------------------------------------------------------------------
-PyMappingMethods VclObject_Mapping =
-{
-  0, /* mp_length */
-  (binaryfunc)VclObject_Subscript, /* mp_subscript */
-  (objobjargproc)VclObject_SetSubscript, /* mp_ass_subscript */
-};
-//---------------------------------------------------------------------------
 /** Proxy object for a VCL object. If _owned is set to True, the VCL object is
  *  owned by the proxy and destroyed when the proxy is destroyed.
  *  If possible the VCL object will own a delete handler, which will clear the
  *  reference in the proxy if the VCL object is destroyed before the proxy.
  */
-PyTypeObject VclObject_Type =
+static PyType_Slot VclObject_Slots[] =
 {
-	PyObject_HEAD_INIT(NULL)
-	GUI_TYPE "Object",         /* tp_name */
-	sizeof(TVclObject),        /* tp_basicsize */
-	0,                         /* tp_itemsize */
-	(destructor)VclObject_Dealloc, /* tp_dealloc */
-	0,                         /* tp_print */
-	0,                         /* tp_getattr */
-	0,                         /* tp_setattr */
-	0,                         /* tp_reserved */
-	(reprfunc)VclObject_Repr,  /* tp_repr */
-	&VclObject_NumberMethods,  /* tp_as_number */
-	0,                         /* tp_as_sequence */
-	&VclObject_Mapping,        /* tp_as_mapping */
-	0,                         /* tp_hash */
-	0, 												 /* tp_call */
-	0,                         /* tp_str */
-	(getattrofunc)VclObject_GetAttro, /* tp_getattro */
-	(setattrofunc)VclObject_SetAttro, /* tp_setattro */
-	0,                         /* tp_as_buffer */
-	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	PROJECT_NAME " object",       			 /* tp_doc */
-	0,		                     /* tp_traverse */
-	0,		                     /* tp_clear */
-	(richcmpfunc)VclObject_RichCompare, /* tp_richcompare */
-	0,		                     /* tp_weaklistoffset */
-	0,		                     /* tp_iter */
-	0,		                     /* tp_iternext */
-	VclObject_Methods,         /* tp_methods */
-	VclObject_Members,         /* tp_members */
-	0,       									 /* tp_getset */
-	0,                         /* tp_base */
-	0,                         /* tp_dict */
-	0,                         /* tp_descr_get */
-	0,                         /* tp_descr_set */
-	0,                         /* tp_dictoffset */
-	0,                         /* tp_init */
-	0,                         /* tp_alloc */
-	0,						             /* tp_new */
+  {Py_tp_doc,	(void*) PROJECT_NAME " object"},
+  {Py_tp_dealloc, VclObject_Dealloc},
+  {Py_tp_repr, VclObject_Repr},
+  {Py_tp_getattro, VclObject_GetAttro},
+  {Py_tp_setattro, VclObject_SetAttro},
+  {Py_tp_richcompare, VclObject_RichCompare},
+  {Py_nb_bool, VclObject_Bool},
+  {Py_mp_subscript, VclObject_Subscript},
+  {Py_mp_ass_subscript, VclObject_SetSubscript},
+	{Py_tp_methods, VclObject_Methods},
+	{Py_tp_members, VclObject_Members},
+  {0, NULL}
 };
+
+static PyType_Spec VclObject_Spec =
+{
+  GUI_TYPE "Object",   //name
+  sizeof(TVclObject),  //basicsize
+  0,                    //itemsize
+  Py_TPFLAGS_DEFAULT,   //flags
+  VclObject_Slots,     //slots
+};
+//---------------------------------------------------------------------------
+/** Initialize the VclObject_Type type object.
+ *  \return true on success
+ */
+bool VclObject_InitType()
+{
+  VclObject_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclObject_Spec));
+  return VclObject_Type != NULL;
+}
 //---------------------------------------------------------------------------
 /** Create new VclObject.
  *  \param Instance: VCL instance, which the VclObject will be a proxy for.
@@ -680,7 +625,7 @@ PyObject* VclObject_Create(TObject *Instance, bool Owned)
   }
   else
   {
-    VclObject = PyObject_New(TVclObject, &VclObject_Type);
+    VclObject = PyObject_New(TVclObject, VclObject_Type);
 	  VclObject->Instance = Instance;
 	  VclObject->Owned = Owned;
     if(DeleteHandler)
@@ -693,7 +638,7 @@ PyObject* VclObject_Create(TObject *Instance, bool Owned)
  */
 bool VclObject_Check(PyObject *O)
 {
-	return O->ob_type->tp_repr == VclObject_Type.tp_repr;
+	return O->ob_type->tp_repr == VclObject_Type->tp_repr;
 }
 //---------------------------------------------------------------------------
 /** Return the VCL object, which the given VclObject is a proxy for.
@@ -703,7 +648,7 @@ bool VclObject_Check(PyObject *O)
  */
 TObject* VclObject_AsObject(PyObject *O)
 {
-	if(O->ob_type->tp_repr != VclObject_Type.tp_repr)
+	if(O->ob_type->tp_repr != VclObject_Type->tp_repr)
 		throw EPyVclError("Object is not a " GUI_TYPE "Object type");
 	return reinterpret_cast<TVclObject*>(O)->Instance;
 }
