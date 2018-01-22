@@ -92,6 +92,7 @@ static PyGetSetDef VclClosure_GetSeters[] =
 };
 //---------------------------------------------------------------------------
 /** VclClosure is a proxy for a Delphi closure, i.e. a method pointer and an instance.
+ *  Returned when you access an event assigned to a C++ function, eg. C = Form1.OnShow
  */
 static PyType_Slot VclClosure_Slots[] =
 {
@@ -127,8 +128,8 @@ bool VclClosure_Init()
  */
 PyObject* VclClosure_Create(const TValue &Callable)
 {
-  //Allocate with new should be valid as VclClosure is not subclassable and
-  //cannot be allocated directly from Python
+  //Allocate with new should be valid as VclClosure is not subclassable and cannot be allocated directly
+  //from Python. And TVclClosure contains a variable with constructor that must be created with new.
 	TVclClosure *VclClosure = new TVclClosure();
   PyObject_Init(reinterpret_cast<PyObject*>(VclClosure), VclClosure_Type);
   VclClosure->Callable = Callable;

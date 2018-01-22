@@ -16,6 +16,7 @@
 
 namespace Python
 {
+PyTypeObject *VclIndexedProperty_Type = NULL;
 //---------------------------------------------------------------------------
 struct TVclIndexedProperty
 {
@@ -60,13 +61,15 @@ static PyObject *VclIndexedProperty_Repr(TVclIndexedProperty* self)
 /** Set an element of the array property.
  *  \param self: The array property wrapper, indicating instance and property RTTI.
  *  \param key: The subscription index. May be a tuple.
- *  \param v: The value to set. This is checked for corret type.
+ *  \param v: The value to set. This is checked for corret type. v is NULL if it should be deleted.
  *  \return 0 on success and -1 on failure.
  */
 static int VclIndexedProperty_SetSubscript(TVclIndexedProperty *self, PyObject *key, PyObject *v)
 {
 	try
 	{
+    if(v == NULL)
+      throw EPyVclError("Cannot delete indexed value.");
     if(!self->IndexedProperty->IsWritable)
   		throw EPyVclError("Property is not writable.");
 		DynamicArray<TRttiParameter*> ParameterTypes = self->IndexedProperty->WriteMethod->GetParameters();
@@ -88,58 +91,34 @@ static int VclIndexedProperty_SetSubscript(TVclIndexedProperty *self, PyObject *
 	}
 }
 //---------------------------------------------------------------------------
-PyMappingMethods VclIndexedProperty_Mapping =
+/** VclIndexedProperty is a wrapper around an array property in a Delphi object.
+ */
+static PyType_Slot VclIndexedProperty_Slots[] =
 {
-  0, /* mp_length */
-  (binaryfunc)VclIndexedProperty_Subscript, /* mp_subscript */
-  (objobjargproc)VclIndexedProperty_SetSubscript, /* mp_ass_subscript */
+  {Py_tp_doc,	(void*) PROJECT_NAME " indexed property"},
+  {Py_tp_repr, VclIndexedProperty_Repr},
+  {Py_mp_subscript, VclIndexedProperty_Subscript},
+  {Py_mp_ass_subscript, VclIndexedProperty_SetSubscript},
+  {0, NULL}
+};
+
+static PyType_Spec VclIndexedProperty_Spec =
+{
+  GUI_TYPE "IndexedProperty",   //name
+  sizeof(TVclIndexedProperty),  //basicsize
+  0,                    //itemsize
+  Py_TPFLAGS_DEFAULT,   //flags
+  VclIndexedProperty_Slots,     //slots
 };
 //---------------------------------------------------------------------------
-/** VclArrayProperty is a wrapper around an array property in a Delphi object.
- *  This is a wrokaround as the Delphi RTTI does not support access to read/write array
- *  properties in a generic way.
+/** Initialize the VclIndexedProperty_Type type object.
+ *  \return true on success
  */
-PyTypeObject VclIndexedProperty_Type =
+bool VclIndexedProperty_Init()
 {
-	PyObject_HEAD_INIT(NULL)
-	GUI_TYPE "IndexedProperty",	 /* tp_name */
-	sizeof(TVclIndexedProperty), /* tp_basicsize */
-	0,                         /* tp_itemsize */
-	0, 												 /* tp_dealloc */
-	0,                         /* tp_print */
-	0,                         /* tp_getattr */
-	0,                         /* tp_setattr */
-	0,                         /* tp_compare */
-	(reprfunc)VclIndexedProperty_Repr,  /*tp_repr */
-	0, 												 /* tp_as_number */
-	0,                         /* tp_as_sequence */
-	&VclIndexedProperty_Mapping,  /* tp_as_mapping */
-	0,                         /* tp_hash */
-	0, 												 /* tp_call */
-	0,                         /* tp_str */
-	0, 												 /* tp_getattro */
-	0, 												 /* tp_setattro */
-	0,                         /* tp_as_buffer */
-	Py_TPFLAGS_DEFAULT, 			 /* tp_flags */
-	PROJECT_NAME " indexed property",		 /* tp_doc */
-	0,		                     /* tp_traverse */
-	0,		                     /* tp_clear */
-	0,		                     /* tp_richcompare */
-	0,		                     /* tp_weaklistoffset */
-	0,		                     /* tp_iter */
-	0,		                     /* tp_iternext */
-	0, 								         /* tp_methods */
-	0,                         /* tp_members */
-	0,       									 /* tp_getset */
-	0,                         /* tp_base */
-	0,                         /* tp_dict */
-	0,                         /* tp_descr_get */
-	0,                         /* tp_descr_set */
-	0,                         /* tp_dictoffset */
-	0,                         /* tp_init */
-	0,                         /* tp_alloc */
-	0,						             /* tp_new */
-};
+  VclIndexedProperty_Type = reinterpret_cast<PyTypeObject*>(PyType_FromSpec(&VclIndexedProperty_Spec));
+  return VclIndexedProperty_Type != NULL;
+}
 //---------------------------------------------------------------------------
 /** Create a new array property wrapper object.
  *  \param Instance: This is the VCL object instance that has the array property.
@@ -150,11 +129,13 @@ PyObject* VclIndexedProperty_Create(TObject *Instance, const String &Name)
 {
   TRttiType *Type = Context.GetType(Instance->ClassType());
   if(Type == NULL)
-	throw EPyVclError("Type not found.");
+	  throw EPyVclError("Type not found.");
   TRttiIndexedProperty *Property = Type->GetIndexedProperty(Name);
   if(Property == NULL || Property->Visibility == mvPrivate || Property->Visibility == mvProtected)
 		return NULL;
-	TVclIndexedProperty *VclProperty = PyObject_New(TVclIndexedProperty, &VclIndexedProperty_Type);
+	TVclIndexedProperty *VclProperty = PyObject_New(TVclIndexedProperty, VclIndexedProperty_Type);
+  //We need to increment refcnt for the type as it is decremented by the default tp_dealloc when the object is destroyed
+  Py_INCREF(VclIndexedProperty_Type);
 	VclProperty->Instance = Instance;
 	VclProperty->IndexedProperty = Property;
 	return reinterpret_cast<PyObject*>(VclProperty);
