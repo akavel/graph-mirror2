@@ -189,40 +189,50 @@ TMethodImplementation::TInvokeInfo* CreateInvokeInfo(TTypeInfo *TypeInfo)
  *  this will return a bound method weakproxy Func.__self__ to Func.__func__.
  *  Otherwise a normal strong reference is stored to Func to make sure the object is
  *  not destroyed if there are no references, e.g. lambda function.
+ *
+ *  We use a weak reference to avoid a circular reference like this case:
+ *  class FooClass:
+ *    def OnShow(self, Sender): pass
+ *    def __init__(self):
+ *      self.Form = vcl.TForm(None, OnShow=self.OnShow)
+ *  Foo = FooClass()
+ *  del Foo
+ *
+ *  In this case Foo contains a reference to Foo.Form. But Foo.Form.OnShow contains
+ *  a bound method with a reference Foo. This will prevent Foo from being destroyed.
+ *
+ *  We cannot use a weak reference to the bound method as the bound method will loose
+ *  its strong reference as soon as the weak reference is created.
+ *
+ *  We cannot change the bound method to use a weak reference as the __self__ attribute
+ *  is read only.
  *  \param Func: Callable object used as event.
  *  \return New reference to event object. NULL if a Python exception has been set.
  */
+ PyObject *GlobalObj;
 PyObject* CreateWeakEvent(PyObject* Func)
 {
   if(!PyCallable_Check(Func))
     return SetErrorString(PyExc_TypeError, "Event must be callable.");
-  if(!PyMethod_Check(Func))
-  { //Not a  bound method
+
+  //Foo.OnShow.__self__ is a reference to Foo and Foo.OnShow.__func__ is a reference to FooClass.OnShow
+  if(!PyObject_HasAttrString(Func, "__self__") || !PyObject_HasAttrString(Func, "__func__"))
+  {
     Py_INCREF(Func);
     return Func;
   }
 
-  PyObject *obj = PyObject_GetAttrString(Func, "__self__");
-  if(obj == NULL)
+  TPyObjectPtr Obj(PyObject_GetAttrString(Func, "__self__"), false);
+  TPyObjectPtr Fn(PyObject_GetAttrString(Func, "__func__"), false);
+  if(!Obj || !Fn)
+    return NULL; //Should never happen. We already checked that the attributes exist
+GlobalObj=Obj.get();
+  TPyObjectPtr Proxy(PyWeakref_NewProxy(Obj.get(), NULL), false);
+  if(!Proxy)
     return NULL;
-
-  PyObject *fn = PyObject_GetAttrString(Func, "__func__");
-  if(fn == NULL) //Apparently not a bound method
-  {
-    Py_DECREF(obj);
-    return NULL;
-  }
-  PyObject *proxy = PyWeakref_NewProxy(obj, NULL);
-  Py_DECREF(obj);
-  if(proxy == NULL)
-  {
-    Py_DECREF(fn);
-    return NULL;
-  }
-  PyObject *BoundMethod = PyMethod_New(fn, proxy);
-  Py_DECREF(fn);
-  Py_DECREF(proxy);
-  return BoundMethod;
+  //Instead of using PyMethod_New(Fn, Proxy), which doesn't exist in the limited API,
+  //we create a new method object using the type passing (Fn, Proxy) to the constructor.
+  return PyObject_Call(reinterpret_cast<PyObject*>(Func->ob_type), PyTuple_Pack(2, Fn.get(), Proxy.get()), NULL);
 }
 //---------------------------------------------------------------------------
 /** Returns a Python string that represent the VclObject.
@@ -449,7 +459,7 @@ static PyObject* VclObject_RichCompare(TVclObject *self, PyObject *other, int op
     Py_RETURN_TRUE;
   }
 
-  return PyErr_Format(PyExc_TypeError, "unorderable types: %s() < %s()", self->ob_base.ob_type->tp_name, GetTypeName(other).c_str());
+  return PyErr_Format(PyExc_TypeError, "Unorderable types: VclObject() < %s()", AnsiString(GetTypeName(other)).c_str());
 }
 //---------------------------------------------------------------------------
 /** Convert the object to True or False.
@@ -631,7 +641,7 @@ PyObject* VclObject_Create(TObject *Instance, bool Owned)
  */
 bool VclObject_Check(PyObject *O)
 {
-	return O->ob_type->tp_repr == VclObject_Type->tp_repr;
+	return O->ob_type == VclObject_Type;
 }
 //---------------------------------------------------------------------------
 /** Return the VCL object, which the given VclObject is a proxy for.
@@ -641,7 +651,7 @@ bool VclObject_Check(PyObject *O)
  */
 TObject* VclObject_AsObject(PyObject *O)
 {
-	if(O->ob_type->tp_repr != VclObject_Type->tp_repr)
+	if(O->ob_type != VclObject_Type)
 		throw EPyVclError("Object is not a " GUI_TYPE "Object type");
 	return reinterpret_cast<TVclObject*>(O)->Instance;
 }
