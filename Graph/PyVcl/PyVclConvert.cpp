@@ -30,6 +30,7 @@ String GetTypeName(PyObject *O)
   TPyObjectPtr Type(PyObject_GetAttrString(reinterpret_cast<PyObject*>(O->ob_type), "__name__"), false);
   if(Type.get())
     return FromPyObject<String>(Type.get());
+  PyErr_Clear();
   return "";
 }
 //---------------------------------------------------------------------------
@@ -148,7 +149,7 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 			throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 	}
 	if(PyErr_Occurred())
-		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
+ 		throw EPyVclError("Cannot convert Python object of type '" + GetTypeName(O) + "' to '" + AnsiString(TypeInfo->Name) + "'");
 	return Result;
 }
 //---------------------------------------------------------------------------
@@ -427,6 +428,9 @@ PyObject* PyVclHandleException()
 	}
   //WARNING: The 64 bit compiler in C++ Builder XE4 does not handle catch of exceptions
   //derived from Exception correctly. See QC #116246
+  catch(EAbort &E)
+  { //This is used when a Python exception has already been set. Mostly useful for debugging.
+  }
 	catch(EStringListError &E)
 	{
 		SetErrorString(PyExc_IndexError, E.Message);
