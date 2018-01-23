@@ -26,7 +26,6 @@ namespace Python
 	PyObject* VclObject_Create(TObject *Instance, bool Owned);
 	bool VclObject_Check(PyObject *O);
 	TObject* VclObject_AsObject(PyObject *O);
-	void CreateDeleteHandler(TVclObject *VclObject);
 }
 //---------------------------------------------------------------------------
 #endif

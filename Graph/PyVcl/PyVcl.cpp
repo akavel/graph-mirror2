@@ -16,7 +16,7 @@
 #include "PyVClMethod.h"
 #include "PyVClClosure.h"
 #include "PyVclObject.h"
-#include "PyVClType.h"
+#include "PyVClObjectFactory.h"
 #include "PyVclFunction.h"
 #include "PyVclIndexedProperty.h"
 #include <RTLConsts.hpp>
@@ -115,7 +115,7 @@ static PyObject* VclModule_GetAttro(PyObject *self, PyObject *attr_name)
 				Type = Context.GetType(Class);
 		}
 		if(Type != NULL)
-			Result = VclType_Create(Type);
+			Result = VclObjectFactory_Create(Type);
 		else
     {
 			Result = VclFunction_Create(Name);
@@ -203,7 +203,7 @@ PyObject* InitPyVcl()
 	if(VclModule_Type == NULL || !VclMethod_InitType() ||
 		!VclObject_InitType() || !VclFunction_InitType() ||
 		!VclIndexedProperty_InitType() || !VclRef_InitType() ||
-    !VclClosure_InitType())
+    !VclClosure_InitType() || !VclObjectFactory_InitType())
 		return NULL;
 
   //Module must be created by PyModule_Create().

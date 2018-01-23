@@ -97,15 +97,6 @@ TObjectDeleteHandler* FindDeleteHandler(TObject *Object, bool Create)
   return NULL;
 }
 //---------------------------------------------------------------------------
-/** Create a delete handler if it doesn't already exists and register the TVclObject
- *  object, which the delete handler is attached to.
- */
-void CreateDeleteHandler(TVclObject *VclObject)
-{
-  if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(VclObject->Instance, true))
-		DeleteHandler->SetVclObject(VclObject);
-}
-//---------------------------------------------------------------------------
 /** Class with function used to assign all events that are python objects.
  *  There is only one global instance, in fact the instance is not used but is
  *  necesarry because a closure is needed.
@@ -314,7 +305,9 @@ static void VclObject_Dealloc(TVclObject* self)
 	else
     if(TObjectDeleteHandler *DeleteHandler = FindDeleteHandler(self->Instance, false))
 	  	DeleteHandler->SetVclObject(NULL);
-	Py_TYPE(self)->tp_free(reinterpret_cast<PyObject*>(self));
+
+  //It is okay to call PyObject_Del() directly as the object was created with PyObject_New() and cannot be subclassed.
+  PyObject_Del(self);
 }
 //---------------------------------------------------------------------------
 /** Retrieve a method, property or field. If a property or field is retrieved,
