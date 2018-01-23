@@ -7,13 +7,14 @@
  * your option) any later version.
  */
 //---------------------------------------------------------------------------
-#ifndef PyVclTypeH
-#define PyVclTypeH
+#ifndef PyVclObjectFactoryH
+#define PyVclObjectFactoryH
 //---------------------------------------------------------------------------
 #include "Python.hpp"
 namespace Python
 {
-	PyObject* VclType_Create(TRttiType *Type);
+  bool VclObjectFactory_InitType();
+	PyObject* VclObjectFactory_Create(TRttiType *Type);
 }
 //---------------------------------------------------------------------------
 #endif
