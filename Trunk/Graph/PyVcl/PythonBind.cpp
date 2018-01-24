@@ -9,11 +9,20 @@
 //---------------------------------------------------------------------------
 #include "Platform.h"
 #pragma hdrstop
-//#define PYTHON_WRAP(type,name) type& name = GetPythonAddress<type>(#name);
 #include "PythonBind.h"
 #include "python.hpp"
 #include "PyVclObject.h"
 #include <float.h>
+
+#ifdef Py_LIMITED_API
+#ifdef _WIN64
+#pragma link "python3.a"
+#elif defined(__WIN32__)
+#pragma link "python3.lib"
+#else
+#error Not tested with Py_LIMITED_API
+#endif
+#else
 #ifdef _WIN64
 #pragma link "python36.a"
 #elif defined(__WIN32__)
@@ -21,6 +30,7 @@
 #else
 #pragma link "python35.dylib"
 #endif
+#endif //Py_LIMITED_API
 //---------------------------------------------------------------------------
 namespace Python
 {

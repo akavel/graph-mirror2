@@ -21,3 +21,6 @@
 #endif
 
 
+#define Py_LIMITED_API
+
+

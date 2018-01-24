@@ -119,6 +119,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Debugger_HostApplication>C:\Python36-32\python.exe</Debugger_HostApplication>
         <FinalOutputDir>vcl</FinalOutputDir>
         <DynamicRTL>false</DynamicRTL>
         <UsePackages>false</UsePackages>
@@ -128,6 +129,8 @@
         <ILINK_LibraryPath>$(BDS)\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <Debugger_RunParams>Console.py</Debugger_RunParams>
+        <Debugger_HostApplication>C:\Python36-64\python.exe</Debugger_HostApplication>
         <UsePackages>false</UsePackages>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -195,13 +198,13 @@
             <DependentOn>PyVclObject.h</DependentOn>
             <BuildOrder>9</BuildOrder>
         </CppCompile>
+        <CppCompile Include="PyVclObjectFactory.cpp">
+            <DependentOn>PyVclObjectFactory.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
         <CppCompile Include="PyVclRef.cpp">
             <DependentOn>PyVclRef.h</DependentOn>
             <BuildOrder>10</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="PyVclType.cpp">
-            <DependentOn>PyVclType.h</DependentOn>
-            <BuildOrder>11</BuildOrder>
         </CppCompile>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
