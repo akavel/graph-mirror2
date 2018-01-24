@@ -36,5 +36,8 @@ Problem with creating pre-compiled header:
 
 
 Creating import libraries
+For Win32:
+implib -aa Python3.lib c:\Python36-32\Python3.dll
+
 For Win64:
-mkexp Python36.a Python\python36.dll
+mkexp Python36.a c:\Python36-64\python3.dll
