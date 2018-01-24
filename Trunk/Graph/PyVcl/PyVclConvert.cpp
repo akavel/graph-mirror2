@@ -324,7 +324,7 @@ PyObject* ToPyObject(const Rtti::TValue &V)
       PyObject *O = PyList_New(Value.GetArrayLength());
       if(O != NULL)
       {
-        Py_ssize_t Size = PyTuple_Size(O);
+        Py_ssize_t Size = PyList_Size(O);
         for(int I = 0; I < Size; I++)
           PyList_SetItem(O, I, ToPyObject(Value.GetArrayElement(I)));
       }
