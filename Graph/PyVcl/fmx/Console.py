@@ -1,5 +1,6 @@
 import fmx
 import sys
+import __main__
    
 class ConsoleForm:
   def __init__(self):
@@ -16,11 +17,12 @@ class ConsoleForm:
     self.Form.Width = Size[0] // (2 * Scale)
     self.Form.Height = Size[1] // (3 * Scale)
     self.Form.Caption = "Python interpreter"
+    self.Form.OnShow = lambda Sender: self.WritePrompt()
     
     self.Memo = fmx.TMemo(None, Parent=self.Form, Align="alClient", OnKeyDown=self.KeyDown, OnKeyUp=self.KeyUp)      
     self.Memo.Font.Family = "Courier New"
     self.Memo.Font.Size = 28
-    self.Memo.StyledSettings = {'FontColor', 'Style', 'Size'}
+    self.Memo.StyledSettings = {'FontColor', 'Style'}
     self.Memo.TextSettings.WordWrap = True;
 
     self.PopupMenu = fmx.TPopupMenu(None)
@@ -31,7 +33,7 @@ class ConsoleForm:
     
     self.stdout = sys.stdout
     sys.stdout = self
-    self.WritePrompt()   
+#    self.WritePrompt()   
   
   def write(self, Str):
     self.WriteText(Str)
@@ -50,7 +52,10 @@ class ConsoleForm:
     
   def WriteText(self, Str):
     Lines = Str.split("\n")
-    self.Memo.Lines[self.Memo.Lines.Count - 1] = self.Memo.Lines[self.Memo.Lines.Count - 1] + Lines[0]
+    if self.Memo.Lines.Count == 0: 
+      self.Memo.Lines.Add(Lines[0])
+    else:
+      self.Memo.Lines[self.Memo.Lines.Count - 1] = self.Memo.Lines[self.Memo.Lines.Count - 1] + Lines[0]
     for Line in Lines[1:]:
       self.Memo.Lines.Add(Line)  
   
@@ -148,7 +153,7 @@ class ConsoleForm:
       import code
       Code = code.compile_command(self.Command, "<console>")
       if Code:
-        exec(Code, globals(), globals())
+        exec(Code, __main__.__dict__, __main__.__dict__)
         self.Command = ""
         self.IndentLevel = 0
         self.WritePrompt()
@@ -195,4 +200,6 @@ class ConsoleForm:
         
 if __name__ == "__main__":
   Form = ConsoleForm()
+  print(sys.version, "on", sys.platform)
+  print('Type "help", "copyright", "credits" or "license" for more information.')
   Form.ShowModal()
