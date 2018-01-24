@@ -219,13 +219,13 @@
             <DependentOn>..\PyVcl\PyVclObject.h</DependentOn>
             <BuildOrder>60</BuildOrder>
         </CppCompile>
+        <CppCompile Include="..\PyVcl\PyVclObjectFactory.cpp">
+            <DependentOn>..\PyVcl\PyVclObjectFactory.h</DependentOn>
+            <BuildOrder>62</BuildOrder>
+        </CppCompile>
         <CppCompile Include="..\PyVcl\PyVclRef.cpp">
             <DependentOn>..\PyVcl\PyVclRef.h</DependentOn>
             <BuildOrder>61</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="..\PyVcl\PyVclType.cpp">
-            <DependentOn>..\PyVcl\PyVclType.h</DependentOn>
-            <BuildOrder>62</BuildOrder>
         </CppCompile>
         <CppCompile Include="Forms\Unit1.cpp">
             <Form>Form1</Form>
