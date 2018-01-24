@@ -15,6 +15,12 @@ struct _typeobject;
 struct _ts;
 typedef _object PyObject;
 
+//Workaround on problem with the Borland 32 bit compiler, which refuses to compile if the structs are not defined.
+#if defined(Py_LIMITED_API) && defined(__WIN32__) && !defined(_Win64)
+struct _typeobject {};
+struct _longobject {};
+#endif
+
 #define PYTHON_FPU_CONTROL MCW_EM | IC_PROJECTIVE | RC_NEAR | PC_53
 #define DEFAULT_FPU_CONTROL EM_INVALID | EM_DENORMAL | EM_UNDERFLOW | EM_INEXACT | IC_AFFINE | RC_NEAR | PC_64
 #define FPU_MASK MCW_EM | MCW_IC | MCW_RC | MCW_PC

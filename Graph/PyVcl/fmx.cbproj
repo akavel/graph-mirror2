@@ -204,13 +204,13 @@
             <DependentOn>PyVclObject.h</DependentOn>
             <BuildOrder>8</BuildOrder>
         </CppCompile>
+        <CppCompile Include="PyVclObjectFactory.cpp">
+            <DependentOn>PyVclObjectFactory.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
         <CppCompile Include="PyVclRef.cpp">
             <DependentOn>PyVclRef.h</DependentOn>
             <BuildOrder>9</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="PyVclType.cpp">
-            <DependentOn>PyVclType.h</DependentOn>
-            <BuildOrder>10</BuildOrder>
         </CppCompile>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
