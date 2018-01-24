@@ -1,5 +1,6 @@
 import vcl
 import sys
+import __main__
    
 class ConsoleForm:
   def __init__(self):
@@ -151,7 +152,7 @@ class ConsoleForm:
       import code
       Code = code.compile_command(self.Command, "<console>")
       if Code:
-        exec(Code, globals(), globals())
+        exec(Code, __main__.__dict__, __main__.__dict__)
         self.WritePrompt()
         self.Command = ""
         self.IndentLevel = 0
@@ -188,4 +189,6 @@ class ConsoleForm:
         
 if __name__ == "__main__":
   Form = ConsoleForm()
+  print(sys.version, "on", sys.platform)
+  print('Type "help", "copyright", "credits" or "license" for more information.')
   Form.ShowModal()
