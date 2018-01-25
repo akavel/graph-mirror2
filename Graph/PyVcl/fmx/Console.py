@@ -21,7 +21,7 @@ class ConsoleForm:
     
     self.Memo = fmx.TMemo(None, Parent=self.Form, Align="alClient", OnKeyDown=self.KeyDown, OnKeyUp=self.KeyUp)      
     self.Memo.Font.Family = "Courier New"
-    self.Memo.Font.Size = 28
+    self.Memo.Font.Size = 7 * Scale
     self.Memo.StyledSettings = {'FontColor', 'Style'}
     self.Memo.TextSettings.WordWrap = True;
 
