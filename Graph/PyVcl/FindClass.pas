@@ -13,17 +13,25 @@ procedure RegisterType(TypeInfo : PTypeInfo);
 implementation
 uses
 {$ifdef FIREMONKEY}
+{$if CompilerVersion < 32.0}
+  FMX.Context.DX10, FMX.EmbeddedControls, FMX.EmbeddedControls.Calendar, FMX.Notification,
+{$else}
+  FMX.Context.DX11, FMX.ListView.Appearances, FMX.Calendar, FMX.CalendarEdit, FMX.ComboEdit,
+  FMX.ComboEdit.Style, FMX.ComboTrackBar, FMX.EditBox, System.Notification, FMX.Memo.Style,
+  FMX.ListView.Adapters.Base, FMX.NumberBox, FMX.Controls.Presentation, FMX.Presentation.Factory,
+  FMX.SearchBox, FMX.SpinBox,
+{$endif}
   FMX.ActnList, FMX.Advertising, FMX.Ani, FMX.BehaviorManager, FMX.Canvas.GPU,
-  FMX.Canvas.GPU.Helpers, FMX.Colors, FMX.Consts, FMX.Context.DX10, FMX.Context.DX9,
+  FMX.Canvas.GPU.Helpers, FMX.Colors, FMX.Consts, FMX.Context.DX9,
   FMX.Controls, FMX.Controls3D, FMX.DateTimeCtrls, FMX.DateTimeCtrls.Types, FMX.Dialogs,
-  FMX.Dialogs.Win, FMX.Edit, FMX.Effects, FMX.EmbeddedControls, FMX.EmbeddedControls.Calendar,
+  FMX.Dialogs.Win, FMX.Edit, FMX.Effects,
   FMX.ExtCtrls, FMX.Filter, FMX.Filter.Effects, FMX.FontGlyphs, FMX.FontGlyphs.Win,
   FMX.Forms, FMX.Forms.Border, FMX.Forms.Border.Win, FMX.Forms3D, FMX.Gestures,
   FMX.Gestures.Win, FMX.Graphics, FMX.Grid, FMX.Header, FMX.Import,
   FMX.InAppPurchase, FMX.InertialMovement, FMX.Layers3D, FMX.Layouts, FMX.ListBox,
   FMX.ListView, FMX.ListView.Types, FMX.MagnifierGlass, FMX.Materials, FMX.Materials.Canvas,
   FMX.MaterialSources, FMX.Media, FMX.Media.Win, FMX.MediaLibrary, FMX.MediaLibrary.Actions,
-  FMX.Memo, FMX.Menus, FMX.MultiResBitmap, FMX.Notification, FMX.Objects,
+  FMX.Memo, FMX.Menus, FMX.MultiResBitmap, FMX.Objects,
   FMX.Objects3D, FMX.PhoneDialer, FMX.PhoneDialer.Actions, FMX.Pickers, FMX.Platform,
   FMX.Platform.Win, FMX.Printer, FMX.Printer.Win, FMX.StdActns, FMX.StdCtrls,
   FMX.StrokeBuilder, FMX.Styles, FMX.Styles.Objects, FMX.Styles.Switch, FMX.Surfaces,
@@ -91,6 +99,35 @@ begin
   TypeList.Sorted := True;
 
 {$ifdef FIREMONKEY}
+{$if CompilerVersion < 32.0}
+  TypeList.AddObject('TActionTypeHelper', TypeInfo(TActionTypeHelper));
+  TypeList.AddObject('TAnimationTypeHelper', TypeInfo(TAnimationTypeHelper));
+  TypeList.AddObject('TBitmapHelper', TypeInfo(TBitmapHelper));
+  TypeList.AddObject('TCalendarBox', TypeInfo(TCalendarBox));
+  TypeList.AddObject('TCheckCell', TypeInfo(TCheckCell));
+  TypeList.AddObject('TContextShaderArchHelper', TypeInfo(TContextShaderArchHelper));
+  TypeList.AddObject('TCustomCalendarProxy', TypeInfo(TCustomCalendarProxy));
+  TypeList.AddObject('TCustomDX10Context', TypeInfo(TCustomDX10Context));
+  TypeList.AddObject('TDeleteOptionHelper', TypeInfo(TDeleteOptionHelper));
+  TypeList.AddObject('TEmbeddedControl', TypeInfo(TEmbeddedControl));
+  TypeList.AddObject('TImageCell', TypeInfo(TImageCell));
+  TypeList.AddObject('TImageOrientationHelper', TypeInfo(TImageOrientationHelper));
+  TypeList.AddObject('TImageScalingModeHelper', TypeInfo(TImageScalingModeHelper));
+  TypeList.AddObject('TInsertOptionHelper', TypeInfo(TInsertOptionHelper));
+  TypeList.AddObject('TInt64Helper', TypeInfo(TInt64Helper));
+  TypeList.AddObject('TInterpolationTypeHelper', TypeInfo(TInterpolationTypeHelper));
+  TypeList.AddObject('TOpenCustomAction', TypeInfo(TOpenCustomAction));
+  TypeList.AddObject('TPoint3DHelper', TypeInfo(TPoint3DHelper));
+  TypeList.AddObject('TPointFHelper', TypeInfo(TPointFHelper));
+  TypeList.AddObject('TPopupCell', TypeInfo(TPopupCell));
+  TypeList.AddObject('TProgressCell', TypeInfo(TProgressCell));
+  TypeList.AddObject('TSelectionModeHelper', TypeInfo(TSelectionModeHelper));
+  TypeList.AddObject('TSelectionPointTypeHelper', TypeInfo(TSelectionPointTypeHelper));
+  TypeList.AddObject('TTextCell', TypeInfo(TTextCell));
+{$else}
+  TypeList.AddObject('TCustomDX10Context', TypeInfo(TCustomDX11Context));
+{$endif}
+
   TypeList.AddObject('TAbstractLayer3D', TypeInfo(TAbstractLayer3D));
   TypeList.AddObject('TAbstractPrinter', TypeInfo(TAbstractPrinter));
   TypeList.AddObject('TAbstractSocket', TypeInfo(TAbstractSocket));
@@ -99,7 +136,6 @@ begin
   TypeList.AddObject('TActionLink', TypeInfo(TActionLink));
   TypeList.AddObject('TActionList', TypeInfo(TActionList));
   TypeList.AddObject('TActionListEnumerator', TypeInfo(TActionListEnumerator));
-  TypeList.AddObject('TActionTypeHelper', TypeInfo(TActionTypeHelper));
   TypeList.AddObject('TActiveMaskedImage', TypeInfo(TActiveMaskedImage));
   TypeList.AddObject('TActiveOpacityObject', TypeInfo(TActiveOpacityObject));
   TypeList.AddObject('TActiveStyleObject', TypeInfo(TActiveStyleObject));
@@ -113,7 +149,6 @@ begin
   TypeList.AddObject('TAniIndicator', TypeInfo(TAniIndicator));
   TypeList.AddObject('TAniIndicatorStyleHelper', TypeInfo(TAniIndicatorStyleHelper));
   TypeList.AddObject('TAnimation', TypeInfo(TAnimation));
-  TypeList.AddObject('TAnimationTypeHelper', TypeInfo(TAnimationTypeHelper));
   TypeList.AddObject('TAppearanceObjects', TypeInfo(TAppearanceObjects));
   TypeList.AddObject('TApplication', TypeInfo(TApplication));
   TypeList.AddObject('TApplicationEventHelper', TypeInfo(TApplicationEventHelper));
@@ -150,7 +185,6 @@ begin
   TypeList.AddObject('TBitmapAnimation', TypeInfo(TBitmapAnimation));
   TypeList.AddObject('TBitmapCodecManager', TypeInfo(TBitmapCodecManager));
   TypeList.AddObject('TBitmapCtx', TypeInfo(TBitmapCtx));
-  TypeList.AddObject('TBitmapHelper', TypeInfo(TBitmapHelper));
   TypeList.AddObject('TBitmapLink', TypeInfo(TBitmapLink));
   TypeList.AddObject('TBitmapLinks', TypeInfo(TBitmapLinks));
   TypeList.AddObject('TBitmapListAnimation', TypeInfo(TBitmapListAnimation));
@@ -184,7 +218,6 @@ begin
   TypeList.AddObject('TByteHelper', TypeInfo(TByteHelper));
   TypeList.AddObject('TBytesStream', TypeInfo(TBytesStream));
   TypeList.AddObject('TCalendar', TypeInfo(TCalendar));
-  TypeList.AddObject('TCalendarBox', TypeInfo(TCalendarBox));
   TypeList.AddObject('TCalendarEdit', TypeInfo(TCalendarEdit));
   TypeList.AddObject('TCall', TypeInfo(TCall));
   TypeList.AddObject('TCalloutPanel', TypeInfo(TCalloutPanel));
@@ -215,7 +248,6 @@ begin
   TypeList.AddObject('TCharDic', TypeInfo(TCharDic));
   TypeList.AddObject('TCharHelper', TypeInfo(TCharHelper));
   TypeList.AddObject('TCheckBox', TypeInfo(TCheckBox));
-  TypeList.AddObject('TCheckCell', TypeInfo(TCheckCell));
   TypeList.AddObject('TCheckColumn', TypeInfo(TCheckColumn));
   TypeList.AddObject('TCheckStyleObject', TypeInfo(TCheckStyleObject));
   TypeList.AddObject('TCircle', TypeInfo(TCircle));
@@ -285,7 +317,6 @@ begin
   TypeList.AddObject('TContextManager', TypeInfo(TContextManager));
   TypeList.AddObject('TContextResetMessage', TypeInfo(TContextResetMessage));
   TypeList.AddObject('TContextShader', TypeInfo(TContextShader));
-  TypeList.AddObject('TContextShaderArchHelper', TypeInfo(TContextShaderArchHelper));
   TypeList.AddObject('TContrastEffect', TypeInfo(TContrastEffect));
   TypeList.AddObject('TControl', TypeInfo(TControl));
   TypeList.AddObject('TControl3D', TypeInfo(TControl3D));
@@ -315,7 +346,6 @@ begin
   TypeList.AddObject('TCustomBufferLayer3D', TypeInfo(TCustomBufferLayer3D));
   TypeList.AddObject('TCustomButton', TypeInfo(TCustomButton));
   TypeList.AddObject('TCustomCalendarEdit', TypeInfo(TCustomCalendarEdit));
-  TypeList.AddObject('TCustomCalendarProxy', TypeInfo(TCustomCalendarProxy));
   TypeList.AddObject('TCustomCanvasGpu', TypeInfo(TCustomCanvasGpu));
   TypeList.AddObject('TCustomCaret', TypeInfo(TCustomCaret));
   TypeList.AddObject('TCustomComboBox', TypeInfo(TCustomComboBox));
@@ -324,7 +354,6 @@ begin
   TypeList.AddObject('TCustomDateEdit', TypeInfo(TCustomDateEdit));
   TypeList.AddObject('TCustomDateTimeEdit', TypeInfo(TCustomDateTimeEdit));
   TypeList.AddObject('TCustomDateTimePicker', TypeInfo(TCustomDateTimePicker));
-  TypeList.AddObject('TCustomDX10Context', TypeInfo(TCustomDX10Context));
   TypeList.AddObject('TCustomDX9Context', TypeInfo(TCustomDX9Context));
   TypeList.AddObject('TCustomEdit', TypeInfo(TCustomEdit));
   TypeList.AddObject('TCustomEditBox', TypeInfo(TCustomEditBox));
@@ -398,7 +427,6 @@ begin
   TypeList.AddObject('TDateTimeFormatter', TypeInfo(TDateTimeFormatter));
   TypeList.AddObject('TDebugUtils', TypeInfo(TDebugUtils));
   TypeList.AddObject('TDefaultAttributeBase', TypeInfo(TDefaultAttributeBase));
-  TypeList.AddObject('TDeleteOptionHelper', TypeInfo(TDeleteOptionHelper));
   TypeList.AddObject('TDeviceKindHelper', TypeInfo(TDeviceKindHelper));
   TypeList.AddObject('TDevicePositionHelper', TypeInfo(TDevicePositionHelper));
   TypeList.AddObject('TDirectionalBlurEffect', TypeInfo(TDirectionalBlurEffect));
@@ -422,7 +450,6 @@ begin
   TypeList.AddObject('TEllipse', TypeInfo(TEllipse));
   TypeList.AddObject('TEllipse3D', TypeInfo(TEllipse3D));
   TypeList.AddObject('TEllipsesEditButton', TypeInfo(TEllipsesEditButton));
-  TypeList.AddObject('TEmbeddedControl', TypeInfo(TEmbeddedControl));
   TypeList.AddObject('TEmbossEffect', TypeInfo(TEmbossEffect));
   TypeList.AddObject('TEmptyItemObjects', TypeInfo(TEmptyItemObjects));
   TypeList.AddObject('TEncoding', TypeInfo(TEncoding));
@@ -625,23 +652,18 @@ begin
   TypeList.AddObject('TIdleMessage', TypeInfo(TIdleMessage));
   TypeList.AddObject('TImage', TypeInfo(TImage));
   TypeList.AddObject('TImage3D', TypeInfo(TImage3D));
-  TypeList.AddObject('TImageCell', TypeInfo(TImageCell));
   TypeList.AddObject('TImageColumn', TypeInfo(TImageColumn));
   TypeList.AddObject('TImageControl', TypeInfo(TImageControl));
   TypeList.AddObject('TImageFXEffect', TypeInfo(TImageFXEffect));
   TypeList.AddObject('TImageInfo', TypeInfo(TImageInfo));
   TypeList.AddObject('TImageMultiResBitmap', TypeInfo(TImageMultiResBitmap));
   TypeList.AddObject('TImageObjectAppearance', TypeInfo(TImageObjectAppearance));
-  TypeList.AddObject('TImageOrientationHelper', TypeInfo(TImageOrientationHelper));
-  TypeList.AddObject('TImageScalingModeHelper', TypeInfo(TImageScalingModeHelper));
   TypeList.AddObject('TImageViewer', TypeInfo(TImageViewer));
   TypeList.AddObject('TImageWrapModeHelper', TypeInfo(TImageWrapModeHelper));
   TypeList.AddObject('TInAppPurchase', TypeInfo(TInAppPurchase));
   TypeList.AddObject('TIndexBuffer', TypeInfo(TIndexBuffer));
   TypeList.AddObject('TIniFile', TypeInfo(TIniFile));
   TypeList.AddObject('TInnerGlowEffect', TypeInfo(TInnerGlowEffect));
-  TypeList.AddObject('TInsertOptionHelper', TypeInfo(TInsertOptionHelper));
-  TypeList.AddObject('TInt64Helper', TypeInfo(TInt64Helper));
   TypeList.AddObject('TIntAnimation', TypeInfo(TIntAnimation));
   TypeList.AddObject('TIntegerBucketList', TypeInfo(TIntegerBucketList));
   TypeList.AddObject('TIntegerHelper', TypeInfo(TIntegerHelper));
@@ -651,7 +673,6 @@ begin
   TypeList.AddObject('TInterfaceList', TypeInfo(TInterfaceList));
   TypeList.AddObject('TInterfaceListEnumerator', TypeInfo(TInterfaceListEnumerator));
   TypeList.AddObject('TInterlocked', TypeInfo(TInterlocked));
-  TypeList.AddObject('TInterpolationTypeHelper', TypeInfo(TInterpolationTypeHelper));
   TypeList.AddObject('TInvertEffect', TypeInfo(TInvertEffect));
   TypeList.AddObject('TInvokeableVariantType', TypeInfo(TInvokeableVariantType));
   TypeList.AddObject('TIStringComparer', TypeInfo(TIStringComparer));
@@ -794,7 +815,6 @@ begin
   TypeList.AddObject('TObjectViewAction', TypeInfo(TObjectViewAction));
   TypeList.AddObject('TObserverMapping', TypeInfo(TObserverMapping));
   TypeList.AddObject('TObservers', TypeInfo(TObservers));
-  TypeList.AddObject('TOpenCustomAction', TypeInfo(TOpenCustomAction));
   TypeList.AddObject('TOpenDialog', TypeInfo(TOpenDialog));
   TypeList.AddObject('TOrderedList', TypeInfo(TOrderedList));
   TypeList.AddObject('TOrdinalIStringComparer', TypeInfo(TOrdinalIStringComparer));
@@ -837,11 +857,8 @@ begin
   TypeList.AddObject('TPlatformSensorManager', TypeInfo(TPlatformSensorManager));
   TypeList.AddObject('TPlatformServices', TypeInfo(TPlatformServices));
   TypeList.AddObject('TPlotGrid', TypeInfo(TPlotGrid));
-  TypeList.AddObject('TPoint3DHelper', TypeInfo(TPoint3DHelper));
-  TypeList.AddObject('TPointFHelper', TypeInfo(TPointFHelper));
   TypeList.AddObject('TPopup', TypeInfo(TPopup));
   TypeList.AddObject('TPopupBox', TypeInfo(TPopupBox));
-  TypeList.AddObject('TPopupCell', TypeInfo(TPopupCell));
   TypeList.AddObject('TPopupColumn', TypeInfo(TPopupColumn));
   TypeList.AddObject('TPopupMenu', TypeInfo(TPopupMenu));
   TypeList.AddObject('TPosition', TypeInfo(TPosition));
@@ -860,7 +877,6 @@ begin
   TypeList.AddObject('TPrinterWin', TypeInfo(TPrinterWin));
   TypeList.AddObject('TProduct', TypeInfo(TProduct));
   TypeList.AddObject('TProgressBar', TypeInfo(TProgressBar));
-  TypeList.AddObject('TProgressCell', TypeInfo(TProgressCell));
   TypeList.AddObject('TProgressColumn', TypeInfo(TProgressColumn));
   TypeList.AddObject('TProjectionHelper', TypeInfo(TProjectionHelper));
   TypeList.AddObject('TProxyObject', TypeInfo(TProxyObject));
@@ -944,9 +960,7 @@ begin
   TypeList.AddObject('TSearchBox', TypeInfo(TSearchBox));
   TypeList.AddObject('TSearchEditButton', TypeInfo(TSearchEditButton));
   TypeList.AddObject('TSelection', TypeInfo(TSelection));
-  TypeList.AddObject('TSelectionModeHelper', TypeInfo(TSelectionModeHelper));
   TypeList.AddObject('TSelectionPoint', TypeInfo(TSelectionPoint));
-  TypeList.AddObject('TSelectionPointTypeHelper', TypeInfo(TSelectionPointTypeHelper));
   TypeList.AddObject('TSemaphore', TypeInfo(TSemaphore));
   TypeList.AddObject('TSensorManager', TypeInfo(TSensorManager));
   TypeList.AddObject('TSepiaEffect', TypeInfo(TSepiaEffect));
@@ -1058,7 +1072,6 @@ begin
   TypeList.AddObject('TTextAlignHelper', TypeInfo(TTextAlignHelper));
   TypeList.AddObject('TTextAttributedRange', TypeInfo(TTextAttributedRange));
   TypeList.AddObject('TTextButtonObjectAppearance', TypeInfo(TTextButtonObjectAppearance));
-  TypeList.AddObject('TTextCell', TypeInfo(TTextCell));
   TypeList.AddObject('TTextControl', TypeInfo(TTextControl));
   TypeList.AddObject('TTextLayer3D', TypeInfo(TTextLayer3D));
   TypeList.AddObject('TTextLayout', TypeInfo(TTextLayout));
