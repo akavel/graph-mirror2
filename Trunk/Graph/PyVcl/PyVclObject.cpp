@@ -125,7 +125,7 @@ void __fastcall TPythonCallback::Invoke(void * UserData, System::DynamicArray<TV
 		PyTuple_SetItem(PyArgs, I, Params[I+1].FByRefParam ? VclRef_Create(&Args[I+1]) : ToPyObject(Args[I+1]));
 	PyObject *PyResult = PyObject_CallObject(Object, PyArgs);
 
-  //Invalidate all VclREf objects used as arguments
+  //Invalidate all VclRef objects used as arguments
 	for(int I = 0; I < Count; I++)
   {
     PyObject *Arg = PyTuple_GetItem(PyArgs, I);
@@ -495,7 +495,19 @@ static TRttiIndexedProperty* GetDefaultIndexedProeprty(TVclObject *self)
  *  \param key: The subscription index. May be a tuple.
  *  \return New reference to the retrieved object.
  */
-static PyObject* VclObject_Subscript(TVclObject *self, PyObject *key)
+
+ PyObject* Test(TRttiIndexedProperty *Property, TVclObject *self, std::vector<TValue> &Parameters)
+ {
+  try
+  {
+    return ToPyObject(Property->GetValue(self->Instance, &Parameters[0], Parameters.size()-1));
+  }
+  catch(Exception &E)
+  {
+		return PyVclHandleException();
+  }
+ }
+ static PyObject* VclObject_Subscript(TVclObject *self, PyObject *key)
 {
 #if __BCPLUSPLUS__ >= 0x640
 	try
@@ -510,6 +522,7 @@ static PyObject* VclObject_Subscript(TVclObject *self, PyObject *key)
     else
       Parameters.push_back(ToValue(key, ParameterTypes[0]->ParamType->Handle));
     return ToPyObject(Property->GetValue(self->Instance, &Parameters[0], Parameters.size()-1));
+//    return Test(Property, self, Parameters);
 	}
 	catch(...)
 	{

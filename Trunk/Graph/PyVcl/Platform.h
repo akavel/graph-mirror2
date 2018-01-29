@@ -4,6 +4,7 @@
 
 #if FIREMONKEY
 #include <fmx.h>
+#include <FMX.BehaviorManager.hpp>
 #define GUI_NAME "fmx"
 #define GUI_TYPE "fmx.Fmx"
 #define PROJECT_NAME "FireMonkey"

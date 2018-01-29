@@ -5,9 +5,6 @@
 #include "PyVcl.h"
 #include "PythonBind.h"
 #include <Math.hpp>
-#if FIREMONKEY
-#include <FMX.BehaviorManager.hpp>
-#endif
 #if defined(__WIN32__) && !defined(_Win64)
 #pragma link "urlmon.lib"
 #endif
