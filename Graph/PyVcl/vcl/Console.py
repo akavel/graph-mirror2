@@ -93,11 +93,13 @@ class ConsoleForm:
       self.HandlePaste()
       Key.Value = 0
     elif Shift == {"ssCtrl"} and Key.Value == ord("C"):
-      if self.InputPromptActive:
-        self.InputPromptActive = False
-        self.InputResult = None # Indicates Ctrl+C was pressed
-      elif self.RichEdit.SelLength == 0:
-        self.KeyboardInterrupt()
+      if self.RichEdit.SelLength == 0:
+        if self.InputPromptActive:
+          self.PromptIndex = self.RichEdit.SelStart
+          self.InputPromptActive = False
+          self.InputResult = None # Indicates Ctrl+C was pressed
+        else:  
+          self.KeyboardInterrupt()
     if (Shift == {"ssCtrl"} and Key.Value == ord("X")) or (Shift == {"ssShift"} and Key.Value == 0x2E): #0x2E=VK_DELETE
       if self.RichEdit.SelStart < self.LastIndex:
         Key.Value = 0        
