@@ -1,6 +1,15 @@
 import vcl
 import sys
 import __main__
+import code
+   
+class OutputReplacement:
+    def __init__(self, Form, Color):
+      self.Form = Form
+      self.Color = Color
+      
+    def write(self, Str):
+      self.Form.WriteText(Str, self.Color)
    
 class ConsoleForm:
   def __init__(self):
@@ -9,6 +18,7 @@ class ConsoleForm:
     self.TextCache = [""]
     self.CacheIndex = 0
     self.IndentLevel = 0
+    self.InputPromptActive = False
     
     self.Form = vcl.TForm(None, OnClose=self.Close, Width=vcl.Screen.Width//2, Height=vcl.Screen.Height//3) 
     self.Form.Caption = "Python interpreter"
@@ -31,16 +41,27 @@ class ConsoleForm:
     
     self.WritePrompt()   
     self.stdout = sys.stdout
-    sys.stdout = self
+    sys.stdout = OutputReplacement(self, 0)
+    self.stdin = sys.stdin
+    sys.stdin = self
+    self.stderr = sys.stderr
+    sys.stderr = OutputReplacement(self, 0xFF)
   
-  def write(self, Str):
-    self.WriteText(Str, 0)
-    
+  def readline(self):
+    self.InputPromptActive = True
+    self.WritePrompt("")
+    while self.InputPromptActive and not vcl.Application.Terminated:
+      vcl.Application.HandleMessage() # Use HandleMessage() instead of ProcessMessages() to avoid busy wait
+    if self.InputResult is None:
+      raise KeyboardInterrupt()
+    return self.InputResult + "\n"
+  
   def flush(self):
     pass
   
   def Close(self, Sender, Action):
     sys.stdout = self.stdout
+    sys.stdin = self.stdin
     
   def Clear(self, Sender):
     self.RichEdit.Clear()
@@ -72,7 +93,10 @@ class ConsoleForm:
       self.HandlePaste()
       Key.Value = 0
     elif Shift == {"ssCtrl"} and Key.Value == ord("C"):
-      if self.RichEdit.SelLength == 0:
+      if self.InputPromptActive:
+        self.InputPromptActive = False
+        self.InputResult = None # Indicates Ctrl+C was pressed
+      elif self.RichEdit.SelLength == 0:
         self.KeyboardInterrupt()
     if (Shift == {"ssCtrl"} and Key.Value == ord("X")) or (Shift == {"ssShift"} and Key.Value == 0x2E): #0x2E=VK_DELETE
       if self.RichEdit.SelStart < self.LastIndex:
@@ -99,7 +123,7 @@ class ConsoleForm:
     elif not Shift and Key.Value == 0x1B: #VK_ESCAPE
       self.SetUserString("");
     elif not Shift and Key.Value == 0x26: #VK_UP
-      if self.RichEdit.ActiveLineNo == self.RichEdit.Lines.Count - 1:
+      if self.RichEdit.SelStart >= self.PromptIndex:
         if self.CacheIndex > 0:
           if self.CacheIndex == len(self.TextCache) - 1:
             self.TextCache[-1] = self.GetUserString()
@@ -107,7 +131,7 @@ class ConsoleForm:
           self.SetUserString(self.TextCache[self.CacheIndex])
         Key.Value = 0
     elif not Shift and Key.Value == 0x28: #VK_DOWN
-      if self.RichEdit.ActiveLineNo == self.RichEdit.Lines.Count - 1:
+      if self.RichEdit.SelStart >= self.PromptIndex:
         if self.CacheIndex < len(self.TextCache) - 1:
           self.CacheIndex += 1
           self.SetUserString(self.TextCache[self.CacheIndex])
@@ -127,11 +151,12 @@ class ConsoleForm:
     self.IndentLevel = 0
     self.CacheIndex = len(self.TextCache) - 1
   
-  def ShowException(self, StartLine):
+  def ShowException(self, StartLine, EndLine=-1):
     import traceback
     TraceBack = traceback.format_exception(*sys.exc_info())
     self.WriteText(TraceBack[0], 0xFF)
-    for Str in TraceBack[StartLine:]: self.WriteText(Str, 0xFF)
+    for Str in TraceBack[StartLine : EndLine]: self.WriteText(Str, 0xFF)
+    self.WriteText(TraceBack[-1], 0xFF)
     self.WritePrompt()
     self.Command = ""
     self.IndentLevel = 0
@@ -148,14 +173,19 @@ class ConsoleForm:
       self.TextCache.append("")
     self.CacheIndex = len(self.TextCache) - 1 
     
+    if self.InputPromptActive:
+      self.InputResult = self.Command
+      self.InputPromptActive = False
+      self.Command = ""
+      return
+    
     try:
-      import code
       Code = code.compile_command(self.Command, "<console>")
       if Code:
-        exec(Code, __main__.__dict__, __main__.__dict__)
-        self.WritePrompt()
         self.Command = ""
         self.IndentLevel = 0
+        exec(Code, __main__.__dict__, __main__.__dict__)
+        self.WritePrompt()
       else:  
         self.WritePrompt("... ")
         self.Command += "\n"
@@ -165,6 +195,9 @@ class ConsoleForm:
       vcl.Application.Terminate()
     except SyntaxError:
       self.ShowException(6)
+    except KeyboardInterrupt:
+      print()
+      self.ShowException(2, -2)
     except Exception:
       self.ShowException(2)
     self.RichEdit.SelText = "\t" * self.IndentLevel  

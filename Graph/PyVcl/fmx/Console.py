@@ -1,6 +1,7 @@
 import fmx
 import sys
 import __main__
+import code
    
 class ConsoleForm:
   def __init__(self):
@@ -9,8 +10,9 @@ class ConsoleForm:
     self.TextCache = [""]
     self.CacheIndex = 0
     self.IndentLevel = 0
+    self.InputPromptActive = False
     
-    self.Form = fmx.CreateForm()
+    self.Form = fmx.TForm(None)
     self.Form.OnClose = self.Close
     Size = fmx.Platform.GetScreenSize()[0]
     Scale = fmx.Platform.GetScreenScale()
@@ -21,7 +23,7 @@ class ConsoleForm:
     
     self.Memo = fmx.TMemo(None, Parent=self.Form, Align="alClient", OnKeyDown=self.KeyDown, OnKeyUp=self.KeyUp)      
     self.Memo.Font.Family = "Courier New"
-    self.Memo.Font.Size = 7 * Scale
+    self.Memo.Font.Size = 14 * Scale
     self.Memo.StyledSettings = {'FontColor', 'Style'}
     self.Memo.TextSettings.WordWrap = True;
 
@@ -33,16 +35,31 @@ class ConsoleForm:
     
     self.stdout = sys.stdout
     sys.stdout = self
-#    self.WritePrompt()   
-  
+    self.stdin = sys.stdin
+    sys.stdin = self
+    self.stderr = sys.stderr
+    sys.stderr = self
+    
   def write(self, Str):
     self.WriteText(Str)
+    
+  def readline(self):
+    self.InputPromptActive = True
+    self.WritePrompt("")
+    # Notice: The form will not close while the HandleMessage() loop is running. You need to finishe the input before you can close the form.
+    while self.InputPromptActive and not fmx.Application.Terminated:
+      fmx.Application.HandleMessage() # Use HandleMessage() instead of ProcessMessages() to avoid busy wait
+    if self.InputResult is None:
+      raise KeyboardInterrupt()
+    return self.InputResult + "\n"  
     
   def flush(self):
     pass
   
   def Close(self, Sender, Action):
     sys.stdout = self.stdout
+    sys.stdin = self.stdin
+    sys.stderr = self.stderr
     
   def Clear(self, Sender):
     self.Memo.Lines.Clear()
@@ -72,7 +89,10 @@ class ConsoleForm:
       self.HandlePaste()
       Key.Value = 0
     elif Shift == {"ssCtrl"} and Key.Value == ord("C"):
-      if self.Memo.SelLength == 0:
+      if self.InputPromptActive:
+        self.InputPromptActive = False
+        self.InputResult = None # Indicates Ctrl+C was pressed
+      elif self.Memo.SelLength == 0:
         self.KeyboardInterrupt()
     if (Shift == {"ssCtrl"} and Key.Value == ord("X")) or (Shift == {"ssShift"} and Key.Value == 0x2E): #0x2E=VK_DELETE
       if self.Memo.SelStart < self.LastIndex:
@@ -128,11 +148,12 @@ class ConsoleForm:
     self.CacheIndex = len(self.TextCache) - 1
     self.WritePrompt()
   
-  def ShowException(self, StartLine):
+  def ShowException(self, StartLine, EndLine=-1):
     import traceback
     TraceBack = traceback.format_exception(*sys.exc_info())
     self.WriteText(TraceBack[0])
-    for Str in TraceBack[StartLine:]: self.WriteText(Str)
+    for Str in TraceBack[StartLine:EndLine]: self.WriteText(Str)
+    self.WriteText(TraceBack[-1])
     self.Command = ""
     self.IndentLevel = 0
     self.WritePrompt()
@@ -149,12 +170,17 @@ class ConsoleForm:
       self.TextCache.append("")
     self.CacheIndex = len(self.TextCache) - 1 
     
+    if self.InputPromptActive:
+      self.InputResult = self.Command
+      self.InputPromptActive = False
+      self.Command = ""
+      return
+
     try:
-      import code
       Code = code.compile_command(self.Command, "<console>")
       if Code:
-        exec(Code, __main__.__dict__, __main__.__dict__)
         self.Command = ""
+        exec(Code, __main__.__dict__, __main__.__dict__)
         self.IndentLevel = 0
         self.WritePrompt()
       else:  
@@ -166,18 +192,19 @@ class ConsoleForm:
       fmx.Application.Terminate()
     except SyntaxError:
       self.ShowException(6)
+    except KeyboardInterrupt:
+      print()
+      self.ShowException(2, -2)
     except Exception:
       self.ShowException(2)
     
   def WritePrompt(self, Str=">>> ", AutoIndent=True):
     Lines = self.Memo.Lines
-    if Lines.Count == 0 or len(Lines[Lines.Count-1]) > 0:
-      Lines.Add("")
     self.PromptIndex = len(Lines.Text) # Indicates position before prompt
-    Lines[Lines.Count - 1] = Str 
+    Lines[Lines.Count - 1] = Lines[Lines.Count - 1] + Str 
     self.LastIndex = len(Lines.Text)
     if AutoIndent:
-      Lines[Lines.Count - 1] = Str + "\t" * self.IndentLevel  
+      Lines[Lines.Count - 1] = Lines[Lines.Count - 1] + "\t" * self.IndentLevel  
     self.Memo.SelStart = 0x7FFFFFFF
   
   def SetUserString(self, Str):
