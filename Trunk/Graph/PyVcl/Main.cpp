@@ -9,6 +9,15 @@
 #pragma link "urlmon.lib"
 #endif
 //---------------------------------------------------------------------------
+// Windows 64 bit problems when compiling with C++ Builder XE6:
+// Calling events crashes. This is probably caused by the wrong code generated
+// by TMethodImplementation::TInvokeInfo.
+
+// Windows 64 bit problems when compiling with C++ Builder 10.2:
+// All Delphi exceptions seem to cause an access violation.
+// It might have something to do with Data Execution Prevention (DEP), but
+// I cannot find the exact cause.
+
 #pragma argsused
 extern "C" int _libmain(unsigned long reason)
 {
