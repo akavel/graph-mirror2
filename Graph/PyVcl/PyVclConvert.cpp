@@ -100,7 +100,7 @@ TValue ToValue(PyObject *O, TTypeInfo *TypeInfo)
 		case tkWChar:
 			if(PyUnicode_GetSize(O) != 1)
 				throw EPyVclError("Expected string with one character");
-			Result = TValue::From(FromPyObject<String>(O)[0]);
+			Result = TValue::From(FromPyObject<String>(O)[1]);
 			break;
 
 		case tkFloat:
