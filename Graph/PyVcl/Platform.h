@@ -20,8 +20,3 @@
 #define PROJECT_NAME "VCL"
 #define INIT_FUNC  PyInit_vcl
 #endif
-
-
-#define Py_LIMITED_API
-
-
