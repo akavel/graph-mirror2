@@ -23,8 +23,7 @@ class ConsoleForm:
     
     self.Memo = fmx.TMemo(None, Parent=self.Form, Align="alClient", OnKeyDown=self.KeyDown, OnKeyUp=self.KeyUp)      
     self.Memo.Font.Family = "Courier New"
-    self.Memo.Font.Size = 14 * Scale
-    self.Memo.StyledSettings = {'FontColor', 'Style'}
+    self.Memo.StyledSettings = {'FontColor', 'Style', "Size"} # Font size problems are fixed in C++ Builder 10.2
     self.Memo.TextSettings.WordWrap = True;
 
     self.PopupMenu = fmx.TPopupMenu(None)
