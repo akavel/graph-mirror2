@@ -3,12 +3,11 @@ Redirect 301 /graph/SetupGraph.exe http://www.padowan.dk/bin/SetupGraph-4.4.exe
 Redirect 301 /graph/SetupGraph-4.2.exe http://www.padowan.dk/bin/SetupGraph-4.4.exe
 
 Redirect 301 /graph/donate.html http://www.padowan.dk/donate
-Redirect 301 /graph/support.html http://forum.padowan.dk
+Redirect 301 /graph/support.html https://forum.padowan.dk
 Redirect 301 /graph/Download.php http://www.padowan.dk/download
 Redirect 301 /graph/download.php http://www.padowan.dk/bin/SetupGraph-4.4.exe
-Redirect 301 /forum http://forum.padowan.dk
+Redirect 301 /forum https://forum.padowan.dk
 Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb74/Graph_pad.xml
-
 
 # BEGIN W3TC Browser Cache
 <IfModule mod_mime.c>
@@ -20,7 +19,7 @@ Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb
     AddType text/x-js .js4
     AddType text/html .html .htm
     AddType text/richtext .rtf .rtx
-    AddType image/svg+xml .svg .svgz
+    AddType image/svg+xml .svg
     AddType text/plain .txt
     AddType text/xsd .xsd
     AddType text/xsl .xsl
@@ -37,6 +36,7 @@ Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb
     AddType application/x-gzip .gz .gzip
     AddType image/x-icon .ico
     AddType image/jpeg .jpg .jpeg .jpe
+    AddType image/webp .webp
     AddType application/json .json
     AddType application/vnd.ms-access .mdb
     AddType audio/midi .mid .midi
@@ -46,6 +46,7 @@ Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb
     AddType video/mpeg .mpeg .mpg .mpe
     AddType application/vnd.ms-project .mpp
     AddType application/x-font-otf .otf
+    AddType application/vnd.ms-opentype ._otf
     AddType application/vnd.oasis.opendocument.database .odb
     AddType application/vnd.oasis.opendocument.chart .odc
     AddType application/vnd.oasis.opendocument.formula .odf
@@ -58,13 +59,17 @@ Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb
     AddType image/png .png
     AddType application/vnd.ms-powerpoint .pot .pps .ppt .pptx
     AddType audio/x-realaudio .ra .ram
+    AddType image/svg+xml .svg .svgz
     AddType application/x-shockwave-flash .swf
     AddType application/x-tar .tar
     AddType image/tiff .tif .tiff
     AddType application/x-font-ttf .ttf .ttc
+    AddType application/vnd.ms-opentype ._ttf
     AddType audio/wav .wav
     AddType audio/wma .wma
     AddType application/vnd.ms-write .wri
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
     AddType application/vnd.ms-excel .xla .xls .xlsx .xlt .xlw
     AddType application/zip .zip
 </IfModule>
@@ -95,6 +100,7 @@ Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb
     ExpiresByType application/x-gzip A31536000
     ExpiresByType image/x-icon A31536000
     ExpiresByType image/jpeg A31536000
+    ExpiresByType image/webp A31536000
     ExpiresByType application/json A31536000
     ExpiresByType application/vnd.ms-access A31536000
     ExpiresByType audio/midi A31536000
@@ -104,6 +110,7 @@ Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb
     ExpiresByType video/mpeg A31536000
     ExpiresByType application/vnd.ms-project A31536000
     ExpiresByType application/x-font-otf A31536000
+    ExpiresByType application/vnd.ms-opentype A31536000
     ExpiresByType application/vnd.oasis.opendocument.database A31536000
     ExpiresByType application/vnd.oasis.opendocument.chart A31536000
     ExpiresByType application/vnd.oasis.opendocument.formula A31536000
@@ -121,22 +128,32 @@ Redirect 301 /graph/Graph.xml http://repository.appvisor.com/info/app-94002e36fb
     ExpiresByType application/x-tar A31536000
     ExpiresByType image/tiff A31536000
     ExpiresByType application/x-font-ttf A31536000
+    ExpiresByType application/vnd.ms-opentype A31536000
     ExpiresByType audio/wav A31536000
     ExpiresByType audio/wma A31536000
     ExpiresByType application/vnd.ms-write A31536000
+    ExpiresByType application/font-woff A31536000
+    ExpiresByType application/font-woff2 A31536000
     ExpiresByType application/vnd.ms-excel A31536000
     ExpiresByType application/zip A31536000
 </IfModule>
 <IfModule mod_deflate.c>
-    <IfModule mod_headers.c>
-        Header append Vary User-Agent env=!dont-vary
-    </IfModule>
-        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
+        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/bmp application/java application/msword application/vnd.ms-fontobject application/x-msdownload image/x-icon image/webp application/json application/vnd.ms-access application/vnd.ms-project application/x-font-otf application/vnd.ms-opentype application/vnd.oasis.opendocument.database application/vnd.oasis.opendocument.chart application/vnd.oasis.opendocument.formula application/vnd.oasis.opendocument.graphics application/vnd.oasis.opendocument.presentation application/vnd.oasis.opendocument.spreadsheet application/vnd.oasis.opendocument.text audio/ogg application/pdf application/vnd.ms-powerpoint image/svg+xml application/x-shockwave-flash image/tiff application/x-font-ttf application/vnd.ms-opentype audio/wav application/vnd.ms-write application/font-woff application/font-woff2 application/vnd.ms-excel
     <IfModule mod_mime.c>
         # DEFLATE by extension
         AddOutputFilter DEFLATE js css htm html xml
     </IfModule>
 </IfModule>
+<FilesMatch "\.(html|htm|rtf|rtx|svg|txt|xsd|xsl|xml|HTML|HTM|RTF|RTX|SVG|TXT|XSD|XSL|XML)$">
+    <IfModule mod_headers.c>
+        Header append Vary User-Agent env=!dont-vary
+    </IfModule>
+</FilesMatch>
+<FilesMatch "\.(bmp|class|doc|docx|eot|exe|ico|webp|json|mdb|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|pot|pps|ppt|pptx|svg|svgz|swf|tif|tiff|ttf|ttc|_ttf|wav|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|BMP|CLASS|DOC|DOCX|EOT|EXE|ICO|WEBP|JSON|MDB|MPP|OTF|_OTF|ODB|ODC|ODF|ODG|ODP|ODS|ODT|OGG|PDF|POT|PPS|PPT|PPTX|SVG|SVGZ|SWF|TIF|TIFF|TTF|TTC|_TTF|WAV|WRI|WOFF|WOFF2|XLA|XLS|XLSX|XLT|XLW)$">
+    <IfModule mod_headers.c>
+         Header unset Last-Modified
+    </IfModule>
+</FilesMatch>
 # END W3TC Browser Cache
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
